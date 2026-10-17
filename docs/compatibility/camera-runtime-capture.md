@@ -135,3 +135,28 @@ un recurso de cámara.
 Después deberá demostrarse la cadena entre el puntero observado y un ID/rango/hash
 del catálogo. Solo esa evidencia permitirá proponer un contrato para campos 92/108,
 colas o dependencias; F02.07/Q05/G02 siguen abiertos.
+
+## Continuación sobre los estados conservados
+
+La [búsqueda exacta](../execution/f02-07-camera-resource-link.md) ya comparó diez
+muestras con ambas extracciones. Encontró seis hits en un único candidato de 1.536
+bytes: prefijo de 256 bytes en A y de 64 bytes en B. No reabrió PCSX2 ni alteró la
+captura. La siguiente subtarea conserva `camera-resource-link-eu/origin` pendiente
+para comprobar mapeo y carga/escritura, antes de atribuir semántica al recurso.
+
+
+La [observación posterior SRC28](../execution/f02-07-camera-writer.md) usa una sesión
+independiente restaurada desde entrada A. Conserva siete estados y dos pares
+coherentes, uno sin cambio y otro BEQ+SW que modifica tres bytes. Se cerró como
+parcial, sin retorno ni prueba de traducción. No añade eventos a esta captura histórica.
+
+
+[SRC29](../execution/f02-07-camera-return.md) repite el par de SRC28 en otra sesión
+y captura el retorno completo, igual al retorno histórico en los 1.536 bytes.
+La sesión histórica conserva sus nueve eventos; mapa y carga siguen pendientes.
+
+[SRC30](../execution/f02-07-effective-mapping.md) define MP01–MP08 y valida mapas
+suministrados con fixtures propios. El sondeo del PCSX2 oficial, en otro perfil
+y sin cargar el juego, recibió EPERM al solicitar puerto host de lectura.
+La captura del mapa efectivo requiere instrumentación en un build separado;
+este resultado no cambia los eventos ni la hipótesis física históricos.

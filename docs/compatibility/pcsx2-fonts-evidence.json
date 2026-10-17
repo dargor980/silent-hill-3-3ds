@@ -1,0 +1,732 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC34",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-freetype-harfbuzz",
+  "stage": "freetype-harfbuzz-accepted",
+  "contract": "schemas/pcsx2-fonts-v1.md",
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan": {
+    "path": "docs/compatibility/pcsx2-build-dependencies.json",
+    "sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+    "historical_snapshot_unchanged": true
+  },
+  "archives": [
+    {
+      "archive": "freetype-2.14.3.tar.xz",
+      "url": "https://sourceforge.net/projects/freetype/files/freetype2/2.14.3/freetype-2.14.3.tar.xz",
+      "sha256": "36bc4f1cc413335368ee656c42afca65c5a3987e8768cc28cf11ba775e785a5f",
+      "bytes": 2670220,
+      "unpacked_bytes": 19676826,
+      "source_root": "freetype-2.14.3",
+      "download_verified": true,
+      "source_comparison": {
+        "files_compared": 855,
+        "changed": []
+      }
+    },
+    {
+      "archive": "harfbuzz-14.2.0.tar.gz",
+      "url": "https://github.com/harfbuzz/harfbuzz/archive/14.2.0/harfbuzz-14.2.0.tar.gz",
+      "sha256": "c652d5d94971031654ab3989891a490a895d3e3f2b71171c62692b28e94b1b93",
+      "bytes": 37408544,
+      "unpacked_bytes": 98983379,
+      "source_root": "harfbuzz-14.2.0",
+      "download_verified": true,
+      "source_comparison": {
+        "files_compared": 3718,
+        "changed": []
+      }
+    }
+  ],
+  "font_generation_tool": {
+    "name": "fonttools",
+    "version": "4.60.1",
+    "url": "https://files.pythonhosted.org/packages/c7/93/0dd45cd283c32dea1545151d8c3637b4b8c53cdb3a625aeb2885b184d74d/fonttools-4.60.1-py3-none-any.whl",
+    "sha256": "906306ac7afe2156fcf0042173d6ebbb05416af70f6b370967b47f8f00103bbb",
+    "bytes": 1143175,
+    "purpose": "generate own geometric test font; host only"
+  },
+  "license_files": [
+    {
+      "path": "freetype-2.14.3/LICENSE.TXT",
+      "sha256": "bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b"
+    },
+    {
+      "path": "freetype-2.14.3/docs/FTL.TXT",
+      "sha256": "5a5ee54c5001bbad1cdc1a57cc3dd4c42199b2da09d39c7ee41fab002d02967f"
+    },
+    {
+      "path": "freetype-2.14.3/docs/GPLv2.TXT",
+      "sha256": "c4120c6752c910c299e3bd9cb3a46ff262c268303ca2069b61f92f10a5656c18"
+    },
+    {
+      "path": "freetype-2.14.3/src/bdf/README",
+      "sha256": "7984455e7e5a9faba3797c8bf095fbe10cc846316b7320aff8c58402e22b82fe"
+    },
+    {
+      "path": "freetype-2.14.3/src/pcf/README",
+      "sha256": "18d9782898d9eac04476e2f744678137b2a889689ed3e923e052fc396a86f86b"
+    },
+    {
+      "path": "freetype-2.14.3/src/gzip/zlib.h",
+      "sha256": "c86a25c27f74cb97b8fa07b175f479f063d5064ace9995b4684063643c81cf1b"
+    },
+    {
+      "path": "harfbuzz-14.2.0/COPYING",
+      "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64"
+    },
+    {
+      "path": "harfbuzz-14.2.0/test/COPYING",
+      "sha256": "9b35b8485f69cd298fccbb3c40a827dc06cf1185553bef827903497d2944a8d7"
+    },
+    {
+      "path": "fonttools-4.60.1/LICENSE",
+      "sha256": "6787208f83f659ccbc2223b2fde952ffa6f7e8aca62f1a8a2bf5bc51bb1b2383"
+    },
+    {
+      "path": "fonttools-4.60.1/LICENSE.external",
+      "sha256": "94a83aaee0729a0f302d34acc4acecbd9d58366f262429075fe557e4a54b2e69"
+    }
+  ],
+  "build_options": {
+    "architecture": "x86_64",
+    "deployment_target": "11.0",
+    "type": "Release",
+    "shared": true,
+    "sequence": [
+      "FreeType without HarfBuzz",
+      "HarfBuzz",
+      "FreeType requiring linked HarfBuzz"
+    ],
+    "freetype": {
+      "FT_REQUIRE_ZLIB": true,
+      "FT_REQUIRE_PNG": true,
+      "FT_DISABLE_BZIP2": true,
+      "FT_DISABLE_BROTLI": true
+    },
+    "harfbuzz": {
+      "HB_BUILD_UTILS": false,
+      "HB_BUILD_GPU": false,
+      "HB_HAVE_FREETYPE": false,
+      "HB_HAVE_GLIB": false,
+      "HB_HAVE_CORETEXT": true,
+      "HB_BUILD_SUBSET": true,
+      "HB_BUILD_RASTER": true,
+      "HB_BUILD_VECTOR": true
+    }
+  },
+  "recipe_deviation": {
+    "option": "FT_DYNAMIC_HARFBUZZ=OFF",
+    "scope": "final FreeType only; FT_REQUIRE_HARFBUZZ=TRUE retained",
+    "reason": "Default dlopen path bypasses required package lookup and searches libharfbuzz.0.dylib by name; CMake installs libharfbuzz.dylib here. Direct link enforces the private dependency.",
+    "source_patched": false,
+    "private_harfbuzz_link_verified": true,
+    "private_harfbuzz_runtime_load_verified": true
+  },
+  "isolation": {
+    "cmake_homebrew_prefix_ignored": true,
+    "pkg_config_path": "",
+    "pkg_config_libdir": "private prefix/lib/pkgconfig",
+    "cmake_package_registries_disabled": true,
+    "target_cache_homebrew_paths": false,
+    "linked_homebrew_libraries": false
+  },
+  "steps": [
+    {
+      "name": "baseline-configure-v6",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 1.3,
+      "log_sha256": "51366ae60c6e2df857529822ccd97dc082927a6fc963352204006a261c4b5380"
+    },
+    {
+      "name": "freetype-bootstrap-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.4,
+      "log_sha256": "18f23313313f4f91d776ada72548212b94e1ee8c640363eb1fdfc56d3768dfef"
+    },
+    {
+      "name": "freetype-bootstrap-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.65,
+      "log_sha256": "1f1aa570f2a552e12c6eb590216a06034d9753797203cfd67fa4d61d2f0565a9"
+    },
+    {
+      "name": "freetype-bootstrap-v1-fixture-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.84,
+      "log_sha256": "6df86c92a9e4c6c1937cb918444d618751cb0b57bc9f88e701546aa6765c3ee1"
+    },
+    {
+      "name": "freetype-bootstrap-v1-fixture-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.28,
+      "log_sha256": "084cae437604bb70396a02bf9808ac548949ca409c9d04db44cf56b8680cec9b"
+    },
+    {
+      "name": "freetype-bootstrap-v1-fixture-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.7,
+      "log_sha256": "c800362ab75183116d6ce9a6f2ec5de4989ad6cce7c5bb8436960a388fd20d7d"
+    },
+    {
+      "name": "freetype-bootstrap-v1-install",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.04,
+      "log_sha256": "1dffb1c34ac852979dd4659c15dd795d6234ca1f789bc3d1a8920a2663d77154"
+    },
+    {
+      "name": "freetype-bootstrap-v1-inventory",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.03,
+      "log_sha256": "655b4edf543a99640d87b7cec2509f8071db3e631f77a63bd8b28f1533babfc4"
+    },
+    {
+      "name": "freetype-final-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.59,
+      "log_sha256": "9b4d3293c57401a46b93de329a9820f40414809653b2ddc4303c983b684bf818"
+    },
+    {
+      "name": "freetype-final-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.48,
+      "log_sha256": "d89c028ea00bf38db9a5cac4a6d4393eeb74314e90c815cd2bba3a54f1ddea61"
+    },
+    {
+      "name": "freetype-final-v1-fixture-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.87,
+      "log_sha256": "5f089a6435fae13db1bb35cfa432d8e3f0f776a0f0e3199b0466fefa40678e4d"
+    },
+    {
+      "name": "freetype-final-v1-fixture-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.28,
+      "log_sha256": "313e87e5238815e339518f1a17a63ce970c669042b36f764cbe473eaf5787443"
+    },
+    {
+      "name": "freetype-final-v1-fixture-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.39,
+      "log_sha256": "89fca5f913c2ed0deab38d3948a483cccbe540ef1b7da7bf86c30761f05efe8e"
+    },
+    {
+      "name": "freetype-final-v1-install",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.04,
+      "log_sha256": "0c7b2a8b960544f7f1538008b77341e84853e75c9ec6aa8d2681f53ecd0dd28c"
+    },
+    {
+      "name": "freetype-final-v1-inventory",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.03,
+      "log_sha256": "655b4edf543a99640d87b7cec2509f8071db3e631f77a63bd8b28f1533babfc4"
+    },
+    {
+      "name": "harfbuzz-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 48.38,
+      "log_sha256": "7da0065a1d12ee01bde680fd52e347794c1ec6fe2e403f0f1c1d52f933c82a66"
+    },
+    {
+      "name": "harfbuzz-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 4.22,
+      "log_sha256": "3aecc0bcab3aae0d1c8344e24ff3ce3568c78eab360964144b5e3a89a3934e6c"
+    },
+    {
+      "name": "harfbuzz-v1-fixture-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.75,
+      "log_sha256": "e38ce080d2f7c4c0ee0d36f9de5e971288cec20fbdb7b307e6e789bf43e65458"
+    },
+    {
+      "name": "harfbuzz-v1-fixture-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.34,
+      "log_sha256": "3fa1e7e8ec2759e8bedcc4528a4ad8e102fcc80291b0c47247926614afbf98bb"
+    },
+    {
+      "name": "harfbuzz-v1-fixture-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.73,
+      "log_sha256": "21979b9914409a7c36bb054fff5d8b89e1668ab4eb975527e438840ec51dbd7a"
+    },
+    {
+      "name": "harfbuzz-v1-install",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.11,
+      "log_sha256": "dca8c75e4ccc52861e5b1f02fc1170cdb35095316138dc12e78f5ff1f6ac9777"
+    },
+    {
+      "name": "harfbuzz-v1-inventory",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.03,
+      "log_sha256": "655b4edf543a99640d87b7cec2509f8071db3e631f77a63bd8b28f1533babfc4"
+    },
+    {
+      "name": "installed-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.86,
+      "log_sha256": "e7bd71267d729f0729735e031652106b820fab708bf66c76ab652808d45e820d"
+    },
+    {
+      "name": "installed-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.42,
+      "log_sha256": "83365c1dbd6965395c547af5f542377bc9f8ee14880da5d1b3efa52e38fde29c"
+    },
+    {
+      "name": "installed-v1-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.5,
+      "log_sha256": "456de8d90e0ecc6fbe265d1cd2afb7918cc5deabf0973cf21de8120220c8b149"
+    },
+    {
+      "name": "loader-autohint-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.12,
+      "log_sha256": "56a8346b692d6091449407b853733f4daf34098750c15b5062dd1d80b5fa35d7"
+    },
+    {
+      "name": "missing-prefix-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.48,
+      "log_sha256": "d8e8c5b1497ccfeb46d5e2d92fa7956e77f9921b5eeb38b44354ee1f8c834f8c"
+    }
+  ],
+  "provider_tests": {
+    "ctest_registered": {
+      "freetype_bootstrap": 0,
+      "harfbuzz": 0,
+      "freetype_final": 0
+    },
+    "provider_suites_executed": false,
+    "reason": "Recipe CMake builds do not register CTest suites; FreeType test uses Meson and a separate downloaded font; HarfBuzz API tests require GLib disabled by this configuration.",
+    "zero_tests_counted_as_pass": false,
+    "harfbuzz_cmake_support": "community-maintained per provider warning"
+  },
+  "fixture": {
+    "font": "original synthetic rectangles v1, Apache-2.0 repository license",
+    "font_bytes": 1356,
+    "font_sha256": "cdd254e7aec2ce13f35942b815da8374d8b0f36a61ef99ba4a4519c2dda81b97",
+    "deterministic_generations": 4,
+    "fonttools_host_only": true,
+    "original_data_used": false,
+    "unique_ctest_cases": 7,
+    "ctest_executions_across_stages": 25,
+    "junit": {
+      "freetype-bootstrap-v1-fixture-junit.xml": {
+        "tests": 4,
+        "failures": 0,
+        "skipped": 0,
+        "sha256": "0034c70fa9d04b49036c58798f2a71c87ea181f038f2d0935a2a816fc5a339d5"
+      },
+      "freetype-final-v1-fixture-junit.xml": {
+        "tests": 7,
+        "failures": 0,
+        "skipped": 0,
+        "sha256": "904a3756484f1089d323029a43576ec6a90a57bde4344ea748cf50c10537a104"
+      },
+      "harfbuzz-v1-fixture-junit.xml": {
+        "tests": 7,
+        "failures": 0,
+        "skipped": 0,
+        "sha256": "0e53001e3ef63f359f32d2c7507af6d242e36fe4bbec59d8f576e535960176a0"
+      },
+      "installed-v1-junit.xml": {
+        "tests": 7,
+        "failures": 0,
+        "skipped": 0,
+        "sha256": "4ce8e9ec74ae877ba026a8e5c55b59085861507e27e2093ef9a56a69ad7fd5e1"
+      }
+    },
+    "missing_prefix_rejected": true,
+    "shaper": "OpenType (ot), explicit",
+    "installed_binaries": [
+      {
+        "name": "sh3_freetype_fixture",
+        "sha256": "aa176fa550ffbee5ef7b9d6e7f7c0be5774875ca691052fd7363231f8705535c",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "sh3_harfbuzz_fixture",
+        "sha256": "0f9fd4903e0a38bcd29eb56e10db2f9c50ee9bcc6575e870b7200f276fb881be",
+        "architecture": "x86_64"
+      }
+    ],
+    "limits": [
+      "original fonts/text not tested",
+      "complex scripts and full Spanish typography not tested",
+      "CoreText not tested",
+      "HarfBuzz subset/raster/vector APIs not tested",
+      "individual internal FreeType-to-HarfBuzz calls not instrumented"
+    ]
+  },
+  "installation": {
+    "libraries": [
+      {
+        "name": "libfreetype.6.20.6.dylib",
+        "bytes": 802384,
+        "sha256": "11cc7da06d363f83d8a9b62f0c6a8e42122cadad7de4d01994b74960844d6d96",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "libharfbuzz-raster.dylib",
+        "bytes": 104464,
+        "sha256": "6ad5413fa7070ec4088c7ee4f6ca51890ee573a6bf809ecf2a3774dd16681433",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "libharfbuzz-subset.dylib",
+        "bytes": 1434608,
+        "sha256": "23723d2cd0ce6d8d597460194d77acbc3806152e44a3f6a70bd53463d54df549",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "libharfbuzz-vector.dylib",
+        "bytes": 167944,
+        "sha256": "76575eea7a4afafaec7c084cdc105b50c9e3491fea55a65450e2bc527faca199",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "libharfbuzz.dylib",
+        "bytes": 1453960,
+        "sha256": "9e7a9dfc2dc0801fc49ff98b653c85c249063afbedd63d76d2df4b111cf3af1f",
+        "architecture": "x86_64"
+      }
+    ],
+    "manifests": {
+      "freetype-bootstrap-v1": {
+        "entries": 64,
+        "sha256": "63006df4ced85704c99a190c18ef23e2071c4b03cb17d56d898591d2c2bd46cd"
+      },
+      "harfbuzz-v1": {
+        "entries": 47,
+        "sha256": "fb0f7e4b93d229109171146329918dca28a4601e568ba9c7cf94daaed852cc4d"
+      },
+      "freetype-final-v1": {
+        "entries": 64,
+        "sha256": "63006df4ced85704c99a190c18ef23e2071c4b03cb17d56d898591d2c2bd46cd"
+      }
+    },
+    "prior_src32_src33_libraries_unchanged": 10
+  },
+  "configuration": {
+    "exit_code": 1,
+    "duration_seconds": 1.3,
+    "log_sha256": "51366ae60c6e2df857529822ccd97dc082927a6fc963352204006a261c4b5380",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 18839592960,
+    "directory": "baseline-configure-v6",
+    "freetype_version": "2.14.3",
+    "freetype_resolved_from_private_prefix": true,
+    "first_missing_dependency": "PlutoVG >= 1.1.0",
+    "later_dependencies_checked": false
+  },
+  "capacity": {
+    "free_gib_before_download_approx": 17.9,
+    "free_bytes_after_configuration": 18839592960,
+    "large_build_reserve_bytes": 21474836480,
+    "scope": "bounded dependency unit; large build gate unchanged"
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 18839592960,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "preflight_toolchain_checks_reused_from": "SRC31; no new C++20/Metal fixture execution",
+  "validation": {
+    "python_suite": "1897 historical cases from SRC31, not rerun",
+    "remote_ci_executed": false,
+    "pcsx2_full_build_executed": false,
+    "three_ds_build_executed": false,
+    "repository_checks": {
+      "exit_code": 0,
+      "errors": 0
+    },
+    "generator_ruff_exit_code": 0,
+    "diff_check_exit_code": 0,
+    "source_hashes_verified": 6,
+    "local_hashes_verified": 42,
+    "step_logs_verified": 27,
+    "local_links_verified": 6,
+    "archive_hashes_match_report": true,
+    "public_evidence_has_no_private_absolute_paths": true
+  },
+  "source_files": [
+    {
+      "path": "schemas/pcsx2-fonts-v1.md",
+      "sha256": "8feb98e82f3995166085d542d16fee8dd0de4485e768653d8e845d035ca03a1a"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-fonts/CMakeLists.txt",
+      "sha256": "88aa4bf6b60e063333c5838365dad1d1559d8aad6453396b3b81509b67d6d41b"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-fonts/README.md",
+      "sha256": "8f38f195ee897cab8e707bb0e520520c02f9aa8ae75ee9b8444fe9021716e4fa"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-fonts/freetype.cpp",
+      "sha256": "e60cf729e6049c88ef744daa1b38e25b61b81fc84aa82f4d9a88a52ddd688ca1"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-fonts/generate_font.py",
+      "sha256": "dab85c51de7b3a59a2a8d0e5985cc4a0d0f7f5fd022cead2702ac58d5feb36bf"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-fonts/harfbuzz.cpp",
+      "sha256": "983c98962e331cea5de741ef63d4ba97afb4f759effa81a45c6f339b0fccffae"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "build/f02-07-pcsx2-fonts/baseline-configure-v6.json",
+      "sha256": "9f55286da828ad7504ff9754ab99940d31068c3c388fa01b1c80d0534c918e02"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/bootstrap-library.json",
+      "sha256": "a7080727a9944424e79a4a4e16957cc6091dfb5265fa1ba75b5dd892d9487618"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/configure-result-v6.json",
+      "sha256": "cc384c1cb071c6689b1c5fb94fca5d6c8daa24551528f96a36f431ab669fbd6f"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/downloads.json",
+      "sha256": "09d991b79865058da9fc0a6fba773b0958a499033ac42691c2f5a1781b382ae9"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-bootstrap-v1-build.json",
+      "sha256": "ea8d62ab251ac78bd75646b5ef5840e9b81f262828761eeae7c1edf61602c26d"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-bootstrap-v1-configure.json",
+      "sha256": "f1bd34413c171783f9bd7b2e004f5c144aaaf79904f72571eadb916751e7bef5"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-bootstrap-v1-fixture-build.json",
+      "sha256": "491d695d34cfc658c73fd70dd7016d67cc0bac95f930e2d552b2b4f22a9e896a"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-bootstrap-v1-fixture-configure.json",
+      "sha256": "b67de81e2d237a085db0747ea1d47de9ccd0d1c7269c7e579fd50bde398de99e"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-bootstrap-v1-fixture-ctest.json",
+      "sha256": "2199e73b8dcf85061a0d3994e903e93a638a1dd4fa215affc9dfd3265e6b2020"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-bootstrap-v1-fixture-junit.xml",
+      "sha256": "0034c70fa9d04b49036c58798f2a71c87ea181f038f2d0935a2a816fc5a339d5"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-bootstrap-v1-install.json",
+      "sha256": "d7cbd905997d4abc4c662026aaa0b9c3ada7a555fce0f1f5c81cd082165edbf6"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-bootstrap-v1-inventory.json",
+      "sha256": "83c833ab2965cd3cb26c39ac00b5039adb6c0c540c9e8e64343064ee148e704e"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-final-v1-build.json",
+      "sha256": "0571b371ab2e329cb440a7d25d84076027046c1a89e00eb4ea233e1c2ad6dd0d"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-final-v1-configure.json",
+      "sha256": "39a6a934f412c5541564354201d0b0a46f1d8e2e39b927c910b8bba1526d7f7c"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-final-v1-fixture-build.json",
+      "sha256": "084169509fd8b864b14a1f235d9a28766c84ab70440e468a71f7d512c0f63fa3"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-final-v1-fixture-configure.json",
+      "sha256": "0a75f63d98e4e7bc78a59f86ab31dbd5ef66a997d425a8b2db48b3f8e2c0154d"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-final-v1-fixture-ctest.json",
+      "sha256": "1970722fdc90ceac6a78a3c98904ca5d9cfdbc725d93a5a52cfa2dc0e6580f3f"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-final-v1-fixture-junit.xml",
+      "sha256": "904a3756484f1089d323029a43576ec6a90a57bde4344ea748cf50c10537a104"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-final-v1-install.json",
+      "sha256": "d1dc625eb80a5e3257aa946a4b79facc63cacb5a82e2672ead25204d59fc39bd"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/freetype-final-v1-inventory.json",
+      "sha256": "22de7dba243c2f34133ec938fe66894a72b3dee1e305ae8fe86606c98b0b5322"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/harfbuzz-v1-build.json",
+      "sha256": "510debd87b4912ce026798780cf9915d3388d45a19c02e2fe8d5c1966aa672dd"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/harfbuzz-v1-configure.json",
+      "sha256": "b88ee656b722824f7a879ec962fe4aa72aafc140e5497819f31327bc24d61074"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/harfbuzz-v1-fixture-build.json",
+      "sha256": "05237ada80c93350c8d14edad18a56c7badcf757e68cedddd8e22bfe2098f5b6"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/harfbuzz-v1-fixture-configure.json",
+      "sha256": "2f76ee46cf892a60ddefc2fb464881b5ee1624ec53cdf3d16a3807e05cb45a61"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/harfbuzz-v1-fixture-ctest.json",
+      "sha256": "c141a309d827f980ca5393853404675b7491fa384395d64455450fe7a9de5234"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/harfbuzz-v1-fixture-junit.xml",
+      "sha256": "0e53001e3ef63f359f32d2c7507af6d242e36fe4bbec59d8f576e535960176a0"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/harfbuzz-v1-install.json",
+      "sha256": "35b3de73ec316e72ec050dc50928192879ae18b675da90bf24b32dbe9df6ce94"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/harfbuzz-v1-inventory.json",
+      "sha256": "4aab0be3d523ebca49b6a1e08da7071627e5d077c8f51e175fad13d1014b5259"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/installed-v1-build.json",
+      "sha256": "01bc1695b9a1b1190de1c35f659458fb178654f778ed60ac5270d801f6818a24"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/installed-v1-configure.json",
+      "sha256": "b778415ac61c0ba4a48a9264ae35861de08f482abb081a9ab390b5da0d87e4bc"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/installed-v1-ctest.json",
+      "sha256": "8ae26c57608c26d245f09fa03c60b95f8606af6ff49d193c481c2ed7a86759fb"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/installed-v1-junit.xml",
+      "sha256": "4ce8e9ec74ae877ba026a8e5c55b59085861507e27e2093ef9a56a69ad7fd5e1"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/loader-autohint-v1.json",
+      "sha256": "93f1c3d9b6ff07924a8974c6e67c0fbabd83f3066ab58d3978438840e30cd618"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/missing-prefix-v1.json",
+      "sha256": "44d2c1335c5d43b0ca1ea55ed7b740f522e85d9f91c475a95f3f551d85c1032f"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/preflight-v5.json",
+      "sha256": "0c22b53daa50d2d8e2972e9e3535161e31edac5dc4f6304dcbb0a7c611492e52"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/prior-libraries.json",
+      "sha256": "ae9d11a1fd202614eeb5de04e0dca013dd39101de11050958db885d7aed51760"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/rectangles-after-lint-repeat.ttf",
+      "sha256": "cdd254e7aec2ce13f35942b815da8374d8b0f36a61ef99ba4a4519c2dda81b97"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/rectangles-after-lint.ttf",
+      "sha256": "cdd254e7aec2ce13f35942b815da8374d8b0f36a61ef99ba4a4519c2dda81b97"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/rectangles-repeat.ttf",
+      "sha256": "cdd254e7aec2ce13f35942b815da8374d8b0f36a61ef99ba4a4519c2dda81b97"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/rectangles-v1.ttf",
+      "sha256": "cdd254e7aec2ce13f35942b815da8374d8b0f36a61ef99ba4a4519c2dda81b97"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/run_stage.py",
+      "sha256": "06d676aa64fc5027267a4c28a067cb97db1b713e1cc2bc518c7ee167f1891a04"
+    },
+    {
+      "path": "build/f02-07-pcsx2-fonts/verification.json",
+      "sha256": "eb2f2e48e2475dac5c6cf105ba0d91ac7f89fa92c37c62a05f76b8818359fdbf"
+    }
+  ],
+  "next_task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-plutovg-plutosvg",
+  "f02_07_status": "pending",
+  "mapping_verified": false,
+  "resource_links": [],
+  "capabilities": [],
+  "recipe_progress": {
+    "verified_archives": 9,
+    "total_archives": 25,
+    "auxiliary_not_in_recipe": [
+      "NASM 3.02",
+      "FontTools 4.60.1"
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping",
+  "stage": "contract-validator-and-access-probe-completed-live-capture-pending",
+  "session_id": "4b97d02583cd4f55a409f9b71df342f4",
+  "binary_sha256": "10e7cc1b3180b5a9f48923f3dfc3900019cc8c0df7e280a0ea61190b86961390",
+  "self_probe": {
+    "target": "self_synthetic",
+    "task_read_for_pid_code": 0,
+    "port_nonzero": true,
+    "read_code": 0,
+    "read_size": 15,
+    "expected_bytes": true,
+    "close_code": 0
+  },
+  "process_probe": {
+    "session_id": "4b97d02583cd4f55a409f9b71df342f4",
+    "binary_sha256": "10e7cc1b3180b5a9f48923f3dfc3900019cc8c0df7e280a0ea61190b86961390",
+    "target_identity_checked": true,
+    "scope": "read_port_capability_no_vm",
+    "task_read_for_pid_code": -1,
+    "port_nonzero": false,
+    "mapping_observed": false,
+    "errno": 1,
+    "errno_name": "EPERM",
+    "error_description": "Operation not permitted"
+  },
+  "closure": {
+    "process_closed": true,
+    "original_profile_unchanged": true,
+    "pine_disabled": true,
+    "socket_absent": true,
+    "private_permissions": true,
+    "game_loaded": false
+  },
+  "pcsx2_source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "sources_consulted": [
+    {
+      "path": "pcsx2/vtlb.h",
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/pcsx2/vtlb.h",
+      "sha256": "0c8a1f9331995fbb287d0a7564f8897efa4c17c909f186562f62bf9e28cd9a58",
+      "bytes": 10030
+    },
+    {
+      "path": "pcsx2/MemoryTypes.h",
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/pcsx2/MemoryTypes.h",
+      "sha256": "7f0066d74627959fffe68767f45038c7b3213f6de63e1a6822771b32867f2e8c",
+      "bytes": 2572
+    },
+    {
+      "path": "CMakeLists.txt",
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/CMakeLists.txt",
+      "sha256": "c4f70c95ca25cbc9dde41131e7352bb81276920a54f9ac70f7c57d0c1f329c16",
+      "bytes": 2856
+    },
+    {
+      "path": ".github/workflows/macos_build.yml",
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/.github/workflows/macos_build.yml",
+      "sha256": "1f4b809ddcda5dac24715878cd8d561af5b7883d0752f4a7712150d0d7243ea4",
+      "bytes": 7846
+    },
+    {
+      "path": "cmake/SearchForStuff.cmake",
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/cmake/SearchForStuff.cmake",
+      "sha256": "032606903971e808373254b03efd93c1375a58188cc0f27c91f840b4ad3317a7",
+      "bytes": 5076
+    },
+    {
+      "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/.github/workflows/scripts/macos/build-dependencies.sh",
+      "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a",
+      "bytes": 16112
+    },
+    {
+      "path": "COPYING.GPLv3",
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/COPYING.GPLv3",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "bytes": 35147
+    },
+    {
+      "path": "cmake/BuildParameters.cmake",
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/cmake/BuildParameters.cmake",
+      "sha256": "294799059e4b9d5e93fdba33cde3f18ed7f2a04d4d4f0ecae280ce8a73c2603f",
+      "bytes": 12378
+    }
+  ],
+  "build_preflight": {
+    "host_arch": "arm64",
+    "reference_arch": "x86_64",
+    "cmake": "4.2.3",
+    "clang": "Apple Clang 15.0.0",
+    "metal_found": false,
+    "metal_find_exit_code": 72,
+    "qt_at_usr_local_opt_present": false,
+    "pcsx2_build_executed": false,
+    "source_instrumentation_implemented": false
+  },
+  "local_evidence": [
+    {
+      "name": "self-probe.json",
+      "sha256": "e93ccd28ff17665e6ac4868f936ad680a410d81aac7aeaf98e1d0d1ef9027216"
+    },
+    {
+      "name": "process-probe.json",
+      "sha256": "079dece238b5bcd194e7505aa546ea9889bc0df364c4e2e3b3fb91b0ca97a97c"
+    },
+    {
+      "name": "closure.json",
+      "sha256": "d87d71947f7e8164a4004e27703533740090e4072b774db36839ae38feea8823"
+    },
+    {
+      "name": "session.json",
+      "sha256": "14f9ba7c8d145db230f22a3552bce70bc6d3a3768824f5753f44fa622bb9cae9"
+    },
+    {
+      "name": "build-preflight.json",
+      "sha256": "1d8f9934f6c9f0dab81f87206fa4d8d6e42f225474d3ff290efb54d06ca64266"
+    },
+    {
+      "name": "sources.json",
+      "sha256": "293d2916e2d3aa981381318c58f712be075e9d3e624b5ff1ce4e8c2a3f90e701"
+    },
+    {
+      "name": "junit.xml",
+      "sha256": "ca2933fa22b0ebb6a410140ddabef20998ec1d2e6e1ecd7b0fe8d35722c57154"
+    },
+    {
+      "name": "coverage.json",
+      "sha256": "17226287d02732cde8d24772d7b6844f0e4e84b78c29e72f75323eab4426df72"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "schemas/effective-mapping-v1.md",
+      "sha256": "e1dfdc08b182ab84e1e4e4886be1d013b86075a2b08521939f74f9e27102f457"
+    },
+    {
+      "path": "tools/inspectors/effective_mapping.py",
+      "sha256": "ce3715e624332bb244cd840f53b080281eca7e4f938a86613cea017d38a22d96"
+    },
+    {
+      "path": "tests/python/test_effective_mapping.py",
+      "sha256": "3f79e40f158df51f0598dc8688cd263099c649e70e620d4571a2a60dfbbb5fed"
+    }
+  ],
+  "validation": {
+    "python_tests_passed": 1849,
+    "new_tests": 91,
+    "mapping_lines": "62/62",
+    "mapping_branches": "10/10",
+    "line_coverage_percent": 98.7661,
+    "branch_coverage_percent": 97.2789,
+    "coverage_gate": "passed",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "repository_check": "passed",
+    "remote_ci_executed": false,
+    "3ds_build_executed": false
+  },
+  "mapping_verified": false,
+  "execution_authentication": "not_provided",
+  "resource_links": [],
+  "capabilities": [],
+  "origin_status": "pending",
+  "f02_07_status": "pending",
+  "next_task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build"
+}

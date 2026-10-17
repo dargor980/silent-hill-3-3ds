@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-resource-link-eu",
+  "stage": "exact-sample-search-completed-origin-pending",
+  "result_sha256": "30611f6f1af92a1c5363474af0b76a5805222824c8a50065aa1d93daf3a62842",
+  "result_bytes": 7642,
+  "repeat_identical": true,
+  "input_hashes": {
+    "capture_sha256": "216003229ac966e9a6e0d1153be9c6a80ef7550ffc5c7d23ab52bb1c2cb34e49",
+    "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+    "extraction_sha256": "74720589caadefaf2f88a5ea0642ed080cc0d81ffab036cacf0bc5f051f3a943",
+    "observation_repeat_sha256": "6280e7b164c12805ecead3d3415fbe18588c726369553d6ea17d8b215d04898d",
+    "observation_sha256": "6280e7b164c12805ecead3d3415fbe18588c726369553d6ea17d8b215d04898d",
+    "plan_sha256": "55285f27e8dc2c9c894e1d07c9882f10091ef094a26e509a28d0cead89bfdd6b",
+    "state_index_sha256": "d541dfef6496f3598dbc315db10b4aaf5aa4afb103c04c0bd64291406bed74c5"
+  },
+  "mapping": "low_direct_physical_offset_hypothesis_tlb_not_verified",
+  "summary": {
+    "bytes_per_copy": 1562367840,
+    "copies_verified": 2,
+    "match_count": 6,
+    "resources_per_copy": 1740,
+    "sample_count": 10,
+    "searched_count": 10
+  },
+  "unique_candidate_resources": [
+    {
+      "resource_id": "asset:f8328806a743597779f6bfa4b32167d33d52456a8da0d71b7f9edf38cf41e58b",
+      "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+      "resource_size": 1536
+    }
+  ],
+  "matched_sample_lengths": {
+    "A_entry": [
+      64,
+      256
+    ],
+    "B1_entry": [
+      64
+    ],
+    "B1_return": [
+      64
+    ],
+    "B2_entry": [
+      64
+    ],
+    "B2_return": [
+      64
+    ]
+  },
+  "all_matches_at_resource_offset": 0,
+  "b_256_samples_equal": true,
+  "a_entry_b_bases_equal": true,
+  "sources_consulted": [
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/MemoryTypes.h",
+      "sha256": "7f0066d74627959fffe68767f45038c7b3213f6de63e1a6822771b32867f2e8c",
+      "bytes": 2572,
+      "license": "GPL-3.0+",
+      "use": "format facts and initial mapping only; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/Memory.cpp",
+      "sha256": "d0fe8073d5bc9b52ed50bffe38c3c8111fd61e735a9f0eb4b1a1f7db02cb5830",
+      "bytes": 36023,
+      "license": "GPL-3.0+",
+      "use": "format facts and initial mapping only; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/Memory.h",
+      "sha256": "1a3623b2348551bb32686f415c7cf7f23f0e2365f26de3ccc673a500f26c84bd",
+      "bytes": 9581,
+      "license": "GPL-3.0+",
+      "use": "format facts and initial mapping only; no source copied into repository"
+    }
+  ],
+  "prior_format_source": "SRC24 SaveState.cpp v2.8.2",
+  "source_files": [
+    {
+      "path": "schemas/camera-resource-link-v1.md",
+      "sha256": "4aadae97ab9ffc1f08655583ede02ee557427effc2a8d9a9546aefb767f4b278"
+    },
+    {
+      "path": "tools/inspectors/pcsx2_state.py",
+      "sha256": "682471ed43437b3be07a2b787c96a5c77abad047819c6b9c868cd53337f0e122"
+    },
+    {
+      "path": "tools/inspectors/state_files.py",
+      "sha256": "def80240c7cb1b6c673bbbebfd4d748dd3404c45d3c9c1495e06dc9c65a94d2d"
+    },
+    {
+      "path": "tools/inspectors/state_memory.py",
+      "sha256": "7c4f2af226b9605bc48fdc15113270d441359fadad91f0338933c76b536ddae4"
+    },
+    {
+      "path": "tools/inspectors/resource_match.py",
+      "sha256": "406d5b26952da3dcaf2985adfb5991fed14eb0a80d4e7ae337302b4ab246f621"
+    },
+    {
+      "path": "tools/inspectors/resource_scan_files.py",
+      "sha256": "b54ff578b9714616b9da2840a7727096e10743cf0c45d7b353afab8a4c17c283"
+    },
+    {
+      "path": "tools/inspectors/resource_link.py",
+      "sha256": "93416d9b1a1488a000eb3702d966577ddcc3b7f6624c9654997adcdab8beb310"
+    },
+    {
+      "path": "tests/python/test_resource_link.py",
+      "sha256": "3decc70950fff5f09af8fd984905e7faaa37e6ab600406844f97ea3b5f21d700"
+    }
+  ],
+  "validation": {
+    "python_tests_passed": 1583,
+    "new_tests": 66,
+    "line_coverage_percent": 98.6989,
+    "branch_coverage_percent": 97.4153,
+    "gate": "passed",
+    "remote_ci_executed": false,
+    "3ds_build_executed": false,
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "repository_check": "passed"
+  },
+  "emulator_reopened": false,
+  "original_states_modified": false,
+  "resource_links": [],
+  "capabilities": [],
+  "f02_07_status": "pending"
+}

@@ -1,0 +1,177 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-resource-link-eu/origin",
+  "stage": "full-comparison-completed-mapping-writer-loader-pending",
+  "result_sha256": "0a08d220a0913719deecab4bcc12ebda038f73c7dc0aa5a427f940180c9cea95",
+  "result_bytes": 19343,
+  "repeat_identical": true,
+  "input_hashes": {
+    "capture_sha256": "216003229ac966e9a6e0d1153be9c6a80ef7550ffc5c7d23ab52bb1c2cb34e49",
+    "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+    "extraction_sha256": "74720589caadefaf2f88a5ea0642ed080cc0d81ffab036cacf0bc5f051f3a943",
+    "link_repeat_sha256": "30611f6f1af92a1c5363474af0b76a5805222824c8a50065aa1d93daf3a62842",
+    "link_sha256": "30611f6f1af92a1c5363474af0b76a5805222824c8a50065aa1d93daf3a62842",
+    "observation_repeat_sha256": "6280e7b164c12805ecead3d3415fbe18588c726369553d6ea17d8b215d04898d",
+    "observation_sha256": "6280e7b164c12805ecead3d3415fbe18588c726369553d6ea17d8b215d04898d",
+    "origin_plan_sha256": "7d9a9cb5a68916d29be38c946d149e279fe21e8aba4146dd13372b974708fc28",
+    "plan_sha256": "55285f27e8dc2c9c894e1d07c9882f10091ef094a26e509a28d0cead89bfdd6b",
+    "state_index_sha256": "d541dfef6496f3598dbc315db10b4aaf5aa4afb103c04c0bd64291406bed74c5"
+  },
+  "session_id": "bdaad9edb3134b5fa876ae7ba60d0d99",
+  "resource": {
+    "id": "asset:f8328806a743597779f6bfa4b32167d33d52456a8da0d71b7f9edf38cf41e58b",
+    "sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "size": 1536
+  },
+  "states_compared": 8,
+  "source_full_resource_equal": true,
+  "first_observed_change": {
+    "after_event_sequence": 2,
+    "by_event_sequence": 3,
+    "difference_ranges": [
+      {
+        "end": 88,
+        "start": 85
+      },
+      {
+        "end": 100,
+        "start": 98
+      },
+      {
+        "end": 216,
+        "start": 213
+      },
+      {
+        "end": 228,
+        "start": 226
+      },
+      {
+        "end": 344,
+        "start": 341
+      },
+      {
+        "end": 356,
+        "start": 354
+      },
+      {
+        "end": 472,
+        "start": 469
+      },
+      {
+        "end": 484,
+        "start": 482
+      },
+      {
+        "end": 600,
+        "start": 597
+      },
+      {
+        "end": 612,
+        "start": 610
+      },
+      {
+        "end": 728,
+        "start": 725
+      },
+      {
+        "end": 740,
+        "start": 738
+      },
+      {
+        "end": 856,
+        "start": 853
+      },
+      {
+        "end": 868,
+        "start": 866
+      },
+      {
+        "end": 984,
+        "start": 981
+      },
+      {
+        "end": 996,
+        "start": 994
+      }
+    ]
+  },
+  "different_bytes_at_return": 40,
+  "later_states_equal_to_return": true,
+  "mapping": "low_direct_physical_offset_hypothesis_tlb_not_verified",
+  "mapping_verified": false,
+  "origin_status": "pending",
+  "sources_consulted": [
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/SaveState.cpp",
+      "sha256": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589",
+      "bytes": 37125,
+      "license": "GPL-3.0+",
+      "use": "mapping and debugger behavior research; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/COP0.cpp",
+      "sha256": "5c15c34884f06c95074d725415df0d9751092f9bb9115f3324351ec4aba17686",
+      "bytes": 18825,
+      "license": "GPL-3.0+",
+      "use": "mapping and debugger behavior research; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/DebugTools/DebugInterface.cpp",
+      "sha256": "61790fc48d688633d416f9301dac27afa18db9dcd12a28b8f6f13d7f9ccbe27c",
+      "bytes": 28567,
+      "license": "GPL-3.0+",
+      "use": "mapping and debugger behavior research; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/vtlb.cpp",
+      "sha256": "633b63e1179a1503044643b5011ef5b9f5fcb6d15faf860924857bcc96b22ae9",
+      "bytes": 50146,
+      "license": "GPL-3.0+",
+      "use": "effective virtual memory read behavior; no source copied into repository"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "schemas/camera-origin-v1.md",
+      "sha256": "2cd7f77155efedd6fa090e55bb3f343123865461942335c7b6360c777f608081"
+    },
+    {
+      "path": "tools/inspectors/origin_memory.py",
+      "sha256": "1f71d92707f788d2fa4cbf57e4cae2d71c4aa07018b05a9566bedf886f92f444"
+    },
+    {
+      "path": "tools/inspectors/origin_compare.py",
+      "sha256": "4b0c4d6626da28a7f8ea5dea4365609adc2b1ec6d8dabb8a8ccb67222946344e"
+    },
+    {
+      "path": "tools/inspectors/resource_origin.py",
+      "sha256": "2a1377be6ffeb0a221c33e8aafcba621bcfb63bfadbf0b62254d3253e4eeee08"
+    },
+    {
+      "path": "tests/python/test_resource_origin.py",
+      "sha256": "2641efdbe86804d87d3c44f762f08a8bdf80f9fa2fc5a3aa313343ba4ce69322"
+    }
+  ],
+  "validation": {
+    "python_tests_passed": 1649,
+    "new_tests": 66,
+    "line_coverage_percent": 98.7206,
+    "branch_coverage_percent": 97.3684,
+    "gate": "passed",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "repository_check": "passed",
+    "remote_ci_executed": false,
+    "3ds_build_executed": false
+  },
+  "writer_plan": {
+    "status": "not_performed",
+    "sha256": "396c05cf8d5e2c339d7498537134128bdf1602ea33d4870a52f608d7acaea45a",
+    "bytes": 2568
+  },
+  "emulator_reopened": false,
+  "original_states_modified": false,
+  "resource_links": [],
+  "capabilities": [],
+  "f02_07_status": "pending"
+}

@@ -83,8 +83,17 @@ def _zip_budget(raw: bytes) -> int:
     return count
 
 
-def read_state_archive(raw: bytes, expected_crc: int) -> EEState:
-    """Read only two bounded ZIP members. Never extract members to the filesystem."""
+def read_state_members(raw: bytes, requests: tuple[tuple[str, int], ...]) -> list[bytes]:
+    """Read explicit bounded members; callers define the pinned member contracts."""
+    _require(
+        isinstance(requests, tuple)
+        and 1 <= len(requests) <= 3
+        and all(
+            isinstance(n, str) and type(limit) is int and 1 <= limit <= 32 * 1024 * 1024
+            for n, limit in requests
+        ),
+        "STATE_BUDGET",
+    )
     count = _zip_budget(raw)
     try:
         with zipfile.ZipFile(BytesIO(raw)) as archive:
@@ -106,7 +115,7 @@ def read_state_archive(raw: bytes, expected_crc: int) -> EEState:
                 _require(not flags & 65, "STATE_ENCRYPTED")
                 _require(start + 30 + name_size <= len(raw))
             values = []
-            for name, limit in ((VERSION_MEMBER, 36), (INTERNALS_MEMBER, MAX_INTERNALS)):
+            for name, limit in requests:
                 _require(name in names, "STATE_MEMBER")
                 info = archive.getinfo(name)
                 _require(1 <= info.file_size <= limit, "STATE_BUDGET")
@@ -118,4 +127,10 @@ def read_state_archive(raw: bytes, expected_crc: int) -> EEState:
         raise ProfileError("STATE_COMPRESSION", "Host cannot decode this compression") from error
     except (zipfile.BadZipFile, EOFError, zlib.error) as error:
         raise ProfileError("STATE_ZIP", "Invalid state archive") from error
+    return values
+
+
+def read_state_archive(raw: bytes, expected_crc: int) -> EEState:
+    """Read only two bounded ZIP members. Never extract members to the filesystem."""
+    values = read_state_members(raw, ((VERSION_MEMBER, 36), (INTERNALS_MEMBER, MAX_INTERNALS)))
     return decode_ee_state(*values, expected_crc)

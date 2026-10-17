@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC33",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-sdl3",
+  "stage": "sdl3-accepted",
+  "contract": "schemas/pcsx2-sdl3-v1.md",
+  "archive": {
+    "archive": "SDL3-3.4.12.tar.gz",
+    "sha256_expected": "f07b958a9ac5020fb7a44cadb957f658b2149c3c8abb4f63145fac9303249db7",
+    "url": "https://libsdl.org/release/SDL3-3.4.12.tar.gz",
+    "download_verified": true,
+    "bytes": 15629574,
+    "unpacked_bytes": 49631176
+  },
+  "source_files_compared_with_archive": 2183,
+  "source_modified": false,
+  "license": {
+    "name": "zlib-style SDL notice; subordinate notices retained",
+    "path": "LICENSE.txt",
+    "sha256": "1c040b8271b37e5076359f8fd54240e371114112924d2df81ef87c7d6a1dfdfd",
+    "redistribution_review": "LIC08 remains open"
+  },
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "build_options": {
+    "shared": true,
+    "static": false,
+    "architecture": "x86_64",
+    "deployment_target": "11.0",
+    "video": false,
+    "power": false,
+    "sensor": false,
+    "dialog": false,
+    "tray": false,
+    "test_library": true,
+    "tests": true,
+    "tests_link_shared": true,
+    "install_tests": false
+  },
+  "isolation": {
+    "cmake_homebrew_prefix_ignored": true,
+    "pkg_config_libdir": "private dependencies-x86_64/lib/pkgconfig",
+    "pkg_config_path": "",
+    "cmake_package_registries_disabled": true,
+    "final_cache_has_no_homebrew_dependency_library_or_include_paths": true
+  },
+  "preserved_incidents": [
+    {
+      "stage": "build-v1",
+      "exit_code": 2,
+      "reason": "optional FFmpeg test resolved Homebrew ARM64 libraries through pkg-config",
+      "resolution": "fresh build-v2, isolated pkg-config search, no SDL source patch"
+    },
+    {
+      "stage": "fixture-build-v1",
+      "exit_code": 2,
+      "reason": "own fixture lacked SDL_main.h declaration for SDL_SetMainReady",
+      "resolution": "include SDL_main.h with SDL_MAIN_HANDLED",
+      "source_before_fix_sha256": "989029a5ab3d7c6f35799e909f91fdcc52e4cb916659758d5d64947a8ae627b3"
+    }
+  ],
+  "steps": [
+    {
+      "name": "configure-v1",
+      "exit_code": 0,
+      "duration_seconds": 28.16,
+      "log_sha256": "766ce9664c73fe5d214aa54e1715f7666cb331c0281738943afd937df2cfdf93"
+    },
+    {
+      "name": "build-v1",
+      "exit_code": 2,
+      "duration_seconds": 9.46,
+      "log_sha256": "2a73423d6f674109e1218cb20b3e3cfad5c76d965494d517b21d061117872861"
+    },
+    {
+      "name": "configure-v2",
+      "exit_code": 0,
+      "duration_seconds": 28.3,
+      "log_sha256": "3f5563b7530e7a07adc470d069fbfb1e744b7439a640dca9765ac37faf5ae0fb"
+    },
+    {
+      "name": "build-v2",
+      "exit_code": 0,
+      "duration_seconds": 13.85,
+      "log_sha256": "1a50909250027b5e66c6406425048a49dcf5bafee7e7f53b92f2fc2a9aa2a0d4"
+    },
+    {
+      "name": "provider-ctest-v1",
+      "exit_code": 0,
+      "duration_seconds": 41.95,
+      "log_sha256": "60765d04fb8c7a5f5fdd8e8eea1ae2e8125ac752cd354719a2b42b790adee90f"
+    },
+    {
+      "name": "fixture-configure-v1",
+      "exit_code": 0,
+      "duration_seconds": 2.72,
+      "log_sha256": "727867f39323dd136f537f86cab5fdebaa2ab84b638941bbdca7003dd7419ade"
+    },
+    {
+      "name": "fixture-build-v1",
+      "exit_code": 2,
+      "duration_seconds": 0.74,
+      "log_sha256": "be141b5b0999842b95c6fcc8979dcad7349d347d484979a4d80b1c4b2a1bd695"
+    },
+    {
+      "name": "fixture-build-v2",
+      "exit_code": 0,
+      "duration_seconds": 1.24,
+      "log_sha256": "b217a1c1f58000fceaf107079e25ca1b8e8c2bd8f1cef0ff7383ced209065181"
+    },
+    {
+      "name": "fixture-ctest-v2",
+      "exit_code": 0,
+      "duration_seconds": 1.94,
+      "log_sha256": "eb2effba0c21b11399a20a111ae3430148bbcb25a9bdef7fa7208e60e43f903f"
+    },
+    {
+      "name": "install-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.29,
+      "log_sha256": "f16ce188520947ad0f9bae9afc2c16f55e4defdec5d076a6d1c8c66210214b34"
+    },
+    {
+      "name": "fixture-installed-configure-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.62,
+      "log_sha256": "d1811bc4f1eb72ff356d7783568af7e15062ed070c8f07a6f7373dcec711de12"
+    },
+    {
+      "name": "fixture-installed-build-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.87,
+      "log_sha256": "b217a1c1f58000fceaf107079e25ca1b8e8c2bd8f1cef0ff7383ced209065181"
+    },
+    {
+      "name": "fixture-installed-ctest-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.98,
+      "log_sha256": "e1f5f2aa7764456ce36824828d2e98db99bf905941552625266508da094f930e"
+    },
+    {
+      "name": "fixture-missing-prefix-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.69,
+      "log_sha256": "fbed09c8566de686584468646c7251f0d577e58f217f2276e881cd62ba3a3d12"
+    }
+  ],
+  "provider_tests": {
+    "registered": 23,
+    "selected": [
+      "testaudioinfo",
+      "testatomic",
+      "testerror",
+      "testsymbols",
+      "testevdev",
+      "testfile",
+      "testthread",
+      "testlocale",
+      "testrwlock",
+      "testplatform",
+      "testpower",
+      "testfilesystem",
+      "testsem",
+      "testtimer",
+      "testver",
+      "testyuv",
+      "torturethread",
+      "testqsort",
+      "testprocess",
+      "testplatform-no-simd"
+    ],
+    "excluded_before_run": {
+      "testautomation": "runner initializes video unconditionally; SDL_VIDEO=OFF",
+      "testautomation-no-simd": "same video requirement",
+      "testbounds": "initializes SDL_INIT_VIDEO; SDL_VIDEO=OFF"
+    },
+    "ctest_result": {
+      "tests": 20,
+      "failures": 0,
+      "disabled": 0,
+      "skipped": 0,
+      "sha256": "dfbbdbfde48a5edebc50cae99790207fcd101838d90500f8e53f58a273a3b2d3"
+    },
+    "internal_omissions": {
+      "testevdev": "SDL compiled without evdev capability check; exit 0 is a no-op on this host"
+    },
+    "effective_executables": 19,
+    "full_suite": false
+  },
+  "fixture": {
+    "cases": [
+      "events FIFO/content/drain",
+      "virtual gamepad axes/buttons/bounds/cleanup",
+      "memory PCM conversion and invalid channels",
+      "bounded memory IO, EOF and seek"
+    ],
+    "build_tests": {
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "skipped": 0
+    },
+    "installed_tests": {
+      "tests": 4,
+      "failures": 0,
+      "disabled": 0,
+      "skipped": 0
+    },
+    "missing_prefix_rejected": true,
+    "installed_binary": {
+      "sha256": "1b21e0da7ce04f5a6e76dc79be2ced37350975b4b44529e197951c46d393a91c",
+      "architecture": "x86_64"
+    },
+    "physical_devices_tested": false,
+    "audio_device_output_used": false,
+    "original_data_used": false
+  },
+  "installation": {
+    "entries": 98,
+    "manifest_sha256": "4625be1b91900532a5c34a300f12d35132254d227eb093529532d076187fcd37",
+    "library": {
+      "name": "libSDL3.0.dylib",
+      "bytes": 2071464,
+      "sha256": "e406136a0c33a801a87ec1b8c8b9f281e2e0d4c6d6735ac9fa27ee164eaeff00",
+      "architecture": "x86_64"
+    },
+    "linkage_homebrew_references": false,
+    "tests_executables_installed": false
+  },
+  "configuration": {
+    "exit_code": 1,
+    "duration_seconds": 2.07,
+    "log_sha256": "b7da60aa5f3d975b3cbb2ff05bb984cb1e92eea1da4da99ceb00c86f4e2dea80",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 19491287040,
+    "directory": "baseline-configure-v5",
+    "sdl_resolved_from_private_prefix": true,
+    "first_missing_dependency": "Freetype >= 2.10",
+    "later_dependencies_checked": false,
+    "metal_toolchain": "com.apple.dt.toolchain.Metal.32023.883",
+    "pkg_config_isolated": true
+  },
+  "capacity": {
+    "free_bytes_before": 19857428480,
+    "free_bytes_after_configuration": 19491287040,
+    "large_build_reserve_bytes": 21474836480,
+    "scope": "bounded SDL dependency stage; full build remains gated"
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 19491287040,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "recipe_progress": {
+    "total_archives": 25,
+    "verified_cumulative": 7,
+    "remaining_archives": 18,
+    "nasm_additional_to_recipe": true,
+    "previous_evidence": "docs/compatibility/pcsx2-dependencies-evidence.json"
+  },
+  "provider_sources": [
+    {
+      "path": "LICENSE.txt",
+      "sha256": "1c040b8271b37e5076359f8fd54240e371114112924d2df81ef87c7d6a1dfdfd"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "5b2834726e1970ad287d69fa998103cd0885065935ecbc2e2e69835506e1df88"
+    },
+    {
+      "path": "test/CMakeLists.txt",
+      "sha256": "13308389ec1ca555ce332f5ff5a88ff6b01484c0e90b4b81b0409448aa60c41d"
+    },
+    {
+      "path": "test/testautomation.c",
+      "sha256": "2fa8dcf22976231c3e73ea01236f57547d7539f8e6f6942f92b478cb10c32027"
+    },
+    {
+      "path": "test/testevdev.c",
+      "sha256": "cb6795cb4c06b1846b839561871929b570e1afd41bc6d70c46a40b6131a35829"
+    },
+    {
+      "path": "test/testbounds.c",
+      "sha256": "b3fe64fb01fa3c5e8400ec434faea67b46abfe26b82ae58e6e5363c9524c0018"
+    },
+    {
+      "path": "include/SDL3/SDL_main.h",
+      "sha256": "cc1b4a1ad67b6e090951babc392548ce9cd7e5a33618f262f567a51659239ff9"
+    },
+    {
+      "path": "include/SDL3/SDL_joystick.h",
+      "sha256": "de936f3314f39bb02aaf3afc758aa3af7cf5cd2152c2265369d7dc5abca1f1bb"
+    },
+    {
+      "path": "include/SDL3/SDL_audio.h",
+      "sha256": "244fa8da51ac74d9c01414de18e35ce4371c2e15250c8e450ffe4d67d62d16f3"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "schemas/pcsx2-sdl3-v1.md",
+      "sha256": "49c039df3a95a8a884a1a0f043e00b862d9667702c7e3e71d25824eb7903e710"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-sdl3/CMakeLists.txt",
+      "sha256": "a48f49afdbc3d2243cbbc155eada595eee8be29ca2e4d12e087fd9fe488d0604"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-sdl3/README.md",
+      "sha256": "7fc05a8eb4ec8c26d09f785973486ba9fe1179735b33ed3876bf884c8a1f4a20"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-sdl3/main.cpp",
+      "sha256": "59a9f9c311fb28595e429b2fca918afe805a01316bf95c8f619c378c7c6ca94b"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "build-result-v2.json",
+      "sha256": "549e8a81b5567c28c14e5626950d0707b31713aa19e52a79b4aa3b77466ae859"
+    },
+    {
+      "name": "build-result.json",
+      "sha256": "e37de25e680193d9c58d9b5c85bbecee26d53729c2001f81d3f1b942f1d8e983"
+    },
+    {
+      "name": "configure-result-v5.json",
+      "sha256": "8d5afd254c91b82779a23d666a2fcdfdcffedc6a6676e6e698a99b0dfc931865"
+    },
+    {
+      "name": "download-result.json",
+      "sha256": "018816e72128f095665b3b9ea0ce2d819cdeda53c002f037aa143ccaf1976370"
+    },
+    {
+      "name": "fixture-build-junit.xml",
+      "sha256": "a6b10b198d8bc82a633b4f43161425e533c1c34672eab10d2e5d0989d0b8d443"
+    },
+    {
+      "name": "fixture-installed-junit.xml",
+      "sha256": "3d245756645adf48bec9c1b934b762548525386d527dc2ed4c203be9e17e3b59"
+    },
+    {
+      "name": "fixture-main-v1.cpp",
+      "sha256": "989029a5ab3d7c6f35799e909f91fdcc52e4cb916659758d5d64947a8ae627b3"
+    },
+    {
+      "name": "install-result.json",
+      "sha256": "5f82ea0ce334c3caec17951edfae0956dd7aa9f954e8b6589ac5c2967d8a2405"
+    },
+    {
+      "name": "preflight-v4.json",
+      "sha256": "5ea3272e90e8e8f5998da83535c6cdd35b88530f2e7c13611e461b08b270cfaf"
+    },
+    {
+      "name": "provider-junit.xml",
+      "sha256": "dfbbdbfde48a5edebc50cae99790207fcd101838d90500f8e53f58a273a3b2d3"
+    },
+    {
+      "name": "provider-test-inventory.json",
+      "sha256": "9b992aa5b2fa475832964e3061819719702524babe6f2639378679fe8933a69f"
+    },
+    {
+      "name": "provider-test-selection.json",
+      "sha256": "0dfec92c0813b5d5e0069814f6880c47ec8cab5bc4292f7f32cc351b3774e22c"
+    },
+    {
+      "name": "tests-result.json",
+      "sha256": "4991461daa29d7e733a6b4d933a09abb83d99c43c59d032c9a1c74446bc64b23"
+    }
+  ],
+  "validation": {
+    "archive_hash_reverified": true,
+    "provider_source_archive_comparison": "passed",
+    "step_logs_reverified": 14,
+    "previous_library_hashes_unchanged": true,
+    "repository_check": "passed (0 errors)",
+    "diff_check": "passed",
+    "python_suite_rerun": false,
+    "python_previous_total": 1897,
+    "remote_ci_executed": false,
+    "pcsx2_build_executed": false,
+    "3ds_build_executed": false,
+    "referenced_hashes": "passed",
+    "local_links": "passed (6 checked)"
+  },
+  "next_task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-freetype-harfbuzz",
+  "f02_07_status": "pending",
+  "mapping_verified": false,
+  "resource_links": [],
+  "capabilities": []
+}

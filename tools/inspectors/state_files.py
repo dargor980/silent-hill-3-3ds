@@ -3,7 +3,9 @@
 import hashlib
 import os
 import stat
+from collections.abc import Callable
 from pathlib import Path
+from typing import TypeVar
 
 from tools.inspectors.inventory import validate_image_hash
 from tools.inspectors.pcsx2_state import MAX_ARCHIVE, EEState, read_state_archive
@@ -16,10 +18,17 @@ from tools.pipeline.private_files import (
 )
 from tools.pipeline.profile import ProfileError
 
+T = TypeVar("T")
 
-def read_private_state(
-    root: Path, name: str, digest: str, expected_crc: int, repository: Path
-) -> EEState:
+
+def inspect_private_state(
+    root: Path,
+    name: str,
+    digest: str,
+    expected_crc: int,
+    repository: Path,
+    decode: Callable[[bytes, int], T],
+) -> T:
     validate_image_hash(digest)
     resolved, checkout = root.resolve(), repository.resolve()
     if resolved.is_relative_to(checkout) or checkout.is_relative_to(resolved):
@@ -51,7 +60,7 @@ def read_private_state(
                 raise ProfileError("STATE_HASH", "State bytes differ")
             if _identity(os.fstat(stream.fileno())) != _identity(before):
                 raise ProfileError("STATE_CHANGED", "State changed during read")
-        result = read_state_archive(raw, expected_crc)
+        result = decode(raw, expected_crc)
         current = _open_directory(root)
         try:
             after = os.stat(name, dir_fd=parent, follow_symlinks=False)
@@ -68,3 +77,9 @@ def read_private_state(
         raise
     os.close(parent)
     return result
+
+
+def read_private_state(
+    root: Path, name: str, digest: str, expected_crc: int, repository: Path
+) -> EEState:
+    return inspect_private_state(root, name, digest, expected_crc, repository, read_state_archive)

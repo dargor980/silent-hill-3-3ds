@@ -1,0 +1,686 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC32",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites",
+  "stage": "bounded-dependency-batch-accepted",
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_clean": true,
+  "contract": "schemas/pcsx2-dependencies-v1.md",
+  "source_plan": {
+    "path": "docs/compatibility/pcsx2-build-dependencies.json",
+    "sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+    "status": "historical SRC31 snapshot; verification progress is recorded here",
+    "recipe_archive_count": 25,
+    "recipe_archives_verified_cumulative": 6,
+    "recipe_archives_remaining": 19,
+    "host_tool_nasm_is_additional": true
+  },
+  "capacity": {
+    "user_confirmed_space_freed": true,
+    "free_bytes_at_start": 21486219264,
+    "minimum_free_bytes": 21474836480,
+    "reserve_passed_at_start": true,
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "components_planned": [
+      "nasm-host",
+      "libjpeg-turbo-x86_64",
+      "remaining-recipe-dependencies"
+    ],
+    "full_build_executed": false,
+    "free_bytes_after_configuration": 20047466496
+  },
+  "archives_verified_this_batch": [
+    {
+      "archive": "nasm-3.02.tar.xz",
+      "url": "https://www.nasm.us/pub/nasm/releasebuilds/3.02/nasm-3.02.tar.xz",
+      "sha256_expected": "87336eba53b4acfe917424ab5d500d2b0054d9f5148d35c2273ccf2cfb712f0d",
+      "root": "nasm-3.02",
+      "bytes": 1531636,
+      "download_verified": true,
+      "members": 1411,
+      "unpacked_bytes": 19660591
+    },
+    {
+      "archive": "libjpeg-turbo-3.2.0.tar.gz",
+      "sha256_expected": "6f30092cef9fb839779646608f4ee14ae3cbac989c47fa05e841b0841f09878e",
+      "url": "https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.0/libjpeg-turbo-3.2.0.tar.gz",
+      "download_verified": true,
+      "root": "libjpeg-turbo-3.2.0",
+      "bytes": 2537858,
+      "members": 644,
+      "unpacked_bytes": 9246273
+    },
+    {
+      "archive": "libwebp-1.6.0.tar.gz",
+      "sha256_expected": "e4ab7009bf0629fd11982d4c2aa83964cf244cffba7347ecd39019a9e38c4564",
+      "url": "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.6.0.tar.gz",
+      "download_verified": true,
+      "bytes": 4296070,
+      "unpacked_bytes": 10092224,
+      "root": "libwebp-1.6.0"
+    },
+    {
+      "archive": "lz4-1.10.0.tar.gz",
+      "sha256_expected": "537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b",
+      "url": "https://github.com/lz4/lz4/releases/download/v1.10.0/lz4-1.10.0.tar.gz",
+      "download_verified": true,
+      "bytes": 387114,
+      "unpacked_bytes": 1674742,
+      "root": "lz4-1.10.0"
+    },
+    {
+      "archive": "zstd-1.5.7.tar.gz",
+      "sha256_expected": "eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3",
+      "url": "https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz",
+      "download_verified": true,
+      "bytes": 2434947,
+      "unpacked_bytes": 8354806,
+      "root": "zstd-1.5.7"
+    }
+  ],
+  "nasm": {
+    "version": "3.02",
+    "source_url": "https://www.nasm.us/pub/nasm/releasebuilds/3.02/nasm-3.02.tar.xz",
+    "checksum_registry": "https://formulae.brew.sh/api/formula/nasm.json",
+    "installed_binary": {
+      "sha256": "8a24d68dfc6e5f32d6c28fe4d2a30b6608fcb4243da80b124b11c337287a24ca",
+      "bytes": 2219848,
+      "architecture": "arm64",
+      "version": "NASM version 3.02 compiled on Oct 17 2026"
+    },
+    "license_sha256": "7436a7c46b6e4d969b41e1ce387885ae4ced25710662189ff2983665253729ac",
+    "legacy_regression": {
+      "exit_code": 0,
+      "comparison_unavailable": 190,
+      "accepted": false
+    },
+    "python_regression": {
+      "name": "nasm-python-regression-v2",
+      "exit_code": 0,
+      "duration_seconds": 5.7,
+      "log_sha256": "b222a5c7ffce88498053b2d940bead388ea7b8d2b441215a470c1dd87726efb1",
+      "passed": 301,
+      "failed": 0,
+      "skipped": 1,
+      "skipped_test": "time.1 (disabled by upstream descriptor)",
+      "version_fixture": "upstream make target from shipped version file; no assembler output golden regeneration"
+    },
+    "steps": [
+      {
+        "name": "nasm-configure-v2",
+        "exit_code": 0,
+        "log_sha256": "7e39e1dd5c3d76c5af55ab57aed8eb2d8dd4a3fb8fbc076c1bb97fa53b898c53"
+      },
+      {
+        "name": "nasm-build-v2",
+        "exit_code": 0,
+        "log_sha256": "f9036c4813e1eaf409f5ad1c2091c2037d5d68c8b57eb12b2c9c365b5791b385"
+      },
+      {
+        "name": "nasm-tests-v2",
+        "exit_code": 0,
+        "log_sha256": "cd70a3b63ea9f5f06972f38aa98fd0aaaa57a74e24abedec6e598c41fa484c51"
+      },
+      {
+        "name": "nasm-fixture-assemble",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "nasm-fixture-link",
+        "exit_code": 0,
+        "log_sha256": "9883d0238968d12d477d90b0b30eb56d1697be2ff0e2e8c8dfe0eb712aecd757"
+      },
+      {
+        "name": "nasm-fixture-run",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "nasm-install-v2",
+        "exit_code": 0,
+        "log_sha256": "0eef801fbeaeb22d2d2f0999653d8d1bb81cedd31981636a5fe5044871fad3c3"
+      },
+      {
+        "name": "nasm-version-fixture",
+        "exit_code": 0,
+        "duration_seconds": 2.0,
+        "log_sha256": "11814a8e0aa40ecf9e2d5b648c82e1fb858165e64b4d6bebaad3c3ef85c763c4"
+      },
+      {
+        "name": "nasm-python-regression-v2",
+        "exit_code": 0,
+        "duration_seconds": 5.7,
+        "log_sha256": "b222a5c7ffce88498053b2d940bead388ea7b8d2b441215a470c1dd87726efb1",
+        "passed": 301,
+        "failed": 0,
+        "skipped": 1
+      }
+    ],
+    "preserved_failures": [
+      {
+        "stage": "initial configure",
+        "exit_code": 77,
+        "reason": "explicit Clang invocation lacked SDK sysroot",
+        "log_sha256": "596c0d0bc31311cf549d97cf812e640c356d03967519adfd917f535259a27438"
+      },
+      {
+        "stage": "first Python regression",
+        "exit_code": 1,
+        "reason": "upstream version text fixture not generated yet",
+        "log_sha256": "ff2bf68a048de9a25a9020828035193e5813592ae740fc9dfe0a5c27a3e94449"
+      }
+    ],
+    "fixture_original_data_used": false
+  },
+  "components": {
+    "jpeg": {
+      "version": "3.2.0",
+      "tests": {
+        "tests": 332,
+        "failures": 0,
+        "disabled": 0,
+        "skipped": 0
+      },
+      "installed_entries": 39,
+      "license_files": [
+        {
+          "path": "LICENSE.md",
+          "sha256": "ba6bceebcba0fdd35488477c2cca8c4632ce82c74dbfbc87d886ce6fc4433579"
+        },
+        {
+          "path": "README.ijg",
+          "sha256": "75815e3bf6484201a3c3d17a1bbf10f2e8e3237f84df10a2357ea896db2a81d6"
+        }
+      ],
+      "simd_required": true,
+      "steps": [
+        {
+          "name": "jpeg-configure-v1",
+          "exit_code": 0,
+          "duration_seconds": 4.09,
+          "log_sha256": "12c58e405d12666898ecd563a43231ebdd30921cb1879b3dae652dfd7047656c"
+        },
+        {
+          "name": "jpeg-build-v1",
+          "exit_code": 0,
+          "duration_seconds": 8.95,
+          "log_sha256": "ce508c062c30266d93e16e15b8210afa3e2b0d2fbab88ea39782b8a6dc439305"
+        },
+        {
+          "name": "jpeg-ctest-v1",
+          "exit_code": 0,
+          "duration_seconds": 52.19,
+          "log_sha256": "07cce31765d0c433c2aacb5806e612a21d78eb8731a68e53548a6a3b38bf0a9e"
+        },
+        {
+          "name": "jpeg-install-v1",
+          "exit_code": 0,
+          "duration_seconds": 2.25,
+          "log_sha256": "122d5c53c27e9891fa0acefb0d61b48c2f7eec65b6902c890aff6e025b9fb03b"
+        }
+      ],
+      "libraries": [
+        {
+          "name": "libjpeg.62.4.0.dylib",
+          "bytes": 911992,
+          "sha256": "490875ef525f28ab417f1656784173f9758e6f8f63471a64073222b05dac27ee",
+          "architecture": "x86_64"
+        },
+        {
+          "name": "libturbojpeg.0.5.0.dylib",
+          "bytes": 1275848,
+          "sha256": "6f743afc77289682f0c2e5ccbfd8616a8dfd93028f413fafa296327c6bfaf950",
+          "architecture": "x86_64"
+        }
+      ]
+    },
+    "zstd": {
+      "version": "1.5.7",
+      "provider_tests": {
+        "selected": [
+          "fuzzer",
+          "zstreamtest"
+        ],
+        "random_iterations_each": 1000,
+        "seed": 1,
+        "tests": 2,
+        "failures": 0,
+        "full_suite": false,
+        "excluded": [
+          "fullbench",
+          "playTests (CLI disabled)"
+        ]
+      },
+      "fixture_first_failure": "missing executable LC_RPATH; corrected fixture linker flag; library unchanged",
+      "installed_entries": 12,
+      "install_manifest_sha256": "5f14c4d69208e1a3ff41cc14ee579572f59ceb2325b577d57299bb65dba8e0c7",
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+        }
+      ],
+      "installed_verified": true,
+      "steps": [
+        {
+          "name": "zstd-configure-v1",
+          "exit_code": 0,
+          "duration_seconds": 4.11,
+          "log_sha256": "ab1cd3d522d734c42e34a45903dd5ca85e1221130d95910ed4c1608b5cfb7e47"
+        },
+        {
+          "name": "zstd-build-v1",
+          "exit_code": 0,
+          "duration_seconds": 7.68,
+          "log_sha256": "ec37b932ec487ea96b75f52dfa107897fe2d8d117ffe5c940044724d4d3ce272"
+        },
+        {
+          "name": "zstd-ctest-v1",
+          "exit_code": 0,
+          "duration_seconds": 81.51,
+          "log_sha256": "2aaea0b695d1b31e01b8454e75b3ad8f678c3ee65ca3b5b1345c34b2e303627e"
+        },
+        {
+          "name": "zstd-fixture-compile-v1",
+          "exit_code": 0,
+          "duration_seconds": 1.01,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "zstd-fixture-before-install-v1",
+          "exit_code": 0,
+          "duration_seconds": 1.91,
+          "log_sha256": "76140f8d2c6c90dcc27256deb651a3d3be771ebb4dc7be03284eed999c6fd4a2"
+        },
+        {
+          "name": "zstd-install-v1",
+          "exit_code": 0,
+          "duration_seconds": 0.09,
+          "log_sha256": "1a3f7ccd09fff8e286a81e1b97612293da9fcab371d4aca71eff809e3854b267"
+        },
+        {
+          "name": "zstd-fixture-installed-v1",
+          "exit_code": -6,
+          "duration_seconds": 0.17,
+          "log_sha256": "a0a5c60de22551226a55fe85418f12d4d358feeb697e9047293f23004ea5d414"
+        },
+        {
+          "name": "zstd-fixture-compile-v2",
+          "exit_code": 0,
+          "duration_seconds": 1.09,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "zstd-fixture-installed-v2",
+          "exit_code": 0,
+          "duration_seconds": 1.93,
+          "log_sha256": "76140f8d2c6c90dcc27256deb651a3d3be771ebb4dc7be03284eed999c6fd4a2"
+        }
+      ],
+      "libraries": [
+        {
+          "name": "libzstd.1.5.7.dylib",
+          "bytes": 957712,
+          "sha256": "d8c6c8a7e816408c6fb80f3d58911be60ba7b91f7cc9041323c72b7e178cec6c",
+          "architecture": "x86_64"
+        }
+      ]
+    },
+    "lz4": {
+      "version": "1.10.0",
+      "provider_tests": {
+        "selected": [
+          "fuzzer",
+          "frametest"
+        ],
+        "random_iterations_each": 1000,
+        "seed": 1,
+        "full_suite": false,
+        "exit_code": 0
+      },
+      "installed_entries": 13,
+      "install_manifest_sha256": "edeed3864c2f0e55f9c64c72bc29f250fda2ddb2a01b274770119500539a7a71",
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "sha256": "4bc9c403f6b679cc076dee210e0e21c27b4e8f6d3fb43d85364c76657bfaaac5"
+        },
+        {
+          "path": "lib/LICENSE",
+          "sha256": "8b58c446121a109ccf32edc094bba3010a3d85e4ee3702950db55e4d3e87736c"
+        },
+        {
+          "path": "tests/COPYING",
+          "sha256": "609b910ef05c9c855ecc1da155a36ed0f57514eac452cf93446530b5ea4b3bc3"
+        }
+      ],
+      "installed_verified": true,
+      "steps": [
+        {
+          "name": "lz4-configure-v1",
+          "exit_code": 0,
+          "duration_seconds": 1.79,
+          "log_sha256": "59b64faddae0cce2ec17ec52ca7978ac883d032bbbc42981462bd0f1aaabf4a4"
+        },
+        {
+          "name": "lz4-build-v1",
+          "exit_code": 0,
+          "duration_seconds": 1.06,
+          "log_sha256": "c84b4b7c4177f09c9e9868796e5c0e57a2214a33f82980312f1146a85f3aa379"
+        },
+        {
+          "name": "lz4-provider-build-v1",
+          "exit_code": 0,
+          "duration_seconds": 0.32,
+          "log_sha256": "881848f65de8750301d3f64e97605f7b8b4144f114e10672379fe52eebc8af55"
+        },
+        {
+          "name": "lz4-fuzzer-v1",
+          "exit_code": 0,
+          "duration_seconds": 37.78,
+          "log_sha256": "e86a1ef827c1c298dbe08428e6535a7c0234f5e5c9291a5b8ac3de2b13768911"
+        },
+        {
+          "name": "lz4-frametest-v1",
+          "exit_code": 0,
+          "duration_seconds": 10.81,
+          "log_sha256": "2d780360f7f3bb1d9b263fa263c079a9282fec42b0ff762e3ce0a7f904a14260"
+        },
+        {
+          "name": "lz4-fixture-compile-v1",
+          "exit_code": 0,
+          "duration_seconds": 1.16,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "lz4-fixture-before-install-v1",
+          "exit_code": 0,
+          "duration_seconds": 1.7,
+          "log_sha256": "4bec6de83f54f3ced84b051ef34ca5319faf6b49f51259cc3015118b3d1aa7c3"
+        },
+        {
+          "name": "lz4-install-v1",
+          "exit_code": 0,
+          "duration_seconds": 0.09,
+          "log_sha256": "c338cd96a7644196d058b87e3c1e78ba0dde005c3d2814f6bd1e865d27b0117e"
+        },
+        {
+          "name": "lz4-fixture-installed-v1",
+          "exit_code": 0,
+          "duration_seconds": 0.49,
+          "log_sha256": "4bec6de83f54f3ced84b051ef34ca5319faf6b49f51259cc3015118b3d1aa7c3"
+        }
+      ],
+      "libraries": [
+        {
+          "name": "liblz4.1.10.0.dylib",
+          "bytes": 182640,
+          "sha256": "aecc5f4ce7434ced18ee812f52726a15b526622acc29f8b682c3c53928196ff1",
+          "architecture": "x86_64"
+        }
+      ]
+    },
+    "webp": {
+      "version": "1.6.0",
+      "provider_tests": {
+        "executed": false,
+        "reason": "upstream CMake fuzztest requires additional third-party dependencies; own shared-library fixture used",
+        "full_suite": false
+      },
+      "installed_entries": 38,
+      "install_manifest_sha256": "c71e45daf5e794b605006e83067e62167877f7fd9a519a2a21771113df8d6ac7",
+      "license_files": [
+        {
+          "path": "COPYING",
+          "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"
+        },
+        {
+          "path": "PATENTS",
+          "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c"
+        }
+      ],
+      "installed_verified": true,
+      "steps": [
+        {
+          "name": "webp-configure-v1",
+          "exit_code": 0,
+          "duration_seconds": 3.43,
+          "log_sha256": "1bcff31687cc6629e328ef9aa6eab86f1ea43689b8f02eebb3faf75e6d971ba2"
+        },
+        {
+          "name": "webp-build-v1",
+          "exit_code": 0,
+          "duration_seconds": 4.33,
+          "log_sha256": "e63f9d65c3687e776e49c2c30049b4687c9e4a4536f1d973c6c46d88be4bbe71"
+        },
+        {
+          "name": "webp-fixture-compile-v1",
+          "exit_code": 0,
+          "duration_seconds": 0.67,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "webp-fixture-before-install-v1",
+          "exit_code": 0,
+          "duration_seconds": 1.53,
+          "log_sha256": "c9f6af1382235710ead2ab1302b48d00f9880919078597a8b7faee56c49760af"
+        },
+        {
+          "name": "webp-install-v1",
+          "exit_code": 0,
+          "duration_seconds": 0.1,
+          "log_sha256": "acd3df0f31f866c957faa2135c86db143ef93e2fe15c662a7a3a0d277786637a"
+        },
+        {
+          "name": "webp-fixture-installed-v1",
+          "exit_code": 0,
+          "duration_seconds": 0.95,
+          "log_sha256": "c9f6af1382235710ead2ab1302b48d00f9880919078597a8b7faee56c49760af"
+        }
+      ],
+      "libraries": [
+        {
+          "name": "libsharpyuv.0.1.2.dylib",
+          "bytes": 34912,
+          "sha256": "e2a6c54451eff8fdbf57fdd02a23d88afa235266c86b0d38b386ec402a75656a",
+          "architecture": "x86_64"
+        },
+        {
+          "name": "libwebpdecoder.3.2.0.dylib",
+          "bytes": 323000,
+          "sha256": "4ca19706eada7543f3ab8b5c4c7b6973e8707858f87e87960ac9fca0812d9fb6",
+          "architecture": "x86_64"
+        },
+        {
+          "name": "libwebp.7.2.0.dylib",
+          "bytes": 635952,
+          "sha256": "07f146bda6ec7471f2c88f2f52ee5905504a462b823b3c645ea437c0d506d57d",
+          "architecture": "x86_64"
+        },
+        {
+          "name": "libwebpdemux.2.0.17.dylib",
+          "bytes": 26696,
+          "sha256": "29f39b7ed373424c714054cb5da6b568c1e72ca990583b2ab5069ecb58e45401",
+          "architecture": "x86_64"
+        },
+        {
+          "name": "libwebpmux.3.1.2.dylib",
+          "bytes": 50368,
+          "sha256": "3dd6261c7425b9aca30a8443ad0631734d1ae07b9e605f568f3ef59cf8024e63",
+          "architecture": "x86_64"
+        }
+      ]
+    }
+  },
+  "configuration": {
+    "environment_overrides": {
+      "TOOLCHAINS": "com.apple.dt.toolchain.Metal.32023.883"
+    },
+    "exit_code": 1,
+    "duration_seconds": 2.5,
+    "log_sha256": "3c3e0be1541ead14a218f2cba80b66d5e06a3f31a94ba21d27f57985bac94b70",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 20047466496,
+    "first_missing_dependency": "SDL3 >= 3.2.6",
+    "detected": [
+      "PNG 1.6.58",
+      "JPEG ABI 62 (libjpeg-turbo 3.2.0)",
+      "ZLIB 1.2.12 (Apple SDK)",
+      "Zstd",
+      "LZ4",
+      "WebP"
+    ],
+    "later_dependencies_checked": false,
+    "directory": "baseline-configure-v4"
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 20047466496,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "completed_components_cumulative": [
+    "libpng-1.6.58-apng-x86_64",
+    "nasm-3.02-host-arm64",
+    "libjpeg-turbo-3.2.0-x86_64",
+    "zstd-1.5.7-x86_64",
+    "lz4-1.10.0-x86_64",
+    "libwebp-1.6.0-x86_64"
+  ],
+  "validation": {
+    "archive_hashes_verified": 5,
+    "step_logs_reverified": 38,
+    "installed_library_hashes_reverified": true,
+    "previous_png_hash_unchanged": true,
+    "repository_check": "passed (0 errors)",
+    "diff_check": "passed",
+    "python_suite_rerun": false,
+    "python_previous_total": 1897,
+    "remote_ci_executed": false,
+    "pcsx2_build_executed": false,
+    "mapping_captured": false,
+    "3ds_build_executed": false,
+    "installed_headers_and_libraries_recheck": "passed for zstd, lz4 and webp",
+    "installed_nasm_hash_reverified": true
+  },
+  "source_files": [
+    {
+      "path": "schemas/pcsx2-dependencies-v1.md",
+      "sha256": "befce017c199785960bb43a339bf0433df342c3c58d342ca0bf85db240da8588"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/README.md",
+      "sha256": "60e87277e1c12bed5eb5f99dea030707c598c6abd72773e41797ce9f020bb37c"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/lz4.cpp",
+      "sha256": "11dfb036e32bcd9beb20b8e350e5119e35ca278da5d62b261ce0df7421e60b17"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/nasm.asm",
+      "sha256": "31fe9ebea54a42e18c83e9121b4e41f42ce650bae7aedc9d9685ccf3e7ae61de"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/nasm_driver.cpp",
+      "sha256": "ac42150c3b863c2ee081328e14ac1e0d7e72561ae441add0c0ac7815affad5bd"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/toolchain.cpp",
+      "sha256": "3240ded2149ed6cf28cac172dd37119d6fc8ead1d4428529330565eb17f80b3f"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/toolchain.metal",
+      "sha256": "4c25d477b02519ed92602c8fb786714f0e9480d01db78733da1c958184a0d314"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/webp.cpp",
+      "sha256": "d09ce5be19d5882d61046cedaa23178674db018c12037cdc94d7a9323eed75d7"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/zstd.cpp",
+      "sha256": "ae76765ea91a14889f5f5d13d16c9353d7f80852d0d9a89528e48ab228d75c0d"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "codecs-result.json",
+      "sha256": "055aeef694a736f26f1b2836c78678ab340cd511727f22654c319be4151d6b6a"
+    },
+    {
+      "name": "configure-result-v4.json",
+      "sha256": "b8c8fcb7927c1f6d347a8f50d34d833b7302eff77dd8db2a0b5ef321361849df"
+    },
+    {
+      "name": "extra-downloads.json",
+      "sha256": "465dc1c9c691da626977eeb8bfae0c0bf80c82742a9048d9438b55c271a6301e"
+    },
+    {
+      "name": "jpeg-junit.xml",
+      "sha256": "65a406b347314a21aee13c539ce844e1fbe313f0f60c794d4b875dcf895ea40c"
+    },
+    {
+      "name": "jpeg-result.json",
+      "sha256": "4ec777e33209a0c38fda0ccc3a4dfe985cde21f5c297dbf44ab40e16d0e08584"
+    },
+    {
+      "name": "preflight-v3.json",
+      "sha256": "8710186c4fd7988d70217485122c11be249f55d9227af22533885be5d0fc15af"
+    },
+    {
+      "name": "stage-manifest.json",
+      "sha256": "6644a0bc7e1c5b129305b4b601f3422a7f25f8f75c58399c85b74fc768051f19"
+    },
+    {
+      "name": "start.json",
+      "sha256": "db74502482e1adda5be6dabf4a5b71b007c4137664ec9173fc0aeca362f4ec99"
+    },
+    {
+      "name": "zstd-junit.xml",
+      "sha256": "9bb9616f06a5a63ea1ebb2e57f9b12231d50a7056052fbe85259ecedf5879700"
+    },
+    {
+      "name": "installed-fixtures-recheck.json",
+      "sha256": "f216fa2c79c73d21117ac8ea0177f1657d969a501e50e6d6bec4dff53afab1b8"
+    }
+  ],
+  "next_task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-sdl3",
+  "f02_07_status": "pending",
+  "mapping_verified": false,
+  "resource_links": [],
+  "capabilities": []
+}

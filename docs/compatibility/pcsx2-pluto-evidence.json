@@ -1,0 +1,676 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC35",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-plutovg-plutosvg",
+  "stage": "plutovg-plutosvg-accepted",
+  "contract": "schemas/pcsx2-pluto-v1.md",
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan": {
+    "path": "docs/compatibility/pcsx2-build-dependencies.json",
+    "sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+    "historical_snapshot_unchanged": true
+  },
+  "archives": [
+    {
+      "archive": "plutovg-1.3.2.tar.gz",
+      "sha256_expected": "7bd4e79ce18b1d47517e7e91fbb7cf19d4f01942804a519bc7c0bf32b6325dd5",
+      "url": "https://github.com/sammycage/plutovg/archive/v1.3.2/plutovg-1.3.2.tar.gz",
+      "download_verified": true,
+      "bytes": 236686,
+      "unpacked_bytes": 1058022,
+      "source_root": "plutovg-1.3.2",
+      "source_comparison": {
+        "files_compared": 35,
+        "changed": []
+      }
+    },
+    {
+      "archive": "plutosvg-0.0.7.tar.gz",
+      "sha256_expected": "78561b571ac224030cdc450ca2986b4de915c2ba7616004a6d71a379bffd15f3",
+      "url": "https://github.com/sammycage/plutosvg/archive/v0.0.7/plutosvg-0.0.7.tar.gz",
+      "download_verified": true,
+      "bytes": 116434,
+      "unpacked_bytes": 310316,
+      "source_root": "plutosvg-0.0.7",
+      "source_comparison": {
+        "files_compared": 21,
+        "changed": []
+      }
+    }
+  ],
+  "source_modified": false,
+  "license_files": [
+    {
+      "path": "plutovg-1.3.2/LICENSE",
+      "sha256": "e008ab9f8b36ec517cc47be20e776e68d69f5ba75f8f774d506ae4696d0e50c4"
+    },
+    {
+      "path": "plutosvg-0.0.7/LICENSE",
+      "sha256": "e008ab9f8b36ec517cc47be20e776e68d69f5ba75f8f774d506ae4696d0e50c4"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-ft-math.c",
+      "sha256": "02a1b5faf07a0ce6f4af2001fb6fa887a3682c2a2cbc9b2454894d8f930612e6"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-ft-math.h",
+      "sha256": "9d1b12c8e2cda360fc591d0dea879462e4fcf3628e27d31aa9ca223b6309414d"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-ft-raster.c",
+      "sha256": "46ad3e0dee8d89b98a0fe1ec047be8fac31d21a5bb9cf7767a7964a58f12cb7d"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-ft-raster.h",
+      "sha256": "cb065904566f2313f61dbd64be817d4da2944fb5fff391a12bd9b3be3f19be4d"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-ft-stroker.c",
+      "sha256": "3983909b2529bfad6b1625fa0d387ec8e1dbeda3c4501cadc7d7bb89d5e25421"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-ft-stroker.h",
+      "sha256": "519c1487a65c3f515afd25ff752038e5ffbd3beee02038302fd61dc87c5e9695"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-ft-types.h",
+      "sha256": "801a879039ab7ffb5c6049eb3a4e364fdac03d1d22349d7f6f3bc9e35ae9732b"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-stb-image-write.h",
+      "sha256": "fc1f2db67a6914bd34250f34fe64b776f08d6a19b9b97bcc25dafb5973546010"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-stb-image.h",
+      "sha256": "e3ce9e557d85e689bac5f8fcd1624da739508c661a84f7f6cda879b565854ff1"
+    },
+    {
+      "path": "plutovg-1.3.2/source/plutovg-stb-truetype.h",
+      "sha256": "92dd46ffcbeccad84898fddeb0eff9ab5dccfc46a9f43e7809f743df4d19f93c"
+    }
+  ],
+  "freetype_license_text_retained": {
+    "source": "SRC34",
+    "path": "freetype-2.14.3/docs/FTL.TXT",
+    "sha256": "5a5ee54c5001bbad1cdc1a57cc3dd4c42199b2da09d39c7ee41fab002d02967f"
+  },
+  "license_scope": "Root notices MIT; PlutoVG includes FreeType-derived FTL files and stb notices offering MIT/public-domain alternatives; bundle review LIC08 remains open",
+  "build_options": {
+    "architecture": "x86_64",
+    "type": "Release",
+    "deployment_target": "11.0",
+    "shared": true,
+    "examples": false,
+    "plutosvg_freetype": true,
+    "recipe_deviations": [],
+    "plutosvg_uses_installed_plutovg": true,
+    "plutosvg_subdirectory_fallback_used": false,
+    "library_jobs": 4,
+    "fixture_jobs": 2
+  },
+  "isolation": {
+    "cmake_homebrew_prefix_ignored": true,
+    "pkg_config_libdir": "private prefix/lib/pkgconfig",
+    "pkg_config_path": "",
+    "cmake_package_registries_disabled": true,
+    "target_cache_homebrew_paths": false,
+    "linked_homebrew_libraries": false
+  },
+  "provider_tests": {
+    "ctest_registered": {
+      "plutovg-v1": 0,
+      "plutosvg-v1": 0
+    },
+    "zero_tests_counted_as_pass": false,
+    "provider_suite_executed": false,
+    "examples_executed": false
+  },
+  "fixture": {
+    "data": "original scene and SVG rectangle font, Apache-2.0 repository license",
+    "font": {
+      "bytes": 1548,
+      "sha256": "019a5919f32f9ad9906e0b896a2f276666d828598af124a6978f882d07b0639a",
+      "base_sha256": "cdd254e7aec2ce13f35942b815da8374d8b0f36a61ef99ba4a4519c2dda81b97",
+      "fonttools_version": "4.60.1",
+      "generations_identical": 2
+    },
+    "fonttools_reused_from": "SRC34",
+    "fonttools": {
+      "name": "fonttools",
+      "version": "4.60.1",
+      "url": "https://files.pythonhosted.org/packages/c7/93/0dd45cd283c32dea1545151d8c3637b4b8c53cdb3a625aeb2885b184d74d/fonttools-4.60.1-py3-none-any.whl",
+      "sha256": "906306ac7afe2156fcf0042173d6ebbb05416af70f6b370967b47f8f00103bbb",
+      "bytes": 1143175,
+      "purpose": "generate own geometric test font; host only"
+    },
+    "unique_ctest_cases": 8,
+    "ctest_executions_across_stages": 20,
+    "results": {
+      "tests": {
+        "installed-v1-junit.xml": {
+          "tests": 8,
+          "failures": 0,
+          "disabled": 0,
+          "skipped": 0,
+          "sha256": "f7fd57c8d430249ce2f27dee86760afef53343a8e658eb7e28ee7c6e3f31c928"
+        },
+        "plutosvg-v1-fixture-junit.xml": {
+          "tests": 8,
+          "failures": 0,
+          "disabled": 0,
+          "skipped": 0,
+          "sha256": "6a75bc59a9b1884d75482e6691f71cdfaf8f916aea5577484d5f63f3dacd6167"
+        },
+        "plutovg-v1-fixture-junit.xml": {
+          "tests": 4,
+          "failures": 0,
+          "disabled": 0,
+          "skipped": 0,
+          "sha256": "1fdf6339cec1ae727326ba68ca7e093d76392b2f9533c4d900a29d602305fe15"
+        }
+      },
+      "installed_binaries": [
+        {
+          "name": "sh3_vg_fixture",
+          "architecture": "x86_64",
+          "sha256": "53a10bce3d3f18097a687c00a7a4adbfd66762dd68cc1dca6dbec90be018e0a7"
+        },
+        {
+          "name": "sh3_svg_fixture",
+          "architecture": "x86_64",
+          "sha256": "bff6d04cf1071c09d12129e010c2b0fd985532dc02b28fa36ce1cdd709ba5d39"
+        }
+      ]
+    },
+    "missing_vg_package_rejected": true,
+    "missing_svg_package_rejected": true,
+    "fixed_pcsx2_hook_consumer": {
+      "path": "3rdparty/imgui/src/imgui_freetype.cpp",
+      "sha256": "26fbef2c687e568d541ecc277f699c060ac417a2d8cd9c56e931635684e7b622"
+    },
+    "hooks_api": "plutosvg_ft_svg_hooks (exported compatibility API)",
+    "svg_glyph_dimensions": [
+      [
+        20,
+        35
+      ],
+      [
+        40,
+        70
+      ],
+      [
+        20,
+        35
+      ]
+    ],
+    "svg_glyph_pixel_mode": "BGRA",
+    "original_data_used": false,
+    "limits": [
+      "not a complete SVG/OpenType suite",
+      "no originals/game text or 3DS render",
+      "not all operators or stb font/image APIs tested",
+      "no performance measurements",
+      "external buffer supplied with valid stride only"
+    ]
+  },
+  "loader": {
+    "required_libraries": [
+      "libplutovg.1.dylib",
+      "libplutosvg.0.dylib",
+      "libfreetype.6.dylib",
+      "libharfbuzz.dylib"
+    ],
+    "resolved_paths_checked": true,
+    "all_private": true,
+    "homebrew_references": false,
+    "initial_check_note": "literal FreeType soname comparison corrected to compare resolved paths; dyld reports real versioned filename; no build or test failure",
+    "log_sha256": "aece1e296e9b9ca7297a0e93ae29c9392f7cebc568af10817f41947ed234b3c4"
+  },
+  "steps": [
+    {
+      "name": "baseline-configure-v7",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 1.82,
+      "log_sha256": "a37d58f9f3fdfb66a5886cc2f986fa21043b09e2e2573c0b34e418733fa07c8d"
+    },
+    {
+      "name": "installed-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.9,
+      "log_sha256": "22464bca954dad7fb4dffa4115a70ce9b0a69b4e3abe437fba4d625dcc9a561f"
+    },
+    {
+      "name": "installed-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.71,
+      "log_sha256": "763ee09ee03b726b445587ef5af80f52706319f5933e5494e8fe4ade18d4a44a"
+    },
+    {
+      "name": "installed-v1-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.47,
+      "log_sha256": "0b28aadb66c62d9ae3c613c4e84329bf519c5f0c616e6e3cf038d02b68980b40"
+    },
+    {
+      "name": "loader-freetype-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "aece1e296e9b9ca7297a0e93ae29c9392f7cebc568af10817f41947ed234b3c4"
+    },
+    {
+      "name": "missing-svg-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.41,
+      "log_sha256": "1091663064a21a367344eaaab6fd24c5e1935f80160cb8eba432cc8a0b145475"
+    },
+    {
+      "name": "missing-vg-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.57,
+      "log_sha256": "6a151a1bf1811e63cebd833e487625f4242145978d30cf7a1c04f9363b70e7f9"
+    },
+    {
+      "name": "plutosvg-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.66,
+      "log_sha256": "21cf6871f11fa0b7bd66f8a8c63fd7b3c3f500013bd7be6536cd6fb8b1ef5aa6"
+    },
+    {
+      "name": "plutosvg-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.32,
+      "log_sha256": "9c0963199e2040d546dbc35f557465acfb37c5bd4842d1ac4e76fd34bcca7dbb"
+    },
+    {
+      "name": "plutosvg-v1-fixture-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.84,
+      "log_sha256": "22464bca954dad7fb4dffa4115a70ce9b0a69b4e3abe437fba4d625dcc9a561f"
+    },
+    {
+      "name": "plutosvg-v1-fixture-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.37,
+      "log_sha256": "1aa57119fde5c6b52263eb4a1e5ddf866644346eac7df06d30396bccc5f1ba59"
+    },
+    {
+      "name": "plutosvg-v1-fixture-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.29,
+      "log_sha256": "61c761aa97b04acfec78e017947da4dd8c1f49bff6588b2ea94e76cd0b3653e8"
+    },
+    {
+      "name": "plutosvg-v1-install",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "56c668ee4db5285f37a5df231c9727cf418e51f9bcd941c9903c36c688a47cc5"
+    },
+    {
+      "name": "plutosvg-v1-inventory",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.03,
+      "log_sha256": "655b4edf543a99640d87b7cec2509f8071db3e631f77a63bd8b28f1533babfc4"
+    },
+    {
+      "name": "plutovg-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.69,
+      "log_sha256": "29e9c94bb15612100b62d76717eae13c835486b30ab403ee79a37bd0e2029ca4"
+    },
+    {
+      "name": "plutovg-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.05,
+      "log_sha256": "e3701e75321b12c474c04b02affe60c9592a6c2428d65ecc083db1c9650efeb1"
+    },
+    {
+      "name": "plutovg-v1-fixture-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.77,
+      "log_sha256": "7268bd425b0c8dfd42dd42751c6782c1b1fbe641942919806f0add1467d8706f"
+    },
+    {
+      "name": "plutovg-v1-fixture-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.39,
+      "log_sha256": "752f650ef798e93ffca52707c5fe0e1849ad47f567a51af8a1876aa5702e8d0c"
+    },
+    {
+      "name": "plutovg-v1-fixture-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.03,
+      "log_sha256": "4c2bc2d5202883ad376f54be20b1ccea4ff32c2d18b4e9727446d75a5ab170af"
+    },
+    {
+      "name": "plutovg-v1-install",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "25d6cd5b84678c55e16504adfa31579f54afc14a5c255dbe7f3a5a217e4c17bd"
+    },
+    {
+      "name": "plutovg-v1-inventory",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "655b4edf543a99640d87b7cec2509f8071db3e631f77a63bd8b28f1533babfc4"
+    }
+  ],
+  "installation": {
+    "libraries": [
+      {
+        "name": "libplutosvg.0.dylib",
+        "bytes": 81096,
+        "sha256": "0479436303333bb4bf9cbef5a20e4e45bfe6a8a2c2c798695d191fa0c382ae79",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "libplutovg.1.dylib",
+        "bytes": 287440,
+        "sha256": "26c682a3cf0ffd72fbcce579f10600ff8bc0dcd859b27114b99f3458143d2226",
+        "architecture": "x86_64"
+      }
+    ],
+    "manifests": {
+      "plutovg-v1": {
+        "entries": 8,
+        "sha256": "95f140601a710c003af02afae419444f743897a69e26cb98a3675958281c5e12"
+      },
+      "plutosvg-v1": {
+        "entries": 9,
+        "sha256": "bd9e32ec20224ae4049bdd81e49f096496363871df1e1634b438a63b37a3c799"
+      }
+    },
+    "prior_src32_src34_libraries_unchanged": 15
+  },
+  "configuration": {
+    "exit_code": 1,
+    "duration_seconds": 1.82,
+    "log_sha256": "a37d58f9f3fdfb66a5886cc2f986fa21043b09e2e2573c0b34e418733fa07c8d",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 17766416384,
+    "directory": "baseline-configure-v7",
+    "plutovg_private_package_resolved": true,
+    "plutosvg_private_package_resolved": true,
+    "first_missing_dependency": "ryml",
+    "later_dependencies_checked": false
+  },
+  "capacity": {
+    "free_gib_before_approx": 16.63,
+    "free_bytes_after_configuration": 17766416384,
+    "large_build_reserve_bytes": 21474836480,
+    "scope": "bounded dependency unit; large build gate unchanged"
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 17766416384,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "preflight_toolchain_checks_reused_from": "SRC31; C++20/Metal fixtures not rerun",
+  "recipe_progress": {
+    "verified_archives": 11,
+    "total_archives": 25,
+    "auxiliary_not_in_recipe": [
+      "NASM 3.02",
+      "FontTools 4.60.1"
+    ]
+  },
+  "validation": {
+    "python_suite": "1897 historical cases from SRC31, not rerun",
+    "remote_ci_executed": false,
+    "pcsx2_full_build_executed": false,
+    "three_ds_build_executed": false,
+    "repository_checks": {
+      "exit_code": 0,
+      "errors": 0
+    },
+    "generator_ruff_exit_code": 0,
+    "generator_format_check_exit_code": 0,
+    "diff_check_exit_code": 0,
+    "source_hashes_verified": 9,
+    "local_hashes_verified": 34,
+    "step_logs_verified": 21,
+    "local_links_verified": 7,
+    "report_hashes_verified": true,
+    "public_evidence_has_no_private_absolute_paths": true
+  },
+  "source_files": [
+    {
+      "path": "schemas/pcsx2-pluto-v1.md",
+      "sha256": "d26ff09d670603334346290d1761d3cb59c6909f7f70da68676c84fb008b00fc"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-pluto/CMakeLists.txt",
+      "sha256": "84f5ee7e378b73e8e0458cde8aa198bd83a0224b37fb176a2b7671e1cb6edf4c"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-pluto/README.md",
+      "sha256": "317531bfee79e5a1a71e8bbb70df6aba52c3a77ccff9c7b0b766cc4927425696"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-pluto/fixture.hpp",
+      "sha256": "ea5128072b4d0ed41ac541bc4fd6069b4512aac6b2cc33d86375255555584e26"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-pluto/generate_svg_font.py",
+      "sha256": "07fbdd93c278b5957f29423c75adc3b410543630c6a1213b9215c79f58dff5a2"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-pluto/glyph.svg",
+      "sha256": "fda1ef18857804756ff102f465472013c10fdbaba25d5737c53f6632ff8d68e0"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-pluto/scene.svg",
+      "sha256": "6d72b1901a2f43fdbbdca485dfa5e3781ed7957750656d3e4da4830043205231"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-pluto/svg.cpp",
+      "sha256": "b63d40db2a0f47812067683bad547c7c34a6290a7cec5626f1ce88431398a2f6"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-pluto/vg.cpp",
+      "sha256": "e49a3d4be5b53a6643139b1ba201ec7fe0871e424afcc93e064f17884679d3c6"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "build/f02-07-pcsx2-pluto/baseline-configure-v7.json",
+      "sha256": "6b8aa69d144677d28060a09b2324f5e1c299adb3acc419f8cfa899090dced421"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/configure-result-v7.json",
+      "sha256": "034523bcd77dd1c22ebc1c41cbc279af7a962cb01f8f2c5173bc0970d68cdaea"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/downloads.json",
+      "sha256": "8ddac096bc653791fc75a9d9774141541be31bac117ec399276ba26f296f0843"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/font.json",
+      "sha256": "1adc8a6eb16d84f77d0eaf03c3646c00a4c1105c44e86b9394376e975b07d69a"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/installed-v1-build.json",
+      "sha256": "365327b65e8bdceca8e9f6320861787034dc17c0ebf9533bc067c5f91d3d9c81"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/installed-v1-configure.json",
+      "sha256": "1ac45f8942fdf034453e01c8bee3c43bfeefbdf92297a31e7b852bd70558e4a5"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/installed-v1-ctest.json",
+      "sha256": "ac5370995a2546e502369cc8ff9c8ad509a27d31c229b124f401b9a46e7783d0"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/installed-v1-junit.xml",
+      "sha256": "f7fd57c8d430249ce2f27dee86760afef53343a8e658eb7e28ee7c6e3f31c928"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/loader-freetype-v1.json",
+      "sha256": "2932d6024a00fbdbf2ed40c5b2c738662d34214812f24829134ad88ca4416c6c"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/loader-verification.json",
+      "sha256": "5c3a020870e62b9b72b6b719740705e40693bc954a12c64d392fc7c74b412dfe"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/missing-svg-v1.json",
+      "sha256": "3bd9a6483a341302926a23e5bb339f588fab0ce61bff132866ea14287dfa2f67"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/missing-vg-v1.json",
+      "sha256": "2891e3b512f4ccfafce5ab7363b0abbf0c095f75dbf6e94fc72e4c9dfa2cb40f"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutosvg-v1-build.json",
+      "sha256": "915e4c8c563f49902c796075c16bb007ddf652a65731e1965c8688ebc44cfb4c"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutosvg-v1-configure.json",
+      "sha256": "df08cd2bb7b07bc39394b6998c5b9685e0e67067ab60eb00874f2829d352d753"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutosvg-v1-fixture-build.json",
+      "sha256": "00b3c4f675d11c2682549d7f099012ac2ad903975259da70683cb457fede4a39"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutosvg-v1-fixture-configure.json",
+      "sha256": "13a2e8588d072ce8a78f25f7036647f9c733c18d490db5f01d51d9a4dc24938d"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutosvg-v1-fixture-ctest.json",
+      "sha256": "147bfba6dba76f525fb32b58fcce5304347e8e569fd78d2724a4aee7f687476e"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutosvg-v1-fixture-junit.xml",
+      "sha256": "6a75bc59a9b1884d75482e6691f71cdfaf8f916aea5577484d5f63f3dacd6167"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutosvg-v1-install.json",
+      "sha256": "53c7873f80997e8a593ab357a56610899db105369ba90177ec3b9aacf29239f5"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutosvg-v1-inventory.json",
+      "sha256": "82d64ce719bec97e96248df97e11a88d9d49738aab1a2294b28c79cfcbcc4e70"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutovg-v1-build.json",
+      "sha256": "a87955b9f13e32e4e7347dcf777f966168348b00590d55d5acdf7281682afab0"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutovg-v1-configure.json",
+      "sha256": "d754e8328aa36dae701a3ed59eb9fd2c53c00b370754d86402e6d37791aad9f3"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutovg-v1-fixture-build.json",
+      "sha256": "d6c4dc0fa3d5b62875b89702f4c81e38c09cff77dfa9b42b7755d71fc72a1e50"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutovg-v1-fixture-configure.json",
+      "sha256": "08538a1fa3bb1b3c107d193eacf4f6699da077bdd449938679f775db71807731"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutovg-v1-fixture-ctest.json",
+      "sha256": "2db64ca49b0a662889c2317a3b31c4c9c1feedc07b4a3ca480cfd5e4d14674e4"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutovg-v1-fixture-junit.xml",
+      "sha256": "1fdf6339cec1ae727326ba68ca7e093d76392b2f9533c4d900a29d602305fe15"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutovg-v1-install.json",
+      "sha256": "3603306181d55cf9a11e2da761988d311c01d2f7d27599836e04c5c9bf07a122"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/plutovg-v1-inventory.json",
+      "sha256": "71e5a560dbc2f3902aafd9a2395519c645f14d93c3843da958a2598b7330340e"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/preflight-v6.json",
+      "sha256": "5ea21fbfc01f6224cdb74a1d1b3fcd811d03eafb7cda89832ee90db2ae8e7bdb"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/rectangles-svg-repeat.ttf",
+      "sha256": "019a5919f32f9ad9906e0b896a2f276666d828598af124a6978f882d07b0639a"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/rectangles-svg-v1.ttf",
+      "sha256": "019a5919f32f9ad9906e0b896a2f276666d828598af124a6978f882d07b0639a"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/run_stage.py",
+      "sha256": "20d6bc770e5c5327fbbcdc56248d28455e12b1628dc73b218af0c9b3ed887b12"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/test-results.json",
+      "sha256": "cf8e465748925936e70836ef310123784186ab4bea93a05c103c4a2b1dce200d"
+    },
+    {
+      "path": "build/f02-07-pcsx2-pluto/verification.json",
+      "sha256": "3fcb603271b7bfb572f351838ad7e99b4d14147a2e74e71e158db5af809fdfe7"
+    }
+  ],
+  "next_task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-rapidyaml",
+  "f02_07_status": "pending",
+  "mapping_verified": false,
+  "resource_links": [],
+  "capabilities": []
+}

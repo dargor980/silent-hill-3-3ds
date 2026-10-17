@@ -32,6 +32,21 @@ Versión 1.2 · 2026-10-17 · F00.05/F00.06, RF01.01 y RNF08.01. Este inventario
 
 | SRC25 | Captura completa de fronteras y lector propio de estados F02.07 | Nueve eventos, tres invocaciones, seis ventanas y dos recibos idénticos de 1.343 bytes; A cambia GPR4, B1/B2 conservan GPR16 en la invocación observada | [Evidencia](camera-runtime-capture-evidence.json), [informe](../execution/f02-07-camera-runtime-capture.md), [contrato](../../schemas/pcsx2-state-reader-v1.md). Estados/GPR privados; sin vínculo de recurso ni capacidades nuevas |
 
+| SRC26 | Muestras EE y búsqueda exacta en dos extracciones F02.07 | Diez muestras, seis hits sobre un candidato de 1.536 bytes; dos informes finales idénticos de 7.642 bytes, SHA-256 `30611f6f1af92a1c5363474af0b76a5805222824c8a50065aa1d93daf3a62842` | [Procedencia y resultado](camera-resource-link-evidence.json), [informe](../execution/f02-07-camera-resource-link.md), [contrato](../../schemas/camera-resource-link-v1.md). Mapeo directo como hipótesis, origen y semántica pendientes |
+
+
+| SRC27 | Comparación completa del candidato entre estados F02.07 | Ocho estados: igualdad completa en entrada A, 40 bytes distintos al retornar y seis estados posteriores iguales; dos informes de 19.343 bytes, SHA-256 `0a08d220a0913719deecab4bcc12ebda038f73c7dc0aa5a427f940180c9cea95` | [Evidencia](camera-origin-evidence.json), [informe](../execution/f02-07-camera-origin.md), [contrato](../../schemas/camera-origin-v1.md). Traducción efectiva, escritor y cargador pendientes |
+
+| SRC28 | Observación parcial de escritor durante A | Siete estados de sesión nueva; dos pares coherentes, SW directa sin cambio y BEQ+SW con tres bytes distintos `[85,88)`; dos recibos de 6.814 bytes, SHA-256 `e526f58772c790d471293c288a1b311559cc4a23941c1ff102dca355c443ed20` | [Evidencia](camera-writer-evidence.json), [informe](../execution/f02-07-camera-writer.md), [contrato](../../schemas/camera-writer-v1.md). Retorno no capturado; mapa, otros escritores y cargador pendientes |
+
+| SRC29 | Repetición del escritor y retorno de A | Cuatro estados nuevos; par BEQ+SW idéntico a SRC28 y retorno de 1.536 bytes igual a SRC27, con los mismos 40 bytes distintos de entrada; dos recibos de 9.478 bytes, SHA-256 `3d5bd69b282de39eb17b633e9558f111ebf731cdee7b5b532925b99cecf96914` | [Evidencia](camera-return-evidence.json), [informe](../execution/f02-07-camera-return.md), [contrato](../../schemas/camera-return-v1.md). Mapa efectivo, otros escritores y cargador pendientes |
+| SRC30 | Contrato y factibilidad del mapa efectivo | MP01–MP08 y validador puro; 91 casos nuevos, 1.849 pruebas aprobadas. Puerto de lectura del PCSX2 oficial denegado con EPERM; mapa real no observado | [Evidencia](effective-mapping-evidence.json), [informe y siguiente build](../execution/f02-07-effective-mapping.md), [contrato](../../schemas/effective-mapping-v1.md). Instrumentación aislada pendiente; no cierra identidad física ni origen |
+| SRC31 | Preparación del build instrumentado PCSX2 | Checkout fijado y limpio; fixture C++20 x86_64 aprobado; libpng/APNG compilada e instalada con 37 pruebas CTest; Xcode 26.6/Metal instalados y cuatro ensayos del toolchain aprobados; CMake con Clang 21 avanza hasta JPEG. 25 descargas fijadas, 48 casos nuevos y 1.897 pruebas Python aprobadas | [Evidencia](pcsx2-build-evidence.json), [ejecución](../execution/f02-07-pcsx2-build.md), [IB01–IB06](../../schemas/pcsx2-build-preflight-v1.md). Build base e instrumentación pendientes de entorno y espacio |
+| SRC32 | Dependencias host del observador, primer lote | NASM: 301 PASS y 1 SKIP; JPEG: 332/332 CTest; Zstd/LZ4 con pruebas acotadas y fixtures, WebP con fixture propio. Nueve dylibs x86_64; CMake limpio alcanza SDL3; seis de 25 descargas verificadas más NASM adicional | [Evidencia](pcsx2-dependencies-evidence.json), [informe y tareas](../execution/f02-07-pcsx2-dependencies.md), [DB01–DB08](../../schemas/pcsx2-dependencies-v1.md). Build completo, instrumentación y mapa pendientes; preserva el snapshot SRC31 |
+| SRC33 | SDL3 del observador host | SDL 3.4.12 x86_64; 19 controles aplicables, un no-op evdev identificado y tres exclusiones por vídeo; fixture CMake propio con cuatro casos antes/después de instalar; CMake PCSX2 alcanza FreeType | [Evidencia](pcsx2-sdl3-evidence.json), [informe](../execution/f02-07-pcsx2-sdl3.md), [SD01–SD06](../../schemas/pcsx2-sdl3-v1.md). Sin build completo ni mapa; siete descargas de la receta verificadas más NASM |
+| SRC34 | FreeType/HarfBuzz del observador host | FreeType 2.14.3 y HarfBuzz 14.2.0 x86_64; fuente geométrica propia, siete casos de API y enlace privado comprobado; CMake PCSX2 alcanza PlutoVG | [Evidencia](pcsx2-fonts-evidence.json), [informe](../execution/f02-07-pcsx2-fonts.md), [FH01–FH07](../../schemas/pcsx2-fonts-v1.md). Suites de proveedor no ejecutadas; nueve descargas de receta verificadas más NASM/FontTools; sin build completo ni mapa |
+| SRC35 | PlutoVG/PlutoSVG del observador host | Versiones 1.3.2/0.0.7 x86_64; ocho casos propios, incluido glifo SVG vía FreeType; negativos de paquetes y dependencias privadas comprobados; CMake PCSX2 alcanza ryml | [Evidencia](pcsx2-pluto-evidence.json), [informe](../execution/f02-07-pcsx2-pluto.md), [PV01–PV07](../../schemas/pcsx2-pluto-v1.md). Cero tests CTest del proveedor, sin contarlos como aprobados; 11 descargas de receta verificadas; sin build completo ni mapa |
+
 ## Perfil canónico y evidencias históricas
 
 El JSON canónico de SRC04 mide **17.037 bytes**, SHA-256 `504cb4aa3a0a24480324d2853a153ff9c77ac7b8987b3665566b8ed8f9a620d9`. F00.05 valida su contrato y comprueba igualdad con `profile` de `reports/local/europe-disc-catalog-recheck.json`; no recalcula los bytes de la ISO ni declara otra validación de disco. Región `Europe`, revisión `1.02`, serial `SLES-51434`, idiomas `en,fr,de,es,it`, capacidades vacías y `extractor_version=none-inspection-only-v1`.
@@ -84,3 +99,16 @@ fuentes oficiales ya atribuidas; no incorpora código externo. Nueve estados se
 importan al contrato CO existente, sin publicar registros ni memoria. Los recibos
 coherentes no autentican ejecución ni demuestran preservación universal. La próxima
 investigación exige vincular el argumento/base con el catálogo por evidencia de carga.
+
+SRC26 verifica estados, captura CO y las dos copias completas del catálogo fijado.
+Las muestras nunca se publican; el reporte contiene hashes/IDs/offsets dentro del
+recurso. Consulta fuentes oficiales de memoria PCSX2 v2.8.2 por URL/hash, conservadas
+fuera del checkout. Igualdad de prefijos y base no prueba carga, traducción efectiva
+ni formato. La hipótesis se limita al mapeo físico bajo; ningún alias se normaliza.
+
+
+SRC27 reproduce SRC26 y compara el candidato completo conservando la base de entrada
+A; no usa el GPR4 modificado del retorno. Las diferencias son offsets relativos sin
+payloads. Se investigan SaveState/COP0/DebugInterface/vtlb oficiales, v2.8.2, por URL
+y hash. No se restaura ni ejecuta PCSX2 en esta comparación: el plan posterior está
+`not_performed`, exige sesión nueva y mantiene origen/capacidades pendientes.

@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-resource-link-eu/origin/runtime-writer",
+  "stage": "partial-first-changed-store-return-mapping-loader-pending",
+  "result_sha256": "e526f58772c790d471293c288a1b311559cc4a23941c1ff102dca355c443ed20",
+  "result_bytes": 6814,
+  "repeat_identical": true,
+  "repetition_scope": "two analyses of same capture; one new emulator session",
+  "input_hashes": {
+    "capture_sha256": "1f5f7593c9579c0c93f15c9f6b5adb47f46e06c7d790448669f06fb1f4a2e86d",
+    "origin_sha256": "0a08d220a0913719deecab4bcc12ebda038f73c7dc0aa5a427f940180c9cea95",
+    "plan_sha256": "396c05cf8d5e2c339d7498537134128bdf1602ea33d4870a52f608d7acaea45a",
+    "restore_state_sha256": "79afa3921db8c376548a434cfa96299e13357a12a0322fbc69ba226fc6b5b769"
+  },
+  "session_id": "71797d5333e44b15861b1eb22fa0bbe6",
+  "resource": {
+    "id": "asset:f8328806a743597779f6bfa4b32167d33d52456a8da0d71b7f9edf38cf41e58b",
+    "sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "size": 1536
+  },
+  "state_count": 7,
+  "validated_pair_count": 2,
+  "pairs": [
+    {
+      "after_sequence": 5,
+      "before_sequence": 4,
+      "comparison": {
+        "difference_ranges": [],
+        "different_bytes": 0,
+        "equal": true,
+        "observed_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+        "reference_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+        "size": 1536
+      },
+      "control_flow": "direct",
+      "execution_authentication": "not_provided",
+      "instruction_class": "SW",
+      "instruction_sha256": "c3af99259ea362fe03406eaca371ea6b83bba651f5d43c149ae987b33f378bb5",
+      "mapping_verified": false,
+      "relative_offset": 64,
+      "status": "consistent_no_change",
+      "width": 4
+    },
+    {
+      "after_sequence": 7,
+      "before_sequence": 6,
+      "comparison": {
+        "difference_ranges": [
+          {
+            "end": 88,
+            "start": 85
+          }
+        ],
+        "different_bytes": 3,
+        "equal": false,
+        "observed_sha256": "f859efdcce491bf635e1a72f97f4b99c7010d0b3e46a449a2facc6d589f20a8c",
+        "reference_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+        "size": 1536
+      },
+      "control_flow": "beq_sw_delay_slot",
+      "execution_authentication": "not_provided",
+      "instruction_class": "SW",
+      "instruction_sha256": "0c5ef005b05b1cc5a7ef587fcd05168b8377ecf81aa1836f930fcb4e7afc8919",
+      "mapping_verified": false,
+      "relative_offset": 84,
+      "status": "consistent_changed_store",
+      "width": 4
+    }
+  ],
+  "auxiliary_pair_sequences": [
+    2,
+    3
+  ],
+  "auxiliary_limitation": "second code read not captured; not counted as validated pair",
+  "return_captured": false,
+  "mapping_verified": false,
+  "origin_status": "pending",
+  "closure": {
+    "baseline_unchanged": true,
+    "emulator_closed": true,
+    "ipc_disabled": true,
+    "return_captured": false,
+    "socket_removed": true,
+    "stop_reason": "partial_first_changed_store"
+  },
+  "closure_metadata_sha256": "0aee85adab8a868c7a2dd475f957c95d64cfcff9ebfa9c43c041889572edd3a2",
+  "capture_helper_sha256": "29b5c7d868b0e542c71e2bb29fd43ea494ae049fa5d6c6dd606173a0038baca9",
+  "private_manifest_sha256": "15f5af006ee44d514ed4fb3e982d252d9dbc6f2b515ef641b0b2f0dd912612e9",
+  "original_profile_verification": "INI, debugger breakpoint settings and both memory cards retained their baseline hashes",
+  "sources_consulted": [
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/Interpreter.cpp",
+      "sha256": "2d1951d8b98a7bbf697577b6376d966d9266c3fa628cc058ea1cf50adab83048",
+      "bytes": 15023,
+      "license": "GPL-3.0+",
+      "use": "behavior reference only; no external source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/R5900OpcodeImpl.cpp",
+      "sha256": "6ae749a7e3a297a291f1844d2f96a17bf7c53a9c6f6f4ab4ddab27781a78c2b4",
+      "bytes": 41762,
+      "license": "GPL-3.0+",
+      "use": "behavior reference only; no external source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2-qt/Debugger/DebuggerWindow.cpp",
+      "sha256": "8baa206abd4c751b429e3791cc708cbdd7254e2573070cb6deee510a9de6a7cf",
+      "bytes": 15908,
+      "license": "GPL-3.0+",
+      "use": "behavior reference only; no external source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df",
+      "bytes": 21507,
+      "license": "GPL-3.0+",
+      "use": "behavior reference only; no external source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2-qt/Debugger/Breakpoints/BreakpointModel.h",
+      "sha256": "f5ae32f6548d44d0e80e4ab6e0d0a015aa5d47676721203b6faa3ead8aa57638",
+      "bytes": 2219,
+      "license": "GPL-3.0+",
+      "use": "behavior reference only; no external source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/PINE.cpp",
+      "sha256": "b6d32cc43b857bb94fd2fdcde556bf8fba300dd1e3d008aad052ae54c1d0b2de",
+      "bytes": 20593,
+      "license": "GPL-3.0+",
+      "use": "behavior reference only; no external source copied into repository"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "schemas/camera-writer-v1.md",
+      "sha256": "1f6b7e7387725be68146c5c01c2595589b699059893bb56bcf1fc7a31002774b"
+    },
+    {
+      "path": "tools/inspectors/writer_state.py",
+      "sha256": "944b2945795541605e307995acd08194077d2f676e5948384ea1c39e403e98a1"
+    },
+    {
+      "path": "tools/inspectors/store_pair.py",
+      "sha256": "3830a9fc82d5f9114b4528fcd652a9c466e94dec22a727b44c104edba815c9d1"
+    },
+    {
+      "path": "tools/inspectors/camera_writer.py",
+      "sha256": "f792deb1d90f18a1ce301020bc22674b3becb1bfb4189cd3ddef6ef8b22b6133"
+    },
+    {
+      "path": "tests/python/test_camera_writer.py",
+      "sha256": "27d35c41cb0c2751db0e57d153928e93da01d5abdf6dc9891176cd11c0fd2bc2"
+    }
+  ],
+  "validation": {
+    "python_tests_passed": 1720,
+    "new_tests": 71,
+    "line_coverage_percent": 98.7461,
+    "branch_coverage_percent": 97.3137,
+    "gate": "passed",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "repository_check": "passed",
+    "remote_ci_executed": false,
+    "3ds_build_executed": false
+  },
+  "next_task": "F02.07/camera-resource-link-eu/origin/runtime-writer/repeat-return",
+  "resource_links": [],
+  "capabilities": [],
+  "f02_07_status": "pending"
+}

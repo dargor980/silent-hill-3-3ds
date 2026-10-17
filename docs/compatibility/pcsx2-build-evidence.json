@@ -1,0 +1,514 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build",
+  "stage": "toolchain-and-png-pilot-verified-remaining-dependencies-and-storage-pending",
+  "source": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "tree_sha1": "6932dd7cfae6ecb615bc30fc496c45524110f557",
+    "clean": true,
+    "tracked_files": 2934,
+    "tracked_bytes": 129603536,
+    "submodules": "",
+    "prior_sources_match": true,
+    "copying_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 18696228864,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "synthetic_binary": {
+    "architecture": "x86_64",
+    "sha256": "e24abcbae874d52882ad17bfc419c7409f2cfe62000a0f7736ec2e6bfd89fde5",
+    "bytes": 9408,
+    "execution_exit_code": 0,
+    "compiler": "Apple Clang 21.0.0",
+    "original_assets_used": false
+  },
+  "dependencies": {
+    "plan": "docs/compatibility/pcsx2-build-dependencies.json",
+    "plan_sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+    "archive_count": 25,
+    "downloads_executed": true,
+    "recipe_executed": false,
+    "verified_archive_count": 2,
+    "remaining_archives": 23,
+    "completed_components": [
+      "libpng-1.6.58-apng-x86_64"
+    ]
+  },
+  "closure": {
+    "source_clean": true,
+    "original_app_unchanged": true,
+    "original_configuration_and_cards_unchanged": true,
+    "game_started": false,
+    "free_bytes_latest": 18696228864,
+    "final_source_git_recheck": "passed after configuration v3"
+  },
+  "sources_consulted": [
+    {
+      "path": "COPYING.GPLv3",
+      "url": "https://github.com/PCSX2/pcsx2/blob/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/COPYING.GPLv3",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "pcsx2/CMakeLists.txt",
+      "url": "https://github.com/PCSX2/pcsx2/blob/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/pcsx2/CMakeLists.txt",
+      "sha256": "488ccc82ad34f7d271dbd2f6db87dc0eaaa8ebf3956302cf0d2e8f706eeeb7c7"
+    },
+    {
+      "path": "cmake/Pcsx2Utils.cmake",
+      "url": "https://github.com/PCSX2/pcsx2/blob/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/cmake/Pcsx2Utils.cmake",
+      "sha256": "cf5e00635d9ff6af82127bd9b189fb1fc8884ccbd101490f63feb223b9157861"
+    },
+    {
+      "path": "cmake/BuildParameters.cmake",
+      "url": "https://github.com/PCSX2/pcsx2/blob/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/cmake/BuildParameters.cmake",
+      "sha256": "294799059e4b9d5e93fdba33cde3f18ed7f2a04d4d4f0ecae280ce8a73c2603f"
+    },
+    {
+      "path": "cmake/SearchForStuff.cmake",
+      "url": "https://github.com/PCSX2/pcsx2/blob/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/cmake/SearchForStuff.cmake",
+      "sha256": "032606903971e808373254b03efd93c1375a58188cc0f27c91f840b4ad3317a7"
+    },
+    {
+      "path": ".github/workflows/macos_build.yml",
+      "url": "https://github.com/PCSX2/pcsx2/blob/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/.github/workflows/macos_build.yml",
+      "sha256": "1f4b809ddcda5dac24715878cd8d561af5b7883d0752f4a7712150d0d7243ea4"
+    },
+    {
+      "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+      "url": "https://github.com/PCSX2/pcsx2/blob/fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3/.github/workflows/scripts/macos/build-dependencies.sh",
+      "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "source-manifest.json",
+      "sha256": "453be23a89b3594cc45095d105a8fe9faa5aa25112b88994dafda87aaba416ab"
+    },
+    {
+      "name": "toolchain-results.json",
+      "sha256": "75a96afb28a6e7fcc3e08de27ba960e0dd7b6a112dde029852c1493ff586160d"
+    },
+    {
+      "name": "configure-result.json",
+      "sha256": "f2c68aa9d8871d75df2007e9b2917a0acfad69299f1718a49ac589216021c483"
+    },
+    {
+      "name": "preflight.json",
+      "sha256": "fb185f5fc71eb5e8c8c363670edc8441a308fee682a709bbe23c1dcd55e7523c"
+    },
+    {
+      "name": "junit.xml",
+      "sha256": "fbcd03aedba5e163535540785a4376f8909cc526bee1f2d660ccae994af9a530"
+    },
+    {
+      "name": "coverage.json",
+      "sha256": "ecbfb421c42f2a778d60f09cd9917c450503472620c1d143f683b31dac32af09"
+    },
+    {
+      "name": "png-manifest.json",
+      "sha256": "23bdab0f562b0d10bf3de6452d622229d0ea146aa2357f035a73fc8df4b5a9c2"
+    },
+    {
+      "name": "configure-result-v2.json",
+      "sha256": "7419164844170b3205696cf6cf31c2520f786b42a7f9d01a5717cdd7c85bcec4"
+    },
+    {
+      "name": "xcode-observation.json",
+      "sha256": "ce3e6430fcd1893284718acf49df6172f28d349167592d33d9a5a2bda790054d"
+    },
+    {
+      "name": "xcode-observation-in-progress.json",
+      "sha256": "2314d2aab3182496d4146cec63af99ebbefdaf992c4584d0465f29cb75dec198"
+    },
+    {
+      "name": "xcode-cli-status.json",
+      "sha256": "5dd1a4c169f0fa4515dff124e6e82cb9cb7e86078199431e65298547fc7e7c73"
+    },
+    {
+      "name": "metal-install-result.json",
+      "sha256": "cce1f6724f9450001edb25e131e7d3834c44e1972e9cf37298cd967bbd90183c"
+    },
+    {
+      "name": "metal-component-info.log",
+      "sha256": "e981f8150a957525c1f139de52c4e65d42d2f1f8dcb44606a456b7fd3789150d"
+    },
+    {
+      "name": "metal-explicit-lookup.log",
+      "sha256": "9ec2c5cdddcb811ed4840604f4320d7cd3c58511a13452b7d69077dab800ac4e"
+    },
+    {
+      "name": "metal-after-component-query.log",
+      "sha256": "89b399788c3fe43373dc237205a99106a2cdb97aa7565465bddb133346329425"
+    },
+    {
+      "name": "toolchain-v2/results.json",
+      "sha256": "67d8cc68465e29852378d8d5cd8970bf1d40f70e95ba644f310453dc869ced85"
+    },
+    {
+      "name": "toolchain-v3/results.json",
+      "sha256": "b9a619859bd79d241a3915778fe77d7729dc4828fc61adea903abda78c67d890"
+    },
+    {
+      "name": "metal-v4/results.json",
+      "sha256": "eeed110f373fa383173ef2799cc023d7c7b24c368eae501286390b60b40e2790"
+    },
+    {
+      "name": "toolchain-v5/results.json",
+      "sha256": "9905ecddc3d9b2cd3e04c20213a6054f1d072b9a64af5beec6c50964d9b02bbf"
+    },
+    {
+      "name": "configure-result-v3.json",
+      "sha256": "5bcd7a6614d1853715a6308350c6712dbe89ee9b17ebdcadf9ba61b5674b0b92"
+    },
+    {
+      "name": "preflight-v2.json",
+      "sha256": "b22b5428da3dd6bc51907bc45f5aeddd8babe95732fd99e11aad936dac62d65d"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "schemas/pcsx2-build-preflight-v1.md",
+      "sha256": "9ab7d5981a2b1fe6f44a4c635c5460eb4eac24a41dd905862e8e6722d71fd162"
+    },
+    {
+      "path": "tools/qa/pcsx2_preflight.py",
+      "sha256": "18cad4ec215346da8fe50e6bec7929e26a6ddeed83e7b9c3b2037cb2bde8b48d"
+    },
+    {
+      "path": "tests/python/test_pcsx2_preflight.py",
+      "sha256": "4ac63ef01bcac01e947def329eba660b81fbe2b311e54b4498fa04fdca7873df"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/toolchain.cpp",
+      "sha256": "3240ded2149ed6cf28cac172dd37119d6fc8ead1d4428529330565eb17f80b3f"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-build/toolchain.metal",
+      "sha256": "4c25d477b02519ed92602c8fb786714f0e9480d01db78733da1c958184a0d314"
+    }
+  ],
+  "validation": {
+    "python_tests_passed": 1897,
+    "new_tests": 48,
+    "preflight_line_coverage": "19/19",
+    "preflight_branch_coverage": "12/12",
+    "line_coverage_percent": 98.7725,
+    "branch_coverage_percent": 97.3064,
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "coverage_gate": "passed",
+    "repository_check": "passed",
+    "remote_ci_executed": false,
+    "pcsx2_build_executed": false,
+    "3ds_build_executed": false,
+    "diff_check_after_xcode_installation": "passed"
+  },
+  "next_task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites",
+  "mapping_verified": false,
+  "resource_links": [],
+  "capabilities": [],
+  "f02_07_status": "pending",
+  "configuration_history": [
+    {
+      "exit_code": 1,
+      "first_missing_dependency": "PNG >= 1.6.40",
+      "later_dependencies_checked": false,
+      "log_sha256": "921a29af2e4d115a2b4fa2ab25c26091ad2eb0dd58f9ad6f361012f502ef8d14",
+      "prefix_isolated": true,
+      "homebrew_arm64_prefix_ignored": true
+    },
+    {
+      "exit_code": 1,
+      "png_detected": "1.6.58",
+      "first_missing_dependency": "JPEG",
+      "later_dependencies_checked": false,
+      "log_sha256": "be7edd17da6548b9b893f0c7200addc454ee69d07a8da552c99437ae290c1f83",
+      "prefix_isolated": true,
+      "homebrew_arm64_prefix_ignored": true
+    },
+    {
+      "exit_code": 1,
+      "compiler": "AppleClang 21.0.0.21000101",
+      "png_detected": "1.6.58",
+      "first_missing_dependency": "JPEG",
+      "later_dependencies_checked": false,
+      "log_sha256": "f0abc2e1e626ecb8a80d66e26df560bf1f9729f835bc2a1637d90ed4b32cc1dc",
+      "prefix_isolated": true,
+      "homebrew_arm64_prefix_ignored": true,
+      "environment_overrides": {
+        "TOOLCHAINS": "com.apple.dt.toolchain.Metal.32023.883"
+      }
+    }
+  ],
+  "png_pilot": {
+    "archives": [
+      {
+        "archive": "libpng-1.6.58.tar.xz",
+        "sha256": "28eb403f51f0f7405249132cecfe82ea5c0ef97f1b32c5a65828814ae0d34775",
+        "bytes": 1070096
+      },
+      {
+        "archive": "libpng-1.6.58-apng.patch.gz",
+        "sha256": "eee7dea22ed502868017971c86c63c4ed1e6085de0baebfdcc3d3322f00f3eb0",
+        "bytes": 10671
+      }
+    ],
+    "patch_exit_code": 0,
+    "patch_log_sha256": "24653e5446692aa3bc78cf8414fa681478b6f332358840586739bfd11f2d31aa",
+    "build_result": {
+      "exit_code": 0,
+      "log_sha256": "298e943002449254548278802bf1f7194fbcb4923dd8cee9556f4f8c67d28431"
+    },
+    "tests": {
+      "exit_code": 0,
+      "count": 37,
+      "failures": 0,
+      "junit_sha256": "8d56a4a961365354331f1f68fe52b7d5eff01839aceac7a701a9748ac374f331",
+      "log_sha256": "d030540b7a9be02d568d97211c990594d7d5f621a8a55e515712dafc678af33e"
+    },
+    "installation": {
+      "exit_code": 0,
+      "manifest_sha256": "3df0cc142ee2d59c73f0a9a8de55d40bcd40635b98641c7ca8825c969c64e3e1",
+      "log_sha256": "6de0aeb52efe0b7655d39c5ce99de765cdb35685f19f9f2dec97cc4ea26b0f28",
+      "file_count": 33,
+      "library_sha256": "ef8d05aa5309bd4ddaa2a44848e94cf3fd8aabdf7102a25e1d9d801facf67de0",
+      "library_arch": "x86_64",
+      "license_sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526"
+    },
+    "license": "PNG Reference Library License version 2 (source LICENSE); APNG patch retained with provenance",
+    "full_pcsx2_build": false
+  },
+  "toolchain_installation": {
+    "host_macos": "26.5",
+    "host_build": "25F71",
+    "previous_developer_directory": "/Library/Developer/CommandLineTools",
+    "active_developer_directory": "/Applications/Xcode.app/Contents/Developer",
+    "developer_directory_changed_during_installation": true,
+    "xcode_select_mutation_executed_by_agent": false,
+    "app_store_catalog_version": "27.1",
+    "catalog_requires_macos": "26.6",
+    "compatible_version_offered": true,
+    "compatible_version_download_requested": true,
+    "installation_state": "installed_and_fixture_verified",
+    "installed_version": "26.6",
+    "product_build_version": "17F113",
+    "info_dtxcode_build": "17F112",
+    "minimum_system_version": "26.2",
+    "info_plist_sha256": "224c27a718df1d8b4e785d29d06259e0a9326c424e70d30efab9c587463f719a",
+    "version_plist_sha256": "951ddf34d65d84d57684bd083ca7deebf8d5722eefb074f3cdf00f8304d5f511",
+    "app_store_button_after_installation": "Abrir",
+    "first_launch_window": "Xcode and Apple SDKs Agreement",
+    "agreement_identifier": "EA1990",
+    "agreement_date": "2026-01-21",
+    "license_accepted_by_agent": true,
+    "license_confirmation_pending": false,
+    "default_git_exit_code_after_installation": 69,
+    "default_git_failure_reason": "Xcode license agreements not accepted",
+    "metal_installation_attempted": true,
+    "metal_available_after_installation": true,
+    "toolchain_retested_after_installation": true,
+    "free_bytes_after_installation": 18226868224,
+    "initial_toolchain_results": "toolchain-results.json",
+    "initial_observation": "xcode-observation-in-progress.json",
+    "license_user_confirmation": "explicit action-time authorization in current chat",
+    "first_launch_optional_ios_selected": false,
+    "first_launch_predictive_model_selected": false,
+    "optional_predictive_download_stopped": true,
+    "auto_review_rejection": "initial deselection rejected as mistaken selection; fresh UI proved both boxes checked; individual deselections then approved",
+    "first_launch_status_exit_code": 0,
+    "xcode_version_exit_code": 0,
+    "xcode_version_stdout": "Xcode 26.6\nBuild version 17F113\n",
+    "first_launch_window_after_setup": "Welcome to Xcode",
+    "system_git_available_after_license": true,
+    "metal_build": "17F109",
+    "metal_version": "32023.883",
+    "toolchain_identifier": "com.apple.dt.toolchain.Metal.32023.883",
+    "metal_default_lookup_status": "missing even outside sandbox",
+    "metal_explicit_selection_status": "compile_and_link_passed",
+    "environment_overrides": {
+      "TOOLCHAINS": "com.apple.dt.toolchain.Metal.32023.883"
+    },
+    "latest_fixture_results": "toolchain-v5/results.json",
+    "metal_gpu_execution_tested": false,
+    "metal_download_result": {
+      "argv": [
+        "/usr/bin/xcodebuild",
+        "-downloadComponent",
+        "MetalToolchain"
+      ],
+      "exit_code": 0,
+      "log_sha256": "12aa9ed331ec95dd42c81a1ad2b530121c0d4bd124141ec70fe0f1c219fa5cc0",
+      "free_bytes_after": 17133338624
+    }
+  },
+  "user_storage_response": "user confirmed initial space freed; 18.46 GiB before Xcode; additional capacity requested after toolchain installation and tests",
+  "preflight_scope": "current: Xcode 26.6, explicit Metal toolchain selection, latest configuration v3; initial results retained in preflight_initial",
+  "preflight_initial": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 5234978816,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 72,
+        "status": "failed"
+      },
+      "metal_link": {
+        "exit_code": null,
+        "status": "not_run"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "metal_compile",
+      "metal_link",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "toolchain_latest": {
+    "xcode_version": "26.6",
+    "product_build": "17F113",
+    "clang_version": "21.0.0",
+    "metal_version": "32023.883",
+    "environment_overrides": {
+      "TOOLCHAINS": "com.apple.dt.toolchain.Metal.32023.883"
+    },
+    "execution_context": "outside_workspace_sandbox",
+    "checks": {
+      "cxx20_compile": {
+        "argv": [
+          "/usr/bin/clang++",
+          "-arch",
+          "x86_64",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "tests/fixtures/pcsx2-build/toolchain.cpp",
+          "-o",
+          "build/f02-07-pcsx2-build/toolchain-v5/toolchain-x86_64"
+        ],
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cxx20_run": {
+        "argv": [
+          "build/f02-07-pcsx2-build/toolchain-v5/toolchain-x86_64"
+        ],
+        "exit_code": 0,
+        "log_sha256": "c9f9b60a53e43a0a8a4126949f5531cd6966b1768db1478e68bc50333aedab58"
+      },
+      "metal_compile": {
+        "argv": [
+          "/usr/bin/xcrun",
+          "metal",
+          "-std=macos-metal2.0",
+          "-target",
+          "air64-apple-macos10.13",
+          "-c",
+          "tests/fixtures/pcsx2-build/toolchain.metal",
+          "-o",
+          "build/f02-07-pcsx2-build/toolchain-v5/toolchain.air"
+        ],
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "metal_link": {
+        "argv": [
+          "/usr/bin/xcrun",
+          "metallib",
+          "build/f02-07-pcsx2-build/toolchain-v5/toolchain.air",
+          "-o",
+          "build/f02-07-pcsx2-build/toolchain-v5/toolchain.metallib"
+        ],
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "artifacts": [
+      {
+        "name": "toolchain.air",
+        "bytes": 3024,
+        "sha256": "bd80e73f2cd864858af7cd4210ec15355b1101aef79cab378a599ccb29283f5f"
+      },
+      {
+        "name": "toolchain.metallib",
+        "bytes": 2898,
+        "sha256": "e9c9bee5982db1b546ef9406f412036cad24b3794695aca29dd8a0c08a3e9338"
+      },
+      {
+        "name": "toolchain-x86_64",
+        "bytes": 9408,
+        "sha256": "e24abcbae874d52882ad17bfc419c7409f2cfe62000a0f7736ec2e6bfd89fde5"
+      }
+    ],
+    "gpu_execution_tested": false
+  },
+  "synthetic_binary_initial": {
+    "architecture": "x86_64",
+    "sha256": "83e08ed3cf9fc4f048cbb13cd872943aa9e9ddb6020845a5a8bde8c5b2727592",
+    "bytes": 9464,
+    "execution_exit_code": 0,
+    "original_assets_used": false
+  },
+  "toolchain_primary_documentation": {
+    "installation": "https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components",
+    "compatibility": "https://developer.apple.com/xcode/system-requirements",
+    "toolchain_selection": "installed Xcode 26.6 xcrun(1) manual, TOOLCHAINS environment variable",
+    "xcrun_manual_sha256": "9237a9b41d4baaaa40ae24e728c00818634e0dde7c108608a86933867396c1e1"
+  }
+}

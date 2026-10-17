@@ -145,3 +145,79 @@ Actualización F02.07/camera-pointer-origin-eu (2026-10-17): se revalidaron los 
 Actualización F02.07/camera-caller-boundary-eu (2026-10-17): referencias MIPS fijadas revalidadas localmente para el análisis propio de transferencias y slots, sin nueva dependencia, adopción ni ejecución externa. Se mantienen las declaraciones GPLv3 o posterior y la ausencia de afirmación clean room. [Procedencia](camera-boundary-research-evidence.json), [alcance](../execution/f02-07-camera-boundary.md).
 
 Actualización F02.07/camera-runtime-observation-plan-eu (2026-10-17): PCSX2 oficial **v2.8.2 macOS**, instalado por petición del usuario como herramienta host externa. Descarga contrastada con digest de release y firma/notarización verificadas; CLI y perfil privado comprobados, BIOS/juego/depurador en ejecución pendientes. Se consultaron fuentes fijadas de configuración con cabecera GPL-3.0+ y el texto COPYING.GPLv3, sin incorporar ese código al port. [Procedencia exacta](camera-observation-research-evidence.json), [resultado](../execution/f02-07-camera-observation.md). No se distribuye PCSX2; revisión de avisos/componentes del bundle necesaria si se propusiera empaquetarlo (LIC08). No se afirma clean room ni licencia sobre BIOS/originales.
+
+Actualización F02.07/effective-mapping (2026-10-17): [SRC30](effective-mapping-evidence.json)
+fija PCSX2 `fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3`, ocho fuentes/recetas y
+`COPYING.GPLv3`. Las cabeceras de `vtlb.h` y `MemoryTypes.h` declaran GPL-3.0+.
+Se consultaron los hechos de ABI y la configuración de compilación; el validador
+es propio, sin copiar funciones del emulador ni añadir una dependencia al port.
+No se afirma clean room. La receta de dependencias no se ejecutó. El futuro
+build instrumentado será una herramienta host separada con fuentes, cambios y
+avisos conservados; la revisión de dependencias/redistribución sigue en LIC08.
+
+Actualización F02.07/instrumented-build (2026-10-17): [SRC31](pcsx2-build-evidence.json)
+conserva checkout limpio del mismo commit oficial, su `COPYING.GPLv3` y un plan
+de 25 descargas con hashes esperados de la receta. Se ejecutó CMake del checkout
+primero hasta el fallo en PNG y después hasta JPEG. Se compiló e instaló un
+piloto privado de libpng 1.6.58 con el parche APNG fijado: ambos archivos se
+verificaron por hash, las 37 pruebas CTest pasaron y se conservó `LICENSE`
+(PNG Reference Library License version 2) junto a las fuentes modificadas.
+La receta completa no se ejecutó ni se generó un build de PCSX2. Los fixtures
+C++20/Metal son propios. La revisión de términos individuales y de cualquier
+bundle permanece en LIC08; no se redistribuye esta dependencia host.
+
+Actualización de dependencias host (2026-10-17): [SRC32](pcsx2-dependencies-evidence.json)
+registra fuentes y hashes de los avisos de este lote, conservados junto al build
+privado. Las bibliotecas se usan en el emulador de investigación; no se añaden
+al runtime 3DS ni se publica un bundle.
+
+| Componente fijado | Avisos revisados | Alcance de este lote |
+|---|---|---|
+| NASM 3.02 | `LICENSE`, BSD-2-Clause | Herramienta host ARM64; produce objetos propios x86_64 |
+| libjpeg-turbo 3.2.0 | `LICENSE.md` y `README.ijg`: IJG, BSD modificada y avisos subordinados descritos por el proveedor | JPEG/TurboJPEG x86_64, fuentes y avisos conservados; no se reduce el conjunto a una sola licencia |
+| Zstd 1.5.7 | `LICENSE`, BSD de tres cláusulas | Biblioteca host; pruebas seleccionadas del proveedor conservadas |
+| LZ4 1.10.0 | `LICENSE`, `lib/LICENSE` y `tests/COPYING` | Biblioteca BSD-2-Clause; programas de prueba GPL-2.0-or-later según avisos. La licencia de la biblioteca no se atribuye a todo el repositorio |
+| WebP 1.6.0 | `COPYING` (BSD de tres cláusulas) y `PATENTS` | Bibliotecas host, con el aviso adicional de patentes conservado |
+
+Los fixtures de esta etapa son propios. Los términos de las dependencias
+subordinadas y de un eventual paquete completo siguen dentro del alcance de
+LIC08; esta verificación local no constituye una revisión de redistribución.
+
+Actualización SDL3 host (2026-10-17): [SRC33](pcsx2-sdl3-evidence.json) fija
+SDL 3.4.12 y verifica su archivo oficial, `LICENSE.txt` (aviso de estilo zlib)
+y los 2.183 archivos regulares de fuente sin cambios. Se conservan origen,
+avisos subordinados y configuración; la biblioteca compartida y el auxiliar de
+tests se instalan únicamente en el prefijo privado. Los cuatro casos C++ y su
+proyecto CMake son propios y usan API públicas; no incorporan SDL al runtime
+3DS. No se redistribuye el bundle; LIC08 conserva la revisión de dependencias
+internas y avisos para ese eventual artefacto.
+
+Actualización FreeType/HarfBuzz host (2026-10-17):
+[SRC34](pcsx2-fonts-evidence.json) conserva fuentes, avisos y hashes exactos.
+
+| Componente fijado | Avisos revisados | Uso |
+|---|---|---|
+| FreeType 2.14.3 | `LICENSE.TXT`, `docs/FTL.TXT`, `docs/GPLv2.TXT`; avisos BDF/PCF/gzip conservados | Biblioteca host; ofrece FTL o GPLv2-or-later. No se reduce el conjunto de avisos a una licencia global |
+| HarfBuzz 14.2.0 | `COPYING`, Old MIT; `test/COPYING` y avisos subordinados conservados | Cuatro bibliotecas host; las fuentes tipográficas externas del proveedor no se usan en los fixtures propios |
+| FontTools 4.60.1 | Wheel PyPI fijado por SHA-256; `LICENSE` MIT y `LICENSE.external` conservados | Generador host aislado en `build/`, sin instalación global ni enlace al objetivo |
+
+El generador y los casos de API son propios; la fuente de rectángulos también
+es original y usa la licencia Apache-2.0 del repositorio. No contiene contornos
+ni textos de fuentes ajenas o del juego. No se incorporan dependencias al
+runtime 3DS ni se publica un bundle; LIC08 conserva su revisión de una eventual
+redistribución y sus avisos/créditos concretos.
+
+Actualización PlutoVG/PlutoSVG host (2026-10-17):
+[SRC35](pcsx2-pluto-evidence.json) fija y verifica PlutoVG 1.3.2 y PlutoSVG 0.0.7.
+Ambos conservan su `LICENSE` MIT, fuentes y avisos completos. PlutoVG incluye
+siete archivos `plutovg-ft-*` derivados de FreeType que citan FTL, y tres
+headers `plutovg-stb-*` con alternativas MIT/dominio público; el aviso raíz
+no sustituye los de esos archivos. Se registran sus hashes y la FTL íntegra
+conservada en SRC34. No se modificaron fuentes ni se redistribuye el bundle;
+LIC08 conserva la revisión de términos, créditos y fuentes de la entrega.
+
+Los SVG, generador y fixtures son propios bajo Apache-2.0 del repositorio.
+Se reutiliza FontTools 4.60.1 de SRC34 únicamente en host para añadir una tabla
+SVG a la fuente geométrica propia. El fixture usa los hooks de la biblioteca
+PlutoSVG instalada y API públicas, sin copiar el adaptador header-only al
+repositorio ni incorporar dependencias al runtime 3DS.

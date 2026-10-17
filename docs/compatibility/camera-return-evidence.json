@@ -1,0 +1,199 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-resource-link-eu/origin/runtime-writer/repeat-return",
+  "stage": "pair-repeated-and-return-captured-mapping-loader-pending",
+  "result_sha256": "3d5bd69b282de39eb17b633e9558f111ebf731cdee7b5b532925b99cecf96914",
+  "result_bytes": 9478,
+  "repeat_identical": true,
+  "repetition_scope": "two analyses of the new capture and comparison with a distinct prior emulator session",
+  "input_hashes": {
+    "capture_sha256": "593b73a75f5a4d33f1ed688b91a9d9836c1346d891d76962b6852aa5718b6f3d",
+    "origin_sha256": "0a08d220a0913719deecab4bcc12ebda038f73c7dc0aa5a427f940180c9cea95",
+    "plan_sha256": "396c05cf8d5e2c339d7498537134128bdf1602ea33d4870a52f608d7acaea45a",
+    "previous_capture_sha256": "1f5f7593c9579c0c93f15c9f6b5adb47f46e06c7d790448669f06fb1f4a2e86d",
+    "previous_report_sha256": "e526f58772c790d471293c288a1b311559cc4a23941c1ff102dca355c443ed20",
+    "restore_state_sha256": "79afa3921db8c376548a434cfa96299e13357a12a0322fbc69ba226fc6b5b769"
+  },
+  "session_id": "3890d08bb2814358988090f3f32effcb",
+  "previous_session_id": "71797d5333e44b15861b1eb22fa0bbe6",
+  "previous_reproduced": true,
+  "resource": {
+    "id": "asset:f8328806a743597779f6bfa4b32167d33d52456a8da0d71b7f9edf38cf41e58b",
+    "sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "size": 1536
+  },
+  "state_count": 4,
+  "pair_count": 1,
+  "pair_comparisons": [
+    {
+      "current_before_sequence": 2,
+      "differing_fields": [],
+      "equal": true,
+      "previous_before_sequence": 6
+    }
+  ],
+  "repetition_equal": true,
+  "return": {
+    "against_entry": {
+      "difference_ranges": [
+        {
+          "end": 88,
+          "start": 85
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 216,
+          "start": 213
+        },
+        {
+          "end": 228,
+          "start": 226
+        },
+        {
+          "end": 344,
+          "start": 341
+        },
+        {
+          "end": 356,
+          "start": 354
+        },
+        {
+          "end": 472,
+          "start": 469
+        },
+        {
+          "end": 484,
+          "start": 482
+        },
+        {
+          "end": 600,
+          "start": 597
+        },
+        {
+          "end": 612,
+          "start": 610
+        },
+        {
+          "end": 728,
+          "start": 725
+        },
+        {
+          "end": 740,
+          "start": 738
+        },
+        {
+          "end": 856,
+          "start": 853
+        },
+        {
+          "end": 868,
+          "start": 866
+        },
+        {
+          "end": 984,
+          "start": 981
+        },
+        {
+          "end": 996,
+          "start": 994
+        }
+      ],
+      "different_bytes": 40,
+      "equal": false,
+      "observed_sha256": "4826f98efad530eb84f1f04b4bed7879d6143b1c4fc2ef1044244317a6656d52",
+      "reference_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+      "size": 1536
+    },
+    "against_historical": {
+      "difference_ranges": [],
+      "different_bytes": 0,
+      "equal": true,
+      "observed_sha256": "4826f98efad530eb84f1f04b4bed7879d6143b1c4fc2ef1044244317a6656d52",
+      "reference_sha256": "4826f98efad530eb84f1f04b4bed7879d6143b1c4fc2ef1044244317a6656d52",
+      "size": 1536
+    },
+    "historical_event_sequence": 3,
+    "historical_state_sha256": "72acdb38cb937425d5639e2c62a4ef505a3b67f9974ea549700c2fb18455e632",
+    "pc_matches_entry_link_and_historical": true,
+    "sequence": 4
+  },
+  "return_equal_to_historical": true,
+  "mapping_verified": false,
+  "origin_status": "pending",
+  "closure": {
+    "baseline_unchanged": true,
+    "emulator_closed": true,
+    "ipc_disabled": true,
+    "return_captured": true,
+    "socket_removed": true,
+    "stop_reason": "return_observed"
+  },
+  "capture_helper_sha256": "8fff53ccc648224fb013cec45c0baba7ebc3f8e0d75ae2b73c9ac85635522b74",
+  "private_manifest_sha256": "2e815396bafeb849da92d166351513d5761d472b10975e0ff1f298b48ee2ee10",
+  "configuration_sha256": "f02161839593caa4634403291007b167e39db38e197879af73d23da6a648f74d",
+  "debugger_configuration_sha256": "081ab132749d12e3632a408804106a2dd0062358c393db918d4099b954e7acc2",
+  "execution_window": {
+    "start_utc": "2026-10-17 20:07:38",
+    "end_utc": "2026-10-17 20:08:36",
+    "elapsed_wall_seconds_at_clock_precision": 58,
+    "cpu_time_measured": false,
+    "watchpoint_hits_observed": 1
+  },
+  "sources_consulted": [
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/PINE.cpp",
+      "sha256": "b6d32cc43b857bb94fd2fdcde556bf8fba300dd1e3d008aad052ae54c1d0b2de",
+      "bytes": 20593,
+      "license": "GPL-3.0+",
+      "use": "read-only investigation of effective mapping observation; no code copied"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/vtlb.cpp",
+      "sha256": "633b63e1179a1503044643b5011ef5b9f5fcb6d15faf860924857bcc96b22ae9",
+      "bytes": 50146,
+      "license": "GPL-3.0+",
+      "use": "read-only investigation of effective mapping observation; no code copied"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "schemas/camera-return-v1.md",
+      "sha256": "a596cfcca4958e4b323d4f65f23a356ec1587edf62c0cb733d055ef7324dc08e"
+    },
+    {
+      "path": "tools/inspectors/camera_writer.py",
+      "sha256": "8061708f38a0aa61dc25653853adcb063dd19b9db2b482a9df150c8862f416cb"
+    },
+    {
+      "path": "tools/inspectors/return_compare.py",
+      "sha256": "f43631d750496210ff78c30595a6910c8765cc8707a6635d69c105a1624e8572"
+    },
+    {
+      "path": "tools/inspectors/camera_return.py",
+      "sha256": "5140691d4ba495e212c9f9e16943a1b9e9f71025bdfa2796ae7fa5fa70ea42ef"
+    },
+    {
+      "path": "tests/python/test_camera_return.py",
+      "sha256": "cc9628c8bdd22819367ccc9ad560ede2d290abf3152421e77f6dd9ae50d6a7df"
+    }
+  ],
+  "validation": {
+    "python_tests_passed": 1758,
+    "new_tests": 38,
+    "line_coverage_percent": 98.7448,
+    "branch_coverage_percent": 97.2556,
+    "gate": "passed",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "repository_check": "passed",
+    "remote_ci_executed": false,
+    "3ds_build_executed": false
+  },
+  "next_task": "F02.07/camera-resource-link-eu/origin/effective-mapping",
+  "resource_links": [],
+  "capabilities": [],
+  "f02_07_status": "pending"
+}
