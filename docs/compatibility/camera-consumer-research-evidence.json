@@ -1,0 +1,45 @@
+{
+  "additional_context": [
+    {
+      "url": "https://gabi.xinuos.com/elf/02-eheader.html",
+      "use": "ELF32 header field definitions; version 4.3 DRAFT observed on review date"
+    },
+    {
+      "url": "https://gabi.xinuos.com/elf/07-pheader.html",
+      "use": "PT_LOAD mapping, sizes, alignment and flags; version 4.3 DRAFT observed on review date"
+    }
+  ],
+  "date": "2026-10-17",
+  "decision": "Own bounded static pattern inspection using Python standard library. No third-party implementation adopted or executed; no clean-room claim. Camera resource linkage remains unproven.",
+  "files": [
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "82390a1c51fe05d7ceeb231d3e3535e13fa4e05269e447c7523716c5e86c15c0",
+      "size": 252839,
+      "url": "https://raw.githubusercontent.com/MIPS/binutils-gdb/9decc44bc67d9fb4248c2afe4fde77174e8abf80/opcodes/mips-opc.c",
+      "use": "Instruction encoding consultation only; declarations GPL-3.0-or-later in file header"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "de49227ae06241624dbb519cc83d529580a4def0bc8df09d7ef640a6454f2241",
+      "size": 89709,
+      "url": "https://raw.githubusercontent.com/MIPS/binutils-gdb/9decc44bc67d9fb4248c2afe4fde77174e8abf80/opcodes/mips-dis.c",
+      "use": "PC-relative target calculation consultation only; declarations GPL-3.0-or-later in file header"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c",
+      "size": 18002,
+      "url": "https://raw.githubusercontent.com/MIPS/binutils-gdb/9decc44bc67d9fb4248c2afe4fde77174e8abf80/COPYING",
+      "use": "Root COPYING is GPLv2; does not override GPLv3-or-later declarations of consulted source files"
+    }
+  ],
+  "method": "mips-road128-loop-candidate-v1",
+  "private_data_sent": false,
+  "schema_version": 1,
+  "source_code_in_checkout": false,
+  "task": "F02.07/camera-consumer-eu"
+}

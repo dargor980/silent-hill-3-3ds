@@ -1,0 +1,38 @@
+"""Check line and branch coverage independently from coverage.py JSON output."""
+
+import argparse
+import json
+from pathlib import Path
+
+
+def check_totals(totals: dict, minimum: float = 80.0) -> list[str]:
+    errors = []
+    for label, hit, total in (
+        ("line", "covered_lines", "num_statements"),
+        ("branch", "covered_branches", "num_branches"),
+    ):
+        measured = totals[hit]
+        available = totals[total]
+        if not 0 <= measured <= available or available <= 0:
+            errors.append(f"Invalid or empty {label} coverage denominator")
+        elif 100.0 * measured / available < minimum:
+            errors.append(f"{label} coverage {100.0 * measured / available:.2f}% < {minimum}%")
+    return errors
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("report", type=Path)
+    args = parser.parse_args(argv)
+    try:
+        errors = check_totals(json.loads(args.report.read_text())["totals"])
+    except (OSError, ValueError, KeyError, TypeError):
+        errors = ["Missing or invalid coverage report"]
+    for error in errors:
+        print(error)
+    print(f"Line/branch coverage gate: {'FAIL' if errors else 'PASS'}")
+    return bool(errors)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

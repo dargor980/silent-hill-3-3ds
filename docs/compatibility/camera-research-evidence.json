@@ -1,0 +1,101 @@
+{
+  "additional_context": [
+    {
+      "url": "https://github.com/Palm-Studios/sh3redux/issues/131",
+      "use": "Primary author discussion; CAM values unresolved, comments discuss SH2; no normative SH3 layout inferred"
+    },
+    {
+      "url": "https://github.com/Murugo/Misc-Game-Research/tree/c088e878544f25d45ea7cf4215613fb5f9638dd4/PS2/Silent%20Hill%202%2B3",
+      "use": "Public tree inspected; no camera file parser located in this inspected subtree"
+    },
+    {
+      "url": "https://github.com/316austin316/Silent-Hill-3-Modding/tree/0c7b2d88f768283ea79397420e6d8fe76ebb8d48",
+      "use": "Public tree inspected; no camera parser located; API reports no license; not adopted"
+    },
+    {
+      "url": "https://github.com/kidneyclark/sh3-modlib/tree/0611bc88556676bf80dda4cc789aae7bb5773288",
+      "use": "Public tree inspected; no camera file parser located; not adopted"
+    }
+  ],
+  "date": "2026-10-17",
+  "decision": "Numeric hypothesis probe only; independent implementation with attributed format research. Not clean-room claimed; SH3 field semantics and consumer remain unresolved.",
+  "files": [
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "e22c5314da19ebc87e94d413c4a004cbacb82ce15c565b09445e7c61eb29eddf",
+      "size": 15598,
+      "url": "https://github.com/dreamingmoths/memory-of-alessa/blob/89c61883dd2ad5390223ba37d9bbacc62783d371/silent-hill-2/src/view/vc_main.h",
+      "use": "SH2 reference struct offsets and enums; not a demonstrated SH3 contract"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "f76bc68b8cb0d0d51ee86e351cb42589942c71604a048b4deb19bd73434e334a",
+      "size": 96317,
+      "url": "https://github.com/dreamingmoths/memory-of-alessa/blob/89c61883dd2ad5390223ba37d9bbacc62783d371/silent-hill-2/src/view/vc_main.c",
+      "use": "SH2 consumer stops at first end-flag; does not explain SH3 opaque tail"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "f1b448aff8436be1529dd0c4dd48a311434bc0f97cbd81d172e1aecd13b05eaa",
+      "size": 1182,
+      "url": "https://github.com/dreamingmoths/memory-of-alessa/blob/89c61883dd2ad5390223ba37d9bbacc62783d371/silent-hill-2/src/view/camera_dat.h",
+      "use": "Different runtime camera structure; not used as file layout"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "0ec34c9bde8b331bfaa59af821c5fcb0904c0493112e1f67e111b40161e31556",
+      "size": 1072,
+      "url": "https://github.com/dreamingmoths/memory-of-alessa/blob/89c61883dd2ad5390223ba37d9bbacc62783d371/LICENSE",
+      "use": "Repository declares MIT; no code adopted"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "590a0bde06f1e0fe23a2e4223d0d9eefdf6b563caa0b5c10410a81e9495e562c",
+      "size": 3300,
+      "url": "https://github.com/dreamingmoths/memory-of-alessa/blob/89c61883dd2ad5390223ba37d9bbacc62783d371/README.md",
+      "use": "Project targets US SH3 and SH2; no automatic equivalence with PAL edition"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "8dbc4dbe427422d13d5a5bba032be2349eaad6adbf7e32684f4fd30a59afddc2",
+      "size": 7531,
+      "url": "https://github.com/Palm-Studios/sh3redux/blob/50d10aef1b9afbfbf2ae5946a511a2c5e0a2f106/include/SH3/camera/camera.hpp",
+      "use": "Comment leaves cam input interpretation unresolved; not a file parser"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "2d3de490e2f36e326e0af6feab867a3a49f6a3ea81436723e747071dd9371a5a",
+      "size": 3335,
+      "url": "https://github.com/Palm-Studios/sh3redux/blob/50d10aef1b9afbfbf2ae5946a511a2c5e0a2f106/source/SH3/camera/camera.cpp",
+      "use": "Runtime camera class, not CAM decoder"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+      "size": 35141,
+      "url": "https://github.com/Palm-Studios/sh3redux/blob/50d10aef1b9afbfbf2ae5946a511a2c5e0a2f106/LICENSE",
+      "use": "GPL-3.0 repository license; no code adopted"
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "20d3d26fbe5c6072fa6ee1ffadef28205e263628808394ed3bbf04d7b449a473",
+      "size": 1678,
+      "url": "https://github.com/Sparagas/Silent-Hill/blob/f08ec73e32c0b0d5ddbb58f96eef51f0b8ee5b35/docs/GitHub%20list.md",
+      "use": "Navigation to primary repositories only"
+    }
+  ],
+  "method": "sh2-road128-reference-v1",
+  "private_data_sent": false,
+  "schema_version": 1,
+  "source_code_in_checkout": false,
+  "task": "F02.07/formato-camera"
+}

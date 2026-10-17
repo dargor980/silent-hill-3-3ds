@@ -1,0 +1,79 @@
+# Silent Hill 3 PS2 → Nintendo 3DS
+
+Proyecto de adaptación nativa con origen PS2 y destino confirmado **New Nintendo 2DS XL**. Estado: F00 completada y G00 aprobada para identificación, alcance y custodia; F01/diagnóstico sintético en curso. Todavía no hay juego portado. La ISO europea del usuario permanece como entrada local ignorada en `binaries`.
+
+- [Especificaciones EARS y backlog](docs/SPEC.md).
+- [Alcance M0-M5: primera alpha en español y Normal/Normal](docs/scope.md).
+- [Normas SOLID, testing y CI](docs/engineering.md).
+- [Cierre de F00 e incógnitas](docs/execution/f00-07-decisions.md).
+- [F01.01: ejemplo oficial reproducible, C++17 y pruebas del SDK](docs/execution/f01-01-toolchain.md).
+- [F01.02: diagnóstico compilado, contratos y prueba física pendiente](docs/execution/f01-02-diagnostic.md).
+- [F01.03: archivos, opciones y errores de I/O](docs/execution/f01-03-files.md).
+- [F01.04: tono, errores NDSP y contadores](docs/execution/f01-04-audio.md).
+- [F01.05: símbolos, integridad y breakpoints en Azahar](docs/execution/f01-05-debugging.md).
+- [F01.06: recursos, ventana acotada y protocolo de métricas](docs/execution/f01-06-resources.md).
+- [F01.07: suspensión, reanudación y controles reservados](docs/execution/f01-07-lifecycle.md).
+- [F01.08: builds, gates y protocolo de treinta minutos](docs/execution/f01-08-builds.md).
+- [F02.01: inventario verificado de 113 archivos ISO](docs/execution/f02-01-inventory.md).
+- [Avance y evidencia de la primera ejecución](docs/execution/foundation.md).
+- [Política de datos privados](docs/private-data.md).
+- [Inventario de fuentes y perfil canónico](docs/compatibility/sources.md).
+- [Licencias, procedencia y pendientes de adopción](docs/compatibility/licenses.md).
+- [Edición europea identificada e inspección ISO](docs/compatibility/edition-comparison.md).
+
+## Build y pruebas host
+
+Requiere CMake ≥3.21, compilador C++17 y Python ≥3.11. En un entorno Python aislado:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install --require-hashes -r requirements-dev.lock
+.venv/bin/python -m ruff check tools tests/python
+.venv/bin/python -m ruff format --check tools tests/python
+.venv/bin/python -m tools.qa.check_repository
+.venv/bin/python -m pytest --cov=tools --cov-report=json:build/python-coverage.json --cov-report=term-missing
+.venv/bin/python -m tools.qa.coverage_gate build/python-coverage.json
+cmake --preset host-debug
+cmake --build --preset host-debug --parallel 2
+ctest --preset host-debug
+```
+
+Todos los presets fallan si no encuentran pruebas y limitan cada caso a 120 segundos, salvo límites específicos menores. Las pruebas Python de automatización requieren CMake/CTest en PATH. Presets adicionales: `host-release`, `host-sanitize` (ASan/UBSan) y `host-coverage` (GCC). Ejecutar `ctest` también en Release: los checks no desaparecen con `NDEBUG`. CTest incluye 47 casos: ocho suites de núcleo/archivos/métricas/smoke, treinta y tres contratos de composición 3DS, cinco del adaptador de audio y uno de recursos. Compila composición y `tone.cpp` reales en targets host separados con dobles del SDK; esos casos no acreditan hardware ni escucha. La cobertura C++ se obtiene con `.venv/bin/python -m gcovr --config gcovr.cfg` tras construir y probar `host-coverage`.
+
+Para identificar el fixture propio, sin ejecutar extracción:
+
+```sh
+.venv/bin/python -m tools.pipeline.verify \
+  --profile tests/fixtures/synthetic/game-profile.json \
+  --data-root tests/fixtures/synthetic
+```
+
+## Inspección local de la ISO
+
+El [procedimiento de inspección](docs/execution/europe-iso.md) genera un manifiesto con tamaños y SHA-256 de todos los archivos sin exportarlos. La copia disponible es `SLES-51434`, PAL; `VER=1.02` es el valor de arranque observado. La imagen completa coincide con Redump 1064: versión 1.02 y lista de idiomas en/fr/de/es/it. [F00.02 completada](docs/execution/f00-02-edition-identification.md). El usuario seleccionó español y Normal/Normal para la primera alpha; [F00.04 completada](docs/execution/f00-04-scope.md). Las pruebas de ejecución siguen pendientes.
+
+## Build 3DS aislado
+
+El [chequeo F01.01](docs/execution/f01-01-toolchain.md) construye el ejemplo oficial en dos directorios limpios y verifica C++17 antes del build de CI. Incluye instrucciones para repetirlo montando solo scripts y fixtures propios. F01.02 ya tiene validación local y build identificados; su [prueba física](docs/compatibility/diagnostic-startup.md) sigue pendiente. F01.03 ya incorpora lectura, opciones persistentes y errores de I/O con pruebas locales; F01.04 añade validación de NDSP, PCM, contadores y liberación. F01.05 ya alcanzó breakpoints en Azahar y rechaza símbolos mezclados; conserva pendiente la consola y una anomalía gráfica tras reconectar GDB. F01.06 añade consultas de recursos, SELECT para métricas y protocolo inicial; B_app y entorno físicos siguen pendientes. F01.07 evita entrada durante suspensión, conserva pausa/mute y exige liberar botones al volver. F01.08 verifica el conjunto completo de artefactos, rechaza presets sin tests y conserva reportes/logs. El ensayo físico de treinta minutos y G01 siguen pendientes; F02.01 completó el catálogo ISO con dos informes idénticos y desconocidos explícitos. F02.02 evaluó el candidato MFA y añadió un sondeo propio: dos informes idénticos, B0/MV0 estructuralmente válidos y 60 desconocidos; [evidencia](docs/execution/f02-02-mfa-candidate.md). F02.03 añadió B8 y diagnóstico de nombres: [61 contenedores/1740 entradas estructurales](docs/execution/f02-03-container-variants.md), 493 pruebas; XBG0 conserva codificación pendiente. F02.04 completó [dos catálogos idénticos](docs/execution/f02-04-asset-catalog.md) con IDs, offsets y SHA-256 para 1740 recursos, y 582 pruebas Python aprobadas. Tipos y dependencias semánticas siguen sin inspeccionar. [F02.05](docs/execution/f02-05-repeatable-extraction.md) extrajo dos copias privadas de esos 1740 recursos, verificadas contra el catálogo; 686 pruebas Python aprobadas. [F02.06](docs/execution/f02-06-extraction-hardening.md) añadió 142 casos adversos y corrigió propiedad/cierre de descriptores y estado posterior a confirmación: 828 pruebas aprobadas. [F02.07](docs/execution/f02-07-slice-corpus.md) completó el inventario inicial: 1740 candidatos releídos en ambas copias, dos informes idénticos y 919 pruebas aprobadas. [El sondeo de cámara](docs/execution/f02-07-camera-probe.md) examinó esos 285 candidatos y registró discrepancias con SH2 en 154 archivos; dos informes idénticos y 985 pruebas aprobadas. [La búsqueda estática del ejecutable europeo](docs/execution/f02-07-camera-consumer.md) encontró dos sitios candidatos, con dos informes idénticos y 1101 pruebas aprobadas. [El seguimiento del puntero](docs/execution/f02-07-camera-pointer.md) alcanzó una referencia externa y dos fronteras de llamada, sin vínculo de recurso probado; dos informes idénticos y 1240 pruebas aprobadas. [El análisis de fronteras](docs/execution/f02-07-camera-boundary.md) distingue el argumento de A después del slot y mantiene sin demostrar los efectos de las dos llamadas de B; dos informes idénticos y 1307 pruebas aprobadas. [El plan y validador de observación](docs/execution/f02-07-camera-observation.md) añaden 128 casos propios (1435 pruebas aprobadas) y dos planes idénticos de tres fronteras/25 puntos. [PCSX2 y BIOS europea configurados](docs/execution/f02-07-ps2-boot.md), con carga del ejecutable europeo comprobada por logs. [Primera tentativa en ejecución](docs/execution/f02-07-camera-runtime-attempt.md): nueve breakpoints cargados, seis rangos de memoria coincidentes y aviso de tarjeta verificado visualmente; dos recibos sin observaciones y 128 pruebas del validador aprobadas. [Captura posterior completada](docs/execution/f02-07-camera-runtime-capture.md): nueve eventos en tres invocaciones, seis rangos coincidentes y dos recibos idénticos `validated_observations`; lector privado de estados con contrato EARS, 82 casos nuevos y 1.517 pruebas Python aprobadas. Sigue `F02.07/camera-resource-link-eu`; el vínculo con un recurso, su tipo y las salas siguen pendientes. XBG0, AFS, semántica/corpus y G02 siguen pendientes.
+
+Docker debe estar iniciado. La imagen está fijada por digest; no hace falta instalar devkitARM globalmente:
+
+```sh
+image=$(cat toolchains/devkitpro-image.txt)
+docker pull "$image"
+docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
+  --mount "type=bind,src=$PWD,dst=/work" -w /work \
+  "$image" bash scripts/build_3ds.sh
+```
+
+Salida: `build/3ds/sh3_diagnostic.3dsx`, ELF con símbolos, SMDH, `probe.txt`, `build-id.txt`, `debug-bundle.json`, checksums, inventario de paquetes y `artifact-check.json`. El recibo exige los ocho archivos regulares/no vacíos, fixture/ID/checksums coherentes y cabeceras básicas; no acredita ejecución. El manifiesto vincula ELF/3DSX por SHA-256; se rechaza reutilizar una carpeta que ya contiene evidencia registrada. Conservar el build anterior y usar una copia limpia para el siguiente. En una instalación devkitPro nativa verificada se puede ejecutar directamente `bash scripts/build_3ds.sh`.
+
+El diagnóstico usa figuras sintéticas y un tono PCM propio. `A` pausa/reanuda; `START` sale; `SELECT` alterna audio/archivos y recursos. `X` cambia y guarda el tono; `Y` restaura y guarda su valor predeterminado. Se muestran build ID, estado/etapa/Result de audio, contadores SDK y estados Probe/Load/Save. Después de suspensión o combinaciones bloqueadas, soltar todos los botones antes de una nueva acción; el aviso indica cuándo hacerlo. La escucha permanece NOT_VERIFIED hasta registrarla en la prueba física. No contiene assets del juego. Su compilación no demuestra ejecución, audio o estabilidad en consola.
+
+Para la prueba manual actual, copiar el `.3dsx` y `probe.txt` a `/3ds/sh3_diagnostic/` de la SD y abrirlo con Homebrew Launcher. El build actual está identificado en el [informe F01.08](docs/execution/f01-08-builds.md); seguir el [ensayo de treinta minutos](docs/compatibility/diagnostic-soak.md), la [guía de ciclo de vida](docs/compatibility/lifecycle-probe.md), la [guía de recursos](docs/compatibility/resource-probe.md) y la [guía de depuración](docs/compatibility/debugging.md). La [guía de audio](docs/compatibility/audio-probe.md) conserva la identidad de F01.04: registrar el ID/hash nuevo al repetirla. La [guía de archivos/opciones](docs/compatibility/file-probe.md) conserva su build histórico; si se repite con el actual, registrar su nueva identidad. El programa escribe solo `options-a.dat` y `options-b.dat` en esa carpeta. La prueba de arranque de F01.02 sigue pendiente. FBI corresponde a una futura ruta CIA independiente; esta iteración no produce CIA.
+
+## CI y mantenimiento
+
+[GitHub Actions](.github/workflows/ci.yml) configura calidad Python, arquitectura y trazabilidad, tests host Linux/macOS, sanitizadores, cobertura y compilación 3DS. Selecciona artefactos de desarrollo sintéticos y reportes; no crea releases. La ejecución remota está pendiente. Antes de compartir los binarios debe completarse su revisión de avisos y fuentes [LIC07](docs/compatibility/licenses.md), también cuando procedan de CI.
+
+Conservar dependencias fijadas y un test por regresión. Cada cambio de herramientas, esquema, contrato o receta requiere repetir las pruebas afectadas. La CI no necesita originales. La ISO local de `binaries` y los informes de `reports/local` están excluidos de Git; las extracciones siguen en un directorio externo.

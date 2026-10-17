@@ -1,0 +1,23 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {"major": 3, "minor": 21, "patch": 0},
+  "configurePresets": [
+    {"name": "host-debug", "generator": "Unix Makefiles", "binaryDir": "${sourceDir}/build/host-debug", "cacheVariables": {"CMAKE_BUILD_TYPE": "Debug", "BUILD_TESTING": "ON"}},
+    {"name": "host-release", "inherits": "host-debug", "binaryDir": "${sourceDir}/build/host-release", "cacheVariables": {"CMAKE_BUILD_TYPE": "Release"}},
+    {"name": "host-sanitize", "inherits": "host-debug", "binaryDir": "${sourceDir}/build/host-sanitize", "cacheVariables": {"SH3_SANITIZERS": "ON"}},
+    {"name": "host-coverage", "inherits": "host-debug", "binaryDir": "${sourceDir}/build/host-coverage", "cacheVariables": {"SH3_COVERAGE": "ON"}}
+  ],
+  "buildPresets": [
+    {"name": "host-debug", "configurePreset": "host-debug"},
+    {"name": "host-release", "configurePreset": "host-release"},
+    {"name": "host-sanitize", "configurePreset": "host-sanitize"},
+    {"name": "host-coverage", "configurePreset": "host-coverage"}
+  ],
+  "testPresets": [
+    {"name": "host-debug", "configurePreset": "host-debug", "output": {"outputOnFailure": true}, "execution": {"noTestsAction": "error", "timeout": 120}},
+    {"name": "host-release", "configurePreset": "host-release", "output": {"outputOnFailure": true}, "execution": {"noTestsAction": "error", "timeout": 120}},
+    {"name": "host-sanitize", "configurePreset": "host-sanitize", "output": {"outputOnFailure": true}, "execution": {"noTestsAction": "error", "timeout": 120}},
+    {"name": "host-coverage", "configurePreset": "host-coverage", "output": {"outputOnFailure": true}, "execution": {"noTestsAction": "error", "timeout": 120}}
+  ]
+}
+

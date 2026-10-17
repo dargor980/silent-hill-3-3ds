@@ -1,0 +1,4 @@
+# ISO inspection only; upstream PyPI release hashes, version 1.22.0.
+pycdlib==1.22.0 \
+    --hash=sha256:00456c146e2834eac96ddf738b6b2cbe81564d9efe2022ae6a155fc6649870c6 \
+    --hash=sha256:bfa0b3631345a14b2741fe088398b6b8dc2838442ea607fd07d027dcc67b9e94

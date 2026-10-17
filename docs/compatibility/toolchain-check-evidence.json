@@ -1,0 +1,150 @@
+{
+  "task": "F01.01",
+  "date": "2026-10-16",
+  "scope": "Local Linux ARM64 compilation; no hardware or remote CI execution",
+  "expected_image": "devkitpro/devkitarm@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5",
+  "observed_image": {
+    "image_id": "sha256:23e9c452eafb9bd85c7a5fbf1f6ebb05f22f086f5f14cc73fcc6dbcd5a32a71c",
+    "architecture": "arm64",
+    "os": "linux",
+    "repo_digests": [
+      "devkitpro/devkitarm@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5"
+    ]
+  },
+  "packages": {
+    "devkitARM": "r68-1",
+    "devkitarm-gcc": "16.1.0-1",
+    "devkitarm-binutils": "2.46.0-1",
+    "devkitarm-newlib": "4.6.0.20260123-5",
+    "devkitarm-crtls": "1.2.6-1",
+    "devkitarm-rules": "1.6.0-4",
+    "3ds-examples": "20240917-1",
+    "3dstools": "1.3.1-3",
+    "libctru": "2.7.0-1",
+    "citro2d": "1.7.0-1",
+    "citro3d": "1.7.1-2",
+    "picasso": "2.7.2-3",
+    "general-tools": "1.4.4-1",
+    "3ds-cmake": "1.5.2-1",
+    "devkitarm-cmake": "1.2.4-1",
+    "dkp-cmake-common-utils": "1.5.3-1",
+    "dkp-toolchain-vars": "1.0.5-1"
+  },
+  "official_example": {
+    "origin": "https://github.com/devkitPro/3ds-examples",
+    "installed_path": "examples/3ds/graphics/gpu/simple_tri",
+    "package": "20240917-1",
+    "sources": [
+      {
+        "path": "Makefile",
+        "sha256": "c9caa71880612e5d2106a9a4f6c2718c10c83da63bedf2244a595f117dd292d6"
+      },
+      {
+        "path": "source/main.c",
+        "sha256": "41ef6b41e4c237a209c453873966a0f1adcc3b837dbf43555fddea06743d65b6"
+      },
+      {
+        "path": "source/vshader.v.pica",
+        "sha256": "99a3976be8ea6b77663cdff238b964662ab280f171af55892b2ecd981b00f858"
+      }
+    ],
+    "readme_sha256": "088647a0521d5a60db20732e39fb482951a9215142987b506d5ce9c36b5c56bd",
+    "readme_license_mark": "Public Domain Mark 1.0; not a release clearance",
+    "runs": [
+      {
+        "run": "run-1",
+        "files": [
+          {
+            "name": "simple_tri.3dsx",
+            "size": 81668,
+            "sha256": "c51a303bd5328637c08ed5cc89b6b57343c7f40b5cee2aa89988ee0317a10f27"
+          },
+          {
+            "name": "simple_tri.elf",
+            "size": 1051440,
+            "sha256": "9a572e579c84ab7e8ea03f5a00599e657c8fe1aff8145ffc7c6d27aaf2e95f99"
+          },
+          {
+            "name": "simple_tri.smdh",
+            "size": 14016,
+            "sha256": "d3611b1cc63bdbb16e9b205203f25e5107fd4049c05897ad9d6ed5549d55b555"
+          }
+        ]
+      },
+      {
+        "run": "run-2",
+        "files": [
+          {
+            "name": "simple_tri.3dsx",
+            "size": 81668,
+            "sha256": "c51a303bd5328637c08ed5cc89b6b57343c7f40b5cee2aa89988ee0317a10f27"
+          },
+          {
+            "name": "simple_tri.elf",
+            "size": 1051440,
+            "sha256": "c1008a7647465e517028f52c99bffaf7a9f88848ec9b1e19187bbde42a99ba9e"
+          },
+          {
+            "name": "simple_tri.smdh",
+            "size": 14016,
+            "sha256": "d3611b1cc63bdbb16e9b205203f25e5107fd4049c05897ad9d6ed5549d55b555"
+          }
+        ]
+      }
+    ],
+    "comparison": "3DSX/SMDH byte-identical across both clean directories; ELF with debug not required to match"
+  },
+  "cxx17_probe": {
+    "source": "tests/fixtures/synthetic/toolchain/cxx17.cpp",
+    "source_sha256": "44e15a730a11f9dbb914e8b95e694d96ea3656438003656b6ad86b0ffd450952",
+    "object_sha256": "cad37cb05d2578eda89f74fd19e4cb373a8cec7b3ac37c3f57a61e2982985a17",
+    "format": "ELF32 ARM relocatable",
+    "execution": "not_executed"
+  },
+  "project_build": {
+    "clean_input_count": 16,
+    "clean_manifest_sha256": "a1a01ef4ecc1fcb67e6699e3a22e46742093ad8374e034658e2325b2e58ea324",
+    "translation_units_cxx17": 5,
+    "artifact_size": 179624,
+    "artifact_sha256": "eed7b652dbc0b868eb2ac3858286e59880f6cec597db7964f4eb96a634065c6a"
+  },
+  "general_tools_license": {
+    "package": "1.4.4-1",
+    "origin": "https://github.com/devkitPro/general-tools",
+    "metadata_label": "ISC",
+    "installed_copying": "GPLv3 text; discrepancy unresolved under LIC01",
+    "files": [
+      {
+        "path": "/opt/devkitpro/licenses/general-tools/COPYING",
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+      }
+    ]
+  },
+  "input_hashes": {
+    "scripts/check_3ds_toolchain.sh": "e3d6683d647da04473db979b364501687c478ff121ce9f85182c28376d2f6052",
+    "tests/fixtures/synthetic/toolchain/cxx17.cpp": "44e15a730a11f9dbb914e8b95e694d96ea3656438003656b6ad86b0ffd450952",
+    "tests/python/test_toolchain_script.py": "df549688e3d0d4dc843aff8a5666426c0048576912c1b41cb55a11976d7bf161",
+    ".github/workflows/ci.yml": "6bd046c0d070250dc303590970da04fd26f89b979805f64a46c153074c04fced"
+  },
+  "verification": {
+    "python": {
+      "tests": 185,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "coverage": {
+      "covered_lines": 576,
+      "num_statements": 602,
+      "covered_branches": 235,
+      "num_branches": 248
+    },
+    "actionlint": "1.7.12 PASS",
+    "bash_syntax": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "repository_check": "PASS, 0 errors",
+    "remote_ci": "not_run",
+    "hardware": "not_tested"
+  }
+}

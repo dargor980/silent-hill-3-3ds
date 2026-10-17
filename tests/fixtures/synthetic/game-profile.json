@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-v1",
+  "platform": "synthetic",
+  "region": "test",
+  "revision": "1",
+  "serial": "SYNTHETIC",
+  "language": "es",
+  "extractor_version": "not-applicable",
+  "capabilities": [
+    "identification"
+  ],
+  "files": [
+    {
+      "path": "sample.txt",
+      "size": 37,
+      "sha256": "e64f58cd08ec3bb440f776e88676569e63c5a9b07786a8a3a3bad8ff10a93692"
+    }
+  ]
+}

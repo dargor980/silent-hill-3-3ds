@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "hardware": "New Nintendo 2DS XL",
+  "hardware_source": "User confirmation 2026-10-16",
+  "primary_launcher": "Homebrew Launcher",
+  "primary_artifact": "3dsx",
+  "available_installer": "FBI",
+  "cia_status": "optional_future_profile_not_built_or_tested",
+  "hardware_execution": "not_tested",
+  "firmware": null,
+  "homebrew_launcher_version": null,
+  "fbi_version": null,
+  "cpu_configuration": null,
+  "game_platform": "PS2",
+  "game_region": "Europe",
+  "game_revision": "1.02",
+  "game_serial": "SLES-51434",
+  "game_hashes": {
+    "iso_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "iso_size": 3586785280,
+    "file_count": 113,
+    "manifest": "reports/local/europe-profile-identified.json",
+    "iso_sha1": "aecd86c7b15446e5061afb9ea58e3d04f3a2649a",
+    "iso_md5": "3914c8a0cf593276a55c22db090650b5",
+    "iso_crc32": "121f94a6"
+  },
+  "game_region_source": "User confirmation and catalog checksum match",
+  "game_system_cnf_ver": "1.02",
+  "game_video_mode": "PAL",
+  "game_profile_id": "ps2-sles-51434-9a94b95e777dae42",
+  "game_language": "en,fr,de,es,it",
+  "game_revision_status": "matched_catalog_complete_image",
+  "game_inspection_status": "matched_catalog",
+  "game_languages_status": "catalog_match_not_runtime_tested",
+  "game_catalog": {
+    "id": "redump-1064",
+    "source_url": "https://redump.info/disc/1064",
+    "reference": "docs/compatibility/catalogs/redump-1064.json"
+  }
+}

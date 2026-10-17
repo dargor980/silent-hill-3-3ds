@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-17",
+  "decision": "Own partial static GPR/control analysis, using previously pinned primary references. No external code adopted/executed and no clean-room claim. Register effects do not prove execution or resource identity.",
+  "files": [
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "82390a1c51fe05d7ceeb231d3e3535e13fa4e05269e447c7523716c5e86c15c0",
+      "size": 252839,
+      "url": "https://raw.githubusercontent.com/MIPS/binutils-gdb/9decc44bc67d9fb4248c2afe4fde77174e8abf80/opcodes/mips-opc.c",
+      "use": "Documented GPR/control effects, R5900 POR and scalar COP1 forms; PC-relative transfers. Consultation only, GPL-3.0-or-later declarations; no source implementation adopted."
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "de49227ae06241624dbb519cc83d529580a4def0bc8df09d7ef640a6454f2241",
+      "size": 89709,
+      "url": "https://raw.githubusercontent.com/MIPS/binutils-gdb/9decc44bc67d9fb4248c2afe4fde77174e8abf80/opcodes/mips-dis.c",
+      "use": "Documented GPR/control effects, R5900 POR and scalar COP1 forms; PC-relative transfers. Consultation only, GPL-3.0-or-later declarations; no source implementation adopted."
+    }
+  ],
+  "method": "mips-pointer-origin-subset-v1",
+  "new_dependencies": [],
+  "private_data_sent": false,
+  "schema_version": 1,
+  "source_code_in_checkout": false,
+  "task": "F02.07/camera-pointer-origin-eu"
+}

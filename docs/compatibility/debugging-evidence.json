@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "version": "2126.2",
+  "source": "https://github.com/azahar-emu/azahar/releases/tag/2126.2",
+  "asset": "azahar-macos-arm64-2126.2.zip",
+  "sha256": "c24dec2bd5111b7d79513d686c5aece6612cdbf9737b2e6ea99cfc426f1d4aef",
+  "host": "macOS 26.5 arm64 / Apple M2",
+  "gdb": "devkitARM GDB 14.1 (pinned SDK)",
+  "diagnostic_build": "db2dd53fb5dc",
+  "status": "breakpoints_observed_graphical_refresh_issue_open",
+  "hardware": "not_tested",
+  "configuration": {
+    "new_3ds": true,
+    "cpu_jit": true,
+    "cpu_clock_percentage": 100,
+    "graphics_api": "Vulkan",
+    "audio_emulation": "HLE"
+  },
+  "evidence": {
+    "start": "build/f01-05/gdb-start.log",
+    "error": "build/f01-05/gdb-portable-error.log",
+    "no_gdb": "build/f01-05/portable-no-gdb-azahar.log",
+    "mismatch": "build/f01-05/wrong-elf.log"
+  },
+  "evidence_hashes": {
+    "gdb-start.log": "03e8ceb9d69b7a2b01d765bcb31900d8fd7f48bf47c45d342491a143f89d4eb6",
+    "gdb-portable-error.log": "2d04075dbd636183dc2b032b61a8fdced47be0c544530955957c0b155ac626ed",
+    "symbols.log": "9d68e67c87bfb6789ec8f5e50e45ca6b5bb4651c81541dc7c99c315921ccf210",
+    "wrong-elf.log": "ef9594b5bbc0187d7942ed7ce51ebd76e3f32b27cb8ad18f2d2159ffdc7a98dd",
+    "portable-gdb-azahar.log": "b69167218f361765735e5d443ccbd64e30649dc6ecb8f8665f4d706d5580e573",
+    "portable-no-gdb-azahar.log": "78f4abac4ad9110f808a9ffc4ae2911cbd91d96b204a3643601f5f81b56b1361",
+    "debugger-closed.txt": "d1d3d749e1fcaf2248cb0aea19759f9f97a9a81e58a6a56413f0294caccddb36"
+  },
+  "artifact_manifest_sha256": "ef2d53995d99aadfa337a06465b2463aec93fe32a0af91b1abd9a7b7661942b7"
+}

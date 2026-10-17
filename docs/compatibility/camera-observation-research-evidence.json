@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-runtime-observation-plan-eu",
+  "installed_release": {
+    "tag": "v2.8.2",
+    "url": "https://github.com/PCSX2/pcsx2/releases/tag/v2.8.2",
+    "asset": "pcsx2-v2.8.2-macos-Qt.tar.xz",
+    "bytes": 24377200,
+    "sha256": "3ed9eb40a33eae67134142c24255a079be444f0616ca29575a04a37981f7d426",
+    "matches_github_asset_digest": true,
+    "binary_sha256": "10e7cc1b3180b5a9f48923f3dfc3900019cc8c0df7e280a0ea61190b86961390",
+    "architecture": "x86_64",
+    "host": "macOS 26.5 arm64",
+    "rosetta": "already_installed",
+    "codesign_strict_exit": 0,
+    "gatekeeper_exit": 0,
+    "gatekeeper_result": "Notarized Developer ID"
+  },
+  "configuration": {
+    "isolated_private_data": true,
+    "saved_settings_verified": true,
+    "initial_sha256": "bac180d13f3431c9669579e2b9834212398ab92eae4bd7ce92c029d13d1a3e45",
+    "after_testconfig_sha256": "4cc93b0a9155f5aadd2d58ff30e9e6c87c28162b8b9836a60f8dc257a5f54e0b",
+    "testconfig_exit": 0,
+    "bios": "ROM2 copied; main BIOS missing",
+    "setup_wizard": "incomplete",
+    "ui_inspection": "tool_timeout",
+    "game_execution": "not_performed",
+    "runtime_capture": "not_performed"
+  },
+  "documentation": [
+    {
+      "url": "https://pcsx2.net/docs/setup/bios/",
+      "purpose": "Required user-dumped BIOS; missing prerequisite"
+    },
+    {
+      "url": "https://pcsx2.net/docs/advanced/debugger/",
+      "purpose": "EE debugger, register views and advanced settings"
+    },
+    {
+      "url": "https://pcsx2.net/docs/setup/running/",
+      "purpose": "macOS application installation and Rosetta"
+    }
+  ],
+  "sources_consulted": [
+    {
+      "url": "https://github.com/PCSX2/pcsx2/blob/v2.8.2/pcsx2-qt/QtHost.cpp",
+      "sha256": "d4619812da7f7e2b1bdb8273e8915b9f1c78e913010d9da9658180f2e37bebd8",
+      "bytes": 75905,
+      "use": "configuration reference"
+    },
+    {
+      "url": "https://github.com/PCSX2/pcsx2/blob/v2.8.2/pcsx2-qt/MainWindow.cpp",
+      "sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923",
+      "bytes": 133902,
+      "use": "configuration reference"
+    },
+    {
+      "url": "https://github.com/PCSX2/pcsx2/blob/v2.8.2/pcsx2/GameList.cpp",
+      "sha256": "c56981ba3b8cd9354b41b5ccbfb95f0900b4adedbf70bca45993f629e7ae3433",
+      "bytes": 45673,
+      "use": "configuration reference"
+    },
+    {
+      "url": "https://github.com/PCSX2/pcsx2/blob/v2.8.2/pcsx2/INISettingsInterface.cpp",
+      "sha256": "64a2dceefa679be89b22b2eedf27688c692be3059f6aee46122064353e1ce7c7",
+      "bytes": 9997,
+      "use": "configuration reference"
+    },
+    {
+      "url": "https://github.com/PCSX2/pcsx2/blob/v2.8.2/COPYING.GPLv3",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "bytes": 35147,
+      "use": "license text"
+    },
+    {
+      "url": "https://github.com/PCSX2/pcsx2/blob/v2.8.2/pcsx2/ps2/BiosTools.cpp",
+      "sha256": "49d52e3ccc98037ef62f6405748f1884a76357afe338885c1acfbe6a747ca552",
+      "bytes": 12106,
+      "use": "main BIOS detection and auxiliary ROM distinction"
+    },
+    {
+      "url": "https://github.com/PCSX2/pcsx2/blob/v2.8.2/pcsx2-qt/Settings/BIOSSettingsWidget.cpp",
+      "sha256": "47bac7e45f95731f0038f1fd5f6ec2aa425ed0faa46ba276c2f45ed9c5eff874",
+      "bytes": 4859,
+      "use": "main BIOS detection and auxiliary ROM distinction"
+    }
+  ],
+  "license_scope": "COPYING.GPLv3 text and GPLv3-or-later source headers; host tool only. Full bundled third-party redistribution review not performed.",
+  "code_adopted": false,
+  "clean_room_claimed": false,
+  "capabilities": [],
+  "f02_07_status": "pending",
+  "bios_component": {
+    "filename": "SCPH-70004_BIOS_V12_PAL_200.ROM2",
+    "bytes": 524288,
+    "sha256": "b86fbccaa111ca7497630337dafea7da7320fc4f924ada22b92145ef806e7b42",
+    "copied_to_private_bios_directory": true,
+    "source_retained": true,
+    "mode": "0600",
+    "main_bios": false,
+    "romver_marker_present": false,
+    "official_auto_detection_size_check": "below 4 MiB minimum",
+    "runtime_bios_selection": "not_performed"
+  }
+}

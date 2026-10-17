@@ -1,0 +1,183 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.13.7'
+      - name: Install locked test tools
+        run: |
+          python -m pip install --require-hashes -r requirements-dev.lock
+          cmake --version
+          ctest --version
+      - name: Lint and formatting
+        run: |
+          python -m ruff check tools tests/python
+          python -m ruff format --check tools tests/python
+      - name: Dependency, custody and spec contracts
+        run: python -m tools.qa.check_repository
+      - name: Python tests and coverage gate
+        run: |
+          python -m pytest --cov=tools --cov-report=xml:build/python-coverage.xml --cov-report=json:build/python-coverage.json --cov-report=term-missing --junitxml=build/pytest.xml
+          python -m tools.qa.coverage_gate build/python-coverage.json
+          test -s build/python-coverage.xml
+          test -s build/pytest.xml
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: python-test-reports
+          path: |
+            build/python-coverage.xml
+            build/python-coverage.json
+            build/pytest.xml
+          if-no-files-found: warn
+          retention-days: 14
+
+  host:
+    needs: quality
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-14]
+        preset: [host-release, host-sanitize]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Record compiler
+        run: |
+          cmake --version
+          c++ --version
+      - name: Configure
+        run: |
+          mkdir -p build/logs
+          cmake --preset ${{ matrix.preset }} 2>&1 | tee build/logs/configure.log
+      - name: Compile
+        run: cmake --build --preset ${{ matrix.preset }} --parallel 2 2>&1 | tee build/logs/compile.log
+      - name: Run C++ unit, adapter contract and smoke tests
+        env:
+          UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+        run: |
+          ctest --preset ${{ matrix.preset }} --output-junit test-results.xml 2>&1 | tee build/logs/ctest.log
+          test -s build/${{ matrix.preset }}/test-results.xml
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: host-${{ matrix.os }}-${{ matrix.preset }}
+          path: |
+            build/${{ matrix.preset }}/test-results.xml
+            build/logs/*.log
+          if-no-files-found: warn
+          retention-days: 14
+
+  cpp-coverage:
+    needs: quality
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.13.7'
+      - run: python -m pip install --require-hashes -r requirements-dev.lock
+      - name: Build and exercise portable libraries
+        env:
+          CXX: g++
+        run: |
+          mkdir -p build/logs
+          cmake --preset host-coverage 2>&1 | tee build/logs/configure.log
+          cmake --build --preset host-coverage --parallel 2 2>&1 | tee build/logs/compile.log
+          ctest --preset host-coverage --output-junit test-results.xml 2>&1 | tee build/logs/ctest.log
+          test -s build/host-coverage/test-results.xml
+      - name: Require 80 percent line and branch coverage
+        run: |
+          python -m gcovr --config gcovr.cfg 2>&1 | tee build/logs/coverage.log
+          test -s build/cpp-coverage.xml
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: cpp-coverage
+          path: |
+            build/cpp-coverage.xml
+            build/host-coverage/test-results.xml
+            build/logs/*.log
+          if-no-files-found: warn
+          retention-days: 14
+
+  nintendo-3ds:
+    needs: [host, cpp-coverage]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Compile with pinned devkitPro image
+        shell: bash
+        run: |
+          image=$(cat toolchains/devkitpro-image.txt)
+          docker pull "$image"
+          mkdir -p build/logs
+          docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
+            --user "$(id -u):$(id -g)" -e HOME=/tmp \
+            --mount "type=bind,src=$PWD,dst=/work" -w /work "$image" bash -c \
+            'bash scripts/check_3ds_toolchain.sh && bash scripts/build_3ds.sh' \
+            2>&1 | tee build/logs/3ds.log
+      - name: Retain SDK check reports
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: toolchain-check-reports
+          path: |
+            build/toolchain-check/result.txt
+            build/toolchain-check/expected-sdk-image.txt
+            build/toolchain-check/versions.txt
+            build/toolchain-check/toolchain-packages.txt
+            build/toolchain-check/SHA256SUMS
+            build/toolchain-check/*.sha256
+            build/toolchain-check/*-elf-header.txt
+            build/toolchain-check/*.log
+            build/logs/3ds.log
+          if-no-files-found: warn
+          retention-days: 14
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: synthetic-3ds-diagnostic
+          path: |
+            build/3ds/sh3_diagnostic.3dsx
+            build/3ds/sh3_diagnostic.elf
+            build/3ds/sh3_diagnostic.smdh
+            build/3ds/probe.txt
+            build/3ds/build-id.txt
+            build/3ds/debug-bundle.json
+            build/3ds/SHA256SUMS
+            build/3ds/toolchain-packages.txt
+            build/3ds/artifact-check.json
+          if-no-files-found: error
+          retention-days: 14

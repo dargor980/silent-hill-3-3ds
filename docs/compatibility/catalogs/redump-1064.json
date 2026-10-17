@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "redump-1064",
+  "source_url": "https://redump.info/disc/1064",
+  "retrieved_on": "2026-10-16",
+  "serial": "SLES-51434",
+  "region": "Europe",
+  "revision": "1.02",
+  "languages": ["en", "fr", "de", "es", "it"],
+  "image": {
+    "size": 3586785280,
+    "crc32": "121f94a6",
+    "md5": "3914c8a0cf593276a55c22db090650b5",
+    "sha1": "aecd86c7b15446e5061afb9ea58e3d04f3a2649a"
+  },
+  "provenance_note": "Manually transcribed public disc metadata. No game bytes. Language list is catalog evidence, not a local gameplay test. SHA-256 is measured locally and deliberately absent from this external reference."
+}

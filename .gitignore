@@ -1,0 +1,31 @@
+/build/
+/.venv/
+/.pytest_cache/
+/.ruff_cache/
+__pycache__/
+*.py[cod]
+.coverage*
+/htmlcov/
+/reports/local/
+.DS_Store
+.env
+# Local ISO inbox requested by the user; never version its contents.
+/binaries/*
+!/binaries/.gitignore
+# Extracted/converted originals remain external to this checkout.
+*.iso
+*.mfa
+*.MFA
+*.afs
+*.AFS
+*.irx
+*.IRX
+*.img
+*.IMG
+*.bin
+*.3dsx
+*.elf
+*.smdh
+*.cia
+*.sav
+*.p2s

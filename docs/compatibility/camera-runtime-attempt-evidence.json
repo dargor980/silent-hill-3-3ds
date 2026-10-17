@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-runtime-capture-eu",
+  "session_id": "e4f01a42cbcf4b0db3e6e2400e0821dd",
+  "environment": {
+    "emulator": "PCSX2",
+    "version": "v2.8.2",
+    "binary_sha256": "10e7cc1b3180b5a9f48923f3dfc3900019cc8c0df7e280a0ea61190b86961390",
+    "bios_sha256": "d6653f4e93be2f6f9e9d690a934f26cf0f6ad4e348b69f41ef736732c3a6685b",
+    "configuration_sha256": "6de363ceb0058e5bbe52e02a9706ddf22f54ed64d74a6af619e0e6b28f905b2d",
+    "cpu": "EE",
+    "method": "manual-debugger-v1"
+  },
+  "breakpoints": {
+    "primary_configured": 9,
+    "before_call_enabled": 3,
+    "primary_events_observed": 0
+  },
+  "code_preflight": {
+    "status": "matched",
+    "transport": "PINE local Unix socket; private parent 0700; paused before and after reads",
+    "ranges": [
+      {
+        "range_id": "41e61d8c74fb862394924d574d3d5f4112b93e17d294607189e2c5fa254ff16b",
+        "size": 524,
+        "sha256": "3b71119d0557dd800dfcd738b5cf251d8e1d8a1d0724b589ab70fbd47d9f73e6",
+        "matches_plan": true
+      },
+      {
+        "range_id": "6eb05b4424d34b522e015b82b65e8c4c02bd67b412f2c066a5289f16bcf6a1da",
+        "size": 4096,
+        "sha256": "a5f1ba1bef8bd62d945d1823d1e083f2458d5864127f97464714e5b68b08bf21",
+        "matches_plan": true
+      },
+      {
+        "range_id": "7e6ace1a4639d7a203fe81a98709abe7b860a183d789683321e4b923afad620e",
+        "size": 524,
+        "sha256": "2978f87b22e497f858aeedcb44439d467aae92ce37239c05724d2d4796e1d0dd",
+        "matches_plan": true
+      },
+      {
+        "range_id": "fa25cf6ce2817119ce5c67e4ac91cdc87fbadd2d22e8f5169d652e322cab9640",
+        "size": 524,
+        "sha256": "e24346ba8c50b56a249e2607ef9f2c6d6b9a90f4fc156b5e3fd175c70b411f1d",
+        "matches_plan": true
+      },
+      {
+        "range_id": "fd6b978f7126b66c98e84a2b2ffc7ebc3b88137a90bdda7ad9ed879da98ba8b6",
+        "size": 4096,
+        "sha256": "06f861be371bb7e27082017f78b7bb00b61cb90443d2263e0d53f059c9f3b891",
+        "matches_plan": true
+      },
+      {
+        "range_id": "fda27ea8e60e92eccddee921c2bbf192013b9a6b35d869a1cc56ceff819cede5",
+        "size": 4096,
+        "sha256": "009d84b2ddfa9beaa98bfa2c38003b7ca7c0f22afad0a0ece01e2de0e4b066ca",
+        "matches_plan": true
+      }
+    ]
+  },
+  "visual_checkpoint": "unformatted_memory_card_prompt",
+  "controls_verified": false,
+  "language_difficulty_selected": false,
+  "private_savestates": [
+    {
+      "slot": 1,
+      "bytes": 1580515,
+      "sha256": "9812d8f31b1ca6a38983fda12a26e8c2298fb763e41c1f228664128110da0ff6",
+      "zip_crc_valid": true,
+      "version": "v2.8.2",
+      "control_is_elf_entry": true
+    },
+    {
+      "slot": 2,
+      "bytes": 3687094,
+      "sha256": "6559a37d76399aa5414d08ec9e3c9e54b22713b7964c133ce43cd7a5ca015103",
+      "zip_crc_valid": true,
+      "version": "v2.8.2",
+      "control_is_elf_entry": false
+    }
+  ],
+  "capture": {
+    "sha256": "2686447af7ad07b7e425980ec5805e466ede513235075c65123f9ddc75e93124",
+    "status": "validated_no_observations",
+    "event_count": 0,
+    "boundary_outcomes": [
+      "not_reached",
+      "not_reached",
+      "not_reached"
+    ],
+    "receipt_bytes": 1375,
+    "receipt_sha256": "c2a89c0df879e1078c11d4422f81df7b7fe181ed27364b8810ee3110dd5c5d88",
+    "repeat_identical": true,
+    "execution_authentication": "not_provided"
+  },
+  "blocker": "Native coordinate input noWindowsAvailable; key presses had no observable game response",
+  "cleanup": {
+    "process_exited": true,
+    "socket_removed": true,
+    "pine_enabled": false,
+    "mtvu_restored": true,
+    "savestate_folder_restored": true,
+    "restored_profile_sha256": "a68611f865abaaf5326ed8742ef3e741bbde5b930a11f01aae98c4f7428b27fc",
+    "testconfig_exit": 0
+  },
+  "sources_consulted": [
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "bytes": 21507,
+      "sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df",
+      "license": "GPL-3.0+",
+      "use": "format and behavior reference; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2-qt/Debugger/DebuggerSettingsManager.cpp",
+      "bytes": 6248,
+      "sha256": "0e1386cd4d00d2d34e34488ad892590ae722297534d4acffb27ec0a64c11d85d",
+      "license": "GPL-3.0+",
+      "use": "format and behavior reference; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/PINE.cpp",
+      "bytes": 20593,
+      "sha256": "b6d32cc43b857bb94fd2fdcde556bf8fba300dd1e3d008aad052ae54c1d0b2de",
+      "license": "GPL-3.0+",
+      "use": "format and behavior reference; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/SaveState.cpp",
+      "bytes": 37125,
+      "sha256": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589",
+      "license": "GPL-3.0+",
+      "use": "format and behavior reference; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/SaveState.h",
+      "bytes": 8930,
+      "sha256": "6c47daa3be4a4b7c3df236b0ac1dae27af0a948038774ba6e2a8a6bc45493720",
+      "license": "GPL-3.0+",
+      "use": "format and behavior reference; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/VMManager.cpp",
+      "bytes": 116797,
+      "sha256": "384f0c0dca7b4e2a2d904ef17e5684521ac750bdfca56d8164c94da744349f4c",
+      "license": "GPL-3.0+",
+      "use": "format and behavior reference; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/R5900.h",
+      "bytes": 13858,
+      "sha256": "a6ef18e1b646b5ba6c956c10836aa4f75fd8309798f0ac0cf8644faa41cbf323",
+      "license": "GPL-3.0+",
+      "use": "format and behavior reference; no source copied into repository"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PCSX2/pcsx2/v2.8.2/pcsx2/DebugTools/Breakpoints.h",
+      "bytes": 5718,
+      "sha256": "83fe29ac938acc14d12594693ea245c6d43fa7e2f0ad440da3868875cd74d65f",
+      "license": "GPL-3.0+",
+      "use": "format and behavior reference; no source copied into repository"
+    }
+  ],
+  "f02_07_status": "pending",
+  "resource_links": [],
+  "capabilities": [],
+  "payloads_in_repository": false,
+  "validation": {
+    "camera_observation_tests_passed": 128,
+    "full_suite_rerun": false,
+    "build_3ds_rerun": false
+  }
+}

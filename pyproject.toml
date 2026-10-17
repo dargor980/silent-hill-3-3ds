@@ -1,0 +1,26 @@
+[tool.pytest.ini_options]
+testpaths = ["tests/python"]
+pythonpath = ["."]
+addopts = "--strict-markers --strict-config -ra"
+markers = [
+  "unit: isolated domain or parser behavior",
+  "integration: filesystem or CLI interaction",
+  "architecture: dependency and repository contracts",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["tools"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_empty = true
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+

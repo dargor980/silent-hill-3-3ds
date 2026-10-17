@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-runtime-capture-eu/environment",
+  "user_supplied_bios": {
+    "bytes": 4194304,
+    "sha256": "d6653f4e93be2f6f9e9d690a934f26cf0f6ad4e348b69f41ef736732c3a6685b",
+    "metadata": {
+      "major": 2,
+      "minor": 0,
+      "region": "Europe",
+      "date": "2004-06-14"
+    },
+    "romdir_entries": 101,
+    "romdir_ranges_within_file": true
+  },
+  "source_retained": true,
+  "private_mode": "0600",
+  "configuration_sha256": "374aab2aee57025debfbba90ab3c8c71cf4230583f79c227e9da7579774b5c06",
+  "testconfig_exit": 0,
+  "setup_manually_completed": true,
+  "start_paused": true,
+  "bios_load_verified": true,
+  "iso_startup": {
+    "source_log_sha256": "6ed99753ca5aafb35529df2e59e1e85fe8fe91ce0cf584d5e8abe9108c0a26b8",
+    "bios_europe_2_00": true,
+    "serial": "SLES-51434",
+    "serial_verified": true,
+    "elf_size": 3395784,
+    "elf_size_verified": true,
+    "active_crc": "5088CCDB",
+    "active_crc_verified": true,
+    "entry_point_event": true,
+    "metal_initialized": true,
+    "vblank_log_events": 3,
+    "automatic_gamefixes": {
+      "VU0_clamp_mode_2": true,
+      "VU1_clamp_mode_2": true,
+      "minimum_blending_4": true,
+      "deinterlace_9": true
+    },
+    "controlled_shutdown": true,
+    "display_visually_verified": false,
+    "in_game_language_difficulty_verified": false,
+    "camera_breakpoints_observed": false
+  },
+  "runs": {
+    "bios-startup": {
+      "process_exit": 0,
+      "seconds": 21.669587957992917,
+      "termination": "SIGTERM after 20 seconds"
+    },
+    "sh3-startup": {
+      "process_exit": 0,
+      "seconds": 26.36147354100831,
+      "termination": "SIGTERM after 25 seconds"
+    }
+  },
+  "capture_status": "not_performed",
+  "f02_07_status": "pending",
+  "previous_provenance": "camera-observation-research-evidence.json",
+  "bios_bytes_in_repository": false,
+  "private_logs_in_repository": false
+}

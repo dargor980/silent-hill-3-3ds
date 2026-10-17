@@ -1,0 +1,6 @@
+-r requirements-tools.in
+pytest==9.1.1
+pytest-cov==7.1.0
+gcovr==8.6
+ruff==0.17.1
+PyYAML==6.0.3

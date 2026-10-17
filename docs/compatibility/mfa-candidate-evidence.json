@@ -1,0 +1,88 @@
+{
+  "repository": "RayneDuarte/MFA-Tool-for-Silent-Hill-3-PS2-",
+  "commit": "6c362d2c163236c0496c42ed297eb9c07487ab69",
+  "date": "2025-12-06T16:41:18Z",
+  "default_branch": "main",
+  "license": null,
+  "tree": [
+    "README.md",
+    "Silent Hill 3 (PS2) - MFA Tool.cbproj",
+    "Silent Hill 3 (PS2) - MFA Tool.cbproj.local",
+    "Silent Hill 3 (PS2) - MFA Tool.cpp",
+    "Silent Hill 3 (PS2) - MFA ToolPCH2.h",
+    "Silent Hill 3 (PS2) - MFA Tool_Icon.ico",
+    "Silent Hill 3 (PS2) - MFA Tool_Icon1.ico",
+    "Win64",
+    "Win64/Release",
+    "Win64/Release/Silent Hill 3 (PS2) - MFA Tool.d",
+    "Win64/Release/Silent Hill 3 (PS2) - MFA Tool.exe",
+    "Win64/Release/Silent Hill 3 (PS2) - MFA Tool.map",
+    "Win64/Release/Silent Hill 3 (PS2) - MFA Tool.o",
+    "Win64/Release/Silent Hill 3 (PS2) - MFA Tool.res",
+    "Win64/Release/Silent Hill 3 (PS2) - MFA ToolPCH2.rar",
+    "Win64/Release/build_mfa.d",
+    "Win64/Release/build_mfa.o",
+    "Win64/Release/infos_screen.d",
+    "Win64/Release/infos_screen.o",
+    "Win64/Release/main.d",
+    "Win64/Release/main.o",
+    "Win64/Release/mfa_reader.d",
+    "Win64/Release/mfa_reader.o",
+    "build_mfa.cpp",
+    "build_mfa.h",
+    "infos_screen.cpp",
+    "infos_screen.dfm",
+    "infos_screen.h",
+    "main.cpp",
+    "main.dfm",
+    "main.h",
+    "mfa_reader.cpp",
+    "mfa_reader.h"
+  ],
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/RayneDuarte/MFA-Tool-for-Silent-Hill-3-PS2-/6c362d2c163236c0496c42ed297eb9c07487ab69/README.md",
+      "size": 243,
+      "sha256": "c3bef516706e76cd5ba2776fbcabcf3beed9359e0383906a30f88cbadb311aca"
+    },
+    {
+      "path": "mfa_reader.cpp",
+      "url": "https://raw.githubusercontent.com/RayneDuarte/MFA-Tool-for-Silent-Hill-3-PS2-/6c362d2c163236c0496c42ed297eb9c07487ab69/mfa_reader.cpp",
+      "size": 5759,
+      "sha256": "3b0f646947cbc3974abbe4d8ae613825a3ef0093d365aeab22f7f77b288d6b43"
+    },
+    {
+      "path": "mfa_reader.h",
+      "url": "https://raw.githubusercontent.com/RayneDuarte/MFA-Tool-for-Silent-Hill-3-PS2-/6c362d2c163236c0496c42ed297eb9c07487ab69/mfa_reader.h",
+      "size": 1065,
+      "sha256": "cbe00642c1a1c08962c5a534ac8d894dba84ac203332404bc6b82cbb631556be"
+    },
+    {
+      "path": "main.cpp",
+      "url": "https://raw.githubusercontent.com/RayneDuarte/MFA-Tool-for-Silent-Hill-3-PS2-/6c362d2c163236c0496c42ed297eb9c07487ab69/main.cpp",
+      "size": 3411,
+      "sha256": "571f7dd31eb05f7e719753a63e057b27dc7270721052c6611ee1aeb9554cdd13"
+    },
+    {
+      "path": "Silent Hill 3 (PS2) - MFA Tool.cbproj",
+      "url": "https://raw.githubusercontent.com/RayneDuarte/MFA-Tool-for-Silent-Hill-3-PS2-/6c362d2c163236c0496c42ed297eb9c07487ab69/Silent%20Hill%203%20%28PS2%29%20-%20MFA%20Tool.cbproj",
+      "size": 67445,
+      "sha256": "9eed6ceb2b3012ddf7b7aed750c931517a9845b1365bc34d83df973634544e5d"
+    }
+  ],
+  "schema_version": 1,
+  "review_date": "2026-10-17",
+  "candidate_execution": "not_performed",
+  "candidate_adoption": "not_adopted",
+  "host": "Darwin arm64",
+  "observed_target": "C++Builder VCL; Win32/Win64",
+  "license_review": "No global license file in fetched tree; API license null; LIC04 remains open for adoption",
+  "reviewed_source_policy": "Read externally; no third-party code or binary copied into repository",
+  "bms_reference": {
+    "url": "https://aluigi.altervista.org/bms/silent_hill_3.bms",
+    "size": 252,
+    "sha256": "8119db39a1eea7895e0182f76190ef650192c5e2b081f20bdc1d9e226803395f",
+    "result": "Published script has a different layout; not evidence of MFA D8 compatibility; not executed or adopted"
+  }
+}

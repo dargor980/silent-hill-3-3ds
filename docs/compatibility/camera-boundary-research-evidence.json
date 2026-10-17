@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-17",
+  "decision": "Own bounded one-level caller/callee analysis; low-32 GPR identity only. No ABI or memory preservation assumed. Previously pinned primary MIPS references revalidated locally; no external code adopted/executed or clean-room claim.",
+  "files": [
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "82390a1c51fe05d7ceeb231d3e3535e13fa4e05269e447c7523716c5e86c15c0",
+      "size": 252839,
+      "url": "https://raw.githubusercontent.com/MIPS/binutils-gdb/9decc44bc67d9fb4248c2afe4fde77174e8abf80/opcodes/mips-opc.c",
+      "use": "Previously documented JAL/JR, branch and delay-slot encodings/effects. Consultation only; GPL-3.0-or-later file declarations; no external implementation adopted."
+    },
+    {
+      "adopted": false,
+      "executed": false,
+      "sha256": "de49227ae06241624dbb519cc83d529580a4def0bc8df09d7ef640a6454f2241",
+      "size": 89709,
+      "url": "https://raw.githubusercontent.com/MIPS/binutils-gdb/9decc44bc67d9fb4248c2afe4fde77174e8abf80/opcodes/mips-dis.c",
+      "use": "Previously documented JAL/JR, branch and delay-slot encodings/effects. Consultation only; GPL-3.0-or-later file declarations; no external implementation adopted."
+    }
+  ],
+  "method": "mips-call-boundary-subset-v1",
+  "new_dependencies": [],
+  "private_data_sent": false,
+  "schema_version": 1,
+  "source_code_in_checkout": false,
+  "task": "F02.07/camera-caller-boundary-eu"
+}

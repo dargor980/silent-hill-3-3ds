@@ -1,0 +1,825 @@
+{
+  "reviewed_on": "2026-10-16",
+  "scope": "F00.06 initial provenance review; not a release SBOM or redistribution clearance",
+  "hash_meaning": "SHA-256 of observed document bytes, not source commit or resulting binary. Default-branch candidates remain unadopted.",
+  "sdk_image": "devkitpro/devkitarm@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5",
+  "local_inputs": [
+    {
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "requirements-dev.in",
+      "sha256": "cdcb40340200440ba4c3dc0327cbee1a5a46a5793f5fcedf96c58dc17b3d4c6e"
+    },
+    {
+      "path": "requirements-tools.in",
+      "sha256": "534257a111b3b8c04eaab948fafaa226576df1e7aed6796ec5f68bdf31b4a84c"
+    },
+    {
+      "path": "requirements-dev.lock",
+      "sha256": "946d07a4696f5f905499561784e8ed08a43fd825a6cd40656a8734c6658ca3ae"
+    },
+    {
+      "path": "requirements-tools.lock",
+      "sha256": "ed91a6d1ec6c5bc87547a121fb7ca81f83c60fcb18844e30a34ba963e4d0df93"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "54db3bdb655816a4a51bd80200f1f4e10dba5c8e34ed73f78bbb4f6d4755e424"
+    },
+    {
+      "path": "toolchains/devkitpro-image.txt",
+      "sha256": "411ea53fed0e89217e0f1fcd8d661e31de2196ce9e6cb8535ef824285e07f5d8"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "39b4fca8179bafb500358f62ea3bed1e2174d96d58c9a51c97eee3ee04eff5a3"
+    },
+    {
+      "path": "scripts/build_3ds.sh",
+      "sha256": "c6617d9f4e8ca531b202ed395970d876440cc66d20d49103b547bdace84d7f4d"
+    },
+    {
+      "path": "build/3ds/CMakeFiles/sh3_diagnostic.dir/link.txt",
+      "sha256": "86eab382e668c995fdd870290858aab89f6c52031c257b3c202158bc2773f731"
+    },
+    {
+      "path": "build/3ds/toolchain-packages.txt",
+      "sha256": "d357299f735481553637bfa4cb464fd10343fc66f8b741aa2b5027b3cc1af7a9"
+    }
+  ],
+  "sdk_packages": [
+    {
+      "name": "libctru",
+      "version": "2.7.0-1",
+      "origin_url": "http://github.com/devkitPro/libctru",
+      "metadata_license": "custom",
+      "observed_files": []
+    },
+    {
+      "name": "citro2d",
+      "version": "1.7.0-1",
+      "origin_url": "http://github.com/devkitpro/citro2d",
+      "metadata_license": "custom",
+      "observed_files": []
+    },
+    {
+      "name": "citro3d",
+      "version": "1.7.1-2",
+      "origin_url": "http://github.com/devkitPro/citro3d",
+      "metadata_license": "custom",
+      "observed_files": []
+    },
+    {
+      "name": "3dstools",
+      "version": "1.3.1-3",
+      "origin_url": "https://github.com/devkitpro/3dstools",
+      "metadata_license": "ISC",
+      "observed_files": [
+        {
+          "path": "/opt/devkitpro/licenses/3dstools/COPYING",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        }
+      ]
+    },
+    {
+      "name": "devkitarm-gcc",
+      "version": "16.1.0-1",
+      "origin_url": "https://www.gnu.org/software/gcc/gcc.html",
+      "metadata_license": "spdx:GPL-3.0-or-later",
+      "observed_files": []
+    },
+    {
+      "name": "devkitarm-binutils",
+      "version": "2.46.0-1",
+      "origin_url": "https://www.gnu.org/software/binutils/binutils.html",
+      "metadata_license": "spdx:GPL-3.0-or-later AND GPL-2.0-or-later AND LGPL-3.0-or-later AND LGPL-2.0-or-later",
+      "observed_files": []
+    },
+    {
+      "name": "devkitarm-newlib",
+      "version": "4.6.0.20260123-5",
+      "origin_url": "None",
+      "metadata_license": "None",
+      "observed_files": []
+    },
+    {
+      "name": "devkitarm-crtls",
+      "version": "1.2.6-1",
+      "origin_url": "http://github.com/devkitpro/devkitarm-crtls",
+      "metadata_license": "custom",
+      "observed_files": []
+    },
+    {
+      "name": "3ds-examples",
+      "version": "20240917-1",
+      "origin_url": "http://github.com/devkitpro/3ds-examples",
+      "metadata_license": "custom",
+      "observed_files": []
+    },
+    {
+      "name": "picasso",
+      "version": "2.7.2-3",
+      "origin_url": "https://github.com/devkitPro/picasso",
+      "metadata_license": "GPL",
+      "observed_files": [
+        {
+          "path": "/opt/devkitpro/licenses/picasso/COPYING",
+          "sha256": "fff319f39e5a79efa71c837e4e901ad4a1ff432dd89d04febf0453a356911fd3"
+        }
+      ]
+    },
+    {
+      "name": "tex3ds",
+      "version": "2.3.0-4",
+      "origin_url": "https://github.com/mtheall/tex3ds",
+      "metadata_license": "ISC",
+      "observed_files": [
+        {
+          "path": "/opt/devkitpro/licenses/tex3ds/COPYING",
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+        }
+      ]
+    },
+    {
+      "name": "3ds-cmake",
+      "version": "1.5.2-1",
+      "origin_url": "http://devkitpro.org/",
+      "metadata_license": "None",
+      "observed_files": [
+        {
+          "path": "/opt/devkitpro/cmake/3DS.cmake",
+          "sha256": "b60cadbc5b3f1647d107215309698f862ef0a06b3a8057b729b4cb7ff77e1c45"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/Platform/Nintendo3DS.cmake",
+          "sha256": "63bba1bc5b65a61797d07fa8bbf8dc8ac135920db77d00ee1446d1c72100eabb"
+        }
+      ]
+    },
+    {
+      "name": "devkitarm-cmake",
+      "version": "1.2.4-1",
+      "origin_url": "http://devkitpro.org/",
+      "metadata_license": "None",
+      "observed_files": [
+        {
+          "path": "/opt/devkitpro/cmake/devkitARM.cmake",
+          "sha256": "f1029f9a04b2e543e5b49255fe501839dabe7f80e626dca0196531de744704db"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-gba-ds-common.cmake",
+          "sha256": "0892748da89275191bba16b747faed6361b4f1fd09d2d3641160b44dc0b3a8e5"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-gba-ds-utils.cmake",
+          "sha256": "1ef2d30b7dde4ef70164239f2a1feb57fd16c95f1e78f4cf9c3ee0031601001f"
+        }
+      ]
+    },
+    {
+      "name": "dkp-cmake-common-utils",
+      "version": "1.5.3-1",
+      "origin_url": "http://devkitpro.org/",
+      "metadata_license": "None",
+      "observed_files": [
+        {
+          "path": "/opt/devkitpro/cmake/Platform/Generic-dkP.cmake",
+          "sha256": "161873070c09b4ac759f25a9ba5d2ae72194ca66e2d577fd121fb835229536d3"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-asset-folder.cmake",
+          "sha256": "f24abd66dea5a2b60be52f1244c4523025828cc9fa71e14cf4c58f24a06007d0"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-custom-target.cmake",
+          "sha256": "0f0ac9a7a92c6dff4975c2204433d4b7515893bc461b3022a135b0ed4728b32d"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-embedded-binary.cmake",
+          "sha256": "b39f405f459b4e4aa55ad3a04d8d56ba567da2c02425e3b8d60f46bde55d5274"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-impl-helpers.cmake",
+          "sha256": "b775c77dbc3128885f4db0a04f751ea592d3b8924b8c78e7f246f91b0e5b89b6"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-initialize-path.cmake",
+          "sha256": "758b8cc680112d87870f84e8d69abfadc0cbcd1b0987e88329d1fafa7470f9f4"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-linker-utils.cmake",
+          "sha256": "beabc5b2c53de05adbc26b7264080041c84578a76a5783f02d771ac0790f5db2"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-rule-overrides.cmake",
+          "sha256": "c52a1b59e132d18f432883ef748db7b2e2b15d9a7c75208e02a01f8d29149392"
+        },
+        {
+          "path": "/opt/devkitpro/cmake/dkp-toolchain-common.cmake",
+          "sha256": "07e6aba12cc3bbba8ede5e5cf27f0491b1deab221c35a622d0024c3a975044a5"
+        }
+      ]
+    },
+    {
+      "name": "dkp-toolchain-vars",
+      "version": "1.0.5-1",
+      "origin_url": "http://devkitpro.org/",
+      "metadata_license": "None",
+      "observed_files": []
+    },
+    {
+      "name": "devkitarm-rules",
+      "version": "1.6.0-4",
+      "origin_url": "http://github.com/devkitpro/devkitarm-rules",
+      "metadata_license": "custom",
+      "observed_files": []
+    }
+  ],
+  "python_packages": [
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "scope": "host development only; Windows conditional",
+      "installed_on_review_host": false,
+      "license_summary": "BSD-3-Clause",
+      "origin_url": "https://pypi.org/project/colorama/0.4.6/",
+      "observed_files": [
+        {
+          "name": "colorama",
+          "url": "https://raw.githubusercontent.com/tartley/colorama/0.4.6/LICENSE.txt",
+          "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318"
+        }
+      ]
+    },
+    {
+      "name": "colorlog",
+      "version": "6.12.0",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "MIT",
+      "origin_url": "https://pypi.org/project/colorlog/6.12.0/",
+      "observed_files": [
+        {
+          "path": "colorlog-6.12.0.dist-info/licenses/LICENSE",
+          "sha256": "b1d9082bc483623fd59fc7279b457f0e40d942a76426cde257239e04dfe4125a"
+        }
+      ]
+    },
+    {
+      "name": "coverage",
+      "version": "7.16.2",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "Apache-2.0; NOTICE",
+      "origin_url": "https://pypi.org/project/coverage/7.16.2/",
+      "observed_files": [
+        {
+          "path": "coverage-7.16.2.dist-info/licenses/LICENSE.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "coverage-7.16.2.dist-info/licenses/NOTICE.txt",
+          "sha256": "80e177ab397d5f332954693a52abc1b34b06c5792dd57297608b6d68a2f6af11"
+        }
+      ]
+    },
+    {
+      "name": "gcovr",
+      "version": "8.6",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "BSD-3-Clause",
+      "origin_url": "https://pypi.org/project/gcovr/8.6/",
+      "observed_files": [
+        {
+          "path": "gcovr-8.6.dist-info/licenses/LICENSE.txt",
+          "sha256": "c647f75745adfe782bc07fa4924b92156c343e5594d8d04ffd3e35440f0a779a"
+        }
+      ]
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "MIT",
+      "origin_url": "https://pypi.org/project/iniconfig/2.3.1/",
+      "observed_files": [
+        {
+          "path": "iniconfig-2.3.1.dist-info/licenses/LICENSE",
+          "sha256": "3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4"
+        }
+      ]
+    },
+    {
+      "name": "jinja2",
+      "version": "3.1.6",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "BSD-3-Clause",
+      "origin_url": "https://pypi.org/project/jinja2/3.1.6/",
+      "observed_files": [
+        {
+          "path": "jinja2-3.1.6.dist-info/licenses/LICENSE.txt",
+          "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+        }
+      ]
+    },
+    {
+      "name": "lxml",
+      "version": "6.1.3",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "BSD-3-Clause for lxml; bundled code has additional terms in LICENSES.txt",
+      "origin_url": "https://pypi.org/project/lxml/6.1.3/",
+      "observed_files": [
+        {
+          "path": "lxml-6.1.3.dist-info/licenses/LICENSE.txt",
+          "sha256": "8fc2b568133516e46845d2147917adeee1648e70ae9ab5ed6c5417afef4ce855"
+        },
+        {
+          "path": "lxml-6.1.3.dist-info/licenses/LICENSES.txt",
+          "sha256": "388fa99f3bde4447cd5a4cbb114037be026854db6cfe89e112691c1d8abdcf3c"
+        }
+      ]
+    },
+    {
+      "name": "markupsafe",
+      "version": "3.0.4",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "BSD-3-Clause",
+      "origin_url": "https://pypi.org/project/markupsafe/3.0.4/",
+      "observed_files": [
+        {
+          "path": "markupsafe-3.0.4.dist-info/licenses/LICENSE.txt",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea"
+        }
+      ]
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "Apache-2.0 OR BSD-2-Clause",
+      "origin_url": "https://pypi.org/project/packaging/26.3/",
+      "observed_files": [
+        {
+          "path": "packaging-26.3.dist-info/licenses/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "path": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ]
+    },
+    {
+      "name": "pluggy",
+      "version": "1.7.0",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "MIT",
+      "origin_url": "https://pypi.org/project/pluggy/1.7.0/",
+      "observed_files": [
+        {
+          "path": "pluggy-1.7.0.dist-info/licenses/LICENSE",
+          "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606"
+        }
+      ]
+    },
+    {
+      "name": "pycdlib",
+      "version": "1.22.0",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "LGPL-2.1-only",
+      "origin_url": "https://pypi.org/project/pycdlib/1.22.0/",
+      "observed_files": [
+        {
+          "path": "pycdlib-1.22.0.dist-info/licenses/COPYING",
+          "sha256": "130403c323acd0fe48850da8f0b58b232705f33bc0e84cb7e4c70cf8f0f54e21"
+        }
+      ]
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "BSD-2-Clause",
+      "origin_url": "https://pypi.org/project/pygments/2.21.0/",
+      "observed_files": [
+        {
+          "path": "pygments-2.21.0.dist-info/licenses/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        }
+      ]
+    },
+    {
+      "name": "pytest",
+      "version": "9.1.1",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "MIT",
+      "origin_url": "https://pypi.org/project/pytest/9.1.1/",
+      "observed_files": [
+        {
+          "path": "pytest-9.1.1.dist-info/licenses/LICENSE",
+          "sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b"
+        }
+      ]
+    },
+    {
+      "name": "pytest-cov",
+      "version": "7.1.0",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "MIT",
+      "origin_url": "https://pypi.org/project/pytest-cov/7.1.0/",
+      "observed_files": [
+        {
+          "path": "pytest_cov-7.1.0.dist-info/licenses/LICENSE",
+          "sha256": "835586ae156766a24e3c103fbc55d9af6b1a16df57ca932c97482a2737fd83d5"
+        }
+      ]
+    },
+    {
+      "name": "pyyaml",
+      "version": "6.0.3",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "MIT",
+      "origin_url": "https://pypi.org/project/pyyaml/6.0.3/",
+      "observed_files": [
+        {
+          "path": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+        }
+      ]
+    },
+    {
+      "name": "ruff",
+      "version": "0.17.1",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "MIT; binary dependency review needed before bundling",
+      "origin_url": "https://pypi.org/project/ruff/0.17.1/",
+      "observed_files": [
+        {
+          "path": "ruff-0.17.1.dist-info/licenses/LICENSE",
+          "sha256": "2597d854122b77ddc71971564ca2350a37608575ce324adc5650a2b2051c8f18"
+        }
+      ]
+    },
+    {
+      "name": "tomli",
+      "version": "2.5.0",
+      "scope": "host development only",
+      "installed_on_review_host": true,
+      "license_summary": "MIT",
+      "origin_url": "https://pypi.org/project/tomli/2.5.0/",
+      "observed_files": [
+        {
+          "path": "tomli-2.5.0.dist-info/licenses/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        }
+      ]
+    }
+  ],
+  "configured_actions": [
+    {
+      "repository": "actions/checkout",
+      "query_url": "https://api.github.com/repos/actions/checkout/license?ref=11d5960a326750d5838078e36cf38b85af677262",
+      "reference": "11d5960a326750d5838078e36cf38b85af677262",
+      "path": "LICENSE",
+      "spdx": "MIT",
+      "url": "https://github.com/actions/checkout/blob/11d5960a326750d5838078e36cf38b85af677262/LICENSE",
+      "sha256": "3e855ffa704114a51628ef8f0bf3aeb41728adf9d9070e263bf58aa5640b0eb5"
+    },
+    {
+      "repository": "actions/setup-python",
+      "query_url": "https://api.github.com/repos/actions/setup-python/license?ref=a26af69be951a213d495a4c3e4e4022e16d87065",
+      "reference": "a26af69be951a213d495a4c3e4e4022e16d87065",
+      "path": "LICENSE",
+      "spdx": "MIT",
+      "url": "https://github.com/actions/setup-python/blob/a26af69be951a213d495a4c3e4e4022e16d87065/LICENSE",
+      "sha256": "7d070f6b64d9bcc530fe99cc21eaaa4b3c364e0b2d367d7735671fa202a03b32"
+    },
+    {
+      "repository": "actions/upload-artifact",
+      "query_url": "https://api.github.com/repos/actions/upload-artifact/license?ref=ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "reference": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "path": "LICENSE",
+      "spdx": "MIT",
+      "url": "https://github.com/actions/upload-artifact/blob/ea165f8d65b6e75b540449e92b4886f43607fa02/LICENSE",
+      "sha256": "3e855ffa704114a51628ef8f0bf3aeb41728adf9d9070e263bf58aa5640b0eb5"
+    }
+  ],
+  "source_documents": [
+    {
+      "repository": "devkitPro/citro2d",
+      "query_url": "https://api.github.com/repos/devkitPro/citro2d/license?ref=v1.7.0",
+      "reference": "v1.7.0",
+      "path": "LICENSE",
+      "spdx": "Zlib",
+      "url": "https://github.com/devkitPro/citro2d/blob/v1.7.0/LICENSE",
+      "sha256": "852711e22394a8ccc0487b8179774d15e4fed72a994c1a6fb2993b2279984bde"
+    },
+    {
+      "repository": "devkitPro/citro3d",
+      "query_url": "https://api.github.com/repos/devkitPro/citro3d/license?ref=v1.7.1",
+      "reference": "v1.7.1",
+      "path": "LICENSE",
+      "spdx": "Zlib",
+      "url": "https://github.com/devkitPro/citro3d/blob/v1.7.1/LICENSE",
+      "sha256": "4d8db8e7270929946a3439aef932e37c7356a83391e56006439087e1d685809d"
+    },
+    {
+      "repository": "devkitPro/picasso",
+      "query_url": "https://api.github.com/repos/devkitPro/picasso/license",
+      "reference": "default branch; not adopted",
+      "path": "COPYING",
+      "spdx": "MIT",
+      "url": "https://github.com/devkitPro/picasso/blob/master/COPYING",
+      "sha256": "fff319f39e5a79efa71c837e4e901ad4a1ff432dd89d04febf0453a356911fd3"
+    },
+    {
+      "repository": "devkitPro/tex3ds",
+      "query_url": "https://api.github.com/repos/devkitPro/tex3ds/license",
+      "reference": "default branch; not adopted",
+      "path": "COPYING",
+      "spdx": "GPL-3.0",
+      "url": "https://github.com/devkitPro/tex3ds/blob/master/COPYING",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "repository": "Steveice10/FBI",
+      "query_url": "https://api.github.com/repos/Steveice10/FBI/license",
+      "reference": "default branch; not adopted",
+      "path": "LICENSE.txt",
+      "spdx": "MIT",
+      "url": "https://github.com/Steveice10/FBI/blob/master/LICENSE.txt",
+      "sha256": "0380f32e72ea7ed1bf0505ecc3daf9e7a126188da090862d9bbf882a1aee99b5"
+    },
+    {
+      "repository": "LumaTeam/Luma3DS",
+      "query_url": "https://api.github.com/repos/LumaTeam/Luma3DS/license",
+      "reference": "default branch; not adopted",
+      "path": "LICENSE",
+      "spdx": "GPL-3.0",
+      "url": "https://github.com/LumaTeam/Luma3DS/blob/master/LICENSE",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "repository": "NationalSecurityAgency/ghidra",
+      "query_url": "https://api.github.com/repos/NationalSecurityAgency/ghidra/license",
+      "reference": "default branch; not adopted",
+      "path": "LICENSE",
+      "spdx": "Apache-2.0",
+      "url": "https://github.com/NationalSecurityAgency/ghidra/blob/master/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "repository": "chaoticgd/ghidra-emotionengine-reloaded",
+      "query_url": "https://api.github.com/repos/chaoticgd/ghidra-emotionengine-reloaded/license",
+      "reference": "default branch; not adopted",
+      "path": "LICENSE",
+      "spdx": "Apache-2.0",
+      "url": "https://github.com/chaoticgd/ghidra-emotionengine-reloaded/blob/main/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "repository": "PCSX2/pcsx2",
+      "query_url": "https://api.github.com/repos/PCSX2/pcsx2/license",
+      "reference": "default branch; not adopted",
+      "path": "COPYING.GPLv3",
+      "spdx": "GPL-3.0",
+      "url": "https://github.com/PCSX2/pcsx2/blob/master/COPYING.GPLv3",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "repository": "azahar-emu/azahar",
+      "query_url": "https://api.github.com/repos/azahar-emu/azahar/license",
+      "reference": "default branch; not adopted",
+      "path": "LICENSE.txt",
+      "spdx": "GPL-3.0",
+      "url": "https://github.com/azahar-emu/azahar/blob/master/LICENSE.txt",
+      "sha256": "52b66866c785f554207a4685d3d6f5f067938050f61c4cdc0a05b4bf20c6e037"
+    },
+    {
+      "repository": "dreamingmoths/memory-of-alessa",
+      "query_url": "https://api.github.com/repos/dreamingmoths/memory-of-alessa/license",
+      "reference": "default branch; not adopted",
+      "path": "LICENSE",
+      "spdx": "MIT",
+      "url": "https://github.com/dreamingmoths/memory-of-alessa/blob/main/LICENSE",
+      "sha256": "0ec34c9bde8b331bfaa59af821c5fcb0904c0493112e1f67e111b40161e31556"
+    },
+    {
+      "repository": "Sparagas/Silent-Hill",
+      "query_url": "https://api.github.com/repos/Sparagas/Silent-Hill/license",
+      "reference": "default branch; not adopted",
+      "path": "LICENSE",
+      "spdx": "MIT",
+      "url": "https://github.com/Sparagas/Silent-Hill/blob/main/LICENSE",
+      "sha256": "26f743052bafcf49c229e0a9f8bb694b3f0a5e22fafc099a2e8231778a059e54"
+    },
+    {
+      "repository": "ran-j/PS2Recomp",
+      "query_url": "https://api.github.com/repos/ran-j/PS2Recomp/license",
+      "reference": "default branch; not adopted",
+      "path": "LICENSE",
+      "spdx": "GPL-3.0",
+      "url": "https://github.com/ran-j/PS2Recomp/blob/main/LICENSE",
+      "sha256": "831e92808eb553250066261a1387a9323cbf300d4559a41f2c71fd3712bdb44a"
+    },
+    {
+      "repository": "actions/checkout",
+      "query_url": "https://api.github.com/repos/actions/checkout/license?ref=11d5960a326750d5838078e36cf38b85af677262",
+      "reference": "11d5960a326750d5838078e36cf38b85af677262",
+      "path": "LICENSE",
+      "spdx": "MIT",
+      "url": "https://github.com/actions/checkout/blob/11d5960a326750d5838078e36cf38b85af677262/LICENSE",
+      "sha256": "3e855ffa704114a51628ef8f0bf3aeb41728adf9d9070e263bf58aa5640b0eb5"
+    },
+    {
+      "repository": "actions/setup-python",
+      "query_url": "https://api.github.com/repos/actions/setup-python/license?ref=a26af69be951a213d495a4c3e4e4022e16d87065",
+      "reference": "a26af69be951a213d495a4c3e4e4022e16d87065",
+      "path": "LICENSE",
+      "spdx": "MIT",
+      "url": "https://github.com/actions/setup-python/blob/a26af69be951a213d495a4c3e4e4022e16d87065/LICENSE",
+      "sha256": "7d070f6b64d9bcc530fe99cc21eaaa4b3c364e0b2d367d7735671fa202a03b32"
+    },
+    {
+      "repository": "actions/upload-artifact",
+      "query_url": "https://api.github.com/repos/actions/upload-artifact/license?ref=ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "reference": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "path": "LICENSE",
+      "spdx": "MIT",
+      "url": "https://github.com/actions/upload-artifact/blob/ea165f8d65b6e75b540449e92b4886f43607fa02/LICENSE",
+      "sha256": "3e855ffa704114a51628ef8f0bf3aeb41728adf9d9070e263bf58aa5640b0eb5"
+    },
+    {
+      "name": "libctru-v2.7.0",
+      "url": "https://raw.githubusercontent.com/devkitPro/libctru/v2.7.0/README.md",
+      "sha256": "6ca781f919d70afba6206e61415ac8bd003adce37fc08c10d8367c9114c77fd0"
+    },
+    {
+      "name": "3dstools-tree",
+      "url": "https://api.github.com/repos/devkitPro/3dstools/contents?ref=v1.3.1",
+      "sha256": "d2dedce199df9de81e8f48a29ccce07ddfbacc92c3b82f29457a1ba59de41fa0"
+    },
+    {
+      "name": "3ds-examples-tree",
+      "url": "https://api.github.com/repos/devkitPro/3ds-examples/contents",
+      "sha256": "dbab1fe358f05c993bc9bccff23c99df7802ded3aca1ded667239c7bd2b3143e"
+    },
+    {
+      "name": "hbmenu-readme",
+      "url": "https://raw.githubusercontent.com/devkitPro/3ds-hbmenu/master/README.md",
+      "sha256": "31f5d7e5666d7573ee0f8335610a61049baa9833ac66b87bd98158b35bc56033"
+    },
+    {
+      "name": "mfa-tree",
+      "url": "https://api.github.com/repos/RayneDuarte/MFA-Tool-for-Silent-Hill-3-PS2-/contents",
+      "sha256": "576f1a7aec3c818dcfb940e14bfdc6fb6a878656150fab3f3cc358b9bcc6dd5c"
+    },
+    {
+      "name": "sh3-nx-tree",
+      "url": "https://api.github.com/repos/cutarev/sh3-nx/contents",
+      "sha256": "9a88f3af01c87f5bb1cdfaabba9c62688499ee618f81ecba8b77fbc56168baff"
+    },
+    {
+      "name": "actionlint",
+      "url": "https://raw.githubusercontent.com/rhysd/actionlint/v1.7.12/LICENSE.txt",
+      "sha256": "03a26b06d224380a02bf100e05fff3b2dfc71b14d4e2fa685ec9963a87563c22"
+    },
+    {
+      "name": "colorama",
+      "url": "https://raw.githubusercontent.com/tartley/colorama/0.4.6/LICENSE.txt",
+      "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318"
+    },
+    {
+      "name": "python",
+      "url": "https://raw.githubusercontent.com/python/cpython/v3.14.6/LICENSE",
+      "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231"
+    },
+    {
+      "name": "gcc-runtime-exception",
+      "url": "https://raw.githubusercontent.com/gcc-mirror/gcc/releases/gcc-16.1.0/COPYING.RUNTIME",
+      "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74"
+    },
+    {
+      "name": "gcc-libgcc",
+      "url": "https://raw.githubusercontent.com/gcc-mirror/gcc/releases/gcc-16.1.0/libgcc/libgcc2.c",
+      "sha256": "83e1247be3f78dd8c70d32c4df95f04161c0f47838cf62be8cdb5b9eb2f06c34"
+    },
+    {
+      "name": "newlib",
+      "url": "https://sourceware.org/newlib/COPYING.NEWLIB",
+      "sha256": "9a59b4ee3af067045fe0ea78786201c42d54756fe48cbccf44f3dfc398474717"
+    },
+    {
+      "name": "3dstools-src",
+      "url": "https://api.github.com/repos/devkitPro/3dstools/contents/src?ref=v1.3.1",
+      "sha256": "3bb014094562cc41d37fde2ee4d29dddb5f2a7eedef237bc23db137b285df4ae"
+    },
+    {
+      "name": "crtls-tree",
+      "url": "https://api.github.com/repos/devkitPro/devkitarm-crtls/contents?ref=v1.2.6",
+      "sha256": "60da666c5c95052c0e0548aa88d423ddfded4b23f7f9183e60d3d2544f733fa1"
+    },
+    {
+      "name": "picasso-version",
+      "url": "https://raw.githubusercontent.com/devkitPro/picasso/v2.7.2/COPYING",
+      "sha256": "fff319f39e5a79efa71c837e4e901ad4a1ff432dd89d04febf0453a356911fd3"
+    },
+    {
+      "name": "cmake-version",
+      "url": "https://raw.githubusercontent.com/Kitware/CMake/v4.2.3/LICENSE.rst",
+      "sha256": "1e0d48f16c60f400838a96989684ae12cec35cb96688db11e8cb0204058cf4b8"
+    },
+    {
+      "name": "llvm-version",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-22.1.4/llvm/LICENSE.TXT",
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee"
+    },
+    {
+      "name": "blender-license",
+      "url": "https://raw.githubusercontent.com/blender/blender/main/COPYING",
+      "sha256": "19e6f4b541772f9d7b98a52bdbca3ebd5ef9e404956a9a6de68bfc3c1a178387"
+    },
+    {
+      "name": "3ds-examples-readme",
+      "url": "https://raw.githubusercontent.com/devkitPro/3ds-examples/master/README.md",
+      "sha256": "088647a0521d5a60db20732e39fb482951a9215142987b506d5ce9c36b5c56bd"
+    },
+    {
+      "name": "mfa-readme",
+      "url": "https://raw.githubusercontent.com/RayneDuarte/MFA-Tool-for-Silent-Hill-3-PS2-/master/README.md",
+      "sha256": "c3bef516706e76cd5ba2776fbcabcf3beed9359e0383906a30f88cbadb311aca"
+    },
+    {
+      "name": "sh3-nx-readme",
+      "url": "https://raw.githubusercontent.com/cutarev/sh3-nx/main/README.md",
+      "sha256": "ad8b3bbf958c6319bf6b70c51a4592e702abc661c900a7cdfabe66c325d9f74d"
+    },
+    {
+      "name": "3dsxtool-v1.3.1",
+      "url": "https://raw.githubusercontent.com/devkitPro/3dstools/v1.3.1/src/3dsxtool.cpp",
+      "sha256": "df88814555933cf3e0f3ac0c235dd2abafac79138f8ce629357dbc419f072e25"
+    },
+    {
+      "name": "smdhtool-v1.3.1",
+      "url": "https://raw.githubusercontent.com/devkitPro/3dstools/v1.3.1/src/smdhtool.cpp",
+      "sha256": "448b497244413229ff98b92ed49d746d14f46d17f716e364e49e4590b3c4045c"
+    },
+    {
+      "name": "3dstools-readme-v1.3.1",
+      "url": "https://raw.githubusercontent.com/devkitPro/3dstools/v1.3.1/README",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "crt0-v1.2.6",
+      "url": "https://raw.githubusercontent.com/devkitPro/devkitarm-crtls/v1.2.6/3dsx_crt0.s",
+      "sha256": "0cd0169dd5b711a2adf5efefe57134afff22a70b54e51cc4a87e608fd11071a8"
+    },
+    {
+      "name": "3ds-specs-v1.2.6",
+      "url": "https://raw.githubusercontent.com/devkitPro/devkitarm-crtls/v1.2.6/3dsx.specs",
+      "sha256": "2663fca222c4a97bd51fae61a19f95bdabc068000685997ecbe7b11a6675f84b"
+    },
+    {
+      "name": "blender-gpl",
+      "url": "https://raw.githubusercontent.com/blender/blender/main/doc/license/GPL-license.txt",
+      "sha256": "f2703dec1b0118070caabd3302e21738c00211b0cc3260dbeb1168d6eda726b7"
+    }
+  ],
+  "web_references_without_snapshot": [
+    {
+      "url": "https://ffmpeg.org/legal.html",
+      "use": "configuration-dependent license"
+    },
+    {
+      "url": "https://www.mozilla.org/en-US/MPL/2.0/",
+      "use": "CRT source and notice obligations"
+    },
+    {
+      "url": "https://richwhitehouse.com/index.php?content=inc_projects.php&showproject=91",
+      "use": "Noesis official distribution; EULA remains pending"
+    },
+    {
+      "url": "https://gcc.gnu.org/onlinedocs/libstdc++/manual/license.html",
+      "use": "GCC runtime exception conditions"
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "date": "2026-10-17",
+  "task": "F02.07/camera-runtime-capture-eu",
+  "session_id": "bdaad9edb3134b5fa876ae7ba60d0d99",
+  "environment": {
+    "emulator": "PCSX2",
+    "version": "v2.8.2",
+    "binary_sha256": "10e7cc1b3180b5a9f48923f3dfc3900019cc8c0df7e280a0ea61190b86961390",
+    "bios_sha256": "d6653f4e93be2f6f9e9d690a934f26cf0f6ad4e348b69f41ef736732c3a6685b",
+    "configuration_sha256": "3aaa3070821c6c00e64ee4951d91a3e3e7538a57870681dcb95d980f2fa7917f",
+    "cpu": "EE",
+    "method": "manual-debugger-v1"
+  },
+  "environment_host_checked_by_operator": true,
+  "user_confirmation": {
+    "physical_keyboard_responds": true,
+    "new_game_started": true,
+    "requested_profile": "Spanish texts; action Normal; riddle Normal",
+    "profile_selection_evidence": "operator confirmation; not independently read from game memory"
+  },
+  "capture_method": {
+    "debugger": "EE before-call breakpoints; Step Into; Step Out; Run between completed invocations",
+    "state_export": "PINE SaveState while status=paused before/after; stable file hash before read",
+    "restarts_or_loads_between_events": 0,
+    "decoder_contract": "pcsx2-state-reader-v1",
+    "checkpoint_count": 0,
+    "data_sample_count": 0
+  },
+  "private_states": [
+    {
+      "slot": 2,
+      "sha256": "27295515aa7259a640b7ee0d0d05ef028db7f62af48b165c4983e22fed18579d",
+      "point_id": "37c2722488a402843f073e9374c224efa819396b866fa563e62f18ecb6b6c5bc",
+      "phase": "before_call",
+      "delay_slot": false
+    },
+    {
+      "slot": 3,
+      "sha256": "79afa3921db8c376548a434cfa96299e13357a12a0322fbc69ba226fc6b5b769",
+      "point_id": "939b1f0a4b38b64ad4afa4011700fe03e726e0d42c3f4873456e5894efbf94da",
+      "phase": "entry_after_slot",
+      "delay_slot": false
+    },
+    {
+      "slot": 4,
+      "sha256": "72acdb38cb937425d5639e2c62a4ef505a3b67f9974ea549700c2fb18455e632",
+      "point_id": "1aebd4f0ce279e6971749a79acc27cfaf4079117bb02195f252bb6667e1d6d77",
+      "phase": "return_if_reached",
+      "delay_slot": false
+    },
+    {
+      "slot": 5,
+      "sha256": "7b757cc020582c48ad45b05a279d9e623ccca0d1480f0a96a6e650b12481ccb9",
+      "point_id": "08f9647220d018e931344d27ae280c94c04218c915d5dd528fd0737ed55ae679",
+      "phase": "before_call",
+      "delay_slot": false
+    },
+    {
+      "slot": 6,
+      "sha256": "d1bea6bc5a61463add09bc1841574a47d583a3046c18c91fbd0650305cb44d20",
+      "point_id": "ed564b0bb054d7219dda64481417bafd1c50bd0b7ab53f99e99aa0a7cc8b6355",
+      "phase": "entry_after_slot",
+      "delay_slot": false
+    },
+    {
+      "slot": 7,
+      "sha256": "67bb7ba7af400d8f4a92aa3a37c443f9891ed21ec774803262c84675d0673a56",
+      "point_id": "e526495ec04cf988258ea50564acae4d9e1b53abbc4f1d85c67386ea0e08ed33",
+      "phase": "return_if_reached",
+      "delay_slot": false
+    },
+    {
+      "slot": 8,
+      "sha256": "8af0672278bc48593dd7d24f2a0d31696e7ee94bf70656898c037cdc9a821813",
+      "point_id": "8f014f78dcf2bd080a352940e80acbf4a415ca712a2d2097d0d112de17612a02",
+      "phase": "before_call",
+      "delay_slot": false
+    },
+    {
+      "slot": 9,
+      "sha256": "a823383555b5ab8626ed6083cb417f3d20442113b351a52e01057913a6a589a7",
+      "point_id": "7b47028ca3f730e03c8d2743ac9f5027ebdddf842f6a25b1615fb8814c6b9de1",
+      "phase": "entry_after_slot",
+      "delay_slot": false
+    },
+    {
+      "slot": 10,
+      "sha256": "a5d86a79c63517c235089b7c716f4133d4813defe8618cdb42dd0c1bc8705d21",
+      "point_id": "8d4b118d2aaf083a7f7fd9cf5948b105293dbc09b397acb4c702f8b12f388bc8",
+      "phase": "return_if_reached",
+      "delay_slot": false
+    }
+  ],
+  "control": {
+    "sha256": "7111d815b922f67767113b97d73ecce3d6d8545584df602b9809ab3571f50401",
+    "elf_entry_verified": true,
+    "included_as_event": false
+  },
+  "code_preflight": [
+    {
+      "range_id": "41e61d8c74fb862394924d574d3d5f4112b93e17d294607189e2c5fa254ff16b",
+      "size": 524,
+      "sha256": "3b71119d0557dd800dfcd738b5cf251d8e1d8a1d0724b589ab70fbd47d9f73e6",
+      "matches_plan": true
+    },
+    {
+      "range_id": "6eb05b4424d34b522e015b82b65e8c4c02bd67b412f2c066a5289f16bcf6a1da",
+      "size": 4096,
+      "sha256": "a5f1ba1bef8bd62d945d1823d1e083f2458d5864127f97464714e5b68b08bf21",
+      "matches_plan": true
+    },
+    {
+      "range_id": "7e6ace1a4639d7a203fe81a98709abe7b860a183d789683321e4b923afad620e",
+      "size": 524,
+      "sha256": "2978f87b22e497f858aeedcb44439d467aae92ce37239c05724d2d4796e1d0dd",
+      "matches_plan": true
+    },
+    {
+      "range_id": "fa25cf6ce2817119ce5c67e4ac91cdc87fbadd2d22e8f5169d652e322cab9640",
+      "size": 524,
+      "sha256": "e24346ba8c50b56a249e2607ef9f2c6d6b9a90f4fc156b5e3fd175c70b411f1d",
+      "matches_plan": true
+    },
+    {
+      "range_id": "fd6b978f7126b66c98e84a2b2ffc7ebc3b88137a90bdda7ad9ed879da98ba8b6",
+      "size": 4096,
+      "sha256": "06f861be371bb7e27082017f78b7bb00b61cb90443d2263e0d53f059c9f3b891",
+      "matches_plan": true
+    },
+    {
+      "range_id": "fda27ea8e60e92eccddee921c2bbf192013b9a6b35d869a1cc56ceff819cede5",
+      "size": 4096,
+      "sha256": "009d84b2ddfa9beaa98bfa2c38003b7ca7c0f22afad0a0ece01e2de0e4b066ca",
+      "matches_plan": true
+    }
+  ],
+  "code_postflight": [
+    {
+      "range_id": "41e61d8c74fb862394924d574d3d5f4112b93e17d294607189e2c5fa254ff16b",
+      "size": 524,
+      "sha256": "3b71119d0557dd800dfcd738b5cf251d8e1d8a1d0724b589ab70fbd47d9f73e6",
+      "matches_plan": true
+    },
+    {
+      "range_id": "6eb05b4424d34b522e015b82b65e8c4c02bd67b412f2c066a5289f16bcf6a1da",
+      "size": 4096,
+      "sha256": "a5f1ba1bef8bd62d945d1823d1e083f2458d5864127f97464714e5b68b08bf21",
+      "matches_plan": true
+    },
+    {
+      "range_id": "7e6ace1a4639d7a203fe81a98709abe7b860a183d789683321e4b923afad620e",
+      "size": 524,
+      "sha256": "2978f87b22e497f858aeedcb44439d467aae92ce37239c05724d2d4796e1d0dd",
+      "matches_plan": true
+    },
+    {
+      "range_id": "fa25cf6ce2817119ce5c67e4ac91cdc87fbadd2d22e8f5169d652e322cab9640",
+      "size": 524,
+      "sha256": "e24346ba8c50b56a249e2607ef9f2c6d6b9a90f4fc156b5e3fd175c70b411f1d",
+      "matches_plan": true
+    },
+    {
+      "range_id": "fd6b978f7126b66c98e84a2b2ffc7ebc3b88137a90bdda7ad9ed879da98ba8b6",
+      "size": 4096,
+      "sha256": "06f861be371bb7e27082017f78b7bb00b61cb90443d2263e0d53f059c9f3b891",
+      "matches_plan": true
+    },
+    {
+      "range_id": "fda27ea8e60e92eccddee921c2bbf192013b9a6b35d869a1cc56ceff819cede5",
+      "size": 4096,
+      "sha256": "009d84b2ddfa9beaa98bfa2c38003b7ca7c0f22afad0a0ece01e2de0e4b066ca",
+      "matches_plan": true
+    }
+  ],
+  "capture": {
+    "sha256": "216003229ac966e9a6e0d1153be9c6a80ef7550ffc5c7d23ab52bb1c2cb34e49",
+    "status": "validated_observations",
+    "events": 9,
+    "comparisons": [
+      {
+        "boundary_id": "0c1a0b8c14dddb701299d1d367d04ab46bdada42957674207b5971830a94ac5c",
+        "entry_copy_comparison": "equal",
+        "entry_return_comparison": "different",
+        "status": "observed"
+      },
+      {
+        "boundary_id": "6b2adeb9f9e3cb376c5e3b100a389df5778d783e62c216916788e0ae5f2a790a",
+        "entry_copy_comparison": "not_applicable",
+        "entry_return_comparison": "equal",
+        "status": "observed"
+      },
+      {
+        "boundary_id": "6a6d0aad5397845c5c9b83efc3dd77c92817ef5c366f11fd7d2612fd94432443",
+        "entry_copy_comparison": "not_applicable",
+        "entry_return_comparison": "equal",
+        "status": "observed"
+      }
+    ],
+    "receipt_bytes": 1343,
+    "receipt_sha256": "6280e7b164c12805ecead3d3415fbe18588c726369553d6ea17d8b215d04898d",
+    "repeat_identical": true,
+    "execution_authentication": "not_provided"
+  },
+  "cleanup": {
+    "process_exited": true,
+    "socket_removed": true,
+    "pine_enabled": false,
+    "mtvu_restored": true,
+    "savestate_folder_restored": true,
+    "configuration_close_sha256": "cfc4b6e39eaa9fa7efa7be80fdd20b471a789ed1543ae7feebf716045c26274e",
+    "restored_profile_sha256": "124b133bc8cfab8c83c2878e447d1e3a892b79a39f4e2e2ce9457ef99140cb2d",
+    "testconfig_exit": 0
+  },
+  "sources": "SRC24 official PCSX2 v2.8.2 sources; format facts only; no external source copied",
+  "implementation_files": [
+    {
+      "path": "tools/inspectors/pcsx2_state.py",
+      "sha256": "8d280276634ac156ef1fe38a510a86df6e1267799f3dbb5bf922301bdbce714e"
+    },
+    {
+      "path": "tools/inspectors/state_files.py",
+      "sha256": "bce4bd7b31064c2a95a5d24bcca6046328ab7b7ccb9f817c011a3dde9f59e4e0"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "initial_suite": {
+      "passed": 1511,
+      "failed": 1,
+      "failure": "custody check raced temporary receipt publication; rerun with stable tree required"
+    },
+    "remote_ci_executed": false,
+    "runtime_3ds_rebuilt": false,
+    "python_tests_passed": 1517,
+    "new_state_reader_tests": 82,
+    "line_coverage_percent": 98.6595,
+    "branch_coverage_percent": 97.4335,
+    "state_reader_line_branch_percent": 100,
+    "private_state_adapter_line_branch_percent": 100,
+    "coverage_gate": "passed",
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "repository_check": "passed"
+  },
+  "f02_07_status": "pending",
+  "resource_links": [],
+  "capabilities": [],
+  "payloads_in_repository": false
+}
