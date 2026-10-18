@@ -1,0 +1,517 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC37",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-shaderc/prepare",
+  "stage": "prepared-build-pending-capacity",
+  "contract": "schemas/pcsx2-shaderc-v1.md",
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan": {
+    "path": "docs/compatibility/pcsx2-build-dependencies.json",
+    "sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+    "historical_snapshot_unchanged": true
+  },
+  "archives": [
+    {
+      "archive": "shaderc-2026.2.tar.gz",
+      "sha256_expected": "f924178e75e3293082481b25ed64d5e48a795b479dac3bd3c83d23070855df42",
+      "url": "https://github.com/google/shaderc/archive/v2026.2/shaderc-2026.2.tar.gz",
+      "download_verified": true,
+      "exit_code": 0,
+      "seconds": 1.07,
+      "download_log_sha256": "5d232e6dd7291684833f62ff050c73f3d5a22121efad5ea83398b0fbc42d80d7",
+      "bytes": 228959,
+      "unpacked_bytes": 1213916,
+      "source_root": "shaderc-2026.2"
+    },
+    {
+      "archive": "shaderc-glslang-275822a6261ee689aadb1da5f09a0ec2f058685c.tar.gz",
+      "sha256_expected": "971848a1cc639ce8dc244e778b17efe0f690e32ac398a75e31d1c67ad06d3e0a",
+      "url": "https://github.com/KhronosGroup/glslang/archive/275822a6261ee689aadb1da5f09a0ec2f058685c/shaderc-glslang-275822a6261ee689aadb1da5f09a0ec2f058685c.tar.gz",
+      "download_verified": true,
+      "exit_code": 0,
+      "seconds": 1.48,
+      "download_log_sha256": "7608575ea0e082a410d956ecb4977dbc46d44b5f02a16c8072b0ca5e4ddfa540",
+      "bytes": 4333168,
+      "unpacked_bytes": 44115228,
+      "source_root": "glslang-275822a6261ee689aadb1da5f09a0ec2f058685c"
+    },
+    {
+      "archive": "shaderc-spirv-headers-58006c901d1d5c37dece6b6610e9af87fa951375.tar.gz",
+      "sha256_expected": "a6cb1b300bb8171795e116457e858e555334749f9cacaed8068ae0ef8681110c",
+      "url": "https://github.com/KhronosGroup/SPIRV-Headers/archive/58006c901d1d5c37dece6b6610e9af87fa951375/shaderc-spirv-headers-58006c901d1d5c37dece6b6610e9af87fa951375.tar.gz",
+      "download_verified": true,
+      "exit_code": 0,
+      "seconds": 1.11,
+      "download_log_sha256": "e42bc6ea91544d89d84779cdaeaa19c6ebb4017d68902b12e40a8e59f8ff79ac",
+      "bytes": 566868,
+      "unpacked_bytes": 4036740,
+      "source_root": "SPIRV-Headers-58006c901d1d5c37dece6b6610e9af87fa951375"
+    },
+    {
+      "archive": "shaderc-spirv-tools-6337eb62cadd7d124ac6789bf39c0f71148f0a73.tar.gz",
+      "sha256_expected": "e156be0bd81c8812f1bff8e520422bfa9df61b3045587b9eb483185f1074a7b2",
+      "url": "https://github.com/KhronosGroup/SPIRV-Tools/archive/6337eb62cadd7d124ac6789bf39c0f71148f0a73/shaderc-spirv-tools-6337eb62cadd7d124ac6789bf39c0f71148f0a73.tar.gz",
+      "download_verified": true,
+      "exit_code": 0,
+      "seconds": 1.43,
+      "download_log_sha256": "01f593bd996249b0a2e81be80715ffce360de33544a88ef5bf09e8cc846ac74a",
+      "bytes": 3478862,
+      "unpacked_bytes": 26001029,
+      "source_root": "SPIRV-Tools-6337eb62cadd7d124ac6789bf39c0f71148f0a73"
+    }
+  ],
+  "source_verification": {
+    "comparisons": [
+      {
+        "archive": "shaderc-2026.2.tar.gz",
+        "regular_files": 217,
+        "symlinks": 0,
+        "originals_unchanged": true,
+        "work_changed_files": [
+          "CMakeLists.txt",
+          "libshaderc/CMakeLists.txt",
+          "libshaderc/include/shaderc/shaderc.h",
+          "libshaderc/include/shaderc/shaderc.hpp",
+          "libshaderc/src/shaderc.cc",
+          "libshaderc_util/include/libshaderc_util/compiler.h",
+          "libshaderc_util/src/compiler.cc",
+          "third_party/CMakeLists.txt"
+        ]
+      },
+      {
+        "archive": "shaderc-glslang-275822a6261ee689aadb1da5f09a0ec2f058685c.tar.gz",
+        "regular_files": 3348,
+        "symlinks": 0,
+        "originals_unchanged": true,
+        "work_changed_files": []
+      },
+      {
+        "archive": "shaderc-spirv-headers-58006c901d1d5c37dece6b6610e9af87fa951375.tar.gz",
+        "regular_files": 115,
+        "symlinks": 0,
+        "originals_unchanged": true,
+        "work_changed_files": []
+      },
+      {
+        "archive": "shaderc-spirv-tools-6337eb62cadd7d124ac6789bf39c0f71148f0a73.tar.gz",
+        "regular_files": 1738,
+        "symlinks": 0,
+        "originals_unchanged": true,
+        "work_changed_files": []
+      }
+    ],
+    "work_extra_files": [
+      {
+        "path": ".DS_Store",
+        "kind": "Finder metadata, not compiled",
+        "sha256": "3c7d568cd258d42640dff88ee71a93039147f72bd76f078baf1c37eaaa2cc709"
+      },
+      {
+        "path": "CMakeLists.txt.orig",
+        "kind": "patch backup equal to original",
+        "sha256": "3f06b14ea9596cd2b988271858ed1bc02adaf0ec58069ef28d385142e87b96d2"
+      },
+      {
+        "path": "libshaderc/src/shaderc.cc.orig",
+        "kind": "patch backup equal to original",
+        "sha256": "c152ac0a209f96155502cc8ec46ad0d66c8b038001e4b11c36712b7cf3452589"
+      },
+      {
+        "path": "libshaderc_util/include/libshaderc_util/compiler.h.orig",
+        "kind": "patch backup equal to original",
+        "sha256": "da9a01eae2614241dec655b23e4c03b08b9ba67c322e01e9235a11d6d5a5b78a"
+      },
+      {
+        "path": "libshaderc_util/src/compiler.cc.orig",
+        "kind": "patch backup equal to original",
+        "sha256": "446148d5a3ea805c6ae7e63e5c5751548dc6a67df008f3817ca72b27ed60b316"
+      },
+      {
+        "path": "third_party/.DS_Store",
+        "kind": "Finder metadata, not compiled",
+        "sha256": "cfaaad7700049771437c032b033cb2f143ea18dca53192332f7b14b788334a18"
+      }
+    ],
+    "license_files": [
+      {
+        "path": "shaderc-2026.2/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "shaderc-2026.2/third_party/LICENSE.spirv-tools",
+        "sha256": "47e20ce182bc68fab1a0cfb129b03c326aaf4f2b6b7905aa9d376d31018bd29f"
+      },
+      {
+        "path": "shaderc-2026.2/third_party/LICENSE.glslang",
+        "sha256": "b5a00e94f058edc87e05978329b55730d8689abe61205d9018443d03de4f07da"
+      },
+      {
+        "path": "glslang-275822a6261ee689aadb1da5f09a0ec2f058685c/LICENSE.txt",
+        "sha256": "17e70c676e1521ff3e4686f04a2053d93a7e28a33be8de7ec37ab0ff72feb677"
+      },
+      {
+        "path": "SPIRV-Headers-58006c901d1d5c37dece6b6610e9af87fa951375/LICENSE",
+        "sha256": "ea43b1de38a6f90c488800d66dec1ed671e68cda530266bc96951fb5b6307613"
+      },
+      {
+        "path": "SPIRV-Tools-6337eb62cadd7d124ac6789bf39c0f71148f0a73/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "SPIRV-Tools-6337eb62cadd7d124ac6789bf39c0f71148f0a73/utils/vscode/src/lsp/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    ],
+    "patches": {
+      "recipe_sha256": "351f0e758a723d165b418f5bc7c9dbcae2999193b69fd12072298bc05475ab57",
+      "local_fix_sha256": "94def2a714948fc98ead58c6a94f584233e7bd40b94bb05bdd875641ec203915",
+      "final_diff_sha256": "19b571ed8eec8661404a3b748b3b45b9c2d3c4f5aad2e4ff6380bf539e8ead7e"
+    },
+    "pcsx2_source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "pcsx2_source_clean": true
+  },
+  "patch_deviations": [
+    {
+      "file": "libshaderc/include/shaderc/shaderc.hpp",
+      "reason": "fixed recipe patch uses non_sematic_debug_info instead of declared non_semantic_debug_info",
+      "patch": "tests/fixtures/pcsx2-shaderc/header-typo.patch",
+      "before_probe_exit_code": 1,
+      "after_probe_exit_code": 0
+    }
+  ],
+  "configuration": {
+    "component_cmake_exit_code": 0,
+    "architecture": "x86_64",
+    "type": "Release",
+    "deployment_target": "11.0",
+    "compiler": "AppleClang 21",
+    "sdk": "macOS 26.5",
+    "planned_build_jobs": 2,
+    "private_prefix": true,
+    "SHADERC_SKIP_TESTS": true,
+    "SHADERC_SKIP_EXAMPLES": true,
+    "SHADERC_SKIP_COPYRIGHT_CHECK": true,
+    "SPIRV_SKIP_EXECUTABLES": true,
+    "SPIRV_TOOLS_BUILD_STATIC": false,
+    "SPIRV_TOOLS_LIBRARY_TYPE": "STATIC"
+  },
+  "tests": {
+    "provider_ctest_inventory_count": 0,
+    "zero_count_is_success": false,
+    "provider_full_suite_executed": false,
+    "own_runtime_cases_prepared": 6,
+    "provider_c_smoke_prepared": 1,
+    "runtime_cases_executed": 0,
+    "own_cpp_syntax_exit_code": 0,
+    "provider_c_syntax_exit_code": 0,
+    "missing_explicit_library_exit_code": 1,
+    "fixture_link_verified": false,
+    "shader_compile_execution_verified": false,
+    "spirv_validation_execution_verified": false
+  },
+  "capacity_before_build_attempts": [
+    {
+      "free_bytes": 20644794368,
+      "minimum_free_bytes": 21474836480,
+      "allowed": false
+    },
+    {
+      "free_bytes": 20527665152,
+      "minimum_free_bytes": 21474836480,
+      "allowed": false
+    }
+  ],
+  "capacity_final": {
+    "free_bytes": 20527513600,
+    "minimum_free_bytes": 21474836480,
+    "allowed": false,
+    "scope": "IB02 before Shaderc compilation",
+    "prior_libraries_unchanged": 20
+  },
+  "library_build_started": false,
+  "library_installed": false,
+  "unit_accepted": false,
+  "prior_libraries_unchanged": 20,
+  "src36_inventory_supplement": {
+    "name": "libc4core.0.2.12.dylib",
+    "bytes": 33072,
+    "sha256": "b4954d00e2a8a37a7ce2b18c0a546400fcd020660acc85987d3b662b4604c6dc",
+    "architecture": "x86_64",
+    "present_in_src36_manifest": true
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 20527513600,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "reused_evidence": {
+    "toolchain": "SRC31 four checks, not rerun",
+    "pcsx2_configure": "SRC36 baseline-configure-v8, not rerun"
+  },
+  "recipe_progress": {
+    "verified_archives": 16,
+    "total_archives": 25,
+    "extra_host_inputs": [
+      "NASM",
+      "FontTools"
+    ],
+    "historical_source_plan_unchanged": true
+  },
+  "steps": [
+    {
+      "name": "fixture-syntax-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.97,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "header-after-fix-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.32,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "header-before-fix-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.78,
+      "log_sha256": "5b3c9d2470edb95e09a562376c9a7f56131384afd499dde01ac1f3baff9a578b"
+    },
+    {
+      "name": "header-fix-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.0,
+      "log_sha256": "1f3c26ed1ac54947c44c957af7eea71f3ba98db8dae5d9979ba4c3fd6e4ce435"
+    },
+    {
+      "name": "missing-library-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 1.1,
+      "log_sha256": "10e18a7791dd92ae078195ed53653544243b338ba17c898595fee48ad7f9c7f3"
+    },
+    {
+      "name": "provider-c-syntax-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recipe-patch-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "fed8c4a448bc231aee497ef426f68eec5771ae46c1e57badc09ec419d4fee0f6"
+    },
+    {
+      "name": "shaderc-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.22,
+      "log_sha256": "297dad66389c7ca707939853d04cf2693c982155a05cb1f5ad9183505eb9b554"
+    },
+    {
+      "name": "shaderc-v1-inventory",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "655b4edf543a99640d87b7cec2509f8071db3e631f77a63bd8b28f1533babfc4"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "schemas/pcsx2-shaderc-v1.md",
+      "sha256": "52c71a0c92e14282650d716ec21af793cdad7d5bdf130b67593833d9b0852372"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-shaderc/CMakeLists.txt",
+      "sha256": "51ce61ee4b155101231252937b34da4feaa256fd06ebd9eba8257c7e8df32a5e"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-shaderc/README.md",
+      "sha256": "fe5590e45a5fdc5752486c928bbb9eb23cdd5d5171ece287da6a3ce56b710adf"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-shaderc/fixture.hpp",
+      "sha256": "73318d62332156346cf13840b48d750c46e0c83c08332e24a777fe350a735337"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-shaderc/fragment.frag",
+      "sha256": "cbfe1337d296fd28df03681cf21b200b207cf2931be8679d61171559cc111385"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-shaderc/header-typo.patch",
+      "sha256": "94def2a714948fc98ead58c6a94f584233e7bd40b94bb05bdd875641ec203915"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-shaderc/header_probe.cpp",
+      "sha256": "549df6b3a982630429dcfafd2a0edfa0e6b8da68d83e7bdaabe2736393711d22"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-shaderc/shader.cpp",
+      "sha256": "018f236c1ae63a0329981b50b38b03c63f04c1531f650854f32e0e85abe4ad80"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-shaderc/vertex.vert",
+      "sha256": "86789b8dc56b8909bf8f89e655d160ab15940a29652719722d8913763c42140a"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "build/f02-07-pcsx2-shaderc/audit-notes.json",
+      "sha256": "631d1d7ea816741315960e66be97cb5c4514b63b8553cf018ae74c1109c4d6fb"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/c4core-supplement.json",
+      "sha256": "a3916e03efd2177d6a5878b1502240c30d8cfb449e59cc9ce61a684ae9492354"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/capacity-before-build-v2.json",
+      "sha256": "8747c90a231816f2a16bb2e3869a8f9d8435146dccfae42947586d60092e1ccd"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/capacity-before-build.json",
+      "sha256": "b6d18c578224dc9b05335a50ea1a5b99f4edb8a8440ffb0db06d9938213e23e4"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/capacity-current.json",
+      "sha256": "5d727a61eac2c4134df8caaab29cfad808625b28f00beea228340ce1b35e6e79"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/capacity-final-v2.json",
+      "sha256": "3570c9b848753994075acc19c4d1e9e43aa892d805cb94b2daf7aa786f361f65"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/capacity-final.json",
+      "sha256": "1f66e6a8fd0238413227e5dd9b31491f0e1c4a16f652012faa38db84af4b0307"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/download.py",
+      "sha256": "322f2fcd5bd856260c13677c755696ea43a2eee3ff132eb6011f670646b0c9be"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/downloads.json",
+      "sha256": "97b0c55dce3bad4d89bc94c7fce22e0ea8710395ae5374586e0d0f0de286aded"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/fixture-syntax-v1.json",
+      "sha256": "8ca3964703d9bc0211fffd6c28f59eaabafe9d5bfae8ddefb87a274fa67fddc1"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/header-after-fix-v1.json",
+      "sha256": "8ed9007655a377586854b1759ee2bea08c113534c0d3436bb5058dbb6068031f"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/header-before-fix-v1.json",
+      "sha256": "4c3e3a345a7fb7c132dce9883d30b4bccedb2c3ccdd9233e4390f8c01977a4f5"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/header-fix-v1.json",
+      "sha256": "a0b8442f11a8d073a9c18798473480da2cfbe6998c27fd8f4f46c22f19647753"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/missing-library-v1.json",
+      "sha256": "21a4a2c1cf53e1ad0f7471ae348ddb05b7ad9cf0cc7217738110bee746e0a0d1"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/preflight-v8.json",
+      "sha256": "20e544696677b5210f9c0f85d0cb29e3ab9e646d44699f8b62fe255e82bfd2c2"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/prior-libraries.json",
+      "sha256": "2e22a2ed0682833e558081a11b908d8a52dfd0cfd8d17abc420da3352b4158b1"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/provider-c-syntax-v1.json",
+      "sha256": "90eebaac5212fcbaa5ea46a14e5dc7242ff93ce41cc4bda6499cfee23dc5d77e"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/publish.py",
+      "sha256": "e7d8d02b5bc965c9f9ee9ba19daf252a5a6ed88853a09c3b39a2bfa216c77f97"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/recipe-patch-v1.json",
+      "sha256": "afa105bbaa4fb7f23f5c0c0fb791014b2f88172db685ed0daf009509a19fc765"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/run_build.py",
+      "sha256": "a751566e8f0d78ff3d849bd77484b7312cf3250f2ccd623e21f52fdec096e6fd"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/run_stage.py",
+      "sha256": "7e734f7dac7c820042347b74ebceb7bf41ca33d9767042adf84cb2a632ad0b41"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/shaderc-v1-configure.json",
+      "sha256": "bb792e92049017a627b4f0c195d06e46ee351a673874505f7ec58336751846ce"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/shaderc-v1-inventory.json",
+      "sha256": "1468ef3d501d2e8d5969b014b30742ebdbcaa5a4509373ab800aa8874d427bef"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/source-verification.json",
+      "sha256": "e7f368f040551b3d1299bd95cd5b71d702e59ee1a2f4539f660fc4258fb61d0a"
+    },
+    {
+      "path": "build/f02-07-pcsx2-shaderc/verify_sources.py",
+      "sha256": "d4a3e236703e30adf47f0f94828a201f9f70610f768a7c2223b16f66b2b22f8c"
+    }
+  ],
+  "validation": {
+    "repository_checks": "passed",
+    "git_diff_check": "passed",
+    "source_hashes_verified": 9,
+    "local_evidence_hashes_verified": 25,
+    "step_logs_verified": 9,
+    "remote_ci_executed": false,
+    "python_full_suite_rerun": false
+  },
+  "next_task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-shaderc/build-and-validate",
+  "f02_07_status": "pending",
+  "mapping_verified": false,
+  "resource_links": [],
+  "capabilities": []
+}

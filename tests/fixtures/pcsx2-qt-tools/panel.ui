@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui version="4.0"><class>FixturePanel</class><widget class="QWidget" name="fixturePanel">
+<property name="windowTitle"><string>Panel de prueba</string></property>
+<layout class="QVBoxLayout" name="layout">
+<item><widget class="QLabel" name="label"><property name="text"><string>Brújula y llaves</string></property></widget></item>
+<item><widget class="QPushButton" name="button"><property name="text"><string>Abrir puerta</string></property></widget></item>
+</layout></widget><resources/><connections/></ui>

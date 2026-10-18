@@ -1,0 +1,3968 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC44",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-qt-translations",
+  "stage": "installed-and-validated",
+  "contract": "schemas/pcsx2-qt-translations-v1.md",
+  "prior_qt_evidence": [
+    {
+      "source_id": "SRC40",
+      "sha256": "affd051bf62c339ab9abf6492a4aaf7adbaa4c84ea1b521ac7d1f9d495cb2a09",
+      "installed_binary_hashes_verified": true
+    },
+    {
+      "source_id": "SRC41",
+      "sha256": "f1f355f6963929f2e80629a30b7922130a23ea838b0ac3b8e3f7961fe7cde3b2",
+      "installed_binary_hashes_verified": true
+    },
+    {
+      "source_id": "SRC42",
+      "sha256": "31b991378746074c3070f77a99e2479199dd85964ef2f999d5ba619826b0f21f",
+      "installed_binary_hashes_verified": true
+    },
+    {
+      "source_id": "SRC43",
+      "sha256": "74bed063e2ba266f0d58ea4e0dd9f1254834fa17d0cde63552be8911101157e8",
+      "installed_binary_hashes_verified": true
+    }
+  ],
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan_sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+  "archive": {
+    "archive": "qttranslations-everywhere-src-6.11.1.tar.xz",
+    "url": "https://download.qt.io/archive/qt/6.11/6.11.1/submodules/qttranslations-everywhere-src-6.11.1.tar.xz",
+    "sha256": "37c02c81206594c7bb4edca85ac93e8e55a9836b70c960fde6cb0f8623ec5677",
+    "bytes": 1684616,
+    "unpacked_bytes": 22580230,
+    "regular_files": 309
+  },
+  "recipe_archives_verified_total": 21,
+  "recipe_archives_total": 25,
+  "configuration": {
+    "cache_expected": {
+      "CMAKE_BUILD_TYPE": "Release",
+      "CMAKE_OSX_ARCHITECTURES": "x86_64",
+      "CMAKE_OSX_DEPLOYMENT_TARGET": "11.0",
+      "QT_GENERATE_SBOM": "OFF"
+    },
+    "translation_units": 0,
+    "link_commands": 0,
+    "lrelease_commands": 304,
+    "lrelease_sha256": "8c756246c6ae580f50a72aee3e7347303428de541eccb02c3df6750c961c3231",
+    "no_homebrew_target_references": true,
+    "source_files_unchanged": 309,
+    "supervisor_reused_from": "SRC40",
+    "supervisor_sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc"
+  },
+  "build": {
+    "accepted": true,
+    "exit_code": 0,
+    "abort_reason": null,
+    "duration_seconds": 11.18,
+    "limits": {
+      "start_bytes": 15032385536,
+      "floor_bytes": 12884901888,
+      "maximum_build_bytes": 1073741824,
+      "nominal_interval_seconds": 1
+    },
+    "log_sha256": "58763e2eff52531220c0befcbf29952611c827d14f0c508970655fc3732cc965",
+    "samples": 14,
+    "initial": {
+      "free_bytes": 16865280000,
+      "logical_bytes": 2979078,
+      "allocated_bytes": 3891200,
+      "elapsed_seconds": 0.009
+    },
+    "final": {
+      "free_bytes": 16839155712,
+      "logical_bytes": 18840879,
+      "allocated_bytes": 20480000,
+      "elapsed_seconds": 11.179
+    },
+    "minimum_free_bytes_observed": 16829939712,
+    "maximum_logical_bytes_observed": 18840879,
+    "maximum_allocated_bytes_observed": 20688896,
+    "maximum_sample_interval_seconds": 1.023
+  },
+  "catalog_generation": {
+    "source_ts": 291,
+    "generated_empty_english_ts": 13,
+    "qm_generated": 304,
+    "omitted_ts": 0,
+    "catalogs_metadata_installed": true,
+    "data_architecture": "architecture-independent QM data",
+    "lrelease_reused_from": "SRC43",
+    "all_qm_identical_in_independent_regeneration": true,
+    "generation_source_update_targets": "Not invoked; sibling repository warnings concern TS update targets, not QM compilation from supplied TS"
+  },
+  "supervisor": {
+    "reused_from": "SRC40",
+    "sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc",
+    "previous_control_tests_passed": 7,
+    "control_tests_rerun": false
+  },
+  "runtime_tests": {
+    "cases": [
+      "all QM load and language metadata",
+      "Spanish messages direct and application translation",
+      "aggregate dependency translation",
+      "missing/corrupt QM rejection and recovery",
+      "missing/partial dependency rejection and recovery"
+    ],
+    "cases_per_stage": 5,
+    "stages": [
+      "build-v2-fixture",
+      "installed-v1"
+    ],
+    "ctest_executions_passed": 10,
+    "failed_ctest_cases": 0,
+    "skipped_ctest_cases": 0,
+    "additional_loader_executions": 6,
+    "checks_per_stage": {
+      "catalogs": 304,
+      "spanish": 4562,
+      "aggregate": 1647,
+      "recovery": 1532,
+      "missing-dependency": 1647
+    },
+    "oracle": {
+      "counts": {
+        "messages": 4502,
+        "plurals": 20,
+        "disambiguated": 32,
+        "unicode_translations": 1853
+      },
+      "catalogs": 304,
+      "spanish_catalogs": 13,
+      "oracle_sha256": "0a67a1800a5abcf19b41a91577e4800e36c19f4f9f7b5b3f82e5b0d852ba57e0",
+      "spanish": [
+        {
+          "catalog": "assistant_es",
+          "messages": 219,
+          "dependencies": []
+        },
+        {
+          "catalog": "designer_es",
+          "messages": 1256,
+          "dependencies": []
+        },
+        {
+          "catalog": "linguist_es",
+          "messages": 378,
+          "dependencies": []
+        },
+        {
+          "catalog": "qt_es",
+          "messages": 0,
+          "dependencies": [
+            "qtbase_es",
+            "qtmultimedia_es"
+          ]
+        },
+        {
+          "catalog": "qt_help_es",
+          "messages": 69,
+          "dependencies": []
+        },
+        {
+          "catalog": "qtbase_es",
+          "messages": 1532,
+          "dependencies": []
+        },
+        {
+          "catalog": "qtconnectivity_es",
+          "messages": 331,
+          "dependencies": []
+        },
+        {
+          "catalog": "qtdeclarative_es",
+          "messages": 314,
+          "dependencies": []
+        },
+        {
+          "catalog": "qtlocation_es",
+          "messages": 151,
+          "dependencies": []
+        },
+        {
+          "catalog": "qtmultimedia_es",
+          "messages": 115,
+          "dependencies": []
+        },
+        {
+          "catalog": "qtserialport_es",
+          "messages": 16,
+          "dependencies": []
+        },
+        {
+          "catalog": "qtwebengine_es",
+          "messages": 70,
+          "dependencies": []
+        },
+        {
+          "catalog": "qtwebsockets_es",
+          "messages": 51,
+          "dependencies": []
+        }
+      ]
+    },
+    "plural_counts": [
+      0,
+      1,
+      2,
+      5
+    ],
+    "aggregate_dependencies": [
+      "qtbase_es",
+      "qtmultimedia_es"
+    ],
+    "missing_explicit_qt_root_rejected_after_install": true,
+    "upstream_test_programs_available": false,
+    "spanish_coverage": "All 4502 finished nonempty messages in 12 Spanish catalogs, plus one aggregate; no human linguistic review"
+  },
+  "verification_fix": {
+    "cause": "Coordinator assumed translations/en_ts, but CMake generates src/translations/en_ts. The absent oracle also caused the attempted consumer configure to reject its inputs. No functional tests or installation ran in those failed attempts.",
+    "preserved_failed_steps": [
+      "oracle-v1",
+      "build-v1-fixture-configure"
+    ],
+    "recovery": "Correct generated-English directory, require oracle before consumer configuration, retry oracle-v2 and build-v2-fixture; original sources and test expectations unchanged.",
+    "before_script_sha256": "d14b2f3fb77f2df413fb7d99a04f5dd71e63f42f8dc4fb0cb7f7b54d263b029e",
+    "after_script_sha256": "639ad0a40ae71e302709cac13a8c153db6675e45dae246de96323aeff4b26f90"
+  },
+  "installation": {
+    "manifest_entries": 305,
+    "qm_count": 304,
+    "qm_bytes": 15861801,
+    "qm_inventory": [
+      {
+        "path": "assistant_ar.qm",
+        "sha256": "d58573f01a50a892942715c575f006d06f0eb90f0f4cd15eacadd3d34f7b54ea",
+        "bytes": 19837
+      },
+      {
+        "path": "assistant_bg.qm",
+        "sha256": "29d0abdf2e0a7ef1f3ebb72e0427d483d42db47f77ba5732e5183f92f50f332d",
+        "bytes": 27244
+      },
+      {
+        "path": "assistant_cs.qm",
+        "sha256": "618ddba47215349f1522e9b8369661bbb59c5925691c45927ff9fa4bbfc8bee9",
+        "bytes": 53210
+      },
+      {
+        "path": "assistant_da.qm",
+        "sha256": "e97ca018c4b48face375cc20bd3b13f311f8d5a1b8e59912fa2ec4cad1915884",
+        "bytes": 25254
+      },
+      {
+        "path": "assistant_de.qm",
+        "sha256": "2b4afc0a4cdae38f26806c81e99b717086ec1cd64233e0237de2ef5cdde35f74",
+        "bytes": 25263
+      },
+      {
+        "path": "assistant_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "assistant_es.qm",
+        "sha256": "f30bdf748b185d2fe3eb75419b68f5f825c162fbfd0be71d52e208c9f111b459",
+        "bytes": 26846
+      },
+      {
+        "path": "assistant_fr.qm",
+        "sha256": "d42d39c51200dbbbd380f1a431c5c59672405afdcd7bcef8b15e2ea3c7f2e08f",
+        "bytes": 25981
+      },
+      {
+        "path": "assistant_hr.qm",
+        "sha256": "f8e59e895dfbc1a489fec5f23d3a1edc1aaf6f0c8fc8df36c4b45e288e21791a",
+        "bytes": 26723
+      },
+      {
+        "path": "assistant_hu.qm",
+        "sha256": "e28e64c2b97b5600e879036fa34c55450943d2b4c2818df53bc166e61d134185",
+        "bytes": 25256
+      },
+      {
+        "path": "assistant_ja.qm",
+        "sha256": "3ed8cc0178f4261531a658d2c3352dcff67a05d4404d19ba026f83d2bc3c9dd3",
+        "bytes": 21516
+      },
+      {
+        "path": "assistant_ka.qm",
+        "sha256": "015df49c4b128c52d1e314df3e0dc43cb28dea9c3e97e1d7543a364b1caf4be6",
+        "bytes": 24964
+      },
+      {
+        "path": "assistant_ko.qm",
+        "sha256": "a7df3bb943b06196ae5cff24dd2f1afb5d4e82441d109d6c802c46e0eccb50ee",
+        "bytes": 20561
+      },
+      {
+        "path": "assistant_nl.qm",
+        "sha256": "6a60a23d62b84153b898ba7ce7675ab79d32c5b50f3a6fb6014e2bd5ecbb26b2",
+        "bytes": 26995
+      },
+      {
+        "path": "assistant_pl.qm",
+        "sha256": "e2b6c047f2800c52b156b355d7b929292952a29c2c000c77238afb18f958356e",
+        "bytes": 26186
+      },
+      {
+        "path": "assistant_pt_BR.qm",
+        "sha256": "e302914b82ef951f12eaeaaa34ab70a57d4381786423ec8047c677c14a8be7bf",
+        "bytes": 35850
+      },
+      {
+        "path": "assistant_ru.qm",
+        "sha256": "9ef967ad74c47ccb32fa956544c43b7947b2d2c2c369a94f4d6ba11122474fb6",
+        "bytes": 24583
+      },
+      {
+        "path": "assistant_sk.qm",
+        "sha256": "0152d29a42deaac664591eac37d30a1b6d1aa074f88e3b37202996dcbd3bd127",
+        "bytes": 52510
+      },
+      {
+        "path": "assistant_sl.qm",
+        "sha256": "7b4dfeef47b0193c17c1311630241861d8bf04505cb12eccf519f60590d3b9a5",
+        "bytes": 41894
+      },
+      {
+        "path": "assistant_sv.qm",
+        "sha256": "828798cc2529f3d080bf43bca3c3029e22a2a3a10d40f988693684407af30dc7",
+        "bytes": 24058
+      },
+      {
+        "path": "assistant_tr.qm",
+        "sha256": "9f5c0558e7bb3cc48d643f37d41edb2ccaba19caa5af7a4ee652ff1b34aa08b7",
+        "bytes": 24678
+      },
+      {
+        "path": "assistant_uk.qm",
+        "sha256": "a1be7d903f52ee419e8078b67d0c7b90e35e5b7525ec03bc90754a64a3a8b76e",
+        "bytes": 25632
+      },
+      {
+        "path": "assistant_zh_CN.qm",
+        "sha256": "c2d005f9d68d29591a05f926ec53cca61b0f4ac73685576e8697aea0660dc068",
+        "bytes": 20207
+      },
+      {
+        "path": "assistant_zh_TW.qm",
+        "sha256": "dcbdf1a6f04b4db05f04eee907587c3fb909701ea2d2ff847bfbb0ddd62f8025",
+        "bytes": 19130
+      },
+      {
+        "path": "designer_ar.qm",
+        "sha256": "1b5dc3867f3a181afcc88a1d557f15844c8393bd33c17be850004ddf591d2064",
+        "bytes": 139157
+      },
+      {
+        "path": "designer_bg.qm",
+        "sha256": "ee830182795f49049b17c525c916d739f565cbe47bc35b3fae12ebf8f4ff2d0d",
+        "bytes": 154161
+      },
+      {
+        "path": "designer_cs.qm",
+        "sha256": "758bd990acf8cb3392ff053e9fd1ac3f339fb9d0a2055f19b9ceb832dc606a39",
+        "bytes": 154604
+      },
+      {
+        "path": "designer_da.qm",
+        "sha256": "6b8130e4c9ad9eba3ace68389c7885ff8e250d3c4dbd1578ee1e858df3869b04",
+        "bytes": 143790
+      },
+      {
+        "path": "designer_de.qm",
+        "sha256": "afd8e55cdeadb959113734eb23629d809e9b3da8d95ebcc50dd8036261173cbc",
+        "bytes": 160954
+      },
+      {
+        "path": "designer_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "designer_es.qm",
+        "sha256": "75f5c4480322801e21f2fa1fbd408fc7bd4a8424a9306c3bbb8c59c9ef2eb1d6",
+        "bytes": 151958
+      },
+      {
+        "path": "designer_fr.qm",
+        "sha256": "c0b5bd0ab63bd70e80895ef2bd6a221d3fdc9bd30ebd87de89ff1f127d8c1e4f",
+        "bytes": 153552
+      },
+      {
+        "path": "designer_hr.qm",
+        "sha256": "e9dad0fee185ff826284fe942b5f2d4f542e4f08d4cbc0b402a70f35e57ec3b8",
+        "bytes": 149336
+      },
+      {
+        "path": "designer_hu.qm",
+        "sha256": "d82d0b4862c4298b508caafbeb0d6da13283eb78e545665026ac85e03e60e5e6",
+        "bytes": 158573
+      },
+      {
+        "path": "designer_ja.qm",
+        "sha256": "ed9ae6419f1422b929794dbf52b280e276adc85981680d7d3453081188c0dec0",
+        "bytes": 122622
+      },
+      {
+        "path": "designer_ka.qm",
+        "sha256": "f1c25fdf8f3490254d6dda0222a4540a364e6d8c92fef226f86a62b3fe2dba12",
+        "bytes": 154307
+      },
+      {
+        "path": "designer_ko.qm",
+        "sha256": "03af3ccf46595c542f8a6a946fcdbd86da29284b2d24d597e0f07fcd5b7ef98c",
+        "bytes": 123322
+      },
+      {
+        "path": "designer_nl.qm",
+        "sha256": "27fe80f8a5428323602e267c58edef506597a6b65d0739cfeed86b3e95e26e35",
+        "bytes": 150633
+      },
+      {
+        "path": "designer_pl.qm",
+        "sha256": "f3248d249c0d55a566cbbb2f78ced437d379594d6f1148a622e9b0838e062953",
+        "bytes": 148636
+      },
+      {
+        "path": "designer_pt_BR.qm",
+        "sha256": "df6b25352a39ace2720fe863500a145bcba716a9c483be3ccee0cdf8c25dfc59",
+        "bytes": 163932
+      },
+      {
+        "path": "designer_ru.qm",
+        "sha256": "504c80e2b56dad060b22e0c2030d50d66d4e88b913efb2289bea8249e09b842a",
+        "bytes": 152636
+      },
+      {
+        "path": "designer_sk.qm",
+        "sha256": "058290e6540ed326f9e13145d899902713b5f8cbf00d5485f52d114e54dbdd19",
+        "bytes": 144296
+      },
+      {
+        "path": "designer_sl.qm",
+        "sha256": "e07f934b2f3b5d97878ecd12217b954c0bebf01c6ac76baf57a7270ce632c033",
+        "bytes": 152468
+      },
+      {
+        "path": "designer_sv.qm",
+        "sha256": "853d1f55e9ddd70fa861a9cf77373b4c419fb9d7b93a89d2b1dc78d7c05208ba",
+        "bytes": 150796
+      },
+      {
+        "path": "designer_tr.qm",
+        "sha256": "15a20049d0ab988aeba536cc18e3253c62b7600df6ef042e975cb26243f39b1a",
+        "bytes": 150505
+      },
+      {
+        "path": "designer_uk.qm",
+        "sha256": "627bbd6457bc39e1ccdeeaff8c9cdf5c79c815fb2e891990c6675aa5ce70c263",
+        "bytes": 148632
+      },
+      {
+        "path": "designer_zh_CN.qm",
+        "sha256": "9571b6de5d6a04e980b20b2842dcffb46f34df179fec8c1e7519a378e046db69",
+        "bytes": 112445
+      },
+      {
+        "path": "designer_zh_TW.qm",
+        "sha256": "cd1b75d239b74b4eca130a14dc4b295c8217891020b75fc6d93d3877f384964c",
+        "bytes": 114871
+      },
+      {
+        "path": "linguist_ar.qm",
+        "sha256": "49378186cf68fb3e91586e488d4763dad2abf1fbf877ddc348738b2cfdb5471e",
+        "bytes": 45963
+      },
+      {
+        "path": "linguist_bg.qm",
+        "sha256": "4dbf777fb463b17e69e4199dd136e1373b7f1d765aa02c10f218239b7356fd8c",
+        "bytes": 48198
+      },
+      {
+        "path": "linguist_cs.qm",
+        "sha256": "e8afbbd2a96b7371c95ed6373ea7ffd700be005553dd3b3af0c116637ab1d98a",
+        "bytes": 87779
+      },
+      {
+        "path": "linguist_da.qm",
+        "sha256": "26dba28ea79b5c1e3ec149aff006453d1f52f35f0afc007165eb9b21196854c2",
+        "bytes": 48378
+      },
+      {
+        "path": "linguist_de.qm",
+        "sha256": "69f2573f965636c9f129a397bf27107588a00e2066da90aca62118a5d7e1d89f",
+        "bytes": 63296
+      },
+      {
+        "path": "linguist_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "linguist_es.qm",
+        "sha256": "565286fb7c66a00799e7e0feff6a42bbff544c7162b79bd05dcdc2a24d5621e8",
+        "bytes": 49406
+      },
+      {
+        "path": "linguist_fr.qm",
+        "sha256": "cf3fbba311db4f601c6ca44d875bdf3c809ffa026452b3153e74de393d6a7e3b",
+        "bytes": 45430
+      },
+      {
+        "path": "linguist_hr.qm",
+        "sha256": "be8033080376b270a1be3eea526a11dc6c0eb32987ae30b830462fd5a4746696",
+        "bytes": 49665
+      },
+      {
+        "path": "linguist_hu.qm",
+        "sha256": "63816f2a239fa3ab2c2514efb2663df8e9b0a5aa4b14c0cf18c1b264820165a3",
+        "bytes": 50092
+      },
+      {
+        "path": "linguist_it.qm",
+        "sha256": "af852402c4b6b2ebb9d86abf814ee3a12037d0371de75bc07dd64126433ebe4a",
+        "bytes": 47373
+      },
+      {
+        "path": "linguist_ja.qm",
+        "sha256": "3c986eb7776a596484e537552267f7ffbbc4386ab7e3280b02c0ee7a83e3e295",
+        "bytes": 36964
+      },
+      {
+        "path": "linguist_ka.qm",
+        "sha256": "576f664091ea1648b7e6d5c7032a3dba0fae5381c153c4025dbdea4b817c8d92",
+        "bytes": 49130
+      },
+      {
+        "path": "linguist_ko.qm",
+        "sha256": "4925af460c9ad9bac45c83d7e89bd8ddd01a1dde31e9d7a494c4a8ca4e856564",
+        "bytes": 37607
+      },
+      {
+        "path": "linguist_nl.qm",
+        "sha256": "ea76d2e7de54f61e9d07d25ee475c87b59cfc25e80e1614f7118bef1c290d92d",
+        "bytes": 50999
+      },
+      {
+        "path": "linguist_pl.qm",
+        "sha256": "773fee9c0497ed999fd1544cd3d21e12519507fac45ce545e488f3de432f8ffc",
+        "bytes": 49777
+      },
+      {
+        "path": "linguist_pt_BR.qm",
+        "sha256": "45796d7eab89f61dd879c2901f452d2e5338de17a9962c8da7d93400a902db4e",
+        "bytes": 50458
+      },
+      {
+        "path": "linguist_ru.qm",
+        "sha256": "284cff7704d66b5356d237f10ae61b822b94e2dfe982aa443e791bd5c6a6cb88",
+        "bytes": 48667
+      },
+      {
+        "path": "linguist_sk.qm",
+        "sha256": "03ecff545e18167568c0afb4fa21712876dfe016001eca19f73823ec69476722",
+        "bytes": 84315
+      },
+      {
+        "path": "linguist_sl.qm",
+        "sha256": "b75a7be156e0107e635f3111931439d0134d75db8bd4610f8647d283152c13d9",
+        "bytes": 46526
+      },
+      {
+        "path": "linguist_sv.qm",
+        "sha256": "97c0f5975f3b6baa573d7adfa55e16ffc1bffe72281f0ba310f32fa720eee20e",
+        "bytes": 46593
+      },
+      {
+        "path": "linguist_tr.qm",
+        "sha256": "40baa73e7cd75d37d9c55c019bf5554a2d9d6b9d8dcdb05a0375dbd8c93d3968",
+        "bytes": 47539
+      },
+      {
+        "path": "linguist_uk.qm",
+        "sha256": "5d5b1ba2600ac93bb18b59eef504b54bf2c583362430f0f0918a965350da7544",
+        "bytes": 47773
+      },
+      {
+        "path": "linguist_zh_CN.qm",
+        "sha256": "b1fb2eb48cd2151c772a2dc24e9e8bb9b0374227a91868e36aed41fdfb6bf2b3",
+        "bytes": 34840
+      },
+      {
+        "path": "linguist_zh_TW.qm",
+        "sha256": "16bf6a43da0adaf20884b6370dec0c8718e8f42492a718771031297efffb1b0c",
+        "bytes": 34579
+      },
+      {
+        "path": "qt_ar.qm",
+        "sha256": "b11333c520ccd8e375cde20985df402d586a1a95e0796313bbeb9f717d4db22e",
+        "bytes": 104
+      },
+      {
+        "path": "qt_bg.qm",
+        "sha256": "1e22ee126ec9f76031d880285a907b3a0c4510392319ff700dcdee964abbb1ad",
+        "bytes": 91
+      },
+      {
+        "path": "qt_ca.qm",
+        "sha256": "17ab2623c7f6e8def44b3dbcb517544185817d65f1298ddb10ef71136f232bdc",
+        "bytes": 91
+      },
+      {
+        "path": "qt_cs.qm",
+        "sha256": "c585918fb1d4821a054ea40bdcf279f275ca76c88a5793f433dac6a611ac7e8f",
+        "bytes": 95
+      },
+      {
+        "path": "qt_da.qm",
+        "sha256": "f6773c672acb73fdef6e092060d69d1e5dfee840012bac912d1e92de28714386",
+        "bytes": 91
+      },
+      {
+        "path": "qt_de.qm",
+        "sha256": "0401c316aa3b50a172eb44a4ff1ec384924073beec7c928ef888ec48e4612688",
+        "bytes": 91
+      },
+      {
+        "path": "qt_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qt_es.qm",
+        "sha256": "648ed4519bc45d7a4779479a7626ea16cf9aa23e93a0b178546cc47bea0591ab",
+        "bytes": 91
+      },
+      {
+        "path": "qt_fa.qm",
+        "sha256": "3f4c989c6b2990d80cc6299408214b31698923b52f154483b3371875de91f88e",
+        "bytes": 84
+      },
+      {
+        "path": "qt_fi.qm",
+        "sha256": "342d01c7eeb234e431d0506821c4cd03c0433115d8d63fee3357be2331858879",
+        "bytes": 91
+      },
+      {
+        "path": "qt_fr.qm",
+        "sha256": "c896a38892a92346b033793d56440993236b23e47e06f3974afdb0552f628387",
+        "bytes": 91
+      },
+      {
+        "path": "qt_gd.qm",
+        "sha256": "49df855a004a17950338af3146466f6df4d5852410bd0b58ea80e0d0203a9d24",
+        "bytes": 70
+      },
+      {
+        "path": "qt_gl.qm",
+        "sha256": "204a01ac7deb6b5bae193afecbd1e50d18c73bf7d94badeb2bbfdf6123c4ed93",
+        "bytes": 323590
+      },
+      {
+        "path": "qt_he.qm",
+        "sha256": "36f01fff2f25e116d4b7af78097b7e49520fd5b7fb6fb120e40be228c05c045f",
+        "bytes": 57
+      },
+      {
+        "path": "qt_help_ar.qm",
+        "sha256": "222088c9752d1cc3bab985ef2dc77e5ae78578dce18a61ec15b39f02e588163d",
+        "bytes": 8743
+      },
+      {
+        "path": "qt_help_bg.qm",
+        "sha256": "cbcdd1e0bbae332d80ddb0a286056f17c824fa28d353d7fdf12fc97d9f6fe054",
+        "bytes": 10599
+      },
+      {
+        "path": "qt_help_ca.qm",
+        "sha256": "8c98b5ee246e18397d0de7bd76b2891773a975553ec5dcdce42f8a696e5b34de",
+        "bytes": 7426
+      },
+      {
+        "path": "qt_help_cs.qm",
+        "sha256": "4ac56fc63e400943bab13f1d4c418502138908e1d488c24aee6131d3d17552aa",
+        "bytes": 15297
+      },
+      {
+        "path": "qt_help_da.qm",
+        "sha256": "6bb092552a398687119f6d52145f04bf8373977446d8f00c0dcbd56b96829f0f",
+        "bytes": 4795
+      },
+      {
+        "path": "qt_help_de.qm",
+        "sha256": "037bc99abf98571ae9375c2513536c15b571d66406c36c1de447b547ff539c07",
+        "bytes": 7569
+      },
+      {
+        "path": "qt_help_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qt_help_es.qm",
+        "sha256": "fd16b279f8cf69077f75e94d90c9c07a2afff3948a579e3789f5ffb5e5f4202d",
+        "bytes": 10704
+      },
+      {
+        "path": "qt_help_fr.qm",
+        "sha256": "875ee2dcdc64e3dea888d84048e382d3921a175f12847de2e6b1cb12ad9add50",
+        "bytes": 3573
+      },
+      {
+        "path": "qt_help_gl.qm",
+        "sha256": "7399a248609974773f60866c87b78ea7dfbc4f750313d692f7886cd763883c9f",
+        "bytes": 10891
+      },
+      {
+        "path": "qt_help_hr.qm",
+        "sha256": "8c8cc3c5b1ab2b074f82937001b896603420ef75592b3b78172177360dd7ea61",
+        "bytes": 5170
+      },
+      {
+        "path": "qt_help_hu.qm",
+        "sha256": "7be32e015119c969453abb6e8f3fb377963a69fafb10c27b796737b5eb283eaf",
+        "bytes": 7255
+      },
+      {
+        "path": "qt_help_it.qm",
+        "sha256": "316fe8d0815e2b4b396895beb38ef1a40431915b5e054df80f4c0cd556f26e4b",
+        "bytes": 10612
+      },
+      {
+        "path": "qt_help_ja.qm",
+        "sha256": "ae603b2c0d434d40cde433ffcba65f9ee27978a9e19316007be7fe782a5b8b47",
+        "bytes": 7917
+      },
+      {
+        "path": "qt_help_ka.qm",
+        "sha256": "159c74f94b384b5ee6afdf38b6cfc4806bc99ecf73be02d4a7021d4ceba7ec7e",
+        "bytes": 7091
+      },
+      {
+        "path": "qt_help_ko.qm",
+        "sha256": "f11c64694e8e34e1d2c46c1a1d15d6ba9f2db7b61de4fdf54eca5ab977c3e052",
+        "bytes": 5708
+      },
+      {
+        "path": "qt_help_nl.qm",
+        "sha256": "44a8a0daf775d14352180052d13f623814d7bdf98e2c5c80144b7bf74214e3b0",
+        "bytes": 5087
+      },
+      {
+        "path": "qt_help_nn.qm",
+        "sha256": "4c8a7213942078e4f72f5babd26c41b77ace70189714a58b5504a7d5ad0193dc",
+        "bytes": 6934
+      },
+      {
+        "path": "qt_help_pl.qm",
+        "sha256": "cc6cb4d8c54086224672f2e49e623c8cb7c0c1cd65b8d5ecd42fc9ba3a6065bd",
+        "bytes": 9673
+      },
+      {
+        "path": "qt_help_pt_BR.qm",
+        "sha256": "b4015c5d519b4fe93c00bf734d1742e4f0094d89862664d548eb64a46a2feae7",
+        "bytes": 16030
+      },
+      {
+        "path": "qt_help_ru.qm",
+        "sha256": "557b644e6da5f1ec720ef93965617087e4d1f40b2494cc5aa524cf3796108de7",
+        "bytes": 7288
+      },
+      {
+        "path": "qt_help_sk.qm",
+        "sha256": "f41e33e1d790bd0d3eb180f1f875bc191fe74773628f25c2cad95e1402e66867",
+        "bytes": 10388
+      },
+      {
+        "path": "qt_help_sl.qm",
+        "sha256": "2ec955e662407ebcd8dcdae5aaa21e4108e0b5b0aee0e9db712c27072943535f",
+        "bytes": 10363
+      },
+      {
+        "path": "qt_help_sv.qm",
+        "sha256": "95bdb03dbaa6dbdfda46c249e9ccce9a353f71ddb8b112961e8b005b2c60b13c",
+        "bytes": 6934
+      },
+      {
+        "path": "qt_help_tr.qm",
+        "sha256": "81da2f88cd624097581f2d29b10311796bcd9ab289e65883346d276110542d28",
+        "bytes": 6723
+      },
+      {
+        "path": "qt_help_uk.qm",
+        "sha256": "497cfc473684692ee44d7a3795e8fb2270c57069fd9eb98a615dd29ab9be8a7c",
+        "bytes": 9750
+      },
+      {
+        "path": "qt_help_zh_CN.qm",
+        "sha256": "e256d1f6034a5a5521c62f129f91731216e474f71e1d9caea3d3dcb11b670deb",
+        "bytes": 5115
+      },
+      {
+        "path": "qt_help_zh_TW.qm",
+        "sha256": "40112812abb43853d678cc6d97729f21f21b3a7321c827fc9d18f6c936447d1e",
+        "bytes": 5160
+      },
+      {
+        "path": "qt_hr.qm",
+        "sha256": "fc9e4146f33be3d09b234be01e56235d3037d8d82d64f0700b4d4a6e253a61a7",
+        "bytes": 102
+      },
+      {
+        "path": "qt_hu.qm",
+        "sha256": "c2fa649f167cdb801d1cc0cb69c1d93594fd5bf8c0b7e79b969935da5c3e19aa",
+        "bytes": 84
+      },
+      {
+        "path": "qt_it.qm",
+        "sha256": "9e7a18bc20ebeec54baaaf41c918a74534511271f796dffffd0f9b9ec31c68d3",
+        "bytes": 91
+      },
+      {
+        "path": "qt_ja.qm",
+        "sha256": "0f5fe50452947d1ee9755249d860354bff6977279b4c496a5bc77e5b89dd745e",
+        "bytes": 84
+      },
+      {
+        "path": "qt_ka.qm",
+        "sha256": "00b67c6dfc255079b5b98a5640f82519c96b2520a028682fba4078b39d743eaa",
+        "bytes": 94
+      },
+      {
+        "path": "qt_ko.qm",
+        "sha256": "1d254b535e1cb35cbcad8210b15b89f4488159826bf35b4504696263dd102fa3",
+        "bytes": 84
+      },
+      {
+        "path": "qt_lg.qm",
+        "sha256": "6ba668501f4c040c66da1bdc022362da3c8cf663da6aa484cbdb599028da98ed",
+        "bytes": 57
+      },
+      {
+        "path": "qt_lt.qm",
+        "sha256": "47eb5f97467df769261421d54a5bea1131c9fb9b6388791d38bb6574335b64bf",
+        "bytes": 165383
+      },
+      {
+        "path": "qt_lv.qm",
+        "sha256": "addeca285282338294f24ca50d37d08a5f68d3785d0a94af86dd4ec8f2a3b449",
+        "bytes": 63
+      },
+      {
+        "path": "qt_nl.qm",
+        "sha256": "39e870cbd25c0f97fa9b1828d5ea1ed9849857a2e26c5321b3f13c76be8f0548",
+        "bytes": 91
+      },
+      {
+        "path": "qt_nn.qm",
+        "sha256": "4e544e23f75eafe1553dc896973db23b5795cd243786d5c653cc0f36a46ca74f",
+        "bytes": 91
+      },
+      {
+        "path": "qt_pl.qm",
+        "sha256": "e6890afa0caf0f6db0248e4c94f6016b8ec8bc266f1e0e9b8f01e8ea912cf968",
+        "bytes": 99
+      },
+      {
+        "path": "qt_pt_BR.qm",
+        "sha256": "0e24c58e35271853f8cdfb3f0f7b0741b5a9a588e43cdec62ae85a3842771e0a",
+        "bytes": 106
+      },
+      {
+        "path": "qt_pt_PT.qm",
+        "sha256": "2c1e7bbf5168a64b43752dd4c547601c0bde6d610f8671fa3e3af38597e84783",
+        "bytes": 70334
+      },
+      {
+        "path": "qt_ru.qm",
+        "sha256": "1b388e2d6d1bd405603e794e498c6d7ec5f5a5ad819243546f6399181da36758",
+        "bytes": 102
+      },
+      {
+        "path": "qt_sk.qm",
+        "sha256": "840c3b01c89df976fc1d2e5bfc6fc84b65666b8a3ceb4cbf5aa0c22af3d2a383",
+        "bytes": 95
+      },
+      {
+        "path": "qt_sl.qm",
+        "sha256": "c44e0313a9414cc0e490b65b0c036fa11bca959353b228886547bc2c8492034f",
+        "bytes": 228428
+      },
+      {
+        "path": "qt_sv.qm",
+        "sha256": "daaae448e0814b469ac3d7a91096fde15491600a6b8bc6c01508425fb5e8b3ec",
+        "bytes": 91
+      },
+      {
+        "path": "qt_tr.qm",
+        "sha256": "59e8a0c411be3b0802a68561b090f182099d6b75c4fe46f398e55f11528e11b9",
+        "bytes": 84
+      },
+      {
+        "path": "qt_uk.qm",
+        "sha256": "053ec1f677c4dba48c6a97eb28f4fc78c1511324d1843d7f4cec2c7c00a66145",
+        "bytes": 102
+      },
+      {
+        "path": "qt_zh_CN.qm",
+        "sha256": "c0e29d32c9540a7e78643b74214e633c56f6ab11f018e516629f2c11b1fb09fc",
+        "bytes": 99
+      },
+      {
+        "path": "qt_zh_TW.qm",
+        "sha256": "24e226954491689549a1a1990db3b8cb78888008d8163b2fd2442b772b6d1b5f",
+        "bytes": 99
+      },
+      {
+        "path": "qtbase_ar.qm",
+        "sha256": "e03fe68d83201543698fd7fe267dd5dfc5bfd195147e74ff2f19ac3491401263",
+        "bytes": 160017
+      },
+      {
+        "path": "qtbase_bg.qm",
+        "sha256": "e448ac9e3f16c29eb27af3012efe21052daa78fabfb34cd6dff2f69ee3bd3cdb",
+        "bytes": 165337
+      },
+      {
+        "path": "qtbase_ca.qm",
+        "sha256": "005b0aa0c9a5b930dfdd870661958a8069bbec862d75f98bce20bf7401bea13d",
+        "bytes": 209899
+      },
+      {
+        "path": "qtbase_cs.qm",
+        "sha256": "03028b42df5479270371e4c3bdc7df2f56cbbe6dda956a2864ac6f6415861fe8",
+        "bytes": 174701
+      },
+      {
+        "path": "qtbase_da.qm",
+        "sha256": "7d1e5ca3310b54d104c19bf2abd402b38e584e87039a70e153c4a9af74b25c22",
+        "bytes": 181387
+      },
+      {
+        "path": "qtbase_de.qm",
+        "sha256": "ed828a83dfaa51944f166c842155b48ab3bd7cb2c46dcd96269eb5d48af4f63f",
+        "bytes": 223282
+      },
+      {
+        "path": "qtbase_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qtbase_es.qm",
+        "sha256": "4ffda56ba3bb5414ab0482d1dde64a6f226e3488f6b7f3f11a150e01f53fa4c8",
+        "bytes": 165170
+      },
+      {
+        "path": "qtbase_fa.qm",
+        "sha256": "f78e59b5bdd586181a999034ba418868ed17fe9c05707fb65e523f70e92253d2",
+        "bytes": 148156
+      },
+      {
+        "path": "qtbase_fi.qm",
+        "sha256": "e47fe13713e184d07fa4495dde0c589b0e8f562e91574a3558a9363443a4fa72",
+        "bytes": 179941
+      },
+      {
+        "path": "qtbase_fr.qm",
+        "sha256": "314243a55c32679ad473fdfe48dc7d66e973ad0fc8bf2164480c58dddb50c1a7",
+        "bytes": 159463
+      },
+      {
+        "path": "qtbase_gd.qm",
+        "sha256": "63b439dd44139aa3aed54c2ebe03fa9bc77f22c14ed8fba8eff2608445bb233d",
+        "bytes": 189580
+      },
+      {
+        "path": "qtbase_he.qm",
+        "sha256": "e1ebca16afe8994356f81ca007fbdb9ddf865842010fe908923d873b687cad3f",
+        "bytes": 138690
+      },
+      {
+        "path": "qtbase_hr.qm",
+        "sha256": "bb9eec9a9a652c1340dc75eb2e749be50df00f885b3d6900dfc76799c45b244d",
+        "bytes": 149711
+      },
+      {
+        "path": "qtbase_hu.qm",
+        "sha256": "98463295539d769c8645a0b7fb95ad38454cfd0b14f36af485513f036ddbbbc6",
+        "bytes": 205885
+      },
+      {
+        "path": "qtbase_it.qm",
+        "sha256": "7808ed542a7833c4bd94ec8bdfbbca00bb4f2fe15979b9121ce3249323687300",
+        "bytes": 161166
+      },
+      {
+        "path": "qtbase_ja.qm",
+        "sha256": "2b9581c69b975f59be505b127cd3c19d403ef3d12e0e8386fb97238223e9c1df",
+        "bytes": 129913
+      },
+      {
+        "path": "qtbase_ka.qm",
+        "sha256": "e55e4b72fa620bebee5297ca59dfe2f49894a1e544f2b7485b1cfd8829289d6f",
+        "bytes": 201105
+      },
+      {
+        "path": "qtbase_ko.qm",
+        "sha256": "0179ed1b136e1cb3f583351eaa2c545ba3d83a6ee3f82c32505926a1a5f5f183",
+        "bytes": 156799
+      },
+      {
+        "path": "qtbase_lg.qm",
+        "sha256": "31c0cc4ce13b1d74fe0c19ed0b47638fb31e20c93ee08092533e884007aebfb5",
+        "bytes": 315764
+      },
+      {
+        "path": "qtbase_lv.qm",
+        "sha256": "846e047573ae40c83671c3ba7f73e27efc24b98c82701da0df9973e574178bb2",
+        "bytes": 153608
+      },
+      {
+        "path": "qtbase_nl.qm",
+        "sha256": "f61513bcdbb6ad800585f9437a95d018aab17fa12ee414aa31462ff279d8240e",
+        "bytes": 202861
+      },
+      {
+        "path": "qtbase_nn.qm",
+        "sha256": "f9f2fb7c60e7fcb38bbd3c1314ef122145594265e20b0659ff00004baab13ac7",
+        "bytes": 196411
+      },
+      {
+        "path": "qtbase_pl.qm",
+        "sha256": "3cf6b5c14d5eb0cf81e9af2066e66b3aa579a6b9b3c323ed670761f6254a8c54",
+        "bytes": 162962
+      },
+      {
+        "path": "qtbase_pt_BR.qm",
+        "sha256": "3475d61604b938d459949801a906dbd34a8ca824ade94120015d676e208da859",
+        "bytes": 290955
+      },
+      {
+        "path": "qtbase_ru.qm",
+        "sha256": "3da6605668f9178d11a838c4515478084dcfb4f9cf22f99d7a92b492db9c224b",
+        "bytes": 203767
+      },
+      {
+        "path": "qtbase_sk.qm",
+        "sha256": "d586ae2c314074cf398417fdecb40709d5478dfeb0a67c2fe60d509ee9b59ed7",
+        "bytes": 125763
+      },
+      {
+        "path": "qtbase_sv.qm",
+        "sha256": "5a2178dd2c03cc4516697f1fb0049649c9ed53f5cde6b937786733dae06aeda8",
+        "bytes": 249963
+      },
+      {
+        "path": "qtbase_tr.qm",
+        "sha256": "353fdfd7165659a49212e7a25bf91c0a71588e52c836f7496640f26782414634",
+        "bytes": 248720
+      },
+      {
+        "path": "qtbase_uk.qm",
+        "sha256": "51b8ff55b37dc5907d637a8ddda12fbe816852b0244c74eb4f0fb84867a786e0",
+        "bytes": 158274
+      },
+      {
+        "path": "qtbase_zh_CN.qm",
+        "sha256": "0481a9b92a6f0578400e960a7d5ee70217a6a450eaf7f98b7d32b8dbd0d58616",
+        "bytes": 147222
+      },
+      {
+        "path": "qtbase_zh_TW.qm",
+        "sha256": "21012b2b427f8d09d31ce9cae582ca27955b478ca3dc2ec18a3068d808638c6a",
+        "bytes": 126185
+      },
+      {
+        "path": "qtconnectivity_bg.qm",
+        "sha256": "8d59a56c58cb77265d360ffbee67a131c0fd5e21776baa5c425acc4dd1e3565a",
+        "bytes": 47342
+      },
+      {
+        "path": "qtconnectivity_ca.qm",
+        "sha256": "115d31beb48d5b95d3cf67bc05790975510b15a092b3a3ba31292ad4677b63bd",
+        "bytes": 50664
+      },
+      {
+        "path": "qtconnectivity_da.qm",
+        "sha256": "a835768e11cd741c97e3ae73e3e5b98e552c0a23baaf5364199b6242994ddd25",
+        "bytes": 45569
+      },
+      {
+        "path": "qtconnectivity_de.qm",
+        "sha256": "273356372ba0646a34fc81d0352cb080416f9420bdb27546173d34c77ee7a47b",
+        "bytes": 48849
+      },
+      {
+        "path": "qtconnectivity_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qtconnectivity_es.qm",
+        "sha256": "85059995827bf473ee93380918712a671461fafcbc62a8406a17a3edfc4ba915",
+        "bytes": 46591
+      },
+      {
+        "path": "qtconnectivity_hr.qm",
+        "sha256": "f7a7ec5b60ebcab93593959badf1c0b9aff23155f65080ced3c73216c3d14228",
+        "bytes": 48438
+      },
+      {
+        "path": "qtconnectivity_hu.qm",
+        "sha256": "65e35245f4233703a7813efc09633dce19501696a90d2709ce2af4664da4df08",
+        "bytes": 47745
+      },
+      {
+        "path": "qtconnectivity_ka.qm",
+        "sha256": "2ed89c492c5d26395a5cb0ae7462b0aff162c5f40a6c4bb2820f801388ce6fae",
+        "bytes": 48966
+      },
+      {
+        "path": "qtconnectivity_ko.qm",
+        "sha256": "cab886251c9ae4147986bb2c4ebb6ddf76babc5b8d6569bc13812613421030d9",
+        "bytes": 37040
+      },
+      {
+        "path": "qtconnectivity_nl.qm",
+        "sha256": "da9ac50276d43903910e840af0a3972d0df6e0f780d7dc33193b7746addde43b",
+        "bytes": 48264
+      },
+      {
+        "path": "qtconnectivity_pl.qm",
+        "sha256": "64fefdaee792ae38fc069f07e339a3c2200c0b1887f9b785527bf3e4d3a6dfa6",
+        "bytes": 31377
+      },
+      {
+        "path": "qtconnectivity_pt_BR.qm",
+        "sha256": "816abe350a5861d99ac7cea19f9a8ea8adb13bf53418840897213d6f42a09ea2",
+        "bytes": 55366
+      },
+      {
+        "path": "qtconnectivity_ru.qm",
+        "sha256": "2a8dccf95e0c81ef467dfd50856e3b38976cfbba875bc64d98193b6c58de0896",
+        "bytes": 49914
+      },
+      {
+        "path": "qtconnectivity_sv.qm",
+        "sha256": "e5dfac8584885b5322d0ea942d83a320c764e38a59f6b246a7ac26920caac28f",
+        "bytes": 45481
+      },
+      {
+        "path": "qtconnectivity_tr.qm",
+        "sha256": "47f39ca3b2f4f427868a43ca9f0d525ae7f93dc6cd1787b74d26efa835597cfe",
+        "bytes": 45847
+      },
+      {
+        "path": "qtconnectivity_uk.qm",
+        "sha256": "8df80026e7cd4b81c898eca4834882bfb48558b6a55c2cb850061b8f1947cef8",
+        "bytes": 42223
+      },
+      {
+        "path": "qtconnectivity_zh_CN.qm",
+        "sha256": "a98703e90fa075fb15097c3551f8ce564d8859274165c84bdbf45bfdb6887f9c",
+        "bytes": 33700
+      },
+      {
+        "path": "qtdeclarative_ar.qm",
+        "sha256": "c5ceec934c9ccfe34f2db92f9ddc37a2d3941d7ea3d7992422c341fd8acf783d",
+        "bytes": 640
+      },
+      {
+        "path": "qtdeclarative_bg.qm",
+        "sha256": "c9d7f74f94df83ac0a1f05ed64c31030ff1eef2eb5705e56e771dbd795d59e79",
+        "bytes": 70819
+      },
+      {
+        "path": "qtdeclarative_ca.qm",
+        "sha256": "3a03b9ede8149ad40b1207f7c8ef4fe5c62a49b9a898feb64608fc19d0bf7bd3",
+        "bytes": 99189
+      },
+      {
+        "path": "qtdeclarative_da.qm",
+        "sha256": "b5afe4ab5f6fc9f0e0870f7c08456cb2648d3db37b30dce9559d7d315baee2f1",
+        "bytes": 70134
+      },
+      {
+        "path": "qtdeclarative_de.qm",
+        "sha256": "3cabb5d4aea9cf8d649b3209f2664bbb46e311670a69ce607ded0620927a6dbb",
+        "bytes": 110232
+      },
+      {
+        "path": "qtdeclarative_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qtdeclarative_es.qm",
+        "sha256": "e21fbd29b7f7eeee40e83e28ddcec767e2cd5437184c86d9614a36d21d0a3896",
+        "bytes": 59875
+      },
+      {
+        "path": "qtdeclarative_fa.qm",
+        "sha256": "0c5409752ea59ab1e72501399e3bb3578f4c8e5ec3f057f191a07584aa01fd71",
+        "bytes": 29899
+      },
+      {
+        "path": "qtdeclarative_fi.qm",
+        "sha256": "ecbdfe57ceaccd55344d0c81e3a23a437c7654cc3e7e9371030576107531062f",
+        "bytes": 65815
+      },
+      {
+        "path": "qtdeclarative_fr.qm",
+        "sha256": "81f3353c0b247998cb0faed7ac37b2eb43f17a7c7d224b72a5921dc859d250e1",
+        "bytes": 54514
+      },
+      {
+        "path": "qtdeclarative_hr.qm",
+        "sha256": "a63b1e7c5627e1deb59500e62307a25002584a872964f9b57f259cce66b336fb",
+        "bytes": 60894
+      },
+      {
+        "path": "qtdeclarative_hu.qm",
+        "sha256": "82b23cd9fad50c37909f5d2225d40bc7f795545b19bc902640d84d40370a04b5",
+        "bytes": 100378
+      },
+      {
+        "path": "qtdeclarative_ja.qm",
+        "sha256": "48510e832351af8707fba6dac755b43d65182c7b826296805db463f2f8431c69",
+        "bytes": 45301
+      },
+      {
+        "path": "qtdeclarative_ka.qm",
+        "sha256": "a4cbe159075447b3fc1b25a88b1b1e48c0d5aae089b8c722ea182add17ed8cba",
+        "bytes": 94893
+      },
+      {
+        "path": "qtdeclarative_ko.qm",
+        "sha256": "1fb83338961974ca4f3c47c3017b97f83429cf7e205e43c225ebc86a730f5fc4",
+        "bytes": 50236
+      },
+      {
+        "path": "qtdeclarative_lv.qm",
+        "sha256": "17ade65ceb98dada9828daf8990472bfb8a8ea497ba8debe7d2722138984ba65",
+        "bytes": 53940
+      },
+      {
+        "path": "qtdeclarative_nl.qm",
+        "sha256": "4cb5dc8dc91777175675982c3795aa1261ad04bf1af7b7962e75b76417341f2e",
+        "bytes": 74976
+      },
+      {
+        "path": "qtdeclarative_nn.qm",
+        "sha256": "54151b926d63b0853d647a317edeb393df4a41820b1b27d747217ad9cfd95b70",
+        "bytes": 65464
+      },
+      {
+        "path": "qtdeclarative_pl.qm",
+        "sha256": "a2bd73094da6595ef58f48319694eef36f07f76d014fddd8a8c3546349691280",
+        "bytes": 64190
+      },
+      {
+        "path": "qtdeclarative_pt_BR.qm",
+        "sha256": "3bbb1fa596abb32300080e7a9b6d14fa35559ceda58e4939992662c5676f89ec",
+        "bytes": 125028
+      },
+      {
+        "path": "qtdeclarative_ru.qm",
+        "sha256": "5ab39dabf085583a0bd4d98894cefec4b1d788e820bb51bb60851f8f50793196",
+        "bytes": 67138
+      },
+      {
+        "path": "qtdeclarative_sk.qm",
+        "sha256": "f95360e7cf10169e2bb3373c4fa5153d35f1843474d7ece4232e7030e945a9b3",
+        "bytes": 48654
+      },
+      {
+        "path": "qtdeclarative_sv.qm",
+        "sha256": "b6bbabe1f397bdc336c3d3e9deee490298ffa11b0e3ed0f334b9d0d0a35a53cf",
+        "bytes": 94583
+      },
+      {
+        "path": "qtdeclarative_tr.qm",
+        "sha256": "ca1f40a78c7fbeb06c0deff739deb11feb75f2fac613930acd5307fe6bc04554",
+        "bytes": 94602
+      },
+      {
+        "path": "qtdeclarative_uk.qm",
+        "sha256": "1aacd6a5f2583d8039880e7b7cf9a374e37d982bc5cda771306cc6c0b7787f59",
+        "bytes": 73366
+      },
+      {
+        "path": "qtdeclarative_zh_CN.qm",
+        "sha256": "5a194172014b9615e405e2a5b478438a9ca685143c61194e19dcae720c020802",
+        "bytes": 63614
+      },
+      {
+        "path": "qtdeclarative_zh_TW.qm",
+        "sha256": "c6c8b3d2874d0acff369c286cfc4459064bf4b581cacda6ecf70b44a849e3be2",
+        "bytes": 647
+      },
+      {
+        "path": "qtlocation_bg.qm",
+        "sha256": "ef1ddd08a34d1e33b448f52cc2616d07786c6fbab98650002af08b986737bf53",
+        "bytes": 42381
+      },
+      {
+        "path": "qtlocation_ca.qm",
+        "sha256": "fff9e051c55dbf4f47f016aa0229063d11205ee2667b6885d9d32594789c689b",
+        "bytes": 45940
+      },
+      {
+        "path": "qtlocation_da.qm",
+        "sha256": "e37e59e61d4987def2d4a7763086171b86aafeb05fd0e64f6ba90a50c882503a",
+        "bytes": 44056
+      },
+      {
+        "path": "qtlocation_de.qm",
+        "sha256": "40aba328bebdba9a5a7762e4137e7471fb6e5aeb101c0f826904029ae6fc4ecb",
+        "bytes": 46702
+      },
+      {
+        "path": "qtlocation_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qtlocation_es.qm",
+        "sha256": "0312ec0ac787f1c09c9b0ff12c1338e9b55629c61719817a2b0068000abc3093",
+        "bytes": 23400
+      },
+      {
+        "path": "qtlocation_fi.qm",
+        "sha256": "d0e2a47a4e99022aa612b88271fbfb4d6f309cde28a972e3a83d349aaf5170fe",
+        "bytes": 43724
+      },
+      {
+        "path": "qtlocation_fr.qm",
+        "sha256": "741113418d11e506dd85c25095d8eb6f78fdd7440da6dd8baed2ac3a8a5b52b7",
+        "bytes": 22158
+      },
+      {
+        "path": "qtlocation_hr.qm",
+        "sha256": "36cfba3b2a2259cbc62cbcbf0fe9db1c04edc78f59ad36362e5f9d4d55335d73",
+        "bytes": 43758
+      },
+      {
+        "path": "qtlocation_hu.qm",
+        "sha256": "cb3bd76c56c417d305c8ff19767ccb5e014f3d2ed452fa296302cd773ddb91c0",
+        "bytes": 44873
+      },
+      {
+        "path": "qtlocation_ka.qm",
+        "sha256": "066470ff7f294666a8d08cd03abe14ad542ca03fe83d9b39963fb81b328a9718",
+        "bytes": 43966
+      },
+      {
+        "path": "qtlocation_ko.qm",
+        "sha256": "51b1df77a487781e45dc4571deb8996fd3f5c8872e895fae618292ef6f9ce495",
+        "bytes": 35336
+      },
+      {
+        "path": "qtlocation_nl.qm",
+        "sha256": "f40c6bf944c52f13e0ac56bc3cd10fcdbb0531bc1e57bce4903278839717005f",
+        "bytes": 44290
+      },
+      {
+        "path": "qtlocation_pl.qm",
+        "sha256": "621b346772270f905caca455c67ca7d720d7f5eae4afbd64328f37ab0301c307",
+        "bytes": 42325
+      },
+      {
+        "path": "qtlocation_pt_BR.qm",
+        "sha256": "ee1a83f3b0ccaa1e9ba74e8aeeecef9b47e426b9a73ece8ab3bd2b2bbd782aaf",
+        "bytes": 51532
+      },
+      {
+        "path": "qtlocation_ru.qm",
+        "sha256": "8a8e223275e037f778a298415e65e64aeeebf6b7e9ade2c14b948c7c9f4cabb7",
+        "bytes": 43278
+      },
+      {
+        "path": "qtlocation_sv.qm",
+        "sha256": "1fdc458d257f67c207d4beedb58392b5d8c838d18dc3328eef83c000a5634fa4",
+        "bytes": 43396
+      },
+      {
+        "path": "qtlocation_tr.qm",
+        "sha256": "95eeb45c467b140b6def787afbe5e8900cb3a90cbe2ecfef6c44a68816060c70",
+        "bytes": 44365
+      },
+      {
+        "path": "qtlocation_uk.qm",
+        "sha256": "1910621ce710a23f2fce603cb3b78da24a24c9df497b3f26505edd4a738b00e4",
+        "bytes": 24159
+      },
+      {
+        "path": "qtlocation_zh_CN.qm",
+        "sha256": "6dbd2ce62c3235bac50aa322fd8db809c8ad5d48c0d70a9923cde8b2c938923a",
+        "bytes": 32577
+      },
+      {
+        "path": "qtmultimedia_ar.qm",
+        "sha256": "5fc10414e168c1161b8590a5c173d140d31b17cf450f0ac93e666ebf7a2ff908",
+        "bytes": 11486
+      },
+      {
+        "path": "qtmultimedia_bg.qm",
+        "sha256": "add8675fbc2351fb6c8397ed36932f98553782dd4ce0498efc5b89b050ac8626",
+        "bytes": 13683
+      },
+      {
+        "path": "qtmultimedia_ca.qm",
+        "sha256": "9189b6c3e546966be563d5c038c394005ef7f6293e0c181560148f1c615fd733",
+        "bytes": 15538
+      },
+      {
+        "path": "qtmultimedia_cs.qm",
+        "sha256": "6f116e7a2fdefe84a890df1718d235e61d5731bf7c2e3e57a838f6ec9eede0fa",
+        "bytes": 15906
+      },
+      {
+        "path": "qtmultimedia_da.qm",
+        "sha256": "39d902411064cc5c5fd45742f1768022a1ae7953700741b2f608e3807e19110a",
+        "bytes": 13659
+      },
+      {
+        "path": "qtmultimedia_de.qm",
+        "sha256": "bdd219ba77ce46d49241b46cc681ad6fbc71b1a8da0bd026e2b4e2df3dca3286",
+        "bytes": 15410
+      },
+      {
+        "path": "qtmultimedia_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qtmultimedia_es.qm",
+        "sha256": "0866911bfd4c6e78d3517ea298de653caef0b7248aefacdba5236e7565a9b2a5",
+        "bytes": 17046
+      },
+      {
+        "path": "qtmultimedia_fa.qm",
+        "sha256": "5aa57d6bfaf5f2438c3b1d8f85294c17c852bcc07d5916ca7dfb43d20870c83a",
+        "bytes": 11278
+      },
+      {
+        "path": "qtmultimedia_fi.qm",
+        "sha256": "628be72c1dc70652ab302e2f8ccb9f3c328e7fdddf7d8d1c5ce21056a9ba84f2",
+        "bytes": 13883
+      },
+      {
+        "path": "qtmultimedia_fr.qm",
+        "sha256": "9cd2f2663978e931c4a8f54af26c5aee1ddb23af2f18296e82ab763bbe6badea",
+        "bytes": 12700
+      },
+      {
+        "path": "qtmultimedia_hr.qm",
+        "sha256": "1342a96e1f0714343cfb8bf9f0ecc9f3736385a23cff9dc8e78db6d7762d41b4",
+        "bytes": 14176
+      },
+      {
+        "path": "qtmultimedia_hu.qm",
+        "sha256": "449400cceab21c7283c1613624c6dab75953d719904c461c2b2d98eca19466b2",
+        "bytes": 14733
+      },
+      {
+        "path": "qtmultimedia_it.qm",
+        "sha256": "aca8d4dd145e671d827e582496f20281dc559ac91e7e13f88cf508bc2d6301ed",
+        "bytes": 17194
+      },
+      {
+        "path": "qtmultimedia_ja.qm",
+        "sha256": "f9a888586c42c22894ccb4180257c2de70299ff5d540087bc334da74a8dd5969",
+        "bytes": 14337
+      },
+      {
+        "path": "qtmultimedia_ka.qm",
+        "sha256": "cdedd4d74f4e6cdaf7e8ec4ce7da203e7a3e1fbf4acccf198fd2169bd6dd9b8d",
+        "bytes": 14196
+      },
+      {
+        "path": "qtmultimedia_ko.qm",
+        "sha256": "f512a5e985535d0309f737e6156f5959ae9b6405e65ff76abae5a139332f2c7a",
+        "bytes": 11006
+      },
+      {
+        "path": "qtmultimedia_nl.qm",
+        "sha256": "982652093f93ded8ca0c06e2e70ce012d1b562982ac18f710fb394e0cdf21ba7",
+        "bytes": 14132
+      },
+      {
+        "path": "qtmultimedia_nn.qm",
+        "sha256": "020a9386bfc18c23048098edc1439f5bc5e9f8a188ae9a49c75cc8ca460a8268",
+        "bytes": 13425
+      },
+      {
+        "path": "qtmultimedia_pl.qm",
+        "sha256": "3c4cb711f6a59e5b19e4adc0d0a6be63c0bb55f15626ad640db1bfd1d1363664",
+        "bytes": 12237
+      },
+      {
+        "path": "qtmultimedia_pt_BR.qm",
+        "sha256": "30e05b3b5903407caff5c598d471ffe04a4ef4f28ac1f4a3ed33d47f053c6452",
+        "bytes": 25780
+      },
+      {
+        "path": "qtmultimedia_ru.qm",
+        "sha256": "32c1118415f25a378d356cf01652393c8f9063145bc8f8a93c4f992166fa9d4d",
+        "bytes": 14109
+      },
+      {
+        "path": "qtmultimedia_sk.qm",
+        "sha256": "82f544f31ffb0ce80340f445ad2c8e2ba57969413ef9b5d10fe4322bb96a6851",
+        "bytes": 9896
+      },
+      {
+        "path": "qtmultimedia_sv.qm",
+        "sha256": "be1296cbb8563a4ae139c97819072f8291dcbfbe4626482b5a037a11b2a474ad",
+        "bytes": 14173
+      },
+      {
+        "path": "qtmultimedia_tr.qm",
+        "sha256": "18eb1c9526f778a24fb0d77d0008571d972716708debb85f5e6c5ee8404bb640",
+        "bytes": 13571
+      },
+      {
+        "path": "qtmultimedia_uk.qm",
+        "sha256": "ebf67318490f70c765b50b6cc4eb3cd4c0eab9ff10a19bc44a0489b24cecd834",
+        "bytes": 15781
+      },
+      {
+        "path": "qtmultimedia_zh_CN.qm",
+        "sha256": "70be222728b885e0c37c321cc716813eff8ab9963287a6e80ddbc83e6b6dec64",
+        "bytes": 9863
+      },
+      {
+        "path": "qtmultimedia_zh_TW.qm",
+        "sha256": "80169a59d0f7981f5dbda7ca9c4e6ceb3a9ee17b42a57574cc7e217d4f3547bf",
+        "bytes": 9827
+      },
+      {
+        "path": "qtserialport_de.qm",
+        "sha256": "4bbc6fc2dc3b1c8e1f03b53da4231b7acd6e068ef75b85aae9429db7dc942f16",
+        "bytes": 2291
+      },
+      {
+        "path": "qtserialport_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qtserialport_es.qm",
+        "sha256": "460fc8a3bf5db24cf570ed0caf72c30d754a16859b3f80143ed6b9bb6a78370b",
+        "bytes": 2507
+      },
+      {
+        "path": "qtserialport_ja.qm",
+        "sha256": "9641cc7bc400a29ec3fc54f69c72ae25f190b199817dcd0b4f564fcf5b01d638",
+        "bytes": 1744
+      },
+      {
+        "path": "qtserialport_ka.qm",
+        "sha256": "42ac50b778de983cec241517f5bbd905dcb5f0c3c07e693a2b8f33cae3225e18",
+        "bytes": 2179
+      },
+      {
+        "path": "qtserialport_ko.qm",
+        "sha256": "9c8447f8c0699b318f8ae26ef53500b5e80ce06b615e1af1a9205ba16f7f6da0",
+        "bytes": 1627
+      },
+      {
+        "path": "qtserialport_pl.qm",
+        "sha256": "7d8200285797267bdeb2a630888100c35e0a06a6acbd3c5254dcab022765614f",
+        "bytes": 2002
+      },
+      {
+        "path": "qtserialport_pt_BR.qm",
+        "sha256": "c6c96f88b42825c9847b6691fd7263e19e79ee73a7359dd1799a8455989222a9",
+        "bytes": 2237
+      },
+      {
+        "path": "qtserialport_ru.qm",
+        "sha256": "aa9069ca426240d035ba132f3f2b9cf2d55863466dfc745a1a156bda1af89565",
+        "bytes": 2370
+      },
+      {
+        "path": "qtserialport_sv.qm",
+        "sha256": "28b4652f81c702662d5b301de1a93c364351bf7d24b0fd4c60bf23583c40d5b6",
+        "bytes": 2012
+      },
+      {
+        "path": "qtserialport_tr.qm",
+        "sha256": "758883cf58914fef766892084391f6f83deebac1a4fe8a4cdad0af365b702ba7",
+        "bytes": 2020
+      },
+      {
+        "path": "qtserialport_uk.qm",
+        "sha256": "965a71ef9b7e976ede3483471d0727cb9f76d5f280d2b6a7fb543ea3dadec99a",
+        "bytes": 2424
+      },
+      {
+        "path": "qtserialport_zh_CN.qm",
+        "sha256": "8592151909338b64406a7c8058a16ce41aafc7dbc53b7ea6ae04339d7ac3c7a0",
+        "bytes": 1428
+      },
+      {
+        "path": "qtwebengine_ca.qm",
+        "sha256": "a746c73f5eaa5e10950a0bc97fa472139374078d1bfe03cb262145672727e699",
+        "bytes": 13967
+      },
+      {
+        "path": "qtwebengine_de.qm",
+        "sha256": "f66351b5ab311e27d5f0733fd9528d056ee1ef9dc40f6993740c78fec27a5db8",
+        "bytes": 14338
+      },
+      {
+        "path": "qtwebengine_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qtwebengine_es.qm",
+        "sha256": "a7ca4ad4d17d136140f519c4fa4e597b735b7561a9f7e13ff799b6276194fca0",
+        "bytes": 8435
+      },
+      {
+        "path": "qtwebengine_ka.qm",
+        "sha256": "15a3b600bc4a07cb2dd8f9abe6c616422626886a24b997f5141a339b2b62b8cb",
+        "bytes": 13387
+      },
+      {
+        "path": "qtwebengine_ko.qm",
+        "sha256": "384dde8013a57875a5e9142a082a6c01d4f5506c339b540f8fc19dce1633fca5",
+        "bytes": 5922
+      },
+      {
+        "path": "qtwebengine_lg.qm",
+        "sha256": "1a281cffb6362d7c89fc2ec63b1648b102675e2ca68762a2ad5eddbee2da0153",
+        "bytes": 14638
+      },
+      {
+        "path": "qtwebengine_pl.qm",
+        "sha256": "eb2b5cbe262b43df397be0b978acba6617170ac75b91f71ec2a415e64045e204",
+        "bytes": 8770
+      },
+      {
+        "path": "qtwebengine_pt_BR.qm",
+        "sha256": "c65c52e4f6580e319781fd945286393be59cfc13401bcec0f3519cf8ef930e06",
+        "bytes": 13558
+      },
+      {
+        "path": "qtwebengine_ru.qm",
+        "sha256": "b75b2997f6aedc2152c0a0adf461bd5d8cc16f5d7246486deae02b935b368652",
+        "bytes": 14376
+      },
+      {
+        "path": "qtwebengine_sv.qm",
+        "sha256": "3589e69d5df3566364b62879c9697350644d2655c3697fed9c420f99cf3dd124",
+        "bytes": 12919
+      },
+      {
+        "path": "qtwebengine_tr.qm",
+        "sha256": "d29db5c0eefe7dff8d5215fb352d93679faa47094c039b0460078d8cc198ef2a",
+        "bytes": 14379
+      },
+      {
+        "path": "qtwebengine_uk.qm",
+        "sha256": "8cc9a4149bdaedc55082bac302dd58b59a03eafc830eec9745079ff5b3903d85",
+        "bytes": 9249
+      },
+      {
+        "path": "qtwebengine_zh_CN.qm",
+        "sha256": "7bb6a9681ac9a2937cf65eb909ac9fdeed79cd06ead6903f4a00cf7403c8856c",
+        "bytes": 9733
+      },
+      {
+        "path": "qtwebsockets_ca.qm",
+        "sha256": "cc87d204434b1ff552612c7ae3aded6881d2a9850e6b9663b7330e4305874d27",
+        "bytes": 11547
+      },
+      {
+        "path": "qtwebsockets_de.qm",
+        "sha256": "dcb72d0f1eb1fd8cb239a69337e3ebd750b51f0af553973f30775429bd9073ff",
+        "bytes": 11421
+      },
+      {
+        "path": "qtwebsockets_en.qm",
+        "sha256": "494ac9a2b2cb2fdeced353f4a9f898ed8dcf616e9bc667438c62681e3f7f79cf",
+        "bytes": 33
+      },
+      {
+        "path": "qtwebsockets_es.qm",
+        "sha256": "8ccb4369029d62c51bbee6d210a841337a8736382acea03d664a289fd6f12719",
+        "bytes": 9679
+      },
+      {
+        "path": "qtwebsockets_fr.qm",
+        "sha256": "5691892400f9939cd38fefb51d985e20afc498e2a55f6428919c204c20a584b4",
+        "bytes": 9639
+      },
+      {
+        "path": "qtwebsockets_ja.qm",
+        "sha256": "7dfe297c2752ada9d11933f555d2a616fb92f4b4f3c27bba783a83ab65b61f9b",
+        "bytes": 7270
+      },
+      {
+        "path": "qtwebsockets_ka.qm",
+        "sha256": "ef4809b597b86382a0d618d053ce62b7e668670fb91c40664c7fdfc07d1f1508",
+        "bytes": 10905
+      },
+      {
+        "path": "qtwebsockets_ko.qm",
+        "sha256": "bf3b71eabb20bbcac27c5f8671bb7060e9eab7bc6821ba8f09d2d67ee82367b6",
+        "bytes": 7131
+      },
+      {
+        "path": "qtwebsockets_pl.qm",
+        "sha256": "4af915de2133ab4e936b4ac485ca19ed34ec08a3399f95765ee7a6f2b9e07461",
+        "bytes": 7599
+      },
+      {
+        "path": "qtwebsockets_pt_BR.qm",
+        "sha256": "156b04af483c81da72706e1edf9fdb004d0c7fd7f91ba29a5048ed02b224d72b",
+        "bytes": 11057
+      },
+      {
+        "path": "qtwebsockets_ru.qm",
+        "sha256": "6c6e2e9914f25bad087d82f5a0438bfaa9b8b965bcb15e6f1f69d7ff22e69e0d",
+        "bytes": 9562
+      },
+      {
+        "path": "qtwebsockets_sv.qm",
+        "sha256": "a40ae25f21c9698d761c1cc6ad553e84d499dd05a88e67129db0e1f57d3fe377",
+        "bytes": 10602
+      },
+      {
+        "path": "qtwebsockets_tr.qm",
+        "sha256": "f4495a99b7840af9fa9d9e721f518886745969727695d46c277c51e57eb42992",
+        "bytes": 9567
+      },
+      {
+        "path": "qtwebsockets_uk.qm",
+        "sha256": "9734a5dffb889911a5d9a6eb4ea8f81e5f78e48329ce2747e935bcdf7688d999",
+        "bytes": 9160
+      },
+      {
+        "path": "qtwebsockets_zh_CN.qm",
+        "sha256": "238fc979cee020c7e0cd9a07fdb14cbb1e8f00b6d5b4ee31fa7abf9abb446e29",
+        "bytes": 6220
+      }
+    ],
+    "previous_regular_files_unchanged": 4653,
+    "previous_symlinks_unchanged": 58,
+    "manifest_evidence_sha256": "07ca617cc0d9b9a856cab8b31e67083fd7ee5157a0b69cda21e46b8bc62e8ffa",
+    "consumer_binaries": [
+      {
+        "stage": "build-v2-fixture",
+        "executable": "qtr_catalogs",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "sha256": "a9eb6b869f07cf5a15659fe30f6d36e72e8844b281862babee8aabf07a90ba31",
+        "load_commands_sha256": "6311a763a6c110a8022d6ad69d1679cb2d1a3f57829fca97846b7a11e25d24ab"
+      },
+      {
+        "stage": "installed-v1",
+        "executable": "qtr_catalogs",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "sha256": "a9eb6b869f07cf5a15659fe30f6d36e72e8844b281862babee8aabf07a90ba31",
+        "load_commands_sha256": "2758e179537da7e20d76c69c61b23efcc0fb59df2e0dc5350ff0838590078815"
+      }
+    ]
+  },
+  "source_verification": {
+    "originals_unchanged": 309,
+    "working_files_unchanged": 309,
+    "patches": [],
+    "license_notice_reuse_files": [
+      {
+        "path": "licenseRule.json",
+        "sha256": "bd3dd93fa56f54bd5ab78e4209f1dd7d2d27c41d65945db064e6e267b39c009c"
+      },
+      {
+        "path": "LICENSES/LicenseRef-Qt-Commercial.txt",
+        "sha256": "9b1f50aae6267f9d5e0ceb6775ee86450262c25ec7c0573e151fe5d3f18a4700"
+      },
+      {
+        "path": "LICENSES/Qt-GPL-exception-1.0.txt",
+        "sha256": "40678d338ce53cd93f8b22b281a2ecbcaa3ee65ce60b25ffb0c462b0530846b2"
+      },
+      {
+        "path": "LICENSES/GPL-3.0-only.txt",
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+      },
+      {
+        "path": "LICENSES/BSD-3-Clause.txt",
+        "sha256": "9f0490f18656c6f2435bd14f603ef0c96434d1825615363dce43abb42ed1dcce"
+      }
+    ],
+    "pcsx2_source_clean": true,
+    "catalogs": [
+      {
+        "catalog": "assistant_ar",
+        "language": "ar",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_bg",
+        "language": "bg",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_cs",
+        "language": "cs_CZ",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_da",
+        "language": "da",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_fr",
+        "language": "fr_FR",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_hr",
+        "language": "hr",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_hu",
+        "language": "hu_HU",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_ja",
+        "language": "ja",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_nl",
+        "language": "nl_NL",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_pl",
+        "language": "pl",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_ru",
+        "language": "ru",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_sk",
+        "language": "sk_SK",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_sl",
+        "language": "sl",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_sv",
+        "language": "sv",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_zh_TW",
+        "language": "zh_TW",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_ar",
+        "language": "ar",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_bg",
+        "language": "bg_BG",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_cs",
+        "language": "cs_CZ",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_da",
+        "language": "da",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_fr",
+        "language": "fr_FR",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_hr",
+        "language": "hr",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_hu",
+        "language": "hu_HU",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_ja",
+        "language": "ja",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_nl",
+        "language": "nl_NL",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_pl",
+        "language": "pl",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_ru",
+        "language": "ru",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_sk",
+        "language": "sk_SK",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_sl",
+        "language": "sl_SI",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_sv",
+        "language": "sv_SE",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_zh_TW",
+        "language": "zh_TW",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_ar",
+        "language": "ar",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_bg",
+        "language": "bg_BG",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_cs",
+        "language": "cs_CZ",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_da",
+        "language": "da",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_fr",
+        "language": "fr_FR",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_hr",
+        "language": "hr",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_hu",
+        "language": "hu_HU",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_it",
+        "language": "it_IT",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_ja",
+        "language": "ja",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_nl",
+        "language": "nl_NL",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_pl",
+        "language": "pl",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_ru",
+        "language": "ru",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_sk",
+        "language": "sk_SK",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_sl",
+        "language": "sl",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_sv",
+        "language": "sv_SE",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_zh_TW",
+        "language": "zh_TW",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_ar",
+        "language": "ar",
+        "dependencies": [
+          "qtbase_ar",
+          "qtmultimedia_ar"
+        ]
+      },
+      {
+        "catalog": "qt_bg",
+        "language": "bg",
+        "dependencies": [
+          "qtbase_bg",
+          "qtmultimedia_bg"
+        ]
+      },
+      {
+        "catalog": "qt_ca",
+        "language": "ca",
+        "dependencies": [
+          "qtbase_ca",
+          "qtmultimedia_ca"
+        ]
+      },
+      {
+        "catalog": "qt_cs",
+        "language": "cs",
+        "dependencies": [
+          "qtbase_cs",
+          "qtmultimedia_cs"
+        ]
+      },
+      {
+        "catalog": "qt_da",
+        "language": "da",
+        "dependencies": [
+          "qtbase_da",
+          "qtmultimedia_da"
+        ]
+      },
+      {
+        "catalog": "qt_de",
+        "language": "de",
+        "dependencies": [
+          "qtbase_de",
+          "qtmultimedia_de"
+        ]
+      },
+      {
+        "catalog": "qt_es",
+        "language": "es",
+        "dependencies": [
+          "qtbase_es",
+          "qtmultimedia_es"
+        ]
+      },
+      {
+        "catalog": "qt_fa",
+        "language": "fa",
+        "dependencies": [
+          "qtbase_fa",
+          "qtmultimedia_fa"
+        ]
+      },
+      {
+        "catalog": "qt_fi",
+        "language": "fi",
+        "dependencies": [
+          "qtbase_fi",
+          "qtmultimedia_fi"
+        ]
+      },
+      {
+        "catalog": "qt_fr",
+        "language": "fr",
+        "dependencies": [
+          "qtbase_fr",
+          "qtmultimedia_fr"
+        ]
+      },
+      {
+        "catalog": "qt_gd",
+        "language": "gd",
+        "dependencies": [
+          "qtbase_gd"
+        ]
+      },
+      {
+        "catalog": "qt_gl",
+        "language": "gl_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_he",
+        "language": "he",
+        "dependencies": [
+          "qtbase_he"
+        ]
+      },
+      {
+        "catalog": "qt_help_ar",
+        "language": "ar",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_bg",
+        "language": "bg",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_ca",
+        "language": "ca",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_cs",
+        "language": "cs_CZ",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_da",
+        "language": "da",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_fr",
+        "language": "fr_FR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_gl",
+        "language": "gl_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_hr",
+        "language": "hr",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_hu",
+        "language": "hu_HU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_it",
+        "language": "it_IT",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_ja",
+        "language": "ja",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_nl",
+        "language": "nl_NL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_nn",
+        "language": "nn",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_pl",
+        "language": "pl",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_ru",
+        "language": "ru",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_sk",
+        "language": "sk_SK",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_sl",
+        "language": "sl",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_sv",
+        "language": "sv",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_zh_TW",
+        "language": "zh_TW",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_hr",
+        "language": "hr",
+        "dependencies": [
+          "qtbase_hr",
+          "qtmultimedia_hr"
+        ]
+      },
+      {
+        "catalog": "qt_hu",
+        "language": "hu",
+        "dependencies": [
+          "qtbase_hu",
+          "qtmultimedia_hu"
+        ]
+      },
+      {
+        "catalog": "qt_it",
+        "language": "it",
+        "dependencies": [
+          "qtbase_it",
+          "qtmultimedia_it"
+        ]
+      },
+      {
+        "catalog": "qt_ja",
+        "language": "ja",
+        "dependencies": [
+          "qtbase_ja",
+          "qtmultimedia_ja"
+        ]
+      },
+      {
+        "catalog": "qt_ka",
+        "language": "ka_GE",
+        "dependencies": [
+          "qtbase_ka",
+          "qtmultimedia_ka"
+        ]
+      },
+      {
+        "catalog": "qt_ko",
+        "language": "ko",
+        "dependencies": [
+          "qtbase_ko",
+          "qtmultimedia_ko"
+        ]
+      },
+      {
+        "catalog": "qt_lg",
+        "language": "lg",
+        "dependencies": [
+          "qtbase_lg"
+        ]
+      },
+      {
+        "catalog": "qt_lt",
+        "language": "lt",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_lv",
+        "language": "lv",
+        "dependencies": [
+          "qtbase_lv"
+        ]
+      },
+      {
+        "catalog": "qt_nl",
+        "language": "nl",
+        "dependencies": [
+          "qtbase_nl",
+          "qtmultimedia_nl"
+        ]
+      },
+      {
+        "catalog": "qt_nn",
+        "language": "nn",
+        "dependencies": [
+          "qtbase_nn",
+          "qtmultimedia_nn"
+        ]
+      },
+      {
+        "catalog": "qt_pl",
+        "language": "pl",
+        "dependencies": [
+          "qtbase_pl",
+          "qtmultimedia_pl"
+        ]
+      },
+      {
+        "catalog": "qt_pt_BR",
+        "language": "pt_BR",
+        "dependencies": [
+          "qtbase_pt_BR",
+          "qtmultimedia_pt_BR"
+        ]
+      },
+      {
+        "catalog": "qt_pt_PT",
+        "language": "pt_PT",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_ru",
+        "language": "ru",
+        "dependencies": [
+          "qtbase_ru",
+          "qtmultimedia_ru"
+        ]
+      },
+      {
+        "catalog": "qt_sk",
+        "language": "sk",
+        "dependencies": [
+          "qtbase_sk",
+          "qtmultimedia_sk"
+        ]
+      },
+      {
+        "catalog": "qt_sl",
+        "language": "sl",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_sv",
+        "language": "sv",
+        "dependencies": [
+          "qtbase_sv",
+          "qtmultimedia_sv"
+        ]
+      },
+      {
+        "catalog": "qt_tr",
+        "language": "tr",
+        "dependencies": [
+          "qtbase_tr",
+          "qtmultimedia_tr"
+        ]
+      },
+      {
+        "catalog": "qt_uk",
+        "language": "uk",
+        "dependencies": [
+          "qtbase_uk",
+          "qtmultimedia_uk"
+        ]
+      },
+      {
+        "catalog": "qt_zh_CN",
+        "language": "zh_CN",
+        "dependencies": [
+          "qtbase_zh_CN",
+          "qtmultimedia_zh_CN"
+        ]
+      },
+      {
+        "catalog": "qt_zh_TW",
+        "language": "zh_TW",
+        "dependencies": [
+          "qtbase_zh_TW",
+          "qtmultimedia_zh_TW"
+        ]
+      },
+      {
+        "catalog": "qtbase_ar",
+        "language": "ar",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_bg",
+        "language": "bg_BG",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_ca",
+        "language": "ca",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_cs",
+        "language": "cs_CZ",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_da",
+        "language": "da",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_fa",
+        "language": "fa_IR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_fi",
+        "language": "fi",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_fr",
+        "language": "fr_FR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_gd",
+        "language": "gd_GB",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_he",
+        "language": "he_IL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_hr",
+        "language": "hr",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_hu",
+        "language": "hu_HU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_it",
+        "language": "it_IT",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_ja",
+        "language": "ja",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_ka",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_lg",
+        "language": "lg_UG",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_lv",
+        "language": "lv_LV",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_nl",
+        "language": "nl_NL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_nn",
+        "language": "nn",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_pl",
+        "language": "pl_PL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_ru",
+        "language": "ru_RU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_sk",
+        "language": "sk_SK",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_sv",
+        "language": "sv_SE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_zh_TW",
+        "language": "zh_TW",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_bg",
+        "language": "bg",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_ca",
+        "language": "ca_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_da",
+        "language": "da",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_hr",
+        "language": "hr",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_hu",
+        "language": "hu_HU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_nl",
+        "language": "nl_NL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_pl",
+        "language": "pl_PL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_ru",
+        "language": "ru",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_sv",
+        "language": "sv_SE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_ar",
+        "language": "ar",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_bg",
+        "language": "bg",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_ca",
+        "language": "ca_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_da",
+        "language": "da",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_fa",
+        "language": "fa_IR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_fi",
+        "language": "fi",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_fr",
+        "language": "fr_FR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_hr",
+        "language": "hr",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_hu",
+        "language": "hu_HU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_ja",
+        "language": "ja",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_lv",
+        "language": "lv_LV",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_nl",
+        "language": "nl_NL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_nn",
+        "language": "nn",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_pl",
+        "language": "pl_PL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_ru",
+        "language": "ru_RU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_sk",
+        "language": "sk",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_sv",
+        "language": "sv_SE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_zh_TW",
+        "language": "zh_TW",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_bg",
+        "language": "bg",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_ca",
+        "language": "ca_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_da",
+        "language": "da",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_fi",
+        "language": "fi",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_fr",
+        "language": "fr_FR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_hr",
+        "language": "hr",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_hu",
+        "language": "hu_HU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_nl",
+        "language": "nl_NL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_pl",
+        "language": "pl_PL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_ru",
+        "language": "ru",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_sv",
+        "language": "sv_SE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_ar",
+        "language": "ar",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_bg",
+        "language": "bg",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_ca",
+        "language": "ca_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_cs",
+        "language": "cs_CZ",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_da",
+        "language": "da",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_fa",
+        "language": "fa_IR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_fi",
+        "language": "fi",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_fr",
+        "language": "fr_FR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_hr",
+        "language": "hr",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_hu",
+        "language": "hu_HU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_it",
+        "language": "it_IT",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_ja",
+        "language": "ja",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_nl",
+        "language": "nl_NL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_nn",
+        "language": "nn",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_pl",
+        "language": "pl_PL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_ru",
+        "language": "ru_RU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_sk",
+        "language": "sk_SK",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_sv",
+        "language": "sv",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_zh_TW",
+        "language": "zh_TW",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_ja",
+        "language": "ja_JP",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_pl",
+        "language": "pl_PL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_ru",
+        "language": "ru_RU",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_sv",
+        "language": "sv",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_ca",
+        "language": "ca_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_lg",
+        "language": "lg_UG",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_pl",
+        "language": "pl_PL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_ru",
+        "language": "ru",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_sv",
+        "language": "sv_SE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_ca",
+        "language": "ca_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_de",
+        "language": "de_DE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_es",
+        "language": "es_ES",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_fr",
+        "language": "fr_FR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_ja",
+        "language": "ja_JP",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_ka",
+        "language": "ka_GE",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_ko",
+        "language": "ko",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_pl",
+        "language": "pl_PL",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_pt_BR",
+        "language": "pt_BR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_ru",
+        "language": "ru",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_sv",
+        "language": "sv",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_tr",
+        "language": "tr_TR",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_uk",
+        "language": "uk_UA",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_zh_CN",
+        "language": "zh_CN",
+        "dependencies": []
+      },
+      {
+        "catalog": "assistant_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "designer_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "linguist_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qt_help_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtbase_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtconnectivity_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtdeclarative_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtlocation_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtmultimedia_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtserialport_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebengine_en",
+        "language": "en_US",
+        "dependencies": []
+      },
+      {
+        "catalog": "qtwebsockets_en",
+        "language": "en_US",
+        "dependencies": []
+      }
+    ],
+    "source_ts_files": 291,
+    "generated_english_ts_files": 13,
+    "omitted_source_ts_files": 0,
+    "upstream_test_programs_available": false
+  },
+  "pcsx2_configuration": {
+    "version": "v14",
+    "exit_code": 1,
+    "resolved_qt_components": [
+      "Core",
+      "CoreTools",
+      "Gui",
+      "GuiTools",
+      "Widgets",
+      "WidgetsTools",
+      "LinguistTools"
+    ],
+    "next_fatal_dependency": "KDDockWidgets-qt6",
+    "ffmpeg_still_missing": true,
+    "source_clean": true
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 16805089280,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "toolchain_checks_reused_from": "SRC31",
+  "steps": [
+    {
+      "name": "baseline-configure-v14",
+      "status": "expected-result",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 3.8,
+      "log_sha256": "98cbe922e1a2d27a6f37b1de9dc4c4a113b3ef0bb250477773c863a9eeca64cf"
+    },
+    {
+      "name": "build-v1-fixture-configure",
+      "status": "failed-attempt-preserved",
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.32,
+      "log_sha256": "3ba5bebf32184609ec986e5cef780ac8c807a13cacb3783a203c9041a240bcd0"
+    },
+    {
+      "name": "build-v2-fixture-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.5,
+      "log_sha256": "15b698aafcaed830929aa59835828f3b81aaffa87c990ad4705b25254666b5c5"
+    },
+    {
+      "name": "build-v2-fixture-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.32,
+      "log_sha256": "53076e26d2f7a176612bab311daaba358996b1df6179a4f6481084498ca71d0e"
+    },
+    {
+      "name": "build-v2-fixture-ctest",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.0,
+      "log_sha256": "481e22095aa78634af9af00fc10aa187f26f18546b0f27f9b76dc8921a68c4c0"
+    },
+    {
+      "name": "build-v2-fixture-loader-aggregate",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "7a8c7d08bacd5a8fef2aebc5e4e75b49b36be7bb1517661b22a02320fb0bfe17"
+    },
+    {
+      "name": "build-v2-fixture-loader-missing-dependency",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "5a0b66fa8147f676f9844f6e9de1fc31484467014b5382b438d0683bbb55b3bb"
+    },
+    {
+      "name": "build-v2-fixture-loader-spanish",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.32,
+      "log_sha256": "97061ad9a754e9f91bf6901a480f20c78a0cd400d8ea21e86397fdaa074c332e"
+    },
+    {
+      "name": "download-v1",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.69,
+      "log_sha256": "dfd825ebc2401fccc9383960399c57851fc2c934e6b5214dda90648ca8c8dd06"
+    },
+    {
+      "name": "installed-v1-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.56,
+      "log_sha256": "15b698aafcaed830929aa59835828f3b81aaffa87c990ad4705b25254666b5c5"
+    },
+    {
+      "name": "installed-v1-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.32,
+      "log_sha256": "4f5d680b81e04c4c946cd078f42dfd4d676138fe63b9e21060fa782c88aff39f"
+    },
+    {
+      "name": "installed-v1-ctest",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.19,
+      "log_sha256": "2eab781d0dcfb2e31b901f39580b7bb055b904f774678e3499a1971ae8ab3e50"
+    },
+    {
+      "name": "installed-v1-loader-aggregate",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "ede1ce8e9e89648607e5fe94794d4ddd03500da6d27d84693a33e2abdb7b380e"
+    },
+    {
+      "name": "installed-v1-loader-missing-dependency",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "b4e557de0f127c234f1162ffd6ed307c21f959f3d37c1f1376e6a5f0baeefc39"
+    },
+    {
+      "name": "installed-v1-loader-spanish",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.35,
+      "log_sha256": "f13306525556a015a46df503d9799da4b50ccbe6933f55eade1dd1fb78da1fad"
+    },
+    {
+      "name": "missing-qt-prefix-v1",
+      "status": "expected-result",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.88,
+      "log_sha256": "6d51ea8be5b3798b984c2c6158287e2be417f9324bee4d504bdcf5789eb6fe03"
+    },
+    {
+      "name": "oracle-v1",
+      "status": "failed-attempt-preserved",
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "4ab2443dc3b17da21a6c1404860d4ca8e1d1a98536a4c55468794f4c80479bd1"
+    },
+    {
+      "name": "oracle-v2",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.17,
+      "log_sha256": "a5c8a1c5a4da947e72b15c1a5ba006d07afd7ddb31aee2a4b80bbbcf16689f67"
+    },
+    {
+      "name": "qttranslations-v1-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "duration_seconds": 11.18,
+      "log_sha256": "58763e2eff52531220c0befcbf29952611c827d14f0c508970655fc3732cc965"
+    },
+    {
+      "name": "qttranslations-v1-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.78,
+      "log_sha256": "cd901bc03543b4eb2df2586c44c51668063ee587d99ac62c461015f47bc18fee"
+    },
+    {
+      "name": "qttranslations-v1-install",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.16,
+      "log_sha256": "ab6e9aecc9d57200a5e9152c349ca4fcef939c56d375c02e29016975f0ff3a8c"
+    },
+    {
+      "name": "repeat-v1",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 10.84,
+      "log_sha256": "88aeaca87e1e04b1fd5c8a29a282ddf7c220e174fe7f27f5f96bbe544f3d8331"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "path": "schemas/pcsx2-qt-translations-v1.md",
+      "bytes": 4474,
+      "sha256": "1a80cd25180f04587965881dbad3bc3032e0700df8ee98cd5fa1c2cfc9b1a787"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-translations/CMakeLists.txt",
+      "bytes": 1207,
+      "sha256": "8e615adcb12229f94db21fe9ed59c84393bf1a19d91f1289c1d3407351b28621"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-translations/README.md",
+      "bytes": 1522,
+      "sha256": "7c516d06f7cc6875e81eaa756b97e6f71c983a0437fd510146d7e016a34eac89"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-translations/catalogs.cpp",
+      "bytes": 8285,
+      "sha256": "fd1fdbe920b2c648ddaa2e13b1c890997448a6d8eb8655e21c4a314801a85483"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-translations/oracle.py",
+      "bytes": 3488,
+      "sha256": "21bdb2162b27906080a1e8a5e6b410cf407f6cf30618f5f93cf12199f11973db"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "actions-before-path-fix.py",
+      "bytes": 3331,
+      "sha256": "d14b2f3fb77f2df413fb7d99a04f5dd71e63f42f8dc4fb0cb7f7b54d263b029e"
+    },
+    {
+      "name": "actions.py",
+      "bytes": 3413,
+      "sha256": "639ad0a40ae71e302709cac13a8c153db6675e45dae246de96323aeff4b26f90"
+    },
+    {
+      "name": "archive.json",
+      "bytes": 330,
+      "sha256": "3e2a2c1bb49d9690c32d27232ebe1684dbc13483b0e9002d9bff1272ee35c7a0"
+    },
+    {
+      "name": "baseline-configure-v14.json",
+      "bytes": 1493,
+      "sha256": "bb69bd56babf1b37a5d838917b4f47c09af4566ab096b1334c3d3e52cbdbf0fe"
+    },
+    {
+      "name": "build-v1-fixture-configure.json",
+      "bytes": 2499,
+      "sha256": "7ae321c799dd03e4d6899c792eade1f645572191880775c6a8881a1257c4a59c"
+    },
+    {
+      "name": "build-v2-fixture-build.json",
+      "bytes": 993,
+      "sha256": "5a037828247f88afe4c5e27d727427e9ad47a44c514815d30b41d21220b4b73d"
+    },
+    {
+      "name": "build-v2-fixture-configure.json",
+      "bytes": 2499,
+      "sha256": "bc670654fd93bf019ff1c0a056f7a147e22bf154a6e790eb1b3e0bd4cd224891"
+    },
+    {
+      "name": "build-v2-fixture-ctest.json",
+      "bytes": 1128,
+      "sha256": "73ab4629a19c08ab36b1bc25be7c42dd557e40a0a2728fc8f72fb9b0f01ec992"
+    },
+    {
+      "name": "build-v2-fixture-junit.xml",
+      "bytes": 1040,
+      "sha256": "11f5df5c65eecef938f4c93649447aba04c7338220cd72308081e375f7712048"
+    },
+    {
+      "name": "build-v2-fixture-loader-aggregate.json",
+      "bytes": 1206,
+      "sha256": "6b0ccf1eae334e7416fb3dba8dfd3c8d6970fc96e1486bc99dc091c3d4f2b2c6"
+    },
+    {
+      "name": "build-v2-fixture-loader-missing-dependency.json",
+      "bytes": 1233,
+      "sha256": "e4bc09a2ccae3fe177e8281c30d7e7b2b9ab190635d7f1a8bb220a50f273b707"
+    },
+    {
+      "name": "build-v2-fixture-loader-spanish.json",
+      "bytes": 1200,
+      "sha256": "6f568dd8a0b3ab7ca9f85deb883049020ecdf3a6c3f774ce2b74bfa9fb4fafa1"
+    },
+    {
+      "name": "build-v2-fixture-verified.json",
+      "bytes": 2089,
+      "sha256": "773063cf0113508b17efd3cbc2729bf6b13704589ce79c6e69ec524c682c3f88"
+    },
+    {
+      "name": "build_module.py",
+      "bytes": 3066,
+      "sha256": "8a3774f3eff3de7c21c050f958b8747bf7f3071796c0462408e986a511d0d587"
+    },
+    {
+      "name": "capacity-samples.json",
+      "bytes": 1854,
+      "sha256": "24efbc7078d658e4290a358cab0d17cbbef54c4b640c102172ca5782c6bdbb90"
+    },
+    {
+      "name": "configuration-audit.json",
+      "bytes": 546,
+      "sha256": "fc58c7a05aea1135754d22ca873ffd60e8fc6472d8f8f5373baf232a0268e210"
+    },
+    {
+      "name": "configure-result-v14.json",
+      "bytes": 1609,
+      "sha256": "0cde42d0ae0d047fe609138aea0bddeb5492b6ec00b4bed39b5ffd98699f2c72"
+    },
+    {
+      "name": "download-v1.json",
+      "bytes": 1178,
+      "sha256": "b7b069a4b7f7afadb9d360e57a1752b5034114f16190d09195e84723ca549dcf"
+    },
+    {
+      "name": "finalize.py",
+      "bytes": 1669,
+      "sha256": "1612c8be1d190b8edea8908ac94a8b563384b50dde8a92bf034184fe3565ae72"
+    },
+    {
+      "name": "install-verification.json",
+      "bytes": 96041,
+      "sha256": "07ca617cc0d9b9a856cab8b31e67083fd7ee5157a0b69cda21e46b8bc62e8ffa"
+    },
+    {
+      "name": "installed-v1-build.json",
+      "bytes": 982,
+      "sha256": "d6af2019182a77033006e0380e96ac9623b152878769d3b5b14cf11b7d8d8b6a"
+    },
+    {
+      "name": "installed-v1-configure.json",
+      "bytes": 2465,
+      "sha256": "7da605b7d89ecaa022c7f4fa51ce68747179e568383d0d1681366d6685c0a743"
+    },
+    {
+      "name": "installed-v1-ctest.json",
+      "bytes": 1113,
+      "sha256": "ed71b57d589a1991222512d0420f1d459a0b987d7c5140d7758d1c6b379ee46c"
+    },
+    {
+      "name": "installed-v1-junit.xml",
+      "bytes": 1042,
+      "sha256": "9fcd157ba8f7a81579849961467ba0f4ade869fb514740d6ee5b8cdd64c9ad5e"
+    },
+    {
+      "name": "installed-v1-loader-aggregate.json",
+      "bytes": 1172,
+      "sha256": "e977c66f9c881f94cb63581c192652d821227b7b73fb7a867be2cfe1b1b56042"
+    },
+    {
+      "name": "installed-v1-loader-missing-dependency.json",
+      "bytes": 1199,
+      "sha256": "6e7872248b4b0b0992f53f315b580493448360a031c9fb55b28efaea2392278c"
+    },
+    {
+      "name": "installed-v1-loader-spanish.json",
+      "bytes": 1166,
+      "sha256": "4d1b9a4e3f79eacc2f0f6028c4b09348ff408b6f3d9eacc7385e6e11594409af"
+    },
+    {
+      "name": "installed-v1-verified.json",
+      "bytes": 2085,
+      "sha256": "8dcfcb0f8fdf5a24bd4af2f55d3fcf4455794ede80485cbe05a633942feedb21"
+    },
+    {
+      "name": "missing-qt-prefix-v1.json",
+      "bytes": 2238,
+      "sha256": "3ed39861f1c0695c3a61f2d3377e7d20049f32c7ee5703a98b9036fb1c796384"
+    },
+    {
+      "name": "oracle-summary.json",
+      "bytes": 1551,
+      "sha256": "eb7deac98a338d53d613f34f1f4733e37d65660c653ac1b101b7cc78b54441cf"
+    },
+    {
+      "name": "oracle-v1.json",
+      "bytes": 1387,
+      "sha256": "7afe7f9cd49903756e893dc9d8440430029db51ddd42ef51843dad4e16394f78"
+    },
+    {
+      "name": "oracle-v2.json",
+      "bytes": 1391,
+      "sha256": "0738d44146ffebf34e99c116dc3bd2b50136ee9431167e8b2f5b0e095d3353dc"
+    },
+    {
+      "name": "original-inventory.json",
+      "bytes": 43469,
+      "sha256": "9850993f255bbd24ec67c7e1ad7f4e66447032edb8cae1c40cb434bbaaff059e"
+    },
+    {
+      "name": "prefix-before.json",
+      "bytes": 536635,
+      "sha256": "962ee1db6296323afe41441ea4a33272b8b5ff50e0daf72d0a4f2488a7651891"
+    },
+    {
+      "name": "prefix-links-before.json",
+      "bytes": 3088,
+      "sha256": "642158456709a0075417a28166290dc9ef57d10b7f63304a7178cfb9a81669d7"
+    },
+    {
+      "name": "preflight-v14.json",
+      "bytes": 834,
+      "sha256": "3cda1229d9f222ad979d2262684248996f012de076868cd48e5b1d1b0e522cfa"
+    },
+    {
+      "name": "publish.py",
+      "bytes": 6424,
+      "sha256": "786ac22ad7b942fa628c0214fbff148720f831ef9127fecfd1c9f441ab729145"
+    },
+    {
+      "name": "qttranslations-v1-build.json",
+      "bytes": 1175,
+      "sha256": "53371da0415fef562d60bfac61f66defb2545e1a7f6400c24ba7f918f2c62210"
+    },
+    {
+      "name": "qttranslations-v1-configure.json",
+      "bytes": 2285,
+      "sha256": "c01d7ac6dd57e29af4ce96ea796872e0e4e1d7767596aa917aba8f24ef71ae62"
+    },
+    {
+      "name": "qttranslations-v1-install.json",
+      "bytes": 976,
+      "sha256": "8a9be76540b82f7b54f2488fc80b4940da525045521755df78ad86f30f4b78ed"
+    },
+    {
+      "name": "repeat-v1.json",
+      "bytes": 943,
+      "sha256": "def2ce5b8b883b60423d50723f0c87bd54da496e3223360bb08caf785bce3d62"
+    },
+    {
+      "name": "repeat.py",
+      "bytes": 897,
+      "sha256": "6a2c40df1775da205eb6e14048d39a6530e1a64a75c32f21ce1aed3a37d67835"
+    },
+    {
+      "name": "repeatability.json",
+      "bytes": 45919,
+      "sha256": "40e1b26f062fe703d24860aed573580c4c2aaaf34a846affc2285c56e70e4446"
+    },
+    {
+      "name": "repository-validation.json",
+      "bytes": 589,
+      "sha256": "dcf513e96cd5ce588b54acdd5cabbdfe1f8629c4d693b8afa531a5a40e97ab4c"
+    },
+    {
+      "name": "source-verification.json",
+      "bytes": 32129,
+      "sha256": "cfee0038dde5ff0bfd3bc5c42f41edeb4070a03f3b8f2ea15259f6a733b3fec0"
+    },
+    {
+      "name": "stage.py",
+      "bytes": 3672,
+      "sha256": "4de588d37d9ae99a0c7f8cbce5083d69caf9a318eabd5f19b8de6908a4d7c36d"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 301,
+      "sha256": "d88e04a2203c0796f30f1997c8e7e24246c8ae6db72da9974fc10ec5a90b90e6"
+    },
+    {
+      "name": "verification-fix.json",
+      "bytes": 525,
+      "sha256": "f573558cbc6965726bd019b385e8df22543cfb98ec99b71a9ce892d6fd8f3c42"
+    },
+    {
+      "name": "verify.py",
+      "bytes": 4535,
+      "sha256": "796af8c6ff9a331235acbb96d9ab8379536bcbf751ea4a1611331796d2604013"
+    }
+  ],
+  "limitations": [
+    "QM catalogs are Qt host translations, not Silent Hill 3 text assets",
+    "No semantic translation oracle for non-Spanish languages beyond load/language/dependencies",
+    "No visual UI, GPU, macOS 11 physical or Nintendo 3DS runtime verification",
+    "No complete PCSX2 build, instrumentation or effective map",
+    "No remote CI or full Python suite rerun"
+  ],
+  "next_unit": "prerequisites/dependencies-qt-apng",
+  "resource_links": [],
+  "capabilities": [],
+  "repository_validation": {
+    "date": "2026-10-17",
+    "repository_checks": {
+      "command": "rtk proxy .venv/bin/python -m tools.qa.check_repository",
+      "exit_code": 0,
+      "output": "Repository checks: PASS (0 errors)"
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    },
+    "source_artifacts_hashes_verified": 5,
+    "local_evidence_hashes_verified_before_receipt": 48,
+    "prior_evidence_files_unchanged": [
+      "SRC40",
+      "SRC41",
+      "SRC42",
+      "SRC43"
+    ],
+    "local_markdown_links_verified": 5,
+    "fixture_whitespace_and_privacy": "passed",
+    "full_python_suite_rerun": false,
+    "remote_ci_executed": false
+  }
+}

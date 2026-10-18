@@ -1,0 +1,949 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC42",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-qt-imageformats",
+  "stage": "installed-and-validated",
+  "contract": "schemas/pcsx2-qt-imageformats-v1.md",
+  "prior_qt_evidence": [
+    {
+      "source_id": "SRC40",
+      "sha256": "affd051bf62c339ab9abf6492a4aaf7adbaa4c84ea1b521ac7d1f9d495cb2a09",
+      "installed_binary_hashes_verified": true
+    },
+    {
+      "source_id": "SRC41",
+      "sha256": "f1f355f6963929f2e80629a30b7922130a23ea838b0ac3b8e3f7961fe7cde3b2",
+      "installed_binary_hashes_verified": true
+    }
+  ],
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan_sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+  "archive": {
+    "archive": "qtimageformats-everywhere-src-6.11.1.tar.xz",
+    "url": "https://download.qt.io/archive/qt/6.11/6.11.1/submodules/qtimageformats-everywhere-src-6.11.1.tar.xz",
+    "sha256": "b2bf6c6845ac175ed7f819145483ba4676f617aaa6a5012c8efee63c8bbac413",
+    "bytes": 2032792,
+    "unpacked_bytes": 10230327,
+    "regular_files": 563
+  },
+  "recipe_archives_verified_total": 19,
+  "recipe_archives_total": 25,
+  "configuration": {
+    "cache_expected": {
+      "CMAKE_BUILD_TYPE": "Release",
+      "CMAKE_OSX_ARCHITECTURES": "x86_64",
+      "CMAKE_OSX_DEPLOYMENT_TARGET": "11.0",
+      "QT_GENERATE_SBOM": "OFF",
+      "QT_BUILD_TESTS": "OFF",
+      "QT_BUILD_EXAMPLES": "OFF",
+      "QT_FEATURE_system_webp": "ON",
+      "QT_FEATURE_system_tiff": "OFF",
+      "QT_FEATURE_jasper": "OFF",
+      "QT_FEATURE_mng": "OFF"
+    },
+    "translation_units": 59,
+    "link_commands": 7,
+    "no_homebrew_target_references": true,
+    "source_files_unchanged": 563,
+    "supervisor_reused_from": "SRC40",
+    "supervisor_sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc"
+  },
+  "dependencies": {
+    "webp_version": "1.6.0",
+    "webp_source_id": "SRC32",
+    "webp_binaries_match_prior_evidence_and_initial_snapshot": [
+      {
+        "name": "libsharpyuv.0.1.2.dylib",
+        "bytes": 34912,
+        "sha256": "e2a6c54451eff8fdbf57fdd02a23d88afa235266c86b0d38b386ec402a75656a",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "libwebpdecoder.3.2.0.dylib",
+        "bytes": 323000,
+        "sha256": "4ca19706eada7543f3ab8b5c4c7b6973e8707858f87e87960ac9fca0812d9fb6",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "libwebp.7.2.0.dylib",
+        "bytes": 635952,
+        "sha256": "07f146bda6ec7471f2c88f2f52ee5905504a462b823b3c645ea437c0d506d57d",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "libwebpdemux.2.0.17.dylib",
+        "bytes": 26696,
+        "sha256": "29f39b7ed373424c714054cb5da6b568c1e72ca990583b2ab5069ecb58e45401",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "libwebpmux.3.1.2.dylib",
+        "bytes": 50368,
+        "sha256": "3dd6261c7425b9aca30a8443ad0631734d1ae07b9e605f568f3ef59cf8024e63",
+        "architecture": "x86_64"
+      }
+    ],
+    "bundled_webp_compiled": false,
+    "tiff_version": "4.7.1",
+    "tiff_origin": "Qt imageformats bundled sources",
+    "tiff_attribution_sha256": "3feff143a03929a929ba2d187195c82b495e1cb0c372e233a3e55272daa6d038",
+    "tiff_source_units": [
+      "src/3rdparty/libtiff/libtiff/tif_aux.c",
+      "src/3rdparty/libtiff/libtiff/tif_close.c",
+      "src/3rdparty/libtiff/libtiff/tif_codec.c",
+      "src/3rdparty/libtiff/libtiff/tif_color.c",
+      "src/3rdparty/libtiff/libtiff/tif_compress.c",
+      "src/3rdparty/libtiff/libtiff/tif_dir.c",
+      "src/3rdparty/libtiff/libtiff/tif_dirinfo.c",
+      "src/3rdparty/libtiff/libtiff/tif_dirread.c",
+      "src/3rdparty/libtiff/libtiff/tif_dirwrite.c",
+      "src/3rdparty/libtiff/libtiff/tif_dumpmode.c",
+      "src/3rdparty/libtiff/libtiff/tif_error.c",
+      "src/3rdparty/libtiff/libtiff/tif_extension.c",
+      "src/3rdparty/libtiff/libtiff/tif_fax3.c",
+      "src/3rdparty/libtiff/libtiff/tif_fax3sm.c",
+      "src/3rdparty/libtiff/libtiff/tif_flush.c",
+      "src/3rdparty/libtiff/libtiff/tif_getimage.c",
+      "src/3rdparty/libtiff/libtiff/tif_hash_set.c",
+      "src/3rdparty/libtiff/libtiff/tif_luv.c",
+      "src/3rdparty/libtiff/libtiff/tif_lzw.c",
+      "src/3rdparty/libtiff/libtiff/tif_next.c",
+      "src/3rdparty/libtiff/libtiff/tif_open.c",
+      "src/3rdparty/libtiff/libtiff/tif_packbits.c",
+      "src/3rdparty/libtiff/libtiff/tif_pixarlog.c",
+      "src/3rdparty/libtiff/libtiff/tif_predict.c",
+      "src/3rdparty/libtiff/libtiff/tif_print.c",
+      "src/3rdparty/libtiff/libtiff/tif_read.c",
+      "src/3rdparty/libtiff/libtiff/tif_strip.c",
+      "src/3rdparty/libtiff/libtiff/tif_swab.c",
+      "src/3rdparty/libtiff/libtiff/tif_thunder.c",
+      "src/3rdparty/libtiff/libtiff/tif_tile.c",
+      "src/3rdparty/libtiff/libtiff/tif_version.c",
+      "src/3rdparty/libtiff/libtiff/tif_warning.c",
+      "src/3rdparty/libtiff/libtiff/tif_write.c",
+      "src/3rdparty/libtiff/libtiff/tif_zip.c",
+      "src/3rdparty/libtiff/libtiff/tif_unix.c"
+    ],
+    "plugins_built": [
+      "qwebp",
+      "qtga",
+      "qwbmp",
+      "qtiff",
+      "qicns",
+      "qmacheif",
+      "qmacjp2"
+    ],
+    "plugins_runtime_tested": [
+      "qwebp",
+      "qtga",
+      "qwbmp",
+      "qtiff"
+    ],
+    "plugins_structural_only": [
+      "qicns",
+      "qmacheif",
+      "qmacjp2"
+    ],
+    "jasper": "disabled; unavailable",
+    "mng": "disabled; unavailable",
+    "heif_and_jpeg2000": "Apple ImageIO plugins; runtime not tested"
+  },
+  "build": {
+    "accepted": true,
+    "exit_code": 0,
+    "abort_reason": null,
+    "duration_seconds": 17.52,
+    "limits": {
+      "start_bytes": 17179869184,
+      "floor_bytes": 15032385536,
+      "maximum_build_bytes": 536870912,
+      "nominal_interval_seconds": 1
+    },
+    "log_sha256": "ace299810e40f39ba8fb45a64d496f3dbfcb22ed57af7d6e3ddfae84977f257a",
+    "samples": 20,
+    "initial": {
+      "free_bytes": 17791725568,
+      "logical_bytes": 3452801,
+      "allocated_bytes": 5574656,
+      "elapsed_seconds": 0.019
+    },
+    "final": {
+      "free_bytes": 17783246848,
+      "logical_bytes": 11566167,
+      "allocated_bytes": 14217216,
+      "elapsed_seconds": 17.521
+    },
+    "minimum_free_bytes_observed": 17774817280,
+    "maximum_logical_bytes_observed": 11566167,
+    "maximum_allocated_bytes_observed": 14217216,
+    "maximum_sample_interval_seconds": 1.05
+  },
+  "supervisor": {
+    "reused_from": "SRC40",
+    "sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc",
+    "previous_control_tests_passed": 7,
+    "control_tests_rerun": false
+  },
+  "runtime_tests": {
+    "own_cases": [
+      "WebP lossless pixels/alpha",
+      "QImageReader fallback scaling",
+      "TGA top and bottom orientation",
+      "WBMP odd row width and padding",
+      "TIFF uncompressed gray strip",
+      "four truncated inputs and recovery",
+      "Qt WebP write checked by separate libwebp process"
+    ],
+    "provider_program": "tst_qwebp",
+    "provider_functions": [
+      "readImage",
+      "readAnimation",
+      "writeImage"
+    ],
+    "provider_data_rows": 9,
+    "provider_qtest_totals": {
+      "build-v1-fixture": [
+        "Totals: 11 passed, 0 failed, 0 skipped, 0 blacklisted, 84ms"
+      ],
+      "installed-v1": [
+        "Totals: 11 passed, 0 failed, 0 skipped, 0 blacklisted, 103ms"
+      ]
+    },
+    "cases_per_stage": 8,
+    "stages": [
+      "build-v1-fixture",
+      "installed-v1"
+    ],
+    "ctest_executions_passed": 16,
+    "failed_ctest_cases": 0,
+    "skipped_ctest_cases": 0,
+    "additional_loader_executions": 10,
+    "consumer_does_not_link_plugins_or_webp_directly": true,
+    "oracle_does_not_link_qt": true,
+    "generated_inputs": [
+      {
+        "name": "bad.tga",
+        "bytes": 9,
+        "sha256": "ec76aaa43ea8afc0e5132cb3fab389d31c33d2ec9ace63bdbdf8375497039017"
+      },
+      {
+        "name": "bad.tiff",
+        "bytes": 7,
+        "sha256": "2e9e95ab9195e28998611101a3d528d74d1620a3832ee6ab7b902c145a61a7c1"
+      },
+      {
+        "name": "bad.wbmp",
+        "bytes": 9,
+        "sha256": "994905e5721bd0e9127676ab16638b556e10ebea23a96e1debb5583b0e58b278"
+      },
+      {
+        "name": "bad.webp",
+        "bytes": 20,
+        "sha256": "5425da545f48648d207dc4b578613388b9387df21c8df8df0c742b3ce3ce088d"
+      },
+      {
+        "name": "bottom.tga",
+        "bytes": 3116,
+        "sha256": "18b1d94dde182298cf50d376a6b81875718d6113d078ada991b41d5922db15ab"
+      },
+      {
+        "name": "scene.tiff",
+        "bytes": 128,
+        "sha256": "213979a923dff9e5dae39cb05c6b5f683cb2f2643c6ac6376a13cd4074c12832"
+      },
+      {
+        "name": "scene.wbmp",
+        "bytes": 10,
+        "sha256": "d9dcbf2bd37cf2b7b6754e169bafc312afcad76f95a84587104b3e1b077b04d2"
+      },
+      {
+        "name": "scene.webp",
+        "bytes": 78,
+        "sha256": "e3b848b24422eff8ef719d0e1991bee5fc1a36338fcabc13c32e4aacbdf67ce3"
+      },
+      {
+        "name": "top.tga",
+        "bytes": 3116,
+        "sha256": "564b326801bf303c67a3379cc01ff5b6f4ccd9e90e7658ba4e0fd8d91b8f02b2"
+      }
+    ],
+    "generated_inputs_identical_after_install": true,
+    "missing_explicit_plugin_root_rejected_after_install": true,
+    "full_imageformats_suite": "not executed; only the complete WebP test program plus own cases",
+    "platform": "offscreen"
+  },
+  "installation": {
+    "manifest_entries": 59,
+    "binary_inventory": [
+      {
+        "path": "plugins/imageformats/libqtga.dylib",
+        "bytes": 38384,
+        "sha256": "30968ed3e820a44af6a72c12c448d1099a7c7293c346c4e61ee442bf027da795",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "e02a1591bf0ae2b25bb85198bc4e1ac184f1e7fc7fca0b28ae1f37e3dcb0c3b8"
+      },
+      {
+        "path": "plugins/imageformats/libqwbmp.dylib",
+        "bytes": 37952,
+        "sha256": "07fb248d2ccca05dcfc709560bc4114125d29923aaea3d041140cea0ca2dd948",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "bebf0bd1b35155b8c0e573114a21a49e81f12668551f15155b5ca0316829068b"
+      },
+      {
+        "path": "plugins/imageformats/libqtiff.dylib",
+        "bytes": 521320,
+        "sha256": "b70b73238ab8eef65fca287ad7bbb98a1a61fb2e0c1f5ef00f410702cd899870",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "2507c8a543d29a7e86ba0521cccb84c1a5a1abc08e088078f4cc429a32480559"
+      },
+      {
+        "path": "plugins/imageformats/libqwebp.dylib",
+        "bytes": 50672,
+        "sha256": "ae067dfd832c894f606a1fdd2dd0304ecccdda31a3af8f9e3e0d57bc0fd6b0ed",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "8186195044e00f7e50952e91ac96749538d1532ff39ce50027c118087a5555fe"
+      },
+      {
+        "path": "plugins/imageformats/libqmacheif.dylib",
+        "bytes": 57856,
+        "sha256": "956cef93f36aa987808021e3dcda49dc905b617befc1c62e05cfffa9da66177e",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "ee7e911adb2f383fb22a8733266b6aa762c8dcc0d98de97c0d1ece5528cbb9b8"
+      },
+      {
+        "path": "plugins/imageformats/libqicns.dylib",
+        "bytes": 58200,
+        "sha256": "ac5780bc4b51ce8a19738e3b075f414de0c0b31e75ac20059c739f17ca1f339f",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "d7dc2b14269d60d73ea627814a6659dfb3b755b201f30a46585707770e808f95"
+      },
+      {
+        "path": "plugins/imageformats/libqmacjp2.dylib",
+        "bytes": 57520,
+        "sha256": "4d57458f0d6f8fdc2fb5e5a7413720ddf43bd7e2bf46b7065a4f494a3cf7ef47",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "2118b9e43458f86b337e808b3a133635b42c6ed83f61d42fe89e6396881d4ecd"
+      }
+    ],
+    "previous_regular_files_unchanged": 4218,
+    "previous_symlinks_unchanged": 52,
+    "manifest_evidence_sha256": "518e2556a86a1c0064f7116cf04f21d61b9aebe1fdced15bc8d44447cba631a9",
+    "consumer_binaries": [
+      {
+        "stage": "build-v1-fixture",
+        "executable": "qi_images",
+        "sha256": "9d6ba749ae0268698bc3cc938db666264e85de34f0ad6cf2c89fa5d8e36c9282",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "build-v1-fixture",
+        "executable": "qi_oracle",
+        "sha256": "aa153b12ea22a0ca6f7a778ed223aac056618bcf5db54f2ccee061d0814b839c",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "build-v1-fixture",
+        "executable": "provider_qwebp",
+        "sha256": "f61591c330f2f6e575865c7022a37cce2f30bed4f372063c35cb490116d5dc08",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "installed-v1",
+        "executable": "qi_images",
+        "sha256": "9d6ba749ae0268698bc3cc938db666264e85de34f0ad6cf2c89fa5d8e36c9282",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "installed-v1",
+        "executable": "qi_oracle",
+        "sha256": "aa153b12ea22a0ca6f7a778ed223aac056618bcf5db54f2ccee061d0814b839c",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "installed-v1",
+        "executable": "provider_qwebp",
+        "sha256": "088937916091d07461b25a02aa667df0c1d23c22060480f90edae958d1da4655",
+        "architecture": "x86_64"
+      }
+    ]
+  },
+  "source_verification": {
+    "originals_unchanged": 563,
+    "working_files_unchanged": 563,
+    "patches": [],
+    "license_notice_reuse_files": [
+      {
+        "path": "REUSE.toml",
+        "sha256": "70a52017c259cbf988f427c6ad234b2527f7c941c066bb9a971bf2bf9e112d41"
+      },
+      {
+        "path": "licenseRule.json",
+        "sha256": "ff1fcf586a8abec0c7a29d2c10f92951513174249818fdea2899fdaa6765a3aa"
+      },
+      {
+        "path": "LICENSES/LGPL-3.0-only.txt",
+        "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+      },
+      {
+        "path": "LICENSES/LicenseRef-Qt-Commercial.txt",
+        "sha256": "9b1f50aae6267f9d5e0ceb6775ee86450262c25ec7c0573e151fe5d3f18a4700"
+      },
+      {
+        "path": "LICENSES/GFDL-1.3-no-invariants-only.txt",
+        "sha256": "110535522396708cea37c72a802c5e7e81391139f5f7985631c93ef242b206a4"
+      },
+      {
+        "path": "LICENSES/GPL-2.0-only.txt",
+        "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+      },
+      {
+        "path": "LICENSES/libtiff.txt",
+        "sha256": "fbd6fed7938541d2c809c0826225fc85e551fdbfa8732b10f0c87e0847acafd7"
+      },
+      {
+        "path": "LICENSES/GPL-3.0-only.txt",
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+      },
+      {
+        "path": "LICENSES/BSD-3-Clause.txt",
+        "sha256": "9f0490f18656c6f2435bd14f603ef0c96434d1825615363dce43abb42ed1dcce"
+      },
+      {
+        "path": "dist/REUSE.toml",
+        "sha256": "7a74e09fdb0d2b9efa696cbf288f7903a8271facf8364d7749711c7d2dab81df"
+      },
+      {
+        "path": "src/3rdparty/libtiff/REUSE.toml",
+        "sha256": "b64bc82363ab14739be820d47b7fbc58c23c5099cfc2077dd725b0a3d5d21ec4"
+      },
+      {
+        "path": "src/3rdparty/libtiff/qt_attribution.json",
+        "sha256": "3feff143a03929a929ba2d187195c82b495e1cb0c372e233a3e55272daa6d038"
+      },
+      {
+        "path": "src/3rdparty/libwebp/REUSE.toml",
+        "sha256": "9e62f5bcb0b80f7aa495b83c60f5fb6666bed0723f2b5e24072dce01a670cc8a"
+      },
+      {
+        "path": "src/3rdparty/libwebp/COPYING",
+        "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"
+      },
+      {
+        "path": "src/3rdparty/libwebp/qt_attribution.json",
+        "sha256": "0a9f45a5ea57dea6b6987ec2974c4a785cd0cb6850df96af49a544068577363b"
+      }
+    ],
+    "pcsx2_source_clean": true
+  },
+  "pcsx2_configuration": {
+    "version": "v12",
+    "exit_code": 1,
+    "resolved_qt_components": [
+      "Core",
+      "CoreTools",
+      "Gui",
+      "GuiTools",
+      "Widgets",
+      "WidgetsTools"
+    ],
+    "next_fatal_dependency": "Qt6LinguistTools",
+    "ffmpeg_still_missing": true,
+    "source_clean": true
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 17756168192,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "toolchain_checks_reused_from": "SRC31",
+  "steps": [
+    {
+      "name": "baseline-configure-v12",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 3.75,
+      "log_sha256": "eddc1c68b59cb7d80d716033f4f4ca5ecfa263124edb307d15cf1d012f139387"
+    },
+    {
+      "name": "build-v1-fixture-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 4.66,
+      "log_sha256": "45b990c898e22d65746dbcc60c1d50b80bca6236eb870bea629ca1cc16c71baf"
+    },
+    {
+      "name": "build-v1-fixture-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.6,
+      "log_sha256": "c36606dfec5b247633a51cb05acf9625cd27d25f077e0f2e1553b9c820c24988"
+    },
+    {
+      "name": "build-v1-fixture-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 5.68,
+      "log_sha256": "453cd77faa4b5ea01306a21015e8b56000b01a9b6ff8c29ff9b73f79d14447a5"
+    },
+    {
+      "name": "build-v1-fixture-loader-oracle",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "2cc88ab928739ae996afa5eec0cfd77b2bdd27034bfbbe8feaa57eef3d70d948"
+    },
+    {
+      "name": "build-v1-fixture-loader-tga",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "a754b02526936591e1b3d58f319b01cea0432ca804ef608ca87b7fc0a602bed1"
+    },
+    {
+      "name": "build-v1-fixture-loader-tiff",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "760a5b2da85a1a6f657cf2187f4709342206aaf387092d10044cd7fe67726b33"
+    },
+    {
+      "name": "build-v1-fixture-loader-wbmp",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "a37f8065f1534f1cfb31b53a578b43f19c872e7d6583a4f9509971932f60f2c5"
+    },
+    {
+      "name": "build-v1-fixture-loader-webp",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.43,
+      "log_sha256": "950860c8326e735911451ed0e07fe7c72073dfe1ce0c61c62222461635b48a62"
+    },
+    {
+      "name": "download-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.5,
+      "log_sha256": "0d3294aaae089d733656645cec6cc25503b5215e23bf28cce67acb4ab3316ad7"
+    },
+    {
+      "name": "installed-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.89,
+      "log_sha256": "df3dba368e74097843083bed41d56dad8827dc7c249097aaf15e786ee91ccdea"
+    },
+    {
+      "name": "installed-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.47,
+      "log_sha256": "050990219980c8105b2554e66910e2ad1f04ec6a4542c738156b7b3c5708a2fc"
+    },
+    {
+      "name": "installed-v1-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 4.98,
+      "log_sha256": "6a7d7ac4eca09002cf7c23f3f55d54d8647071ab809c728475bdb4d25bddc521"
+    },
+    {
+      "name": "installed-v1-loader-oracle",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.03,
+      "log_sha256": "a91d6aa6e032a9b52458472208cbc7032953489cae4c94095450e8aefd4f98b5"
+    },
+    {
+      "name": "installed-v1-loader-tga",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "b99dd9785aaa2db06bd3d8d05def19b6f49b8817802d0714e67f373e7e25a310"
+    },
+    {
+      "name": "installed-v1-loader-tiff",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "bf5beedcfa32016b7b8113a6fbf22269d9eb32d5319e8009535f956c60b80fdf"
+    },
+    {
+      "name": "installed-v1-loader-wbmp",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "474fedbee9804bde2aa3490f60f0ff3315699658b02c8a38961967aecc3c0313"
+    },
+    {
+      "name": "installed-v1-loader-webp",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.35,
+      "log_sha256": "645a674a4d72542494e1dfb7830af09ea4cd1927ff37ccd28dbe799966646740"
+    },
+    {
+      "name": "missing-plugin-prefix-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 1.17,
+      "log_sha256": "7be261d6324e9825e2fa54a540c628d36ca03c5e656858b9e45dc77f6c37a521"
+    },
+    {
+      "name": "qtimageformats-v1-build",
+      "exit_code": 0,
+      "duration_seconds": 17.52,
+      "log_sha256": "ace299810e40f39ba8fb45a64d496f3dbfcb22ed57af7d6e3ddfae84977f257a"
+    },
+    {
+      "name": "qtimageformats-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 4.72,
+      "log_sha256": "1ee9e6b81181d1d2a5c886c9ed8341efd1bbc6724363b4edc92c17cf36eed81f"
+    },
+    {
+      "name": "qtimageformats-v1-install",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.14,
+      "log_sha256": "f23cc6bdab434aae9f7816a4d7dddac2c53b3c1f8da6667aeb0baba6435e75df"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "path": "schemas/pcsx2-qt-imageformats-v1.md",
+      "bytes": 4437,
+      "sha256": "a4314c6c4f183e0c7e830e3cdb6ab71bb6546af8314a05bf9e9569228c91f975"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-imageformats/CMakeLists.txt",
+      "bytes": 3429,
+      "sha256": "900861e42ed2eb435f9d126e6c903b39754c2d9dfaffd5056646f5c5f2a4a66f"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-imageformats/README.md",
+      "bytes": 2222,
+      "sha256": "32fbd01bb739d4f4954a521dd3d8552a8f110845035dded8afab1c669e3a45cf"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-imageformats/images.cpp",
+      "bytes": 4177,
+      "sha256": "bc2066cd0b9b628f70c2e5a00eaa0c3f92acd741f2469f7d468c6cd85a315256"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-imageformats/pattern.hpp",
+      "bytes": 721,
+      "sha256": "8b0f36ad661b2390cc7e67773a167fe288f7aef8967691183f5bcc8f2aa00bb3"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-imageformats/verify_writer.cmake",
+      "bytes": 403,
+      "sha256": "4e87ee07f4ee408c245c6db07631dc7898ff73f43e9142b10559477a782243a4"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-imageformats/webp_oracle.cpp",
+      "bytes": 4260,
+      "sha256": "bdb9588e88d16e84738521b2dcf7ae60c849806a6a8aa8ca79432dbcc2fc24a9"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "actions.py",
+      "bytes": 3369,
+      "sha256": "ef7302558cb430daba46724fc503013d31174ae4789ea7190f34afab223228d6"
+    },
+    {
+      "name": "archive.json",
+      "bytes": 330,
+      "sha256": "d435d05916e6c4a6e838461d6444b1fd957abdd727cdd8b482f24235af304e6f"
+    },
+    {
+      "name": "baseline-configure-v12.json",
+      "bytes": 1494,
+      "sha256": "00da85f6e27719c32512616634148818f5471d479ba48de5e820078f95d5b97a"
+    },
+    {
+      "name": "build-v1-fixture-build.json",
+      "bytes": 1202,
+      "sha256": "d60cc3d1c72c2df280b7ae9ea35d4cbbdf243d7ed48e080c245009efe7c1022d"
+    },
+    {
+      "name": "build-v1-fixture-configure.json",
+      "bytes": 2864,
+      "sha256": "3b9bc0284a1709a3a069af97729e8616eb0a6b8bd76bd863ed82278a2ce91f7a"
+    },
+    {
+      "name": "build-v1-fixture-ctest.json",
+      "bytes": 1337,
+      "sha256": "11098169714b8fc537411a1099a8357f675dd29a22a8f95c52be572b717821cb"
+    },
+    {
+      "name": "build-v1-fixture-junit.xml",
+      "bytes": 2210,
+      "sha256": "d95b2ce32389c38cb90bda9d44f647eaac6c47df4497264e7b4a54f1320cb8d8"
+    },
+    {
+      "name": "build-v1-fixture-loader-oracle.json",
+      "bytes": 1303,
+      "sha256": "3593c1311d96ac89706b33ad1fc5607da143d2874ac92c8ed18d7ba103942a9d"
+    },
+    {
+      "name": "build-v1-fixture-loader-tga.json",
+      "bytes": 1281,
+      "sha256": "9d3650d545f42d582468dc68a4b87d1a7a5e80dfaa3f956a8e4ef447ce971830"
+    },
+    {
+      "name": "build-v1-fixture-loader-tiff.json",
+      "bytes": 1284,
+      "sha256": "6a9f6197efda67c2423abb128c122d6b72223acb87f72853807375f7b839a4e5"
+    },
+    {
+      "name": "build-v1-fixture-loader-wbmp.json",
+      "bytes": 1284,
+      "sha256": "bc0f03f360944c0ee1bcccfeb8ec13624a1de6cf7249ecfec449d95d607c85c7"
+    },
+    {
+      "name": "build-v1-fixture-loader-webp.json",
+      "bytes": 1284,
+      "sha256": "b2aff695cd064187b0be5f55f05a0453e48cca8bbff234ee4c57752e49920f1f"
+    },
+    {
+      "name": "build-v1-fixture-verified.json",
+      "bytes": 10346,
+      "sha256": "f662f8d978dd418db018c744b418fbb938a3ee3b07ff2688f9cce9590137c898"
+    },
+    {
+      "name": "build_module.py",
+      "bytes": 3023,
+      "sha256": "990ed1d7b84884e1c7502acb8d73a906329b0b25cc327581ba306fa782c29b51"
+    },
+    {
+      "name": "capacity-samples.json",
+      "bytes": 2645,
+      "sha256": "87a9577c96a60259e5eec069d4cbcb63b64662066830bd2859561bf238eb8ba7"
+    },
+    {
+      "name": "configuration-audit.json",
+      "bytes": 625,
+      "sha256": "720b6fa91ee07e220e509b98e87046b6f86c6506696eace1980a4e220495e767"
+    },
+    {
+      "name": "configure-result-v12.json",
+      "bytes": 1610,
+      "sha256": "b2c819197f7c1a4d907c60feba7fd65fce7a6edf2019e805236666a11816cd49"
+    },
+    {
+      "name": "dependency-audit.json",
+      "bytes": 3446,
+      "sha256": "5d7e4bc14e8b593f69a33c7a881bc7848ea652f4c859f86e56c45f8262d3ad39"
+    },
+    {
+      "name": "dependency_audit.py",
+      "bytes": 1804,
+      "sha256": "f49e2b0919e9f26657fb9e207b53c02fb5962af7d673525b4426c5523b8a0c26"
+    },
+    {
+      "name": "download-v1.json",
+      "bytes": 1177,
+      "sha256": "aea6a0cb1ae4aad3a08d51130370c420f26da489dfedd2e2d85e93ff6acffafd"
+    },
+    {
+      "name": "finalize.py",
+      "bytes": 1586,
+      "sha256": "b598f20f73c1dfd55558a6e219b7f1cb2075c61d03923a3f0abafd87d86a82de"
+    },
+    {
+      "name": "install-verification.json",
+      "bytes": 14793,
+      "sha256": "518e2556a86a1c0064f7116cf04f21d61b9aebe1fdced15bc8d44447cba631a9"
+    },
+    {
+      "name": "installed-v1-build.json",
+      "bytes": 1077,
+      "sha256": "7e9fe247c773cfce0fbd6540ab428cadf6595141c76168e035c2374847ce5084"
+    },
+    {
+      "name": "installed-v1-configure.json",
+      "bytes": 2718,
+      "sha256": "f52f0ce0a1fdb3e6f863be913d04a0bbf3a9e5e5ebd9573e4fd035decd0c6795"
+    },
+    {
+      "name": "installed-v1-ctest.json",
+      "bytes": 1208,
+      "sha256": "50c4fbba5744f8b5817656c77991a2207f3cfd009a1736fb60aa2486974c1de3"
+    },
+    {
+      "name": "installed-v1-junit.xml",
+      "bytes": 2210,
+      "sha256": "fd7ff4558da0f74362e9494ce325c4f183a78c9f9704fa66fa0f8cb67af76f54"
+    },
+    {
+      "name": "installed-v1-loader-oracle.json",
+      "bytes": 1174,
+      "sha256": "cb07a94a1945fafa08f1feb0e6dd5029e6215348d5faef5e52b5c2e45e4d31de"
+    },
+    {
+      "name": "installed-v1-loader-tga.json",
+      "bytes": 1152,
+      "sha256": "0e497a618d2e43cea288e2d45e8e9d455daf8451f4e8adc105c65ca117776307"
+    },
+    {
+      "name": "installed-v1-loader-tiff.json",
+      "bytes": 1155,
+      "sha256": "ca34e8c8bae3ad9077d280635a7f59ccb76776a5a2204f2d04e7410ea02e404a"
+    },
+    {
+      "name": "installed-v1-loader-wbmp.json",
+      "bytes": 1155,
+      "sha256": "d3026e7e22764e2a2d01780cea7355c1f9b6040d708939fd43c90d11a1f48cd1"
+    },
+    {
+      "name": "installed-v1-loader-webp.json",
+      "bytes": 1155,
+      "sha256": "1d20e4af794f4ded935a875d64e8e5064a512db7ffe003970d743d12025ae137"
+    },
+    {
+      "name": "installed-v1-verified.json",
+      "bytes": 10247,
+      "sha256": "a2f87eb284e9fddb1eed02042e5285b0039823697f9d452514e02c0a848fef53"
+    },
+    {
+      "name": "missing-plugin-prefix-v1.json",
+      "bytes": 2508,
+      "sha256": "c5ad833469a1e6880d19865e00b61908a67714c0fc6efbe7c6f3c32b6b6d1096"
+    },
+    {
+      "name": "original-inventory.json",
+      "bytes": 84640,
+      "sha256": "7999008f6d359abfd6206ab86fda8ee8c96acb9f6f99f468e272b191240a1b84"
+    },
+    {
+      "name": "prefix-before.json",
+      "bytes": 481096,
+      "sha256": "22b4be479babf34f4c381f03cfbdf3c20bf550a00d12b88b2e1d82f1f732e282"
+    },
+    {
+      "name": "prefix-links-before.json",
+      "bytes": 2695,
+      "sha256": "12164ad04106df798f1aeeccc2a7f1352739c604c777ea38b1c15369d0de4f3d"
+    },
+    {
+      "name": "preflight-v12.json",
+      "bytes": 834,
+      "sha256": "519d4a035fff807e2780a4ba960c6c67a28f9b5cff2b41a95bdbffacf51249e1"
+    },
+    {
+      "name": "publish.py",
+      "bytes": 5764,
+      "sha256": "bdf88a240f21bd60340d13e98631012c4ebb0d4dc1db147f5e091875c2f67089"
+    },
+    {
+      "name": "qtimageformats-v1-build.json",
+      "bytes": 1173,
+      "sha256": "9b9094c93ddf777a6dffad5f8cca12959e5219dbc9b2b9618803d2cc687d0de4"
+    },
+    {
+      "name": "qtimageformats-v1-configure.json",
+      "bytes": 2376,
+      "sha256": "9f392929f6fb8d6b37ea7cdb6bf92aff63f16cceb04ba764089d1a35677348be"
+    },
+    {
+      "name": "qtimageformats-v1-install.json",
+      "bytes": 976,
+      "sha256": "8dab452485eac75a851dabde25b8ba44fa8306fa5fef66936c4e67a4189d3a9e"
+    },
+    {
+      "name": "repository-validation.json",
+      "bytes": 319,
+      "sha256": "be14bf3a8310b0ef651cf5924f53690e6632b066f2c874fce99132e812e4b355"
+    },
+    {
+      "name": "source-verification.json",
+      "bytes": 2271,
+      "sha256": "efb8c23579ca7be7ba4b0f0faf8991ac3a8e4b1d4b43ba56ba040a7c03658ac6"
+    },
+    {
+      "name": "stage.py",
+      "bytes": 3434,
+      "sha256": "1defc94632cdbcc74bc26df58be6d9785ebf8bd6e1916754016b414b1e69a3a2"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 279,
+      "sha256": "ce6f9aeabe977c21fca07d24c4d4278290fb7b16371fa0d326f7abf46ac3a173"
+    },
+    {
+      "name": "verify.py",
+      "bytes": 6232,
+      "sha256": "b15de906521d7fb0b99e2761e321e2702ff795f592054b16b677a643eaa385a4"
+    }
+  ],
+  "limitations": [
+    "ICNS, HEIF and JPEG2000 plugins structurally verified only",
+    "TIFF codecs, multipage and write paths not tested; TGA/WBMP variants not exhaustively tested",
+    "No full imageformats suite, fuzzing, sanitizers or performance claim",
+    "No visible UI, GPU or macOS 11 physical verification",
+    "No complete PCSX2 build, effective map, game or 3DS runtime",
+    "No remote CI or full Python suite rerun"
+  ],
+  "next_unit": "prerequisites/dependencies-qt-tools",
+  "resource_links": [],
+  "capabilities": [],
+  "repository_validation": {
+    "repository_checks": "PASS (0 errors)",
+    "git_diff_check": "PASS",
+    "source_artifact_hashes_verified": 7,
+    "local_evidence_hashes_verified_before_validation_record": 45,
+    "local_document_links_verified": 6,
+    "fixture_trailing_whitespace": "none",
+    "full_python_suite_rerun": false,
+    "remote_ci_run": false
+  }
+}

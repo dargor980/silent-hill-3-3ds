@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Panel</class>
+ <widget class="QWidget" name="Panel">
+  <layout class="QVBoxLayout" name="layout">
+   <item><widget class="QLabel" name="message"><property name="text"><string>Español: Normal</string></property></widget></item>
+   <item><widget class="QPushButton" name="advance"><property name="text"><string>Avanzar</string></property></widget></item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

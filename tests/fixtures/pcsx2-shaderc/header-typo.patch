@@ -1,0 +1,5 @@
+--- a/libshaderc/include/shaderc/shaderc.hpp
++++ b/libshaderc/include/shaderc/shaderc.hpp
+@@ -173,1 +173,1 @@
+-      non_sematic_debug_info);
++      non_semantic_debug_info);

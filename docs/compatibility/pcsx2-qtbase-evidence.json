@@ -1,0 +1,482 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC39",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-qtbase/prepare",
+  "stage": "prepared-library-build-pending-capacity",
+  "contract": "schemas/pcsx2-qtbase-v1.md",
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan": {
+    "path": "docs/compatibility/pcsx2-build-dependencies.json",
+    "sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+    "historical_snapshot_unchanged": true
+  },
+  "archive": {
+    "archive": "qtbase-everywhere-src-6.11.1.tar.xz",
+    "url": "https://download.qt.io/archive/qt/6.11/6.11.1/submodules/qtbase-everywhere-src-6.11.1.tar.xz",
+    "sha256": "d9594a31228aa23ad6b531719a29b45f0f3989fe6c136d45767ea179f233c1ac",
+    "bytes": 50648500,
+    "unpacked_bytes": 275949217,
+    "regular_files": 22859,
+    "symlinks": 0
+  },
+  "recipe_archives_verified_total": 17,
+  "recipe_archives_total": 25,
+  "patches": {
+    "changed_files": [
+      ".cmake.conf",
+      "CMakeLists.txt",
+      "src/corelib/global/qsysinfo.cpp",
+      "src/corelib/kernel/qcore_mac.mm",
+      "src/corelib/thread/qyieldcpu.h",
+      "src/gui/platform/darwin/qappleiconengine.mm",
+      "src/plugins/platforms/cocoa/qcocoawindow.mm",
+      "src/tools/macdeployqt/shared/shared.cpp"
+    ],
+    "hashes": {
+      "qt-macos11compat.patch": "a31cc527790147b40e9ceacb972ab32ed53cef169173cdee3ce3f5716e81e674",
+      "qt110-xcode264.patch": "4380bb3f2234b361b147a790b184b1058a214846f387e46fbf0b8f2862da9993",
+      "final-source.diff": "f468ff1b82e5e6232b4d3987a0c08340f4d9a0767337f41c2a923af07b4b4825",
+      "macdeployqt.patch": "157dffaeca24df2e8a57171e3c79b7219f7faa8bf82de95ed92e66d25b43cfdd"
+    },
+    "size": {
+      "regular_files": 45733,
+      "logical_bytes": 602810447,
+      "allocated_bytes": 737701888
+    }
+  },
+  "source_verification": {
+    "original_files_verified": 22859,
+    "changed_files": [
+      ".cmake.conf",
+      "CMakeLists.txt",
+      "src/corelib/global/qsysinfo.cpp",
+      "src/corelib/kernel/qcore_mac.mm",
+      "src/corelib/thread/qyieldcpu.h",
+      "src/gui/platform/darwin/qappleiconengine.mm",
+      "src/plugins/platforms/cocoa/qcocoawindow.mm",
+      "src/tools/macdeployqt/shared/shared.cpp"
+    ],
+    "patch_backups_matching_originals": [
+      ".cmake.conf.orig",
+      "src/corelib/global/qsysinfo.cpp.orig",
+      "src/corelib/kernel/qcore_mac.mm.orig",
+      "src/gui/platform/darwin/qappleiconengine.mm.orig",
+      "src/plugins/platforms/cocoa/qcocoawindow.mm.orig",
+      "src/tools/macdeployqt/shared/shared.cpp.orig"
+    ],
+    "unclassified_extra_files": [],
+    "pcsx2_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "pcsx2_source_clean": true,
+    "prefix_files_unchanged": 426,
+    "prefix_dylibs_unchanged": 21,
+    "final_diff_sha256": "f468ff1b82e5e6232b4d3987a0c08340f4d9a0767337f41c2a923af07b4b4825",
+    "syncqt": {
+      "bytes": 314152,
+      "sha256": "24b1a86274425f1b8b92da00de93ee8b5539dc41e4f419b1b9669f2def5787b5",
+      "architecture": "Mach-O 64-bit executable x86_64"
+    },
+    "provider_sources": {
+      "tests/auto/corelib/tools/qversionnumber/tst_qversionnumber.cpp": "b745d86b040303952ba52cea86c816d407dea2441a213d806bf1fa79cecee256",
+      "tests/auto/corelib/tools/qversionnumber/CMakeLists.txt": "f78c1a0a6b3f48719bb2a03976be9a59f706dd2ddcd9e6ea8e09045da8a926c5",
+      "tests/auto/corelib/tools/qscopeguard/tst_qscopeguard.cpp": "4697bdb4ae7504cbae7b48bf4e1696e54433543aa050fa07d409ab8eb528177b",
+      "tests/auto/corelib/tools/qscopeguard/CMakeLists.txt": "d703417e34bb81d26fd7a8a8642a167da54048bd613b69ae0e1e911f2cf3fb8a"
+    },
+    "license_notice_file_count": 192,
+    "license_notice_inventory_evidence_sha256": "db7fdcb4acec949a6ba5c184a30093bada47142e797eb33beecf1477768831ee"
+  },
+  "configuration_audit": {
+    "cache_assertions": {
+      "CMAKE_BUILD_TYPE": "MinSizeRel",
+      "CMAKE_OSX_ARCHITECTURES": "x86_64",
+      "CMAKE_OSX_DEPLOYMENT_TARGET": "11.0",
+      "CMAKE_APPLE_SILICON_PROCESSOR": "x86_64",
+      "QT_BUILD_TESTS": "OFF",
+      "QT_BUILD_EXAMPLES": "OFF",
+      "QT_HOST_PATH": "",
+      "QT_FEATURE_framework": "OFF",
+      "QT_FEATURE_dbus": "OFF",
+      "QT_FEATURE_icu": "OFF",
+      "QT_FEATURE_opengl": "OFF",
+      "QT_FEATURE_sql": "OFF",
+      "QT_FEATURE_gssapi": "OFF",
+      "QT_FEATURE_system_png": "ON",
+      "QT_FEATURE_system_jpeg": "ON",
+      "QT_FEATURE_system_zlib": "ON",
+      "QT_FEATURE_system_freetype": "ON",
+      "QT_FEATURE_system_harfbuzz": "ON"
+    },
+    "generated_translation_units": 1170,
+    "generated_link_commands": 55,
+    "target_homebrew_references": 0,
+    "compile_architecture": "x86_64",
+    "optimization": "-DNDEBUG -Oz",
+    "plugins_configured": [
+      "QOffscreenIntegrationPlugin",
+      "QCocoaIntegrationPlugin"
+    ],
+    "opengl_desktop_capability": "ON",
+    "opengl_feature": "OFF",
+    "Qt6OpenGL_exported": false,
+    "configure_warnings": [
+      "Unix Makefiles generator unsupported by Qt upstream; retained PCSX2 recipe",
+      "FETCHCONTENT_FULLY_DISCONNECTED unused; not a network sandbox"
+    ],
+    "build_size": {
+      "regular_files": 7230,
+      "logical_bytes": 29141215,
+      "allocated_bytes": 54333440
+    },
+    "stage_size": {
+      "regular_files": 52980,
+      "logical_bytes": 632165017,
+      "allocated_bytes": 792293376
+    }
+  },
+  "dependency_origins": {
+    "png": "private-prefix",
+    "jpeg": "private-prefix",
+    "freetype": "private-prefix",
+    "harfbuzz": "private-prefix",
+    "zstd": "private-prefix",
+    "zlib": "Apple SDK 26.5, header version 1.2.12"
+  },
+  "fixture_diagnostics": {
+    "xml_parsed": [
+      "panel.ui",
+      "resources.qrc"
+    ],
+    "message_bytes": 26,
+    "syntax_cases_passed": [
+      "core",
+      "images"
+    ],
+    "runtime_cases_executed": 0,
+    "provider_ctest_registered": 0,
+    "moc_rcc_uic_execution": "pending-full-build"
+  },
+  "runtime_tests": {
+    "own_cases_defined": 6,
+    "provider_programs_selected": [
+      "qversionnumber",
+      "qscopeguard"
+    ],
+    "cases_executed": 0,
+    "full_provider_suite": "disabled",
+    "widgets_syntax": "pending real uic"
+  },
+  "capacity": {
+    "free_bytes": 19353075712,
+    "minimum_free_bytes": 21474836480,
+    "allowed": false,
+    "stage": {
+      "regular_files": 52980,
+      "logical_bytes": 632165017,
+      "allocated_bytes": 792293376
+    }
+  },
+  "steps": [
+    {
+      "name": "core-syntax-v1",
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.69,
+      "log_sha256": "c81feed39e5ec72c282c1bee1664acf4eb6c3ffa90082780755c9c49ff0a6109"
+    },
+    {
+      "name": "core-syntax-v2",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.2,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "download-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 5.19,
+      "log_sha256": "b58917fc1959778a5dbb5df188abac90cbcfbe1421c877d4d5366caafea2cc58"
+    },
+    {
+      "name": "headers-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 6.64,
+      "log_sha256": "1e0f7453236a1a7e173e4ea7cde6c8b6ce9de5eac74f26a2713681c05679d095"
+    },
+    {
+      "name": "images-syntax-v2",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.95,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "macdeployqt-apply-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "a84a4eb23a7f7486b68fe144750d8cf95aa6b2cd28659410c6bd3ea5161c3d81"
+    },
+    {
+      "name": "missing-prefix-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.55,
+      "log_sha256": "a649f23397b0542468d4af17cfc07d60f7393835d7b30d9ccad1adf0514fd158"
+    },
+    {
+      "name": "provider-inventory-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "655b4edf543a99640d87b7cec2509f8071db3e631f77a63bd8b28f1533babfc4"
+    },
+    {
+      "name": "qt-macos11compat.patch-apply-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "e4808fe8f27c4d8d938d4cc216f385dab3c9ac4db72fdea08cbc9abc900dc734"
+    },
+    {
+      "name": "qt110-xcode264.patch-apply-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.0,
+      "log_sha256": "d768b009fbfc5e55b9e69e47541aebea0f73535c6dd29454fb0ae1ae436051c5"
+    },
+    {
+      "name": "qtbase-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 28.61,
+      "log_sha256": "da6e70a25869e41582f35dce10b6aa2c273fe20182779e122a6a76fef5c24192"
+    },
+    {
+      "name": "syncqt-architecture-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "713cc3686581e1ad22ae4d6f46cb3adb51a03bcb0ad0d72ad27d85e8212526f6"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "path": "schemas/pcsx2-qtbase-v1.md",
+      "bytes": 5782,
+      "sha256": "3949671bd55fcaf337fd8afd16c596d442879b02e2734f87d37c930e5935509c"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/CMakeLists.txt",
+      "bytes": 2616,
+      "sha256": "a9316fbed8b1ddac8357630379f9b224181430a0450f26085cc59436b5a70d73"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/README.md",
+      "bytes": 3189,
+      "sha256": "f70f4038428415e6792fd505a0891a80733686a478f0f124575aa3d0ec80d756"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/core.cpp",
+      "bytes": 2740,
+      "sha256": "4d5f02fd80423e3fac767fd9f2e6d93ab0398b9a555561082e59d68d9e5f1301"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/emitter.hpp",
+      "bytes": 191,
+      "sha256": "fb72ba5c65f03f0376d77ed8823e2d4751465a17dfb1a4b0e1b21ebfe2680658"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/fixture.hpp",
+      "bytes": 397,
+      "sha256": "b3d1f4d45ce446d9d9cf0225f6eae83ed5fe90b25e1623aa05a12ded69e08ba6"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/images.cpp",
+      "bytes": 2620,
+      "sha256": "399ca262188f07ffc6992cab4f9d35e1827e0397dac2ef27930a173be9ee2482"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/message.txt",
+      "bytes": 26,
+      "sha256": "b0160ccf54b2306cbcbe62b911686903f6d3e9d86ad812b788d4d497acad3aeb"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/panel.ui",
+      "bytes": 479,
+      "sha256": "5ea09a07c8796ce54e1d3301d85321858e935f4670073ebf64b4fd013e88113f"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/resources.qrc",
+      "bytes": 72,
+      "sha256": "aa66a908161635466090d40f7a7eb5b2ea2029c5285b8b10728ff81320fde68a"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qtbase/widgets.cpp",
+      "bytes": 1085,
+      "sha256": "f8ab62c781ab57b436923f88f9271978adbbae4dc7a86de3e2e5a9e492a3660e"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "archive.json",
+      "bytes": 335,
+      "sha256": "38d10a163cf53e7c5cf18945ee480a0cc18cb425dde26814c3af8d90bc5feb92"
+    },
+    {
+      "name": "capacity-before-build.json",
+      "bytes": 200,
+      "sha256": "9652e7c2a5587608a7b3d5d1b857a70749bd5ccd00c6d90e415941c86de86bba"
+    },
+    {
+      "name": "configuration-audit.json",
+      "bytes": 2133,
+      "sha256": "a65ba08c963c28677438f414e4dec247dab1447f7517716a0900e6c6b86e2792"
+    },
+    {
+      "name": "continue_stage.py",
+      "bytes": 1372,
+      "sha256": "b1a7cb3d31953aa9df925365d392f45c5e8c6b6766c5c04639080492f8d0c108"
+    },
+    {
+      "name": "core-syntax-v1.json",
+      "bytes": 1716,
+      "sha256": "6b4a820055907ea586f553d8c201e147ee5e5ec060081f72e52280b9f162e995"
+    },
+    {
+      "name": "core-syntax-v2.json",
+      "bytes": 1715,
+      "sha256": "b9d8f39492f64cc4b03f6b1c385ae6a4b39e535a47f6526699d7721c2fd4a5ea"
+    },
+    {
+      "name": "diagnostics.py",
+      "bytes": 4100,
+      "sha256": "3e62f0cfe2871ff31a4707ad349a4f31d05f4fd23e95cb12ca81257b8c67bd29"
+    },
+    {
+      "name": "download-v1.json",
+      "bytes": 1056,
+      "sha256": "074fed54cc65ff2c8644aed4e08a3b56e351194587bcf6c4820672ac12020acf"
+    },
+    {
+      "name": "fixture-structure.json",
+      "bytes": 256,
+      "sha256": "922bd4081b9d71ae66b46aed5dde998eda19888f5baa396a32d316fd5d38bcfd"
+    },
+    {
+      "name": "headers-v1.json",
+      "bytes": 974,
+      "sha256": "ec9c674ea0fbbcf1040ded4f682ac6a65fb5d1dd7423114552aac353ff3e05f8"
+    },
+    {
+      "name": "images-syntax-v2.json",
+      "bytes": 1722,
+      "sha256": "3cd4b6fc7f48b5f3f479772d96eaef7dd0ceae9446001a87145e27c92c1c25bc"
+    },
+    {
+      "name": "macdeployqt-apply-v1.json",
+      "bytes": 1033,
+      "sha256": "e2cc2da7716500782421d83ecdef4e2e41ec49b9611da253d65f57d5e3ececea"
+    },
+    {
+      "name": "missing-prefix-v1.json",
+      "bytes": 2108,
+      "sha256": "e2fca02b8cf74eb9476eb9eca76e3225352f25dc3bb5dd1c2bd74d7aa5dff4ed"
+    },
+    {
+      "name": "original-inventory.json",
+      "bytes": 4797495,
+      "sha256": "9acf6347f4b895d0e3aa3bbd9dbc53df17cd934e13171aa8b96256774c6ac4d0"
+    },
+    {
+      "name": "patches.json",
+      "bytes": 842,
+      "sha256": "5fa136401d95e2d3253fd7ca64fa6679afa08e8eb326aa39ccba0985c9b81dde"
+    },
+    {
+      "name": "prefix-before.json",
+      "bytes": 43719,
+      "sha256": "75e73708722a7b61e5670464dff457936e959e7d48c6630146a2900d1b2e0abe"
+    },
+    {
+      "name": "provider-inventory-v1.json",
+      "bytes": 881,
+      "sha256": "8f94a969cc4fd2903225da13f35ae9faa7b2febd8532a48b3d1418fa4ee68b96"
+    },
+    {
+      "name": "qt-macos11compat.patch-apply-v1.json",
+      "bytes": 1031,
+      "sha256": "0eaa69cdcf8a44ab38d321430564e8d3afc7955f7362a91e449e900c3925ee3e"
+    },
+    {
+      "name": "qt110-xcode264.patch-apply-v1.json",
+      "bytes": 1024,
+      "sha256": "2a0498f7222a76f9cffc490aaac3e47ae1ef92bc7bf3bb32ee0bacfa267b1b32"
+    },
+    {
+      "name": "qtbase-v1-configure.json",
+      "bytes": 2482,
+      "sha256": "f3e7f5b7781773620d2c28a19d131e937b71067c859f5582f1bd6d910a4f2cdc"
+    },
+    {
+      "name": "source-verification-v1.json",
+      "bytes": 342,
+      "sha256": "5f19f0689afa348b5a4cbc835a2cdd4893c9db17b82939de7e860a71d96f85b1"
+    },
+    {
+      "name": "source-verification.json",
+      "bytes": 30731,
+      "sha256": "db7fdcb4acec949a6ba5c184a30093bada47142e797eb33beecf1477768831ee"
+    },
+    {
+      "name": "stage.py",
+      "bytes": 7529,
+      "sha256": "724decfea072e8a9ef451a02f2c4720f72e6c9fe97e1e53601b1a2dd4b6cdb12"
+    },
+    {
+      "name": "syncqt-architecture-v1.json",
+      "bytes": 843,
+      "sha256": "92304a048ff8e22207515dcecee5b3057ae0e323bbc5b52a0bafc240c153f5e5"
+    },
+    {
+      "name": "verify-v1.py",
+      "bytes": 2103,
+      "sha256": "8f0e144bf43c33f0a5c254fdfd6e3b4fccc1b9c8bdf0d3023590aeeac41a7d6d"
+    },
+    {
+      "name": "verify.py",
+      "bytes": 2266,
+      "sha256": "f0da30a82122c9f0c14d3f289c95ec34a19bb9f9a464c7351395f0bb12c3f09c"
+    }
+  ],
+  "unchanged_gate": {
+    "last_pcsx2_configuration": "v9",
+    "new_pcsx2_configure_executed": false,
+    "reason": "Qt not installed yet"
+  },
+  "limitations": [
+    "Qt libraries and moc/rcc/uic not built",
+    "No functional tests or installation",
+    "No visible Cocoa UI, GPU or macOS 11 runtime validation",
+    "No full PCSX2 build or effective mapping",
+    "No remote CI or full Python suite rerun",
+    "No 3DS validation"
+  ],
+  "next_unit": "prerequisites/dependencies-qtbase/build-and-validate",
+  "resource_links": [],
+  "capabilities": [],
+  "repository_validation": {
+    "check_repository": "PASS (0 errors)",
+    "git_diff_check": "PASS",
+    "source_hashes_verified": 11,
+    "local_evidence_hashes_verified": 26,
+    "local_links_verified": 7,
+    "full_python_suite_rerun": false,
+    "remote_ci_run": false
+  }
+}

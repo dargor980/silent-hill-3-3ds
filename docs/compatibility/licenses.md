@@ -221,3 +221,126 @@ Se reutiliza FontTools 4.60.1 de SRC34 únicamente en host para añadir una tabl
 SVG a la fuente geométrica propia. El fixture usa los hooks de la biblioteca
 PlutoSVG instalada y API públicas, sin copiar el adaptador header-only al
 repositorio ni incorporar dependencias al runtime 3DS.
+
+Actualización RapidYAML host (2026-10-17):
+[SRC36](pcsx2-rapidyaml-evidence.json) fija RapidYAML 0.12.1 y c4core 0.2.12
+incorporado desde el archivo de receta verificado. Se conservan avisos MIT
+de ambos proyectos, c4Project y rng; BSD de dos cláusulas de debugbreak y
+Boost de inplace_function. fast_float 8.2.4 se identifica por el header
+amalgamado, que conserva MIT; también se preservan los textos MIT/Boost/Apache
+incluidos en su directorio. Los hashes individuales están en la evidencia.
+No se atribuyen commits no verificados a auxiliares del archivo ni se toma
+MIT raíz como sustituto de sus avisos. Fuentes y avisos permanecen privados;
+no se distribuye un bundle y LIC08 sigue abierto. YAML/fixture propios bajo
+la licencia del repositorio; los quickstarts originales se compilan desde
+la fuente privada del proveedor, sin copiarlos al repositorio.
+
+Actualización de preparación Shaderc host (2026-10-17):
+[SRC37](pcsx2-shaderc-evidence.json) verifica Shaderc 2026.2 y las revisiones
+fijadas de glslang, SPIRV-Headers y SPIRV-Tools; conserva fuentes y textos
+individuales. Shaderc/SPIRV-Tools incluyen Apache-2.0; glslang enumera BSD
+(dos/tres cláusulas), MIT y Apache-2.0. SPIRV-Headers conserva sus avisos
+Khronos y excepciones por archivo, JsonCpp MIT/dominio público y CC-BY-4.0
+para documentación/archivos indicados. El parche PCSX2 y la corrección del
+wrapper quedan separados del original. No se distribuye un bundle; LIC08
+sigue pendiente. Shaders y helpers propios mantienen la licencia del
+repositorio; el smoke C del proveedor permanece en la fuente privada.
+SRC37 también registra la dylib c4core ya instalada en SRC36, cuyo aviso
+MIT y fuente se habían conservado; no es una dependencia nueva descargada.
+
+Actualización de build Shaderc host (2026-10-17):
+[SRC38](pcsx2-shaderc-build-evidence.json) acredita instalación privada de la
+dylib personalizada y conserva los mismos cuatro archivos, parches y avisos
+de SRC37. No añade descargas ni modifica los textos de licencia. El validador
+SPIRV-Tools permanece como biblioteca estática de test, sin instalarlo en el
+prefijo. No se distribuye bundle; LIC08 continúa abierto.
+
+Actualización de preparación Qt Base host (2026-10-17):
+[SRC39](pcsx2-qtbase-evidence.json) verifica el archivo 6.11.1 y conserva
+192 archivos de licencias/avisos/REUSE, incluidos los 38 textos de LICENSES.
+Las alternativas LGPL/GPL/comercial y avisos de terceros se registran por
+archivo; no se atribuye una sola licencia a todo Qt. Los tests originales
+qversionnumber/qscopeguard declaran LicenseRef-Qt-Commercial OR GPL-3.0-only.
+Tres parches de la receta permanecen separados, con originales y diff privado.
+Solo syncqt se compiló para generar headers; bibliotecas y distribución no
+validadas. No se redistribuyen fuentes Qt, tests originales, BIOS ni assets
+en el repositorio del port. LIC08 sigue pendiente para un eventual bundle.
+
+Actualización de build Qt Base host (2026-10-17):
+[SRC40](pcsx2-qtbase-build-evidence.json) acredita compilación/instalación privada
+de Qt Base 6.11.1 conservando el archivo, 22.859 originales, tres parches de
+receta, avisos y diferencias de SRC39. Los tests originales se compilan sin
+modificaciones y permanecen fuera del repositorio; solo se corrige la búsqueda
+de TestPrivate en el consumidor CMake propio. La instalación incluye ocho dylibs
+Qt principales más herramientas/plugins y archivos estáticos inventariados.
+La validación funcional no constituye revisión de distribución ni cierre LIC08.
+
+Actualización Qt SVG host (2026-10-17):
+[SRC41](pcsx2-qt-svg-evidence.json) verifica el archivo Qt SVG 6.11.1 de la
+receta, 634 originales sin modificaciones y 13 archivos de licencias/avisos/
+REUSE conservados en el directorio privado. Se instalan Qt6Svg, Qt6SvgWidgets
+y dos plugins SVG. El test original `tst_qsvgrenderer` y sus recursos permanecen
+privados, sin cambios; se seleccionan seis funciones. Su cabecera declara
+`LicenseRef-Qt-Commercial OR GPL-3.0-only`; no se extrapola esa expresión al
+módulo completo. Los SVG/XML y el adaptador de pruebas incorporados al
+repositorio son propios. Esta instalación local no cierra LIC08 ni acredita
+las obligaciones de un eventual bundle redistribuible.
+
+Actualización Qt imageformats host (2026-10-17):
+[SRC42](pcsx2-qt-imageformats-evidence.json) verifica el archivo 6.11.1 y 563
+originales sin cambios; conserva 15 archivos de licencias, avisos, REUSE o
+atribuciones en el directorio privado. El plugin TIFF incorpora libtiff 4.7.1,
+con su atribución y COPYRIGHT; el plugin WebP usa la biblioteca privada 1.6.0
+de SRC32 y no compila la copia incorporada. HEIF/JPEG2000 usan frameworks Apple.
+El programa original `tst_qwebp` y sus cinco imágenes permanecen privados,
+sin modificaciones; su cabecera declara `LicenseRef-Qt-Commercial OR GPL-3.0-only`.
+No se extrapola esa expresión a todo el módulo. El generador, oráculos y
+consumidores públicos son propios. Instalación y pruebas no cierran LIC08
+ni la revisión de un eventual bundle redistribuible.
+
+Actualización Qt Tools host (2026-10-17):
+[SRC43](pcsx2-qt-tools-evidence.json) verifica el archivo 6.11.1 y los 5.769
+originales sin cambios; conserva 52 archivos de licencias, avisos, REUSE o
+atribuciones en el directorio privado. Se instalan herramientas LinguistTools,
+UiTools, Designer/DesignerComponents y un objeto de recursos inventariado.
+El test original `tst_lrelease` y sus datos se copian a consumidores privados
+antes de ejecutar; las nueve entradas originales de cada copia conservan
+sus hashes. Su cabecera declara `LicenseRef-Qt-Commercial OR GPL-3.0-only`;
+no se extrapola esa expresión a todo Qt Tools. Textos, TS, formularios,
+verificador XML y consumidores incorporados al repo son propios. La instalación
+local y las pruebas no cierran LIC08 para una eventual distribución.
+
+Actualización Qt translations host (2026-10-17):
+[SRC44](pcsx2-qt-translations-evidence.json) verifica el archivo 6.11.1 y sus
+309 originales intactos, sin parches. Conserva cuatro archivos en LICENSES y
+licenseRule.json en el directorio privado. Los 291 TS originales, 13 TS vacíos
+generados, 304 QM instalados y el oráculo de mensajes permanecen privados.
+El archivo declara reglas distintas para build, herramientas y otros archivos;
+no se infiere una licencia única a partir de la instalación. El lector XML y
+el consumidor públicos son propios, sin mensajes del proveedor. No hay tests
+originales en este módulo. Las pruebas locales no cierran LIC08 ni autorizan
+un bundle redistribuible.
+
+Actualización QtApng host (2026-10-17):
+[SRC45](pcsx2-qt-apng-evidence.json) verifica el archivo 1.3.0 y conserva
+794 originales intactos, incluidos nueve archivos de licencias/avisos.
+LICENSE principal declara BSD-3-Clause; las copias PNG/ZLIB mantienen sus
+avisos pero no se compilan. El árbol usado incluye el parche de receta y un
+parche local registrado en tres archivos C++; originales, diffs y tests
+externos permanecen privados. Las ocho entradas originales de cada consumidor
+final se verifican sin modificaciones. El generador, oráculos y consumidor
+publicados son propios. La instalación local no cierra LIC08 para una futura
+distribución del conjunto.
+
+Actualización KDDockWidgets host (2026-10-17):
+[SRC46](pcsx2-kddockwidgets-evidence.json) verifica 2.4.1, 793 originales
+intactos y nueve archivos de licencias/avisos en el área privada. LICENSE.txt
+declara GPL-2.0-only o GPL-3.0-only y menciona licenciamiento comercial.
+3RDPARTY.md identifica nlohmann JSON y KDBindings como MIT, y helpers ECM como
+BSD. Esta compilación utiliza las copias incorporadas de JSON/KDBindings.
+El único cambio local agrega la instalación de una cabecera original omitida;
+el C++ y el test original `includes_test` permanecen intactos. El test declara
+GPL-2.0-only OR GPL-3.0-only y se ejecuta desde originales privados; no se
+copia al repo. Consumidor, hook CMake y contrato publicados son propios.
+Los avisos originales y el parche permanecen inventariados; la validación
+local no cierra LIC08 ni la revisión de un futuro bundle redistribuible.

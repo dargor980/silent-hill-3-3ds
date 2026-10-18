@@ -1,0 +1,1144 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC43",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-qt-tools",
+  "stage": "installed-and-validated",
+  "contract": "schemas/pcsx2-qt-tools-v1.md",
+  "prior_qt_evidence": [
+    {
+      "source_id": "SRC40",
+      "sha256": "affd051bf62c339ab9abf6492a4aaf7adbaa4c84ea1b521ac7d1f9d495cb2a09",
+      "installed_binary_hashes_verified": true
+    },
+    {
+      "source_id": "SRC41",
+      "sha256": "f1f355f6963929f2e80629a30b7922130a23ea838b0ac3b8e3f7961fe7cde3b2",
+      "installed_binary_hashes_verified": true
+    },
+    {
+      "source_id": "SRC42",
+      "sha256": "31b991378746074c3070f77a99e2479199dd85964ef2f999d5ba619826b0f21f",
+      "installed_binary_hashes_verified": true
+    }
+  ],
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan_sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+  "archive": {
+    "archive": "qttools-everywhere-src-6.11.1.tar.xz",
+    "url": "https://download.qt.io/archive/qt/6.11/6.11.1/submodules/qttools-everywhere-src-6.11.1.tar.xz",
+    "sha256": "8e61835a679c93fa9c6065b142353c2071ba68e297898937c32a03777fcaf50d",
+    "bytes": 10225832,
+    "unpacked_bytes": 38147648,
+    "regular_files": 5769
+  },
+  "recipe_archives_verified_total": 20,
+  "recipe_archives_total": 25,
+  "configuration": {
+    "cache_expected": {
+      "CMAKE_BUILD_TYPE": "Release",
+      "CMAKE_OSX_ARCHITECTURES": "x86_64",
+      "CMAKE_OSX_DEPLOYMENT_TARGET": "11.0",
+      "QT_GENERATE_SBOM": "OFF",
+      "QT_BUILD_TESTS": "OFF",
+      "QT_BUILD_EXAMPLES": "OFF",
+      "QT_FEATURE_designer": "ON",
+      "QT_FEATURE_linguist": "ON",
+      "QT_FEATURE_assistant": "OFF",
+      "QT_FEATURE_clang": "OFF",
+      "QT_FEATURE_kmap2qmap": "OFF",
+      "QT_FEATURE_pixeltool": "OFF",
+      "QT_FEATURE_pkg_config": "OFF",
+      "QT_FEATURE_qev": "OFF",
+      "QT_FEATURE_qtattributionsscanner": "OFF",
+      "QT_FEATURE_qtdiag": "OFF",
+      "QT_FEATURE_qtplugininfo": "OFF",
+      "QT_FEATURE_qdoc": "OFF",
+      "QT_FEATURE_distancefieldgenerator": "OFF",
+      "QT_FEATURE_qdbus": "OFF"
+    },
+    "translation_units": 352,
+    "link_commands": 14,
+    "no_homebrew_target_references": true,
+    "source_files_unchanged": 5769,
+    "supervisor_reused_from": "SRC40",
+    "supervisor_sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc"
+  },
+  "build": {
+    "accepted": true,
+    "exit_code": 0,
+    "abort_reason": null,
+    "duration_seconds": 160.35,
+    "limits": {
+      "start_bytes": 16106127360,
+      "floor_bytes": 12884901888,
+      "maximum_build_bytes": 2147483648,
+      "nominal_interval_seconds": 1
+    },
+    "log_sha256": "cc42a92ad198b73b4173794e67cbca8020a4d6a9a52c2f61dc387e859deb1667",
+    "samples": 153,
+    "initial": {
+      "free_bytes": 17326387200,
+      "logical_bytes": 8879455,
+      "allocated_bytes": 12746752,
+      "elapsed_seconds": 0.039
+    },
+    "final": {
+      "free_bytes": 16899477504,
+      "logical_bytes": 391918342,
+      "allocated_bytes": 406700032,
+      "elapsed_seconds": 160.347
+    },
+    "minimum_free_bytes_observed": 16899477504,
+    "maximum_logical_bytes_observed": 391918342,
+    "maximum_allocated_bytes_observed": 406700032,
+    "maximum_sample_interval_seconds": 1.265
+  },
+  "effective_components": {
+    "libraries": [
+      "UiTools",
+      "Designer",
+      "DesignerComponents"
+    ],
+    "command_line_tools": [
+      "lconvert",
+      "lcheck",
+      "lrelease",
+      "lrelease-pro",
+      "lupdate",
+      "lupdate-pro",
+      "ltext2id"
+    ],
+    "applications": [
+      "Designer"
+    ],
+    "excluded": [
+      "Assistant",
+      "Clang integration",
+      "QDoc",
+      "Distance Field Generator",
+      "qdbus",
+      "kmap2qmap",
+      "pixeltool",
+      "qtattributionsscanner",
+      "qtdiag",
+      "qtplugininfo"
+    ],
+    "linguist_gui": "not built; Qt Quick unavailable; LinguistTools CLI built"
+  },
+  "supervisor": {
+    "reused_from": "SRC40",
+    "sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc",
+    "previous_control_tests_passed": 7,
+    "control_tests_rerun": false
+  },
+  "runtime_tests": {
+    "own_cases": [
+      "lupdate extraction and update with XML checks",
+      "lrelease repeatability",
+      "tool rejection of malformed/missing inputs",
+      "QTranslator Spanish Unicode disambiguation plurals and fallback",
+      "QM rejection and recovery",
+      "QUiLoader form controls and signals",
+      "UI rejection and recovery"
+    ],
+    "provider_program": "tst_lrelease",
+    "provider_functions": [
+      "translate",
+      "compressed",
+      "idbased",
+      "markuntranslated",
+      "dupes",
+      "noTranslations",
+      "invalidTranslations"
+    ],
+    "provider_qtest_totals": {
+      "build-v1-fixture": [
+        "Totals: 9 passed, 0 failed, 0 skipped, 0 blacklisted, 6502ms"
+      ],
+      "installed-v1": [
+        "Totals: 9 passed, 0 failed, 0 skipped, 0 blacklisted, 2042ms"
+      ]
+    },
+    "cases_per_stage": 8,
+    "stages": [
+      "build-v1-fixture",
+      "installed-v1"
+    ],
+    "ctest_executions_passed": 16,
+    "failed_ctest_cases": 0,
+    "skipped_ctest_cases": 0,
+    "additional_loader_executions": 10,
+    "own_qm_sha256": "0a276d95026e447bca565909e343325d5723c5b82ecf9249a4e68eb2191de398",
+    "own_qm_identical_across_stages_and_repeats": true,
+    "copied_provider_inputs_unchanged_per_stage": 9,
+    "provider_binary_selection": "qt.conf Binaries points to evaluated lrelease; verified by loader trace",
+    "missing_explicit_tools_root_rejected_after_install": true,
+    "full_qt_tools_suite": "not executed; only complete lrelease test program plus own cases",
+    "ui_platform": "offscreen"
+  },
+  "verification_fix": {
+    "stage": "installed manifest audit",
+    "failed_assertion": "len(binaries) == 11",
+    "observed_macho_files": 12,
+    "reason": "Qt also installs one MH_OBJECT resource object for QMakeParserCumulative; it is not a dylib or executable",
+    "fix": "Classify and verify the resource object separately; preserve the expectation of 11 executables/dylibs and verify the exact object path and type",
+    "runtime_tests_changed": false,
+    "provider_changed": false,
+    "before_script_sha256": "9e24cc2bfcf4e534c42e864a042ba1036c3a2775a7fca23c5a172787931d3419",
+    "after_script_sha256": "ff28e130bb4f8a2f8036b0a6b63e3678e8e7b59304831b6abfb32552004a7b87"
+  },
+  "installation": {
+    "manifest_entries": 384,
+    "binary_inventory": [
+      {
+        "path": "lib/libQt6UiTools.6.11.1.dylib",
+        "bytes": 618128,
+        "sha256": "8170969fd78a7e01ebe2cb23bd8d393b0ab40bda35dab111626a00c48efa0300",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 6,
+        "load_commands_sha256": "51308881c37bf8a5824b60f939d0506469c9fc0e1d5ac4f6da977ca59d93b208"
+      },
+      {
+        "path": "bin/lconvert",
+        "bytes": 353472,
+        "sha256": "b596387424d2d35f7a42845441e3006566be848ffceb0fcb203afec8e6e7aebf",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 2,
+        "load_commands_sha256": "a641b96844397df1b801c50ff62518599e68ed8742af8b4c7bb02cf426e71170"
+      },
+      {
+        "path": "bin/lcheck",
+        "bytes": 230808,
+        "sha256": "eea2e10d1e99f1d4a78c705f9381a202acd84221f89207ec67d09daff6c1c44e",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 2,
+        "load_commands_sha256": "c307ba7c440c82e4144c24543a9c5f5d58e265e83fc5ffb00eca7d1be4b8e5a6"
+      },
+      {
+        "path": "bin/lrelease",
+        "bytes": 791336,
+        "sha256": "8c756246c6ae580f50a72aee3e7347303428de541eccb02c3df6750c961c3231",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 2,
+        "load_commands_sha256": "f05e520668a1a8639c696fd3fb33cab4a782e613e2d77636cb174e2e41a909b3"
+      },
+      {
+        "path": "bin/lrelease-pro",
+        "bytes": 698288,
+        "sha256": "3a9eab602084453391b020229f0736f52c46fdfd7c502f1ec22742456da9006b",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 2,
+        "load_commands_sha256": "89db5722ae5e6822f025f5817522a178e4309048a7fec8dbc9588f1c5cb9e2a7"
+      },
+      {
+        "path": "bin/lupdate",
+        "bytes": 1052712,
+        "sha256": "032a84c7a773ea831163f3bbdaa88472bb338d0a06f7a9daa5620d364e4ff1e0",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 2,
+        "load_commands_sha256": "3229005d201418918b4f2d79b4f2905f0c1df01a534aee50beb9a96dbc4a8b53"
+      },
+      {
+        "path": "bin/lupdate-pro",
+        "bytes": 907504,
+        "sha256": "11978b4f5d4a5795934ec4a401f9888bb99ec43604a461b8e14cd6e10256cd21",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 2,
+        "load_commands_sha256": "788d1ff6ccefd74eef95bc00442d606284a2f349c3b93880f37799d555428e5b"
+      },
+      {
+        "path": "bin/ltext2id",
+        "bytes": 513656,
+        "sha256": "36c4395f35c5ec5d39a1f0cf41cfad5a05bb94c2f01071afb12934593641ce81",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 2,
+        "load_commands_sha256": "781f510695cebb7e71024026d377a24cbae0c6be9c5295ece61e159d5ac74136"
+      },
+      {
+        "path": "lib/libQt6Designer.6.11.1.dylib",
+        "bytes": 5713040,
+        "sha256": "95581f24c5bffe654103f27791e9668f66b2d12a1599220d19d9ea721cd836b2",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 6,
+        "load_commands_sha256": "318341601e843c50644d9d232651d3b2291d53b402f43e2c891a530463bad594"
+      },
+      {
+        "path": "lib/libQt6DesignerComponents.6.11.1.dylib",
+        "bytes": 3400208,
+        "sha256": "2571678a5c5c4b9bad37a816cf4cd74d9a136a6054cbd9381c4ede0cbb309c0a",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 6,
+        "load_commands_sha256": "54eeffb9b4bda54f1533c3feeb22541e72df5c44cd2b9a7be22e3d55710faf27"
+      },
+      {
+        "path": "bin/Designer.app/Contents/MacOS/Designer",
+        "bytes": 649496,
+        "sha256": "3a62a395941172209a4ee0f30f33c466213d20845e670f969313490ceaf05835",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 2,
+        "load_commands_sha256": "92cf72401237cb1f3792a93c9f9596945370b658193f61f274755d934e5015aa"
+      }
+    ],
+    "object_inventory": [
+      {
+        "path": "lib/objects-Release/QMakeParserCumulative_resources_1/.qt/rcc/qrc_proparser_init.cpp.o",
+        "bytes": 896,
+        "sha256": "56a0a87412ca2c2270555e27ee9270083a524db2814998cea7329fdfffc12a22",
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "mach_o_type": 1,
+        "load_commands_sha256": "0f7b9cc1fa7da480c7c570072ed01b1c5be6545073e3ba379be2084d194ae919"
+      }
+    ],
+    "previous_regular_files_unchanged": 4277,
+    "previous_symlinks_unchanged": 52,
+    "manifest_evidence_sha256": "b85a4e005aba23fdcf90b4bc7e36a8ed7920f60084a4ca0dd3dfabf5c30eb135",
+    "consumer_binaries": [
+      {
+        "stage": "build-v1-fixture",
+        "executable": "qto_translation",
+        "sha256": "d5c0b918b86b813ba27f6d1d8dc7bf0a9b46abc5f703fb86edf1f37f3fd3e295",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "build-v1-fixture",
+        "executable": "qto_ui",
+        "sha256": "dcd5bf2b4e72bee182daf21946597eec3d9acf27b7bcd572effe75d46643b16c",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "build-v1-fixture",
+        "executable": "provider_lrelease",
+        "sha256": "3626b3d317b63dc3b68adc9b7e8a7d8315d500dcb2035871445cbea6cc281f74",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "installed-v1",
+        "executable": "qto_translation",
+        "sha256": "d5c0b918b86b813ba27f6d1d8dc7bf0a9b46abc5f703fb86edf1f37f3fd3e295",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "installed-v1",
+        "executable": "qto_ui",
+        "sha256": "8c48f74a41a30ea6f74290158fda81f0a19b010768f138dc0e01ed6df126e484",
+        "architecture": "x86_64"
+      },
+      {
+        "stage": "installed-v1",
+        "executable": "provider_lrelease",
+        "sha256": "cc914f5d50aa40caa6cfc84ccf8faf5cf84c167156ebe32dfc20ff0d67f9e414",
+        "architecture": "x86_64"
+      }
+    ]
+  },
+  "source_verification": {
+    "originals_unchanged": 5769,
+    "working_files_unchanged": 5769,
+    "patches": [],
+    "license_notice_reuse_files": [
+      {
+        "path": "REUSE.toml",
+        "sha256": "5fd619087a464ce885462d1ec2a7aa5ac62301d7650dcb78793da5f4779c76bf"
+      },
+      {
+        "path": "licenseRule.json",
+        "sha256": "49776c55951cc73b465222d3f7ff38316fd0c1cc81d4a14dc1c61a3be9e21687"
+      },
+      {
+        "path": "LICENSES/LGPL-3.0-only.txt",
+        "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+      },
+      {
+        "path": "LICENSES/LLVM-exception.txt",
+        "sha256": "f717ab4cf953fd1003be7f1b7adc7f54dd8690a7ebfbc2c22710e920071ac486"
+      },
+      {
+        "path": "LICENSES/LicenseRef-Qt-Commercial.txt",
+        "sha256": "9b1f50aae6267f9d5e0ceb6775ee86450262c25ec7c0573e151fe5d3f18a4700"
+      },
+      {
+        "path": "LICENSES/BSL-1.0.txt",
+        "sha256": "3abd6471b9a9a08d65ce771143f8e278bb4c1aeb10c1c2d476935a6b049653f5"
+      },
+      {
+        "path": "LICENSES/CC0-1.0.txt",
+        "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+      },
+      {
+        "path": "LICENSES/GFDL-1.3-no-invariants-only.txt",
+        "sha256": "110535522396708cea37c72a802c5e7e81391139f5f7985631c93ef242b206a4"
+      },
+      {
+        "path": "LICENSES/GPL-2.0-only.txt",
+        "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+      },
+      {
+        "path": "LICENSES/Qt-GPL-exception-1.0.txt",
+        "sha256": "40678d338ce53cd93f8b22b281a2ecbcaa3ee65ce60b25ffb0c462b0530846b2"
+      },
+      {
+        "path": "LICENSES/GPL-3.0-only.txt",
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+      },
+      {
+        "path": "LICENSES/BSD-3-Clause.txt",
+        "sha256": "9f0490f18656c6f2435bd14f603ef0c96434d1825615363dce43abb42ed1dcce"
+      },
+      {
+        "path": "LICENSES/Apache-2.0.txt",
+        "sha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb"
+      },
+      {
+        "path": "dist/REUSE.toml",
+        "sha256": "7a74e09fdb0d2b9efa696cbf288f7903a8271facf8364d7749711c7d2dab81df"
+      },
+      {
+        "path": "src/qdoc/catch/REUSE.toml",
+        "sha256": "5327c4434b84aa13e393c9156c3a378b5803b8eeb6f8afe52b5acf3e99d4bb9e"
+      },
+      {
+        "path": "src/qdoc/catch/qt_attribution.json",
+        "sha256": "0cf3d536104ede1a1e1c3ddd2f192ab039bc2fd0c3b626f096ccd9decc142748"
+      },
+      {
+        "path": "src/qdoc/catch/LICENSE.CATCH.txt",
+        "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+      },
+      {
+        "path": "src/qdoc/qdoc/src/qdoc/clang/AST/REUSE.toml",
+        "sha256": "93c22f4d2cdabf19b577cbab93ca22441ae685bcca17d9947841bbad8bade51a"
+      },
+      {
+        "path": "src/qdoc/qdoc/src/qdoc/clang/AST/LICENSE.LLVM.txt",
+        "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee"
+      },
+      {
+        "path": "src/qdoc/qdoc/src/qdoc/clang/AST/qt_attribution.json",
+        "sha256": "c44e85ec30b36bf497d685de3db85e5dd5d5dad52a79c8184eeac82600b10295"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/attributions.qdocconf",
+        "sha256": "ecd9ea25a35714867ddb85c1e99aab113dcc2a6e00d52554858e21fe5016c41f"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/webxml/some-attribution-1.webxml",
+        "sha256": "8b2fa2de96ec21bc8fcac08fbd89bf761a121471244de67c196db3d4ead3bbd3"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/webxml/attributions.index",
+        "sha256": "5df5ab8a7d51e211ec79a6059fcc368250d92d1cc838439cacb4598f892ae0bf"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/webxml/attributions-test.webxml",
+        "sha256": "990d27495f982b791d5311371b70f70e7044e9269ee8053ca6a551d18509b237"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/webxml/some-attribution-2.webxml",
+        "sha256": "46146addb1bf8b90d5f7ce63e03483f899a0bf5b3d0a8a7be3203fe470c4259f"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/html/some-attribution-2.html",
+        "sha256": "c101970f335cb86610e828e57d3893990344851f0322bae695124da56c3f6861"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/html/attributions.index",
+        "sha256": "5df5ab8a7d51e211ec79a6059fcc368250d92d1cc838439cacb4598f892ae0bf"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/html/attributions-test.html",
+        "sha256": "7d63052da996b722c0be07f92235c4be3528bb5b24a091a90071acf6948b4ca8"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/html/some-attribution-1.html",
+        "sha256": "1d2e30e15f9890c36ab817fe85a806d7f385d0bab04a38ee7a1b57326bcca3f5"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/docbook/some-attribution-1.xml",
+        "sha256": "4af462b9dd938efa85dae4a4f7bdc4db64f1c221d4f6fb734a0960a12d4fa51d"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/docbook/some-attribution-2.xml",
+        "sha256": "1785f2cc76ceb7d841d87484912d6434020d24a61c96533de10fdaf7ae5cc783"
+      },
+      {
+        "path": "src/qdoc/qdoc/tests/validateqdocoutputfiles/testdata/attributions/expected/docbook/attributions-test.xml",
+        "sha256": "54c580e45825b7a991be6adef6c12b182958552be913146eb0c3b2e3536378ce"
+      },
+      {
+        "path": "src/assistant/qlitehtml/LICENSES/LicenseRef-Qt-Commercial.txt",
+        "sha256": "9b1f50aae6267f9d5e0ceb6775ee86450262c25ec7c0573e151fe5d3f18a4700"
+      },
+      {
+        "path": "src/assistant/qlitehtml/src/3rdparty/qt_attribution.json",
+        "sha256": "a024fe019b88311c6315a8693c8cc6c82b807fae4496ec3018a52f1ac5cb3dae"
+      },
+      {
+        "path": "src/assistant/qlitehtml/src/3rdparty/litehtml/LICENSE",
+        "sha256": "71bd488e77ee821bf38d89e2b8a9c5ebe687553fcae9cefa00a96499792a3e23"
+      },
+      {
+        "path": "src/assistant/qlitehtml/src/3rdparty/litehtml/src/gumbo/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "tests/manual/qtattributionsscanner/qtattributionsscanner.pro",
+        "sha256": "43fa7b655121a1a063de3b190c298322b7a4415944a88a7142e1742e23be1679"
+      },
+      {
+        "path": "tests/manual/qtattributionsscanner/data/LICENSE",
+        "sha256": "3417a56f1be5140321a9ba5885434f92417d671e65e28966974947163e5cff0e"
+      },
+      {
+        "path": "tests/manual/qtattributionsscanner/data/qt_attribution_test.json",
+        "sha256": "b9674349531d40200e41c05710da75f13533ea49d4ea82330bd6937135930196"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/tst_qtattributionsscanner.cpp",
+        "sha256": "f233637e830070c84515f4e145a74a07023a291d261326658c11bfefc862312e"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/warnings/incomplete/qt_attribution_test.json",
+        "sha256": "d914176fd50bd7f565700006a31aa97b79d3ad17cee20c8e5ff2061d5cb74817"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/warnings/unknown/qt_attribution_test.json",
+        "sha256": "3c337138f042ae849e41ec6b814879742a08af73d176821da81a93da99fc66b9"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/good/variants/LICENSE.1.txt",
+        "sha256": "3827f47858e3fca4ef1326e509513918fa46a9526eb72a5d697f9b0bf9c0fcdc"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/good/variants/LICENSE.2.txt",
+        "sha256": "3522b9b81a52287f015f0d35573b3f4cdf926ef1febeb0d93ba8d639a252edd2"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/good/variants/qt_attribution_test.json",
+        "sha256": "0115f9e89cfe3b1f2184644cdfe5b909dea0998d1de87fdbff8384bef0987908"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/good/complete/qt_attribution_test.json",
+        "sha256": "12d5028ba358c65d89b623a6e8f716557f38d049168a60cdd75c0bbbd9555efb"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/good/local_license/LICENSE.Id1.txt",
+        "sha256": "3827f47858e3fca4ef1326e509513918fa46a9526eb72a5d697f9b0bf9c0fcdc"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/good/local_license/LICENSE.Id2.txt",
+        "sha256": "3522b9b81a52287f015f0d35573b3f4cdf926ef1febeb0d93ba8d639a252edd2"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/good/local_license/qt_attribution_test.json",
+        "sha256": "4bd72ee3723378eb63ea03ac8304d7cec031dd66c935b5301d38859622c50831"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/good/minimal/qt_attribution_test.json",
+        "sha256": "fcdc5e7fd2782a48f52f8c455b9c568ee685e736c83f710ebb2c73f30f03b9c6"
+      },
+      {
+        "path": "tests/auto/qtattributionsscanner/testdata/good/licenses-dir/qt_attribution_test.json",
+        "sha256": "41d802e4aef974e90a805241052e6431b9ba2ea8ed292ffd404ffea690aac506"
+      },
+      {
+        "path": "tests/auto/linguist/lconvert/data/REUSE.toml",
+        "sha256": "ee458ff1529867ec20fad578c5bd5db1024d4a96be1ddf0c9bbf78c5728c3aee"
+      }
+    ],
+    "pcsx2_source_clean": true
+  },
+  "pcsx2_configuration": {
+    "version": "v13",
+    "exit_code": 1,
+    "resolved_qt_components": [
+      "Core",
+      "CoreTools",
+      "Gui",
+      "GuiTools",
+      "Widgets",
+      "WidgetsTools",
+      "LinguistTools"
+    ],
+    "next_fatal_dependency": "KDDockWidgets-qt6",
+    "ffmpeg_still_missing": true,
+    "source_clean": true
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 16836526080,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "toolchain_checks_reused_from": "SRC31",
+  "steps": [
+    {
+      "name": "baseline-configure-v13",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 3.9,
+      "log_sha256": "98cbe922e1a2d27a6f37b1de9dc4c4a113b3ef0bb250477773c863a9eeca64cf"
+    },
+    {
+      "name": "build-v1-fixture-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 4.26,
+      "log_sha256": "c9a1b8d0f415fb5ac12b511a6da063a579db5b2be0441dbdbf3db832cdc89941"
+    },
+    {
+      "name": "build-v1-fixture-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.7,
+      "log_sha256": "25d81a8fa6e6b10813f7bcd6eb2a40a37a4398cfb614667e143ad6493b808331"
+    },
+    {
+      "name": "build-v1-fixture-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 9.2,
+      "log_sha256": "f063790e1eb2678522af325148df938f2bf4fbee119eeffe743cb11bdc819707"
+    },
+    {
+      "name": "build-v1-fixture-loader-lrelease",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "da18bf9af71dbbad3fbec21ec7f35cebf61d90647a609e9f8853b0a751ba7cf0"
+    },
+    {
+      "name": "build-v1-fixture-loader-lupdate",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "5a241c0110451ad847321bb802dd93d0ed214ff9d1a8508ad5ee58a1dbd1b922"
+    },
+    {
+      "name": "build-v1-fixture-loader-provider",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.1,
+      "log_sha256": "b31a42d1b83bdf4836a301ffebe3e42acfe50dbee024eb25071bf95e9c0a37dd"
+    },
+    {
+      "name": "build-v1-fixture-loader-translation",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.67,
+      "log_sha256": "f7fc905abba0b685ad1400c4c62349b1d6a6f6fca9a6ba53edd0698eb7f68b13"
+    },
+    {
+      "name": "build-v1-fixture-loader-ui",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.21,
+      "log_sha256": "f69d7f4a937a51b7a1bb4c54a556601beb55fbd0bac1a421d4ff1a1b7fe244c9"
+    },
+    {
+      "name": "build-v1-fixture-lrelease-version",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.62,
+      "log_sha256": "70e07fff4f0568daaf1124879d9cc5ef678ecfe8808a1ac0870acfe00308a685"
+    },
+    {
+      "name": "build-v1-fixture-lupdate-version",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.89,
+      "log_sha256": "f9edaefcf9a6c403f2723573568d9c2042fbd0dd0318562eb353f40c30dcf405"
+    },
+    {
+      "name": "download-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.25,
+      "log_sha256": "7d70b4dcf352ce95a73595ecb5dfe7056c1cf0d3ec41d86c2ef3f63e99b7c663"
+    },
+    {
+      "name": "installed-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 4.34,
+      "log_sha256": "3f26dc252f773205c67ac68e8764d8c09f307a59091c1b2fc9445c5c5b8488bd"
+    },
+    {
+      "name": "installed-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.7,
+      "log_sha256": "64ca808e6654c0359376f33799bb412618f87e6239821214ec834a8af1f64a87"
+    },
+    {
+      "name": "installed-v1-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 4.78,
+      "log_sha256": "1789d5b5858beee993553c9bde5bf6fa26879081ba64b36e6b559319b82f4416"
+    },
+    {
+      "name": "installed-v1-loader-lrelease",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "9b5a05f7529ac7c5e754f9c4d5b152496ed395e6e83f82d2e8d71797f01f7274"
+    },
+    {
+      "name": "installed-v1-loader-lupdate",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "4c34163bbb6b753ea0a6adea3ccf83799fc4e3ad37fae1b525c9474e5325d143"
+    },
+    {
+      "name": "installed-v1-loader-provider",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.09,
+      "log_sha256": "0c0996f663d90bf9c5070140d60bbec3f3f93395816863257bda5ebb2c637b58"
+    },
+    {
+      "name": "installed-v1-loader-translation",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.17,
+      "log_sha256": "fac6013ab7d4f8191e0fd89953f764d09ceff50b824f1f96e91e98da01c37d24"
+    },
+    {
+      "name": "installed-v1-loader-ui",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.17,
+      "log_sha256": "d0136595dafb014a893595e87bb618ec4eadf33fe6e98962fa8a0b4a4a927673"
+    },
+    {
+      "name": "installed-v1-lrelease-version",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.48,
+      "log_sha256": "70e07fff4f0568daaf1124879d9cc5ef678ecfe8808a1ac0870acfe00308a685"
+    },
+    {
+      "name": "installed-v1-lupdate-version",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.78,
+      "log_sha256": "f9edaefcf9a6c403f2723573568d9c2042fbd0dd0318562eb353f40c30dcf405"
+    },
+    {
+      "name": "missing-tools-prefix-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.82,
+      "log_sha256": "5fe63aebc6715e3b9d05c8ef94f02f47436b023b1ab696238cd7d9f70a25b10c"
+    },
+    {
+      "name": "qttools-v1-build",
+      "exit_code": 0,
+      "duration_seconds": 160.35,
+      "log_sha256": "cc42a92ad198b73b4173794e67cbca8020a4d6a9a52c2f61dc387e859deb1667"
+    },
+    {
+      "name": "qttools-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 5.87,
+      "log_sha256": "9319aaf5418418f3d3816deec7f9609554b23fc17846fa4b79a5ab63a729d971"
+    },
+    {
+      "name": "qttools-v1-install",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.53,
+      "log_sha256": "882f90dd5ce1d2ba2568fc44cdb1f949c427181a26689f8cce95e55eca880869"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "path": "schemas/pcsx2-qt-tools-v1.md",
+      "bytes": 4566,
+      "sha256": "509b0f128b0e9f373580694b72872706b775e16d9789a38d16a8e5e92d8cae18"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/CMakeLists.txt",
+      "bytes": 3948,
+      "sha256": "3d804da4b369ffdab64a58c1c42396130d2912ce0a7892802e56cb5e8f7fd46e"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/README.md",
+      "bytes": 1581,
+      "sha256": "3f43e04fe06c2899df61b7fe40a4bdd09200047160055c13aa313a89a2550ff6"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/check_tools.py",
+      "bytes": 3439,
+      "sha256": "0c152d721a3553c2380ad76d9f88afd9fb58ab9e613510dcd7c9b4db87a16448"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/es.ts",
+      "bytes": 705,
+      "sha256": "cb929f5a2c32ed037878ba5d4010ddc709c01a30eef92ee6064feef44a7ce2b2"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/fixture.hpp",
+      "bytes": 364,
+      "sha256": "252c8f1e6f8168d80c1fb014ae4b1311837a7a70982ed9526123abd515563bfd"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/invalid.qm.txt",
+      "bytes": 30,
+      "sha256": "17dbbfa6bcbd965322a901ee44576a15f59fedb8a5a93fcee757f1b0bea2d91c"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/invalid.ts",
+      "bytes": 38,
+      "sha256": "69cf1bceeecf031aefe4b9b0f5e46fd7e9efb84339ef7182241eabf79eff2415"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/invalid.ui",
+      "bytes": 48,
+      "sha256": "3b0d114fc88f42dd82febef076a69a3212ca985d57ee9989441197ac156933bc"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/messages.cpp",
+      "bytes": 462,
+      "sha256": "8e5bea105bf1e02ea75af7eb823c1d75ea94d7b32aaac7f6c7f430474c604b53"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/panel.ui",
+      "bytes": 548,
+      "sha256": "f54268b4d806d8cd0c5881fd1631367484f8d1a614e615dd54ea90b304a9e922"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/translation.cpp",
+      "bytes": 2017,
+      "sha256": "ae6e6d22537d196d7d0197e163d0a1701bcaeeae6fef4c4bf6a1a53659229683"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-tools/ui.cpp",
+      "bytes": 1775,
+      "sha256": "ed405022df47f37dfe475cd1493a6e9506d8608e34cd6481f6226160cec145ad"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "actions.py",
+      "bytes": 3719,
+      "sha256": "6622d99f82cdcb8a1f68be72f8f6b7b4f1543b2690a01a0738da15fe7bf33eb3"
+    },
+    {
+      "name": "archive.json",
+      "bytes": 318,
+      "sha256": "24ef1bf870f8b4ced466b279c1364c176d105d75a9903576139fedf52eff1764"
+    },
+    {
+      "name": "baseline-configure-v13.json",
+      "bytes": 1486,
+      "sha256": "b02b1d634e493a81717774e9f0b21215799e860ea17f8c227fa2d549061b4199"
+    },
+    {
+      "name": "build-v1-fixture-build.json",
+      "bytes": 1075,
+      "sha256": "65f5f8179804e5030b809e81f6db9c0d410c74e3b3930aacb5a1cfb15dd04b0f"
+    },
+    {
+      "name": "build-v1-fixture-configure.json",
+      "bytes": 2653,
+      "sha256": "df755c1396944c304378232a0be574e22b23d47d3be353bcd5f8d93193927b47"
+    },
+    {
+      "name": "build-v1-fixture-ctest.json",
+      "bytes": 1202,
+      "sha256": "eddb11c54a3b3a5f0559adecab94010619d43562f94b6887ba99afd8115f985c"
+    },
+    {
+      "name": "build-v1-fixture-junit.xml",
+      "bytes": 3813,
+      "sha256": "5f01983dd48c7ee847bd03d265ca22f71d0fba655a964c15541329ee30286650"
+    },
+    {
+      "name": "build-v1-fixture-loader-lrelease.json",
+      "bytes": 1237,
+      "sha256": "a46a0255c0403270fbe7bb977c2ed780535bc2baec9c45b6242f3f945253a065"
+    },
+    {
+      "name": "build-v1-fixture-loader-lupdate.json",
+      "bytes": 1308,
+      "sha256": "bbd04c5f3ef6446a7f998ba76f7f0733e6bb59ca69877fb356940650fdffec78"
+    },
+    {
+      "name": "build-v1-fixture-loader-provider.json",
+      "bytes": 1056,
+      "sha256": "fcfb2cf5b7c93d60ecb59c51b58cbc083ab7d93de8945019be70f9aed20b5611"
+    },
+    {
+      "name": "build-v1-fixture-loader-translation.json",
+      "bytes": 1275,
+      "sha256": "be706459b8ba0ba32d0853f4b859f13091bb878db1f7e3585fc09c1a52c6810a"
+    },
+    {
+      "name": "build-v1-fixture-loader-ui.json",
+      "bytes": 1202,
+      "sha256": "8a69294f00130d6e3e472e088429e77abf09529eb75076b669ed277813a8171a"
+    },
+    {
+      "name": "build-v1-fixture-lrelease-version.json",
+      "bytes": 1047,
+      "sha256": "4c37e868e3c1482d6d9d0fe607d9ee4a696da332ddee7514d6afdc39941d0e7f"
+    },
+    {
+      "name": "build-v1-fixture-lupdate-version.json",
+      "bytes": 1044,
+      "sha256": "82f006c109dd77f262169552f4dce52b0caa50ff9118dba318e45fe065471c7b"
+    },
+    {
+      "name": "build-v1-fixture-verified.json",
+      "bytes": 7996,
+      "sha256": "126e0c9f701e85cbb2643daaa6dc2696719e5d41bd375c606632102b90e4c6d2"
+    },
+    {
+      "name": "build_module.py",
+      "bytes": 3125,
+      "sha256": "b4118791fbdb335e9ed377272c8f2e2e86cb0d989bb5e60bb2d498bc5a2e5d20"
+    },
+    {
+      "name": "capacity-samples.json",
+      "bytes": 20766,
+      "sha256": "cfebd5212f802f9f64e2838bf76a77f14a74ed7a945e5faeb88591527c2dab1e"
+    },
+    {
+      "name": "configuration-audit.json",
+      "bytes": 987,
+      "sha256": "fcb1c750fab414ebd5612b72226b8502757380fb98759cbc21864ac0eaf2b669"
+    },
+    {
+      "name": "configure-result-v13.json",
+      "bytes": 1602,
+      "sha256": "16399186401480e97e230f24a13ef41a9bcda5db157ac988ed5574f863760dc5"
+    },
+    {
+      "name": "download-v1.json",
+      "bytes": 1150,
+      "sha256": "fb2386c5c77469482ceb63b437298b3ffa90ac1e9631daebfcb484c3f41bafaa"
+    },
+    {
+      "name": "finalize.py",
+      "bytes": 1676,
+      "sha256": "5589345dcd2975f26c0764e9c759cdf27dd606c2f36abb51f236f0e282be199f"
+    },
+    {
+      "name": "install-verification.json",
+      "bytes": 86366,
+      "sha256": "b85a4e005aba23fdcf90b4bc7e36a8ed7920f60084a4ca0dd3dfabf5c30eb135"
+    },
+    {
+      "name": "installed-v1-build.json",
+      "bytes": 1063,
+      "sha256": "3038c02c93ad98eb26c5c3d46a81522d9f4504dff891c9bd2373f79ab9ff1ed0"
+    },
+    {
+      "name": "installed-v1-configure.json",
+      "bytes": 2633,
+      "sha256": "a4a360b042ed0a4e18ae40aba67d2ed9ddc137bb57e5004b379020a94041d479"
+    },
+    {
+      "name": "installed-v1-ctest.json",
+      "bytes": 1187,
+      "sha256": "144c900c8281fd3f87b6e4eae0e2853d4e9c57081d41f57629caad3eebe10708"
+    },
+    {
+      "name": "installed-v1-junit.xml",
+      "bytes": 3799,
+      "sha256": "77e3e050e0adbd96ea8ce329a86ee26202d88482dcb06590bd84ab43add2695d"
+    },
+    {
+      "name": "installed-v1-loader-lrelease.json",
+      "bytes": 1217,
+      "sha256": "033f4c0ba3842f2af227f2b6493371a5fbb0994093ce4886aa0dc386971afd2c"
+    },
+    {
+      "name": "installed-v1-loader-lupdate.json",
+      "bytes": 1288,
+      "sha256": "e2f49beb3a392e56186a7e7ab7aae8ad3ca689ae9bce401d1e4787a1e84e3474"
+    },
+    {
+      "name": "installed-v1-loader-provider.json",
+      "bytes": 1045,
+      "sha256": "711951e4aaf807af831d20d47931ea7f67a4f8e799b1756fc8a3832acbcc8587"
+    },
+    {
+      "name": "installed-v1-loader-translation.json",
+      "bytes": 1259,
+      "sha256": "e7af1ec8618ad87e94bb31ca73efe37ad7e2b025726c0a8301bdc87b4f7c75cf"
+    },
+    {
+      "name": "installed-v1-loader-ui.json",
+      "bytes": 1190,
+      "sha256": "d5540a4efb55f189c63a592a0a2ab1bf9e56b4cce75cf6893420c4b777f051ef"
+    },
+    {
+      "name": "installed-v1-lrelease-version.json",
+      "bytes": 1031,
+      "sha256": "a5121387e037964c715ea5df20265b9c6684df87bdf1eb62c004ddf22131fe2e"
+    },
+    {
+      "name": "installed-v1-lupdate-version.json",
+      "bytes": 1028,
+      "sha256": "3a9aced059f15d9ed4c115644477ba2b932036e66516b2f48b834a762030080a"
+    },
+    {
+      "name": "installed-v1-verified.json",
+      "bytes": 8016,
+      "sha256": "6d742e33f10733a53b5a6a75d9b411c93dc270314433b355a581ca6b4b991e37"
+    },
+    {
+      "name": "missing-tools-prefix-v1.json",
+      "bytes": 2342,
+      "sha256": "1a5e9f7d4f0418e14e301c4b000ce9ca8ed549b9a5aabb75bda7fdd38c488abc"
+    },
+    {
+      "name": "original-inventory.json",
+      "bytes": 1084962,
+      "sha256": "c4a729be9980aad9a561d17c67143a34d691ae58dd3abd47c52a51e99d6fb8d7"
+    },
+    {
+      "name": "prefix-before.json",
+      "bytes": 488299,
+      "sha256": "18a19c80ac3e7accc5ea70e7fc4a031c81a02199c0ffe21b3f0cf3ce06abeebd"
+    },
+    {
+      "name": "prefix-links-before.json",
+      "bytes": 2695,
+      "sha256": "12164ad04106df798f1aeeccc2a7f1352739c604c777ea38b1c15369d0de4f3d"
+    },
+    {
+      "name": "preflight-v13.json",
+      "bytes": 834,
+      "sha256": "8a9a0d1195ce89640b76530923fa310f1886a0bef2f4bca06fde1934187216f5"
+    },
+    {
+      "name": "publish.py",
+      "bytes": 6486,
+      "sha256": "9740c575ea86441fd97eb18058d7e8ae362ed4b75b67c7f45c91f1b60350bc6d"
+    },
+    {
+      "name": "qttools-v1-build.json",
+      "bytes": 1134,
+      "sha256": "de983726815eea6f39d5236671b9ceb2edb91a17b68f1b096b7c77669f017ed5"
+    },
+    {
+      "name": "qttools-v1-configure.json",
+      "bytes": 2606,
+      "sha256": "e3d66a4c35966728a94346ae52e3f8e2d245ab30e6a3c9a9fa42fa77029db20f"
+    },
+    {
+      "name": "qttools-v1-install.json",
+      "bytes": 941,
+      "sha256": "77fd34158b7c3326cf4dc2ba3c329e14e73f2a3b52a5d3533d26d6da1d924e40"
+    },
+    {
+      "name": "repository-validation.json",
+      "bytes": 320,
+      "sha256": "bb9e1c82a2e32393c26eadcfd5307869fde26f0e2a26a2955e4ce2092d6616d8"
+    },
+    {
+      "name": "source-verification.json",
+      "bytes": 9263,
+      "sha256": "58072e4f2dbc9abb85d133357d09cfd7da8da7e4d00a1beaf6c2b7b2d10d9230"
+    },
+    {
+      "name": "stage.py",
+      "bytes": 3691,
+      "sha256": "b13c5f4ba1275e5248b3aeb83896f1e3f2e6bd5bab3151070d8a4296f0d39eb3"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 301,
+      "sha256": "d6997a64919c4dcf813c68f4045e0ad027f20aa2679bfbd695631d037d7cafba"
+    },
+    {
+      "name": "verification-fix.json",
+      "bytes": 457,
+      "sha256": "243b0537003ee5204a694a090957197ea131567eeb357b7bfe419caf43ba20dd"
+    },
+    {
+      "name": "verify-before-object-fix.py",
+      "bytes": 6325,
+      "sha256": "9e24cc2bfcf4e534c42e864a042ba1036c3a2775a7fca23c5a172787931d3419"
+    },
+    {
+      "name": "verify.py",
+      "bytes": 6820,
+      "sha256": "ff28e130bb4f8a2f8036b0a6b63e3678e8e7b59304831b6abfb32552004a7b87"
+    }
+  ],
+  "limitations": [
+    "Designer, DesignerComponents and other command tools not fully exercised; no Linguist GUI build",
+    "No full Qt Tools suite, fuzzing, sanitizers or performance claim",
+    "No visible UI, GPU or macOS 11 physical verification",
+    "No complete PCSX2 build, effective map, game or 3DS runtime",
+    "No remote CI or full Python suite rerun"
+  ],
+  "next_unit": "prerequisites/dependencies-qt-translations",
+  "resource_links": [],
+  "capabilities": [],
+  "repository_validation": {
+    "repository_checks": "PASS (0 errors)",
+    "git_diff_check": "PASS",
+    "source_artifact_hashes_verified": 13,
+    "local_evidence_hashes_verified_before_validation_record": 49,
+    "local_document_links_verified": 5,
+    "fixture_trailing_whitespace": "none",
+    "full_python_suite_rerun": false,
+    "remote_ci_run": false
+  }
+}

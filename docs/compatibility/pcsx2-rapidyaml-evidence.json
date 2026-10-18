@@ -1,0 +1,579 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC36",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-rapidyaml",
+  "stage": "rapidyaml-accepted",
+  "contract": "schemas/pcsx2-rapidyaml-v1.md",
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan": {
+    "path": "docs/compatibility/pcsx2-build-dependencies.json",
+    "sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+    "historical_snapshot_unchanged": true
+  },
+  "archives": [
+    {
+      "archive": "rapidyaml-0.12.1-src.tgz",
+      "sha256_expected": "e9efcdd17f86287748793cf21d106e461fcad8d103a3e5a23632afe93828660d",
+      "url": "https://github.com/biojppm/rapidyaml/releases/download/v0.12.1/rapidyaml-0.12.1-src.tgz",
+      "download_verified": true,
+      "bytes": 10391033,
+      "unpacked_bytes": 59315069,
+      "source_root": "rapidyaml-0.12.1-src",
+      "source_comparison": {
+        "files_compared": 747,
+        "symlinks_compared": 40,
+        "changed": [],
+        "extra_files": []
+      }
+    }
+  ],
+  "source_modified": false,
+  "components": {
+    "rapidyaml": "0.12.1",
+    "c4core": "0.2.12",
+    "c4core_linkage": "incorporated into ryml",
+    "fast_float_amalgamated_header": "8.2.4",
+    "other_vendored_components": "debugbreak, rng, inplace_function identified by file hashes; commits not asserted"
+  },
+  "component_files": [
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "9cc6a44e01a33c605aa1a40d3c6ae88a91c37a636fa419dda6cded2470886450"
+    },
+    {
+      "path": "src/c4/yml/version.hpp",
+      "sha256": "2caa8da5964ec5528a6d4022a1e1c8ad6133aab2efe9c0af204c46e53929d6b6"
+    },
+    {
+      "path": "ext/c4core/CMakeLists.txt",
+      "sha256": "cb4bac4d7cd4779caa45571309c49383a0b830073f51495b6e4e7bdacbb6aa86"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/fast_float_all.h",
+      "sha256": "20a7f84187722d351f1b30fbad515b3af91b61a41454fd16db679978b850ffb7"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/fast_float.hpp",
+      "sha256": "4db4ae091867176fc345f520a8727979b1146f7ee8d8eac3a543f6c0f91982b4"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/debugbreak/debugbreak.h",
+      "sha256": "0279fe8f90819e4e6dfe25f0a462553ed7b994da1829deae0eadffa2f62dd47f"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/rng/rng.hpp",
+      "sha256": "b5391136e5f257b0951d97a21434caf34932d69b4f1ed4c3089f7479f9a09de1"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/sg14/inplace_function.h",
+      "sha256": "f1dd6ab29d872c72ddc71e983d329665cb86d76e2629129089c74623bd243cc0"
+    },
+    {
+      "path": "ext/testbm.cmake",
+      "sha256": "706c44a2154fbfc48738e7a95df2d1d62e2f2c5f4924f01fbe349f24da116d7a"
+    },
+    {
+      "path": "test/CMakeLists.txt",
+      "sha256": "66e037485c2b605607e09ce255bcabe9eaf4b712e735cef7b9cad4ad5ed40bf1"
+    },
+    {
+      "path": "samples/quickstart.cpp",
+      "sha256": "61e616b880d42390bf7116eb92971e49a65c026745557e224aa1b52925706a6d"
+    },
+    {
+      "path": "samples/quickstart-ints.cpp",
+      "sha256": "e77bf96762f673377a98976f282a57e8b7665afd6de14a4b51cc52a54f446ead"
+    },
+    {
+      "path": "src_extra/c4/yml/extra/event_handler_ints.cpp",
+      "sha256": "7b1a8e5a282d2efaa5993d9e229a1e7c192e23163e44bac6c3cc18d33046d09b"
+    },
+    {
+      "path": "src_extra/c4/yml/extra/ints_utils.cpp",
+      "sha256": "8f06e33ca88a4e786517540399bbf54e7a6e1a3b8464518613650f6d6696a2ac"
+    }
+  ],
+  "license_files": [
+    {
+      "path": "LICENSE.txt",
+      "sha256": "d21acdde3276a3706f41c0a7e911a3953ac1ca6b33c5ae05f92d6651f77ce627"
+    },
+    {
+      "path": "ext/c4core/LICENSE-BOOST.txt",
+      "sha256": "ad0600a1a1041b987f8c828a0e377eb098c9097011e9ec3e429b76f18c4a7fdf"
+    },
+    {
+      "path": "ext/c4core/LICENSE.txt",
+      "sha256": "d21acdde3276a3706f41c0a7e911a3953ac1ca6b33c5ae05f92d6651f77ce627"
+    },
+    {
+      "path": "ext/c4core/cmake/LICENSE.txt",
+      "sha256": "d21acdde3276a3706f41c0a7e911a3953ac1ca6b33c5ae05f92d6651f77ce627"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/debugbreak/COPYING",
+      "sha256": "92bbf5b45f23157f3e77934a6ec2710500c53b0aabde99145a219a1522316155"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/fast_float/LICENSE-APACHE",
+      "sha256": "097a889aa954d04e088b790b10a4014d6189561d0a6013935a73ce3d4ddaaf06"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/fast_float/LICENSE-BOOST",
+      "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/fast_float/LICENSE-MIT",
+      "sha256": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/rng/rng.hpp",
+      "sha256": "b5391136e5f257b0951d97a21434caf34932d69b4f1ed4c3089f7479f9a09de1"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/sg14/inplace_function.h",
+      "sha256": "f1dd6ab29d872c72ddc71e983d329665cb86d76e2629129089c74623bd243cc0"
+    },
+    {
+      "path": "ext/c4core/src/c4/ext/fast_float_all.h",
+      "sha256": "20a7f84187722d351f1b30fbad515b3af91b61a41454fd16db679978b850ffb7"
+    }
+  ],
+  "license_scope": "MIT root notices and rng; debugbreak BSD-2-Clause; inplace_function Boost; fast_float includes MIT/Boost/Apache license texts and MIT amalgamated header; LIC08 remains open",
+  "build_options": {
+    "architecture": "x86_64",
+    "type": "Release",
+    "deployment_target": "11.0",
+    "shared": true,
+    "RYML_DEFAULT_CALLBACKS": true,
+    "RYML_DEFAULT_CALLBACK_USES_EXCEPTIONS": false,
+    "C4CORE_WITH_FASTFLOAT": true,
+    "recipe_deviations": [],
+    "library_jobs": 2,
+    "fixture_jobs": 2
+  },
+  "isolation": {
+    "cmake_homebrew_prefix_ignored": true,
+    "pkg_config_libdir": "private prefix/lib/pkgconfig",
+    "pkg_config_path": "",
+    "cmake_package_registries_disabled": true,
+    "target_compile_link_homebrew_paths": false,
+    "linked_homebrew_libraries": false
+  },
+  "provider_tests": {
+    "library_ctest_registered": 0,
+    "zero_tests_counted_as_pass": false,
+    "full_provider_suite_executed": false,
+    "full_suite_limit": "development tests fetch c4fs/c4log and other additional repositories, including floating branches",
+    "selected_original_programs": [
+      "samples/quickstart.cpp",
+      "samples/quickstart-ints.cpp"
+    ],
+    "quickstart_checks_per_execution": 1842,
+    "quickstart_ints_exit_code": 0,
+    "upstream_sources_modified": false,
+    "working_directories_isolated": true
+  },
+  "fixture": {
+    "own_ctest_cases": 5,
+    "provider_program_ctest_cases": 2,
+    "unique_ctest_cases": 7,
+    "ctest_executions_across_stages": 14,
+    "results": {
+      "build-v1-fixture-junit.xml": {
+        "tests": 7,
+        "failures": 0,
+        "disabled": 0,
+        "skipped": 0,
+        "sha256": "1a6dbd6d730492cb0307aae03b463beb5835aa5f1f80a65d8b3e7b18503e01f6",
+        "full_test_log_sha256": "e949579e00b04af2ecb5eda329f08a8077e7f68c20e727a4a6bec7a8ab8cc889",
+        "provider_quickstart_checks": 1842
+      },
+      "installed-v1-junit.xml": {
+        "tests": 7,
+        "failures": 0,
+        "disabled": 0,
+        "skipped": 0,
+        "sha256": "d5962fad61d012158e0b9ae96fa2432844f4774e52440718afc6c34edfbc50c6",
+        "full_test_log_sha256": "a09d0db816f50b4e0785efc9b3b956a55b974d5be9dcc02b55f6fd3d52c61da2",
+        "provider_quickstart_checks": 1842
+      }
+    },
+    "installed_binaries": [
+      {
+        "name": "sh3_rapidyaml_fixture",
+        "sha256": "7d729ccf27a6b18762cea1f21bb03c20a672122bd97d821d17bb6f76f2884bc4",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "ryml_provider_quickstart",
+        "sha256": "b77d4fda4e4ffccf2e8110bed4019a0d98c5e342474b92085416494408e7bff0",
+        "architecture": "x86_64"
+      },
+      {
+        "name": "ryml_provider_quickstart_ints",
+        "sha256": "8b222d1bad71e8ab299bbc10e602ce3fc73c26d732280a38095f8807493be07a",
+        "architecture": "x86_64"
+      }
+    ],
+    "exact_package_version": "0.12.1",
+    "target": "ryml::ryml",
+    "missing_explicit_package_rejected": true,
+    "temporary_parse_callback_restored": true,
+    "original_data_used": false,
+    "limits": [
+      "not full YAML conformance or fuzz suite",
+      "no sanitizer run",
+      "no performance or game data",
+      "not GPU or 3DS execution"
+    ]
+  },
+  "loader": {
+    "all_private": true,
+    "homebrew_references": false,
+    "log_sha256": "da6381c5889c7cea26f059a187e4ba94624161d2fff17ef070cd3e31ae4a41f1"
+  },
+  "steps": [
+    {
+      "name": "baseline-configure-v8",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 1.3,
+      "log_sha256": "fc4e35fc1e46a601222efe9c6d3e6279565d615a43083516a6f2e2d81ef8ed59"
+    },
+    {
+      "name": "build-v1-fixture-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 5.79,
+      "log_sha256": "158f22ec2a5bb527d4f8bdc2a88fdbc56828ce124e3d1d54b0ba193b8aa0cc6b"
+    },
+    {
+      "name": "build-v1-fixture-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.72,
+      "log_sha256": "351be13cd99e7ca4f723b502516af228992dce4d4f5692b87b7044daec2fc3e2"
+    },
+    {
+      "name": "build-v1-fixture-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.1,
+      "log_sha256": "f4f4b4d117ff75a794e6e0b7a81bbcdbe4a86cea4f8c66f2d91ed1ddbecc5b44"
+    },
+    {
+      "name": "installed-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 5.76,
+      "log_sha256": "a051d74b851645a6d09e632ebdfd9de63bdaca15c4844a28cf50f61be740b46f"
+    },
+    {
+      "name": "installed-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.71,
+      "log_sha256": "09fb0310a9c8a8cf94f88a5904f9b0c082f84e45f37cc12238d48d6a3b933646"
+    },
+    {
+      "name": "installed-v1-ctest",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.89,
+      "log_sha256": "1130e86ff759b15b4bc9bdf46b6611423c7ae2a200c505f1d62b2e150945eb10"
+    },
+    {
+      "name": "loader-v1",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.04,
+      "log_sha256": "da6381c5889c7cea26f059a187e4ba94624161d2fff17ef070cd3e31ae4a41f1"
+    },
+    {
+      "name": "missing-package-v1",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.65,
+      "log_sha256": "103ca3b62ce99c8f6cb8a7c01e1def1eeceec8aa6ba3178f2b1bfbf49d4c665b"
+    },
+    {
+      "name": "ryml-v1-build",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.43,
+      "log_sha256": "5c72af89ab233e48edfd14f85e8c09974f76c4b7b7e8c513738a53f5d1f3565d"
+    },
+    {
+      "name": "ryml-v1-configure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.47,
+      "log_sha256": "793bc849e8436e4023b6aab2d3a918f4e9fd171a957d35f37475d7738c24781a"
+    },
+    {
+      "name": "ryml-v1-install",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.07,
+      "log_sha256": "d5c922b35a65af7a4620523718cd6624699db9e81b2c177e5439b85d1f71fc6a"
+    },
+    {
+      "name": "ryml-v1-inventory",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.03,
+      "log_sha256": "655b4edf543a99640d87b7cec2509f8071db3e631f77a63bd8b28f1533babfc4"
+    }
+  ],
+  "installation": {
+    "libraries": [
+      {
+        "name": "libryml.0.12.1.dylib",
+        "bytes": 367744,
+        "sha256": "0b91d13df74657b1142d99c7969f545e4c8863459d1d3bc325a06f407bb1b3cd",
+        "architecture": "x86_64"
+      }
+    ],
+    "manifest": {
+      "entries": 155,
+      "sha256": "b7b979d4d060bbfb776291030289c5871809888f268350c693c4a005ee07333b"
+    },
+    "prior_libraries_unchanged": 18
+  },
+  "configuration": {
+    "directory_label": "baseline-configure-v8",
+    "exit_code": 1,
+    "ryml_package_private": true,
+    "first_missing": "Shaderc",
+    "diagnostic": "Could NOT find Shaderc (missing: SHADERC_LIBRARY SHADERC_INCLUDE_DIR)",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "log_sha256": "fc4e35fc1e46a601222efe9c6d3e6279565d615a43083516a6f2e2d81ef8ed59"
+  },
+  "capacity": {
+    "initial_free_gib_approx": 15.54,
+    "final_free_bytes": 18881171456,
+    "reserve_bytes": 21474836480,
+    "whole_volume_delta_not_attributed_to_build": true
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 18881171456,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "preflight_toolchain_checks_reused_from": "SRC31; not rerun",
+  "recipe_progress": {
+    "verified_archives": 12,
+    "total_archives": 25,
+    "extra_host_inputs": [
+      "NASM",
+      "FontTools"
+    ],
+    "historical_source_plan_unchanged": true
+  },
+  "verification_corrections": [
+    "archive symlinks compared separately",
+    "provider counts read from full CTest logs instead of truncated JUnit",
+    "source-counter name collision fixed"
+  ],
+  "validation": {
+    "repository_checks": "passed",
+    "git_diff_check": "passed",
+    "source_hashes_verified": 5,
+    "local_evidence_hashes_verified": 30,
+    "step_logs_verified": 13,
+    "remote_ci_executed": false,
+    "python_full_suite_rerun": false,
+    "historical_python_tests": 1897,
+    "pcsx2_full_build_verified": false,
+    "three_ds_build_verified": false
+  },
+  "source_files": [
+    {
+      "path": "schemas/pcsx2-rapidyaml-v1.md",
+      "sha256": "52471f30b7eeb256ce80b7df607de9087536fd17b247e6f2408c7288d4896732"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-rapidyaml/CMakeLists.txt",
+      "sha256": "0090587de539c83bde8a7e2df986ed18933c1daa31e5ab87e2a0c46c6ea704ad"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-rapidyaml/README.md",
+      "sha256": "01378b7152b929452b93e07681e0aac410614c775a607b596766c562564b215a"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-rapidyaml/config.yaml",
+      "sha256": "9592fcbd13316476e0f46910698f94f60e26ff3e841407ac58c825a2a0e14ed1"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-rapidyaml/yaml.cpp",
+      "sha256": "2237eeaee879b14461807b69c154bb1169c727eedde725d792d1348553978740"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/baseline-configure-v8.json",
+      "sha256": "c1f38ae6061da46ca5594bbdd37fdf3b7a2d7794d3caeb63a019b44b795bb59b"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/build-v1-fixture-build.json",
+      "sha256": "822aa17ca854aee257e3e09f757fd551684e45e68ad1b3fcf410988b1bb95e75"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/build-v1-fixture-configure.json",
+      "sha256": "0fa24d8bf65ec101096789745c7c8fdda716a927cac3756a45c0519984c581a6"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/build-v1-fixture-ctest.json",
+      "sha256": "5eda0d333faf36cf90bcc9c8b7bf8c2bf891dc888656823c45ba30b87a942187"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/build-v1-fixture-junit.xml",
+      "sha256": "1a6dbd6d730492cb0307aae03b463beb5835aa5f1f80a65d8b3e7b18503e01f6"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/component-identities.json",
+      "sha256": "249eab9ecd8219ab38f949635e7f1b559938c750d60835228192eb41561933cf"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/configure-result-v8.json",
+      "sha256": "33d5fdbec8900dbd93bb88402590f323cb612ad5af9da93d1f85cd867cc56078"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/download.json",
+      "sha256": "2d9fe2a5f119bf4f472a6672e8cdbb6c121041f62af746942f381378d2ff72aa"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/installed-v1-build.json",
+      "sha256": "727f2e6cfc2c33e788d5f499da221e5bfd8041b904979a8955c4cb7dec4b1e7f"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/installed-v1-configure.json",
+      "sha256": "ada1dfc49c8ba28337e706ec21ab9d838edb890096eec010e2f0e8a5211e2945"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/installed-v1-ctest.json",
+      "sha256": "9fc2640c10e83ad6ac198586f5b3fb320bc034f39e2a54a83b9c9704348d5c5f"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/installed-v1-junit.xml",
+      "sha256": "d5962fad61d012158e0b9ae96fa2432844f4774e52440718afc6c34edfbc50c6"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/loader-v1.json",
+      "sha256": "59a41f3a8be2adf80fb148d2ba6b9fdc5af65f20c60f2be9a851f76be3b6dacd"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/missing-package-v1.json",
+      "sha256": "e20d07ba7bc552c1bfc8fd38ba2ea41eb69ff0d58d7077fe673fc8c92299debd"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/preflight-v7.json",
+      "sha256": "4fd7438c87cdf5cf99bc76d329cff77e8e117ca3a50c7aa18063c4e18b165ad7"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/prior-libraries.json",
+      "sha256": "7d4ef3ea713db10ee7125e69b2d679a08a174cc7c5c5ac3c6c844c9e08d50774"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/publish.py",
+      "sha256": "9f590b75f5905ab73c0aeffff4fe113e819972ed5362e2ddc6e242ebcc695bab"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/run_stage.py",
+      "sha256": "7249518f94ccf412466f0fb5d1c940b733d4ddb0f1869386a4d68bfaed45589a"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/ryml-v1-build.json",
+      "sha256": "c4b7ef5b3fd06b70eb11e2ba72533fdaec6e3e1ff3d5368ae34b7dc5e11f8541"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/ryml-v1-configure.json",
+      "sha256": "7703a8f0ce287de18368f6bf4806018e5825a6bfb8a0bbe526dcd634b9ad1fe1"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/ryml-v1-install.json",
+      "sha256": "6db0c8c2fa8cbbe1220d208112ef28781b80b2dce646b8f6942ba6158e067bb5"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/ryml-v1-inventory.json",
+      "sha256": "5d028dda40e6b2383f2fba0b9dc22116d6fc97d2ff94b16c6cd99a4b6317d4d7"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/verification-attempt-v1.json",
+      "sha256": "020a586d1149f0e4f3da67dd6b401a0e91a598452468ded812f81ea791cfced5"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/verification-attempt-v2.json",
+      "sha256": "f5935584dc76c40e5553096b98fbc19ff418013d06929a2351468356f779f6bf"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/verification-attempt-v3.json",
+      "sha256": "f0a51aacd0783a5e4a4b737deddfac9d6f20f3b97bb83c1eb802bb97640a6c89"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/verification.json",
+      "sha256": "2fb2c7fd9e1208cb3b7951f868660d2b720e04145b73b93d1c341c7bc7149d53"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/verify-v1.py",
+      "sha256": "a437957a7c98da4c8c2f90e2083be534b9c034f28f68cefdf5364380ab3420bb"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/verify-v2.py",
+      "sha256": "60c9f1396213e6bb734e207f3c143255509d7b8adda834b150c0edb6a46902e4"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/verify-v3.py",
+      "sha256": "af4d2b0911f756b8ce289b15209a5cd0e73076ba179a2b21b826f50ad8ae8eb2"
+    },
+    {
+      "path": "build/f02-07-pcsx2-rapidyaml/verify-v4.py",
+      "sha256": "01a86822d5fe86ce4e384cc73643360be6512192ee943b6776153b85e7f62bdd"
+    }
+  ],
+  "next_task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-shaderc",
+  "f02_07_status": "pending",
+  "mapping_verified": false,
+  "resource_links": [],
+  "capabilities": []
+}

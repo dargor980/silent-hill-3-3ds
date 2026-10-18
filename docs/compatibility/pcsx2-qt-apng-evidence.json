@@ -1,0 +1,1322 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC45",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-qt-apng",
+  "stage": "installed-and-validated-with-local-compatibility-patch",
+  "contract": "schemas/pcsx2-qt-apng-v1.md",
+  "prior_qt_evidence": [
+    {
+      "source_id": "SRC40",
+      "sha256": "affd051bf62c339ab9abf6492a4aaf7adbaa4c84ea1b521ac7d1f9d495cb2a09"
+    },
+    {
+      "source_id": "SRC41",
+      "sha256": "f1f355f6963929f2e80629a30b7922130a23ea838b0ac3b8e3f7961fe7cde3b2"
+    },
+    {
+      "source_id": "SRC42",
+      "sha256": "31b991378746074c3070f77a99e2479199dd85964ef2f999d5ba619826b0f21f"
+    },
+    {
+      "source_id": "SRC43",
+      "sha256": "74bed063e2ba266f0d58ea4e0dd9f1254834fa17d0cde63552be8911101157e8"
+    },
+    {
+      "source_id": "SRC44",
+      "sha256": "20b718d17db93ef9fe126ca3c804f13d86980cf67119d45e40f3ba1ff311530c"
+    }
+  ],
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan_sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+  "archive": {
+    "archive": "QtApng-1.3.0.tar.gz",
+    "url": "https://github.com/jurplel/QtApng/archive/1.3.0/QtApng-1.3.0.tar.gz",
+    "sha256": "f1d3be3489f758efe1a8f12118a212febbe611aa670af32e0159fa3c1feab2a6",
+    "bytes": 3456119,
+    "unpacked_bytes": 9768109,
+    "regular_files": 794
+  },
+  "recipe_archives_verified_total": 22,
+  "recipe_archives_total": 25,
+  "recipe_patch": {
+    "recipe_patch": "common/qtapng-cmake.patch",
+    "patch_sha256": "8570862a54fb3f85a7ead44582185a739c4331d5aee2e6a95cc7bb2f0ea753b9",
+    "changes": [
+      {
+        "path": "CMakeLists.txt",
+        "before_sha256": "f95a7bef7defbb673d1b8848ce147f798b514eadf1ac4087b05f9780855477d2",
+        "after_sha256": "f215878ab45d42477ca4a3043b57dfa276d7ca55ce844684487ccfef4b908761"
+      },
+      {
+        "path": "cmake/FindZLib.cmake",
+        "before_sha256": "306f52118350bbbfc216faf0ee7de11dbab29dfc3db090fdf0f8d010a3df1ff6",
+        "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "src/CMakeLists.txt",
+        "before_sha256": "504f341f4fb5eb9446213d021445ebc504fd01e9dd4223cd9e1bb3ceaf55b64d",
+        "after_sha256": "d8f3f71ababaca8ac1085621632a9e95d2527e3155c8c189d6328ef49a1fa2b1"
+      },
+      {
+        "path": "src/plugins/imageformats/apng/CMakeLists.txt",
+        "before_sha256": "f7ee8204631a806650b74905f2bef3b861c4207e86ba16e1c664c0b631580b03",
+        "after_sha256": "36b6dfca670ff3c73f239acb4dfb0e8286e6a07d11d3dd72a50db87c17067b90"
+      }
+    ]
+  },
+  "compatibility_patch": {
+    "patch_sha256": "2b11a3a91f7d131f8759e213a224b9e9cd957cbe699565bfc82f0c818cdd51fc",
+    "changes": [
+      {
+        "path": "src/plugins/imageformats/apng/apngimageplugin.cpp",
+        "before_sha256": "ed4ad4ae1e033be6119fab3419e6a9505e3063cc3b10607a4b9d0f083cf569e4",
+        "after_sha256": "102b42041a50b3a07cb3daaed270b5738b177bb4d093af7810aec71cd49e504f"
+      },
+      {
+        "path": "src/plugins/imageformats/apng/apngimagehandler.cpp",
+        "before_sha256": "03311be12025af7f2003398c337e0c35394be76ee0b366b320f940e6639bca73",
+        "after_sha256": "a97f38cbd107ffafb7f023867248c6ba46cea262b106798c455c199b0c7e5f71"
+      },
+      {
+        "path": "src/plugins/imageformats/apng/apngreader.cpp",
+        "before_sha256": "5fe701bdbad8ca0a9f2ccdda9f394840ea49ec447afcfc119767215bd8e2f2dc",
+        "after_sha256": "88d05dc3b01f09895243717d31cb89807d4c5d3c608350dd071fc89a361403d0"
+      }
+    ],
+    "upstream_tests_modified": false,
+    "additional_fix": "Allow empty-device capability probe used by QMovie, while actual empty/short reads still reject",
+    "prior_failures": [
+      "build-v1-fixture-ctest",
+      "build-v2-fixture-ctest"
+    ]
+  },
+  "compatibility_reasons": [
+    "APNG total plays converted to Qt extra loops",
+    "zero delay denominator interpreted as 100",
+    "hidden default image excluded from animation count",
+    "invalid or short signature rejected during plugin selection"
+  ],
+  "final_source_changes": [
+    {
+      "path": "CMakeLists.txt",
+      "before_sha256": "f95a7bef7defbb673d1b8848ce147f798b514eadf1ac4087b05f9780855477d2",
+      "after_sha256": "f215878ab45d42477ca4a3043b57dfa276d7ca55ce844684487ccfef4b908761"
+    },
+    {
+      "path": "cmake/FindZLib.cmake",
+      "before_sha256": "306f52118350bbbfc216faf0ee7de11dbab29dfc3db090fdf0f8d010a3df1ff6",
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/CMakeLists.txt",
+      "before_sha256": "504f341f4fb5eb9446213d021445ebc504fd01e9dd4223cd9e1bb3ceaf55b64d",
+      "after_sha256": "d8f3f71ababaca8ac1085621632a9e95d2527e3155c8c189d6328ef49a1fa2b1"
+    },
+    {
+      "path": "src/plugins/imageformats/apng/apngreader.cpp",
+      "before_sha256": "5fe701bdbad8ca0a9f2ccdda9f394840ea49ec447afcfc119767215bd8e2f2dc",
+      "after_sha256": "88d05dc3b01f09895243717d31cb89807d4c5d3c608350dd071fc89a361403d0"
+    },
+    {
+      "path": "src/plugins/imageformats/apng/apngimageplugin.cpp",
+      "before_sha256": "ed4ad4ae1e033be6119fab3419e6a9505e3063cc3b10607a4b9d0f083cf569e4",
+      "after_sha256": "102b42041a50b3a07cb3daaed270b5738b177bb4d093af7810aec71cd49e504f"
+    },
+    {
+      "path": "src/plugins/imageformats/apng/CMakeLists.txt",
+      "before_sha256": "f7ee8204631a806650b74905f2bef3b861c4207e86ba16e1c664c0b631580b03",
+      "after_sha256": "36b6dfca670ff3c73f239acb4dfb0e8286e6a07d11d3dd72a50db87c17067b90"
+    },
+    {
+      "path": "src/plugins/imageformats/apng/apngimagehandler.cpp",
+      "before_sha256": "03311be12025af7f2003398c337e0c35394be76ee0b366b320f940e6639bca73",
+      "after_sha256": "a97f38cbd107ffafb7f023867248c6ba46cea262b106798c455c199b0c7e5f71"
+    }
+  ],
+  "configuration": {
+    "cache_expected": {
+      "CMAKE_BUILD_TYPE": "Release",
+      "CMAKE_OSX_ARCHITECTURES": "x86_64",
+      "CMAKE_OSX_DEPLOYMENT_TARGET": "11.0",
+      "APNG_QT6": "ON",
+      "APNG_TESTS": "OFF",
+      "APNG_EXAMPLES": "OFF"
+    },
+    "translation_units": 4,
+    "link_commands": 1,
+    "no_homebrew_target_references": true,
+    "bundled_png_zlib_excluded": true,
+    "png_sha256_verified": "ef8d05aa5309bd4ddaa2a44848e94cf3fd8aabdf7102a25e1d9d801facf67de0",
+    "zlib": "SDK usr/lib/libz.tbd",
+    "supervisor_reused_from": "SRC40",
+    "supervisor_sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc",
+    "archive_version": "1.3.0",
+    "upstream_cmake_project_version": "0.1.0",
+    "upstream_tests_and_examples_flags": "OFF; original test program built separately without modifications"
+  },
+  "builds": [
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "duration_seconds": 6.06,
+      "limits": {
+        "start_bytes": 15032385536,
+        "floor_bytes": 12884901888,
+        "maximum_build_bytes": 536870912,
+        "nominal_interval_seconds": 1
+      },
+      "log_sha256": "d6dac9511979bb844c90087369c7ab9acf90680bf1cbccf0e5ff8fe5a8543cfe",
+      "version": "v1",
+      "samples": 9,
+      "initial": {
+        "free_bytes": 16708747264,
+        "logical_bytes": 606329,
+        "allocated_bytes": 806912,
+        "elapsed_seconds": 0.002
+      },
+      "final": {
+        "free_bytes": 16724967424,
+        "logical_bytes": 1925934,
+        "allocated_bytes": 2187264,
+        "elapsed_seconds": 6.06
+      },
+      "minimum_free_bytes_observed": 16707526656,
+      "maximum_logical_bytes_observed": 1925934,
+      "maximum_allocated_bytes_observed": 2187264,
+      "maximum_sample_interval_seconds": 1.008
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "duration_seconds": 5.07,
+      "limits": {
+        "start_bytes": 15032385536,
+        "floor_bytes": 12884901888,
+        "maximum_build_bytes": 536870912,
+        "nominal_interval_seconds": 1
+      },
+      "log_sha256": "ad26b44ca693414d2592fbad74356b8191b72305f82bacd61c1e48b5db964c9b",
+      "version": "v2",
+      "samples": 8,
+      "initial": {
+        "free_bytes": 16797351936,
+        "logical_bytes": 606329,
+        "allocated_bytes": 827392,
+        "elapsed_seconds": 0.002
+      },
+      "final": {
+        "free_bytes": 16791408640,
+        "logical_bytes": 1926094,
+        "allocated_bytes": 2207744,
+        "elapsed_seconds": 5.069
+      },
+      "minimum_free_bytes_observed": 16791408640,
+      "maximum_logical_bytes_observed": 1926094,
+      "maximum_allocated_bytes_observed": 2207744,
+      "maximum_sample_interval_seconds": 1.015
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "duration_seconds": 4.06,
+      "limits": {
+        "start_bytes": 15032385536,
+        "floor_bytes": 12884901888,
+        "maximum_build_bytes": 536870912,
+        "nominal_interval_seconds": 1
+      },
+      "log_sha256": "1b8e5c01d9da7b28ac9902489df8cfe8e1319e801d3197489d7538c3a51ae512",
+      "version": "v3",
+      "samples": 7,
+      "initial": {
+        "free_bytes": 16746885120,
+        "logical_bytes": 606329,
+        "allocated_bytes": 864256,
+        "elapsed_seconds": 0.001
+      },
+      "final": {
+        "free_bytes": 16750301184,
+        "logical_bytes": 1926150,
+        "allocated_bytes": 2244608,
+        "elapsed_seconds": 4.06
+      },
+      "minimum_free_bytes_observed": 16728862720,
+      "maximum_logical_bytes_observed": 1926150,
+      "maximum_allocated_bytes_observed": 2244608,
+      "maximum_sample_interval_seconds": 1.016
+    }
+  ],
+  "final_build": "v3",
+  "supervisor": {
+    "reused_from": "SRC40",
+    "sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc",
+    "previous_control_tests_passed": 7,
+    "control_tests_rerun": false
+  },
+  "runtime_tests": {
+    "own_cases": [
+      "composition",
+      "finite",
+      "timing",
+      "hidden",
+      "static",
+      "invalid",
+      "movie",
+      "isolation"
+    ],
+    "provider_program": "ApngPluginTest",
+    "provider_totals": {
+      "build-v3-fixture": [
+        "Totals: 11 passed, 0 failed, 0 skipped, 0 blacklisted, 215ms"
+      ],
+      "installed-v1": [
+        "Totals: 11 passed, 0 failed, 0 skipped, 0 blacklisted, 88ms"
+      ]
+    },
+    "cases_per_stage": 9,
+    "final_stages": [
+      "build-v3-fixture",
+      "installed-v1"
+    ],
+    "final_ctest_executions_passed": 18,
+    "final_failed_ctest_cases": 0,
+    "final_skipped_ctest_cases": 0,
+    "additional_loader_executions": 8,
+    "provider_original_inputs_unchanged_per_consumer": 8,
+    "fixture_data": {
+      "files": [
+        {
+          "name": "static.png",
+          "sha256": "aad4851536dcc86093df556501158c4b66d7377d55ee7e35fc851132a1218344",
+          "bytes": 72
+        },
+        {
+          "name": "composition.apng",
+          "sha256": "bc9b81eb22a5e97cad032fb43ec75ce9e02bec266f7c7765482507f078119ab2",
+          "bytes": 402
+        },
+        {
+          "name": "plays-1.apng",
+          "sha256": "f48a2fa90ada593c673aaadc6a1922e572ced3b03ab411d6c13794bea0bbae9f",
+          "bytes": 195
+        },
+        {
+          "name": "short.apng",
+          "sha256": "214246cd551e66de7b92c04e55355d0b3751adc15ee8ecc4066e0e9a7c9d3599",
+          "bytes": 7
+        },
+        {
+          "name": "oracle.json",
+          "sha256": "644df508952b85786b1e8982d3062f8d996c9bdcf05252d5c74b52379222c5b6",
+          "bytes": 4997
+        },
+        {
+          "name": "invalid.apng",
+          "sha256": "136d400f59c3430fcc894f23bb0108105477bd8df16d02a76df775a060eb96f4",
+          "bytes": 37
+        },
+        {
+          "name": "plays-2.apng",
+          "sha256": "d26a4082a7baae70bc74d4c0371215bddc1c518061534c67cf28f896829500e8",
+          "bytes": 195
+        },
+        {
+          "name": "zero-den.apng",
+          "sha256": "8b3172fb27d2e40795a6bb9c439d0048337567372ef798613cc7d9601a8bb3c8",
+          "bytes": 195
+        },
+        {
+          "name": "empty.apng",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "name": "hidden.apng",
+          "sha256": "21b285a5a9cc398707d5ee0a1c9c48262f17a6f9f31af6402d66a5ce34b1f5c6",
+          "bytes": 226
+        },
+        {
+          "name": "truncated.apng",
+          "sha256": "91f6b9bc9079c7d3245876e2541b54258b9ad122cd93b84c60b972a7bb132553",
+          "bytes": 101
+        }
+      ],
+      "regeneration_identical": true,
+      "valid_cases": 6,
+      "frames": 14,
+      "negative_inputs": 4
+    },
+    "initial_valid_data_and_oracles_unchanged": true,
+    "movie_frame_events_per_stage": [
+      2,
+      4
+    ],
+    "movie_cache_mode": "CacheAll",
+    "platform": "offscreen",
+    "missing_explicit_qt_root_rejected_after_install": true,
+    "isolation_no_apng_loaded": true
+  },
+  "preserved_failures": {
+    "runs": [
+      {
+        "stage": "build-v1-fixture",
+        "tests": 9,
+        "passed": 3,
+        "failed": [
+          "qap_finite",
+          "qap_timing",
+          "qap_hidden",
+          "qap_movie",
+          "qap_isolation",
+          "provider_apng"
+        ]
+      },
+      {
+        "stage": "build-v2-fixture",
+        "tests": 9,
+        "passed": 1,
+        "failed": [
+          "qap_composition",
+          "qap_finite",
+          "qap_timing",
+          "qap_hidden",
+          "qap_static",
+          "qap_invalid",
+          "qap_movie",
+          "provider_apng"
+        ]
+      }
+    ],
+    "provider_expectations_changed": false,
+    "fixture_fix": "Disable format autodetection to prevent builtin static PNG fallback in plugin-isolation check; add empty and short signature negative inputs without changing valid image oracles."
+  },
+  "installation": {
+    "manifest_entries": 1,
+    "binary_inventory": [
+      {
+        "path": "plugins/imageformats/libqapng.dylib",
+        "sha256": "9c93b89635627cd74bbc71952f615acd5aad43a5978353d24c2d68ea6cbc8317",
+        "bytes": 61424,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "6e6b90995f5ec67ac90eab25eca46f42c9b4a264adc13d9233bcbb9bd6948078"
+      }
+    ],
+    "build_binary_sha256": "9c93b89635627cd74bbc71952f615acd5aad43a5978353d24c2d68ea6cbc8317",
+    "previous_regular_files_unchanged": 4958,
+    "previous_symlinks_unchanged": 58,
+    "previous_qm_hashes_verified": 304,
+    "manifest_evidence_sha256": "92f460d7a0a0af3c7f7064ca11e4d2cadb93db4ebb4269136f6b03e7869e5a18",
+    "consumer_binaries": [
+      {
+        "stage": "build-v3-fixture",
+        "executable": "qap_consumer",
+        "sha256": "638073c4754d70c285c2206a5a8e08a648840b497278bd717bf65bf0668496d8",
+        "bytes": 62528,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "40bfee3981273ba87388f5209664dd98d66f7b663c1adc1f464c446b02759a73"
+      },
+      {
+        "stage": "build-v3-fixture",
+        "executable": "provider_apng",
+        "sha256": "fada98a95c59e525f7a2c77536736a2705f6c18be3d66659958954408800a823",
+        "bytes": 257712,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "6fb3c9da97c33f13c16c71979150e5afc1b921dac4a93d791f1dc227a68b80bc"
+      },
+      {
+        "stage": "installed-v1",
+        "executable": "qap_consumer",
+        "sha256": "638073c4754d70c285c2206a5a8e08a648840b497278bd717bf65bf0668496d8",
+        "bytes": 62528,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "57ba84f919a784feb2b0563a763e8e6ae1b9a61f4876306f32ffed48edeb91c0"
+      },
+      {
+        "stage": "installed-v1",
+        "executable": "provider_apng",
+        "sha256": "940c6700a225cb1545af817ca171d982c56b2e4fb0312e192f5e9475ea049a54",
+        "bytes": 257712,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "080b7c8cf2e0474addd7d679a05ef16235804911cba0abc8edcbd5c8062ad0ed"
+      }
+    ]
+  },
+  "source_verification": {
+    "originals_unchanged": 794,
+    "working_files": 794,
+    "changed_files": [
+      "CMakeLists.txt",
+      "cmake/FindZLib.cmake",
+      "src/CMakeLists.txt",
+      "src/plugins/imageformats/apng/apngreader.cpp",
+      "src/plugins/imageformats/apng/apngimageplugin.cpp",
+      "src/plugins/imageformats/apng/CMakeLists.txt",
+      "src/plugins/imageformats/apng/apngimagehandler.cpp"
+    ],
+    "license_notice_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c742de4060fe31a9cf350226d760993502c0fa7de225fbcfad36441c844497db"
+      },
+      {
+        "path": "src/3rdparty/zlib/src/LICENSE",
+        "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+      },
+      {
+        "path": "src/3rdparty/zlib/src/contrib/dotzlib/LICENSE_1_0.txt",
+        "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951"
+      },
+      {
+        "path": "src/3rdparty/libpng/src/LICENSE",
+        "sha256": "e32b5028f2a08799aaac01adea671e669efc2b1daa26358e21271b2e5ead9327"
+      },
+      {
+        "path": "src/3rdparty/libpng/src/ci/LICENSE_MIT.txt",
+        "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1"
+      },
+      {
+        "path": "src/3rdparty/libpng/src/contrib/pngexif/LICENSE_MIT.txt",
+        "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1"
+      },
+      {
+        "path": "src/3rdparty/libpng/src/contrib/gregbook/LICENSE",
+        "sha256": "b6a03c1803eb58ffb1f1278d5c7d4096c4c116e66dce8a7553e8c77d163c3438"
+      },
+      {
+        "path": "src/3rdparty/libpng/src/contrib/gregbook/COPYING",
+        "sha256": "d6cb0e9e560f51085556949a84af12b79a00f10ab8b66c752537faf7cd665572"
+      },
+      {
+        "path": "src/3rdparty/libpng/src/contrib/pngminus/LICENSE.txt",
+        "sha256": "1806f1f10d393e9e377b3a8d1b968452b54f1a90378f14eeef45426946ace330"
+      }
+    ],
+    "pcsx2_source_clean": true,
+    "original_provider_test_expectations_unchanged": true
+  },
+  "pcsx2_configuration": {
+    "version": "v15",
+    "exit_code": 1,
+    "resolved_qt_components": [
+      "Core",
+      "CoreTools",
+      "Gui",
+      "GuiTools",
+      "Widgets",
+      "WidgetsTools",
+      "LinguistTools"
+    ],
+    "next_fatal_dependency": "KDDockWidgets-qt6",
+    "ffmpeg_still_missing": true,
+    "source_clean": true
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 16710840320,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "toolchain_checks_reused_from": "SRC31",
+  "steps": [
+    {
+      "name": "baseline-configure-v15",
+      "status": "expected-result",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 4.51,
+      "log_sha256": "98cbe922e1a2d27a6f37b1de9dc4c4a113b3ef0bb250477773c863a9eeca64cf"
+    },
+    {
+      "name": "build-v1-fixture-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.15,
+      "log_sha256": "c33d9863ae1e96d01b295b9adaf9ea99cd1f64775f36f6baaf81edab75bf351f"
+    },
+    {
+      "name": "build-v1-fixture-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.22,
+      "log_sha256": "95336cf79d6c43c629ee462ce117042d2269b5048ae330265d21e5d2f4102e0f"
+    },
+    {
+      "name": "build-v1-fixture-ctest",
+      "status": "failed-attempt-preserved",
+      "exit_code": 8,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.59,
+      "log_sha256": "b36b0f51cdc0310e472ce3e19627370b376a46d27159b5bf2664703a145a5cc7"
+    },
+    {
+      "name": "build-v2-fixture-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.22,
+      "log_sha256": "c33d9863ae1e96d01b295b9adaf9ea99cd1f64775f36f6baaf81edab75bf351f"
+    },
+    {
+      "name": "build-v2-fixture-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.86,
+      "log_sha256": "87373ab72b60c140ebc32d8106d1ce16874b8996749144808c41deab7596ff73"
+    },
+    {
+      "name": "build-v2-fixture-ctest",
+      "status": "failed-attempt-preserved",
+      "exit_code": 8,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.56,
+      "log_sha256": "16cd756a5fe0e9b6dd4a3b72f3cf46347f90710a53e0ad70f827e44a08f6a1d0"
+    },
+    {
+      "name": "build-v3-fixture-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.13,
+      "log_sha256": "c33d9863ae1e96d01b295b9adaf9ea99cd1f64775f36f6baaf81edab75bf351f"
+    },
+    {
+      "name": "build-v3-fixture-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.35,
+      "log_sha256": "250a8da724d6560638fe607466f4fdb375b39244b343be136290e9475e849976"
+    },
+    {
+      "name": "build-v3-fixture-ctest",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.35,
+      "log_sha256": "f5e50cc215c2c57415153a0ce379fcfe7e3ae7d834167541e98781c886463536"
+    },
+    {
+      "name": "build-v3-fixture-loader-composition",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.41,
+      "log_sha256": "b855ef14eade9c17c435197e0b2a89508f4583f56403ee5d0fa9e162e85228e0"
+    },
+    {
+      "name": "build-v3-fixture-loader-isolation",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "998c2e78ab6d823a14c54821b90123e94f9a288af72f74f1548af103b342eec7"
+    },
+    {
+      "name": "build-v3-fixture-loader-movie",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.16,
+      "log_sha256": "929f6b9314d845648a63c20a66770f33f5ada9fd8bcea7174785e651aaca0b7b"
+    },
+    {
+      "name": "build-v3-fixture-loader-provider",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.35,
+      "log_sha256": "a1d858e755c288115e91156702db1ce51060ebcb0dd444307a51d111b663661b"
+    },
+    {
+      "name": "download-v1",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.0,
+      "log_sha256": "f8d31d66bbccb1463d28c8c899333714020224e92c010a04649cbdf2a8f73761"
+    },
+    {
+      "name": "installed-v1-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.97,
+      "log_sha256": "02c81f59df1c963b86b8898a33d3ea52868c91a8a82d13bc9cb9e6f7bed0856f"
+    },
+    {
+      "name": "installed-v1-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.01,
+      "log_sha256": "9de76664b5cf9e9b13d1f8af3664e6911bf571e70ab853879b378c53f7e0e44d"
+    },
+    {
+      "name": "installed-v1-ctest",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.5,
+      "log_sha256": "a48cd7af0b9536f86eef698986c30e7f6ab40180b406af2c99b799022eae48e3"
+    },
+    {
+      "name": "installed-v1-loader-composition",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.48,
+      "log_sha256": "f55b5b1c048d2b6ae7861fdc50eb53782c6116f5abbe1d30421e609c1ac2b1bc"
+    },
+    {
+      "name": "installed-v1-loader-isolation",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "8e088d9041f0c54495431abbb1133d59ed3eb7d12a2b1609e33f7a4d4f82b8a8"
+    },
+    {
+      "name": "installed-v1-loader-movie",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.17,
+      "log_sha256": "1cfe316a44e239d4dbbd1cb7bb30e2fd736e95f72bc50372e3fb36a4d41bd7b0"
+    },
+    {
+      "name": "installed-v1-loader-provider",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.19,
+      "log_sha256": "6168b88faf7d41f11ad9e20bed9a7b1dd2a7724ebffdcbb9989953e0d0901d51"
+    },
+    {
+      "name": "missing-qt-prefix-v1",
+      "status": "expected-result",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.81,
+      "log_sha256": "6d51ea8be5b3798b984c2c6158287e2be417f9324bee4d504bdcf5789eb6fe03"
+    },
+    {
+      "name": "own-data-v1",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "fc9434625ece83579624b5ba8e3b90d6c80bcd30567f635714b7185f42a8d0f6"
+    },
+    {
+      "name": "own-data-v2",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "fc9434625ece83579624b5ba8e3b90d6c80bcd30567f635714b7185f42a8d0f6"
+    },
+    {
+      "name": "own-data-v3",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "b6f51a1a9e4ceb5b9dbc4f9eeec2b64657ca271f9523df980ad21c09ef8dfdab"
+    },
+    {
+      "name": "own-data-v4",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "b6f51a1a9e4ceb5b9dbc4f9eeec2b64657ca271f9523df980ad21c09ef8dfdab"
+    },
+    {
+      "name": "qtapng-patch-v1",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "09e56f16148bfecd254298defc8f9b82e4e6cfe65015902a43fbf3c222fd13e6"
+    },
+    {
+      "name": "qtapng-v1-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "duration_seconds": 6.06,
+      "log_sha256": "d6dac9511979bb844c90087369c7ab9acf90680bf1cbccf0e5ff8fe5a8543cfe"
+    },
+    {
+      "name": "qtapng-v1-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.89,
+      "log_sha256": "7de3240f3bad46bb8b4ad347c40e40c939ce5b67a6c35be1ead80a741ca64ed9"
+    },
+    {
+      "name": "qtapng-v2-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "duration_seconds": 5.07,
+      "log_sha256": "ad26b44ca693414d2592fbad74356b8191b72305f82bacd61c1e48b5db964c9b"
+    },
+    {
+      "name": "qtapng-v2-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.93,
+      "log_sha256": "dfa1255237bc9a571b1205b525b27a96e98c405f52ba28f0ed31b17fa3075af6"
+    },
+    {
+      "name": "qtapng-v3-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "duration_seconds": 4.06,
+      "log_sha256": "1b8e5c01d9da7b28ac9902489df8cfe8e1319e801d3197489d7538c3a51ae512"
+    },
+    {
+      "name": "qtapng-v3-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 3.82,
+      "log_sha256": "ce5826105cfc5bfcd8272abdcc3f39428afaaa2d02652857227653d52f01fb05"
+    },
+    {
+      "name": "qtapng-v3-install",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.08,
+      "log_sha256": "87ea11dd4cfdb0835f66dfc3792e8210274d9e49fbc8a142c66ef50301f241fd"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "path": "schemas/pcsx2-qt-apng-v1.md",
+      "bytes": 5078,
+      "sha256": "b7783644b2cd0ad32d64cbcb68a93f62755fef34ca4822ead92e620502652699"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-apng/CMakeLists.txt",
+      "bytes": 2285,
+      "sha256": "6085637fa60031df7874e4acc21185559a0ba7100b63433cdc67423769665852"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-apng/README.md",
+      "bytes": 1893,
+      "sha256": "97abe6e77f6f5cfeb744147998be2565ca6b14b1db3f31b35250ea01b245d1eb"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-apng/consumer.cpp",
+      "bytes": 7100,
+      "sha256": "a34d95da557d2fcfba6a8c9b75a175dc685b77acbf65df9302d61d3c0fecef5b"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-qt-apng/generate.py",
+      "bytes": 4205,
+      "sha256": "872e340cf4f255f09a99e56c9afb9d2052742f5fb62e5bdb4f3875c4a53f4d29"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "actions-before-compatibility.py",
+      "bytes": 1614,
+      "sha256": "d1edddb94580cfad91b276df42ab79b90dce06cc4dd8934cbf1c35694164ff3e"
+    },
+    {
+      "name": "actions-before-empty-checks.py",
+      "bytes": 1614,
+      "sha256": "d1edddb94580cfad91b276df42ab79b90dce06cc4dd8934cbf1c35694164ff3e"
+    },
+    {
+      "name": "actions.py",
+      "bytes": 3324,
+      "sha256": "fa9a3530ed2c56570abb667dbcf4a6ef384167dfe265b6660933232bd739f35c"
+    },
+    {
+      "name": "apply_compatibility.py",
+      "bytes": 2320,
+      "sha256": "2ead7daf26a089dca842ecb20384326a6600ac2ffb409e7eb087d9368a2dae81"
+    },
+    {
+      "name": "archive.json",
+      "bytes": 272,
+      "sha256": "2333c1aa7f487c969e38b5dbd57f2dbed4e4a900d7827aef907fac631ef8049f"
+    },
+    {
+      "name": "baseline-configure-v15.json",
+      "bytes": 1486,
+      "sha256": "ebe87154fa785324a48d7443cb71a1d4fb48e9d40d01afead01979bd0ceadbdf"
+    },
+    {
+      "name": "build-v1-fixture-build.json",
+      "bytes": 1079,
+      "sha256": "57daca367f0fd63bdf7a8ab887f3c501862c2bafd912c7e0cd009948bf6b6f58"
+    },
+    {
+      "name": "build-v1-fixture-configure.json",
+      "bytes": 2666,
+      "sha256": "58016cd22ca2b950bed4dba1db275bc5a79ed643cb9e8f76f1d25da4bc1365d1"
+    },
+    {
+      "name": "build-v1-fixture-ctest.json",
+      "bytes": 1206,
+      "sha256": "d4eee105af33ee8bba11101ae19906235ac5a88a9c428ed9f837893efc27f61e"
+    },
+    {
+      "name": "build-v1-fixture-junit.xml",
+      "bytes": 3076,
+      "sha256": "16184bc1b0f77dd5b7fb48990f3ac9a096099bc76d43421e3586d71d7fc4550b"
+    },
+    {
+      "name": "build-v2-fixture-build.json",
+      "bytes": 1079,
+      "sha256": "c9e7b2c75afa68a5a867bd5ceb2d122cf94072de09444a3d74bd708bd20bcbae"
+    },
+    {
+      "name": "build-v2-fixture-configure.json",
+      "bytes": 2666,
+      "sha256": "38c078acf1477bb90c5bdd5a89996472b9af5569e23550adf7b9597908bb2d20"
+    },
+    {
+      "name": "build-v2-fixture-ctest.json",
+      "bytes": 1206,
+      "sha256": "7395fe7a3d0922e1bfeec7b517a333e5317ddbe757ef90e37a9d72286a597317"
+    },
+    {
+      "name": "build-v2-fixture-junit.xml",
+      "bytes": 2961,
+      "sha256": "c01cf8b7685223883f5c07646c0c185b1bd7774a12e0420caf79c3aa22f0b0d3"
+    },
+    {
+      "name": "build-v3-fixture-build.json",
+      "bytes": 1079,
+      "sha256": "157eee78def97e374815a0299923db8ee1a6708f940df7cd19796fa2fdf81cda"
+    },
+    {
+      "name": "build-v3-fixture-configure.json",
+      "bytes": 2666,
+      "sha256": "dba30e2f57c04f81aa775647d2ac101ad840c721793966a37399fa1ff4487194"
+    },
+    {
+      "name": "build-v3-fixture-ctest.json",
+      "bytes": 1206,
+      "sha256": "430612581116e210d55171cd47b355b6203e83204e3297b93f2422d9df3da7da"
+    },
+    {
+      "name": "build-v3-fixture-junit.xml",
+      "bytes": 2466,
+      "sha256": "aeac64aeb64bfba2e57aec66de462be293b3135c8aa7a89dd56c901013bc14d9"
+    },
+    {
+      "name": "build-v3-fixture-loader-composition.json",
+      "bytes": 1265,
+      "sha256": "55d8cdc870f99a284813d4da78dcb256235636525c904c5f898fd821d1931348"
+    },
+    {
+      "name": "build-v3-fixture-loader-isolation.json",
+      "bytes": 1269,
+      "sha256": "0fd50aaca660faebfdca2f5019ce2b9d8eff41c3c6bd2ff031e3d3f89e09b154"
+    },
+    {
+      "name": "build-v3-fixture-loader-movie.json",
+      "bytes": 1247,
+      "sha256": "022a41250634db3d35613e91ab3b9f001468459f9e6a15d596d95f6cf1cb7c0a"
+    },
+    {
+      "name": "build-v3-fixture-loader-provider.json",
+      "bytes": 1039,
+      "sha256": "e2f601614864b3815fabd48f3b1e2f4248a8d3890e9ce2d5bd11470a515cd699"
+    },
+    {
+      "name": "build-v3-fixture-verified.json",
+      "bytes": 6827,
+      "sha256": "ddf52c0a738acbee9d12a15a52c61f22603a597b22e8390079a102e287e1853e"
+    },
+    {
+      "name": "build_module-before-compatibility.py",
+      "bytes": 3378,
+      "sha256": "51a3afd2d9e88ce12aa4e5b5d6f5f39ba18531ba65f0accdb10746f1caf90dc7"
+    },
+    {
+      "name": "build_module-before-empty-probe.py",
+      "bytes": 3402,
+      "sha256": "aa650f62732b4f27f2490a96c7655e5dfc00fb5d4a4f7aceb46cbfb60d06faf0"
+    },
+    {
+      "name": "build_module.py",
+      "bytes": 3405,
+      "sha256": "2543bdf8e2e9e65e890e03f89b2ff12037b466b0bda8807bcdfdbb6e54e7abef"
+    },
+    {
+      "name": "capacity-samples-v2.json",
+      "bytes": 1043,
+      "sha256": "ef063983bd280fa345397e135a5e1647d5b5db68782500abbd7f18971533a0e7"
+    },
+    {
+      "name": "capacity-samples-v3.json",
+      "bytes": 912,
+      "sha256": "94a8363abf6a0dc83adf4d70a672f3695571260dc34f7814c8e599a1de7a58e1"
+    },
+    {
+      "name": "capacity-samples.json",
+      "bytes": 1172,
+      "sha256": "7937fb155a06278e322008cc86df94221080aa2d9ceaca57f64b182a11d61285"
+    },
+    {
+      "name": "combined-source-changes-v3.json",
+      "bytes": 1738,
+      "sha256": "2f943ada290221a88dcd814c88e39e48dacca705590498598abb6827ede19ebf"
+    },
+    {
+      "name": "combined-source-changes.json",
+      "bytes": 1738,
+      "sha256": "94d3113c73eef5ba669ccad998c31802fdfa3787bcd1203b8081168bfab41511"
+    },
+    {
+      "name": "compatibility-patch-v2.json",
+      "bytes": 1125,
+      "sha256": "24f46837df2664c7a1d2f3ddddcb4cb141c1459465d7226fe8efb0ebccea859c"
+    },
+    {
+      "name": "compatibility-patch.json",
+      "bytes": 1210,
+      "sha256": "2c3cb5b86ec10cefb6251c9d01e4ab74b28142a3e84baccac36a6244d25f4ef7"
+    },
+    {
+      "name": "configuration-audit-v2.json",
+      "bytes": 604,
+      "sha256": "fe09c535e81ae35d36379aaebd63868205cdcffa73d2766031062b4a42bc7218"
+    },
+    {
+      "name": "configuration-audit-v3.json",
+      "bytes": 604,
+      "sha256": "fe09c535e81ae35d36379aaebd63868205cdcffa73d2766031062b4a42bc7218"
+    },
+    {
+      "name": "configuration-audit.json",
+      "bytes": 604,
+      "sha256": "fe09c535e81ae35d36379aaebd63868205cdcffa73d2766031062b4a42bc7218"
+    },
+    {
+      "name": "configure-result-v15.json",
+      "bytes": 1602,
+      "sha256": "85e4963bdaaffff87dfe00661b96768e1d6e8f8954b2ff0c304eb14d0b55117f"
+    },
+    {
+      "name": "consumer-before-empty-checks.cpp",
+      "bytes": 7072,
+      "sha256": "b0e06ba5b3f8a96ee1553f7fb7653c36974c728d96aff4e6397d73fbfe30adcc"
+    },
+    {
+      "name": "consumer-before-isolation-fix.cpp",
+      "bytes": 6916,
+      "sha256": "522d1bbc8588ccf2c001dab2d3c1cd94ee104078909b62227a8092a6019a8866"
+    },
+    {
+      "name": "download-v1.json",
+      "bytes": 1104,
+      "sha256": "9f0734af89d9a22490e544ac9404a929950c99d87aace8d822777e8bd0097a1f"
+    },
+    {
+      "name": "finalize.py",
+      "bytes": 1676,
+      "sha256": "471e6b0a86ada719b793a851d45c8ce2f50e16449b296fd146210045099e475f"
+    },
+    {
+      "name": "fix_probe.py",
+      "bytes": 1756,
+      "sha256": "98d8735656dac84801fb4e4ad396b495af90fd16ceb3c27b77c78cfe3d4416ff"
+    },
+    {
+      "name": "fixture-data-v3.json",
+      "bytes": 1714,
+      "sha256": "0da4ded0c196f50f952750107d12cce601315a3de6be76214b5c6af88cc15e42"
+    },
+    {
+      "name": "fixture-data.json",
+      "bytes": 1430,
+      "sha256": "74d24d8bd48a3e84f904f4b4dd4b50bba6d94d969e729c61d4b5eb5ac171fec4"
+    },
+    {
+      "name": "generate-before-empty-checks.py",
+      "bytes": 4105,
+      "sha256": "c0f7e7748acce289bf0bba5f9c8a25be307387bc292f79a43a4e2f771b3a0f36"
+    },
+    {
+      "name": "install-verification.json",
+      "bytes": 629,
+      "sha256": "92f460d7a0a0af3c7f7064ca11e4d2cadb93db4ebb4269136f6b03e7869e5a18"
+    },
+    {
+      "name": "installed-v1-build.json",
+      "bytes": 1061,
+      "sha256": "73c6f72fca6fcf025f0e6700cffff016b24c446ffc5e63f1691a0d5115398039"
+    },
+    {
+      "name": "installed-v1-configure.json",
+      "bytes": 2642,
+      "sha256": "787051f34e40fbf2370ff9a186fea2270881fdcbcb98021f67914d6a87b514c3"
+    },
+    {
+      "name": "installed-v1-ctest.json",
+      "bytes": 1183,
+      "sha256": "9aed016dde124c7a36952875b6c28016e93ceb23dcbc9ffd54fb01ce4a45a97c"
+    },
+    {
+      "name": "installed-v1-junit.xml",
+      "bytes": 2465,
+      "sha256": "c27173b48543fe406f050a190ee20e2ba48acfa4423d821a5b9b474cf87ed2fc"
+    },
+    {
+      "name": "installed-v1-loader-composition.json",
+      "bytes": 1241,
+      "sha256": "d7d0487482e2949b2ce303bb85db5ff52601067bd02c06b6ceb85233ef2d761f"
+    },
+    {
+      "name": "installed-v1-loader-isolation.json",
+      "bytes": 1247,
+      "sha256": "a5d7e5bb9c4419021e504a0fb12fe653c657ce61803084cf21c27bd8651893d4"
+    },
+    {
+      "name": "installed-v1-loader-movie.json",
+      "bytes": 1223,
+      "sha256": "cf78ddb848812f4ec737b781f2ec7bcc6faaf7d776d0ea2f53281c5bef80816a"
+    },
+    {
+      "name": "installed-v1-loader-provider.json",
+      "bytes": 1021,
+      "sha256": "eb82ffdfeae327d8e6759019a51bc219587fa5e7b8d446349192026f134116ca"
+    },
+    {
+      "name": "installed-v1-verified.json",
+      "bytes": 11136,
+      "sha256": "73418b3683d57fa55b590753ba168b38c27b73b6d08a58af28e1ca0ba33b69ad"
+    },
+    {
+      "name": "missing-qt-prefix-v1.json",
+      "bytes": 2206,
+      "sha256": "82e45835a5e77922ffe58fa2767a52a764540b19924f970272ea29fb6b63dfcb"
+    },
+    {
+      "name": "original-inventory.json",
+      "bytes": 127513,
+      "sha256": "917a0b05c7d470622c9817dd5b6e441b73cc5a35f868c4cce1282a1dd3320623"
+    },
+    {
+      "name": "own-data-v1.json",
+      "bytes": 1032,
+      "sha256": "345c01787e0a6c765412631e7089e03a79df7f4616a077a7519466e2ba0d1fab"
+    },
+    {
+      "name": "own-data-v2.json",
+      "bytes": 1032,
+      "sha256": "1130e26e13d82815f8c4588b0d83b96a3ed034199f08d2b4a561857793ebaa4e"
+    },
+    {
+      "name": "own-data-v3.json",
+      "bytes": 1032,
+      "sha256": "313898bb611dbc4aeb67cc292f4c327be49aa202e8fde16787a11279828845de"
+    },
+    {
+      "name": "own-data-v4.json",
+      "bytes": 1032,
+      "sha256": "5eb76d102e0829de521402dea5a1bbe5b79f53de307dab566f87532b13b4c8f2"
+    },
+    {
+      "name": "patch.json",
+      "bytes": 1095,
+      "sha256": "064a1131e59f01eb717a6ec25f8c2242849200b743529cebf9552333de499338"
+    },
+    {
+      "name": "prefix-before.json",
+      "bytes": 567809,
+      "sha256": "4f62bcd0cfd47e6fbaca4dc087b880039a3f6ddcf95a1215e380a876624dba18"
+    },
+    {
+      "name": "prefix-links-before.json",
+      "bytes": 3088,
+      "sha256": "642158456709a0075417a28166290dc9ef57d10b7f63304a7178cfb9a81669d7"
+    },
+    {
+      "name": "preflight-v15.json",
+      "bytes": 834,
+      "sha256": "d6ba8059de6c447590e2ca5002ea94808ca801de7ceefc4525c6fe09decb3892"
+    },
+    {
+      "name": "preserved-failures.json",
+      "bytes": 801,
+      "sha256": "e720b62aa484ae6cc50605d3fc375487a918634270005f5f5f5768b3a789b3bc"
+    },
+    {
+      "name": "publish.py",
+      "bytes": 6982,
+      "sha256": "a5d8b26f60f0daaf04c206a6036e7de30288782c39cc7bc3be4097a6ff257003"
+    },
+    {
+      "name": "qtapng-patch-v1.json",
+      "bytes": 1111,
+      "sha256": "8f7ab46bb0184e7f2939622b19c56bd816368425fe1df0f3235b8b1ad2f68eaf"
+    },
+    {
+      "name": "qtapng-v1-build.json",
+      "bytes": 1125,
+      "sha256": "beb540eea595c5c8213f5cbe3d022f149c72a9b086599f90eb17c2491557165c"
+    },
+    {
+      "name": "qtapng-v1-configure.json",
+      "bytes": 2136,
+      "sha256": "d7db1e366dd575abe6c598b6cef7e34d63534d15c642f02adccb79f0c85f3247"
+    },
+    {
+      "name": "qtapng-v2-build.json",
+      "bytes": 1125,
+      "sha256": "41a2857fc4a4c02cac2ff3c212fc01520f24058cb81250e78762e44f5edceb53"
+    },
+    {
+      "name": "qtapng-v2-configure.json",
+      "bytes": 2136,
+      "sha256": "bda755daa06c6bac274a6dadccfcb945d033c1ad377801c09ebef9623dbb7171"
+    },
+    {
+      "name": "qtapng-v3-build.json",
+      "bytes": 1125,
+      "sha256": "70e9a092339b5cf19bb878e6559f52578ed4ee6082e4176d79e322c7ff77cfb0"
+    },
+    {
+      "name": "qtapng-v3-configure.json",
+      "bytes": 2136,
+      "sha256": "4ce426533b93d04b4485297be77bef3c74d2c34ac3ca5ae4ce8cca45c63c59e7"
+    },
+    {
+      "name": "qtapng-v3-install.json",
+      "bytes": 936,
+      "sha256": "66b727e946c63e1012d2f622a7759365b013081c98cd67449ec0cf55e3492c1c"
+    },
+    {
+      "name": "repository-validation.json",
+      "bytes": 602,
+      "sha256": "2625b4a923b312af8e39a383bafad06bd49db672c63c33e22517917cea600fa5"
+    },
+    {
+      "name": "source-verification.json",
+      "bytes": 1887,
+      "sha256": "9a6809370ac6e5945d109dab28b379bbcc257acf5caf4cdb43c2dc904c469d3a"
+    },
+    {
+      "name": "stage-before-compatibility.py",
+      "bytes": 4538,
+      "sha256": "a3c8a89297c55e56c5c17594b5aca1510364f4c28af9e080560c0cf1956b1b4e"
+    },
+    {
+      "name": "stage-before-empty-probe.py",
+      "bytes": 4538,
+      "sha256": "71de0848c7ef6f710a9b8675ad728121fe6c6dcd22aad51e6afde77d119340d4"
+    },
+    {
+      "name": "stage.py",
+      "bytes": 4538,
+      "sha256": "302557f29f90abf307e985288b1484f632edac31f2bd75597b10b4e4ccfccc5b"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 301,
+      "sha256": "afd538ece373f9975771a10f7388c2502341966e3af18d004e2b4e1c359cab34"
+    },
+    {
+      "name": "verify.py",
+      "bytes": 5600,
+      "sha256": "4ea7179085a4204d1b64d69626fcb7753b0115154c32b34f24f08f43f6ec19a1"
+    }
+  ],
+  "sources_consulted": [
+    "https://www.w3.org/TR/2025/REC-png-3-20250624/#11acTL",
+    "https://doc.qt.io/qt-6/qimagereader.html",
+    "https://doc.qt.io/qt-6/qmovie.html#loopCount"
+  ],
+  "limitations": [
+    "Plugin differs from upstream through fixed PCSX2 recipe and local compatibility patch; original tests unchanged",
+    "Own cases do not exhaust interlacing, color profiles, sequential devices, CacheNone, extreme counts or performance",
+    "No visible UI, GPU, macOS 11 physical or Nintendo 3DS runtime verification",
+    "No complete PCSX2 build, instrumentation or effective map",
+    "No remote CI or full Python suite rerun"
+  ],
+  "next_unit": "prerequisites/dependencies-kddockwidgets",
+  "resource_links": [],
+  "capabilities": [],
+  "repository_validation": {
+    "date": "2026-10-17",
+    "repository_checks": {
+      "command": "rtk proxy .venv/bin/python -m tools.qa.check_repository",
+      "exit_code": 0,
+      "output": "Repository checks: PASS (0 errors)"
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    },
+    "source_artifacts_hashes_verified": 5,
+    "local_evidence_hashes_verified_before_receipt": 81,
+    "prior_evidence_files_unchanged": [
+      "SRC40",
+      "SRC41",
+      "SRC42",
+      "SRC43",
+      "SRC44"
+    ],
+    "local_markdown_links_verified": 5,
+    "fixture_whitespace_and_privacy": "passed",
+    "full_python_suite_rerun": false,
+    "remote_ci_executed": false
+  }
+}

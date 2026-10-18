@@ -1,0 +1,1663 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "source_id": "SRC46",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-kddockwidgets",
+  "stage": "installed-and-validated-with-packaging-patch",
+  "contract": "schemas/pcsx2-kddockwidgets-v1.md",
+  "prior_qt_evidence": [
+    {
+      "source_id": "SRC40",
+      "sha256": "affd051bf62c339ab9abf6492a4aaf7adbaa4c84ea1b521ac7d1f9d495cb2a09"
+    },
+    {
+      "source_id": "SRC41",
+      "sha256": "f1f355f6963929f2e80629a30b7922130a23ea838b0ac3b8e3f7961fe7cde3b2"
+    },
+    {
+      "source_id": "SRC42",
+      "sha256": "31b991378746074c3070f77a99e2479199dd85964ef2f999d5ba619826b0f21f"
+    },
+    {
+      "source_id": "SRC43",
+      "sha256": "74bed063e2ba266f0d58ea4e0dd9f1254834fa17d0cde63552be8911101157e8"
+    },
+    {
+      "source_id": "SRC44",
+      "sha256": "20b718d17db93ef9fe126ca3c804f13d86980cf67119d45e40f3ba1ff311530c"
+    },
+    {
+      "source_id": "SRC45",
+      "sha256": "f14c964fa5af91a431e134c2a5a33626bb19b1d91bb9c627c664e070b880724d"
+    }
+  ],
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan_sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+  "archive": {
+    "archive": "KDDockWidgets-2.4.1.tar.gz",
+    "url": "https://github.com/KDAB/KDDockWidgets/archive/v2.4.1/KDDockWidgets-2.4.1.tar.gz",
+    "sha256": "5cd9495d9316cf6cc937bb328a7fd491c3248ef2469cfa42511f1039f6148aca",
+    "bytes": 4321566,
+    "unpacked_bytes": 8504850,
+    "regular_files": 793
+  },
+  "recipe_archives_verified_total": 23,
+  "recipe_archives_total": 25,
+  "packaging_patch": {
+    "path": "src/CMakeLists.txt",
+    "before_sha256": "c0b662851ab08e48d10631a53ed572359fb90988109bb2f5a8751768bda46ee9",
+    "after_sha256": "051cec9053ceff86bce84c54d51d9e04604da2982b45457aec177fb16c78eb17",
+    "patch_sha256": "2a28ede48422802af4fea1625de48293dc3b4b3f919c09a82dc5f0b9aac9b3dc",
+    "reason": "Original includes_test fails against installed package: qtwidgets/Platform.h omitted from install rules.",
+    "scope": "Install one existing unchanged header; no C++ or original test changes."
+  },
+  "configuration": {
+    "cache_expected": {
+      "CMAKE_BUILD_TYPE": "Release",
+      "CMAKE_OSX_ARCHITECTURES": "x86_64",
+      "CMAKE_OSX_DEPLOYMENT_TARGET": "11.0",
+      "KDDockWidgets_QT6": "true",
+      "KDDockWidgets_EXAMPLES": "false",
+      "KDDockWidgets_FRONTENDS": "qtwidgets",
+      "KDDockWidgets_DEVELOPER_MODE": "OFF",
+      "KDDockWidgets_TESTS": "OFF"
+    },
+    "translation_units": 80,
+    "link_commands": 1,
+    "no_homebrew_target_references": true,
+    "supervisor_reused_from": "SRC40",
+    "supervisor_sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc",
+    "version": "2.4.1",
+    "qt_version": "6.11.1",
+    "build_tree_export": "Own deferred CMake export of existing target; provider C++ and tests unchanged",
+    "frontend": "qtwidgets",
+    "bundled_header_dependencies": [
+      "KDBindings",
+      "nlohmann JSON"
+    ],
+    "spdlog": false,
+    "developer_mode": false
+  },
+  "builds": [
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "duration_seconds": 61.9,
+      "limits": {
+        "start_bytes": 15032385536,
+        "floor_bytes": 12884901888,
+        "maximum_build_bytes": 1073741824,
+        "nominal_interval_seconds": 1
+      },
+      "log_sha256": "4b9f9d7332d59dfd8e41b44e5eb18c8fd33cba9b0a941381fc4372843f2d005a",
+      "name": "kddockwidgets-v1",
+      "samples": 64,
+      "initial": {
+        "free_bytes": 17717792768,
+        "logical_bytes": 1408852,
+        "allocated_bytes": 1630208,
+        "elapsed_seconds": 0.003
+      },
+      "final": {
+        "free_bytes": 17692463104,
+        "logical_bytes": 34111855,
+        "allocated_bytes": 34861056,
+        "elapsed_seconds": 61.899
+      },
+      "minimum_free_bytes_observed": 17686155264,
+      "maximum_logical_bytes_observed": 34111855,
+      "maximum_allocated_bytes_observed": 34861056,
+      "maximum_sample_interval_seconds": 1.024
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "duration_seconds": 3.03,
+      "limits": {
+        "start_bytes": 15032385536,
+        "floor_bytes": 12884901888,
+        "maximum_build_bytes": 1073741824
+      },
+      "log_sha256": "add9da0b7350db20c4ed1f69594c132299c130855c16bda6a9c670ac86655a09",
+      "name": "build-v1-fixture",
+      "samples": 6,
+      "initial": {
+        "free_bytes": 17676414976,
+        "logical_bytes": 503878,
+        "allocated_bytes": 704512,
+        "elapsed_seconds": 0.001
+      },
+      "final": {
+        "free_bytes": 17674813440,
+        "logical_bytes": 1019260,
+        "allocated_bytes": 1232896,
+        "elapsed_seconds": 3.032
+      },
+      "minimum_free_bytes_observed": 17674813440,
+      "maximum_logical_bytes_observed": 1019260,
+      "maximum_allocated_bytes_observed": 1232896,
+      "maximum_sample_interval_seconds": 1.014
+    },
+    {
+      "accepted": false,
+      "exit_code": 2,
+      "abort_reason": null,
+      "duration_seconds": 2.02,
+      "limits": {
+        "start_bytes": 15032385536,
+        "floor_bytes": 12884901888,
+        "maximum_build_bytes": 1073741824
+      },
+      "log_sha256": "c27281e7c8baaf0dd896ea52aec12033e164f0070f6034bc0ae1ef42b930bae2",
+      "name": "installed-v1",
+      "samples": 5,
+      "initial": {
+        "free_bytes": 17677684736,
+        "logical_bytes": 503027,
+        "allocated_bytes": 704512,
+        "elapsed_seconds": 0.001
+      },
+      "final": {
+        "free_bytes": 17677189120,
+        "logical_bytes": 793640,
+        "allocated_bytes": 1019904,
+        "elapsed_seconds": 2.023
+      },
+      "minimum_free_bytes_observed": 17677148160,
+      "maximum_logical_bytes_observed": 793640,
+      "maximum_allocated_bytes_observed": 1019904,
+      "maximum_sample_interval_seconds": 1.009
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "duration_seconds": 62.69,
+      "limits": {
+        "start_bytes": 15032385536,
+        "floor_bytes": 12884901888,
+        "maximum_build_bytes": 1073741824,
+        "nominal_interval_seconds": 1
+      },
+      "log_sha256": "4b9f9d7332d59dfd8e41b44e5eb18c8fd33cba9b0a941381fc4372843f2d005a",
+      "name": "kddockwidgets-v2",
+      "samples": 65,
+      "initial": {
+        "free_bytes": 17672314880,
+        "logical_bytes": 1412648,
+        "allocated_bytes": 1658880,
+        "elapsed_seconds": 0.003
+      },
+      "final": {
+        "free_bytes": 17617846272,
+        "logical_bytes": 34115651,
+        "allocated_bytes": 35405824,
+        "elapsed_seconds": 62.692
+      },
+      "minimum_free_bytes_observed": 17617846272,
+      "maximum_logical_bytes_observed": 34115651,
+      "maximum_allocated_bytes_observed": 35405824,
+      "maximum_sample_interval_seconds": 1.021
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "duration_seconds": 2.02,
+      "limits": {
+        "start_bytes": 15032385536,
+        "floor_bytes": 12884901888,
+        "maximum_build_bytes": 1073741824
+      },
+      "log_sha256": "cf6b81fccbc920973e38d43aed56e0705033899b1a3c87aa7c1aa94694739ac8",
+      "name": "build-v2-fixture",
+      "samples": 5,
+      "initial": {
+        "free_bytes": 17564061696,
+        "logical_bytes": 504301,
+        "allocated_bytes": 704512,
+        "elapsed_seconds": 0.001
+      },
+      "final": {
+        "free_bytes": 17573744640,
+        "logical_bytes": 1019683,
+        "allocated_bytes": 1232896,
+        "elapsed_seconds": 2.019
+      },
+      "minimum_free_bytes_observed": 17564057600,
+      "maximum_logical_bytes_observed": 1019683,
+      "maximum_allocated_bytes_observed": 1232896,
+      "maximum_sample_interval_seconds": 1.007
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "duration_seconds": 2.02,
+      "limits": {
+        "start_bytes": 15032385536,
+        "floor_bytes": 12884901888,
+        "maximum_build_bytes": 1073741824
+      },
+      "log_sha256": "add9da0b7350db20c4ed1f69594c132299c130855c16bda6a9c670ac86655a09",
+      "name": "installed-v2",
+      "samples": 5,
+      "initial": {
+        "free_bytes": 17540468736,
+        "logical_bytes": 503027,
+        "allocated_bytes": 704512,
+        "elapsed_seconds": 0.001
+      },
+      "final": {
+        "free_bytes": 17533050880,
+        "logical_bytes": 1004615,
+        "allocated_bytes": 1224704,
+        "elapsed_seconds": 2.021
+      },
+      "minimum_free_bytes_observed": 17533050880,
+      "maximum_logical_bytes_observed": 1004615,
+      "maximum_allocated_bytes_observed": 1224704,
+      "maximum_sample_interval_seconds": 1.008
+    }
+  ],
+  "final_build": "v2",
+  "supervisor": {
+    "reused_from": "SRC40",
+    "sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc",
+    "previous_control_tests_passed": 7,
+    "control_tests_rerun": false
+  },
+  "runtime_tests": {
+    "own_cases": [
+      "docking",
+      "tabs",
+      "lifecycle",
+      "memory",
+      "file",
+      "invalid",
+      "missing"
+    ],
+    "provider_program": "includes_test (compile/link and no-op main; not a functional GUI test)",
+    "cases_per_stage": 8,
+    "final_stages": [
+      "build-v2-fixture",
+      "installed-v2"
+    ],
+    "final_ctest_executions_passed": 16,
+    "final_failed_ctest_cases": 0,
+    "final_skipped_ctest_cases": 0,
+    "historical_build_v1_ctest_executions_passed": 8,
+    "additional_loader_executions_final": 6,
+    "historical_loader_executions": 3,
+    "provider_original_inputs_unchanged_per_consumer": 2,
+    "platform": "offscreen",
+    "missing_explicit_kdd_root_rejected_after_install": true,
+    "missing_explicit_qt_root_rejected_after_install": true,
+    "semantic_layout_checks": [
+      "stable IDs",
+      "open states",
+      "docked/floating states",
+      "tab groups",
+      "active tab",
+      "main window association",
+      "guest contents",
+      "restored IDs",
+      "restore completed"
+    ],
+    "recovery_after_invalid_or_missing": true
+  },
+  "preserved_failures": [
+    {
+      "stage": "build-v1-fixture verification",
+      "reason": "Verifier expected KDDockWidgets-qt6_DIR cache entry, but fixture deliberately defines it as a normal CMake variable. Eight tests and loader traces had passed.",
+      "failure": "AssertionError",
+      "correction": "Verify explicit SH3_KDD_CMAKE_ROOT value, actual linker target and loader trace; keep test expectations unchanged."
+    },
+    {
+      "stage": "installed-v2 verification",
+      "reason": "Verifier assumed build and installed Mach-O hashes were identical. CMake explicitly rewrites LC_ID_DYLIB with install_name_tool. All eight installed tests and loader traces passed.",
+      "failure": "AssertionError",
+      "correction": "Reproduce exact install_name_tool -id operation on a temporary build-library copy and require byte-identical hash to installed library."
+    },
+    {
+      "stage": "installed-v1-build",
+      "exit_code": 2,
+      "reason": "Original includes_test could not find qtwidgets/Platform.h in installed package",
+      "correction": "Install existing header via one CMake rule; fresh v2 build and consumers; unchanged original tests"
+    }
+  ],
+  "installation": {
+    "manifest_entries": 99,
+    "installation_transform": {
+      "operation": "install_name_tool -id PREFIX/lib/libkddockwidgets-qt6.3.dylib",
+      "before_sha256": "f75c956b5e5c6d699769d1c020339fb6f99e60932c886f52c99e740d105c0cdf",
+      "after_sha256": "be30435867527a3fcba331edda30f25ba1e9fd0ca226eb39e7126f4f2d2c1728",
+      "transformed_copy_identical_to_install": true
+    },
+    "unique_manifest_entries": 98,
+    "library_v1_v2_identical": true,
+    "installed_file_inventory": [
+      {
+        "path": "share/doc/KDDockWidgets-qt6/LICENSE.txt",
+        "sha256": "dae642f8054f6e1501c584406097ea1ecc4c7d6843852ab8c6e605906f6d6c73",
+        "bytes": 402
+      },
+      {
+        "path": "share/doc/KDDockWidgets-qt6/README.md",
+        "sha256": "d879f8e5fead3c52cde58a6f8e5377a09f6936e84448316a85af41d239e420e4",
+        "bytes": 4732
+      },
+      {
+        "path": "share/doc/KDDockWidgets-qt6/LICENSES/GPL-2.0-only.txt",
+        "sha256": "b3c87315aae4c9f276c37168f2655dd8bd990544d7a0bbfb929664155c7ab257",
+        "bytes": 17622
+      },
+      {
+        "path": "share/doc/KDDockWidgets-qt6/LICENSES/MIT.txt",
+        "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+        "bytes": 1078
+      },
+      {
+        "path": "share/doc/KDDockWidgets-qt6/LICENSES/GPL-3.0-only.txt",
+        "sha256": "2ca9503d76d1ffab14f599b4741382eec11face60ad1f0d7a41897809003a286",
+        "bytes": 34470
+      },
+      {
+        "path": "share/doc/KDDockWidgets-qt6/LICENSES/BSD-3-Clause.txt",
+        "sha256": "a2b723bddb54fe87d6543b8c872fe4cd65ebe0879266975759a8d4af1f9283dd",
+        "bytes": 1533
+      },
+      {
+        "path": "mkspecs/modules/qt_KDDockWidgets.pri",
+        "sha256": "61b52049a1f8e3c777de291799e11da4b06919204fc4e4b27ff657af5526ee53",
+        "bytes": 446
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/ViewFactory.h",
+        "sha256": "2184593ba8b5658128ad4dc6a1cfa1355294a34a57e0199feb02d72787a47d58",
+        "bytes": 3124
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/ViewFactory.h",
+        "sha256": "2184593ba8b5658128ad4dc6a1cfa1355294a34a57e0199feb02d72787a47d58",
+        "bytes": 3124
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/Platform.h",
+        "sha256": "cf91f4a4981a8ac569d42ff7001ca6c1b735284b1f635fede1b3112fec741518",
+        "bytes": 2527
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/DockWidget.h",
+        "sha256": "9622ea98469a375a055b37469091b1e990782206a1a3c8acbca2da1510345230",
+        "bytes": 3794
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/Separator.h",
+        "sha256": "bac7c164ef52ec36d79d8ee407185f2375fa505bf1e933cf92f7e6ff394ba4aa",
+        "bytes": 1157
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/RubberBand.h",
+        "sha256": "7fb0b11d9cd51e14ef5aed810cd028410f6f83f9d278ad3d36c476852012f6ac",
+        "bytes": 676
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/SideBar.h",
+        "sha256": "6722920a239e1153e35473e872d68ec05eaea052ff76b88aa6618f438eec2f67",
+        "bytes": 1722
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/FloatingWindow.h",
+        "sha256": "40493b2a1bb575b6c08cd06b4a43b0aa3885dabe865a291ebab33b320c4dd57c",
+        "bytes": 1461
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/View.h",
+        "sha256": "ed76be1232d2ecc02f01648928c50780c242df253705925f4db3ee446314055b",
+        "bytes": 10098
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/MainWindowMDI.h",
+        "sha256": "a149815c4dd91d238e9f62628c7a29940ba0c74e92d3addb40b17f0c8ef4dcf7",
+        "bytes": 1281
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/MDILayout.h",
+        "sha256": "13eea7e30bdbec794be9eb3d58763ded712a7f14241962327bdfcf970d152836",
+        "bytes": 866
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/MDIArea.h",
+        "sha256": "3f9af63b58c4db64e03bd2afd405a07aced1d4dfc826fb9810ead67db3a59465",
+        "bytes": 2236
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/DropArea.h",
+        "sha256": "1485e8b5260cfa919660befbd73846c6b6d7dbe853d7042caf848520717caf7c",
+        "bytes": 1001
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/Stack.h",
+        "sha256": "6a9ce9b0f49ba375e0f6fd0d18d6f269dc4b94662c49d0116e91a9479b6ad22f",
+        "bytes": 1717
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/Group.h",
+        "sha256": "edaf7bd7322ef3eeb67876ea8f7b876ba7d3f938a80e7adc2bf1210847d2571d",
+        "bytes": 1062
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/TabBar.h",
+        "sha256": "b821a10ac691bd6be8d5bfb2a82565ccdc7a0bd8c85f755ae2edbb7612191c90",
+        "bytes": 2093
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/ClassicIndicatorsWindow.h",
+        "sha256": "9645b93a2fbb59a390642e8d8a104d36f4cf48dfdbfc41ab35884a2af70d3f42",
+        "bytes": 1967
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/SegmentedDropIndicatorOverlay.h",
+        "sha256": "4deb1e70129e22a94537fd5ad2d8bc90368fcaf200809dd42c68e9ccb5e345e9",
+        "bytes": 1239
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/MainWindow.h",
+        "sha256": "a97b4c05636ed25b9eb63898a7fca80a8f821dd32c78b9cb86e57224d655742d",
+        "bytes": 4715
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/TitleBar.h",
+        "sha256": "272ea51a502fe2f8b0155e6c78e971ed02e3f35de9eb77590e5737ef40c878c0",
+        "bytes": 3391
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/View.h",
+        "sha256": "ed76be1232d2ecc02f01648928c50780c242df253705925f4db3ee446314055b",
+        "bytes": 10098
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/FloatingWindow.h",
+        "sha256": "40493b2a1bb575b6c08cd06b4a43b0aa3885dabe865a291ebab33b320c4dd57c",
+        "bytes": 1461
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/DockWidget.h",
+        "sha256": "9622ea98469a375a055b37469091b1e990782206a1a3c8acbca2da1510345230",
+        "bytes": 3794
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/DropArea.h",
+        "sha256": "1485e8b5260cfa919660befbd73846c6b6d7dbe853d7042caf848520717caf7c",
+        "bytes": 1001
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/MDILayout.h",
+        "sha256": "13eea7e30bdbec794be9eb3d58763ded712a7f14241962327bdfcf970d152836",
+        "bytes": 866
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/Group.h",
+        "sha256": "edaf7bd7322ef3eeb67876ea8f7b876ba7d3f938a80e7adc2bf1210847d2571d",
+        "bytes": 1062
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/MainWindow.h",
+        "sha256": "a97b4c05636ed25b9eb63898a7fca80a8f821dd32c78b9cb86e57224d655742d",
+        "bytes": 4715
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/MainWindowMDI.h",
+        "sha256": "a149815c4dd91d238e9f62628c7a29940ba0c74e92d3addb40b17f0c8ef4dcf7",
+        "bytes": 1281
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/MDIArea.h",
+        "sha256": "3f9af63b58c4db64e03bd2afd405a07aced1d4dfc826fb9810ead67db3a59465",
+        "bytes": 2236
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/RubberBand.h",
+        "sha256": "7fb0b11d9cd51e14ef5aed810cd028410f6f83f9d278ad3d36c476852012f6ac",
+        "bytes": 676
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/Separator.h",
+        "sha256": "bac7c164ef52ec36d79d8ee407185f2375fa505bf1e933cf92f7e6ff394ba4aa",
+        "bytes": 1157
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/TitleBar.h",
+        "sha256": "272ea51a502fe2f8b0155e6c78e971ed02e3f35de9eb77590e5737ef40c878c0",
+        "bytes": 3391
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/TabBar.h",
+        "sha256": "b821a10ac691bd6be8d5bfb2a82565ccdc7a0bd8c85f755ae2edbb7612191c90",
+        "bytes": 2093
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/Stack.h",
+        "sha256": "6a9ce9b0f49ba375e0f6fd0d18d6f269dc4b94662c49d0116e91a9479b6ad22f",
+        "bytes": 1717
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/SideBar.h",
+        "sha256": "6722920a239e1153e35473e872d68ec05eaea052ff76b88aa6618f438eec2f67",
+        "bytes": 1722
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/ClassicIndicatorsWindow.h",
+        "sha256": "9645b93a2fbb59a390642e8d8a104d36f4cf48dfdbfc41ab35884a2af70d3f42",
+        "bytes": 1967
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtwidgets/views/SegmentedDropIndicatorOverlay.h",
+        "sha256": "4deb1e70129e22a94537fd5ad2d8bc90368fcaf200809dd42c68e9ccb5e345e9",
+        "bytes": 1239
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/MainWindow.h",
+        "sha256": "11e2942a8cc20196ccf6b37a5a5a7b1251f8a8dcdbedc8b35f97e6bf5b12f661",
+        "bytes": 377
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/DockWidget.h",
+        "sha256": "bbb9da91eb7d2bdd77e0261ea6db30b1a01a94a42e02875686ab7e174acc1f05",
+        "bytes": 377
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/ViewFactory.h",
+        "sha256": "2184593ba8b5658128ad4dc6a1cfa1355294a34a57e0199feb02d72787a47d58",
+        "bytes": 3124
+      },
+      {
+        "path": "lib/libkddockwidgets-qt6.2.4.1.dylib",
+        "sha256": "be30435867527a3fcba331edda30f25ba1e9fd0ca226eb39e7126f4f2d2c1728",
+        "bytes": 2329704
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/docks_export.h",
+        "sha256": "05376bc3e3497fa52d25e656951ad911265bfc66b97872783e1afe35bd65d367",
+        "bytes": 1325
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/Config.h",
+        "sha256": "dc7361780a7f43e2b82d5b4ad608951153305fbb8bc0614ba36eb4a44b4e8197",
+        "bytes": 20712
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/KDDockWidgets.h",
+        "sha256": "e09d20d0b2ceb3db0421fb9292f2c8eaa4dd49f805c5b34cfad66aa4ea18a433",
+        "bytes": 15551
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/LayoutSaver.h",
+        "sha256": "09858ff9aab771cb746b613e0a09040362eeb468ad0ba4f638d7078aeb057e21",
+        "bytes": 4446
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/Qt5Qt6Compat_p.h",
+        "sha256": "43b706289bff73bd18c5900855a4ac6435406f0374af9ad46467e342fb010d19",
+        "bytes": 1335
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/QtCompat_p.h",
+        "sha256": "24631c7cc144ebea8f0b7dc3c110cb96f4e4386fcdc5abef0e84c1ee68708fd8",
+        "bytes": 5782
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/DockWidget.h",
+        "sha256": "a5cdfeacb960b1e4026f317d68ec3bf63d229bec47469597d8d3f678feaa8cbb",
+        "bytes": 20847
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/DropIndicatorOverlay.h",
+        "sha256": "e4b4170d902d9504801d9866e19d8beaef52b6bdc6f66758034f70e54522a3c9",
+        "bytes": 2864
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/DropArea.h",
+        "sha256": "c8588a31d703d2a2f0f6536b0b263e632b0084ec928654d3de55a25611a11413",
+        "bytes": 6945
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/FloatingWindow.h",
+        "sha256": "ac9c93dd06e5a256475581eed3f9d739de76813650b1925c4c9a2efb83d011b0",
+        "bytes": 7693
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/Group.h",
+        "sha256": "430f5b72ae999ebfbf3e74e53ed3716d77d0409bbf79c0ff2b047b1618e4a1c2",
+        "bytes": 11799
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/Layout.h",
+        "sha256": "e72de2d6a2a92355a2fdc9cee941749f05c0ceab99e7d7c4016ecc5bdaba2bd0",
+        "bytes": 6956
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/MDILayout.h",
+        "sha256": "74630a872005a517243014cb1f2859a2d4855c1045fef10a14f1670a47a6b34f",
+        "bytes": 1891
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/SideBar.h",
+        "sha256": "26022d13c93a920499108c1e4fb21fe8ba1993791e637c8a5d027c4edf5d0fd5",
+        "bytes": 2189
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/TabBar.h",
+        "sha256": "0892ef8c4ded4ca2ab447f41df13ac5ba414a44aaa60629319ba1ea2de0e5d1d",
+        "bytes": 2573
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/FocusScope.h",
+        "sha256": "eea1eb9f489760d6a3e216e260f5e29dbbc65fe476299dd3eb0fca88a4cee9a7",
+        "bytes": 1595
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/MainWindow.h",
+        "sha256": "2d0b970bdf57d55759d27734e5d28397144f01da22fa0334fc45d93eaebda188",
+        "bytes": 11658
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/Separator.h",
+        "sha256": "a0808dbcca51d1d2578df2fdff2b977d9cfae823953e372196dda93fed44bc07",
+        "bytes": 1707
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/Stack.h",
+        "sha256": "cb0b59a41e006886cd316ba91d41fad59f538f12c699d90c2ac89e696b5f10e5",
+        "bytes": 2790
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/TitleBar.h",
+        "sha256": "652f1a9f571ae39ce6f2219e3ba1908c346167d7e55c52528e38aad8f4fc8aef",
+        "bytes": 5951
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/View.h",
+        "sha256": "531c71b90f1f8b66c1946d536fc3001ef95e60a7960b657f966fcc7fe84b288c",
+        "bytes": 10088
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/EventFilterInterface.h",
+        "sha256": "dad9dc72fd9c196df3fbdcd04a30c2101708ac74f318ff6dc1484fd7fe342e63",
+        "bytes": 2381
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/Draggable_p.h",
+        "sha256": "f52c8fc7417b84a5141638c6938d3897e3417697b32e156ab312d8114082474e",
+        "bytes": 3525
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/WindowBeingDragged_p.h",
+        "sha256": "4db1121e4840aa4af20e320f8225b51221217166f2de1c2b8d74819df4fcb19e",
+        "bytes": 3768
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/WidgetResizeHandler_p.h",
+        "sha256": "4fac7bccdf0ce3e8326f6f9bde83395c8653f3c1fae6d39eed02f1f10d00b9be",
+        "bytes": 7241
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/DockRegistry.h",
+        "sha256": "33eb42ace1d0f9772a6d573660ae426390b6b9466df4e3da95c3a5a48919f4ff",
+        "bytes": 11147
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/Controller.h",
+        "sha256": "d40ebd027b600a7d2db6118944806737380adf7bb4ccf4ee8833fd63827ffd88",
+        "bytes": 2587
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/ViewFactory.h",
+        "sha256": "88896841bb81d55f933cc1b3d2626b57ed78092f912e46c85cff81da587a38c5",
+        "bytes": 6235
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/Platform.h",
+        "sha256": "eb5be82af1cb7a6f0bfe6cd4c7a27e570327a5a6ec50df3fddb2aaaa02b2bcee",
+        "bytes": 13873
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/Action.h",
+        "sha256": "aebd5139af27a0c0dc0cb8e4413198dd169728afd3716d2568aa84f70626d73d",
+        "bytes": 1453
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/views/StackViewInterface.h",
+        "sha256": "cc8504410a08f576755349d0024070b6bdbaeb68164f77626de6132d160b731d",
+        "bytes": 1492
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/views/SideBarViewInterface.h",
+        "sha256": "84871fb82121829880547794ed39ca94276c0539b417846a4b595496f55dd6ec",
+        "bytes": 995
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/views/ClassicIndicatorWindowViewInterface.h",
+        "sha256": "0d9fcb286c9be53ff4b49a54d4e34c493f2671a6aa06e3e864fd986a07b66a2e",
+        "bytes": 2274
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/views/TabBarViewInterface.h",
+        "sha256": "4b0a5d8662a27538b1e0b8a8d34cc74a546f63e843e93b20f8b1c5485552996d",
+        "bytes": 1820
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/views/TitleBarViewInterface.h",
+        "sha256": "0d7782f6bc2716acaff543ddedad7e032391d9f875d67b3382ddc01913faa548",
+        "bytes": 1037
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/views/DockWidgetViewInterface.h",
+        "sha256": "884bc00c3eb6bd5ef457ee255e0738f64cae3fd73ceb3e7dcad8b9f5de601365",
+        "bytes": 2686
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/views/MainWindowMDIViewInterface.h",
+        "sha256": "4c136e7510681444f6ba3f950875af6234a7a3f9af7e0f7959d173a7c45c3345",
+        "bytes": 1393
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/views/MainWindowViewInterface.h",
+        "sha256": "357897722985433616c4c4b7297b533ef5bea0b1abd41ad1a09b969292cab35a",
+        "bytes": 3027
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/views/GroupViewInterface.h",
+        "sha256": "24f9a7374921ecc3ea9b60dee24eda9b435d70f7051415a3f104c04735a5000c",
+        "bytes": 1600
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/indicators/NullDropIndicatorOverlay.h",
+        "sha256": "ac09ccb1f3f25a53ebc197b5715a47a274a3b44429893e5f2149f160b4d31ba9",
+        "bytes": 1066
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/indicators/ClassicDropIndicatorOverlay.h",
+        "sha256": "93ca6dc33466860bbbfa696a1f4284e3114dfd94691e1557b646e4b01980a4f2",
+        "bytes": 1372
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/core/indicators/SegmentedDropIndicatorOverlay.h",
+        "sha256": "c36731f222a70c3205f559f219000cb8389f41b0eb64b25843a002fed00db1e1",
+        "bytes": 1435
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtcommon/Platform.h",
+        "sha256": "f93bb589de8111e11c0ae5b2043cfa2b448d14fe558b7666814923f0f3ef6f4a",
+        "bytes": 4246
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/qtcommon/View.h",
+        "sha256": "c7dd3909d240cc1c9ae757d81662fa3059d91284472a3a3f9d8ee7528bff739f",
+        "bytes": 1397
+      },
+      {
+        "path": "include/kddockwidgets-qt6/kddockwidgets/kddockwidgets_version.h",
+        "sha256": "dd2d6f8188c33fea2f4d270d9c02d280f5802246c9df30a1ee668677f31d0a3d",
+        "bytes": 618
+      },
+      {
+        "path": "lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6Targets.cmake",
+        "sha256": "749897901deb082840ae5d95d19bbbbd74bee141ba604d21113bf348036ceaab",
+        "bytes": 4285
+      },
+      {
+        "path": "lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6Targets-release.cmake",
+        "sha256": "bb410a05013edbd0eb3906a008211934536f7dfdae5c1e3590c3dfbecb5e8928",
+        "bytes": 939
+      },
+      {
+        "path": "lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6Config.cmake",
+        "sha256": "6d8fa3151834ebfdc55418de63765c1cfdd85e79258ce9f6334b14487e2a2c2a",
+        "bytes": 780
+      },
+      {
+        "path": "lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6ConfigVersion.cmake",
+        "sha256": "2a11048cc6ae001274bc514adae6fc18777c28ae3b20b9113e2a8a88238f01f5",
+        "bytes": 1861
+      }
+    ],
+    "installed_symlinks": [
+      {
+        "path": "lib/libkddockwidgets-qt6.3.dylib",
+        "target": "libkddockwidgets-qt6.2.4.1.dylib"
+      },
+      {
+        "path": "lib/libkddockwidgets-qt6.dylib",
+        "target": "libkddockwidgets-qt6.3.dylib"
+      }
+    ],
+    "binary_inventory": [
+      {
+        "path": "lib/libkddockwidgets-qt6.2.4.1.dylib",
+        "sha256": "be30435867527a3fcba331edda30f25ba1e9fd0ca226eb39e7126f4f2d2c1728",
+        "bytes": 2329704,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "db30f309d13b59dd4a774e366364f255553db26a927c49fba4554bc96b211afe"
+      }
+    ],
+    "build_binary_sha256": "f75c956b5e5c6d699769d1c020339fb6f99e60932c886f52c99e740d105c0cdf",
+    "previous_regular_files_unchanged": 4959,
+    "previous_symlinks_unchanged": 58,
+    "manifest_evidence_sha256": "70cbcc5ad494c84afe795845ab4fbd0f0c9abc482706b5bfb8415407f12a9a3a",
+    "consumer_binaries": [
+      {
+        "stage": "build-v2-fixture",
+        "executable": "kdw_consumer",
+        "sha256": "736c97c10571eb2d14b33013594f5aee4cd51d6722ab3d8fbc3493e362ca08b9",
+        "bytes": 61456,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "7c8b305e7a96467bfcdcf8b1c473f3ca169f444e99ebc08bac3402e552e181b3"
+      },
+      {
+        "stage": "build-v2-fixture",
+        "executable": "provider/includes_test",
+        "sha256": "4fb96445813c81aba0aeb0a4c9fb9a26b514ce50fa5bb4dfbcdc7ff0f866028e",
+        "bytes": 20712,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "00af2f276a059f6997fd48c99d113374f9f93950db42235f071ba01309baa92c"
+      },
+      {
+        "stage": "installed-v2",
+        "executable": "kdw_consumer",
+        "sha256": "ba826862bfb9847e23fb7ff1bbe0455d9bce9d6f9ed5fadf386797442a3a7370",
+        "bytes": 61456,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "c6b2bc317623bc0b473484cae77c9094bb1598a62cefe6f23cee928e6cfbceda"
+      },
+      {
+        "stage": "installed-v2",
+        "executable": "provider/includes_test",
+        "sha256": "9ecd3fd8a1a29fd44c035219631f44fb8a480ab3f6edea2b68bb2fe4b9d6ca94",
+        "bytes": 20712,
+        "architecture": "x86_64",
+        "minimum_macos": "11.0",
+        "load_commands_sha256": "7a0faa581ac93645ea17ada024dead398916a164b51268dc983be312b1160534"
+      }
+    ]
+  },
+  "source_verification": {
+    "originals_unchanged": 793,
+    "working_original_files_unchanged": 792,
+    "generated_files": [],
+    "changed_original_files": [
+      "src/CMakeLists.txt"
+    ],
+    "license_notice_files": [
+      {
+        "path": "LICENSE.GPL.txt",
+        "sha256": "f589e7b6041b47b67d3515627d6c288966741d629e031dc76ddc7e9d11a11d92"
+      },
+      {
+        "path": "3RDPARTY.md",
+        "sha256": "634742f22fa21b9f2d4eba33c7e77fde2c2cabfc473f5be4e649691893dafdae"
+      },
+      {
+        "path": "LICENSE.txt",
+        "sha256": "dae642f8054f6e1501c584406097ea1ecc4c7d6843852ab8c6e605906f6d6c73"
+      },
+      {
+        "path": "LICENSES/GPL-2.0-only.txt",
+        "sha256": "b3c87315aae4c9f276c37168f2655dd8bd990544d7a0bbfb929664155c7ab257"
+      },
+      {
+        "path": "LICENSES/MIT.txt",
+        "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0"
+      },
+      {
+        "path": "LICENSES/GPL-3.0-only.txt",
+        "sha256": "2ca9503d76d1ffab14f599b4741382eec11face60ad1f0d7a41897809003a286"
+      },
+      {
+        "path": "LICENSES/BSD-3-Clause.txt",
+        "sha256": "a2b723bddb54fe87d6543b8c872fe4cd65ebe0879266975759a8d4af1f9283dd"
+      },
+      {
+        "path": "docs/KDDockWidgets-CopyrightAssignmentForm.pdf",
+        "sha256": "aaf68be52ef2e28c32931c0d75be467d6b7f6c93c1e377465defc01fd8cfee75"
+      },
+      {
+        "path": "src/3rdparty/nlohmann/nlohmann/LICENSE.MIT",
+        "sha256": "86b998c792894ccb911a1cb7994f7a9652894e7a094c0b5e45be2f553f45cf14"
+      }
+    ],
+    "pcsx2_source_clean": true,
+    "original_provider_test_expectations_unchanged": true
+  },
+  "pcsx2_configuration": {
+    "version": "v16",
+    "exit_code": 1,
+    "resolved_qt_components": [
+      "Core",
+      "CoreTools",
+      "Gui",
+      "GuiTools",
+      "Widgets",
+      "WidgetsTools",
+      "LinguistTools"
+    ],
+    "kddockwidgets_resolved": true,
+    "source_clean": true,
+    "next_fatal_dependency": "FFMPEG::avcodec",
+    "ffmpeg_still_missing": true
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "blocked",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 17476018176,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    "blockers": [
+      "storage_reserve",
+      "pcsx2_configure"
+    ],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "toolchain_checks_reused_from": "SRC31",
+  "steps": [
+    {
+      "name": "baseline-configure-v16",
+      "status": "expected-result",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 9.23,
+      "log_sha256": "cadc526101ea69cc8f6fddbcb4f6fb67daf31f3274b4b628407218143533f864"
+    },
+    {
+      "name": "build-v1-fixture-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "duration_seconds": 3.03,
+      "log_sha256": "add9da0b7350db20c4ed1f69594c132299c130855c16bda6a9c670ac86655a09"
+    },
+    {
+      "name": "build-v1-fixture-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.67,
+      "log_sha256": "d1b8de476b73b200616246af4d5a2dfd883468bb6d7553bcf10652f3c4f9d87d"
+    },
+    {
+      "name": "build-v1-fixture-ctest",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 5.09,
+      "log_sha256": "8680d10283c98bd3f4444c80fa835620b9186e44bbe78db0e36fac4ca8bc7577"
+    },
+    {
+      "name": "build-v1-fixture-loader-docking",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.69,
+      "log_sha256": "675b636a4f2020c8e7be4d14ba61ee9c7cecc47b78d1d3378d64322e73a759e9"
+    },
+    {
+      "name": "build-v1-fixture-loader-invalid",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.38,
+      "log_sha256": "3d119fda55b294e9156a0253a522c4c74661a9326807b362310cf3cfea7fe7f7"
+    },
+    {
+      "name": "build-v1-fixture-loader-memory",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.39,
+      "log_sha256": "f7f2cb0655baf0e9afb38bd535fa8c96f9d27d9ff588daef45e8f5060ab7af55"
+    },
+    {
+      "name": "build-v2-fixture-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "duration_seconds": 2.02,
+      "log_sha256": "cf6b81fccbc920973e38d43aed56e0705033899b1a3c87aa7c1aa94694739ac8"
+    },
+    {
+      "name": "build-v2-fixture-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.6,
+      "log_sha256": "57dd7f31676b8effc83abad0d8b53cf5682f9090f4a6b4ee7aae913acbb0e069"
+    },
+    {
+      "name": "build-v2-fixture-ctest",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 5.96,
+      "log_sha256": "27cf6242a1d21286e10b040b04a08d93c0a51e86b8bb7c43ca35919880893a09"
+    },
+    {
+      "name": "build-v2-fixture-loader-docking",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.51,
+      "log_sha256": "adaaff8f141d2a8435a2221e39c503279aa1a354d59a596077a11245bf9766eb"
+    },
+    {
+      "name": "build-v2-fixture-loader-invalid",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.57,
+      "log_sha256": "ee21ad6dcb9a27c0628dc689c7e05ebe52da72cccf2c85190d23879a8db73629"
+    },
+    {
+      "name": "build-v2-fixture-loader-memory",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.38,
+      "log_sha256": "47b4cad7b07fe9a5e611fe9c3fb97ddf453c909c86b6185da51f48f58dbaf844"
+    },
+    {
+      "name": "download-v1",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.49,
+      "log_sha256": "38eb825150aa2bcdf990f8a9bcd78a460ff648de54888845f03a00917ccb651d"
+    },
+    {
+      "name": "installed-v1-build",
+      "status": "failed-attempt-preserved",
+      "exit_code": 2,
+      "duration_seconds": 2.02,
+      "log_sha256": "c27281e7c8baaf0dd896ea52aec12033e164f0070f6034bc0ae1ef42b930bae2"
+    },
+    {
+      "name": "installed-v1-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.6,
+      "log_sha256": "2330b4ddd33b092982d9e123be711d86dfc519e54fa996b004820c0fccab2d0a"
+    },
+    {
+      "name": "installed-v2-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "duration_seconds": 2.02,
+      "log_sha256": "add9da0b7350db20c4ed1f69594c132299c130855c16bda6a9c670ac86655a09"
+    },
+    {
+      "name": "installed-v2-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.58,
+      "log_sha256": "a4c588fcc62a832996adddb04964da8ac57ab4dc440976c632dbd1ed6d429f11"
+    },
+    {
+      "name": "installed-v2-ctest",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 5.13,
+      "log_sha256": "ee2d0537e819ed9beacd0272c170ee7eaf72a9cd0ecb96f040be9eb1bd9c060a"
+    },
+    {
+      "name": "installed-v2-loader-docking",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 1.0,
+      "log_sha256": "3a4e72c57441523538fb2013f7bb301208b747f2c9f9c8c3ada6222f20232443"
+    },
+    {
+      "name": "installed-v2-loader-invalid",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.36,
+      "log_sha256": "051f501817df7a6a797d5ecbc052e0e2289af8b52dbbd3979a2c1a2fe34553aa"
+    },
+    {
+      "name": "installed-v2-loader-memory",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.37,
+      "log_sha256": "e664db44b2dbc914ca430d95e7508418bfb5ba9758768777e5a26943229cd1f7"
+    },
+    {
+      "name": "kddockwidgets-export-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.29,
+      "log_sha256": "7b391022772c1b6dd29cb6227b7fdaa7a3d18a6270d642ddf3dd0b3dfcf21cf1"
+    },
+    {
+      "name": "kddockwidgets-v1-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "duration_seconds": 61.9,
+      "log_sha256": "4b9f9d7332d59dfd8e41b44e5eb18c8fd33cba9b0a941381fc4372843f2d005a"
+    },
+    {
+      "name": "kddockwidgets-v1-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 8.84,
+      "log_sha256": "ac5263263a8c7462897119f435a7d32f09ae52fb47d2734061ec9208c5044b40"
+    },
+    {
+      "name": "kddockwidgets-v1-install",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.1,
+      "log_sha256": "a6d0813a71d41539007a982477001622ce86d66ae6f179113d20f082048e4059"
+    },
+    {
+      "name": "kddockwidgets-v2-build",
+      "status": "expected-result",
+      "exit_code": 0,
+      "duration_seconds": 62.69,
+      "log_sha256": "4b9f9d7332d59dfd8e41b44e5eb18c8fd33cba9b0a941381fc4372843f2d005a"
+    },
+    {
+      "name": "kddockwidgets-v2-configure",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 8.07,
+      "log_sha256": "e15bc74931d325479c7c95bde5e405e92d4a751f2755e7524bb56556e03f37d4"
+    },
+    {
+      "name": "kddockwidgets-v2-install",
+      "status": "expected-result",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.2,
+      "log_sha256": "7a0590fcb9d31ce97e06ccfccf736861fe8f2061a330c522dfc452ef442acc8e"
+    },
+    {
+      "name": "missing-kdd-prefix-v1",
+      "status": "expected-result",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.79,
+      "log_sha256": "bfdf7907ec7d05844a439759ac8bbbb407b0bf9f0773e1b2d20c57517cfd1dd5"
+    },
+    {
+      "name": "missing-qt-prefix-v1",
+      "status": "expected-result",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "duration_seconds": 0.32,
+      "log_sha256": "fbebeac4480aed8c027617484788f9d80968f8ce87d50127c2d3238bec8a25fc"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "path": "schemas/pcsx2-kddockwidgets-v1.md",
+      "bytes": 4655,
+      "sha256": "6e22c650d7bc244868672a43fa9ad3b737136649ce84edb1aa85275d2387331d"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-kddockwidgets/CMakeLists.txt",
+      "bytes": 1997,
+      "sha256": "f1480a1e371f6ed76ecd2dd13668badccf5b919f224e9e3b308188da04beda14"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-kddockwidgets/README.md",
+      "bytes": 3545,
+      "sha256": "4cc4926c139146e10592b80433671c798927a6cba6fa4642031f58e8a3d976f6"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-kddockwidgets/consumer.cpp",
+      "bytes": 7884,
+      "sha256": "836d3452fb6547e7979922db8efbfcafa5fc2694d9522454a1f80081f3106e6e"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-kddockwidgets/export-build-tree.cmake",
+      "bytes": 308,
+      "sha256": "0ca909f7105c775f84ee9e92933173d0dd01af48e43e1480bcfc664b52ef5fb8"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "actions-before-packaging-fix.py",
+      "bytes": 4460,
+      "sha256": "c477e8cd8258dd196722ae282c4fbc937e51f81cdcc9c18747e9c9c18434caea"
+    },
+    {
+      "name": "actions.py",
+      "bytes": 4460,
+      "sha256": "0e342f3be5f7ade28e1b376557211f0e8d0bd3bbf6c3a9b4660e51bd5e418462"
+    },
+    {
+      "name": "apply_packaging_fix.py",
+      "bytes": 1352,
+      "sha256": "6cf3226d32931e482fcbae68e34efae4b3fffc2159c420a78c84a948fd6baec5"
+    },
+    {
+      "name": "archive.json",
+      "bytes": 291,
+      "sha256": "677707d99e0fe73b3478b97861db0ec42f0d0638bc957b0e50f1314aea74d100"
+    },
+    {
+      "name": "baseline-configure-v16.json",
+      "bytes": 1493,
+      "sha256": "f9ba5a28f731cb1425d4615507ec57a5e4ffa4c31dcaeed71a9831920bdf413b"
+    },
+    {
+      "name": "build-v1-fixture-build.json",
+      "bytes": 756,
+      "sha256": "d3628b82cbbd13ac7efc58d470317ab3f74f36b654f7ef29851fcc03fcd99f69"
+    },
+    {
+      "name": "build-v1-fixture-capacity.json",
+      "bytes": 782,
+      "sha256": "a6542c52c6740a66bd3663c82fa9d5b03adeabb4d1a74b720196e44c5ee2a18a"
+    },
+    {
+      "name": "build-v1-fixture-configure.json",
+      "bytes": 2648,
+      "sha256": "7ec0d56227bafdb1047e3f25100fa7ad7653687cac673197d8c1d90563be7ce1"
+    },
+    {
+      "name": "build-v1-fixture-ctest.json",
+      "bytes": 1220,
+      "sha256": "1c6492fe1dc13349b8dc9e7953da89da5f82647acdfba035813746027e9c3238"
+    },
+    {
+      "name": "build-v1-fixture-junit.xml",
+      "bytes": 7257,
+      "sha256": "80a0200478a200f744bb2d7a7ee634fa7b26b73074acb2e9573a4e867217d2e8"
+    },
+    {
+      "name": "build-v1-fixture-loader-docking.json",
+      "bytes": 1059,
+      "sha256": "67413488e00c14fa39fe308fd486093ea45696f7a78ba5866bbd4ae03bf4745c"
+    },
+    {
+      "name": "build-v1-fixture-loader-invalid.json",
+      "bytes": 1059,
+      "sha256": "221017c6dce387e1e3e45d2f5ba3aa1d368a86180fa36f85d3b27a569d28f9ee"
+    },
+    {
+      "name": "build-v1-fixture-loader-memory.json",
+      "bytes": 1056,
+      "sha256": "df8a669579ac1d4b6e057685dbfb41059e1141c593358d4e475cc34ff8b8ece5"
+    },
+    {
+      "name": "build-v1-fixture-verified.json",
+      "bytes": 4220,
+      "sha256": "ddb5e2e385c8c8392c4e33318ec7e4ad1f1822c6bc2608d92a15a8fd250c89e0"
+    },
+    {
+      "name": "build-v2-fixture-build.json",
+      "bytes": 756,
+      "sha256": "2aec50725b6f2d28e23512c81398feb1cb8cc4bed1b26cf219253944e012ff60"
+    },
+    {
+      "name": "build-v2-fixture-capacity.json",
+      "bytes": 651,
+      "sha256": "054a5943d37f8a94e577cf4f280b1b81e3149935d9a374b5043ebd018d393802"
+    },
+    {
+      "name": "build-v2-fixture-configure.json",
+      "bytes": 2647,
+      "sha256": "9da56ef8096bac8e49a946f75d1450054448ff36d5568a275bbb1d5400b10676"
+    },
+    {
+      "name": "build-v2-fixture-ctest.json",
+      "bytes": 1220,
+      "sha256": "367d54d59bbc5de2757ef715fdcb4466d280e8eb223ac16546c63f5f571e3e10"
+    },
+    {
+      "name": "build-v2-fixture-junit.xml",
+      "bytes": 7257,
+      "sha256": "a7591472c8b5ef1107da2752667f31f12d521f6d1860523c1566b349a4ab06e9"
+    },
+    {
+      "name": "build-v2-fixture-loader-docking.json",
+      "bytes": 1059,
+      "sha256": "0e582974f14dcb25aff138158bb50c6687429ca0357615e644be31b98bb59050"
+    },
+    {
+      "name": "build-v2-fixture-loader-invalid.json",
+      "bytes": 1059,
+      "sha256": "6f1b796ab5eec0dec48e6ec264b996f3ea61b2c5dafc17f0cd41432be66908d8"
+    },
+    {
+      "name": "build-v2-fixture-loader-memory.json",
+      "bytes": 1056,
+      "sha256": "417eb8220bf5d6ff9e830075788b1cb648e7195af30e4cfe5feaf570e696ef5b"
+    },
+    {
+      "name": "build-v2-fixture-verified.json",
+      "bytes": 4220,
+      "sha256": "9e50cd7899058aa584dd767457f5bccd1dbd15f168172db28c77c73baf8cbb29"
+    },
+    {
+      "name": "build_module-before-packaging-fix.py",
+      "bytes": 2809,
+      "sha256": "5b838d594175894c93aa18482f4ff57298ee3335af95950ab1152b784b191087"
+    },
+    {
+      "name": "build_module.py",
+      "bytes": 2946,
+      "sha256": "2bb7e51ada88ddc4ddb8b736803a965c3c7606ea08f84f440f902f240b8938e0"
+    },
+    {
+      "name": "capacity-samples-v1.json",
+      "bytes": 8540,
+      "sha256": "dfe8194bc6850df2bf30e64e2d3e65c8d76e00c03604c6a4842826b26120e72f"
+    },
+    {
+      "name": "capacity-samples-v2.json",
+      "bytes": 8676,
+      "sha256": "afbe74cbfd48b5d0d1f936d69e03b02515d887aacc4a13b21126d9316462ce3a"
+    },
+    {
+      "name": "configuration-audit-v1.json",
+      "bytes": 559,
+      "sha256": "4327a6b0ff82608f66485b0af07b33955d16b781145d1a60615785b44a2705ef"
+    },
+    {
+      "name": "configuration-audit-v2.json",
+      "bytes": 559,
+      "sha256": "4327a6b0ff82608f66485b0af07b33955d16b781145d1a60615785b44a2705ef"
+    },
+    {
+      "name": "configure-result-v16.json",
+      "bytes": 1609,
+      "sha256": "40f0747a98c50d0f0eda55af4c58a4604d6aee49312cd13b3ac48e855e161bf6"
+    },
+    {
+      "name": "download-v1.json",
+      "bytes": 1138,
+      "sha256": "d11a4c67d2804eaf5ea385e60c332e27a4b82d4f6d6a56ae70f09713cda67968"
+    },
+    {
+      "name": "finalize.py",
+      "bytes": 1672,
+      "sha256": "32ef90f31828d2854312575c431a8da3af17ba66f4d73e4396ccbf9ce6d196f2"
+    },
+    {
+      "name": "initial-install-manifest.json",
+      "bytes": 14902,
+      "sha256": "120bfd10769172e1c2ae5ec39cef83bd9e392501fa67218565bce674478b2f8f"
+    },
+    {
+      "name": "install-verification.json",
+      "bytes": 20353,
+      "sha256": "70cbcc5ad494c84afe795845ab4fbd0f0c9abc482706b5bfb8415407f12a9a3a"
+    },
+    {
+      "name": "installation-transform.json",
+      "bytes": 305,
+      "sha256": "54e5ddaaad07ecdbee8ecea1893b6ed978b96658958b70b7000aeed7c0b276d6"
+    },
+    {
+      "name": "installed-v1-build.json",
+      "bytes": 749,
+      "sha256": "cc335508623dd4c55adc40987bf3e66b1d5d5f20096536a82a69e58371377b20"
+    },
+    {
+      "name": "installed-v1-capacity.json",
+      "bytes": 649,
+      "sha256": "fbb421a798328bfe8fd5082b4316d0d87062376877d5b0155a4eaf610313c156"
+    },
+    {
+      "name": "installed-v1-configure.json",
+      "bytes": 2639,
+      "sha256": "95a2aa7cb0012326d3c31d4f2ed76ad54b1212224747485633a9a30b9b6ada59"
+    },
+    {
+      "name": "installed-v2-build.json",
+      "bytes": 748,
+      "sha256": "9070a76a731e1b9eb954a75f2e1bc41a5788b4935392df0794f005f9245cd542"
+    },
+    {
+      "name": "installed-v2-capacity.json",
+      "bytes": 652,
+      "sha256": "ba70f3195d3fb396ded085cdae02feab1f502a6d19e9e3653458f5b7f3c1185f"
+    },
+    {
+      "name": "installed-v2-configure.json",
+      "bytes": 2640,
+      "sha256": "b316a0346c979ba445a45b27ce8f3a4e4f03d437aa4979b09419cb0d855ede00"
+    },
+    {
+      "name": "installed-v2-ctest.json",
+      "bytes": 1204,
+      "sha256": "4f205366a5864bab120cd17d15efed3b34eb6323c2bbe83e30a10fba7d3478c6"
+    },
+    {
+      "name": "installed-v2-junit.xml",
+      "bytes": 7255,
+      "sha256": "7275baf0422c6f32208cc54ca65a3bb0e8e995cc127a7dfcc319d87241a0cdc3"
+    },
+    {
+      "name": "installed-v2-loader-docking.json",
+      "bytes": 1046,
+      "sha256": "aaa790fc209cd70b8a84c8abfe62d9bf3a98689db150c464f8f5175b3e411cfc"
+    },
+    {
+      "name": "installed-v2-loader-invalid.json",
+      "bytes": 1047,
+      "sha256": "58ed1096b0aa83dfdeff1190f4b1afbba578d48d0dc97472fd78f7abbd324160"
+    },
+    {
+      "name": "installed-v2-loader-memory.json",
+      "bytes": 1044,
+      "sha256": "d5627f500c2e34dc883fa49fafa10e7d86fe65c354f52046baa9d1e0d06ca20c"
+    },
+    {
+      "name": "installed-v2-verified.json",
+      "bytes": 4160,
+      "sha256": "cfa7a2374b83ef47c0fc58a981519b5d83c1d7bec8f2644e3c2e2983be9e6b4f"
+    },
+    {
+      "name": "kddockwidgets-export-configure.json",
+      "bytes": 2495,
+      "sha256": "12608092c4a2b8bc38027741cb4c131b5ada2aa21152fe2339f2c7b9024f78a3"
+    },
+    {
+      "name": "kddockwidgets-v1-build.json",
+      "bytes": 1168,
+      "sha256": "d1412a22ee1a9c0094405a3ba81db2fb2ea6d2b1c986c133f79a731a12f07fb6"
+    },
+    {
+      "name": "kddockwidgets-v1-configure.json",
+      "bytes": 2342,
+      "sha256": "11a53c33e74d25db88db57be56159beb0b1e9f6f1af04876c111b38fc70e0ba3"
+    },
+    {
+      "name": "kddockwidgets-v1-install.json",
+      "bytes": 970,
+      "sha256": "9ea55ac2cd4b609d3754cfd0c6f5129221f6307932161590c6e00a7a29061b0e"
+    },
+    {
+      "name": "kddockwidgets-v2-build.json",
+      "bytes": 1169,
+      "sha256": "720e4f4f5583a0a88296783e8d74b69e8a70fd0085c0fbd26fb66df1e6d0b692"
+    },
+    {
+      "name": "kddockwidgets-v2-configure.json",
+      "bytes": 2487,
+      "sha256": "2f9c046760d1aed97cc922c0d81a68c893c7ea71e97b539903333da7884f419b"
+    },
+    {
+      "name": "kddockwidgets-v2-install.json",
+      "bytes": 970,
+      "sha256": "4df903d6f468d0e4eb0202d3134fc82aa483c239f754c64ce3bd60b4f84660c1"
+    },
+    {
+      "name": "missing-kdd-prefix-v1.json",
+      "bytes": 2347,
+      "sha256": "196a8c45a61f5be4ed9c6b3a508650c45e1b7d690465bfb8638f159e47777605"
+    },
+    {
+      "name": "missing-qt-prefix-v1.json",
+      "bytes": 2362,
+      "sha256": "41d63351ea47dbe928490f3132ce177fa898de69a6d486cdfaf01b34e34ce92d"
+    },
+    {
+      "name": "original-inventory.json",
+      "bytes": 115748,
+      "sha256": "1ef0433cb9d31079bdf7a58113c440881645ba480c529684a49e9871c413c3e2"
+    },
+    {
+      "name": "packaging-patch.json",
+      "bytes": 500,
+      "sha256": "00d79a3eaee28dde9cd804ec4b27365160fe5a933589aa59626497519156bb4e"
+    },
+    {
+      "name": "prefix-before.json",
+      "bytes": 567918,
+      "sha256": "529c9a0ce9aee7d5540cb9f530f6e7bb16ccd8433a6976c9bb382ce23fcad8da"
+    },
+    {
+      "name": "prefix-links-before.json",
+      "bytes": 3088,
+      "sha256": "642158456709a0075417a28166290dc9ef57d10b7f63304a7178cfb9a81669d7"
+    },
+    {
+      "name": "preflight-v16.json",
+      "bytes": 834,
+      "sha256": "14a90344f2860504a5ed41ba849a2248c7f8db59b038651871a0a0bddfaf2e22"
+    },
+    {
+      "name": "publish.py",
+      "bytes": 7118,
+      "sha256": "955c8e5e994ff975cc3de2dda9edab36340b91be2647703ea2ae72e03ac0ba69"
+    },
+    {
+      "name": "repository-validation.json",
+      "bytes": 470,
+      "sha256": "d7402bf2f1de3e7f36760cb7e6af454d84109e903087c3497019d1ca2d689ab8"
+    },
+    {
+      "name": "source-verification.json",
+      "bytes": 1522,
+      "sha256": "0864b7fc4fb808de5be1d5c67980815e0f6ec9cb90b9ad14adf4406c27e00078"
+    },
+    {
+      "name": "stage-before-packaging-fix.py",
+      "bytes": 4198,
+      "sha256": "7c1cb2d041eb5f9d0c004b4b21fb6a1ac4766910011a336a7371ad40391ec6ce"
+    },
+    {
+      "name": "stage.py",
+      "bytes": 4323,
+      "sha256": "a594a548f006b1dabd95334647b75f3ead2614e2bc04c86fc538390639d2f06a"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 361,
+      "sha256": "377d235b427691c7915180e07b9d9163f4178a06b08bbf7e018865e9ca7196d7"
+    },
+    {
+      "name": "verification-failure-v1.json",
+      "bytes": 386,
+      "sha256": "90b0d87b715e41de0a0510b180fa687aadbef82c2b910b305a478dc79f3eda22"
+    },
+    {
+      "name": "verification-failure-v2.json",
+      "bytes": 425,
+      "sha256": "4be059cc30aac179b178f4a2a7f29d7795887b96612b34338ea2872ac329c2c5"
+    },
+    {
+      "name": "verify-before-cache-check.py",
+      "bytes": 5280,
+      "sha256": "344c7ba9071eed38a6d92dd345c92d300117d74499b0561f5b39bbe0af07a2e2"
+    },
+    {
+      "name": "verify-before-install-name-check.py",
+      "bytes": 5727,
+      "sha256": "b1dabea9cffdb6257e061f75d553b00d11363ff7c2a677eb11fb2f35208944ab"
+    },
+    {
+      "name": "verify-before-packaging-fix.py",
+      "bytes": 5431,
+      "sha256": "9e43363f86f28116b218032b9ff9e3d9497c00e9e95069ca09afb4d2fd141983"
+    },
+    {
+      "name": "verify.py",
+      "bytes": 6337,
+      "sha256": "c6303e05d1d8c1f9b0b611837c04ed6d29cc22aca065b15d4d229a15127c16c1"
+    }
+  ],
+  "limitations": [
+    "Original full GUI suite needs developer-mode test APIs and was not run",
+    "No visible UI, physical drag, native focus, exact geometry, macOS 11 physical or Nintendo 3DS runtime verification",
+    "No complete PCSX2 build, instrumentation or effective map",
+    "No remote CI or full Python suite rerun",
+    "Space supervisor samples are not a filesystem quota"
+  ],
+  "next_unit": "prerequisites/dependencies-ffmpeg",
+  "resource_links": [],
+  "capabilities": [],
+  "repository_validation": {
+    "repository_checks": {
+      "exit_code": 0,
+      "errors": 0,
+      "result": "PASS"
+    },
+    "git_diff_check_exit_code": 0,
+    "source_artifact_hashes_verified": 5,
+    "local_evidence_hashes_verified_before_this_receipt": 72,
+    "prior_qt_evidence_hashes_verified": 6,
+    "local_markdown_links_verified": 5,
+    "new_public_artifacts_no_private_paths": true,
+    "new_public_artifacts_no_trailing_whitespace": true,
+    "full_python_suite_rerun": false,
+    "remote_ci_run": false
+  }
+}

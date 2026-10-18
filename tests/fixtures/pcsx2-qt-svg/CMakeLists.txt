@@ -1,0 +1,70 @@
+cmake_minimum_required(VERSION 3.25)
+project(sh3_qt_svg_fixture LANGUAGES CXX)
+enable_testing()
+
+if(NOT EXISTS "${SH3_QTSVG_CMAKE_ROOT}/Qt6Svg/Qt6SvgConfig.cmake")
+  message(FATAL_ERROR "Set SH3_QTSVG_CMAKE_ROOT to an explicit Qt SVG lib/cmake directory")
+endif()
+if(NOT EXISTS "${SH3_QT_CMAKE_ROOT}/Qt6/Qt6Config.cmake")
+  message(FATAL_ERROR "Set SH3_QT_CMAKE_ROOT to an explicit Qt Base lib/cmake directory")
+endif()
+foreach(component Core CoreTools Gui GuiTools Test)
+  if(NOT EXISTS "${SH3_QT_CMAKE_ROOT}/Qt6${component}/Qt6${component}Config.cmake")
+    message(FATAL_ERROR "Missing explicit Qt Base component: ${component}")
+  endif()
+  set(Qt6${component}_DIR "${SH3_QT_CMAKE_ROOT}/Qt6${component}")
+endforeach()
+find_package(Qt6 6.11.1 EXACT CONFIG REQUIRED COMPONENTS Core Gui Test
+  PATHS "${SH3_QT_CMAKE_ROOT}/Qt6" NO_DEFAULT_PATH)
+set(Qt6Svg_DIR "${SH3_QTSVG_CMAKE_ROOT}/Qt6Svg")
+find_package(Qt6Svg 6.11.1 EXACT CONFIG REQUIRED
+  PATHS "${SH3_QTSVG_CMAKE_ROOT}/Qt6Svg" NO_DEFAULT_PATH)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+add_executable(qs_renderer renderer.cpp fixture.hpp)
+target_link_libraries(qs_renderer PRIVATE Qt6::Svg)
+add_executable(qs_reader reader.cpp fixture.hpp)
+target_link_libraries(qs_reader PRIVATE Qt6::Gui)
+add_executable(qs_icon icon.cpp fixture.hpp resources.qrc)
+target_link_libraries(qs_icon PRIVATE Qt6::Gui)
+foreach(target qs_renderer qs_reader qs_icon)
+  target_compile_options(${target} PRIVATE -Wall -Wextra -Werror)
+endforeach()
+foreach(case basics transformed invalid)
+  add_test(NAME qs_${case} COMMAND qs_renderer ${case}
+    "${CMAKE_CURRENT_SOURCE_DIR}/scene.svg" "${CMAKE_CURRENT_SOURCE_DIR}/invalid.svg")
+endforeach()
+add_test(NAME qs_reader COMMAND qs_reader
+  "${CMAKE_CURRENT_SOURCE_DIR}/scene.svg" "${CMAKE_CURRENT_SOURCE_DIR}/invalid.svg")
+add_test(NAME qs_icon COMMAND qs_icon)
+set_tests_properties(qs_basics qs_transformed qs_invalid qs_reader qs_icon
+  PROPERTIES TIMEOUT 15 ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
+
+if(SH3_QT_PROVIDER_SOURCE)
+  foreach(component CorePrivate GuiPrivate)
+    if(NOT EXISTS "${SH3_QT_CMAKE_ROOT}/Qt6${component}/Qt6${component}Config.cmake")
+      message(FATAL_ERROR "Missing explicit private Qt component: ${component}")
+    endif()
+    set(Qt6${component}_DIR "${SH3_QT_CMAKE_ROOT}/Qt6${component}")
+  endforeach()
+  find_package(Qt6GuiPrivate 6.11.1 EXACT CONFIG REQUIRED
+    PATHS "${SH3_QT_CMAKE_ROOT}/Qt6GuiPrivate" NO_DEFAULT_PATH)
+  set(provider_dir "${SH3_QT_PROVIDER_SOURCE}/tests/auto/qsvgrenderer")
+  if(NOT EXISTS "${provider_dir}/tst_qsvgrenderer.cpp")
+    message(FATAL_ERROR "Missing original qsvgrenderer test")
+  endif()
+  add_executable(provider_qsvgrenderer "${provider_dir}/tst_qsvgrenderer.cpp")
+  target_link_libraries(provider_qsvgrenderer PRIVATE Qt6::Test Qt6::GuiPrivate Qt6::Svg)
+  target_compile_options(provider_qsvgrenderer PRIVATE -UNDEBUG)
+  qt_add_resources(provider_qsvgrenderer provider_resources PREFIX "/" BASE "${provider_dir}"
+    FILES "${provider_dir}/heart.svgz" "${provider_dir}/large.svg" "${provider_dir}/large.svgz")
+  add_test(NAME provider_qsvgrenderer_selected COMMAND provider_qsvgrenderer
+    getSetCheck testMapViewBoxToTarget constructorQXmlStreamReader
+    loadQXmlStreamReader transformForElement opacity)
+  set_tests_properties(provider_qsvgrenderer_selected PROPERTIES
+    TIMEOUT 60 ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
+endif()

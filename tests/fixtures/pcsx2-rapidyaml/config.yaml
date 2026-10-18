@@ -1,0 +1,10 @@
+# Configuración propia para validar la dependencia del observador host.
+profile:
+  title: "Prueba de cámara: áéíóú ñ"
+  language: es
+  empty: ""
+  enabled: true
+  attempts: 3
+  offset: -12
+  scale: 1.25
+  paths: [inicio, "sala: norte"]

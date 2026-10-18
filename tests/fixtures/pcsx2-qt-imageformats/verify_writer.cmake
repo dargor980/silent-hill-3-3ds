@@ -1,0 +1,8 @@
+execute_process(COMMAND "${CONSUMER}" writer "${DATA_DIR}" RESULT_VARIABLE write_result)
+if(NOT write_result EQUAL 0)
+  message(FATAL_ERROR "Qt WebP writer failed: ${write_result}")
+endif()
+execute_process(COMMAND "${ORACLE}" verify "${DATA_DIR}/written.webp" RESULT_VARIABLE read_result)
+if(NOT read_result EQUAL 0)
+  message(FATAL_ERROR "Independent WebP verification failed: ${read_result}")
+endif()
