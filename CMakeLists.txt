@@ -71,6 +71,20 @@ endif()
 
 include(CTest)
 if(BUILD_TESTING AND NOT NINTENDO_3DS)
+  # Host-only observer domain. Nintendo targets never depend on the PCSX2 tooling.
+  find_package(Threads REQUIRED)
+  find_package(Python3 REQUIRED COMPONENTS Interpreter)
+  add_library(sh3_observer tools/observer/capture.cpp tools/observer/wire.cpp)
+  target_include_directories(sh3_observer PUBLIC tools/observer/include)
+  target_link_libraries(sh3_observer PRIVATE sh3_options)
+  add_executable(test_observer tests/cpp/test_observer.cpp)
+  target_include_directories(test_observer PRIVATE tests/cpp)
+  target_link_libraries(test_observer PRIVATE sh3_observer sh3_options Threads::Threads)
+  add_test(NAME observer COMMAND test_observer)
+  add_test(NAME observer_wire_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/observer_wire_oracle.py $<TARGET_FILE:test_observer>)
+  set_tests_properties(observer observer_wire_oracle PROPERTIES
+    LABELS "unit;contract;observer" TIMEOUT 15)
   foreach(suite IN ITEMS lifecycle bounded_log diagnostic_app diagnostic_options options_store stdio_files timing_window)
     add_executable(test_${suite} tests/cpp/test_${suite}.cpp)
     target_include_directories(test_${suite} PRIVATE tests/cpp)

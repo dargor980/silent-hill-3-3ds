@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC50",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/observer-contract-and-patch",
+  "stage": "observer-producer-patch-object-validated",
+  "contract": "schemas/pcsx2-observer-v1.md",
+  "prior_baseline_evidence_sha256": "4fcfe00a57b038a6c3f5077de8f0594d3895b8e2788f14356bf382e4897b842b",
+  "source": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "baseline_files": 2934,
+    "baseline_unchanged": true,
+    "source_fact_hashes": {
+      "pcsx2/PINE.cpp": "b6d32cc43b857bb94fd2fdcde556bf8fba300dd1e3d008aad052ae54c1d0b2de",
+      "pcsx2/VMManager.cpp": "384f0c0dca7b4e2a2d904ef17e5684521ac750bdfca56d8164c94da744349f4c",
+      "pcsx2/VMManager.h": "bb8feef1e03526360645802df04d390cac3b7bddcaeedceecc822973fc34144c",
+      "pcsx2/R5900.h": "a6ef18e1b646b5ba6c956c10836aa4f75fd8309798f0ac0cf8644faa41cbf323",
+      "pcsx2/MemoryTypes.h": "7f0066d74627959fffe68767f45038c7b3213f6de63e1a6822771b32867f2e8c",
+      "pcsx2/vtlb.h": "0c8a1f9331995fbb287d0a7564f8897efa4c17c909f186562f62bf9e28cd9a58",
+      "pcsx2/SaveState.cpp": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589",
+      "pcsx2/Host.h": "59dfd2319d2bc189fe5dd9a6356fef94aea117226bbd1cd943877f0d41b4628a",
+      "pcsx2-qt/QtHost.cpp": "d4619812da7f7e2b1bdb8273e8915b9f1c78e913010d9da9658180f2e37bebd8",
+      "pcsx2/CMakeLists.txt": "488ccc82ad34f7d271dbd2f6db87dc0eaaa8ebf3956302cf0d2e8f706eeeb7c7"
+    },
+    "changed": [
+      "pcsx2/CMakeLists.txt",
+      "pcsx2/VMManager.cpp",
+      "pcsx2/PINE.cpp",
+      "pcsx2/VMManager.h"
+    ],
+    "added": [
+      "pcsx2/sh3-observer/capture.cpp",
+      "pcsx2/sh3-observer/include/sh3_observer/capture.hpp",
+      "pcsx2/sh3-observer/include/sh3_observer/completion.hpp",
+      "pcsx2/sh3-observer/include/sh3_observer/wire.hpp",
+      "pcsx2/sh3-observer/pcsx2/adapter.cpp",
+      "pcsx2/sh3-observer/pcsx2/adapter.hpp",
+      "pcsx2/sh3-observer/wire.cpp"
+    ],
+    "patch_sha256": "3320dbaf751af225aa872069ae154b074fb1a1029c076bb49871fac6e06f590a",
+    "original_tests_unchanged": true,
+    "git_apply_check_passed": true
+  },
+  "dependencies": {
+    "files": 5228,
+    "links": 70,
+    "unchanged": true
+  },
+  "configuration": {
+    "off": {
+      "entries": 811,
+      "own_entries": 0,
+      "sha256": "13df378b150e69926203ee4f05946c7ac17bde28614a45eae64626095adf0fd9"
+    },
+    "on": {
+      "entries": 814,
+      "own_entries": 3,
+      "sha256": "ee3f5830aab4b3aff55aa131fb35d0e7bc0402d16fb841ceca9e294f3f737806"
+    }
+  },
+  "compilation": {
+    "kind": "seven_translation_unit_objects_with_thin_lto_not_linked_emulator",
+    "architecture": "x86_64",
+    "macos_minimum": "11.0",
+    "compiler": "Apple Clang 21",
+    "sdk": "macOS26.5",
+    "version_header": "unmodified source pcsx2/BuildVersion.h; values are unresolved until linking",
+    "abi_cycle_bits": 64,
+    "runs": [
+      {
+        "id": "configure-off-v2",
+        "exit_code": 0,
+        "duration_seconds": 9.792,
+        "log_sha256": "02aa9ca951423eba83c7e6ef80a8b7cf1d1755986edb71f8faf22bedbac53995",
+        "receipt_sha256": "e364aaeb2c3947396d68e38414aedc8121097d20c674c1bca7cbd392efa37068",
+        "process_group_closed": true,
+        "peak_allocated_bytes": 168157184,
+        "minimum_free_bytes": 21661589504
+      },
+      {
+        "id": "configure-on-v2",
+        "exit_code": 0,
+        "duration_seconds": 8.856,
+        "log_sha256": "68699ae3d24de7c1912961e3640c029889407b52c729df62f8cbf5534280c00f",
+        "receipt_sha256": "865f55febc18461a653944a7ea9850503abaffe51ba0e561fd19d671f0175030",
+        "process_group_closed": true,
+        "peak_allocated_bytes": 178483200,
+        "minimum_free_bytes": 21616984064
+      },
+      {
+        "id": "object-off-PINE-v1",
+        "exit_code": 0,
+        "duration_seconds": 2.493,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receipt_sha256": "2144c0742cac51cd0789b0a6f18bd84563df3827ed3448d76832eaf277679370",
+        "process_group_closed": true,
+        "peak_allocated_bytes": 178544640,
+        "minimum_free_bytes": 21619716096
+      },
+      {
+        "id": "object-off-VMManager-v1",
+        "exit_code": 0,
+        "duration_seconds": 2.425,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receipt_sha256": "142ab6baa36e44508e244699065fe88fad5a180d5d8ad18cf0a5a2e4d562867f",
+        "process_group_closed": true,
+        "peak_allocated_bytes": 178905088,
+        "minimum_free_bytes": 21619351552
+      },
+      {
+        "id": "object-on-PINE-v1",
+        "exit_code": 0,
+        "duration_seconds": 1.346,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receipt_sha256": "ffec0c6265b20a7f7e2bec3e412a1d4c79d8f36dac2606eb7ca608092948b258",
+        "process_group_closed": true,
+        "peak_allocated_bytes": 178966528,
+        "minimum_free_bytes": 21618712576
+      },
+      {
+        "id": "object-on-VMManager-v1",
+        "exit_code": 0,
+        "duration_seconds": 2.47,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receipt_sha256": "34dcae6911f9e81fa35417e4459dc2571d3c8b2a6e8ebbe0307f41dcbe98bc13",
+        "process_group_closed": true,
+        "peak_allocated_bytes": 179331072,
+        "minimum_free_bytes": 21618696192
+      },
+      {
+        "id": "object-on-capture-v1",
+        "exit_code": 0,
+        "duration_seconds": 1.369,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receipt_sha256": "45d58cb2d62ce7758c73e4b129ecc2f2b1db0ba009acf0048e939ce7c1e0a21e",
+        "process_group_closed": true,
+        "peak_allocated_bytes": 179343360,
+        "minimum_free_bytes": 21618384896
+      },
+      {
+        "id": "object-on-wire-v1",
+        "exit_code": 0,
+        "duration_seconds": 1.354,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receipt_sha256": "0474d7cd8bcff4e65bfa8534fb570a1a78c9a2513f00dbd72ad801426e957719",
+        "process_group_closed": true,
+        "peak_allocated_bytes": 179363840,
+        "minimum_free_bytes": 21619003392
+      },
+      {
+        "id": "object-on-adapter-v1",
+        "exit_code": 0,
+        "duration_seconds": 1.327,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receipt_sha256": "50aba3ada931621976d576e354af7c35405872ef7820efb6dbdda6438aad05d5",
+        "process_group_closed": true,
+        "peak_allocated_bytes": 179392512,
+        "minimum_free_bytes": 21618925568
+      }
+    ]
+  },
+  "tests": {
+    "python": 2027,
+    "observer_python": 107,
+    "observer_python_final_junit_sha256": "d9e21948c8abeca77011a0d91bbb57026f364a826729ea0df143081d3339fb4a",
+    "python_totals": {
+      "covered_lines": 3785,
+      "num_statements": 3830,
+      "percent_covered": 98.47705696202532,
+      "percent_covered_display": "98",
+      "missing_lines": 45,
+      "excluded_lines": 19,
+      "percent_statements_covered": 98.82506527415144,
+      "percent_statements_covered_display": "99",
+      "num_branches": 1226,
+      "num_partial_branches": 32,
+      "covered_branches": 1194,
+      "missing_branches": 32,
+      "percent_branches_covered": 97.38988580750407,
+      "percent_branches_covered_display": "97"
+    },
+    "observer_python_coverage": {
+      "covered_lines": 64,
+      "num_statements": 64,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 4,
+      "num_partial_branches": 0,
+      "covered_branches": 4,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "ctest": {
+      "release": {
+        "tests": 49,
+        "failures": 0,
+        "junit_sha256": "3c46f0578bcaf92de30cc19daaf1e7c60809fa879ae3cbb6e6a2368aa54a113e",
+        "boundary_rerun_tests": 2,
+        "boundary_junit_sha256": "bd1d16466567dcc983c0bb4cd26bc3a8237bff334e78e4de5c07f26e42fe1fe9"
+      },
+      "sanitize": {
+        "tests": 49,
+        "failures": 0,
+        "junit_sha256": "a44c004872ebd81c2bb189716085c8748fc710f163b8a541d24ac951c0106b7f",
+        "boundary_rerun_tests": 2,
+        "boundary_junit_sha256": "93ad6ee79b3b4f9109c07defc6a9ad62fd3c468012595cfd592bb3679f861a7c"
+      }
+    },
+    "cpp_coverage_tool": "Apple LLVM source-based coverage; GCC gate configured in CI, not run locally",
+    "cpp_coverage": {
+      "tools/observer/capture.cpp": {
+        "branches": {
+          "count": 100,
+          "covered": 100,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 6,
+          "covered": 6,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 6,
+          "covered": 6,
+          "percent": 100
+        },
+        "lines": {
+          "count": 76,
+          "covered": 76,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 125,
+          "covered": 125,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/include/sh3_observer/capture.hpp": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "functions": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "lines": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 1,
+          "covered": 1,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/include/sh3_observer/completion.hpp": {
+        "branches": {
+          "count": 8,
+          "covered": 8,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 4,
+          "covered": 4,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 4,
+          "covered": 4,
+          "percent": 100
+        },
+        "lines": {
+          "count": 25,
+          "covered": 23,
+          "percent": 92
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 16,
+          "covered": 16,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/wire.cpp": {
+        "branches": {
+          "count": 40,
+          "covered": 40,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 5,
+          "covered": 5,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 5,
+          "covered": 5,
+          "percent": 100
+        },
+        "lines": {
+          "count": 44,
+          "covered": 44,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 53,
+          "covered": 53,
+          "notcovered": 0,
+          "percent": 100
+        }
+      }
+    },
+    "cpp_boundary_cases": 12289
+  },
+  "capacity": {
+    "policy": "bounded source copy/configuration/object checks only; full build still requires IB02 20 GiB",
+    "initial_and_floor_gib": 10,
+    "per_version_max_gib": 1,
+    "per_process_timeout_seconds": 180,
+    "free_bytes_at_close": 21510234112
+  },
+  "own_files": {
+    "tools/observer/capture.cpp": "9a10fd742e2361a60557f1f132d89b05f782952a377658075827cb41f6193f2a",
+    "tools/observer/include/sh3_observer/capture.hpp": "a8661c9a081a4eb7cfa9bd5c32e1e7dfe90e4c564c0ef19c531188f4043abfb9",
+    "tools/observer/include/sh3_observer/completion.hpp": "4c152cb902ba9aea4733418e4958c9b0a95488ce939cdffed29b8d3d8a2b6217",
+    "tools/observer/include/sh3_observer/wire.hpp": "ccc71eee8ce66bc90872e8933b79bc1ab062e310c1ee08f4feeca681b0da14c5",
+    "tools/observer/pcsx2/adapter.cpp": "9aee1fdf0a8b0ba95e9766c0c90b6cb002cbe51a69b8223a890ab1906cf482b4",
+    "tools/observer/pcsx2/adapter.hpp": "766bb2b0d5303d946241512f3ccbf699adb9aaf14bb1688fdb8323bf92e304cb",
+    "tools/observer/wire.cpp": "ff9079b027b03be01f3e6ac9b9fa1bafd70bdbefc3036be830690fcf3b8750ea",
+    "tools/inspectors/observer_capture.py": "42843145103800b9ebbb74b6a74e1aeebdd005f8fc49e05824116a9669481712",
+    "tests/python/test_observer_capture.py": "459788049dfe5924e2cff5bf7beea06bca15aa35f939e34a39327b1455a9e799",
+    "tests/cpp/test_observer.cpp": "9eb48ff114bcdbe15c0e8b8f45b65229ab4d951c3e8cf2696ea21abdf2906f79",
+    "tests/observer_wire_oracle.py": "03ff734cf7ae7f99c9cb933037f0d35b521a25945177ec55ae335220ba5514bc",
+    "schemas/pcsx2-observer-v1.md": "3297bf1948f24f0020239ee36011d49ce9e265b1fea2333515eb7607523feaab",
+    "schemas/effective-mapping-v1.md": "8728130c446d2322d9ddc3e75927fe86f21f78d015f7db16ecaf70e1b6357267",
+    "CMakeLists.txt": "fe8910ea508e2866d3a103696f717a97ca311f3a8fd3b3c133dd381d9aa49c24",
+    "gcovr.cfg": "244e1cf7588cb46bdc6a64361748595d07d7d457daa5d22e5fdc48381796c540",
+    ".github/workflows/ci.yml": "c7ab4f201ebc3b95c38ffee60f434cbcf8747a5941c41bc898ecaf2c65f043f4"
+  },
+  "limitations": [
+    "full_instrumented_build_not_performed",
+    "instrumented_original_tests_not_run",
+    "live_socket_not_tested",
+    "OB07_OB08_coordinator_and_IO_tests_pending",
+    "MP08_four_stops_pending",
+    "no_game_boot_in_this_unit",
+    "remote_CI_not_run",
+    "Nintendo_hardware_not_tested",
+    "endpoints_do_not_authenticate_execution"
+  ],
+  "history": [
+    {
+      "id": "initial-synthetic-tests",
+      "result": "fixed test C++ initializer-list type and ProfileError.code assertions"
+    },
+    {
+      "id": "configure-off-v1",
+      "result": "aborted and closed on disappearing CMake temporary; measurement fixed; original receipt retained"
+    },
+    {
+      "id": "object-on-adapter-v1",
+      "result": "static_assert rejected 32-bit cycle; preserved first source and patch; rebuilt new source copy with u64 cycle"
+    },
+    {
+      "id": "oracle-cycle-fixture",
+      "result": "updated independent expected cycle after high-bit test addition; failed JUnit retained"
+    },
+    {
+      "id": "sandbox-python",
+      "result": "six supervisor tests rejected ps access; 2027 pass outside sandbox"
+    }
+  ]
+}

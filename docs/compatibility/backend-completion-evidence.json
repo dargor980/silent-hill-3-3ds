@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC62",
+  "task": "F02.07/camera-resource-link-eu/origin/load-provenance/LP-C",
+  "stage": "static_completion_and_supplied_buffer_consistency_copy_joint_profile_and_live_pending",
+  "contracts": [
+    "schemas/backend-completion-v1.md",
+    "schemas/backend-sector-v1.md"
+  ],
+  "units": {
+    "static_completion_and_units": "complete_static",
+    "supplied_completion_and_buffer_adapter": "complete",
+    "inner_copy": "pending",
+    "joint_capture_profile": "pending",
+    "continuous_lifetime": "pending",
+    "guarded_discovery": "pending",
+    "LP_C": "partial",
+    "LP_D": "pending"
+  },
+  "static_analysis": {
+    "active_files": 0,
+    "active_rows": {
+      "backend": 0,
+      "disc": 0,
+      "stream": 0
+    },
+    "backend_closed_rows": 16,
+    "backend_completion_verified": false,
+    "backend_position_units": "sectors",
+    "buffer_fill_verified": false,
+    "cache_origin_verified": false,
+    "capabilities": [],
+    "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+    "completion_requires_status_and_counts": true,
+    "container_sha256": "8bbd7dd906c4ad7be57c35ae69ee4b46f1b58b6dfa814f4631c02a74a823c840",
+    "device_registration_and_default_match": true,
+    "device_table_sha256": "516ee8f20748fa2d00a008d2ba3fd12b872e1a1cfd7dea8788e193a82f2c4467",
+    "device_table_size": 64,
+    "disc_lsn_plus_position_submission": true,
+    "discovery_budget_included": false,
+    "disk_read_verified": false,
+    "driver_position_units": "bytes",
+    "elf_sha256": "cb6e538bed7de8317f5333f3a56d4cd125432643950988168f901d6ede09f789",
+    "error_can_advance_backend_position": true,
+    "image_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "inner_copy_verified": false,
+    "iso_extent_reverified": true,
+    "joint_capture_profile_complete": false,
+    "live_acquisition_performed": false,
+    "pinned_instructions": 22,
+    "planned_evidence_states": 3,
+    "planned_regional_requests": 24,
+    "prior_evidence_sha256": "7476fca32d2f649dd4532bbbb7aabff27f3f3b355d66dc0adc2f5d75476e3974",
+    "private_plan_sha256": "8efd5e0ee39bf005c066194165bc2859f119a0dd4194948c8d2cbf212f4fb6cf",
+    "profile_input_checks_passed": true,
+    "provider_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "provider_copies_equal": true,
+    "provider_file": "pcsx2/R5900OpcodeImpl.cpp",
+    "provider_sha256": "6ae749a7e3a297a291f1844d2f96a17bf7c53a9c6f6f4ab4ddab27781a78c2b4",
+    "provider_size": 41762,
+    "read_events_produced": 0,
+    "resource_links": [],
+    "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "resource_size": 1536,
+    "schema_version": 1,
+    "sector_size": 2048,
+    "source_payload_hash_reverified": true,
+    "source_sector_hash_reverified": true,
+    "source_state_sha256": "0fe3b36ba64e7762ea56598d3b1e880ca90350f4358fef483f068e19ee803ba3",
+    "status": "static_backend_completion_profile_live_pending",
+    "stream_completed_units": "bytes",
+    "stream_request_size_mutable": true,
+    "total_window_bytes": 3608,
+    "valid_sector_padding_excluded": true,
+    "valid_sector_sha256": "1dfbc2b5b8c256f61e1cbd3b6dac248d5791fa7be2ba8b6508068d2518451211",
+    "valid_sector_size": 2048,
+    "windows": [
+      {
+        "role": "sector_caller",
+        "sha256": "d5c49d6cc232acc285f31869fa26ab57854eee1317e97d79cc28c481257d317d",
+        "size": 488
+      },
+      {
+        "role": "backend_read",
+        "sha256": "47eadbb4d4ebc3a6e3ecae13048f21d1e5c49f726941eaa6d2d25799991030cb",
+        "size": 368
+      },
+      {
+        "role": "backend_prepare",
+        "sha256": "5038f9f52c1b51aa4ba2e8ac06520d188c07d3beee7a8b0675286ffe78dee900",
+        "size": 272
+      },
+      {
+        "role": "backend_progress",
+        "sha256": "12f662f878cbbab271cc82ee524b2d08881d0046ec1da0de321e518cb67600a8",
+        "size": 192
+      },
+      {
+        "role": "backend_cleanup",
+        "sha256": "f87687c77ecdc085fd02019606d72d65c29ba2820c76a6cd58f5a36a96d4e6bb",
+        "size": 112
+      },
+      {
+        "role": "backend_cancel",
+        "sha256": "e63f4c05bfcdf76c658e32d75604d711c0282298b4b2a8ad799621f2b54e0e39",
+        "size": 440
+      },
+      {
+        "role": "backend_status_wrapper",
+        "sha256": "a6f88691b9cb63bcdee488aea7c1e46516bd2c8185c492b92cfdd7a36456d1aa",
+        "size": 112
+      },
+      {
+        "role": "backend_status_value",
+        "sha256": "e1483c337466347ecdaefe261de16f50c5617d760f518d73ba32e4a668c78a05",
+        "size": 48
+      },
+      {
+        "role": "stream_start",
+        "sha256": "5b7e36c04563e5fbf59165566252c86416d20218413d3767aa8327b17bb3f0be",
+        "size": 88
+      },
+      {
+        "role": "stream_seek",
+        "sha256": "dc0af9239c6e1777614ec7aba1642e7b151d70a1acd009c50d76d5e0c21d09de",
+        "size": 28
+      },
+      {
+        "role": "stream_progress",
+        "sha256": "7223ec9ec9f0e5f9a45e915ed034c57ddbefc7f91a7732a54ec3c9b78e618bbb",
+        "size": 64
+      },
+      {
+        "role": "stream_tell",
+        "sha256": "a8a38d1e2206e94a63dab467cc9d8249a6f0882556334cfc3f2ee30c52810d31",
+        "size": 68
+      },
+      {
+        "role": "stream_worker",
+        "sha256": "7935411be5523183ee277ba0fc6b04e862e5650383c16c1b42eac8e639c68d4d",
+        "size": 728
+      },
+      {
+        "role": "disc_completion",
+        "sha256": "70d2e3070a0123bc489a622413a9fba66d2a83fa13d05082a8d3f233dfc8b5b4",
+        "size": 200
+      },
+      {
+        "role": "disc_read",
+        "sha256": "3e6965d238650eaf2e398a0c313dc205b788c7c8218ad75dec1e57d9c4ffe593",
+        "size": 400
+      }
+    ]
+  },
+  "reproducibility": {
+    "runs": 2,
+    "identical": true,
+    "report_size": 4729,
+    "report_sha256": "628e74cf1c1d918f31544064ad6592896ff102b5ecc0b16b189414f5803d31e6",
+    "private_directory_mode": "0700",
+    "private_plan_mode": "0600",
+    "private_plan_not_overwritten": true,
+    "readers_closed_before_publication": true
+  },
+  "implementation": {
+    "modules": [
+      "tools/inspectors/backend_completion.py"
+    ],
+    "kind": "pure_adapter_without_io",
+    "stages": [
+      "sector_request",
+      "accepted_before_worker_progress",
+      "successful_status_return"
+    ],
+    "regions_per_stage": [
+      8,
+      8,
+      8
+    ],
+    "regional_requests": 24,
+    "evidence_states": 3,
+    "discovery_states_count_separately": true,
+    "subset": "ordinary_file_single_sector_cache_miss_without_early_worker_progress_or_cancel",
+    "padding_excluded_from_file_hash": true,
+    "preexisting_buffer_declared_not_new_read": true,
+    "historical_modules_unchanged": true,
+    "reused": [
+      "BackendProfile",
+      "DiscSource",
+      "DriverRequest",
+      "DriverCode",
+      "backend_sector",
+      "mapped_pause"
+    ],
+    "emulator_and_nintendo_runtime_unchanged": true
+  },
+  "validation": {
+    "new_cases": 95,
+    "runs": [
+      {
+        "artifact": "target.xml",
+        "tests": 94,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 12.612,
+        "sha256": "7d75d2b9f1c49a22822b30f5ea46e54fa3957a46f2e56241e2d70f2915831e07"
+      },
+      {
+        "artifact": "target-final.xml",
+        "tests": 94,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 12.471,
+        "sha256": "5ff98d3fba76e9cfd73f8f05a1653b1799e285da53ff7e37656e779de9b5d934"
+      },
+      {
+        "artifact": "target-reviewed.xml",
+        "tests": 95,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 12.94,
+        "sha256": "7811a0b9f46f9ed2e3fb866492a92b7cee118b87119fc1702aff97b84f0d7645"
+      },
+      {
+        "artifact": "pytest.xml",
+        "tests": 2976,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 83.753,
+        "sha256": "d0c9df6d49bead2311b6ea5bda2170862fb12c76cfddf5c959c4343452921a7a"
+      }
+    ],
+    "initial_failure": {
+      "case": "test_host_backing_changes_between_pauses",
+      "cause": "test_fixture_used_nonexistent_MappingContext_attribute",
+      "resolution": "mutate_vmap_in_own_wire_fixture_without_changing_runtime_checks"
+    },
+    "review_added_case": "buffer_alias_to_device_table_observed_only_in_initial_pause",
+    "final_tests": 2976,
+    "final_failures": 0,
+    "final_errors": 0,
+    "final_skipped": 0,
+    "module_coverage": {
+      "tools/inspectors/backend_completion.py": {
+        "covered_lines": 87,
+        "num_statements": 87,
+        "covered_branches": 18,
+        "num_branches": 18
+      }
+    },
+    "total_coverage": {
+      "covered_lines": 5123,
+      "num_statements": 5168,
+      "covered_branches": 1407,
+      "num_branches": 1440
+    },
+    "line_branch_gate_minimum_percent": 80,
+    "line_branch_gate": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 133,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_links": "PASS",
+    "prior_pinned_inputs_unchanged": [
+      "SRC55",
+      "SRC56",
+      "SRC57",
+      "SRC58",
+      "SRC59",
+      "SRC60",
+      "SRC61"
+    ],
+    "historical_pin_resolution": {
+      "source": "SRC52",
+      "module": "tools/inspectors/observer_state.py",
+      "superseding_source": "SRC53",
+      "superseding_sha256": "66b1caf86628305ca78a6a30d05f838fc07af1317427d1404a8dcc667b506a6f",
+      "matches_current": true,
+      "changed_in_this_unit": false
+    },
+    "ci_discovery": "existing_python_job_without_original_game_files",
+    "remote_ci_run": false,
+    "cpp_3ds_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "pytest.xml": "d0c9df6d49bead2311b6ea5bda2170862fb12c76cfddf5c959c4343452921a7a",
+      "python-coverage.json": "1a637a68e423258ae0c69f53499381ca1b7ecd0de792b78c145d82c7175b3662",
+      "python-coverage.xml": "0863195f22bf3cbdf44c3f4e0bdd8529d8e07a4f36330d80192ed7926c0eab1b",
+      "target-coverage-final.json": "7adaa454d206b2ecbe3a951502663576e52dbad524d21a365a96b8149c80c619",
+      "target-coverage-reviewed.json": "27cfaa3e24d72452568c4a1d18f487e01b0f04d65a85fc4279eef9edb21a076d",
+      "target-coverage.json": "28c96680d4c2739b9ed8bbda3a64b9d45feb1949745f3d7bb539aa0672da7b62",
+      "target-final.xml": "5ff98d3fba76e9cfd73f8f05a1653b1799e285da53ff7e37656e779de9b5d934",
+      "target-reviewed.xml": "7811a0b9f46f9ed2e3fb866492a92b7cee118b87119fc1702aff97b84f0d7645",
+      "target.xml": "7d75d2b9f1c49a22822b30f5ea46e54fa3957a46f2e56241e2d70f2915831e07"
+    }
+  },
+  "public_inputs_sha256": {
+    "schemas/backend-completion-v1.md": "6025b2a1735b67a1ea0eac1ad11ad8b709c5278d628767f10782a0900200846a",
+    "tools/inspectors/backend_completion.py": "344c916fefa25ad375d2a64829943f87dcc7f1d66233a175e8aeac1b3e88fd50",
+    "tests/python/test_backend_completion.py": "620b084b473f0710aae9334a5f28482aabd336a5103cce412fc74c572eac09c8",
+    "docs/execution/f02-07-backend-completion.md": "5878bc7dced3e339591f0b20ae9e5de6cca0af9ebd672b6e2932125b69da3761"
+  },
+  "private_operational_script_sha256": {
+    "analyze.py": "3618443b41c430645ddc64e1ba4cd859b981e5f17e8ec52ad22bf426eb301e43"
+  },
+  "limitations": {
+    "execution_authentication": "not_provided",
+    "source_reverification_in_pure_adapter": false,
+    "profile_semantics_authenticated": false,
+    "pool_membership_verified": false,
+    "generation_verified": false,
+    "opening_observed": false,
+    "continuous_lifetime_verified": false,
+    "active_backend_observed": false,
+    "backend_completion_verified": false,
+    "buffer_fill_verified": false,
+    "inner_copy_verified": false,
+    "cache_origin_verified": false,
+    "live_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

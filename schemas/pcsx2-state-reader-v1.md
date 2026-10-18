@@ -69,3 +69,10 @@ Implementación y 82 pruebas propias completadas; 1.517 pruebas de regresión ap
 Los dos módulos alcanzan 100 % de líneas y ramas. Control privado en entrada del ELF
 y nueve estados reimportados, con selección exacta de PC/GPR. Las tres invocaciones
 se validaron con dos recibos CO idénticos. [Resultado y límites](../docs/execution/f02-07-camera-runtime-capture.md).
+
+Extensión posterior: [AC01/AC07](observer-acquisition-v1.md) reutiliza este lector
+sin cambiar su prefijo histórico. `observer_state` exige cpuRegs completo
+(1.160 bytes), importa el ciclo u64 en offset 1.088 y compara una ventana de
+RAM física; [SRC52](../docs/execution/f02-07-observer-acquisition.md) verifica
+la ABI con headers reales. La aceptación positiva de esa extensión sobre
+un estado nuevo del juego sigue pendiente.

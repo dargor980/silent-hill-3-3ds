@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC58",
+  "task": "F02.07/camera-resource-link-eu/origin/load-provenance/LP-C",
+  "stage": "static_catalog_anchor_and_supplied_open_adapter_complete_driver_position_route_pending",
+  "contracts": [
+    "schemas/catalog-open-v1.md",
+    "schemas/descriptor-acquisition-v1.md",
+    "schemas/load-frontier-v1.md"
+  ],
+  "units": {
+    "static_catalog_and_resolver_investigation": "complete",
+    "supplied_catalog_open_adapter": "complete",
+    "underlying_driver_binding": "pending",
+    "position_and_read_cache_route": "pending",
+    "guarded_dynamic_address_discovery": "pending",
+    "LP-C": "partial",
+    "LP-D": "pending"
+  },
+  "static_analysis": {
+    "active_driver_identified": false,
+    "archive_marker_truncation_path_present": true,
+    "capabilities": [],
+    "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+    "container_sha256": "8bbd7dd906c4ad7be57c35ae69ee4b46f1b58b6dfa814f4631c02a74a823c840",
+    "container_size": 42969088,
+    "directory_rows": 1704,
+    "disk_read_verified": false,
+    "driver_ascii_uppercase_and_separator_conversion_present": true,
+    "dynamic_address_discovery": "pending",
+    "elf_sha256": "cb6e538bed7de8317f5333f3a56d4cd125432643950988168f901d6ede09f789",
+    "image_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "iso_mfa_range_reparsed": true,
+    "live_acquisition_performed": false,
+    "load_provenance": "pending",
+    "matching_records": 1,
+    "name_sha256": "27e02f4ce77d6f12d73c2726858805bedbe59fcc7e2d4f3fc70c583ab77583ab",
+    "open_observed": false,
+    "pinned_instructions": 11,
+    "planned_pauses": 4,
+    "planned_regional_requests": 22,
+    "prefix_sha256": "061e37f22111971f7a5699e9fc9fc983feb9e6f466fa68f0df4ac1eb2cf509fa",
+    "prior_evidence_sha256": "369bbab5b5516eb85a3d7f268bc5b65d9f8d06ad962e0d8a980b4fae8206f96b",
+    "private_plan_sha256": "d66cb1db861307987106c6baed3d48405e05f8718b248190f83f09e0b37dba9d",
+    "profile_flags_mode_observed": false,
+    "read_events_produced": 0,
+    "record_range_matches_source": true,
+    "resource_links": [],
+    "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "resource_size": 1536,
+    "schema_version": 1,
+    "selected_catalog_record_observed": false,
+    "source_payload_hash_verified": true,
+    "source_state_sha256": "0fe3b36ba64e7762ea56598d3b1e880ca90350f4358fef483f068e19ee803ba3",
+    "status": "static_catalog_entry_and_open_profile_live_pending",
+    "supplied_profile_input_checks_passed": true,
+    "total_window_bytes": 2288,
+    "windows": [
+      {
+        "role": "archive_wrapper",
+        "sha256": "afe5457aa916399c646d3bd5d82c98a55db863c85d3246e9075ef497517c61b4",
+        "size": 424
+      },
+      {
+        "role": "catalog_resolver",
+        "sha256": "2b100ad12f345f1b8e748eb747b4e0b2a355286cdfcea96e77180c629ca6322d",
+        "size": 560
+      },
+      {
+        "role": "separator_predicate",
+        "sha256": "b6456943fcbe40e2d64507d944fb0d417c4826e09787fb30aee9bd8be25968e8",
+        "size": 96
+      },
+      {
+        "role": "comparison_character_map",
+        "sha256": "7941150480a8456ff51cae158ba39345855e349e987c8426ed82f778de7cb739",
+        "size": 104
+      },
+      {
+        "role": "string_comparator",
+        "sha256": "55e349a74236d6cc226e026f8896a9844b3690c82fd4b7a000c193ec57a83d0b",
+        "size": 132
+      },
+      {
+        "role": "record_comparator",
+        "sha256": "82ba60229ee36e87caeacf6debb134bd056598ed0329d8c78ad6082ec4ee81ac",
+        "size": 104
+      },
+      {
+        "role": "bounded_string_copy",
+        "sha256": "9e2cff450dd08e326d673e4cd30326952e32401eb2b441b17277af33a8f6a955",
+        "size": 64
+      },
+      {
+        "role": "marker_search",
+        "sha256": "206bda5f835e3aecc9ba6abb4bdff9f3036549c43d85df43c85064df759b2ac5",
+        "size": 64
+      },
+      {
+        "role": "underlying_open_dispatch",
+        "sha256": "b2e079e5d3d1de1fa4a6bc1204b5b11731e7c76ee3427661003afcb82cfc339f",
+        "size": 740
+      }
+    ]
+  },
+  "reproducibility": {
+    "runs": 2,
+    "identical": true,
+    "report_size": 3227,
+    "report_sha256": "c39933647ccd2035f40817afc052ac36d0a68aa5d1d733724ede38ce8b90b55b",
+    "private_directory_mode": "0700",
+    "private_plan_mode": "0600",
+    "readers_closed_before_publication": true,
+    "private_plan_not_overwritten": true
+  },
+  "implementation": {
+    "module": "tools/inspectors/catalog_open.py",
+    "kind": "pure_adapter_without_io",
+    "stages": [
+      "catalog_selection",
+      "open_call",
+      "open_return",
+      "descriptor_generation_complete"
+    ],
+    "regions_per_stage": [
+      7,
+      5,
+      5,
+      5
+    ],
+    "regional_requests": 22,
+    "evidence_states": 4,
+    "discovery_states_must_count_separately": true,
+    "source_anchor": "supplied_not_reverified_by_pure_adapter",
+    "code_scope": "supplied_pinned_windows_and_direct_call_shape_not_full_body_interpretation",
+    "runtime_profile_flags_mode": "planned_constraints_not_observed",
+    "reused": [
+      "mapped_pause",
+      "archive_descriptor"
+    ],
+    "emulator_and_nintendo_runtime_unchanged": true
+  },
+  "validation": {
+    "new_cases": 96,
+    "initial_target": {
+      "passed": 91,
+      "failed": 1,
+      "failure": "privacy_oracle_confused_generic_region_label_with_private_path_field",
+      "correction": "check_json_field_not_label_value",
+      "production_changed_for_that_failure": false
+    },
+    "runs": [
+      {
+        "artifact": "target.xml",
+        "tests": 96,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 8.759,
+        "sha256": "5c929cd0cbf87d6403524c393373c9d7d610c7b6be15a89cdf14c3975e6b035c"
+      },
+      {
+        "artifact": "pytest.xml",
+        "tests": 2632,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 44.583,
+        "sha256": "af2f5b7f44704f41b96336c9d55d8d3036c739d568292048b8429acd71a1516c"
+      }
+    ],
+    "final_tests": 2632,
+    "final_failures": 0,
+    "final_skipped": 0,
+    "module_coverage": {
+      "covered_lines": 106,
+      "num_statements": 106,
+      "covered_branches": 20,
+      "num_branches": 20
+    },
+    "total_coverage": {
+      "covered_lines": 4804,
+      "num_statements": 4849,
+      "covered_branches": 1361,
+      "num_branches": 1394
+    },
+    "line_branch_gate_minimum_percent": 80,
+    "line_branch_gate": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 124,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_public_links": "PASS",
+    "prior_SRC55_SRC56_SRC57_inputs_unchanged": true,
+    "ci_discovery": "existing_python_job_without_original_game_files",
+    "remote_ci_run": false,
+    "cpp_3ds_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "python-coverage.json": "2b4c1a2e4b0b76d50e8cab8c5cb4cd844b5f10cfe40d3506335c12bbee8c2e69",
+      "target-coverage-final.json": "ee5f81e32232b258c64af3a628f4cc2fb9e23425d6354a718fa4576d0a9f6fd0",
+      "target-coverage.json": "403287fd0c70c6323c6c044f298790da3bfe568dc97e9b4fea68c8378cec1cc4",
+      "pytest.xml": "af2f5b7f44704f41b96336c9d55d8d3036c739d568292048b8429acd71a1516c",
+      "python-coverage.xml": "4212cb3205b36726e78838f964cc7ff8ee598ce7cafb73911126553b581f0eef",
+      "target.xml": "5c929cd0cbf87d6403524c393373c9d7d610c7b6be15a89cdf14c3975e6b035c"
+    }
+  },
+  "public_inputs_sha256": {
+    "schemas/catalog-open-v1.md": "9a99a53af8fe6c5b6dc7bcc74f49d7707ca3305a229aecfa874cc05d1b580102",
+    "tools/inspectors/catalog_open.py": "ef22c068082ef44fd1c3dc274d48ec3361b5f202daf65cded0d89801a9b4a419",
+    "tests/python/test_catalog_open.py": "7b33750da98059dfeaeac569eb8dfa327fde0d4843de7290924981cd0887535c",
+    "docs/execution/f02-07-catalog-open.md": "95bdcb49ffaa08ca23c6dfcf209026273b3bff8756a59dc4e924daa88c8c5f5e"
+  },
+  "private_operational_script_sha256": {
+    "analyze.py": "45ac1def4596d4c7f0d3ad40c5657b72711b61b6a62058de59cfb4f8c5f9b8c1"
+  },
+  "limitations": {
+    "execution_authentication": "not_provided",
+    "selected_catalog_record_observed": false,
+    "open_observed": false,
+    "file_identity_verified": false,
+    "driver_object_identified": false,
+    "position_verified": false,
+    "selected_driver_route_observed": false,
+    "sector_cache_origin_proved": false,
+    "live_multirange_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

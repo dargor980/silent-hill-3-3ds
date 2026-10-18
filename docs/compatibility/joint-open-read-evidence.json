@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC64",
+  "task": "F02.07/camera-resource-link-eu/origin/load-provenance/LP-C",
+  "stage": "joint_supplied_catalog_open_copy_consistency_lifetime_and_capture_pending",
+  "contracts": [
+    "schemas/joint-open-read-v1.md",
+    "schemas/catalog-open-v1.md",
+    "schemas/buffer-copy-v1.md"
+  ],
+  "units": {
+    "JR_T1": "complete_static",
+    "JR_T2": "complete",
+    "JR_T3": "complete",
+    "JR_T4": "complete",
+    "joint_supplied_profile": "complete",
+    "continuous_lifetime": "pending",
+    "early_worker_progress": "pending_extended_profile",
+    "guarded_discovery": "pending",
+    "LP_C": "partial",
+    "LP_D": "pending"
+  },
+  "static_analysis": {
+    "active_driver_rows": 0,
+    "capabilities": [],
+    "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+    "complete_pool_observed_without_synthetic_subpackets": true,
+    "container_sha256": "8bbd7dd906c4ad7be57c35ae69ee4b46f1b58b6dfa814f4631c02a74a823c840",
+    "continuous_lifetime_verified": false,
+    "disk_read_verified": false,
+    "driver_pool_count": 16,
+    "early_worker_progress_supported": false,
+    "elf_sha256": "cb6e538bed7de8317f5333f3a56d4cd125432643950988168f901d6ede09f789",
+    "full_pool_size": 792,
+    "guarded_discovery_budget_included": false,
+    "image_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "iso_extent_reverified": true,
+    "joint_capture_profile_complete": false,
+    "joint_supplied_profile_complete": true,
+    "live_acquisition_performed": false,
+    "original_states_and_packets_required": true,
+    "pinned_instructions": 17,
+    "planned_evidence_states": 11,
+    "planned_regional_requests": 81,
+    "post_open_position_is_resource_offset": true,
+    "prior_evidence_sha256": {
+      "buffer-copy": "94f47cd3e1ed04bd0a099adf5aea0411f6130c0e0696d86f603b85ef63d8e470",
+      "catalog-open": "9ef9b47e724abf71041bef0ee42cb1a033a58efa77c2d945adf79b3e080ca67d"
+    },
+    "prior_windows_reverified": 13,
+    "private_plan_sha256": "79f2a2974ffeea0d17ae44e3d2d7a51f8522e06ac6539671bb2714f0abee80a8",
+    "profile_input_checks_passed": true,
+    "read_events_produced": 0,
+    "regional_sequence_preserved": true,
+    "regions_per_stage": [
+      7,
+      5,
+      5,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "require_continuity_default": true,
+    "resource_links": [],
+    "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "resource_size": 1536,
+    "schema_version": 1,
+    "seek_does_not_fill_cache": true,
+    "source_payload_hash_reverified": true,
+    "source_sector_hash_reverified": true,
+    "source_state_sha256": "0fe3b36ba64e7762ea56598d3b1e880ca90350f4358fef483f068e19ee803ba3",
+    "status": "static_joint_open_copy_profile_lifetime_and_live_pending",
+    "total_window_bytes": 796,
+    "valid_sector_sha256": "1dfbc2b5b8c256f61e1cbd3b6dac248d5791fa7be2ba8b6508068d2518451211",
+    "valid_sector_size": 2048,
+    "windows": [
+      {
+        "role": "archive_open_positioning",
+        "sha256": "afe5457aa916399c646d3bd5d82c98a55db863c85d3246e9075ef497517c61b4",
+        "size": 424
+      },
+      {
+        "role": "driver_seek",
+        "sha256": "f5db2a3fcb36f0ea27532e45c1b7700db7f24acefa364c671e58c9cac2fc775b",
+        "size": 196
+      },
+      {
+        "role": "seek_dispatch",
+        "sha256": "71c58d8ec36d759d20c9ab23193c7d909ce11d0bc0be07e7849d02d0c0fc2364",
+        "size": 176
+      }
+    ]
+  },
+  "reproducibility": {
+    "runs": 2,
+    "identical": true,
+    "report_size": 2677,
+    "report_sha256": "5cb75ab2d55a761bd84bdb29a67eb4dfb58693f1cdacee6828482591bfa1cc8d",
+    "private_directory_mode": "0700",
+    "private_plan_mode": "0600",
+    "private_plan_not_overwritten": true,
+    "readers_closed_before_publication": true,
+    "source_inputs_unchanged": true
+  },
+  "implementation": {
+    "modules": [
+      "tools/inspectors/joint_open_read.py"
+    ],
+    "kind": "pure_adapter_without_io",
+    "evidence_states": 11,
+    "regions_per_stage": [
+      7,
+      5,
+      5,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "regional_requests": 81,
+    "reused": [
+      "CatalogSource",
+      "OpenProfile",
+      "DiscSource",
+      "DriverRequest",
+      "CopyProfile",
+      "catalog_open",
+      "buffer_copy",
+      "mapped_pause"
+    ],
+    "same_state_prefix_projected_without_reencoding": true,
+    "complete_driver_pool_single_observation": true,
+    "original_sequences_preserved": true,
+    "no_synthetic_subpackets": true,
+    "pool_count_maximum": 84,
+    "require_continuity_default": true,
+    "diagnostic_opt_in_required": true,
+    "discovery_states_and_requests_count_separately": true,
+    "interleaved_discovery_requires_contract_extension": true,
+    "historical_modules_unchanged": true,
+    "emulator_and_nintendo_runtime_unchanged": true,
+    "subset": "ordinary_file_single_sector_cache_miss_without_early_worker_progress_or_cancel"
+  },
+  "validation": {
+    "new_cases": 49,
+    "runs": [
+      {
+        "artifact": "target.xml",
+        "tests": 44,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 18.921,
+        "sha256": "53a0d12e723e4e3e5cdc923ad5b188b39501801101bffc96e6c1260d67c20d66"
+      },
+      {
+        "artifact": "target-final.xml",
+        "tests": 49,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 22.538,
+        "sha256": "5eedcde1841eab84c768f80a8ab2304163745dfa7c5b2d131de511f6c7e561ea"
+      },
+      {
+        "artifact": "pytest.xml",
+        "tests": 3096,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 124.033,
+        "sha256": "874d39d322d450bbc7593c12efead58b146c0a24933e5ab0a710bacaad83b2ea"
+      }
+    ],
+    "preliminary_run": {
+      "passed": 21,
+      "failed": 1,
+      "stopped_on_first_failure": true,
+      "evidence": "stdout_only",
+      "cause": "own_fixture_host_page_offset",
+      "correction": "fix_own_packet_builder_without_relaxing_validator"
+    },
+    "review_added_cases": [
+      "full_pool_84_rows",
+      "full_pool_85_rows_rejected",
+      "async_open_flags_match",
+      "individually_valid_halves_foreign_session",
+      "individually_valid_halves_foreign_host_backing"
+    ],
+    "final_tests": 3096,
+    "final_failures": 0,
+    "final_errors": 0,
+    "final_skipped": 0,
+    "module_coverage": {
+      "tools/inspectors/joint_open_read.py": {
+        "covered_lines": 65,
+        "num_statements": 65,
+        "covered_branches": 16,
+        "num_branches": 16
+      }
+    },
+    "total_coverage": {
+      "covered_lines": 5303,
+      "num_statements": 5348,
+      "covered_branches": 1449,
+      "num_branches": 1482
+    },
+    "line_branch_gate_minimum_percent": 80,
+    "line_branch_gate": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 137,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_links": "PASS",
+    "prior_pinned_inputs_unchanged": {
+      "SRC55": 3,
+      "SRC56": 4,
+      "SRC57": 7,
+      "SRC58": 4,
+      "SRC59": 5,
+      "SRC60": 4,
+      "SRC61": 4,
+      "SRC62": 4,
+      "SRC63": 4
+    },
+    "operational_reports_completed_before_full_suite": true,
+    "ci_discovery": "existing_python_job_without_original_game_files",
+    "remote_ci_run": false,
+    "cpp_3ds_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "pytest.xml": "874d39d322d450bbc7593c12efead58b146c0a24933e5ab0a710bacaad83b2ea",
+      "python-coverage.json": "240b28cec10cd312029c2f177d944c2f21f36b277697aee502ed65401c4ff8e7",
+      "python-coverage.xml": "e47567d84e60959decd7f3a69cc191a972ed509d842088b29bc6d3bc9956009e",
+      "target-coverage-final.json": "1f42f599f53ed7affb2f51e7ce6c4ec16849a0a0c43e64703acbb49d27f9bd79",
+      "target-coverage.json": "a679f1633888f9776c6b7fa376a8a63f9b54a5fa3cda232678d8f368d880260a",
+      "target-final.xml": "5eedcde1841eab84c768f80a8ab2304163745dfa7c5b2d131de511f6c7e561ea",
+      "target.xml": "53a0d12e723e4e3e5cdc923ad5b188b39501801101bffc96e6c1260d67c20d66"
+    }
+  },
+  "public_inputs_sha256": {
+    "schemas/joint-open-read-v1.md": "9c24994d1a6254a4f2f8f2064b489f6be9e9eb26c4466747611498d9a1905e51",
+    "tools/inspectors/joint_open_read.py": "06efe6d8ce4ba7fa99684f5b974056a0af252801a96a140f3986bbead3ae76c7",
+    "tests/python/test_joint_open_read.py": "ebaddce1f8cfb831b70eba8ba16396c46ccd2b165ab22d01ec6126b7d9a2a718",
+    "docs/execution/f02-07-joint-open-read.md": "3be25220fca740d9cf51b2f7f048f3c2d6eb449f999890e787863cfa1aa2228c"
+  },
+  "private_operational_script_sha256": {
+    "analyze.py": "374fe84b15e652e3fb1a6418ef4bee4217bb082e7a945f0d5e5b755b0111434c"
+  },
+  "limitations": {
+    "execution_authentication": "not_provided",
+    "source_reverification_in_pure_adapter": false,
+    "profile_semantics_authenticated": false,
+    "opening_observed": false,
+    "continuous_lifetime_verified": false,
+    "active_copy_observed": false,
+    "backend_completion_verified": false,
+    "buffer_fill_verified": false,
+    "inner_copy_verified": false,
+    "writes_outside_destination_verified": false,
+    "live_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

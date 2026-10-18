@@ -3,7 +3,9 @@
 F02.07/origin/effective-mapping. Observación host de PCSX2 v2.8.2 x86_64;
 no es un formato del juego ni una interfaz del runtime 3DS. La implementación
 inicial valida muestras sintéticas y comprueba la factibilidad de acceso host.
-La captura real completa y su publicador requieren evidencia posterior.
+[SRC53](../docs/execution/f02-07-observer-live.md) aporta posteriormente las
+cuatro capturas reales y su publicación para una invocación, mediante la
+extensión interna OB y los contratos AC/OS. No demuestra procedencia de carga.
 
 ## Requisitos EARS
 
@@ -17,6 +19,9 @@ La captura real completa y su publicador requieren evidencia posterior.
   únicamente un puerto de lectura y lecturas acotadas. SI macOS deniega ese
   puerto, el investigador DEBERÁ registrar el código y conservar el mapa como
   pendiente; no cambiará firma, entitlements ni protecciones del sistema.
+  Para el build privado optativo, [OB01–OB10](pcsx2-observer-v1.md) sustituye
+  el puerto externo por lectura interna acotada en el hilo CPU. Esta extensión
+  no reintenta el puerto denegado ni modifica la aplicación oficial.
 - **MP03 — Pausa y estabilidad.** CUANDO se valide una lectura, ambas muestras
   DEBERÁN declarar pausa y coincidir en identidad, base EE, tamaño expuesto,
   puntero vmap y todas las entradas utilizadas. SI difieren, el validador DEBERÁ

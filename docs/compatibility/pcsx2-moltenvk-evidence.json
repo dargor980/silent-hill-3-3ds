@@ -1,0 +1,2437 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC48",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/prerequisites/dependencies-moltenvk",
+  "stage": "installed-and-validated",
+  "contract": "schemas/pcsx2-moltenvk-v1.md",
+  "prior_dependency_evidence": {
+    "source_id": "SRC47",
+    "sha256": "c9a7e86db7a189a3fcee2228d450df53332ac6ed9adadfd816a65111faea1ea7"
+  },
+  "recipe": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "path": ".github/workflows/scripts/macos/build-dependencies.sh",
+    "sha256": "a6f59f080c02a10e0e96cab7293c4aefb9cb0325056a169dd441a2861a8efd8a"
+  },
+  "source_plan_sha256": "c96b4acc48564d603970b301bf4474d3281a238a6af4d33b1518ebbfce45b985",
+  "archive": {
+    "archive": "MoltenVK-1.4.1.tar.gz",
+    "url": "https://github.com/KhronosGroup/MoltenVK/archive/v1.4.1/MoltenVK-1.4.1.tar.gz",
+    "sha256": "9985f141902a17de818e264d17c1ce334b748e499ee02fcb4703e4dc0038f89c",
+    "bytes": 1249866,
+    "unpacked_bytes": 4776524,
+    "regular_files": 263,
+    "symlinks": 10
+  },
+  "recipe_archives_verified_total": 25,
+  "recipe_archives_total": 25,
+  "transitives": [
+    {
+      "name": "cereal",
+      "url": "https://github.com/USCiLab/cereal.git",
+      "commit": "a56bad8bbb770ee266e930c95d37fff2a5be7fea",
+      "files": 210,
+      "source_bytes": 2233099,
+      "licenses": {
+        "LICENSE": "58604a126af6a671ea390ee3d5b3e42228aa59b2858fb7af1d5b20b31739ccbb",
+        "include/cereal/external/LICENSE": "642e7003561473f4f1f3dd09e053ee2a6ecfb0563e961a3392e914295f9d350c",
+        "include/cereal/external/rapidjson/LICENSE": "dc2ef044e52a4c0ea784f9b54229775ce5275505cc09f21283dfa301e9c962fa",
+        "include/cereal/external/rapidjson/msinttypes/LICENSE": "bf3c9bf6a176c890c7387c71f9ae5bcaf9d33324b9d4a5f8524a6f8bf3063097",
+        "include/cereal/external/rapidxml/license.txt": "794bf3b2ecf5cf0c740ac6c524d66ce6284c4b1de1f983d21a242b8abbeb9720"
+      },
+      "inventory_sha256": "e2948465893fc51f226d55be3f7df8b57a794a364b076ba30295a2c658bb9923"
+    },
+    {
+      "name": "Vulkan-Headers",
+      "url": "https://github.com/KhronosGroup/Vulkan-Headers.git",
+      "commit": "6aefb8eb95c8e170d0805fd0f2d02832ec1e099a",
+      "files": 88,
+      "source_bytes": 34683366,
+      "licenses": {
+        "LICENSE.md": "ac24e5ea920e4318e4d02c4086ae51f53cfb03feed06c18df1019e7ada1ec7bc"
+      },
+      "inventory_sha256": "ff43586ead7d7cd4db0f76285743ed196c3192c619c8cba0570573477a9840ca"
+    },
+    {
+      "name": "SPIRV-Cross",
+      "url": "https://github.com/KhronosGroup/SPIRV-Cross.git",
+      "commit": "adec7acbf41a988713cdb85f93f26c8ca5ea863e",
+      "files": 4659,
+      "source_bytes": 11994848,
+      "licenses": {
+        "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "inventory_sha256": "5e19835c74f608921533f98532aea5586799f47070b32ed670979de5dfcda883"
+    },
+    {
+      "name": "SPIRV-Tools",
+      "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
+      "commit": "262bdab48146c937467f826699a40da0fdfc0f1a",
+      "files": 1742,
+      "source_bytes": 25183535,
+      "licenses": {
+        "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "utils/vscode/src/lsp/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "inventory_sha256": "748626e07f7a92872ae2014119b6d266c270a3111a3414930d5f7c76e482da89"
+    },
+    {
+      "name": "SPIRV-Headers",
+      "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
+      "commit": "b824a462d4256d720bebb40e78b9eb8f78bbb305",
+      "files": 113,
+      "source_bytes": 3972234,
+      "licenses": {
+        "LICENSE": "ea43b1de38a6f90c488800d66dec1ed671e68cda530266bc96951fb5b6307613"
+      },
+      "inventory_sha256": "0cc02678540edd105b080382a36d84057f42385b6d1792d29d1212b20fe58dfc"
+    },
+    {
+      "name": "Vulkan-Tools",
+      "url": "https://github.com/KhronosGroup/Vulkan-Tools.git",
+      "commit": "013058f74e2356347f8d9317233bc769816c9dfb",
+      "files": 130,
+      "source_bytes": 4758142,
+      "licenses": {
+        "LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "inventory_sha256": "dd0ecadd9e8cfb9bf2a6e12aeef0c6032e8dcb814378a4cd52a5a79dbe338d0b"
+    },
+    {
+      "name": "Volk",
+      "url": "https://github.com/zeux/Volk.git",
+      "commit": "59660878571aa99e3c9a366bb1d19fdcd701f0e7",
+      "files": 21,
+      "source_bytes": 525169,
+      "licenses": {
+        "LICENSE.md": "33c831f76b79501665e66c23ac8f876020457c216d44526a8f747da897999b35"
+      },
+      "inventory_sha256": "1a3e74584691af45c9f5f26bbc529dd97463636934b130c3fbc4528abcac8989"
+    }
+  ],
+  "patches": {
+    "changed_files": [
+      "Makefile",
+      "fetchDependencies",
+      "MoltenVK/MoltenVK/GPUObjects/MVKDevice.h",
+      "MoltenVK/MoltenVK/GPUObjects/MVKImage.mm",
+      "MoltenVK/MoltenVK/GPUObjects/MVKPixelFormats.mm",
+      "MoltenVK/MoltenVK/GPUObjects/MVKDevice.mm",
+      "MoltenVK/MoltenVK/API/mvk_deprecated_api.h"
+    ],
+    "hashes": {
+      "final-source.diff": "74cbf96fdbd43aea2418b151242380dd05a8e03600fb2764a11655f07cb86f46",
+      "mvk-texture-swizzle.patch": "ffae5540dd94069dfc6b1aed400f62fdb07d9f37b48d302bc00db73a0cac074a",
+      "4cf93f0f16b1503580cdb7ffdedb056321446677.patch": "48dd51ecd0bad651f83c2a47d551f68791050c2b26b2f5e2e834528c34048664",
+      "mac1-context-v2.patch": "89a22e46eb7105d425d10cfd3f88a7e31623cd48b4f4b28062af3c0d21f02dec"
+    },
+    "context_adaptation": "Only context of Mac2-to-Mac1 hunk adjusted; no renderLinearTextures or mtlConstantBufferAlignment fields added",
+    "failed_first_attempt_preserved": true
+  },
+  "configuration": {
+    "targets": [
+      {
+        "group": "external",
+        "target": "ExternalDependencies-macOS",
+        "settings": {
+          "ARCHS": "x86_64",
+          "VALID_ARCHS": "x86_64",
+          "ONLY_ACTIVE_ARCH": "NO",
+          "MACOSX_DEPLOYMENT_TARGET": "11.0",
+          "SDKROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+          "BUILD_DIR": "$STAGE/moltenvk-work-v2/External/build/Intermediates/macOS/Build/Products",
+          "OBJROOT": "$STAGE/moltenvk-work-v2/External/build/Intermediates/macOS/Build/Intermediates.noindex",
+          "CODE_SIGNING_ALLOWED": "NO",
+          "CC": null,
+          "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+          "COMPILATION_CACHE_ENABLE_CACHING": "NO",
+          "CLANG_ENABLE_COMPILE_CACHE": "NO"
+        }
+      },
+      {
+        "group": "package",
+        "target": "MoltenVK-macOS",
+        "settings": {
+          "ARCHS": "x86_64",
+          "VALID_ARCHS": "x86_64",
+          "ONLY_ACTIVE_ARCH": "NO",
+          "MACOSX_DEPLOYMENT_TARGET": "11.0",
+          "SDKROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+          "BUILD_DIR": "$STAGE/package-derived-v2/Build/Products",
+          "OBJROOT": "$STAGE/package-derived-v2/Build/Intermediates.noindex",
+          "CODE_SIGNING_ALLOWED": "NO",
+          "CC": null,
+          "CLANG_CXX_LANGUAGE_STANDARD": null,
+          "COMPILATION_CACHE_ENABLE_CACHING": "NO",
+          "CLANG_ENABLE_COMPILE_CACHE": "NO"
+        }
+      }
+    ],
+    "project_source_entries": [
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Cross-tvOS",
+        "source_entries": 7
+      },
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Cross-macOS",
+        "source_entries": 7
+      },
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Tools-iOS",
+        "source_entries": 234
+      },
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Cross-iOS",
+        "source_entries": 7
+      },
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Tools-macOS",
+        "source_entries": 234
+      },
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Tools-tvOS",
+        "source_entries": 234
+      },
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Cross-xrOS",
+        "source_entries": 7
+      },
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Tools-xrOS",
+        "source_entries": 234
+      },
+      {
+        "project": "MoltenVKShaderConverter/MoltenVKShaderConverter.xcodeproj/project.pbxproj",
+        "target": "MoltenVKShaderConverter-iOS",
+        "source_entries": 4
+      },
+      {
+        "project": "MoltenVKShaderConverter/MoltenVKShaderConverter.xcodeproj/project.pbxproj",
+        "target": "MoltenVKShaderConverter-xrOS",
+        "source_entries": 4
+      },
+      {
+        "project": "MoltenVKShaderConverter/MoltenVKShaderConverter.xcodeproj/project.pbxproj",
+        "target": "MoltenVKShaderConverter",
+        "source_entries": 5
+      },
+      {
+        "project": "MoltenVKShaderConverter/MoltenVKShaderConverter.xcodeproj/project.pbxproj",
+        "target": "MoltenVKShaderConverter-tvOS",
+        "source_entries": 4
+      },
+      {
+        "project": "MoltenVKShaderConverter/MoltenVKShaderConverter.xcodeproj/project.pbxproj",
+        "target": "MoltenVKShaderConverter-macOS",
+        "source_entries": 4
+      },
+      {
+        "project": "Demos/Cube/Cube.xcodeproj/project.pbxproj",
+        "target": "Cube-macOS",
+        "source_entries": 3
+      },
+      {
+        "project": "Demos/Cube/Cube.xcodeproj/project.pbxproj",
+        "target": "Cube-iOS",
+        "source_entries": 3
+      },
+      {
+        "project": "Demos/Cube/Cube.xcodeproj/project.pbxproj",
+        "target": "Cube-VisionOS",
+        "source_entries": 0
+      },
+      {
+        "project": "Demos/Cube/Cube.xcodeproj/project.pbxproj",
+        "target": "Cube-tvOS",
+        "source_entries": 3
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-macOS-dylib",
+        "source_entries": 0
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-macOS-static",
+        "source_entries": 48
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-iOS-dynamic",
+        "source_entries": 0
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-xrOS-static",
+        "source_entries": 48
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-macOS-dynamic",
+        "source_entries": 0
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-xrOS-dynamic",
+        "source_entries": 0
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-tvOS-static",
+        "source_entries": 48
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-tvOS-dynamic",
+        "source_entries": 0
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-iOS-static",
+        "source_entries": 48
+      }
+    ],
+    "macos_source_entries": 298,
+    "transitive_original_bytes": 83350393,
+    "scheme_testables": [],
+    "options": [
+      "VALID_ARCHS=x86_64",
+      "ARCHS=x86_64",
+      "ONLY_ACTIVE_ARCH=NO",
+      "MACOSX_DEPLOYMENT_TARGET=11.0",
+      "CODE_SIGNING_ALLOWED=NO",
+      "COMPILATION_CACHE_ENABLE_CACHING=NO",
+      "CLANG_ENABLE_COMPILE_CACHE=NO"
+    ],
+    "selected_macos_targets": [
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Cross-macOS",
+        "source_entries": 7
+      },
+      {
+        "project": "ExternalDependencies.xcodeproj/project.pbxproj",
+        "target": "SPIRV-Tools-macOS",
+        "source_entries": 234
+      },
+      {
+        "project": "MoltenVKShaderConverter/MoltenVKShaderConverter.xcodeproj/project.pbxproj",
+        "target": "MoltenVKShaderConverter",
+        "source_entries": 5
+      },
+      {
+        "project": "MoltenVKShaderConverter/MoltenVKShaderConverter.xcodeproj/project.pbxproj",
+        "target": "MoltenVKShaderConverter-macOS",
+        "source_entries": 4
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-macOS-dylib",
+        "source_entries": 0
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-macOS-static",
+        "source_entries": 48
+      },
+      {
+        "project": "MoltenVK/MoltenVK.xcodeproj/project.pbxproj",
+        "target": "MoltenVK-macOS-dynamic",
+        "source_entries": 0
+      }
+    ],
+    "earlier_target_filter_correction": "Include -macOS-static suffix and converter CLI; exclude Cube demo"
+  },
+  "source_verification": {
+    "moltenvk_original_files": 263,
+    "transitive_original_files": 6963,
+    "all_original_files_unchanged": true,
+    "working_transitive_tracked_files_unchanged": true,
+    "working_moltenvk_changes": [
+      "Makefile",
+      "fetchDependencies",
+      "MoltenVK/MoltenVK/GPUObjects/MVKDevice.h",
+      "MoltenVK/MoltenVK/GPUObjects/MVKImage.mm",
+      "MoltenVK/MoltenVK/GPUObjects/MVKPixelFormats.mm",
+      "MoltenVK/MoltenVK/GPUObjects/MVKDevice.mm",
+      "MoltenVK/MoltenVK/API/mvk_deprecated_api.h"
+    ],
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "effective_config": {
+      "argument_buffers": 0,
+      "private_api": 0,
+      "requested_config_private_api": 1,
+      "compiled_private_api_support": 0
+    },
+    "effective_config_source_hashes": {
+      "Common/MVKCommonEnvironment.h": "6dda4bef46e8adb175b7c2803fbf45e23c90e56a05e01856ff3f525c3c64ce32",
+      "MoltenVK/MoltenVK/Utility/MVKEnvironment.cpp": "079b6bdec46185dc6f86f99d97e3588c6d7259087125cc35ec07b7f27841db75"
+    },
+    "compiler_response_hashes": [
+      "a9d4d07cf2167791aaac6e8452bbddbb1dc478bd7f9bc6a881780d3b35ed8685",
+      "22a0f92096d6faad5b74e822100f71131c302526eafbe690c425b4902895bba6",
+      "20070c7a7f598d8f8d97854f914f3da9312d45ad6a4a16f9b71e537a82cab994"
+    ]
+  },
+  "builds": [
+    {
+      "name": "prepare-dependencies-v1",
+      "accepted": true,
+      "exit_code": 0,
+      "duration_seconds": 19.87,
+      "samples": 20,
+      "minimum_free_bytes_observed": 21237235712,
+      "maximum_budgeted_bytes_observed": 203050703,
+      "maximum_allocated_bytes_observed": 244178944,
+      "maximum_raw_logical_bytes_observed": 203050703,
+      "limits": {
+        "start_bytes": 13958643712,
+        "floor_bytes": 10737418240,
+        "maximum_stage_bytes": 4294967296
+      }
+    },
+    {
+      "name": "external-build-v3",
+      "accepted": true,
+      "exit_code": 0,
+      "duration_seconds": 159.95,
+      "samples": 101,
+      "minimum_free_bytes_observed": 22118957056,
+      "maximum_budgeted_bytes_observed": 1400565760,
+      "maximum_allocated_bytes_observed": 360693760,
+      "maximum_raw_logical_bytes_observed": 27124078925,
+      "limits": {
+        "start_bytes": 13958643712,
+        "floor_bytes": 10737418240,
+        "maximum_stage_bytes": 4294967296
+      }
+    },
+    {
+      "name": "package-build-v1",
+      "accepted": true,
+      "exit_code": 0,
+      "duration_seconds": 53.88,
+      "samples": 34,
+      "minimum_free_bytes_observed": 22062829568,
+      "maximum_budgeted_bytes_observed": 1571221504,
+      "maximum_allocated_bytes_observed": 548134912,
+      "maximum_raw_logical_bytes_observed": 27295264426,
+      "limits": {
+        "start_bytes": 13958643712,
+        "floor_bytes": 10737418240,
+        "maximum_stage_bytes": 4294967296
+      }
+    },
+    {
+      "name": "build-v1-fixture-build",
+      "accepted": false,
+      "exit_code": 2,
+      "duration_seconds": 5.32,
+      "samples": 5,
+      "minimum_free_bytes_observed": 22093967360,
+      "maximum_budgeted_bytes_observed": 549724160,
+      "maximum_allocated_bytes_observed": 549724160,
+      "maximum_raw_logical_bytes_observed": 503934118,
+      "limits": {
+        "start_bytes": 13958643712,
+        "floor_bytes": 10737418240,
+        "maximum_stage_bytes": 4294967296
+      }
+    },
+    {
+      "name": "build-v2-fixture-build",
+      "accepted": false,
+      "exit_code": 2,
+      "duration_seconds": 5.31,
+      "samples": 5,
+      "minimum_free_bytes_observed": 22106873856,
+      "maximum_budgeted_bytes_observed": 557670400,
+      "maximum_allocated_bytes_observed": 557670400,
+      "maximum_raw_logical_bytes_observed": 511519113,
+      "limits": {
+        "start_bytes": 13958643712,
+        "floor_bytes": 10737418240,
+        "maximum_stage_bytes": 4294967296
+      }
+    },
+    {
+      "name": "build-v3-fixture-build",
+      "accepted": true,
+      "exit_code": 0,
+      "duration_seconds": 5.36,
+      "samples": 5,
+      "minimum_free_bytes_observed": 22059847680,
+      "maximum_budgeted_bytes_observed": 565710848,
+      "maximum_allocated_bytes_observed": 565710848,
+      "maximum_raw_logical_bytes_observed": 519230384,
+      "limits": {
+        "start_bytes": 13958643712,
+        "floor_bytes": 10737418240,
+        "maximum_stage_bytes": 4294967296
+      }
+    },
+    {
+      "name": "build-v4-fixture-build",
+      "accepted": true,
+      "exit_code": 0,
+      "duration_seconds": 5.01,
+      "samples": 5,
+      "minimum_free_bytes_observed": 22021476352,
+      "maximum_budgeted_bytes_observed": 573751296,
+      "maximum_allocated_bytes_observed": 573751296,
+      "maximum_raw_logical_bytes_observed": 526922459,
+      "limits": {
+        "start_bytes": 13958643712,
+        "floor_bytes": 10737418240,
+        "maximum_stage_bytes": 4294967296
+      }
+    },
+    {
+      "name": "installed-v1-build",
+      "accepted": true,
+      "exit_code": 0,
+      "duration_seconds": 5.29,
+      "samples": 5,
+      "minimum_free_bytes_observed": 23097389056,
+      "maximum_budgeted_bytes_observed": 582209536,
+      "maximum_allocated_bytes_observed": 582209536,
+      "maximum_raw_logical_bytes_observed": 535064285,
+      "limits": {
+        "start_bytes": 13958643712,
+        "floor_bytes": 10737418240,
+        "maximum_stage_bytes": 4294967296
+      }
+    }
+  ],
+  "capacity_policy_tests": {
+    "passed": 7,
+    "failed": 0,
+    "prior_build_processes_remaining": 0,
+    "explanation": "Observed CAS reservation files charged by allocated blocks, raw logical size remains recorded; every other file uses max(logical,allocated)"
+  },
+  "supervisor": {
+    "reused_from": "SRC40",
+    "sha256": "ff826393472d566ad39da51324fbb933641d70018fe4f446a76fe4eb061080cc",
+    "previous_control_tests_passed": 7,
+    "control_tests_rerun": false,
+    "termination_error_preserved": true,
+    "new_sparse_policy_tests": 7
+  },
+  "runtime_tests": {
+    "final_stages": [
+      "build-v4-fixture",
+      "installed-v1"
+    ],
+    "own_cases": [
+      "profile",
+      "errors",
+      "transfer",
+      "compute",
+      "image"
+    ],
+    "provider_cases": [
+      "small_vector",
+      "msl_constexpr_test",
+      "msl_resource_bindings"
+    ],
+    "provider_original_inputs": [
+      {
+        "path": "spirv_cross_c.cpp",
+        "bytes": 95769,
+        "sha256": "ea3d0f9576901b4b8cf7e4c6773489d52229ef9092f206198c9514b72e13cac3"
+      },
+      {
+        "path": "tests-other/small_vector.cpp",
+        "bytes": 5619,
+        "sha256": "4cdd4719e4634b5eb6b75552f6a4fbd977c81e6bbf3e75840260c9bec71092f2"
+      },
+      {
+        "path": "tests-other/msl_constexpr_test.cpp",
+        "bytes": 4110,
+        "sha256": "af7752ef412271623e0741dc433b988ab2d929b43a6abd9291af69cc0d660d53"
+      },
+      {
+        "path": "tests-other/msl_resource_bindings.cpp",
+        "bytes": 2532,
+        "sha256": "2e4ea061465ea1b42f002151f785f32f86fe7178641107b743d0c8174c5acb95"
+      },
+      {
+        "path": "tests-other/msl_constexpr_test.spv",
+        "bytes": 1656,
+        "sha256": "629a2870125eb1ab784c552662eeb56eb4d7831515492624e77dec8946302754"
+      },
+      {
+        "path": "tests-other/msl_resource_binding.spv",
+        "bytes": 1424,
+        "sha256": "02855df3646c8595e4cde2c88e671dae83bdd67df1a057191698a3fce82211b3"
+      }
+    ],
+    "final_ctest_executions_passed": 16,
+    "final_failed": 0,
+    "final_skipped": 0,
+    "additional_loader_executions": 10,
+    "device": "Apple M2",
+    "binary_architecture": "x86_64",
+    "host_architecture": "arm64",
+    "execution_translation": "Rosetta",
+    "gpu_transfer_words": 256,
+    "gpu_compute_words": 256,
+    "gpu_image_pixels": 64,
+    "image_rgb_tolerance": 1,
+    "image_alpha_exact": 255,
+    "gpu_wait_nanoseconds": 5000000000,
+    "ctest_timeout_seconds": 30,
+    "shader_sha256": "c695358d9739fd97d8b840e8533ce91e3993d7191ea4a1565f926b72e1e34e2b",
+    "negative_configurations": 3,
+    "dyld_library_path_override": false,
+    "vulkan_loader_used": false,
+    "validation_layers_used": false
+  },
+  "preserved_failures": [
+    {
+      "stage": "patch-v1",
+      "reason": "Mac1 patch context targets newer fields absent from 1.4.1",
+      "correction": "Adapt context only in a new source copy; fuzz=0; preserve original patch/reject and source"
+    },
+    {
+      "stage": "external-build-v1/v2",
+      "reason": "24 GiB sparse CAS reservations exceed raw logical budget; supervisor stop_group raises EPERM after SIGTERM",
+      "correction": "No remaining build processes observed; preserve failed DerivedData, add tested sparse accounting and persistent live samples; do not mark either attempt accepted",
+      "first_attempt_capacity_samples_available": false,
+      "second_attempt_capacity_samples_available": true
+    },
+    {
+      "stage": "build-v1-fixture",
+      "reason": "C API wrapper namespace differs from Xcode SPIRV-Cross archive",
+      "correction": "Use original MVK_spirv_cross namespace only for C wrapper"
+    },
+    {
+      "stage": "build-v2-fixture",
+      "reason": "Public namespace override breaks original header-only small_vector; direct MoltenVK does not expose loader portability enumeration",
+      "correction": "Keep override private, enable only advertised instance extensions; CTest was started on incomplete build, preserved as failed and future test dispatch now requires accepted build"
+    },
+    {
+      "stage": "build-v3-fixture",
+      "reason": "Two own tests incorrectly expected effective private Metal API support",
+      "correction": "Confirm source default compile support=0, requested runtime flag=1, normalization forces effective=0; keep library/profile unchanged and correct exact expectation; driverVersion decimal format checked"
+    }
+  ],
+  "installation": {
+    "binary": {
+      "name": "libMoltenVK.dylib",
+      "bytes": 5359904,
+      "sha256": "451dc3872d37cc1cfb86d0529805726eaf170b5944fac46a790e4ecd5284ccae",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "@rpath/libMoltenVK.dylib",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/usr/lib/libc++.1.dylib",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libobjc.A.dylib"
+      ]
+    },
+    "copy_bytes_identical": true,
+    "prior_files": 5227,
+    "prior_symlinks": 70,
+    "installed_path": "lib/libMoltenVK.dylib"
+  },
+  "installation_verification": {
+    "new_files": 1,
+    "new_symlinks": 0,
+    "prior_files_preserved": 5227,
+    "prior_symlinks_preserved": 70,
+    "prefix_preserved": true,
+    "installed_sha256": "451dc3872d37cc1cfb86d0529805726eaf170b5944fac46a790e4ecd5284ccae",
+    "installed_bytes": 5359904
+  },
+  "binary_inventory": [
+    {
+      "name": "libMoltenVK.dylib",
+      "bytes": 5359904,
+      "sha256": "451dc3872d37cc1cfb86d0529805726eaf170b5944fac46a790e4ecd5284ccae",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "@rpath/libMoltenVK.dylib",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/usr/lib/libc++.1.dylib",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libobjc.A.dylib"
+      ]
+    },
+    {
+      "stage": "build-v4-fixture",
+      "name": "mv_consumer",
+      "bytes": 98760,
+      "sha256": "18205c9a4169a1a6d84427e9fccc3d42189ce1c08335f7e5bb6f99bc5892377b",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "@rpath/libMoltenVK.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    },
+    {
+      "stage": "build-v4-fixture",
+      "name": "mv_shader",
+      "bytes": 35360,
+      "sha256": "7c8602145d5fc2f4e22362759fb01b000cf00d1febcf605bdb350abe34bb0781",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "$PREFIX/lib/libshaderc_shared.1.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    },
+    {
+      "stage": "build-v4-fixture",
+      "name": "provider_small_vector",
+      "bytes": 30440,
+      "sha256": "39953b319192c2566f0fa44f2b51cb813a41239064cf3f6a0563d1cc4bad935d",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    },
+    {
+      "stage": "build-v4-fixture",
+      "name": "provider_msl_constexpr_test",
+      "bytes": 2973768,
+      "sha256": "e4a2ce72f367bb6ac56947b3197070fa399d2ee8574d6a7c692ea1f53d8c6df6",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    },
+    {
+      "stage": "build-v4-fixture",
+      "name": "provider_msl_resource_bindings",
+      "bytes": 2973768,
+      "sha256": "0ba68c2fed4a47ed091842c732807c44d9ae6d8e18f5abd437f335c5b8fbadf6",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    },
+    {
+      "stage": "installed-v1",
+      "name": "mv_consumer",
+      "bytes": 98760,
+      "sha256": "68c0436efd3ad954fe3c0ee796fc04e6709b22de8cd4c38625f400a13d9e7b0a",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "@rpath/libMoltenVK.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    },
+    {
+      "stage": "installed-v1",
+      "name": "mv_shader",
+      "bytes": 35360,
+      "sha256": "7c8602145d5fc2f4e22362759fb01b000cf00d1febcf605bdb350abe34bb0781",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "$PREFIX/lib/libshaderc_shared.1.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    },
+    {
+      "stage": "installed-v1",
+      "name": "provider_small_vector",
+      "bytes": 30440,
+      "sha256": "39953b319192c2566f0fa44f2b51cb813a41239064cf3f6a0563d1cc4bad935d",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    },
+    {
+      "stage": "installed-v1",
+      "name": "provider_msl_constexpr_test",
+      "bytes": 2973768,
+      "sha256": "e4a2ce72f367bb6ac56947b3197070fa399d2ee8574d6a7c692ea1f53d8c6df6",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    },
+    {
+      "stage": "installed-v1",
+      "name": "provider_msl_resource_bindings",
+      "bytes": 2973768,
+      "sha256": "0ba68c2fed4a47ed091842c732807c44d9ae6d8e18f5abd437f335c5b8fbadf6",
+      "architecture": "x86_64",
+      "minimum_macos": "11.0",
+      "dependencies": [
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ]
+    }
+  ],
+  "build_binary_inventory": [
+    {
+      "path": "Package/Latest/MoltenVK/dynamic/dylib/macOS/libMoltenVK.dylib",
+      "bytes": 5359904,
+      "sha256": "451dc3872d37cc1cfb86d0529805726eaf170b5944fac46a790e4ecd5284ccae",
+      "architecture": "x86_64"
+    },
+    {
+      "path": "External/build/Release/SPIRVCross.xcframework/macos-x86_64/libSPIRVCross.a",
+      "bytes": 5027776,
+      "sha256": "6750f7f02d7f8d3ec4058c744a3366e637ec506c2d24c679715af8401c17a898",
+      "architecture": "x86_64"
+    },
+    {
+      "path": "External/build/Release/SPIRVTools.xcframework/macos-x86_64/libSPIRVTools.a",
+      "bytes": 15458664,
+      "sha256": "0a84f54efe6d1916396b15b56186831f9df8f743c5f350f9ab0bc180b28f3d59",
+      "architecture": "x86_64"
+    }
+  ],
+  "pcsx2_configuration": {
+    "version": "v18",
+    "exit_code": 0,
+    "cmake_generate_succeeded": true,
+    "moltenvk_resolved": true,
+    "ffmpeg_resolved": true,
+    "qt_components_resolved": [
+      "Core",
+      "CoreTools",
+      "Gui",
+      "GuiTools",
+      "Widgets",
+      "WidgetsTools",
+      "LinguistTools"
+    ],
+    "kddockwidgets_resolved": true,
+    "full_pcsx2_build_executed": false,
+    "toolchain_checks_reused_from": "SRC31",
+    "free_bytes": 23049089024
+  },
+  "preflight": {
+    "schema_version": 1,
+    "status": "ready_for_baseline_build",
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_clean": true,
+    "free_bytes": 23049089024,
+    "minimum_free_bytes": 21474836480,
+    "reserve_basis": "project_policy_not_measured_build_size",
+    "checks": {
+      "cxx20_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "cxx20_run": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_compile": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "metal_link": {
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "pcsx2_configure": {
+        "exit_code": 0,
+        "status": "passed"
+      }
+    },
+    "blockers": [],
+    "pcsx2_build_verified": false,
+    "mapping_verified": false,
+    "evidence_authentication": "not_provided"
+  },
+  "steps": [
+    {
+      "name": "4cf93f0f16b1503580cdb7ffdedb056321446677.patch-apply-v1",
+      "exit_code": 1,
+      "duration_seconds": 0.02,
+      "log_sha256": "205db60bd892a343f6d4461916ce2df9e4e1ea08c43895823b4126991519d8d0",
+      "outcome": "failed-attempt-preserved"
+    },
+    {
+      "name": "SPIRV-Cross-checkout",
+      "exit_code": 0,
+      "duration_seconds": 0.53,
+      "log_sha256": "cad2946888a816581e30f456d0feff2201cfc1d82fea155e949178bbf19b374f",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Cross-fetch",
+      "exit_code": 0,
+      "duration_seconds": 1.54,
+      "log_sha256": "70c2c0bd1e80507e999e4cdd9fbe69fdc5a9318cb0515648e6d2ac0f0df870aa",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Cross-init",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "77099d73dd1c3aa34b93306d350b673ffb58ea3065fede427da3c7827dabdced",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Cross-remote",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Headers-checkout",
+      "exit_code": 0,
+      "duration_seconds": 0.1,
+      "log_sha256": "54432504dd47a06abaf284f95099ed363073b3892a0496e50092cc2dfe1f0af8",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Headers-fetch",
+      "exit_code": 0,
+      "duration_seconds": 1.44,
+      "log_sha256": "061a59a262caba1abb16d64a49f4a573a7e46185e8fdceb0ec048c050614fe88",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Headers-init",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "09db0c956e0c2c47b611a665274ad30b335c3f1c849375d46a9f4d5c2bec74bf",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Headers-remote",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Tools-checkout",
+      "exit_code": 0,
+      "duration_seconds": 0.44,
+      "log_sha256": "ca29b6474beeab03110026b42b88414cd9523d80cb394932184e1751bf317170",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Tools-fetch",
+      "exit_code": 0,
+      "duration_seconds": 2.11,
+      "log_sha256": "5a9a47f5d3f42895165ae54f3d2e9be2753b02c807995640884484acf2d6e6cf",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Tools-init",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "5020149963a810bca49eac753cd4e92f2669735b7b2874a1be64a00b3d53f114",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "SPIRV-Tools-remote",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Volk-checkout",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "771254701ae72e649e4d03c711f210941e9c6ac3f2225382b325b3769ccd5068",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Volk-fetch",
+      "exit_code": 0,
+      "duration_seconds": 1.04,
+      "log_sha256": "2e5392c126c8f35227d24a097968f9805700fcb76568cdc6ff5dea4c57dbdcec",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Volk-init",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "b2a078803aa1330f5966f4eaae69591251262a8a8e244b9f44fa0783c4cfd7ee",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Volk-remote",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Vulkan-Headers-checkout",
+      "exit_code": 0,
+      "duration_seconds": 0.1,
+      "log_sha256": "ea6349c38a96218580b0aab7ab7fdab305997411bde13fb36cea2646fae763d7",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Vulkan-Headers-fetch",
+      "exit_code": 0,
+      "duration_seconds": 2.51,
+      "log_sha256": "28a27bed849567b8a82aec76892b091aa1b7ec0d852d4981306ad72e7dc6f1ab",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Vulkan-Headers-init",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "19d93d9d0a982855b76e44993f1224f8314b1066e002c908214ce3e0e905d85e",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Vulkan-Headers-remote",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Vulkan-Tools-checkout",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "42c5dcb12ce66e03f4b18644a00052c7ae07559d20542196aac682bd4e174429",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Vulkan-Tools-fetch",
+      "exit_code": 0,
+      "duration_seconds": 1.36,
+      "log_sha256": "2e57834170bc822f093dc60e82bc5add6231103b96cfd274a20c5dfb310ba526",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Vulkan-Tools-init",
+      "exit_code": 0,
+      "duration_seconds": 0.03,
+      "log_sha256": "e168be8deee0842dd4a386162d4ae1427bee85cc7d7b93b699efd282c1d50f1a",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "Vulkan-Tools-remote",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "baseline-configure-v18",
+      "exit_code": 0,
+      "duration_seconds": 7.56,
+      "log_sha256": "75674b77d65c8241ae08bd7d9f99f13c95baa0dcae8fe54d3c3e72cf5294042f",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v1-fixture-build",
+      "exit_code": 2,
+      "duration_seconds": 5.32,
+      "log_sha256": "187071215348eed9dfb9ffac978e3612f7f536ba334698c380da3dc83672e4ff",
+      "outcome": "failed-attempt-preserved"
+    },
+    {
+      "name": "build-v1-fixture-configure",
+      "exit_code": 0,
+      "duration_seconds": 0.79,
+      "log_sha256": "86cd302dfae3ac4749576d40fd47ec4ab5eaf93df19131f535e1d144e0e028ff",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v2-fixture-build",
+      "exit_code": 2,
+      "duration_seconds": 5.31,
+      "log_sha256": "493b7d5266ab84a075e0fed72e7ef06ce6e2b0e088b404a1e6a63ed37bbd042d",
+      "outcome": "failed-attempt-preserved"
+    },
+    {
+      "name": "build-v2-fixture-configure",
+      "exit_code": 0,
+      "duration_seconds": 0.82,
+      "log_sha256": "4e1afba5607dbc29c99ae961e69842674077ee9f52cbd384f1b465be5af61508",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v2-fixture-ctest",
+      "exit_code": 8,
+      "duration_seconds": 5.08,
+      "log_sha256": "2999c484da21346411619dbfa8419568cc4b0551a59bb857066109d70eb5681b",
+      "outcome": "failed-attempt-preserved"
+    },
+    {
+      "name": "build-v3-fixture-build",
+      "exit_code": 0,
+      "duration_seconds": 5.36,
+      "log_sha256": "51e9ef5c74587a38d9328a26ee88584a72f446e0cce78b2e9dc7794e1488f372",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v3-fixture-configure",
+      "exit_code": 0,
+      "duration_seconds": 0.79,
+      "log_sha256": "9920c9c8bdd431d9a3c56ddcd37d42cc3874d3731d21b3e783d62bed72ac17a2",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v3-fixture-ctest",
+      "exit_code": 8,
+      "duration_seconds": 4.27,
+      "log_sha256": "ee7ef8af83e40703e2196912eac4996285584572b08f1cf0f273f57ebf4d3671",
+      "outcome": "failed-attempt-preserved"
+    },
+    {
+      "name": "build-v4-fixture-build",
+      "exit_code": 0,
+      "duration_seconds": 5.01,
+      "log_sha256": "acfc7d5210b24835651cbc9e7f8ad7aa4372f5dc2dfea987d771787547b6fcc9",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-configure",
+      "exit_code": 0,
+      "duration_seconds": 0.8,
+      "log_sha256": "cd8e190b46ed49ba1fa9f07e42c327d11601cbeb98f63f45f7911041ed47babd",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-ctest",
+      "exit_code": 0,
+      "duration_seconds": 3.28,
+      "log_sha256": "89036b96dbb38a68433e396e0e65ca67ca68ff15927e79df727d54f871099e85",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-mv_consumer-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "b96b9a8007157c0f203b294787293bb21620be5e12bc3d1167c63e9d8e89c556",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-mv_consumer-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "0ad22c1417ee2d9f6dcffb4c2965da1b5b1286326fb08d29aa24e5bb392402a4",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-mv_shader-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "a124fe6e6ecdba9bef8d31baa724df8984015e57e11f2958ceb2caf5287a8fef",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-mv_shader-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "10fa987c4f52e33c9a2f17c9dd9b57dd30dfed2fb29819aec234a5efe60aba7f",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-provider_msl_constexpr_test-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "f547add8e560d865da398986ed16f7bad7f34ad0ef67eef269f9970c1adf0dcb",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-provider_msl_constexpr_test-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "dfea3938828cf4739c378c7f374de43673098be640594122a3a4a95c0c101adc",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-provider_msl_resource_bindings-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "5a61bcaae972c49e0763cc61612cea1a7e3b58acbcfaa3887fdea718c56254ef",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-provider_msl_resource_bindings-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "7c3aa9a6a28860efdde6cf133cc3b95803e79a12a10df00422ed29f83a22139a",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-provider_small_vector-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "3e3d7bd8dd230751d64f407390bd94ebea6280901c3acd4c2c9163a4755148f6",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-provider_small_vector-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "c48279d538799ca015dd333295f8279bd60a5bbe7d49c091322a227bc7d5c46f",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-trace-compute",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "0561095a29fc57ba8557dbdebb8a09d6f8c02cc203e2df1cd7e644dc1688d4ff",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-trace-errors",
+      "exit_code": 0,
+      "duration_seconds": 0.04,
+      "log_sha256": "f77793dbf0ed8a882621117f39b55076f8d9378578988af61452a23828b03918",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-trace-image",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "bfeb586bf761905fb77545c95bf6499ceb2a137f2492a0e6a92367bd0a3b1789",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-trace-profile",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "f593de215066d9cb5393a7a0ed1230093970abdbc8180299651e78baa92fec71",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "build-v4-fixture-trace-transfer",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "4c0d7e6777ad3e0978abb3cae3dccdddd406c9d43ff9e2e2904b3b285d38ee41",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "cereal-checkout",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "ee8fb7483df8e3312ead78fbd70a9505202dca33c1d059945fac2363fb26bc75",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "cereal-fetch",
+      "exit_code": 0,
+      "duration_seconds": 1.34,
+      "log_sha256": "2c77e1bc2cfe1040c7d34568d572b5f4a0721c43546ea5048e736736a1062d64",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "cereal-init",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "999aae6d2a069f615a85b43e36c50f99ac01ecf4a94d0f9714bf81ddf1153ae8",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "cereal-remote",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "consumer-syntax-v1",
+      "exit_code": 0,
+      "duration_seconds": 0.64,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "download-v1",
+      "exit_code": 0,
+      "duration_seconds": 1.5,
+      "log_sha256": "62aeaf634a4660c9de892fa70200cd788313bb7ab78372f98785b2426a67d09f",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "external-build-inner-v3",
+      "exit_code": 0,
+      "duration_seconds": 157.04,
+      "log_sha256": "4a67aa7219d6409f26ff171fbedd0c4b968be6480d1dd4e53809dd397a42b740",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "external-build-v3",
+      "exit_code": 0,
+      "duration_seconds": 159.95,
+      "log_sha256": "1b496b8e225ab6010dde0a327132a1f05c7f1994e9f19e6c3da449330f794b8c",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "external-settings-v1",
+      "exit_code": 0,
+      "duration_seconds": 3.1,
+      "log_sha256": "5ccbc11a2deb753afffe3edf98ef7f0cfb564c873630861a86fab5ea01d97990",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "external-settings-v2",
+      "exit_code": 0,
+      "duration_seconds": 3.23,
+      "log_sha256": "805e33c378fae77012b149b1c55bda8459819bbc922570a0ca6e758aab7b2b2a",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-build",
+      "exit_code": 0,
+      "duration_seconds": 5.29,
+      "log_sha256": "756f9c896dc3f721f4b9a1e650c41b8d8d4aeab8289fd9019e22569043d8d8eb",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-configure",
+      "exit_code": 0,
+      "duration_seconds": 0.85,
+      "log_sha256": "541ac2cb3bd072c1946d68419b63391712b0b4ccb12107842850ae6476a5a02d",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-ctest",
+      "exit_code": 0,
+      "duration_seconds": 5.01,
+      "log_sha256": "93325a7a9e8d098eec2053c01d147543f3bb6fd4104c62520c33390324b4abfb",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-mv_consumer-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "4e34fa6b4cae9881f6b5fd3f7203569bc7036b89ecbbfad63644c65dd7178483",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-mv_consumer-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "d8279e2d647e39f05b311f8ebf39b364b01a46a50f1a1ad4d73d146a85525e39",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-mv_shader-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "cfa2d358122f1a8fdcf2ba4ff6d09b24516561a8ef901ce2f3a2f599bcc2e65a",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-mv_shader-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "f62ce0c7a19f9b0c83ba035bdf7adeff7252ca560b920fb73c03bc103fdd4f8e",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-provider_msl_constexpr_test-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "88f9216e3df14f15af44dd44ee12fe311f12d0b38ae44152ef69cb60afdb0ee4",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-provider_msl_constexpr_test-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "f1a813d7ccb165a955e83e37fde02cac92dd4904a165249102970c827d18f8d8",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-provider_msl_resource_bindings-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "ee1442f64733f432f5213937822575bef066247fc9a253817776b2cdef64c24a",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-provider_msl_resource_bindings-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "dd2caaf1ac314cbae20e8475ffbc514d987ac1ec3edb7c9e60d5b60c3158cd9c",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-provider_small_vector-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "bb3591110ea51964c099fcf7a124748f60f033c543bcbd5c9f6dc8d4081e4e34",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-provider_small_vector-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "d0605be4dd64c4456578ec4ab2db92fe0cdfb56ec56da5573f3a2470b8a542f9",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-trace-compute",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "24eb2756d78dea5774877f46718f62dc22506a5d9f9b2be6de4abe5223ae1d34",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-trace-errors",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "2e4b39068fa86e8092d1e324e47fa04a51df82c7cd4bd6eaeb7735fc42957223",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-trace-image",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "a7e8d03a13a1ebb6a2be1f28b16a8a3e5cc67d005e131b1957d88f5597f6dde5",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-trace-profile",
+      "exit_code": 0,
+      "duration_seconds": 0.06,
+      "log_sha256": "6501978dc65abb8aa4e7c25902fd4c4dcc154919c9986c3d0fdff08268c93088",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "installed-v1-trace-transfer",
+      "exit_code": 0,
+      "duration_seconds": 0.05,
+      "log_sha256": "1fa4c5e9a4cb87e9f529aeb80f492362cc956bbf3d7b616f84beae65d44a153b",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "mac1-apply-v2",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "72c3fa4b0ce69d4e3611bdd04ac22157df3ec920269e7176e29eda7eaedbff49",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "module-before-install-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "69e50d91a043e12ef6364ae4abfec244c6d6932d0982058e105c377103d34848",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "module-before-install-loads",
+      "exit_code": 0,
+      "duration_seconds": 1.73,
+      "log_sha256": "662e17e0847b8e6eb31d8217a83ce8fda67482dad2cdc7c6216f1d7665e70642",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "module-installed-deps",
+      "exit_code": 0,
+      "duration_seconds": 0.01,
+      "log_sha256": "4e12af1d70c1e6c578435914fd6332e8bbb7f61b3dcd311f8bc5a8cc93540da2",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "module-installed-loads",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "817d7a2a4402acef1fa79a9b62654af660bc15b0445d3f5a58cac8bad1f2aa2d",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "negative-sh3_mvk_include",
+      "exit_code": 1,
+      "duration_seconds": 0.24,
+      "log_sha256": "7991f591bfffff7260c57157c0c0f9ea3406279c0695219f67df671c001f2700",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "negative-sh3_mvk_library",
+      "exit_code": 1,
+      "duration_seconds": 0.78,
+      "log_sha256": "a679db9b11482a14be91636b5c38783ca49df0334ffe86469e19cb6d9349451d",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "negative-sh3_vulkan_include",
+      "exit_code": 1,
+      "duration_seconds": 0.24,
+      "log_sha256": "7f0aaf8147e94743cf2866e47f918d13dd247253a815ab72f0e7af8c4036e0a5",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "package-build-inner-v3",
+      "exit_code": 0,
+      "duration_seconds": 51.25,
+      "log_sha256": "962ef92cfd48f72a5bccbded768caebbe837f2188611261c13298aa17c8f6803",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "package-build-v1",
+      "exit_code": 0,
+      "duration_seconds": 53.88,
+      "log_sha256": "ac2329033b451d765f1f9196cc0a329212a801f0cbd95ae27e43e5b7a0b7c19b",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "package-settings-v1",
+      "exit_code": 0,
+      "duration_seconds": 1.0,
+      "log_sha256": "5bd7b69570b4ad5fab207bbcfa90e3b95c3d1a1e39f8e16dcadfe713c8d1c76e",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "package-settings-v2",
+      "exit_code": 0,
+      "duration_seconds": 1.14,
+      "log_sha256": "cafb9cbd438bca554ccb1e9c9885b5558433ed4ed28e2f594c093f7c02ad6b48",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "prepare-dependencies-v1",
+      "exit_code": 0,
+      "duration_seconds": 19.87,
+      "log_sha256": "21dd5b324957a4eda4c8a310d4933fdd705088726def777880cd95d4476c6b61",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "prepare-only-v1",
+      "exit_code": 0,
+      "duration_seconds": 2.38,
+      "log_sha256": "1a5d168716ed81bd128e793b5e9d774924ccf025bbc634f440711d8e354626b8",
+      "outcome": "expected-result"
+    },
+    {
+      "name": "swizzle-apply-v2",
+      "exit_code": 0,
+      "duration_seconds": 0.02,
+      "log_sha256": "415eb0c2533d76fe2b98cba11e94d0a9ec9b0a43a6dda6042175273fd48dd98a",
+      "outcome": "expected-result"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "path": "schemas/pcsx2-moltenvk-v1.md",
+      "bytes": 4463,
+      "sha256": "8304e0dc620b0cd4b43618dc899a12065b97d0c88caf9f9f369bf86f331c94d5"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-moltenvk/CMakeLists.txt",
+      "bytes": 3353,
+      "sha256": "44f2ea91b5c720412c6186b49805ef8da18591b5da49527d04334eb7b0b55de9"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-moltenvk/README.md",
+      "bytes": 3617,
+      "sha256": "fc8ebd7838661e6329e8b7135a7227e4874351e76aa1f72fd3f4d03e3d7ce82a"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-moltenvk/capacity.py",
+      "bytes": 1385,
+      "sha256": "2cfd9e5d76451e455ed28aa54b0a0ad7606cc861e111f9d46038f6f138840e1c"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-moltenvk/consumer.cpp",
+      "bytes": 11329,
+      "sha256": "5b73577d63241df9d692d52943be0671a806c9f5dd4105d5e69828487f528dab"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-moltenvk/fixture.hpp",
+      "bytes": 7271,
+      "sha256": "3d87711dd090922a47bcc328256b3f1fce204610de1ddaa5ba6f8333c5d3e48c"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-moltenvk/shader.cpp",
+      "bytes": 955,
+      "sha256": "0c1f4579c9e4a726cbfb68211a9dc70dc98e5602ac0b339487d7a020c9cee826"
+    },
+    {
+      "path": "tests/fixtures/pcsx2-moltenvk/test_capacity.py",
+      "bytes": 1272,
+      "sha256": "6f67187c2b511cf1f990cf73f3d8c3d334e92586ae839bc79efae92236286340"
+    }
+  ],
+  "local_evidence": [
+    {
+      "name": "4cf93f0f16b1503580cdb7ffdedb056321446677.patch-apply-v1.json",
+      "bytes": 1202,
+      "sha256": "954b41555f662426fbacd6be94945de61f8c8614827339fcf72eac3a48f5b23f"
+    },
+    {
+      "name": "SPIRV-Cross-checkout.json",
+      "bytes": 1031,
+      "sha256": "452f5d87b1d6b24d1cb613f02117e67102004a840a40b094a349c88715aa53c6"
+    },
+    {
+      "name": "SPIRV-Cross-fetch.json",
+      "bytes": 1116,
+      "sha256": "c8638b838a870bef783ff7a682bce917fd34f1f40456f5656b6fe000bfb11890"
+    },
+    {
+      "name": "SPIRV-Cross-init.json",
+      "bytes": 945,
+      "sha256": "330df0d38a82e10e14836f2b4b22e254027bbfbfeecdc4c3a5bbf2bcf7efd947"
+    },
+    {
+      "name": "SPIRV-Cross-original-inventory.json",
+      "bytes": 798843,
+      "sha256": "5e19835c74f608921533f98532aea5586799f47070b32ed670979de5dfcda883"
+    },
+    {
+      "name": "SPIRV-Cross-remote.json",
+      "bytes": 1041,
+      "sha256": "8d31f07d3d164c8b4e8ab8782664220831a95177ceef6240837893319e9c4b25"
+    },
+    {
+      "name": "SPIRV-Headers-checkout.json",
+      "bytes": 1036,
+      "sha256": "3a92305a02b66eeaa25cb43c2c59854fd7490a131728a185386cf6af1c34649a"
+    },
+    {
+      "name": "SPIRV-Headers-fetch.json",
+      "bytes": 1122,
+      "sha256": "ff1b39163acb36e79be1d3bcac6abc8469641ee6f56661860c3fdb060fa69736"
+    },
+    {
+      "name": "SPIRV-Headers-init.json",
+      "bytes": 951,
+      "sha256": "63163d344354d03ebced21824d7cbd520d247782f41043e8d1b0b571f375d712"
+    },
+    {
+      "name": "SPIRV-Headers-original-inventory.json",
+      "bytes": 16871,
+      "sha256": "0cc02678540edd105b080382a36d84057f42385b6d1792d29d1212b20fe58dfc"
+    },
+    {
+      "name": "SPIRV-Headers-remote.json",
+      "bytes": 1049,
+      "sha256": "0ae85b84eb1057f397ca392513dd7c23def0a064f4054eb575224506e834caf8"
+    },
+    {
+      "name": "SPIRV-Tools-checkout.json",
+      "bytes": 1031,
+      "sha256": "a530e2f78d814815976b28e2b16fc9e3bc68c1441ccf8443aaa028973eecb61c"
+    },
+    {
+      "name": "SPIRV-Tools-fetch.json",
+      "bytes": 1116,
+      "sha256": "62d8b459ee7023fb4d31f4396a79b893e815003c45d8e234ffdacddfc168d70b"
+    },
+    {
+      "name": "SPIRV-Tools-init.json",
+      "bytes": 945,
+      "sha256": "95f63874c3a17e53200b516a5ca124f304646e766fe97ec09d1a67cdc09d7ad2"
+    },
+    {
+      "name": "SPIRV-Tools-original-inventory.json",
+      "bytes": 266384,
+      "sha256": "748626e07f7a92872ae2014119b6d266c270a3111a3414930d5f7c76e482da89"
+    },
+    {
+      "name": "SPIRV-Tools-remote.json",
+      "bytes": 1041,
+      "sha256": "a67e316e8620f249654c3e15168098b1919a7cf4a66c77a21d201915ef6a5453"
+    },
+    {
+      "name": "Volk-checkout.json",
+      "bytes": 1010,
+      "sha256": "98b0cd6bb3551fdf58d81e7df9ea696f40fd06f6c6921a1e3e945bc0e837da06"
+    },
+    {
+      "name": "Volk-fetch.json",
+      "bytes": 1095,
+      "sha256": "812d675481ed239321af81b02ec8d78d8274270d52e9793e8623fa4b312f5782"
+    },
+    {
+      "name": "Volk-init.json",
+      "bytes": 924,
+      "sha256": "2e5e0b879f3791712d96b5cdd4b9164e32fc188be377fe9b875d85ec3acb304f"
+    },
+    {
+      "name": "Volk-original-inventory.json",
+      "bytes": 2947,
+      "sha256": "1a3e74584691af45c9f5f26bbc529dd97463636934b130c3fbc4528abcac8989"
+    },
+    {
+      "name": "Volk-remote.json",
+      "bytes": 1005,
+      "sha256": "28336b43fcb1964bcde6b80d2f0ad97f6b8cf5ff0fe5802946fa7c2b215e7c47"
+    },
+    {
+      "name": "Vulkan-Headers-checkout.json",
+      "bytes": 1039,
+      "sha256": "a2f8c3af41729884c8fc7d6005f3861e3a690ed6af898b0b9892fcc46adb0a94"
+    },
+    {
+      "name": "Vulkan-Headers-fetch.json",
+      "bytes": 1125,
+      "sha256": "143318f41d64c27f81d8ea082d5e33135453f4184a551a256402c079c265496c"
+    },
+    {
+      "name": "Vulkan-Headers-init.json",
+      "bytes": 954,
+      "sha256": "13d29d7584315e496c2e35dac7e78fe791a352711fff890c2e4823d2844c53a4"
+    },
+    {
+      "name": "Vulkan-Headers-original-inventory.json",
+      "bytes": 12490,
+      "sha256": "ff43586ead7d7cd4db0f76285743ed196c3192c619c8cba0570573477a9840ca"
+    },
+    {
+      "name": "Vulkan-Headers-remote.json",
+      "bytes": 1053,
+      "sha256": "0bed3d86a2747d250a8d04e07328fd816f253f6172cbd8898cc844bb749f63d6"
+    },
+    {
+      "name": "Vulkan-Tools-checkout.json",
+      "bytes": 1034,
+      "sha256": "cafe63dfd0bdec557b0b2d1499fc360d85422cf0af3b4b736fc6a53c8d65f2b7"
+    },
+    {
+      "name": "Vulkan-Tools-fetch.json",
+      "bytes": 1119,
+      "sha256": "243f27edae3ad102ff1b2afd63f9c66cc5c97692834936a7250b552636bd0c86"
+    },
+    {
+      "name": "Vulkan-Tools-init.json",
+      "bytes": 948,
+      "sha256": "5d7fb53bef5ec7f69ae62be6a72ea6334d7e64e053785c2f3f20537fdfd661ae"
+    },
+    {
+      "name": "Vulkan-Tools-original-inventory.json",
+      "bytes": 19099,
+      "sha256": "dd0ecadd9e8cfb9bf2a6e12aeef0c6032e8dcb814378a4cd52a5a79dbe338d0b"
+    },
+    {
+      "name": "Vulkan-Tools-remote.json",
+      "bytes": 1045,
+      "sha256": "f894fc3f52d4f503ba34aecdb0a0fa5ac0837cabae0370265580002795fd8ef9"
+    },
+    {
+      "name": "actions.py",
+      "bytes": 2878,
+      "sha256": "33391a9070bb0738bbe57fb985fe3ad5d083b0d5f8ee0ceeed11c47d0e717013"
+    },
+    {
+      "name": "archive.json",
+      "bytes": 302,
+      "sha256": "887238189011c05d09868d9aaae662df13422b06bdecb4495eb26f3be411ab69"
+    },
+    {
+      "name": "baseline-configure-v18.json",
+      "bytes": 1488,
+      "sha256": "59e5be9855dd938936c8a717ae8e250efc8ef4fab535880820a9ccbf6d0847e5"
+    },
+    {
+      "name": "build-binary-inventory.json",
+      "bytes": 687,
+      "sha256": "0ac30bda29c042f2ac0325556218d0f2f55743eecd508693fc08303bca5a5b5c"
+    },
+    {
+      "name": "build-v1-fixture-build-live-samples.jsonl",
+      "bytes": 740,
+      "sha256": "83942d2f65f8fe3050be99c075aec243750ec93fd74b7c914879807472bc5b41"
+    },
+    {
+      "name": "build-v1-fixture-build-samples.json",
+      "bytes": 1028,
+      "sha256": "3acd3953ccae6988abe0e8a7d39083bdbea5abcdf32c2c19d1208d21b4fa6e0f"
+    },
+    {
+      "name": "build-v1-fixture-build.json",
+      "bytes": 630,
+      "sha256": "d8de27fb92489c4cef43016c99c0be6853f0e1676f3d72c816119163a5ce5b1e"
+    },
+    {
+      "name": "build-v1-fixture-configure.json",
+      "bytes": 3184,
+      "sha256": "9ef66aadd81cd9de5d62d3b18a73ee21e7cdf25849d7c47f55b54d7db4aabe4a"
+    },
+    {
+      "name": "build-v2-fixture-build-live-samples.jsonl",
+      "bytes": 740,
+      "sha256": "790235de465beddd14e6beeebc831cfc9acab91020f862e49ebbb546682173c5"
+    },
+    {
+      "name": "build-v2-fixture-build-samples.json",
+      "bytes": 1028,
+      "sha256": "225f08d2e9cd1a3d47a3929de48d8961920306edc52a2a9dd18e22ff828133d1"
+    },
+    {
+      "name": "build-v2-fixture-build.json",
+      "bytes": 630,
+      "sha256": "fdb02b0c04ee456d33774a0d15621134ae75be9fcae2b354b692bb4979fc4ebe"
+    },
+    {
+      "name": "build-v2-fixture-configure.json",
+      "bytes": 3184,
+      "sha256": "9820af1df6a5b091ad6dfc5712b6f850316228dfd0382d375a84f2c9915671bf"
+    },
+    {
+      "name": "build-v2-fixture-ctest.json",
+      "bytes": 1110,
+      "sha256": "bca3c0e1fd8b3388d45529c70a6530d75568e255102fe1f7cb3560b91869fdbe"
+    },
+    {
+      "name": "build-v2-fixture-junit.xml",
+      "bytes": 38465,
+      "sha256": "a6ff1136445c2b584352acdaa7515571cff4288faa01142527fd6e137e70ea1e"
+    },
+    {
+      "name": "build-v3-fixture-build-live-samples.jsonl",
+      "bytes": 740,
+      "sha256": "5e3d34ddb90e6dee8ac26583837afb4c0f91d3335bd5b91646021324eef9b984"
+    },
+    {
+      "name": "build-v3-fixture-build-samples.json",
+      "bytes": 1026,
+      "sha256": "e9ac5deacddae2d07fd3f7a98ca8a0990a89b95cfc1ea936cb0ee8165ee6583c"
+    },
+    {
+      "name": "build-v3-fixture-build.json",
+      "bytes": 629,
+      "sha256": "37dd68abb090f3fbf6e18b9b8b0fe6f9f4aab9b054fd7aab5f829a3435361353"
+    },
+    {
+      "name": "build-v3-fixture-configure.json",
+      "bytes": 3184,
+      "sha256": "c937127adb9248f504b46e528b692a1f081d0f5eeb04b7afb4e147b2ff87420e"
+    },
+    {
+      "name": "build-v3-fixture-ctest.json",
+      "bytes": 1110,
+      "sha256": "984ba74737a6f33a01a630ffc5ed26be013b312f406e4c66b843be844541dd10"
+    },
+    {
+      "name": "build-v3-fixture-junit.xml",
+      "bytes": 24861,
+      "sha256": "cf1061fcef275a13e280b2771d0d7ec58e9bd3ce124d7090f11d2415145adb50"
+    },
+    {
+      "name": "build-v4-fixture-build-live-samples.jsonl",
+      "bytes": 740,
+      "sha256": "4efa49910b23e144df1538f00430f4155fcab1f307c39e919052b7245ba36684"
+    },
+    {
+      "name": "build-v4-fixture-build-samples.json",
+      "bytes": 1026,
+      "sha256": "68844a5cbd911d69b3da519e2ec538cc7c525791cddf32a5d86fc4b6698a84c7"
+    },
+    {
+      "name": "build-v4-fixture-build.json",
+      "bytes": 629,
+      "sha256": "7849334ce1d3ebb9673d60aec2966ece6400900220412da80921ae83967437f1"
+    },
+    {
+      "name": "build-v4-fixture-configure.json",
+      "bytes": 3183,
+      "sha256": "8b5dacd32fe589473d70011d14edef239b4131592e61bf6e510cbd67f2b7243a"
+    },
+    {
+      "name": "build-v4-fixture-ctest.json",
+      "bytes": 1110,
+      "sha256": "b0c25af55a36e443471a7cc148cae6d76fe0831ebb5c84f23ea0fb268599d62b"
+    },
+    {
+      "name": "build-v4-fixture-junit.xml",
+      "bytes": 9304,
+      "sha256": "f71366626ffbcfa726a7492fd7834f7c66dd811334f0384150dbd53fe74345e5"
+    },
+    {
+      "name": "build-v4-fixture-mv_consumer-deps.json",
+      "bytes": 975,
+      "sha256": "2e89ef0141443b9babdb688c85992dde4ef3acd13d56892e5cfa991a03155c15"
+    },
+    {
+      "name": "build-v4-fixture-mv_consumer-loads.json",
+      "bytes": 977,
+      "sha256": "50780fdbb69e959644c6d8571b272cad2f80fe5c7c9b2e722d19f0076e7d03ea"
+    },
+    {
+      "name": "build-v4-fixture-mv_shader-deps.json",
+      "bytes": 969,
+      "sha256": "dd5b28a248b17c14dceacb488cdf06959d0eebef8aea812c1d156cd576c6e9cf"
+    },
+    {
+      "name": "build-v4-fixture-mv_shader-loads.json",
+      "bytes": 971,
+      "sha256": "d06bbc9795d052c13354a69b3095025706a9e16691f3fb478e557e3f761d4ca7"
+    },
+    {
+      "name": "build-v4-fixture-provider_msl_constexpr_test-deps.json",
+      "bytes": 1023,
+      "sha256": "0ce9016bb980a2a9cf609d472741bb1118aaef5639f08245a96fea9803b494eb"
+    },
+    {
+      "name": "build-v4-fixture-provider_msl_constexpr_test-loads.json",
+      "bytes": 1025,
+      "sha256": "79b305b423ff318affe064e3ea573c2c83c46dbb61598e484200c74f5f641a61"
+    },
+    {
+      "name": "build-v4-fixture-provider_msl_resource_bindings-deps.json",
+      "bytes": 1032,
+      "sha256": "16d9d874016dbcd118b107996130fb13230567e091222224e8863657b450ffa3"
+    },
+    {
+      "name": "build-v4-fixture-provider_msl_resource_bindings-loads.json",
+      "bytes": 1034,
+      "sha256": "b076e86c5b817d62665935b0a60977e30f76283dbc919342d88368ab4d094e3b"
+    },
+    {
+      "name": "build-v4-fixture-provider_small_vector-deps.json",
+      "bytes": 1005,
+      "sha256": "eb354781e380c478d5207a9c78a51d87e00c52dbfa3b534c318440ae707715ed"
+    },
+    {
+      "name": "build-v4-fixture-provider_small_vector-loads.json",
+      "bytes": 1007,
+      "sha256": "67f17db26cf18b0b202db70e669b267497ba8b198fbe00c5e724185eda9357bd"
+    },
+    {
+      "name": "build-v4-fixture-trace-compute.json",
+      "bytes": 1068,
+      "sha256": "45b71c953fd6183b891a1c77b3ab9d878e186384fd67c6cbf8fd5d1f6d2a99e6"
+    },
+    {
+      "name": "build-v4-fixture-trace-errors.json",
+      "bytes": 1065,
+      "sha256": "961f52830db65f23324fe2669737fc441b4ddf882214f90d9d8720ea7b0a0a01"
+    },
+    {
+      "name": "build-v4-fixture-trace-image.json",
+      "bytes": 1062,
+      "sha256": "f67d345c1ca3720f26b4923ff2891a4110f10010f8a2727a38e25fe18b796b41"
+    },
+    {
+      "name": "build-v4-fixture-trace-profile.json",
+      "bytes": 1068,
+      "sha256": "a33630f04dd1f2d407a2572152b25dd7762abebf6fb4e893fbae04cd233dcdc6"
+    },
+    {
+      "name": "build-v4-fixture-trace-transfer.json",
+      "bytes": 1071,
+      "sha256": "0ad7fdb8cad90bddeaed8060b50fd5efb62b15bcaa4ea1800a0e26394981a1f0"
+    },
+    {
+      "name": "build-v4-fixture-verified.json",
+      "bytes": 312,
+      "sha256": "aeaa0b3bd53eb658ecc23001dca9a4f1a99dfb57852fb8f333dba1fc23ceca68"
+    },
+    {
+      "name": "build.py",
+      "bytes": 1026,
+      "sha256": "9bec44e99051928a2a7826715d120803d5ea6f3144a3f967f2e4483e75bacd7b"
+    },
+    {
+      "name": "capacity-policy-tests.json",
+      "bytes": 233,
+      "sha256": "e5d6ab77b6e185da21e5b56952268fd1d88139685b4bfcbabfa91d14f85e08f2"
+    },
+    {
+      "name": "cereal-checkout.json",
+      "bytes": 1016,
+      "sha256": "096859dc4749ca9d75cdf03b4e45c8ab6714a654d6cbb4004b869e2f64eba251"
+    },
+    {
+      "name": "cereal-fetch.json",
+      "bytes": 1101,
+      "sha256": "df891689089ee2660d8efc41ab4c4e5ad0fdf73aeb26f84239bbbcde226e81d5"
+    },
+    {
+      "name": "cereal-init.json",
+      "bytes": 930,
+      "sha256": "fca890fdfb0ac2dec37b92ff0ad7cc15e09ca08ff29778001820a86ee4b95296"
+    },
+    {
+      "name": "cereal-original-inventory.json",
+      "bytes": 30234,
+      "sha256": "e2948465893fc51f226d55be3f7df8b57a794a364b076ba30295a2c658bb9923"
+    },
+    {
+      "name": "cereal-remote.json",
+      "bytes": 1016,
+      "sha256": "2df72b29a302124e8451b9a57711e8ffacc6fbd95f9144ed5b3b8f98d8cfa8cc"
+    },
+    {
+      "name": "configuration-audit.json",
+      "bytes": 7249,
+      "sha256": "4146a32ae39d4fb6be7ad87d7828bc50cad83654961e236bf833573bc1f051b2"
+    },
+    {
+      "name": "configure-result-v18.json",
+      "bytes": 1604,
+      "sha256": "9720d9dd6082bf42708988bbfbc5e66ef394aefdd409af778d095ebe4c472684"
+    },
+    {
+      "name": "configure.py",
+      "bytes": 3223,
+      "sha256": "0468b837d6cedcb69b81e877b0e76bfe2ebebd7df43fb94b36b2667ca29b8e41"
+    },
+    {
+      "name": "consumer-before-driver-version.cpp",
+      "bytes": 10999,
+      "sha256": "9453bc7adf3193bf5a6a98fa0181a4b7a8940e541df17101b6693fa3a7b9437c"
+    },
+    {
+      "name": "consumer-before-effective-private-api.cpp",
+      "bytes": 10975,
+      "sha256": "3b7b50a855d5d09dbeeeb89b83727602e99d21ad478598457a9fb59eed956f32"
+    },
+    {
+      "name": "consumer-before-namespace.cmake",
+      "bytes": 3258,
+      "sha256": "8fd3e1615b33780e86d9a4fde0645f3e5fa5ac6bf666de38d3a2709fee4c355b"
+    },
+    {
+      "name": "consumer-syntax-v1.json",
+      "bytes": 1593,
+      "sha256": "fff55ca49ccea34d2ede5ae1cb8f0bb93b16732734cfb82c240153cee9c6e33c"
+    },
+    {
+      "name": "consumer-v2-CMakeLists.txt",
+      "bytes": 3352,
+      "sha256": "fc7076bc33ab2575c24d3277ed5752601c193e8f1d63f0e55a0560cda076ba50"
+    },
+    {
+      "name": "consumer-v2-fixture.hpp",
+      "bytes": 6629,
+      "sha256": "eb9eb3b2e0df85617600ffdc171053e5c66a396ae291203b9fc8ab81ce3106fe"
+    },
+    {
+      "name": "download-v1.json",
+      "bytes": 1120,
+      "sha256": "493c0a128b976fb7755ec8188f45da01fc3aeebc0fdba5d8696260928afde862"
+    },
+    {
+      "name": "execution-architecture.json",
+      "bytes": 108,
+      "sha256": "239cda4efd06a042e9a651f6e69fb51200351c011326fc53c003357efea2e17a"
+    },
+    {
+      "name": "external-build-inner-v3.json",
+      "bytes": 1028,
+      "sha256": "193d9f0cda72208c6a43a0fbf96d2fc4db1636d6269ac0f77c9e6693b603216c"
+    },
+    {
+      "name": "external-build-v1-failure.json",
+      "bytes": 953,
+      "sha256": "1f9907cc66a68a63b27d70396a50c11c88e20b0984b970dc07e2473a21311395"
+    },
+    {
+      "name": "external-build-v2-live-samples.jsonl",
+      "bytes": 346,
+      "sha256": "cb61a4c4042e4c2e9542082a18f79553fb1c1c6edd6c1c71d528bfc239a445d2"
+    },
+    {
+      "name": "external-build-v2-supervisor-error.json",
+      "bytes": 752,
+      "sha256": "bcdd39d9d413864ac6cde264bcb70f6658b6ca274c115e3acfe21c06a85f952a"
+    },
+    {
+      "name": "external-build-v3-live-samples.jsonl",
+      "bytes": 15236,
+      "sha256": "90950b7a58676853601040f6d7712588e03038d3e30148b7126030340328f437"
+    },
+    {
+      "name": "external-build-v3-samples.json",
+      "bytes": 21123,
+      "sha256": "f8fa7856156604cadc4272a3e7d9392bf2c59496d722af552e1ff258ef0d1937"
+    },
+    {
+      "name": "external-build-v3.json",
+      "bytes": 618,
+      "sha256": "93619498ff002f52ceba8eb8b08c8438e02bf7c1f7925a30f730e1af60f62009"
+    },
+    {
+      "name": "external-settings-v1.json",
+      "bytes": 1589,
+      "sha256": "0bb2d53ad7f814a857e90a087c0db78f8cef7b1e1ed3d8cad8cbe11c26232d12"
+    },
+    {
+      "name": "external-settings-v2.json",
+      "bytes": 1670,
+      "sha256": "d9a90eac587d4e063273fd6be4d9f919d24e5066becce5471f3e324cf3c0c053"
+    },
+    {
+      "name": "final-binary-inventory.json",
+      "bytes": 4632,
+      "sha256": "c6c5bbe9e34e6d37aab597e048072ac16e8e53f7c8fbe18e52421b27eb3bf033"
+    },
+    {
+      "name": "finish.py",
+      "bytes": 2770,
+      "sha256": "dbdf2a2220eee9340c596454d921ccd7f198322c38ed198deff669f5515daa01"
+    },
+    {
+      "name": "guarded.py",
+      "bytes": 1348,
+      "sha256": "0be000ae0316bdc441d7a448679542e50001d029314aa94a688675d01c2aa1a5"
+    },
+    {
+      "name": "installation-verification.json",
+      "bytes": 257,
+      "sha256": "a464de46b68a9e2c17a1d457537b97b7f47ec6f8424516130068277c4ed9f5df"
+    },
+    {
+      "name": "installation.json",
+      "bytes": 1120,
+      "sha256": "1994ed04d87af77b7286a3be8eac4ac8ba21aae0347e23ae07b175d6c97424cd"
+    },
+    {
+      "name": "installed-v1-build-live-samples.jsonl",
+      "bytes": 740,
+      "sha256": "339f7b411aa86bbed2d81af6a0cd47ced52630300a80c6b8d75b876b22852095"
+    },
+    {
+      "name": "installed-v1-build-samples.json",
+      "bytes": 1027,
+      "sha256": "8ffb6f4d742919199ec00b69d2d2251fbc2999d61a13442d86044cb988b5cf7f"
+    },
+    {
+      "name": "installed-v1-build.json",
+      "bytes": 621,
+      "sha256": "196741a044b9de5bc8c9a3a4a42f0b1c3a31f626741b423d3a9a260ceda15c9d"
+    },
+    {
+      "name": "installed-v1-configure.json",
+      "bytes": 3117,
+      "sha256": "cc25dbd43b248e6ad3777fa6f11a5647dffeaf9ea61d9ad100fe7338d25474be"
+    },
+    {
+      "name": "installed-v1-ctest.json",
+      "bytes": 1094,
+      "sha256": "a1d1dc646cbf2a24117d5ffad88d87b28aebf556e926bbe4b9032807e7e1806a"
+    },
+    {
+      "name": "installed-v1-junit.xml",
+      "bytes": 9302,
+      "sha256": "6e389cae9996d53cdae27c1b97d4d643a79c01638090d0c7ced0b5405de6a9da"
+    },
+    {
+      "name": "installed-v1-mv_consumer-deps.json",
+      "bytes": 963,
+      "sha256": "1432c84ac910a4d2adce9b186e818c75830ca19f3268c3ce9d2245c25fd2f09b"
+    },
+    {
+      "name": "installed-v1-mv_consumer-loads.json",
+      "bytes": 965,
+      "sha256": "b834ba6a221d8ba39feb19d4fcc8e93827a552a393cc2152f078e394e128e92a"
+    },
+    {
+      "name": "installed-v1-mv_shader-deps.json",
+      "bytes": 957,
+      "sha256": "e2c9e0a1440bca2f98db63cda55fdfc52b86bed48d46f96b6cdcf0cce535ab10"
+    },
+    {
+      "name": "installed-v1-mv_shader-loads.json",
+      "bytes": 959,
+      "sha256": "397440bf5c34d6c40677dfd9328e1901649be969f28781714f3b743d0fd165b4"
+    },
+    {
+      "name": "installed-v1-provider_msl_constexpr_test-deps.json",
+      "bytes": 1011,
+      "sha256": "571fb95859052b7480a39ff3a646fd6f4644cdcde227ee6317223fa1fa4d3d32"
+    },
+    {
+      "name": "installed-v1-provider_msl_constexpr_test-loads.json",
+      "bytes": 1013,
+      "sha256": "f68923e95baaa136e044c4806a97360e2004b1f941e87c9a2f62a4043f273fbc"
+    },
+    {
+      "name": "installed-v1-provider_msl_resource_bindings-deps.json",
+      "bytes": 1020,
+      "sha256": "a67e6b0dcaa4e09d57f3d467797a57ab2622ea234149798a8100ceae0f36f254"
+    },
+    {
+      "name": "installed-v1-provider_msl_resource_bindings-loads.json",
+      "bytes": 1022,
+      "sha256": "034e6b20ba36e42cb11227ec6c53d2625f1af66e33d2cbc0419f5c16a34c748d"
+    },
+    {
+      "name": "installed-v1-provider_small_vector-deps.json",
+      "bytes": 993,
+      "sha256": "89be70dc248deec9edad7a9014c5db7e8ec399f650201b5064bc268eb35e8245"
+    },
+    {
+      "name": "installed-v1-provider_small_vector-loads.json",
+      "bytes": 995,
+      "sha256": "7de82a1ac8ae8345be4974ce2e537f57e1c8cc1551fbd435a7aa8d682c920b8f"
+    },
+    {
+      "name": "installed-v1-trace-compute.json",
+      "bytes": 1052,
+      "sha256": "6fb306699ed67df80fdcf8ce8fe3cfae2ce9cabc3b2d7f456c4dd4eb551a3388"
+    },
+    {
+      "name": "installed-v1-trace-errors.json",
+      "bytes": 1049,
+      "sha256": "e5cdc547553f8363395c5bf0090e64a9f0e041f3ea72978244eeeba129213f4d"
+    },
+    {
+      "name": "installed-v1-trace-image.json",
+      "bytes": 1046,
+      "sha256": "f1ed3ca217258b02dfbfa729f503023064db25043c776e478035328acdb95096"
+    },
+    {
+      "name": "installed-v1-trace-profile.json",
+      "bytes": 1052,
+      "sha256": "91b55ece20945f8b7807519e4d0d5572dba877b5cb88c650bda6d33403f4a481"
+    },
+    {
+      "name": "installed-v1-trace-transfer.json",
+      "bytes": 1055,
+      "sha256": "8f107d798aa6816ac24c4723bf39b5aed3086a31c5b852f7aa0a3917a701e1b1"
+    },
+    {
+      "name": "installed-v1-verified.json",
+      "bytes": 312,
+      "sha256": "906238895d1e8752aae653af28408ebd8e87b33f3bdabf5bbeb258a5ed8a1f90"
+    },
+    {
+      "name": "mac1-apply-v2.json",
+      "bytes": 1093,
+      "sha256": "18bdde6902f7bdf59847c1318f9176ccae0d17baf3cc76de40e60161cd5d580e"
+    },
+    {
+      "name": "module-before-install-deps.json",
+      "bytes": 1011,
+      "sha256": "698f827e718b7edd0bb2073d8d4c401b9550e331cdda2d683dca6d80de8d3058"
+    },
+    {
+      "name": "module-before-install-loads.json",
+      "bytes": 1013,
+      "sha256": "ddc23a9ef10414c8720ecb7683508971b26e2ac7f86d66bdf2744f58fa082b25"
+    },
+    {
+      "name": "module-installed-deps.json",
+      "bytes": 946,
+      "sha256": "84d49cb32790da477df9b94354148f1bc47d301350493be1d0593025f7e90858"
+    },
+    {
+      "name": "module-installed-loads.json",
+      "bytes": 948,
+      "sha256": "d40c862d28cd69fd062d09c475d643e438e93d23aa8ee4ca153bbcdc26e4dcbe"
+    },
+    {
+      "name": "negative-sh3_mvk_include.json",
+      "bytes": 3106,
+      "sha256": "2233055978569dd32c7d4c6caacc195a0a47ad33f146b6030681eb7c766dcce6"
+    },
+    {
+      "name": "negative-sh3_mvk_library.json",
+      "bytes": 3116,
+      "sha256": "106f3a401b0b1f9b6e23080e3d6477fe14564c642810975e9f55420a70657d39"
+    },
+    {
+      "name": "negative-sh3_vulkan_include.json",
+      "bytes": 3100,
+      "sha256": "dfe6b62f38e4bc3bc7c870fe984c781ae9ade09abd84a4ecaa73d6cc6178edef"
+    },
+    {
+      "name": "original-inventory.json",
+      "bytes": 41667,
+      "sha256": "a63bb63fdaf57d0840b943875bda094fcaf8f05bb8469c429493af58bbff85df"
+    },
+    {
+      "name": "package-build-inner-v3.json",
+      "bytes": 1082,
+      "sha256": "cd13545a05baf7634b8703cc97183c61e96405e510af2dd9f793b593370e5c9c"
+    },
+    {
+      "name": "package-build-v1-live-samples.jsonl",
+      "bytes": 5119,
+      "sha256": "b582a960d5f2835585b0ec1fca83cc27528786b5db2f0cb5a7e9bfeffe65cffd"
+    },
+    {
+      "name": "package-build-v1-samples.json",
+      "bytes": 7087,
+      "sha256": "4d60629be37f9e9172dd30ac5101fabb24f96d2bfc64436e09a5fdeb5ec040c1"
+    },
+    {
+      "name": "package-build-v1.json",
+      "bytes": 611,
+      "sha256": "94496c96a93f25b0349f47ce543bd149bd087ec257f3c04d84c3bdc835771b16"
+    },
+    {
+      "name": "package-settings-v1.json",
+      "bytes": 1554,
+      "sha256": "0bb20388f369ddbea7acd28497f9b0055dc5e7ccaa7a6200385557c9c9858e27"
+    },
+    {
+      "name": "package-settings-v2.json",
+      "bytes": 1635,
+      "sha256": "15530d3af58c113c24d731356f3a73c3d319aef6fff9e9c3fc37b67ef29537a7"
+    },
+    {
+      "name": "patches.json",
+      "bytes": 930,
+      "sha256": "9487c0bed673e1da8c926be47a94bb644da2465c34a687242fd30dd2cc73b6b2"
+    },
+    {
+      "name": "prefix-after.json",
+      "bytes": 598921,
+      "sha256": "694cbabfc81faf8044b1b252184f5c70b1052c65f81f724f0f6f7865778c6b33"
+    },
+    {
+      "name": "prefix-before.json",
+      "bytes": 598826,
+      "sha256": "bb9af7dbf14925bc15bce64126e69ed4a2eea3b08db229beae84e2e153990c6a"
+    },
+    {
+      "name": "prefix-links-before.json",
+      "bytes": 3807,
+      "sha256": "d3bc0e4b5ffbd90c2880f63cd36e5ac6ecd026efa51214d142de009aec76668f"
+    },
+    {
+      "name": "preflight-v18.json",
+      "bytes": 803,
+      "sha256": "9e1e3aacb48650ec640d630cbd75c3049c086b823156273b0357eb6a6920286c"
+    },
+    {
+      "name": "prepare-dependencies-v1-samples.json",
+      "bytes": 2694,
+      "sha256": "20b37dc73d757018b1922c8f2286f642a86ca5e4117fe225309b69f469323e24"
+    },
+    {
+      "name": "prepare-dependencies-v1.json",
+      "bytes": 625,
+      "sha256": "c78c75733edb8f1ae4b27aefb686b17574ed568a6df54305e0140f03316520c3"
+    },
+    {
+      "name": "prepare-only-v1.json",
+      "bytes": 963,
+      "sha256": "8f203958a09a3a06a58b51c6d76b82ab3bd622d0f3f2674cfe81cd519be0af8a"
+    },
+    {
+      "name": "prepare.py",
+      "bytes": 3720,
+      "sha256": "1e9731ac1a29e73202fe3fa931f4ec5f19acfd7f2312c13703bba45567420b37"
+    },
+    {
+      "name": "publish.py",
+      "bytes": 8246,
+      "sha256": "096fa2ab21d4bb2fdf3637adef113c1d7332d0cc6b12082b53fe5e22be082989"
+    },
+    {
+      "name": "repair_prepare.py",
+      "bytes": 2233,
+      "sha256": "bb8c04d20cf2a8ca9f58b29dd3d468010495dcb20acc7f5730a4b8baaf3edc1d"
+    },
+    {
+      "name": "repository-validation.json",
+      "bytes": 700,
+      "sha256": "e834235508d2dd5d6620da52e559720d281d40df014d56b4a83018f5048f08e4"
+    },
+    {
+      "name": "source-verification.json",
+      "bytes": 1257,
+      "sha256": "6b75d365407f13ac00f49e5e05f16a9c03dc30e341c0d2025c717e421cb662fd"
+    },
+    {
+      "name": "stage.py",
+      "bytes": 2665,
+      "sha256": "0667f666fdbf3caaf675175d46d3b764bd89a8e6817aba8681f6986e1e169123"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 385,
+      "sha256": "e157256e907eb8af65c5c44086fab7e55628a5a2b856ba5918a82d54323768fa"
+    },
+    {
+      "name": "swizzle-apply-v2.json",
+      "bytes": 1103,
+      "sha256": "f85c8492c579d39cf3cf5249c6d569b4b9ca0a174620b9f4d716c331572f69b1"
+    },
+    {
+      "name": "transitives.json",
+      "bytes": 3615,
+      "sha256": "038adc07f44464e06fa59ca3feb85ae7ff4d32ed98a16ad50b5d0f2010877258"
+    },
+    {
+      "name": "verify.py",
+      "bytes": 5227,
+      "sha256": "3eb178e0b01034542ff5d64965260a2899dc559433c60cceca3c677c13255c74"
+    }
+  ],
+  "limitations": [
+    "No complete PCSX2 build, instrumentation or effective map",
+    "No Vulkan CTS, full SPIRV-Cross suite, validation layers, sanitizer, stress or presentation tests",
+    "No Intel GPU, physical macOS 11 or Nintendo 3DS testing",
+    "Two early capacity aborts lost graceful shutdown receipts; observed processes had terminated",
+    "Sparse policy tests do not test Xcode process termination; sampling is not a filesystem quota",
+    "No remote CI or full Python suite rerun"
+  ],
+  "next_unit": "origin/effective-mapping/instrumented-build/baseline-build",
+  "resource_links": [],
+  "capabilities": [],
+  "execution_architecture": {
+    "host": "arm64",
+    "x86_64_probe_sysctl_proc_translated": 1,
+    "test_binaries_architecture": "x86_64"
+  },
+  "repository_validation": {
+    "date": "2026-10-18",
+    "repository_check": {
+      "command": ".venv/bin/python -m tools.qa.check_repository",
+      "exit_code": 0,
+      "output": "Repository checks: PASS (0 errors)"
+    },
+    "diff_check": {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    "source_artifacts_verified": 8,
+    "local_evidence_files_verified_before_receipt": 159,
+    "prior_evidence_hash_verified": "SRC47",
+    "public_files_examined": 15,
+    "local_markdown_links_checked": 463,
+    "private_paths_found": 0,
+    "trailing_whitespace_found": 0,
+    "pcsx2_configuration_exit_code": 0,
+    "gate_status": "ready_for_baseline_build",
+    "gate_blockers": [],
+    "full_python_suite_rerun": false,
+    "remote_ci_run": false
+  }
+}

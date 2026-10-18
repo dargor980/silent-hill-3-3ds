@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC52",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/observer-acquisition-coordinator",
+  "stage": "implemented_synthetic_positive_real_negative",
+  "contract": "schemas/observer-acquisition-v1.md",
+  "prior_observer_build_evidence_sha256": "1d245bd359627269a790f6a37eee249f78b596a37382a6f2a169bb6e017ed3cb",
+  "source": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "baseline_files": 2934,
+    "patched_files": 2941,
+    "patch_sha256": "a4072fb169db8376a657b2e8c578d5cb9777ce361678f03cda92ecea205abbd0",
+    "files_consulted": [
+      {
+        "path": "pcsx2/R5900.h",
+        "sha256": "a6ef18e1b646b5ba6c956c10836aa4f75fd8309798f0ac0cf8644faa41cbf323"
+      },
+      {
+        "path": "pcsx2/SaveState.cpp",
+        "sha256": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589"
+      },
+      {
+        "path": "pcsx2/VMManager.cpp",
+        "sha256": "384f0c0dca7b4e2a2d904ef17e5684521ac750bdfca56d8164c94da744349f4c"
+      },
+      {
+        "path": "pcsx2/PINE.cpp",
+        "sha256": "b6d32cc43b857bb94fd2fdcde556bf8fba300dd1e3d008aad052ae54c1d0b2de"
+      }
+    ],
+    "facts": {
+      "cpuRegs_serialized_whole": true,
+      "state_crc": "current_elf",
+      "observer_and_pine_crc": "disc",
+      "save_state_reply_proves_write_completion": false
+    }
+  },
+  "dependencies": {
+    "files": 5228,
+    "links": 70,
+    "inventory_sha256": "694cbabfc81faf8044b1b252184f5c70b1052c65f81f724f0f6f7865778c6b33"
+  },
+  "abi": {
+    "architecture": "x86_64",
+    "cpu_registers_bytes": 1160,
+    "delay_offset": 676,
+    "pc_offset": 680,
+    "cycle_offset": 1088,
+    "cycle_bytes": 8,
+    "darwin_sol_local": 0,
+    "darwin_local_peerpid": 2,
+    "compiled_against_src51_headers": true,
+    "adapter_compile_options_used": true,
+    "probe_source_sha256": "a39ba0630efdb47cdd3d8b0a9ea336354ea957c0dffb84c7ec01cc2885c27571",
+    "probe_command_sha256": "4564f2adc6faee79fdc7d23109449799e14c07a2ec0c25fffdbe1c0267ab97f9",
+    "result_sha256": "6856851c5a297acc3e3d0ba55eadff761a7011ad46c63ee7e014d93b385731de"
+  },
+  "runtime": {
+    "executable_sha256": "54b24d2087bc8000e1367990a2acc4b615295a94a2cfd1e1c61ca464e9714b49",
+    "profile_sha256": "77465b08d00f47d211894f59cde877eccf93ce35ebbf255441f259c4cd06f231",
+    "environment_sha256": "26fc2bd63348fd5c244dd6668539fdc0211b4be024723a4e26c502f4393fc293",
+    "kernel_peer_pid_matched": true,
+    "persistent_status_queries": 3,
+    "negative_coordinator_code": "ACQUIRE_PAUSE",
+    "no_state_created": true,
+    "no_packets_created": true,
+    "no_acceptance_published": true,
+    "reconnect_after_rejection": true,
+    "identity_stable": true,
+    "live_capture_verified": false,
+    "bios_loaded": false,
+    "game_loaded": false,
+    "profile_normalization": {
+      "initial_guard_rejection": "ACQUIRE_PROFILE",
+      "changed_keys": [
+        "GameListTableView/HeaderState"
+      ],
+      "initial_sha256": "44d4853d974e4f1726b43b8f92b64f6be879b29511fe80f5a56aad3b9dde89da",
+      "initialized_sha256": "77465b08d00f47d211894f59cde877eccf93ce35ebbf255441f259c4cd06f231",
+      "inspected_before_new_pin": true,
+      "guard_relaxed": false
+    },
+    "session": {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "shutdown_verified": true,
+      "duration_seconds": 57.032,
+      "deadline_seconds": 180,
+      "stage_budget_bytes": 8589934592,
+      "free_floor_bytes": 10737418240,
+      "minimum_free_bytes": 19359256576,
+      "maximum_stage_allocated_bytes": 1038712832,
+      "log_sha256": "e814d897f74b1b20857110421741b7d50b1a0e384560096797c6d52da7f5c38e"
+    },
+    "after_shutdown": {
+      "absent": true,
+      "executable_unchanged": true
+    }
+  },
+  "tests": {
+    "python_passed": 2196,
+    "new_since_src51": 124,
+    "console_duration_seconds": 20.48,
+    "junit_suite_duration_seconds": 20.388,
+    "affected_cases": {
+      "acquisition_and_state": 59,
+      "files": 43,
+      "identity": 15,
+      "transport_total": 52,
+      "transport_new": 7
+    },
+    "overall_coverage": {
+      "covered_lines": 4216,
+      "num_statements": 4261,
+      "percent_covered": 98.59484777517564,
+      "percent_covered_display": "99",
+      "missing_lines": 45,
+      "excluded_lines": 19,
+      "percent_statements_covered": 98.94390988030979,
+      "percent_statements_covered_display": "99",
+      "num_branches": 1290,
+      "num_partial_branches": 33,
+      "covered_branches": 1257,
+      "missing_branches": 33,
+      "percent_branches_covered": 97.44186046511628,
+      "percent_branches_covered_display": "97"
+    },
+    "module_coverage": {
+      "tools/inspectors/observer_acquisition.py": {
+        "covered_lines": 109,
+        "num_statements": 109,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 8,
+        "num_partial_branches": 0,
+        "covered_branches": 8,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "tools/inspectors/observer_state.py": {
+        "covered_lines": 21,
+        "num_statements": 21,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "tools/inspectors/observer_transport.py": {
+        "covered_lines": 109,
+        "num_statements": 109,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 38,
+        "num_partial_branches": 0,
+        "covered_branches": 38,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "tools/inspectors/observer_identity.py": {
+        "covered_lines": 55,
+        "num_statements": 55,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 2,
+        "num_partial_branches": 0,
+        "covered_branches": 2,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "tools/inspectors/observer_files.py": {
+        "covered_lines": 137,
+        "num_statements": 137,
+        "percent_covered": 99.34640522875817,
+        "percent_covered_display": "99",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 16,
+        "num_partial_branches": 1,
+        "covered_branches": 15,
+        "missing_branches": 1,
+        "percent_branches_covered": 93.75,
+        "percent_branches_covered_display": "94"
+      }
+    },
+    "independent_line_branch_gate": {
+      "minimum_percent": 80,
+      "passed": true
+    },
+    "ruff_check": true,
+    "ruff_format_files": 107,
+    "synthetic_positive_with_real_filesystem": true,
+    "real_positive_game_acquisition": false,
+    "remote_ci_executed": false,
+    "existing_ci_discovers_new_tests": true,
+    "cpp_provider_tests_repeated": false,
+    "cpp_unchanged": true,
+    "report_sha256": {
+      "initial-tests.xml": "7b6675c623b451961a61b532b834a87f80db05973f8d3e77c8291340d0e57df5",
+      "target-tests.xml": "a09baf8bf3abd62043df048e6b658eb68381e2dc2f32a78432d60e9b9dbf5826",
+      "target-coverage.json": "29099b64669623193b74f4949e6b77847de196c06982e7b38ba1bc1ebb54b930",
+      "target-tests-v2.xml": "f0294ae49918638debb3b3c31025735c4e5b3ebf61d093b93e36f2faafecc801",
+      "target-coverage-v2.json": "5adc26c64a97e5352baed2fd0198c4100a04684615eb67df31b406bffd1512ab",
+      "pytest.xml": "b5eca8c96ce8d436007111dabde268d48a9b3297beaab08592053f5e3c9156ce",
+      "python-coverage.json": "1b14d5dcbac680ea5e7e49fa19eb814c315bc21ef7e3a8b14cac3f24e5b65910",
+      "python-coverage.xml": "d3bf6c8a0f692a0ff2693cf9cabe2d6f4598117adea96ca2a2c07d7f5ed54824",
+      "pytest-final.xml": "a261fd13f81c1dbbc3a333bac3c86d01be80fc768fa8215750023bccc9a5b565",
+      "python-coverage-final.json": "d77ebf5b8917d6345e00e5fc360de948adcacd701810ebdb7e74e21a8cd6a037",
+      "python-coverage-final.xml": "794d0a6071838a18ad1f580eca57a842848ef9da60bcd8257350cb542e317738"
+    }
+  },
+  "own_files": {
+    "tools/inspectors/observer_acquisition.py": "a45d247db41a8414db2361168c47231d224d137e2c24f3ab37b1b770e6a591d4",
+    "tools/inspectors/observer_state.py": "da6bf53470a23defb0ba3a9ba5414ea8293242c4fd429a59942991dc16aed9b2",
+    "tools/inspectors/observer_transport.py": "7609d0a3d4f0d78868bd40ed9c5e9d0604e67530aca902e597b06c916b8c273a",
+    "tools/inspectors/observer_identity.py": "bee90c6e352708b5f599f11976cdf7c147595b66185c19f6ecedaea07bcf092b",
+    "tools/inspectors/observer_files.py": "d335279b9f60e2906c308835de4ac1c2686f893f446232837669b48b8ef9a2db",
+    "tests/python/test_observer_acquisition.py": "cf68333ca85db30c268a27118e9b209b8c68dc633c4d4c57a70fa6aa11ca7da4",
+    "tests/python/test_observer_transport.py": "f916f5c3c7c236a49ded7a7eaf9bbb041a795df4b2194ea1c6cfc54a4b39e256",
+    "tests/python/test_observer_identity.py": "e305b4323d734026dca651aa0d3579c51ca111ae86f51d56018177bb75b2d22d",
+    "tests/python/test_observer_files.py": "9620d5a4eb8ae91f0317137032ccca2ea5f0600d3581fda136e9b603e193ff9f",
+    "schemas/observer-acquisition-v1.md": "4ab4df475447fde9d9ed48f8a91a3a1d0d508c4ac355fda7eb3f94f1c5c9b680",
+    "schemas/pcsx2-observer-v1.md": "4d172da8eadc360c1bf5106d933413b6ecfa7c9634436b4bc18927ff10c5d76a",
+    "schemas/pcsx2-state-reader-v1.md": "a0b1299d3e5272b1cf94ae0d89ee716a562a31b0f8f7e4f737cf5cf3b9ee586a"
+  },
+  "private_operational_artifact_sha256": {
+    "abi.cpp": "a39ba0630efdb47cdd3d8b0a9ea336354ea957c0dffb84c7ec01cc2885c27571",
+    "abi": "68d27c973f815dfe632cde7190f9f5073730dc9276a020857c1d1cce918bf607",
+    "abi-command.json": "4564f2adc6faee79fdc7d23109449799e14c07a2ec0c25fffdbe1c0267ab97f9",
+    "abi-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "abi-result.txt": "6856851c5a297acc3e3d0ba55eadff761a7011ad46c63ee7e014d93b385731de",
+    "live-launch.py": "b25755d56e18d59988ab2f9c503722096da9d149d695b034f0c3b430052d940d",
+    "live-probe.py": "649b2e6c8f9c204bb102aee5599ba7241d6d4293023102d193b4977f071de48a",
+    "live-probe-v2.py": "351d75a658dd1d6c5555e26c87583e41ddd17e08b06138bee13b38f234716b6e",
+    "live-launch.json": "26710d207bc27674203da45e6237d2a63e0b0af44c8c210e257c7e60ad89ccb7",
+    "live-launch-normalized.json": "ae3c31d836a5cbfe14241e3ba4931ebc57e4feea659f1f4ec67dd36e443ee409",
+    "profile-normalization.json": "064bbc3fe54fbfa32463eeeff332caa83880927168abc22623dcec133128487e",
+    "live-probe.json": "fb1f6f6ec7a97eb36cb39dffc80e5e8664f5cc7498ebaadf6ff10d596aece222",
+    "acquisition-ui-v1.json": "ae434b281c12e7aba833c217b3b32196a02ac4a1973b79e0a45a05d829a7e073",
+    "acquisition-ui-v1-samples.jsonl": "6310f0a01e9ab7c13d00a4eafdf247deb0cdc53ffd4702ec5e6cc6c6bf50ccdb",
+    "socket-closed.json": "bfda5d0c8b3f0bb1b45b28a3a343b3a856b21f3af58914f559f4f0097e6e479a"
+  },
+  "history": [
+    {
+      "stage": "initial_target_tests",
+      "outcome": "assertions_matched_message_instead_of_ProfileError_code",
+      "resolution": "assert_code_with_context_manager"
+    },
+    {
+      "stage": "target_subset_coverage",
+      "outcome": "tests_passed_global_gate_failed_on_subset",
+      "resolution": "retain_failure_and_run_full_regression_for_global_gate"
+    },
+    {
+      "stage": "initial_live_guard",
+      "outcome": "profile_hash_changed_during_UI_initialization",
+      "resolution": "inspect_only_HeaderState_change_then_pin_initialized_profile_without_relaxing_guard"
+    }
+  ],
+  "limitations": {
+    "live_acquisition_verified": false,
+    "mp08_status": "pending",
+    "execution_authentication": "not_provided",
+    "state_binding_means": "coherence_of_supplied_packets_and_state",
+    "cooperative_lock_not_exclusion_of_all_host_writers": true,
+    "regular_local_io_not_preemptible": true,
+    "post_commit_publication_failure_may_leave_visible_receipt": true,
+    "linux_peer_tested_with_doubles_only": true,
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "physical_console": "not_tested"
+  }
+}

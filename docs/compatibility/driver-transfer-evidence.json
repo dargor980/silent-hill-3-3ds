@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC59",
+  "task": "F02.07/camera-resource-link-eu/origin/load-provenance/LP-C",
+  "stage": "static_driver_profile_and_supplied_transfer_adapter_complete_open_bridge_backend_route_pending",
+  "contracts": [
+    "schemas/driver-transfer-v1.md",
+    "schemas/catalog-open-v1.md",
+    "schemas/descriptor-acquisition-v1.md"
+  ],
+  "units": {
+    "static_driver_pool_dispatch_investigation": "complete",
+    "supplied_driver_object_adapter": "complete",
+    "supplied_single_sector_transfer_adapter": "complete",
+    "open_generation_bridge": "pending",
+    "backend_file_identity": "pending",
+    "inner_copy_or_read_completion": "pending",
+    "guarded_dynamic_address_discovery": "pending",
+    "LP_C": "partial",
+    "LP_D": "pending"
+  },
+  "static_analysis": {
+    "active_driver_identified": false,
+    "active_objects": 0,
+    "backend_reference_identity": "pending",
+    "buffered_and_unbuffered_branches_present": true,
+    "cache_hit_can_skip_backend_read": true,
+    "cache_origin_verified": false,
+    "candidate_fits_one_sector": true,
+    "capabilities": [],
+    "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+    "closed_objects": 16,
+    "container_sha256": "8bbd7dd906c4ad7be57c35ae69ee4b46f1b58b6dfa814f4631c02a74a823c840",
+    "container_size": 42969088,
+    "disk_read_verified": false,
+    "dynamic_address_discovery": "pending",
+    "elf_sha256": "cb6e538bed7de8317f5333f3a56d4cd125432643950988168f901d6ede09f789",
+    "file_identity_verified": false,
+    "handle_generation_uses_preincrement_value": true,
+    "image_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "index_shift_is_independent_of_capacity": true,
+    "inner_route_observed": false,
+    "live_acquisition_performed": false,
+    "load_provenance": "pending",
+    "open_generation_bridge": "pending",
+    "pinned_instructions": 19,
+    "planned_pauses": 2,
+    "planned_regional_requests": 16,
+    "pool_capacity": 16,
+    "pool_index_shift": 1,
+    "position_observed_during_load": false,
+    "prior_evidence_sha256": "9ef9b47e724abf71041bef0ee42cb1a033a58efa77c2d945adf79b3e080ca67d",
+    "private_plan_sha256": "b992a4f42175b99178d620e0e3c71ad76a471f3a2a6da7ce590594f30f8c494e",
+    "provider_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "provider_copies_equal": true,
+    "provider_file": "pcsx2/R5900OpcodeImpl.cpp",
+    "provider_sha256": "6ae749a7e3a297a291f1844d2f96a17bf7c53a9c6f6f4ab4ddab27781a78c2b4",
+    "provider_size": 41762,
+    "read_events_produced": 0,
+    "residual_vtables": 1,
+    "resource_links": [],
+    "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "resource_size": 1536,
+    "schema_version": 1,
+    "sector_size": 2048,
+    "source_payload_hash_reverified": true,
+    "source_state_sha256": "0fe3b36ba64e7762ea56598d3b1e880ca90350f4358fef483f068e19ee803ba3",
+    "status": "static_driver_profile_and_closed_pool_live_pending",
+    "supplied_profile_input_checks_passed": true,
+    "total_window_bytes": 3852,
+    "vtable_sha256": "0f346546d4c06d60ebdc1ba850c838ba3ec3fb385beeb1676fa22129342064c5",
+    "vtable_size": 24,
+    "windows": [
+      {
+        "role": "pool_initialization",
+        "sha256": "a4443d96e546f5b35f1021672ce7d10771381a08721fbc88102b5f00195af445",
+        "size": 556
+      },
+      {
+        "role": "object_allocation",
+        "sha256": "8d027496d055b930c01acc45f09f4f0b832527590e18e666dd11531d89fbb6f6",
+        "size": 388
+      },
+      {
+        "role": "object_revalidation",
+        "sha256": "1e641cd7989c1fa70c75751909392fab996f2858d9b736779f7b9a6790b6d158",
+        "size": 212
+      },
+      {
+        "role": "object_release",
+        "sha256": "6f8f9b6277db9bb0f32a268e4a92d8ae1ea956996bc189ac8970af532465ba9c",
+        "size": 160
+      },
+      {
+        "role": "handle_lookup",
+        "sha256": "5365d2d1bdf59f75f7bd2dfa10683d2163546722732851fad22b8a92c5646d0e",
+        "size": 216
+      },
+      {
+        "role": "driver_open",
+        "sha256": "b2e079e5d3d1de1fa4a6bc1204b5b11731e7c76ee3427661003afcb82cfc339f",
+        "size": 740
+      },
+      {
+        "role": "position_update",
+        "sha256": "f5db2a3fcb36f0ea27532e45c1b7700db7f24acefa364c671e58c9cac2fc775b",
+        "size": 196
+      },
+      {
+        "role": "seek_dispatch",
+        "sha256": "71c58d8ec36d759d20c9ab23193c7d909ce11d0bc0be07e7849d02d0c0fc2364",
+        "size": 176
+      },
+      {
+        "role": "single_sector_copy",
+        "sha256": "d5c49d6cc232acc285f31869fa26ab57854eee1317e97d79cc28c481257d317d",
+        "size": 488
+      },
+      {
+        "role": "buffered_reader",
+        "sha256": "80ca5f1bed2e68d5cf39ee0b489bd9cd0fab51d184aa3a50d03dd566719c6823",
+        "size": 404
+      },
+      {
+        "role": "read_dispatch",
+        "sha256": "f278f45b7a4b8cc198adc41f228286c1243d6dfb1a835861d59fa0636b79a22c",
+        "size": 176
+      },
+      {
+        "role": "backend_open_wrapper",
+        "sha256": "0cf099ac5bd01a6c24a099fd3ddec005723e434371bc20ff00eca31be0c4ad51",
+        "size": 48
+      },
+      {
+        "role": "backend_size_wrapper",
+        "sha256": "67ed98363b693e5708a49c22807f299a48d18455d7cb52bc1a21e9dbd7a34ddc",
+        "size": 44
+      },
+      {
+        "role": "backend_size_field",
+        "sha256": "362eb03179b761212a48d610ad22fee72fa7159c84310199588301d219336a41",
+        "size": 48
+      }
+    ],
+    "zero_vtables": 15
+  },
+  "reproducibility": {
+    "runs": 2,
+    "identical": true,
+    "report_size": 4426,
+    "report_sha256": "ae50f33cd7f944cee55114f00c05b9f6520d5834d646f5549a7831eccc558f10",
+    "private_directory_mode": "0700",
+    "private_plan_mode": "0600",
+    "readers_closed_before_publication": true,
+    "private_plan_not_overwritten": true
+  },
+  "implementation": {
+    "modules": [
+      "tools/inspectors/driver_object.py",
+      "tools/inspectors/driver_transfer.py"
+    ],
+    "kind": "pure_adapters_without_io",
+    "stages": [
+      "driver_dispatch_call",
+      "driver_dispatch_return"
+    ],
+    "regions_per_stage": [
+      8,
+      8
+    ],
+    "regional_requests": 16,
+    "evidence_states": 2,
+    "discovery_states_must_count_separately": true,
+    "subset": "positive_single_sector_buffered_transfer_with_optional_eof_clamp",
+    "code_scope": "supplied_pins_and_indirect_dispatch_shape_not_full_body_authentication",
+    "handle_source": "supplied_open_bridge_not_implemented",
+    "reused": [
+      "mapped_pause",
+      "observer_series"
+    ],
+    "emulator_and_nintendo_runtime_unchanged": true
+  },
+  "validation": {
+    "new_cases": 99,
+    "runs": [
+      {
+        "artifact": "target.xml",
+        "tests": 94,
+        "failures": 2,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 11.155,
+        "sha256": "c51805aa70916f985adca9aa5f05324cafcf313751261432db8ecb71edcf5b96"
+      },
+      {
+        "artifact": "target-final.xml",
+        "tests": 98,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 11.571,
+        "sha256": "533e3faf3e7df39f74eea9c3912eb7ed84c27fa52656a0a347914a5efe893063"
+      },
+      {
+        "artifact": "target-pass.xml",
+        "tests": 99,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 12.231,
+        "sha256": "6e805b31e604becc69c828f9e15fac51cdc3383d4196cfeb66c3323495204187"
+      },
+      {
+        "artifact": "pytest.xml",
+        "tests": 2731,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 57.129,
+        "sha256": "31a20ea33d869d3a2b6587ed54649f0333ea777f57bb91fdd68c0bfe11d62c75"
+      }
+    ],
+    "initial_failures": {
+      "production_changed": false,
+      "issues": [
+        "invalid_session_fixture_then_request_context_mismatch",
+        "wrong_expected_budget_error_code"
+      ],
+      "correction": "coherent_session_request_context_packets_and_existing_mapping_error_code"
+    },
+    "static_rejections": {
+      "attempts": 2,
+      "reason": "incorrect_assumption_all_closed_rows_share_vtable",
+      "correction": "one_residual_vtable_and_fifteen_zero_vtables_verified",
+      "plan_or_report_published_on_rejection": false
+    },
+    "final_tests": 2731,
+    "final_failures": 0,
+    "final_skipped": 0,
+    "module_coverage": {
+      "tools/inspectors/driver_object.py": {
+        "covered_lines": 31,
+        "num_statements": 31,
+        "covered_branches": 0,
+        "num_branches": 0
+      },
+      "tools/inspectors/driver_transfer.py": {
+        "covered_lines": 69,
+        "num_statements": 69,
+        "covered_branches": 8,
+        "num_branches": 8
+      }
+    },
+    "total_coverage": {
+      "covered_lines": 4904,
+      "num_statements": 4949,
+      "covered_branches": 1369,
+      "num_branches": 1402
+    },
+    "line_branch_gate_minimum_percent": 80,
+    "line_branch_gate": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 127,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_public_links": "PASS",
+    "prior_SRC52_SRC55_SRC56_SRC57_SRC58_inputs_unchanged": true,
+    "ci_discovery": "existing_python_job_without_original_game_files",
+    "remote_ci_run": false,
+    "cpp_3ds_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "target.xml": "c51805aa70916f985adca9aa5f05324cafcf313751261432db8ecb71edcf5b96",
+      "target-final.xml": "533e3faf3e7df39f74eea9c3912eb7ed84c27fa52656a0a347914a5efe893063",
+      "target-pass.xml": "6e805b31e604becc69c828f9e15fac51cdc3383d4196cfeb66c3323495204187",
+      "pytest.xml": "31a20ea33d869d3a2b6587ed54649f0333ea777f57bb91fdd68c0bfe11d62c75",
+      "target-coverage.json": "ef3000335e0f4e288bc83b20d0073103c38bd8052c2b1d93596ea462a9a46fa3",
+      "target-coverage-final.json": "593c4709b28c5b186bf88c55c01c04bab2a2bd8aeb4b383a691a4e36e676ca08",
+      "target-coverage-pass.json": "84a8e680b158cea91fc42216c3e41c5eda83ed845e2b44f63f1084686ef9b040",
+      "python-coverage.json": "93bc48a674afa05caef00942586bb4edb3f10f35372135cdfad56b65492a204b",
+      "python-coverage.xml": "bff8c17a32afcab00683d3c45e72b5cec142736732336423d7b87049cdf82152"
+    }
+  },
+  "public_inputs_sha256": {
+    "schemas/driver-transfer-v1.md": "c231dd4a5beab1c07a7152c54baa7e38f6638e3f47a016d69082c6dba0c26a74",
+    "tools/inspectors/driver_object.py": "1190902c03bff6a716385db6cd69f291eb765ec07751f7013f64f8e40402e517",
+    "tools/inspectors/driver_transfer.py": "85132088d625c79a5aa44d406e93a654216b82ce135278dea15b659c3a1db869",
+    "tests/python/test_driver_transfer.py": "0bd00c1ced958c4d346b06a7172be96ccb71c1d2621907a89788c27bf1b8ec6d",
+    "docs/execution/f02-07-driver-transfer.md": "5742b0eaa587f25bd64eda09779d4e62a842e60b92da1bad41af6cdd845bbb7d"
+  },
+  "private_operational_script_sha256": {
+    "analyze.py": "57feeb6c01858124172a3e8fa6c3c0ea35d3e6acf5a7eca29dde3739d84fa2c4"
+  },
+  "limitations": {
+    "execution_authentication": "not_provided",
+    "active_driver_identified": false,
+    "open_generation_observed": false,
+    "continuous_lifetime_verified": false,
+    "file_identity_verified": false,
+    "position_observed_during_load": false,
+    "inner_route_observed": false,
+    "cache_origin_verified": false,
+    "live_multirange_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

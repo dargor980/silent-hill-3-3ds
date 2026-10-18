@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC55",
+  "task": "F02.07/camera-resource-link-eu/origin/load-provenance",
+  "stage": "source_anchor_and_lineage_model_complete_live_pending",
+  "contracts": [
+    "schemas/load-provenance-v1.md"
+  ],
+  "units": {
+    "LP-A": "complete",
+    "LP-B": "complete",
+    "LP-C": "pending",
+    "LP-D": "pending"
+  },
+  "source_anchor": {
+    "blocks": 2,
+    "both_private_copies_equal": true,
+    "candidate_frontiers": 4,
+    "capabilities": [],
+    "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+    "code_windows": [
+      {
+        "role": "callback",
+        "sha256": "9e55ece14ca8b65ae58ab70c2407044e994cad89dbd4d3d588bbafb07d04f617",
+        "size": 64
+      },
+      {
+        "role": "lookup_candidate",
+        "sha256": "577bbfd40b12f7b0c70f6bccca3cba4730c014a668786f165a6e2c71583130ec",
+        "size": 260
+      },
+      {
+        "role": "dispatch_candidate",
+        "sha256": "e32555e3491e2f4fd540ccc06ba4df60b7afdd887464d7aedc6a2f5ee09b1d99",
+        "size": 788
+      }
+    ],
+    "container_id": "entry:d2a8bab40d2b58341c13cf9122d26eb52f44905347af59e61bc03b7c7da5ee03",
+    "container_range_reparsed": true,
+    "container_sha256": "8bbd7dd906c4ad7be57c35ae69ee4b46f1b58b6dfa814f4631c02a74a823c840",
+    "container_size": 42969088,
+    "elf_sha256": "cb6e538bed7de8317f5333f3a56d4cd125432643950988168f901d6ede09f789",
+    "entries": 86,
+    "image_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "image_size": 3586785280,
+    "inference_scope": "post_load_snapshot_and_static_bytes_not_executed_calls",
+    "iso_offset_reconciled": true,
+    "layout": "b8",
+    "live_acquisition_performed": false,
+    "load_provenance": "pending",
+    "post_load_only_rejection": "LINEAGE_GAP",
+    "prior_evidence_sha256": "352d075007c342de7d72ebc59fd9ea019bc9c4d5f0b31e0dde02295bfa5451ed",
+    "private_plan_sha256": "a724c24a8864aad9c6dee9f98cfcd280965a6092f91c31415f4fb0668f839cd5",
+    "read_frontier": "unresolved",
+    "resource_id": "asset:f8328806a743597779f6bfa4b32167d33d52456a8da0d71b7f9edf38cf41e58b",
+    "resource_links": [],
+    "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "resource_size": 1536,
+    "saved_stack_and_descriptor_consistent": true,
+    "schema_version": 1,
+    "snapshot_payload_equal": true,
+    "snapshot_record_pointer_and_size_consistent": true,
+    "source_state_sha256": "0fe3b36ba64e7762ea56598d3b1e880ca90350f4358fef483f068e19ee803ba3",
+    "status": "source_anchor_and_partial_frontier_plan"
+  },
+  "static_followup": {
+    "anchor_report_sha256": "e4e0d975dcf774a0a304d9826b3cc755c5d4e5c9cadeef451c4e3333aab87afb",
+    "candidate_name_offset_size_match": true,
+    "capabilities": [],
+    "code_windows": [
+      {
+        "role": "resource_request_candidate",
+        "sha256": "7364bdf8d89a8cdb328c324139dc93c27c359862a95e184878018a9de1dec329",
+        "size": 208
+      },
+      {
+        "role": "fetch_wrapper_candidate",
+        "sha256": "46e68806d449c2550f10a659ffbe9e67e43b8c34144929b31e96d435dd317bc6",
+        "size": 112
+      },
+      {
+        "role": "fetch_body_prefix_candidate",
+        "sha256": "540bc092795ba525fbaa7af251ff22999a06870bfaa7c0e4e77210a3fbc08a63",
+        "size": 448
+      }
+    ],
+    "container_label_status": "casefolded_path_matches_literal_marker_uninterpreted",
+    "directory_scan_rows": 173,
+    "disk_read_verified": false,
+    "elf_sha256": "cb6e538bed7de8317f5333f3a56d4cd125432643950988168f901d6ede09f789",
+    "live_acquisition_performed": false,
+    "load_provenance": "pending",
+    "matching_directory_rows": 86,
+    "private_plan_sha256": "a93b724c27b8e2db46521be980004b646a4d15df5bc862dae9a9faf5429497f5",
+    "read_frontier": "unresolved",
+    "request_basename_size_match": true,
+    "resource_links": [],
+    "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "resource_size": 1536,
+    "schema_version": 1,
+    "source_state_sha256": "0fe3b36ba64e7762ea56598d3b1e880ca90350f4358fef483f068e19ee803ba3",
+    "static_calls_checked": 4,
+    "status": "static_frontier_candidates_not_executed_calls"
+  },
+  "reproducibility": {
+    "anchor": {
+      "runs": 2,
+      "identical": true,
+      "size": 2125,
+      "report_sha256": "e4e0d975dcf774a0a304d9826b3cc755c5d4e5c9cadeef451c4e3333aab87afb"
+    },
+    "followup": {
+      "runs": 2,
+      "identical": true,
+      "size": 1504,
+      "report_sha256": "70972ab2c35e7c0ec257a32ed9a35a90482327279e44417a25204c654c834c71"
+    },
+    "scope": "repeated_analysis_of_fixed_inputs_not_two_game_sessions"
+  },
+  "implementation": {
+    "module": "tools/inspectors/load_lineage.py",
+    "synthetic_cases": 78,
+    "events": [
+      "Read",
+      "Copy",
+      "Write",
+      "Deliver"
+    ],
+    "pure_model": true,
+    "file_io_in_model": false,
+    "emulator_control_in_model": false,
+    "budgets": {
+      "events": 256,
+      "bytes_per_event": 4096,
+      "candidate_bytes": 4096,
+      "tracked_bytes": 16384,
+      "physical_ram_bytes": 33554432,
+      "active_ee_cycles": 17694720000
+    },
+    "evidence_adapter": "not_implemented",
+    "post_load_snapshot_alone": "rejected_LINEAGE_GAP"
+  },
+  "validation": {
+    "python_final": {
+      "tests": 2365,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "time": 28.162
+    },
+    "python_initial": {
+      "tests": 2365,
+      "errors": 0,
+      "failures": 6,
+      "skipped": 0,
+      "time": 29.542,
+      "reason": "sandbox_denied_bin_ps_for_existing_supervisor_tests"
+    },
+    "rerun": "approved_access_to_bin_ps_without_test_changes",
+    "coverage_module": {
+      "covered_lines": 89,
+      "num_statements": 89,
+      "covered_branches": 22,
+      "num_branches": 22
+    },
+    "coverage_total": {
+      "covered_lines": 4484,
+      "num_statements": 4529,
+      "covered_branches": 1315,
+      "num_branches": 1348
+    },
+    "line_branch_gate_minimum_percent": 80,
+    "line_branch_gate": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_and_metadata_publication": "PASS",
+    "formatted_files_in_ci_scope": 115,
+    "ci_discovery": "existing_python_job",
+    "remote_ci_run": false,
+    "cpp_3ds_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "pytest.xml": "6a839f9b686b3bc1d3854fa823707bc03025e29ef9b2e9e3bf3d241133ae8ac2",
+      "pytest-final.xml": "0de0ce6917565e5596e87e001daea416ee72fd281ddb54037d6e0c1c6b718b6d",
+      "python-coverage.json": "2577458b6a89f208e89481d46b2075e8d419801b1318cda2c0de6b5607c268ca",
+      "python-coverage-final.json": "f32bcb0f8939e29c5d371ba5d8ecd273e327523535c07dc949191f481fa16f98",
+      "python-coverage.xml": "11496ca3d3c93540d4737eb8779b51b2357eb1e0620bb6ecfc49e1a07183c234",
+      "python-coverage-final.xml": "8ab1b662d27f6052959cf7eb556e2abe06580b297a06288732df8ef077706600"
+    }
+  },
+  "public_inputs_sha256": {
+    "schemas/load-provenance-v1.md": "94a79cd89d2ce266de46ed639cd3fd4da2fb7750b1c0e8b6878cc804c33e185e",
+    "tools/inspectors/load_lineage.py": "afdc12abb0b6b7faad0eb9f27c70c1b8935ffd6bf357bfb94b7c173207d3a9da",
+    "tests/python/test_load_lineage.py": "49e2cec66168440cc9b4e3f8589a3d88f9822ca57dde8b54c043382dc23c0039"
+  },
+  "private_operational_script_sha256": {
+    "anchor.py": "42f9b43433adcb71a57e671a59e713d6edea16978bb9dc40814ac035545e6f37",
+    "followup.py": "1edb7d90828bbe083fc027d218d92afe75210924fbf052fb3c5e3c7e10fcdeb7"
+  },
+  "next_session_budgets": {
+    "acquisitions": 48,
+    "hits": 256,
+    "active_seconds": 60,
+    "wall_seconds": 3600,
+    "stage_bytes": 8589934592,
+    "minimum_free_bytes": 10737418240
+  },
+  "limitations": {
+    "static_references_prove_execution": false,
+    "disk_read_verified": false,
+    "load_provenance": "pending",
+    "read_transfer_frontiers": "unresolved",
+    "adapter_ac_mp": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

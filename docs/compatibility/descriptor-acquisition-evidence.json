@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC57",
+  "task": "F02.07/camera-resource-link-eu/origin/load-provenance/LP-C",
+  "stage": "descriptor_consistency_and_synthetic_multirange_coordinator_complete_active_file_binding_pending",
+  "contracts": [
+    "schemas/descriptor-acquisition-v1.md",
+    "schemas/load-frontier-v1.md",
+    "schemas/load-provenance-v1.md"
+  ],
+  "units": {
+    "static_descriptor_and_resolver_investigation": "complete",
+    "supplied_descriptor_validation": "complete",
+    "multirange_coordinator": "implemented_synthetic_validation_complete",
+    "active_open_catalog_binding": "pending",
+    "selected_driver_and_cache_provenance": "pending",
+    "LP-C": "partial",
+    "LP-D": "pending"
+  },
+  "static_analysis": {
+    "active_descriptor_identified": false,
+    "capabilities": [],
+    "closed_descriptors": 16,
+    "config_sha256": "aaa4ec1b0f9de970aae06e17994ef350e319f953227fcecca707dfd6cd02e89c",
+    "descriptor_count": 16,
+    "disk_read_verified": false,
+    "elf_sha256": "cb6e538bed7de8317f5333f3a56d4cd125432643950988168f901d6ede09f789",
+    "file_identity_verified": false,
+    "generation_increment_on_success_present": true,
+    "image_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "live_acquisition_performed": false,
+    "load_provenance": "pending",
+    "pinned_instructions": 16,
+    "prior_evidence_sha256": "62b33945fecdba561db8a22769a55628b035ca0ebf3b562d0fc64f745bc7d9d1",
+    "private_plan_sha256": "fed9b6b30130574c4f6e09742503d2a38458c05e601d5362f9adaff56d158f3b",
+    "provider_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "provider_copies_equal": true,
+    "provider_file": "pcsx2/R5900OpcodeImpl.cpp",
+    "provider_sha256": "6ae749a7e3a297a291f1844d2f96a17bf7c53a9c6f6f4ab4ddab27781a78c2b4",
+    "provider_size": 41762,
+    "read_events_produced": 0,
+    "reservation_and_release_present": true,
+    "residual_rows": 1,
+    "resolver_range_outputs_present": true,
+    "resource_links": [],
+    "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "resource_size": 1536,
+    "rows_matching_candidate_range": 0,
+    "schema_version": 1,
+    "selected_catalog_record_observed": false,
+    "source_state_sha256": "0fe3b36ba64e7762ea56598d3b1e880ca90350f4358fef483f068e19ee803ba3",
+    "status": "static_descriptor_lifecycle_and_resolver_live_pending",
+    "table_sha256": "1cbaa0de660f4000abcb2a41297121d268e54b48c6a2f86da010aba43db51d57",
+    "total_window_bytes": 1692,
+    "windows": [
+      {
+        "role": "generation_stride_helper",
+        "sha256": "709106da31f6fe5b07b6be3aff3278cedd3907f4fb7be555a84614f8dbe5325d",
+        "size": 48
+      },
+      {
+        "role": "descriptor_token_encoder",
+        "sha256": "f9c4ad2fd367cfa1312bf9e4c1f78438c726d115b0888cf61298231a0742efad",
+        "size": 88
+      },
+      {
+        "role": "descriptor_token_decoder",
+        "sha256": "644ad9c79501495b04190ecc32746af37f34a562c3e22d8effe66f5ee7b798f4",
+        "size": 68
+      },
+      {
+        "role": "descriptor_allocator",
+        "sha256": "17a7d5b373b772ac01bf99f1a2d5700c1fdb2f055624060c6f8cdd4cefbde939",
+        "size": 196
+      },
+      {
+        "role": "descriptor_release",
+        "sha256": "acbee9ace69b43d3c02434cbd316447eb28583d58246164a9029a39017177512",
+        "size": 136
+      },
+      {
+        "role": "archive_open_candidate",
+        "sha256": "afe5457aa916399c646d3bd5d82c98a55db863c85d3246e9075ef497517c61b4",
+        "size": 424
+      },
+      {
+        "role": "descriptor_verifier",
+        "sha256": "81428516ad16a8927d150fd0072848c3c486468c23ec58ba5afa86362862742c",
+        "size": 68
+      },
+      {
+        "role": "catalog_comparator",
+        "sha256": "82ba60229ee36e87caeacf6debb134bd056598ed0329d8c78ad6082ec4ee81ac",
+        "size": 104
+      },
+      {
+        "role": "catalog_path_range_resolver",
+        "sha256": "2b100ad12f345f1b8e748eb747b4e0b2a355286cdfcea96e77180c629ca6322d",
+        "size": 560
+      }
+    ]
+  },
+  "reproducibility": {
+    "runs": 2,
+    "identical": true,
+    "report_size": 3109,
+    "report_sha256": "9d18b46ba5a6873a56650d1b66e22fbdc81d4c1190cad15896004cd4a2e2d78a",
+    "private_directory_mode": "0700",
+    "private_plan_mode": "0600",
+    "iso_reader_closed_before_publication": true,
+    "private_plan_not_overwritten": true
+  },
+  "implementation": {
+    "descriptor_validation": "pure_mapped_table_row_token_generation_and_range_consistency",
+    "acquisition": "one_state_three_observations_per_range_pine_memory_and_guard_revalidation",
+    "region_limit": 8,
+    "regional_sequence_limit": 256,
+    "save_requests_per_acquisition": 1,
+    "save_pending_poll_limit": 256,
+    "cooperative_timeout_seconds": 30,
+    "local_plan_validated_before_adapter_construction": true,
+    "publication_after_resource_closure": true,
+    "partial_artifacts_preserved_on_failure": true,
+    "publication_retry": false,
+    "ports": [
+      "channel",
+      "private_store",
+      "identity_guard",
+      "publisher",
+      "clock"
+    ],
+    "producer_and_emulator_unchanged": true
+  },
+  "validation": {
+    "new_cases": 103,
+    "descriptor_cases": 44,
+    "multirange_cases": 59,
+    "runs": [
+      {
+        "artifact": "pytest.xml",
+        "tests": 2535,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 36.485,
+        "sha256": "05bbcab6c10f88bb238e1ad29db01ff21368af289868d6cd7298345e804a3748"
+      },
+      {
+        "artifact": "pytest-final.xml",
+        "tests": 2535,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 36.457,
+        "sha256": "be1973f049c5c645d7f0f6edb9d7a890a99ea933c6221ce70f317eeab59a80b0"
+      },
+      {
+        "artifact": "pytest-release.xml",
+        "tests": 2536,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 36.451,
+        "sha256": "07cc676cc8021075f15ba23f03cde0b332684a0569c1ef1e41a2da7873bd7354"
+      }
+    ],
+    "initial_failure": "synthetic_pid_digits_accidentally_matched_default_object_repr_address",
+    "historical_test_correction": {
+      "path": "tests/python/test_observer_acquisition.py",
+      "prior_source_id": "SRC52",
+      "prior_sha256": "cf68333ca85db30c268a27118e9b209b8c68dc633c4d4c57a70fa6aa11ca7da4",
+      "current_sha256": "18dd967424200c0422cd785e0f0e0b6654d6e5079f18f58ce6923440dcc57499",
+      "change": "assert_object_repr_instead_of_searching_pid_substring",
+      "historical_module_changed": false,
+      "historical_evidence_rewritten": false
+    },
+    "final_tests": 2536,
+    "final_failures": 0,
+    "final_skipped": 0,
+    "new_module_coverage": {
+      "tools/inspectors/archive_descriptor.py": {
+        "covered_lines": 38,
+        "num_statements": 38,
+        "covered_branches": 2,
+        "num_branches": 2
+      },
+      "tools/inspectors/observer_multirange.py": {
+        "covered_lines": 95,
+        "num_statements": 95,
+        "covered_branches": 14,
+        "num_branches": 14
+      }
+    },
+    "total_coverage": {
+      "covered_lines": 4698,
+      "num_statements": 4743,
+      "covered_branches": 1341,
+      "num_branches": 1374
+    },
+    "line_branch_gate_minimum_percent": 80,
+    "line_branch_gate": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 122,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_public_links": "PASS",
+    "ci_discovery": "existing_python_job_without_original_game_files",
+    "remote_ci_run": false,
+    "cpp_3ds_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "python-coverage-final.json": "a1aec0e216d77c21d5f0556655c97f03a03cfaa4a5a8c185a6c48a9aa2271c5e",
+      "python-coverage-release.json": "e3c58f1fcffd26018d93a73db5da4e77e429fd3f93e151008459d84793d5fed9",
+      "python-coverage.json": "45032acb16673d8afe1f651123c4063cd1f9ae7ccd10c0bfc1053c3ff81ccb8f",
+      "target-coverage.json": "7406e5bd535ee45cf5b31876dc42bef153150aea0f6b3cd6460450bb0e00275a",
+      "pytest-final.xml": "be1973f049c5c645d7f0f6edb9d7a890a99ea933c6221ce70f317eeab59a80b0",
+      "pytest-release.xml": "07cc676cc8021075f15ba23f03cde0b332684a0569c1ef1e41a2da7873bd7354",
+      "pytest.xml": "05bbcab6c10f88bb238e1ad29db01ff21368af289868d6cd7298345e804a3748",
+      "python-coverage-final.xml": "d071d3a7b8c58510c7d9d532a1d536b2749be0dd307bdb0539374c7bb2699b28",
+      "python-coverage-release.xml": "dca8512a910f00517a050ee0dcd537bc308ed0a61f1b6b82c513775db6f325d4",
+      "python-coverage.xml": "a54ea22e22582e46995925d4a77902bb218de73699265b806c02a042831ee00d"
+    }
+  },
+  "public_inputs_sha256": {
+    "schemas/descriptor-acquisition-v1.md": "0bd3a041dfac5ea8033f719efa00b081cf3c675a807e88e7a0ab34cc225b74a2",
+    "tools/inspectors/archive_descriptor.py": "943c8ac1e58eba784ec213dda79c8fdba785bc0997e87e2e851a9ae7e603f3b9",
+    "tools/inspectors/observer_multirange.py": "8608c1038755576c66fa7f5756395dc4a8e6833b92d6487df0c8d3016d990029",
+    "tests/python/test_archive_descriptor.py": "ff1e99d04fb8d2abf5bfd933586d7190ddde14b343bba1e99b158545df3afd34",
+    "tests/python/test_observer_multirange.py": "372b05bfeebd7439ad3ca91b370f690d58533cc8f3d6fb0dd09983a5ea3f0e97",
+    "tests/python/test_observer_acquisition.py": "18dd967424200c0422cd785e0f0e0b6654d6e5079f18f58ce6923440dcc57499",
+    "docs/execution/f02-07-descriptor-acquisition.md": "3fd22dc51a998cfd384d536820d3dd5559546dc8611a80145e56f4d671c9e864"
+  },
+  "private_operational_script_sha256": {
+    "analyze.py": "b474922cf7ed4c7366adf6b928f333019cadb0c052fc736bce0d74fc57007b28"
+  },
+  "limitations": {
+    "execution_authentication": "not_provided",
+    "active_descriptor_identified": false,
+    "selected_catalog_record_observed": false,
+    "open_observed": false,
+    "file_identity_verified": false,
+    "selected_driver_observed": false,
+    "sector_cache_origin_proved": false,
+    "live_multirange_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

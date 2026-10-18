@@ -34,8 +34,8 @@ jobs:
           ctest --version
       - name: Lint and formatting
         run: |
-          python -m ruff check tools tests/python
-          python -m ruff format --check tools tests/python
+          python -m ruff check tools tests/python tests/observer_wire_oracle.py
+          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py
       - name: Dependency, custody and spec contracts
         run: python -m tools.qa.check_repository
       - name: Python tests and coverage gate

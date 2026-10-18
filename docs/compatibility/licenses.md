@@ -344,3 +344,162 @@ GPL-2.0-only OR GPL-3.0-only y se ejecuta desde originales privados; no se
 copia al repo. Consumidor, hook CMake y contrato publicados son propios.
 Los avisos originales y el parche permanecen inventariados; la validación
 local no cierra LIC08 ni la revisión de un futuro bundle redistribuible.
+
+Actualización FFmpeg host (2026-10-18):
+[SRC47](pcsx2-ffmpeg-evidence.json) verifica el archivo 8.1 y conserva privados
+LICENSE.md, COPYING.LGPLv2.1, COPYING.GPLv2, COPYING.GPLv3 y COPYING.LGPLv3.
+LICENSE.md describe la mayor parte del proyecto como LGPL 2.1 o posterior;
+el perfil registrado no habilita GPL, version3 ni nonfree. Se preservan los
+avisos individuales; el perfil no sustituye su revisión. Las 10.107 fuentes
+originales y la copia de trabajo coinciden, sin parches. Los cuatro programas
+originales de pruebas y sus referencias FATE permanecen privados y sin cambios.
+Los consumidores, datos sintéticos y comparador publicados son propios.
+Los ejemplos instalados son fuentes del proveedor conservadas en el prefijo
+privado; no se compilaron ni ejecutaron. Las pruebas locales y esta identificación
+de avisos no cierran LIC08 ni la revisión de un eventual bundle redistribuible.
+
+Actualización MoltenVK host (2026-10-18):
+[SRC48](pcsx2-moltenvk-evidence.json) verifica 1.4.1, su LICENSE Apache-2.0,
+263 archivos originales y siete commits transitivos (6.963 archivos) privados.
+Se registran avisos de cereal y sus componentes RapidJSON/RapidXML/msinttypes;
+SPIRV-Cross y SPIRV-Tools conservan Apache-2.0 y avisos subordinados, incluidos
+LicenseRef-KhronosFreeUse en SPIRV-Cross. Vulkan-Headers declara Apache-2.0/MIT
+según archivo; SPIRV-Headers conserva sus reglas y excepciones, Vulkan-Tools
+Apache-2.0 y Volk su aviso MIT. No se aplica una licencia raíz a todo el conjunto.
+Dos parches PCSX2 se mantienen separados; se adapta únicamente el contexto
+de un hunk para 1.4.1 y se conservan ambos intentos/diff. Los tres programas
+originales SPIRV-Cross, sus entradas y wrapper C permanecen fuera del repo,
+sin cambios. Consumidores, shader/oráculos y política de capacidad son propios.
+La instalación privada de una dylib no cierra LIC08 ni acredita un bundle
+redistribuible; no se incorpora MoltenVK al runtime de Nintendo 3DS.
+
+
+Actualización baseline PCSX2 host (2026-10-18):
+[SRC49](pcsx2-baseline-evidence.json) verifica el checkout PCSX2 fijado y
+33 archivos de licencias/COPYING del árbol, conservados privados. El código
+y tests originales no se modifican; bundle, objetos, símbolos y recursos
+permanecen privados. Los cambios de paquete se limitan a ID/RPATH y firma
+ad hoc con entitlements originales, sin nueva biblioteca ni distribución.
+El supervisor y sus tests públicos son propios. LIC08 y la revisión de un
+posible bundle redistribuible permanecen abiertos.
+
+Actualización observador interno host (2026-10-18):
+[SRC50](pcsx2-observer-evidence.json) conserva privados los originales PCSX2
+identificados en SRC49, ambas copias de trabajo, sus diffs, objetos y logs.
+El núcleo, códec, adaptador y tests publicados son propios; el adaptador
+referencia headers del proveedor únicamente en el build privado optativo.
+No se distribuye emulador ni se añade código PCSX2 al runtime Nintendo.
+Los archivos de licencia originales siguen intactos; LIC08 permanece abierto.
+
+Actualización build instrumentado host (2026-10-18):
+[SRC51](pcsx2-observer-build-evidence.json) mantiene privados la compilación,
+ambos bundles/candidatos, fuente previa, parches, logs y símbolos. La reparación
+PINE se limita al checkout instrumentado; baseline, licencias y tests originales
+siguen intactos. El cliente Unix y sus 45 tests publicados son propios y usan
+la biblioteca estándar. No se incorporan bibliotecas nuevas ni assets del juego.
+La firma ad hoc es local; no acredita notarización ni cierra LIC08.
+
+Actualización coordinador de adquisición host (2026-10-18):
+[SRC52](observer-acquisition-evidence.json) añade módulos, fixtures sintéticos
+y oráculos propios con biblioteca estándar. Los hechos del layout/serialización
+se contrastan con headers y fuentes privados fijados en SRC51; no se copian
+esas fuentes al repositorio. El programa de comprobación ABI es propio y sus
+objetos/logs quedan fuera de los archivos publicables. El ejecutable, parche,
+baseline y prefijo no cambian. Perfiles, estados y paquetes binarios se
+conservan privados; ninguna licencia ni autorización de distribución nueva
+se deduce de las pruebas. LIC08 permanece abierto.
+
+Actualización adquisición real y serie MP08 (2026-10-18):
+[SRC53](observer-live-evidence.json) conserva ISO, BIOS, estados completos,
+paquetes, perfiles y código observado en almacenamiento privado. Solo se
+publican módulos/fixtures propios, hashes y diferencias relativas. El tamaño
+variable de las estructuras se contrasta con SaveState.cpp/Gif_Unit.cpp de la
+revisión fijada, sin copiar esas funciones. No se añaden dependencias al
+runtime Nintendo ni se redistribuyen datos del juego. El build, parche y
+licencias originales no cambian; LIC08 permanece abierto.
+
+Actualización conciliación de escrituras (2026-10-18):
+[SRC54](remaining-writers-evidence.json) añade catálogo y conciliador propios,
+fixtures sintéticos y metadatos de 66 pausas. Código observado, estados,
+paquetes, BIOS/ISO y perfiles permanecen privados, incluido el intento
+incompleto. Common.h/QtHost.cpp de la revisión fijada sirven para contrastar
+ciclos y restauración inicial; no se copian sus implementaciones. No se añaden
+dependencias al runtime Nintendo ni derechos de redistribución; LIC08 sigue
+abierto y el ejecutable/parche SRC51 no cambia.
+
+Actualización modelo de procedencia de carga (2026-10-18):
+[SRC55](load-provenance-evidence.json) añade un modelo puro y fixtures propios
+con biblioteca estándar. La comprobación de ISO/MFA/ELF, extracciones y estado
+produce únicamente hashes, tamaños y recuentos publicables. Los seis rangos
+de código, nombres internos, tablas, planes con direcciones y scripts operativos
+permanecen privados. No se incorporan datos del juego ni dependencias al
+runtime Nintendo. No cambia el build de PCSX2 ni se deducen nuevos derechos
+de distribución; LIC08 sigue abierto.
+
+Actualización fronteras y validadores multirrango (2026-10-18):
+[SRC56](load-frontier-evidence.json) añade dos módulos y fixtures propios con
+biblioteca estándar. Las ventanas ELF/estado, tablas de despacho y planes con
+direcciones se conservan privados; solo se publican hashes, tamaños y
+resultados. No se copian instrucciones del juego a los fixtures ni se añaden
+dependencias al runtime Nintendo. El ejecutable instrumentado no cambia;
+ningún resultado amplía derechos de distribución y LIC08 permanece abierto.
+
+Actualización generación y coordinación multirrango (2026-10-18):
+[SRC57](descriptor-acquisition-evidence.json) añade dos módulos y fixtures
+propios con biblioteca estándar. La semántica de MULT se contrasta con
+R5900OpcodeImpl.cpp de la revisión PCSX2 ya fijada, sin copiar su implementación.
+Ventanas, tablas, estados y planes permanecen privados; los informes públicos
+solo contienen metadatos. Se corrige un oráculo inestable de privacidad de
+SRC52 sin cambiar su módulo ni evidencia histórica. No se añaden dependencias
+al runtime Nintendo, no cambia el ejecutable instrumentado ni se amplían
+derechos de distribución. LIC08 permanece abierto.
+
+Actualización selección de catálogo y apertura (2026-10-18):
+[SRC58](catalog-open-evidence.json) añade un adaptador puro y fixtures propios.
+La comparación de ISO/MFA/ELF/estado conserva cadenas, ventanas, direcciones y
+planes en almacenamiento privado; solo publica hashes, tamaños y recuentos.
+Los fixtures usan cadenas y estados sintéticos, sin copiar cuerpos del juego.
+No se añaden dependencias, no cambia PCSX2 ni el runtime Nintendo y no se
+amplían derechos de redistribución. LIC08 permanece abierto.
+
+Actualización objeto del driver y posición (2026-10-18):
+[SRC59](driver-transfer-evidence.json) añade dos validadores puros y fixtures
+propios con biblioteca estándar. SLLV se contrasta con R5900OpcodeImpl.cpp de
+la revisión PCSX2 ya fijada, sin copiar implementación. Ventanas, tablas,
+registros y planes originales permanecen privados; los informes contienen
+metadatos. No hay dependencias nuevas, cambios en PCSX2/runtime Nintendo ni
+ampliación de derechos de distribución. LIC08 permanece abierto.
+
+Actualización apertura y objeto del driver (2026-10-18):
+[SRC60](open-driver-evidence.json) añade un adaptador puro y fixtures propios.
+El perfil compara ventanas privadas sin publicar código, cadenas, registros o
+direcciones originales. Los artefactos públicos contienen contratos y metadatos.
+No incorpora dependencias, no cambia PCSX2/runtime Nintendo y no amplía derechos
+de redistribución. LIC08 permanece abierto.
+
+Actualización referencia backend, archivo y sector (2026-10-18):
+[SRC61](backend-sector-evidence.json) añade un adaptador y fixtures propios.
+ADDIU, MOVN y SRA se contrastan con las fuentes PCSX2 ya atribuidas, sin copiar
+implementación. Las ventanas, estructuras y direcciones originales permanecen
+privadas; solo se publican contratos y metadatos. No hay dependencias nuevas,
+cambios en PCSX2/runtime Nintendo ni ampliación de derechos. LIC08 sigue abierto.
+
+Actualización finalización backend y buffer (2026-10-18):
+[SRC62](backend-completion-evidence.json) añade un adaptador puro y fixtures
+propios. El perfil estático contrasta ventanas privadas y hashes del sector
+válido sin publicar bytes, registros o direcciones originales. No incorpora
+dependencias ni implementación externa, no cambia PCSX2/runtime Nintendo y no
+amplía derechos de redistribución. LIC08 permanece abierto.
+
+Actualización copia de buffer y retorno del driver (2026-10-18):
+[SRC63](buffer-copy-evidence.json) añade un adaptador puro y fixtures propios.
+El contraste privado de copiador, helper, lector y dispatch publica solo hashes,
+tamaños y alcance. No se incorporan código original ni dependencias, no cambia
+PCSX2/runtime Nintendo y no se amplían derechos de redistribución. LIC08 sigue abierto.
+
+Actualización catálogo, apertura y recorrido conjunto (2026-10-18):
+[SRC64](joint-open-read-evidence.json) añade un adaptador puro y fixtures propios.
+Reutiliza los validadores existentes sin incorporar código original ni dependencias.
+El contraste de posicionamiento publica solo hashes, tamaños y alcance; direcciones,
+ventanas y estructuras originales quedan privadas. No cambia PCSX2/runtime Nintendo
+ni amplía derechos de redistribución. LIC08 permanece abierto.

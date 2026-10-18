@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC60",
+  "task": "F02.07/camera-resource-link-eu/origin/load-provenance/LP-C",
+  "stage": "opening_endpoint_adapter_complete_joint_catalog_lifetime_backend_and_live_pending",
+  "contracts": [
+    "schemas/open-driver-v1.md",
+    "schemas/catalog-open-v1.md",
+    "schemas/driver-transfer-v1.md"
+  ],
+  "units": {
+    "opening_endpoint_adapter": "complete",
+    "static_profile": "complete",
+    "joint_catalog_profile": "pending",
+    "continuous_lifetime": "pending",
+    "backend_file_sector": "pending",
+    "inner_copy_completion": "pending",
+    "guarded_discovery": "pending",
+    "LP_C": "partial",
+    "LP_D": "pending"
+  },
+  "static_analysis": {
+    "active_driver_identified": false,
+    "cache_origin_verified": false,
+    "capabilities": [],
+    "catalog_selection_reconciled": false,
+    "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+    "container_sha256": "8bbd7dd906c4ad7be57c35ae69ee4b46f1b58b6dfa814f4631c02a74a823c840",
+    "continuous_lifetime_verified": false,
+    "discovery_budget_included": false,
+    "disk_read_verified": false,
+    "elf_sha256": "cb6e538bed7de8317f5333f3a56d4cd125432643950988168f901d6ede09f789",
+    "file_identity_verified": false,
+    "image_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "initial_cache_invalid": true,
+    "initial_position_zero": true,
+    "live_acquisition_performed": false,
+    "pinned_instructions": 18,
+    "planned_regional_requests": 24,
+    "planned_states": 3,
+    "prior_driver_windows_reverified": 14,
+    "prior_evidence_sha256": "0b511874c3fee4ed8cbea684671a59e0008eb336b1060e6a092b9e5b8d5a4abc",
+    "private_plan_sha256": "5305cbe08ead9c6d9548412838a8f72b4b7c2a3864a01fcc3f64a8d0c09f4537",
+    "profile_structural_checks_passed": true,
+    "read_events_produced": 0,
+    "regions_per_stage": [
+      8,
+      8,
+      8
+    ],
+    "resource_links": [],
+    "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "resource_size": 1536,
+    "return_precedes_handle_copy_delay_slot": true,
+    "schema_version": 1,
+    "source_payload_hash_reverified": true,
+    "source_state_is_postload": true,
+    "source_state_sha256": "0fe3b36ba64e7762ea56598d3b1e880ca90350f4358fef483f068e19ee803ba3",
+    "status": "static_open_driver_endpoint_plan_live_and_lifetime_pending",
+    "total_window_bytes": 1712,
+    "windows": [
+      {
+        "role": "archive_open",
+        "sha256": "afe5457aa916399c646d3bd5d82c98a55db863c85d3246e9075ef497517c61b4",
+        "size": 424
+      },
+      {
+        "role": "driver_open",
+        "sha256": "b2e079e5d3d1de1fa4a6bc1204b5b11731e7c76ee3427661003afcb82cfc339f",
+        "size": 740
+      },
+      {
+        "role": "object_allocation",
+        "sha256": "8d027496d055b930c01acc45f09f4f0b832527590e18e666dd11531d89fbb6f6",
+        "size": 388
+      },
+      {
+        "role": "object_release",
+        "sha256": "6f8f9b6277db9bb0f32a268e4a92d8ae1ea956996bc189ac8970af532465ba9c",
+        "size": 160
+      }
+    ]
+  },
+  "reproducibility": {
+    "runs": 2,
+    "identical": true,
+    "report_size": 2265,
+    "report_sha256": "c379aaf05597986a8df64b24651b5f333d51d0d2d06eebe16ee080d0c50763a7",
+    "private_directory_mode": "0700",
+    "private_plan_mode": "0600",
+    "private_plan_not_overwritten": true,
+    "readers_closed_before_publication": true
+  },
+  "implementation": {
+    "modules": [
+      "tools/inspectors/open_driver.py"
+    ],
+    "kind": "pure_adapter_without_io",
+    "stages": [
+      "open_return",
+      "driver_dispatch_call",
+      "driver_dispatch_return"
+    ],
+    "regions_per_stage": [
+      8,
+      8,
+      8
+    ],
+    "regional_requests": 24,
+    "evidence_states": 3,
+    "discovery_states_count_separately": true,
+    "default_continuity_result": "OPEN_DRIVER_LIFETIME_UNPROVEN",
+    "diagnostic_requires_explicit_opt_in": true,
+    "subset": "full_positive_single_sector_buffered_request_no_eof_clamp",
+    "catalog_input_reused": true,
+    "catalog_selection_reconciled": false,
+    "historical_modules_unchanged": true,
+    "reused": [
+      "catalog_open",
+      "driver_object",
+      "driver_transfer",
+      "mapped_pause"
+    ],
+    "emulator_and_nintendo_runtime_unchanged": true
+  },
+  "validation": {
+    "new_cases": 63,
+    "runs": [
+      {
+        "artifact": "target.xml",
+        "tests": 1,
+        "failures": 0,
+        "errors": 1,
+        "skipped": 0,
+        "junit_seconds": 0.124,
+        "sha256": "bc36b43bb51ebb5f1acbcca6d2dfd45519b49c6bb65859e52c4018c26f44b15e"
+      },
+      {
+        "artifact": "target-pass.xml",
+        "tests": 61,
+        "failures": 2,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 10.644,
+        "sha256": "2252284a8017cc03f8f95acfbdbcfc76a399fe5b0a903457fe9949040483b999"
+      },
+      {
+        "artifact": "target-final.xml",
+        "tests": 63,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 11.161,
+        "sha256": "6fbc35c1213bb87d007f143c9e5d0be9d24328c020684e293d1f7d00531bda51"
+      },
+      {
+        "artifact": "pytest.xml",
+        "tests": 2794,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 65.905,
+        "sha256": "4be8edd9beafe382433070fb905677baa2ada5df1452837981ebaa5e8045c97d"
+      }
+    ],
+    "initial_issues": [
+      "test_decorator_syntax_collection_error",
+      "negative_cycle_fixture_not_representable",
+      "map_error_detected_earlier_by_PAUSE_PAGE"
+    ],
+    "initial_issues_fixed_without_relaxing_production": true,
+    "final_tests": 2794,
+    "final_failures": 0,
+    "final_errors": 0,
+    "final_skipped": 0,
+    "module_coverage": {
+      "tools/inspectors/open_driver.py": {
+        "covered_lines": 56,
+        "num_statements": 56,
+        "covered_branches": 10,
+        "num_branches": 10
+      }
+    },
+    "total_coverage": {
+      "covered_lines": 4960,
+      "num_statements": 5005,
+      "covered_branches": 1379,
+      "num_branches": 1412
+    },
+    "line_branch_gate_minimum_percent": 80,
+    "line_branch_gate": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 129,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_links": "PASS",
+    "prior_pinned_inputs_unchanged": [
+      "SRC52",
+      "SRC55",
+      "SRC56",
+      "SRC57",
+      "SRC58",
+      "SRC59"
+    ],
+    "ci_discovery": "existing_python_job_without_original_game_files",
+    "remote_ci_run": false,
+    "cpp_3ds_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "pytest.xml": "4be8edd9beafe382433070fb905677baa2ada5df1452837981ebaa5e8045c97d",
+      "python-coverage.json": "4e8d5ff844d7cd25abbc69312ba59541647f6d1377d77c74206c142d143a1193",
+      "python-coverage.xml": "a82ad154783efbdda2d8b2631c1fcb5ffa2fb9e22af2f96b79e1f8f9c44f795e",
+      "target-coverage-final.json": "620b977cd6c0dffb2dfca63744d2be54360496032c8cb52ccef2e0961fc18e18",
+      "target-coverage-pass.json": "8858c28dbc27e25cb38fa356e070253394bcb37c277865f89354bdf7e4ecd9ba",
+      "target-final.xml": "6fbc35c1213bb87d007f143c9e5d0be9d24328c020684e293d1f7d00531bda51",
+      "target-pass.xml": "2252284a8017cc03f8f95acfbdbcfc76a399fe5b0a903457fe9949040483b999",
+      "target.xml": "bc36b43bb51ebb5f1acbcca6d2dfd45519b49c6bb65859e52c4018c26f44b15e"
+    }
+  },
+  "public_inputs_sha256": {
+    "schemas/open-driver-v1.md": "fc05d7f1725ab57822515ceaa69e97e8b9c0ec999c76158488d0f31eebe82a50",
+    "tools/inspectors/open_driver.py": "746ae753254b888f9a0a6388bbbff89591d2aaf36f39ca280594d2f9a256a674",
+    "tests/python/test_open_driver.py": "509ac835839c8560d8f1b696d56a6283bd28ec6a0c1af61e3ec9c0ab18cf9965",
+    "docs/execution/f02-07-open-driver.md": "7474aa544660caee49626f674628d38057b71fe978ab657b2600478ace547381"
+  },
+  "private_operational_script_sha256": {
+    "analyze.py": "011ed83e8aa08bea7789f072f8eaa0119dc447894dbebd0540dfb73664d106d1"
+  },
+  "limitations": {
+    "execution_authentication": "not_provided",
+    "catalog_selection_reconciled": false,
+    "continuous_lifetime_verified": false,
+    "active_driver_identified": false,
+    "file_identity_verified": false,
+    "inner_route_observed": false,
+    "cache_origin_verified": false,
+    "live_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

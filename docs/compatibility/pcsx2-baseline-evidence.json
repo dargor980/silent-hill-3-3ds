@@ -1,0 +1,2679 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC49",
+  "task": "F02.07/camera-resource-link-eu/origin/effective-mapping/instrumented-build/baseline-build",
+  "stage": "baseline-validated-local-candidate",
+  "contract": "schemas/pcsx2-baseline-v1.md",
+  "prior_dependency_evidence": {
+    "source_id": "SRC48",
+    "sha256": "49127ac1aa70bed2b21a960a8a04ba4b188f2f696213409ccfd358f48000dbd4"
+  },
+  "source": {
+    "commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "clean": true,
+    "patches": [],
+    "licenses": {
+      "COPYING.GPLv3": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "3rdparty/soundtouch/COPYING.TXT": "84c6d82dc7de80f5b73f231edfd3ddc5b53513908117452bfa37ea36bb4b7e0a",
+      "3rdparty/cubeb/LICENSE": "44c6b5ae5ec3fe2fbc608b00e6f4896f4d2d5c7e525fcbaa3eaa3cf2f3d5a983",
+      "3rdparty/fast_float/LICENSE-APACHE": "097a889aa954d04e088b790b10a4014d6189561d0a6013935a73ce3d4ddaaf06",
+      "3rdparty/fast_float/LICENSE-BOOST": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b",
+      "3rdparty/fast_float/LICENSE-MIT": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6",
+      "3rdparty/ffmpeg/LICENSE.md": "2e1d16c72fd74e12063776371da757322f8b77589386532f4fd8634bde7de1af",
+      "3rdparty/ffmpeg/COPYING.LGPLv2.1": "246041b6ecf9bc32d718a62c57877c78b5eb397b6467e74ed7ae2626ab189c30",
+      "3rdparty/ffmpeg/COPYING.GPLv2": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "3rdparty/ffmpeg/COPYING.GPLv3": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "3rdparty/ffmpeg/COPYING.LGPLv3": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+      "3rdparty/fmt/LICENSE": "07580f2a3b35709ce703d523f447b242f6dfec7582a8c0df102c7fa2849375f8",
+      "3rdparty/rainterface/LICENSE": "df7f297511e5bc8739cd475bdda3f37924c7e3d1228d2e6c644935d0a81168a5",
+      "3rdparty/imgui/LICENSE.txt": "173506a2d6f7fb67990d257fb2507f188690eca39060c39469ae7bef43aae2a3",
+      "3rdparty/libchdr/LICENSE.txt": "e3989a7aee74a91b8cdbdfe204a6b8d03288863ec7533a21c51f1a987ba73539",
+      "3rdparty/rcheevos/LICENSE": "bf820c034966a3b6be050bb85f94ec841a0b972bd5d477e362337d0574b5c219",
+      "3rdparty/vulkan/LICENSE.md": "95ad366d23fadf701d355bc45fb8b82ae2d700239471d35d41286ac3b08ff903",
+      "3rdparty/promptfont/LICENSE.txt": "91db5ab511830ae7b393be382e64423c5a783da51faf6211b3d42ac836ac0ce3",
+      "3rdparty/googletest/LICENSE": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "3rdparty/rapidjson/license.txt": "a140e5d46fe734a1c78f1a3c3ef207871dd75648be71fdda8e309b23ab8b1f32",
+      "3rdparty/winwil/LICENSE": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
+      "3rdparty/d3d12memalloc/LICENSE.txt": "5478a2f36b736e13dd3250b9c71a4ab521bc327fb9d112a92c647bf3e69ddb68",
+      "3rdparty/libzip/LICENSE": "01c022eca6d566e2e8792fd0f091a28653b2a608319922bcd4de91c49d1438e1",
+      "3rdparty/cpuinfo/LICENSE": "8e7e60636c3aa0cb03571a1a841ce5697f9551ff92b3c426c2561613d15ade70",
+      "3rdparty/lzma/LICENSE.txt": "9f34035d01a354ed074f49944f4ac64778c44e043df4785baa0dd15f60f1d8df",
+      "3rdparty/discord-rpc/LICENSE": "12054cc15e274c9a10966fd7d8740c12dbd679dec2468e370818d899f9a3a634",
+      "3rdparty/zydis/LICENSE": "e5e99718209e94baaf3e9cbf6f64aa3329c9e73c63b1ab47e10f29d81974e6f3",
+      "3rdparty/zydis/dependencies/zycore/LICENSE": "7991ec4481a82c51d196f7440fda34c578aab51f8b9c7023935c6e03b57638bd",
+      "3rdparty/cpuinfo/deps/clog/LICENSE": "68a14c3e79add023eecd83d611e73f05b8bf1d16852efeb7eb4033a96736da9e",
+      "3rdparty/vulkan/include/LICENSE.txt": "52df2c03d6cfc9ffec13c9d3626c530fc9ce0cbe41d5ea3d10cd46edeb1aeb38",
+      "pcsx2/Docs/License.txt": "297b6f030943c45c4c21d1f11c97da3f1a762cbb38719a0f0804d381f70a0931",
+      "bin/resources/icons/flags/LICENSE": "9df3746eb31b27308f30e0f43c6ace0c3d330235ef91c5798e87a2538bbbe098",
+      "bin/resources/icons/flags/LICENSESCN": "2345380edaf31a07c4ba42a6f91696b10849f496926cfc2bfb78dd2dd21c3b3b"
+    }
+  },
+  "entry": {
+    "gate": {
+      "schema_version": 1,
+      "status": "ready_for_baseline_build",
+      "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+      "source_clean": true,
+      "free_bytes": 23053438976,
+      "minimum_free_bytes": 21474836480,
+      "reserve_basis": "project_policy_not_measured_build_size",
+      "checks": {
+        "cxx20_compile": {
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "cxx20_run": {
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "metal_compile": {
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "metal_link": {
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "pcsx2_configure": {
+          "exit_code": 0,
+          "status": "passed"
+        }
+      },
+      "blockers": [],
+      "pcsx2_build_verified": false,
+      "mapping_verified": false,
+      "evidence_authentication": "not_provided"
+    },
+    "prefix": {
+      "files": 5228,
+      "links": 70,
+      "inventory_sha256": "694cbabfc81faf8044b1b252184f5c70b1052c65f81f724f0f6f7865778c6b33"
+    },
+    "toolchain_checks_reused_from": "SRC31"
+  },
+  "configuration": {
+    "compilation_entries": 811,
+    "extensions": {
+      ".c": 270,
+      ".cpp": 530,
+      ".m": 1,
+      ".cc": 5,
+      ".mm": 5
+    },
+    "compile_commands_sha256": "a7f59ec7e1885175ba6bdd7aab2e6e9c4ba6c9238a0b13566f0a91972c89ba29",
+    "cmake_cache_sha256": "d727acff3549769757a9bb00e9bec3bd0bc9ee301748d80bca364f6b93e24b85",
+    "environment_overrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "TOOLCHAINS": "com.apple.dt.toolchain.Metal.32023.883",
+      "TMPDIR": "$STAGE/tmp",
+      "PKG_CONFIG_LIBDIR": "$PREFIX/lib/pkgconfig",
+      "PKG_CONFIG_PATH": "",
+      "SDKROOT": null,
+      "MACOSX_DEPLOYMENT_TARGET": null
+    },
+    "capacity_policy": {
+      "start_gib": 20,
+      "floor_gib": 10,
+      "stage_max_gib": 8,
+      "timeout_seconds": 2700,
+      "jobs": 2
+    },
+    "initial": {
+      "free_bytes": 23043072000,
+      "logical_bytes": 8557497,
+      "allocated_bytes": 10067968
+    }
+  },
+  "operations": [
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "shutdown": {
+        "verified": true,
+        "remaining": [],
+        "errors": []
+      },
+      "duration_seconds": 9.144,
+      "argv": [
+        "/opt/homebrew/bin/cmake",
+        "-S",
+        "$SOURCE",
+        "-B",
+        "$STAGE/build",
+        "-G",
+        "Unix Makefiles",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_OSX_ARCHITECTURES=x86_64",
+        "-DDISABLE_ADVANCE_SIMD=ON",
+        "-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON",
+        "-DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON",
+        "-DUSE_LINKED_FFMPEG=ON",
+        "-DCMAKE_PREFIX_PATH=$PREFIX",
+        "-DCMAKE_IGNORE_PREFIX_PATH=/opt/homebrew",
+        "-DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF",
+        "-DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=OFF",
+        "-DCMAKE_C_COMPILER=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+        "-DCMAKE_CXX_COMPILER=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+        "-DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+        "-DENABLE_TESTS=ON"
+      ],
+      "log": "$STAGE/configure-v19.log",
+      "log_sha256": "3195747cbb93dd073cbf89bb7c236f2a29b31d11fa3a345f494791a11a8a2194",
+      "samples_count": 12,
+      "minimum_free_bytes": 23043076096,
+      "maximum_stage_bytes": 10067968
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "shutdown": {
+        "verified": true,
+        "remaining": [],
+        "errors": []
+      },
+      "duration_seconds": 338.397,
+      "argv": [
+        "/opt/homebrew/bin/cmake",
+        "--build",
+        "$STAGE/build",
+        "--parallel",
+        "2"
+      ],
+      "log": "$STAGE/build-v1.log",
+      "log_sha256": "551240bfdd3d8865994d97165b90eb497018e7c69d6ad37abe3af1baec337f03",
+      "samples_count": 326,
+      "minimum_free_bytes": 21675864064,
+      "maximum_stage_bytes": 344207360
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "shutdown": {
+        "verified": true,
+        "remaining": [],
+        "errors": []
+      },
+      "duration_seconds": 34.038,
+      "argv": [
+        "/opt/homebrew/bin/cmake",
+        "--build",
+        "$STAGE/build",
+        "--target",
+        "common_test",
+        "core_test",
+        "--parallel",
+        "2"
+      ],
+      "log": "$STAGE/tests-build-v1.log",
+      "log_sha256": "e43ee1a72b89274cb0ed54c98b3c2c363f7f0c321c7f76fbb1edcd18fbacaa31",
+      "samples_count": 35,
+      "minimum_free_bytes": 21508775936,
+      "maximum_stage_bytes": 495452160
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "shutdown": {
+        "verified": true,
+        "remaining": [],
+        "errors": []
+      },
+      "duration_seconds": 5.491,
+      "argv": [
+        "/opt/homebrew/bin/ctest",
+        "--test-dir",
+        "$STAGE/build/tests/ctest",
+        "--output-on-failure",
+        "--timeout",
+        "120",
+        "--output-junit",
+        "$STAGE/ctest.xml"
+      ],
+      "log": "$STAGE/ctest-v1.log",
+      "log_sha256": "d5c9a518c7091971d57dd6a7d779aa6b4be73980be819e9e2f69d46bb569b273",
+      "samples_count": 8,
+      "minimum_free_bytes": 21384228864,
+      "maximum_stage_bytes": 606904320
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "shutdown": {
+        "verified": true,
+        "remaining": [],
+        "errors": []
+      },
+      "duration_seconds": 14.07,
+      "argv": [
+        "$STAGE/candidate/PCSX2.app/Contents/MacOS/PCSX2",
+        "-datapath",
+        "$STAGE/profile",
+        "-testconfig",
+        "-earlyconsolelog"
+      ],
+      "log": "$STAGE/testconfig-v1.log",
+      "log_sha256": "8a9c4000682939ec85548bb723dd69ab5152d1ea59b0dce7ac6f92e51eebe6f2",
+      "samples_count": 16,
+      "minimum_free_bytes": 21323747328,
+      "maximum_stage_bytes": 606932992
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "shutdown": {
+        "verified": true,
+        "remaining": [],
+        "errors": []
+      },
+      "duration_seconds": 29.856,
+      "argv": [
+        "$STAGE/candidate/PCSX2.app/Contents/MacOS/PCSX2",
+        "-datapath",
+        "$STAGE/profile",
+        "-debugger",
+        "-earlyconsolelog"
+      ],
+      "log": "$STAGE/ui-v1.log",
+      "log_sha256": "d0380d006ad4d8ab61bff6d9b70af83fef25e90951ea3a56726389e58fbe3d00",
+      "samples_count": 31,
+      "minimum_free_bytes": 22405410816,
+      "maximum_stage_bytes": 606965760
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "shutdown": {
+        "verified": true,
+        "remaining": [],
+        "errors": []
+      },
+      "duration_seconds": 13.971,
+      "argv": [
+        "$STAGE/candidate-v2/PCSX2.app/Contents/MacOS/PCSX2",
+        "-datapath",
+        "$STAGE/profile",
+        "-testconfig",
+        "-earlyconsolelog"
+      ],
+      "log": "$STAGE/testconfig-v2.log",
+      "log_sha256": "32873570aff8bb8b5bf0a88cb0c7429241163444455397f1c5725c35df78a434",
+      "samples_count": 16,
+      "minimum_free_bytes": 22191550464,
+      "maximum_stage_bytes": 719777792
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "abort_reason": null,
+      "shutdown": {
+        "verified": true,
+        "remaining": [],
+        "errors": []
+      },
+      "duration_seconds": 33.387,
+      "argv": [
+        "$STAGE/candidate-v2/PCSX2.app/Contents/MacOS/PCSX2",
+        "-datapath",
+        "$STAGE/profile",
+        "-debugger",
+        "-earlyconsolelog"
+      ],
+      "log": "$STAGE/ui-v2.log",
+      "log_sha256": "f52e8b11055d45491f2cc3fdc1926586faae07b61d6bbf7f06b59a0311f0074b",
+      "samples_count": 34,
+      "minimum_free_bytes": 22168580096,
+      "maximum_stage_bytes": 719781888
+    }
+  ],
+  "supervisor": {
+    "module": "tools.qa.supervised_process",
+    "tests_passed": 23,
+    "line_and_branch_percent": 100,
+    "historical_supervisor_unchanged": true,
+    "scope": "synthetic process groups; Xcode service EPERM not reproduced"
+  },
+  "packaging": {
+    "original_preserved": true,
+    "intermediate_preserved": true,
+    "initial_packager_exit": 0,
+    "initial_codesign_errors": true,
+    "initial_shaderc_id_absolute": true,
+    "rpath_corrections": [
+      "Contents/Frameworks/libsharpyuv.0.dylib",
+      "Contents/Frameworks/libwebp.7.dylib",
+      "Contents/Frameworks/libwebpmux.3.dylib",
+      "Contents/Frameworks/libwebpdemux.2.dylib",
+      "Contents/Frameworks/libjpeg.62.dylib"
+    ],
+    "final_signature": "ad hoc, hardened runtime, original entitlements, no notarization",
+    "entitlements_sha256": "8bd096c9c928d31c95ea480847938750acbf28fc7653fe1c261a32bc4585b9bf",
+    "codesign_deep_strict_exit": 0
+  },
+  "candidate": {
+    "executable_sha256": "9fc99e1bf529cfb5afaf3d259a14b502942cc07e2ced8a82231a8a72e3df58ee",
+    "executable_bytes": 17708592,
+    "file_count": 200,
+    "total_bytes": 112344866,
+    "machos": [
+      {
+        "path": "Contents/MacOS/PCSX2",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libkddockwidgets-qt6.3.dylib",
+          "@executable_path/../Frameworks/libavformat.62.dylib",
+          "@executable_path/../Frameworks/libavcodec.62.dylib",
+          "@executable_path/../Frameworks/libswscale.9.dylib",
+          "@executable_path/../Frameworks/libswresample.6.dylib",
+          "@executable_path/../Frameworks/libavutil.60.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+          "/usr/lib/libcurl.4.dylib",
+          "@executable_path/../Frameworks/libjpeg.62.dylib",
+          "@executable_path/../Frameworks/libwebp.7.dylib",
+          "@executable_path/../Frameworks/libryml.0.12.1.dylib",
+          "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+          "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+          "@executable_path/../Frameworks/libSDL3.0.dylib",
+          "@executable_path/../Frameworks/liblz4.1.dylib",
+          "@executable_path/../Frameworks/libpng16.16.dylib",
+          "/usr/lib/libz.1.dylib",
+          "@executable_path/../Frameworks/libzstd.1.dylib",
+          "@executable_path/../Frameworks/libplutosvg.0.dylib",
+          "@executable_path/../Frameworks/libfreetype.6.dylib",
+          "@executable_path/../Frameworks/libplutovg.1.dylib",
+          "/usr/lib/libpcap.A.dylib",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+          "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+          "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+          "@executable_path/../Frameworks/libQt6Widgets.6.dylib",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+          "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+          "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+          "/usr/lib/libobjc.A.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libavformat.62.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libavformat.62.dylib",
+          "@executable_path/../Frameworks/libavcodec.62.dylib",
+          "@executable_path/../Frameworks/libavutil.60.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+          "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+          "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libQt6Svg.6.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Svg.6.dylib",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/usr/lib/libz.1.dylib",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path"
+        ]
+      },
+      {
+        "path": "Contents/Frameworks/libQt6Core.6.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+          "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/usr/lib/libz.1.dylib",
+          "@executable_path/../Frameworks/libzstd.1.dylib",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/usr/lib/libobjc.A.dylib"
+        ],
+        "rpaths": [
+          "@loader_path"
+        ]
+      },
+      {
+        "path": "Contents/Frameworks/libpng16.16.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libpng16.16.dylib",
+          "/usr/lib/libz.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libQt6Gui.6.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+          "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+          "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate",
+          "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+          "@executable_path/../Frameworks/libpng16.16.dylib",
+          "/usr/lib/libz.1.dylib",
+          "@executable_path/../Frameworks/libharfbuzz.dylib",
+          "@executable_path/../Frameworks/libfreetype.6.dylib",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+          "/usr/lib/libobjc.A.dylib"
+        ],
+        "rpaths": [
+          "@loader_path"
+        ]
+      },
+      {
+        "path": "Contents/Frameworks/libSDL3.0.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libSDL3.0.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+          "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+          "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/ForceFeedback.framework/Versions/A/ForceFeedback",
+          "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+          "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+          "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+          "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+          "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+          "/System/Library/Frameworks/GameController.framework/Versions/A/GameController",
+          "/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+          "/usr/lib/libobjc.A.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libswresample.6.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libswresample.6.dylib",
+          "@executable_path/../Frameworks/libavutil.60.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+          "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libplutosvg.0.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libplutosvg.0.dylib",
+          "@executable_path/../Frameworks/libplutovg.1.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "@executable_path/../Frameworks/libfreetype.6.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libplutovg.1.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libplutovg.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libfreetype.6.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libfreetype.6.dylib",
+          "@executable_path/../Frameworks/libpng16.16.dylib",
+          "@executable_path/../Frameworks/libharfbuzz.dylib",
+          "/usr/lib/libz.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libsharpyuv.0.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path"
+        ]
+      },
+      {
+        "path": "Contents/Frameworks/libavcodec.62.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libavcodec.62.dylib",
+          "@executable_path/../Frameworks/libavutil.60.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+          "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+          "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libMoltenVK.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@rpath/libMoltenVK.dylib",
+          "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+          "/usr/lib/libc++.1.dylib",
+          "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+          "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/usr/lib/libobjc.A.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libwebp.7.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libwebp.7.dylib",
+          "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path"
+        ]
+      },
+      {
+        "path": "Contents/Frameworks/libshaderc_shared.1.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@rpath/libshaderc_shared.1.dylib",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libwebpmux.3.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libwebpmux.3.dylib",
+          "@executable_path/../Frameworks/libwebp.7.dylib",
+          "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path"
+        ]
+      },
+      {
+        "path": "Contents/Frameworks/libQt6Widgets.6.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Widgets.6.dylib",
+          "/usr/lib/libz.1.dylib",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+          "/usr/lib/libobjc.A.dylib"
+        ],
+        "rpaths": [
+          "@loader_path"
+        ]
+      },
+      {
+        "path": "Contents/Frameworks/liblz4.1.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/liblz4.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libwebpdemux.2.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libwebpdemux.2.dylib",
+          "@executable_path/../Frameworks/libwebp.7.dylib",
+          "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path"
+        ]
+      },
+      {
+        "path": "Contents/Frameworks/libzstd.1.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libzstd.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libkddockwidgets-qt6.3.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libkddockwidgets-qt6.3.dylib",
+          "@executable_path/../Frameworks/libQt6Widgets.6.dylib",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libjpeg.62.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libjpeg.62.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path"
+        ]
+      },
+      {
+        "path": "Contents/Frameworks/libharfbuzz.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libharfbuzz.dylib",
+          "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+          "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libryml.0.12.1.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libryml.0.12.1.dylib",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libswscale.9.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libswscale.9.dylib",
+          "@executable_path/../Frameworks/libavutil.60.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+          "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/Frameworks/libavutil.60.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libavutil.60.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+          "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/PlugIns/platforms/libqcocoa.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+          "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+          "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+          "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+          "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+          "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+          "/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+          "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+          "/usr/lib/libobjc.A.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/styles/libqmacstyle.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Widgets.6.dylib",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+          "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+          "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+          "/usr/lib/libobjc.A.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/iconengines/libqsvgicon.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Svg.6.dylib",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqgif.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqwbmp.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqwebp.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "@executable_path/../Frameworks/libwebpdemux.2.dylib",
+          "@executable_path/../Frameworks/libwebpmux.3.dylib",
+          "@executable_path/../Frameworks/libwebp.7.dylib",
+          "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqapng.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libpng16.16.dylib",
+          "/usr/lib/libz.1.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": []
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqico.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqmacheif.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqjpeg.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "@executable_path/../Frameworks/libjpeg.62.dylib",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqtiff.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libz.1.dylib",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqsvg.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Svg.6.dylib",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqicns.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqtga.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      },
+      {
+        "path": "Contents/PlugIns/imageformats/libqmacjp2.dylib",
+        "architecture": "x86_64",
+        "minimum": [
+          [
+            "11.0",
+            ""
+          ]
+        ],
+        "dependencies": [
+          "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+          "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+          "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+          "@executable_path/../Frameworks/libQt6Core.6.dylib",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+          "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+          "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "@loader_path/../../lib"
+        ]
+      }
+    ],
+    "manifest": {
+      "Contents/Info.plist": {
+        "bytes": 7449,
+        "sha256": "263664114be170389c59c6fa5d0d898c10e5a808f7ddbb5ece3a73af83001747"
+      },
+      "Contents/_CodeSignature/CodeResources": {
+        "bytes": 51369,
+        "sha256": "aee8c3214bc38c2d2b11e1292e219191728b85cc682084420b88583b9d19a49d"
+      },
+      "Contents/MacOS/PCSX2": {
+        "bytes": 17708592,
+        "sha256": "9fc99e1bf529cfb5afaf3d259a14b502942cc07e2ced8a82231a8a72e3df58ee"
+      },
+      "Contents/Resources/default.metallib": {
+        "bytes": 332812,
+        "sha256": "d3b569bc89fb84ad317d2fadeb53a25683218ab36115029f427e906a7c8eeed7"
+      },
+      "Contents/Resources/qt.conf": {
+        "bytes": 77,
+        "sha256": "7da2de3426c478dd95719705312f245057cc455cee936fadad56a01dfca5ab6d"
+      },
+      "Contents/Resources/game_controller_db.txt": {
+        "bytes": 520295,
+        "sha256": "373c19912e71958ddfde500a42b6af6cadf34121bd602a6d6d4cf6e17d3ecbf5"
+      },
+      "Contents/Resources/RedumpDatabase.yaml": {
+        "bytes": 1906463,
+        "sha256": "755962450efd5effd2f3fe2f9a60c73d6cb3f9b4acea964abf5bb25a86ee25bc"
+      },
+      "Contents/Resources/Metal22.metallib": {
+        "bytes": 390109,
+        "sha256": "7c1ee9a9dd6cc3fb5046c9ebbb6c364d9b510e223dd9d52e8ddf42d16697f9e3"
+      },
+      "Contents/Resources/Metal23.metallib": {
+        "bytes": 413205,
+        "sha256": "76c98d7a1931dde5a1b87188d6361b09a51fecf506f78bde10996652019649c6"
+      },
+      "Contents/Resources/cover-placeholder.png": {
+        "bytes": 56075,
+        "sha256": "1f00d0eba7f55dfa696950eda6ed635b433f28913b37545b61c4674d6454fa03"
+      },
+      "Contents/Resources/PCSX2.icns": {
+        "bytes": 84675,
+        "sha256": "df72fdda75209ae7fb2a59c838c52f875d46051f75df2fa0b3c181170c84fe63"
+      },
+      "Contents/Resources/GameIndex.yaml": {
+        "bytes": 2681184,
+        "sha256": "565c0f3454147c11f4aae150a0fc3ecd12d691e11af1b0fba57f308223bf3e8a"
+      },
+      "Contents/Frameworks/libavformat.62.dylib": {
+        "bytes": 519920,
+        "sha256": "026e8b93788628275cc2f4a4a7552ccae2bbd89a6eb755bac244e1a801be656a"
+      },
+      "Contents/Frameworks/libQt6Svg.6.dylib": {
+        "bytes": 686960,
+        "sha256": "0c840e8600ab0baacdf755e942594ec6e98f03936e72a8764ecd1fefad27ede2"
+      },
+      "Contents/Frameworks/libQt6Core.6.dylib": {
+        "bytes": 7429616,
+        "sha256": "1ff89e8e6c6cf435b1e4bc7f66b0dcd43673833f901c0ed96fcd74956e220221"
+      },
+      "Contents/Frameworks/libpng16.16.dylib": {
+        "bytes": 267200,
+        "sha256": "92dbace5c0ecfdb579fc6689da7562b14907c029010b02ce4c15c489e9ac6ff8"
+      },
+      "Contents/Frameworks/libQt6Gui.6.dylib": {
+        "bytes": 7528624,
+        "sha256": "158099a6d15f82bbded9be36cec9c230ea6cd8151559a95cce915fddf1a8913c"
+      },
+      "Contents/Frameworks/libSDL3.0.dylib": {
+        "bytes": 2105936,
+        "sha256": "521a32eb9276b0baf834514fb183c496e04a2c4af92f5b4d6a18a82382da3dc8"
+      },
+      "Contents/Frameworks/libswresample.6.dylib": {
+        "bytes": 155552,
+        "sha256": "b7a0094fc61aab0e276f3f85ae3489aed8d7ec9f3369402bbe28f9b635c6b792"
+      },
+      "Contents/Frameworks/libplutosvg.0.dylib": {
+        "bytes": 99968,
+        "sha256": "c0fc0aff90713023fe433a75e556183a646259c660c661b3c559e5fc35bd0f51"
+      },
+      "Contents/Frameworks/libplutovg.1.dylib": {
+        "bytes": 307936,
+        "sha256": "1d2065d34ac916abdc3ffd02261594fc85e7c0e08de8dc2cee435fbdb7a7a203"
+      },
+      "Contents/Frameworks/libfreetype.6.dylib": {
+        "bytes": 826880,
+        "sha256": "d0bbdaa4b252712a0096f11f99a505949b43fe0ddd13f38d1079b70a904367fa"
+      },
+      "Contents/Frameworks/libsharpyuv.0.dylib": {
+        "bytes": 53424,
+        "sha256": "0258418f95d3c5969327be4598a8d9d5f7c5b3502eb9c456e96fc16fe178f588"
+      },
+      "Contents/Frameworks/libavcodec.62.dylib": {
+        "bytes": 531680,
+        "sha256": "d8a5bd08df41e3bdd3f00fd8a28339d33aa5b46aed8ba723c64a0c84e290f987"
+      },
+      "Contents/Frameworks/libMoltenVK.dylib": {
+        "bytes": 5420064,
+        "sha256": "1970075a8820acc236c27b577980982aaf389f94273ccce107d344f334a57400"
+      },
+      "Contents/Frameworks/libwebp.7.dylib": {
+        "bytes": 659168,
+        "sha256": "9f61ddc5a79ba90a6af7cfd9a3f3a52f11e17c223839985564c1c8d3a7802907"
+      },
+      "Contents/Frameworks/libshaderc_shared.1.dylib": {
+        "bytes": 7241376,
+        "sha256": "142dd8b116da8e5096d7e44747371119333659f28a28e236aafaff18c2e6c462"
+      },
+      "Contents/Frameworks/libwebpmux.3.dylib": {
+        "bytes": 69008,
+        "sha256": "146d0dc2ad519873803d4f24405722c16ec20ee53cf6c40b746296657bd715e6"
+      },
+      "Contents/Frameworks/libQt6Widgets.6.dylib": {
+        "bytes": 7571008,
+        "sha256": "c7de3ac159cc05cc5f817c0c9b26f907393fb7c30a97abc9cd67f380616c94d5"
+      },
+      "Contents/Frameworks/liblz4.1.dylib": {
+        "bytes": 202336,
+        "sha256": "d5c006d2468585dc05bd8081b27465d9ee89b35bde744ffe7170fe5a18228d53"
+      },
+      "Contents/Frameworks/libwebpdemux.2.dylib": {
+        "bytes": 45152,
+        "sha256": "2244a88df80775567f099297ba4ed1929c675134f14f2fea284dd21ad15b71e9"
+      },
+      "Contents/Frameworks/libzstd.1.dylib": {
+        "bytes": 983424,
+        "sha256": "43df7665b443a7fe59d2f881b97650b1a7910016a6a3d071f4710d64ce6bd387"
+      },
+      "Contents/Frameworks/libkddockwidgets-qt6.3.dylib": {
+        "bytes": 2366192,
+        "sha256": "1950fcf661a5b741a6b82ed27118e5a53647b684158e81471519ffd013f662d6"
+      },
+      "Contents/Frameworks/libjpeg.62.dylib": {
+        "bytes": 937360,
+        "sha256": "9084efcbe370307f00171ecb277e6adf969a7b15855f4ff5de4924a61d5b97da"
+      },
+      "Contents/Frameworks/libharfbuzz.dylib": {
+        "bytes": 1483600,
+        "sha256": "c6a264ecd8ff34f29d27c63294cf757c18f73687f876ab89b6e6a4d7fe310ed5"
+      },
+      "Contents/Frameworks/libryml.0.12.1.dylib": {
+        "bytes": 388848,
+        "sha256": "df44311e5a8726a7506ad071d42b0bc4dc4af37bc8de6901ae09b02985b84b57"
+      },
+      "Contents/Frameworks/libswscale.9.dylib": {
+        "bytes": 1513600,
+        "sha256": "c41f113d58384545c59560c433b1a48dbbb1693fcee6dfe5f25fe352bd0ac6c0"
+      },
+      "Contents/Frameworks/libavutil.60.dylib": {
+        "bytes": 841856,
+        "sha256": "15471a31cff7ce914dc02c1d7b264fa7662c284af7f15d8722fe9520758c378e"
+      },
+      "Contents/Resources/docs/GPL.html": {
+        "bytes": 37279,
+        "sha256": "f20948605b5d8e349977579aae01357e50f9fe4d158fc044d33c35b5fab41684"
+      },
+      "Contents/Resources/docs/ThirdPartyLicenses.html": {
+        "bytes": 302517,
+        "sha256": "b0d35939ad14fd0d9eef98d4ab63f4922d76ea7f666d6b262d27c27e64862383"
+      },
+      "Contents/Resources/docs/GameIndex.pdf": {
+        "bytes": 55211,
+        "sha256": "b000e6386e931b5ccf12f626a2868a7034b667efb2d158050b0e13e9ce286e51"
+      },
+      "Contents/Resources/fullscreenui/start-game.svg": {
+        "bytes": 2839,
+        "sha256": "51e2ce4df2f9a756e74d9a4a0811fac1e8767492bbbb7f7d3feff8a73938c749"
+      },
+      "Contents/Resources/fullscreenui/drive-cdrom.svg": {
+        "bytes": 1037,
+        "sha256": "2e6210f4d43dcadb9ba97984c7991fd83e76ee85b3192365f26e87d8adcc9dbb"
+      },
+      "Contents/Resources/fullscreenui/no-save.png": {
+        "bytes": 9655,
+        "sha256": "ab829598e15b771112130cbafbd982736400690c11e3d7c81e3fc8c582c24f47"
+      },
+      "Contents/Resources/fullscreenui/back-icon.svg": {
+        "bytes": 1364,
+        "sha256": "2930e4849159a1bbeee650c469989b8ab8fb6d14d2c19b36d3f5c28a519dda62"
+      },
+      "Contents/Resources/fullscreenui/media-cdrom.svg": {
+        "bytes": 3318,
+        "sha256": "022c8b05d8f3e7e6046077a2d6ad2d3da1e7fa0e69c8321f3c556b9963be2477"
+      },
+      "Contents/Resources/fullscreenui/start-file.svg": {
+        "bytes": 1120,
+        "sha256": "c0ca66cdb8081b7d9caa450d8e606f9fd3f9046180bef441e28013e65e11340e"
+      },
+      "Contents/Resources/fullscreenui/placeholder.png": {
+        "bytes": 2668,
+        "sha256": "0a42ffa04c5895647026f4cbbd30cae3e1455bd6e36d069ae83142e0c229c74b"
+      },
+      "Contents/Resources/fullscreenui/desktop-mode.svg": {
+        "bytes": 1269,
+        "sha256": "0cd9e13beb9965bdb6ba355a6bdb89a4c94a6fb799a3707c75b3ba0371bd0a85"
+      },
+      "Contents/Resources/fullscreenui/applications-system.svg": {
+        "bytes": 3797,
+        "sha256": "3456c17385c637e5359b815f497c1341d95a7d2b072e5628aab03dba2527fec1"
+      },
+      "Contents/Resources/fullscreenui/exit.svg": {
+        "bytes": 4042,
+        "sha256": "9dacf195fc9c6f183093fdcd045a44bafb28efe19dc672f1d2c4efa1d4ad4355"
+      },
+      "Contents/Resources/fullscreenui/start-bios.svg": {
+        "bytes": 1295,
+        "sha256": "c0a9204f361b449bd75465c22aaf3257fcf9a6554c3c34fbd164bd3654f3fea6"
+      },
+      "Contents/Resources/icons/star-4.svg": {
+        "bytes": 5255,
+        "sha256": "c711d4905fcd7dfc940c550cfa88ba6b60455a954057610ba5ca69e3fecd6604"
+      },
+      "Contents/Resources/icons/star-5.svg": {
+        "bytes": 5240,
+        "sha256": "21cf4038f25fccd8aac11731ed9eaf2e5cc5ded51116edeac68d678553b4a5d4"
+      },
+      "Contents/Resources/icons/star-1.svg": {
+        "bytes": 5300,
+        "sha256": "7209b9c7ec77bc290ede0a82c53583c3eeae6d7c5cc44fec5f9e6e96264adb56"
+      },
+      "Contents/Resources/icons/AppIconLarge.png": {
+        "bytes": 93501,
+        "sha256": "956278a74b5ed2e6ea7a17dfa95f984282af3252a61838e7cb4cf2e0ed80ca87"
+      },
+      "Contents/Resources/icons/star-0.svg": {
+        "bytes": 5315,
+        "sha256": "921e158c3d82a4b74db3e39233d2344105c9a48a68394fa998c87cca55fe02d4"
+      },
+      "Contents/Resources/icons/star-2.svg": {
+        "bytes": 5285,
+        "sha256": "566019480f4f6e058a43025896b90d86a4fa00cbddd2524ae5c02afc38191aa2"
+      },
+      "Contents/Resources/icons/star-3.svg": {
+        "bytes": 5270,
+        "sha256": "ee201d2d5ebe2f0d04f83200f9d8ee593cc25bd7b79a23939bb1b29bd6a6d8d7"
+      },
+      "Contents/Resources/icons/AppBanner.svg": {
+        "bytes": 2649,
+        "sha256": "4bb22e528622898ca5afdb01e2d9190449f1ed0c7b82d56c6e5074553ed4fa27"
+      },
+      "Contents/Resources/icons/AppIconLarge.ico": {
+        "bytes": 302430,
+        "sha256": "b13d849f560d39b6607eec818b4a9455db39378597495b93041cf839738e2a2b"
+      },
+      "Contents/Resources/icons/ra-icon.svg": {
+        "bytes": 2092,
+        "sha256": "0d30848f6a4eb24e64cc430c2d84c1509bfcfcd0923b90a84fb8fe14e2a93700"
+      },
+      "Contents/Resources/fonts/fa-solid-900.ttf": {
+        "bytes": 414664,
+        "sha256": "8a2db53f7927abee48e52262090d99ced56a22d46752fba13c8f8782ce632d73"
+      },
+      "Contents/Resources/fonts/RobotoMono-Medium.ttf": {
+        "bytes": 86820,
+        "sha256": "4d901b560f20f455b3c82c6616b17b72360956747cb35c3808aa370052fe8e32"
+      },
+      "Contents/Resources/fonts/Roboto-Regular.ttf": {
+        "bytes": 305608,
+        "sha256": "797e35f7f5d6020a5c6ea13b42ecd668bcfb3bbc4baa0e74773527e5b6cb3174"
+      },
+      "Contents/Resources/fonts/promptfont-license": {
+        "bytes": 4302,
+        "sha256": "9019d15ccd7a175946a326812b70c3603d074f3016edfe0fc7b261006643f934"
+      },
+      "Contents/Resources/fonts/Twemoji.Mozilla.ttf": {
+        "bytes": 1574620,
+        "sha256": "c4541eefde3f31e4216559ada91f52d1b7ec95b849f7e9afc7a05613a56c8bf2"
+      },
+      "Contents/Resources/fonts/Twemoji.Mozilla-license": {
+        "bytes": 2168,
+        "sha256": "0b6a48b98dd4c1dcccf54510735749b9c3c2007157afe6c56467247b338c6072"
+      },
+      "Contents/Resources/fonts/Roboto-Regular-copyright": {
+        "bytes": 1276,
+        "sha256": "8fb8f30f9898fcecec3620dba5847de9b56fa1c111760873ed40c6d466839549"
+      },
+      "Contents/Resources/fonts/promptfont.otf": {
+        "bytes": 263548,
+        "sha256": "92848f15d5eeea9fdfe87e272e4c9ea32f876b3665f5b27ef059711b7c757502"
+      },
+      "Contents/Resources/translations/pcsx2-qt_it-IT.qm": {
+        "bytes": 777864,
+        "sha256": "6fcb57ff0279559f891f17c15b11f1c492bbfc6a58e51e818d32a0653f1da47a"
+      },
+      "Contents/Resources/translations/pcsx2-qt_no-NO.qm": {
+        "bytes": 716156,
+        "sha256": "4ec84c0ffb64b3b4aa0e68fde8e184ebd8a05bdd1350cddc48cd8f16c5a9464d"
+      },
+      "Contents/Resources/translations/pcsx2-qt_ar-SA.qm": {
+        "bytes": 703105,
+        "sha256": "6c9c153321ace73ed38d6e94c532934b3d2e18cc08293120bf7954641842818b"
+      },
+      "Contents/Resources/translations/pcsx2-qt_lv-LV.qm": {
+        "bytes": 744067,
+        "sha256": "3ac9406da807b855461c7cf59cbb9c696242a6dafc3b56a5d7048789150bdf4e"
+      },
+      "Contents/Resources/translations/pcsx2-qt_id-ID.qm": {
+        "bytes": 736268,
+        "sha256": "df87d206697d700dfbc3fa80b636fa61b27a9b95dad19da830b6a57bd780451f"
+      },
+      "Contents/Resources/translations/pcsx2-qt_az-AZ.qm": {
+        "bytes": 723818,
+        "sha256": "0ba423d1e3be48c8412c172c5aca4301dfa222da32ee84d3ff72120e1a508583"
+      },
+      "Contents/Resources/translations/pcsx2-qt_de-DE.qm": {
+        "bytes": 766086,
+        "sha256": "66b954db16883452a2a79374e218c475c142784957e1c57d43a9af40c0020603"
+      },
+      "Contents/Resources/translations/pcsx2-qt_qu-PE.qm": {
+        "bytes": 708180,
+        "sha256": "00e6d165f0137cfc5243e63b9e0156db890083c80569b2e1895e07f57b3981b9"
+      },
+      "Contents/Resources/translations/pcsx2-qt_ru-RU.qm": {
+        "bytes": 762638,
+        "sha256": "19de8f2d62aa963062616e001435be06ae3f3d080f37e32caab0f5b1018b7834"
+      },
+      "Contents/Resources/translations/pcsx2-qt_gn-PY.qm": {
+        "bytes": 713302,
+        "sha256": "969e624da7a76ca87bd99ebbd1880112f73c267bcc922a5e9cf3d2c772ec8ea2"
+      },
+      "Contents/Resources/translations/pcsx2-qt_pl-PL.qm": {
+        "bytes": 742679,
+        "sha256": "bd64a17aa7b2c5c691c0f4ec66e57197ace5c86bb687fd2d18da5bc8bf6fe43e"
+      },
+      "Contents/Resources/translations/pcsx2-qt_uk-UA.qm": {
+        "bytes": 728044,
+        "sha256": "766627edeeff8af09dbe87ee2b788a91b2068a0dbcbd60d81526890d55bb9c4a"
+      },
+      "Contents/Resources/translations/pcsx2-qt_fi-FI.qm": {
+        "bytes": 738650,
+        "sha256": "3ece4ee65554947f15c850eec3a7a2f6ee7ac353b032cea2186b8b18d8cdb5f8"
+      },
+      "Contents/Resources/translations/pcsx2-qt_ja-JP.qm": {
+        "bytes": 614198,
+        "sha256": "08c5393390150fe9bd1b9d188add9c664e13459fc528d73a266df5ce3f225bcd"
+      },
+      "Contents/Resources/translations/pcsx2-qt_he-IL.qm": {
+        "bytes": 702818,
+        "sha256": "c7fa381b0a0c9d8cdbd76437c2138860fcd9bbe5b99a4ea03628eae18e3eb2c2"
+      },
+      "Contents/Resources/translations/pcsx2-qt_el-GR.qm": {
+        "bytes": 804544,
+        "sha256": "31d298a7955af6daeab91b4c7d46a3330daf50e90be2ba57a1242581df95efa3"
+      },
+      "Contents/Resources/translations/pcsx2-qt_hi-IN.qm": {
+        "bytes": 708706,
+        "sha256": "1fce105874b7aea131eaa8a3a27af2d389506d0b73de9dd360e352a3cd2fcd2a"
+      },
+      "Contents/Resources/translations/pcsx2-qt_es-ES.qm": {
+        "bytes": 797332,
+        "sha256": "cb28ec3087eea75dd8618152b0852242488fbf1de1f5bae073221819569ce465"
+      },
+      "Contents/Resources/translations/pcsx2-qt_sv-SE.qm": {
+        "bytes": 733200,
+        "sha256": "e0dea490b7b0afb39febc1cd36d9985bf3061a46fb52862de0d2994e4d6ce3d4"
+      },
+      "Contents/Resources/translations/pcsx2-qt_hr-HR.qm": {
+        "bytes": 740424,
+        "sha256": "345c4f372a6774cdb34afc50745c65a5495608304265f0a6ce237c6fa9c1817a"
+      },
+      "Contents/Resources/translations/pcsx2-qt_af-ZA.qm": {
+        "bytes": 710018,
+        "sha256": "753817897c67d9e641c632ff8e0254159b91f5c7c44207f9eb6346712167b609"
+      },
+      "Contents/Resources/translations/pcsx2-qt_en-US.qm": {
+        "bytes": 1816,
+        "sha256": "693273d4809760c6dd490fb8e908671c00046a97ca6269b406e07002c4e6b9a6"
+      },
+      "Contents/Resources/translations/pcsx2-qt_da-DK.qm": {
+        "bytes": 708374,
+        "sha256": "77ae9ae1d6162daab7c13e1f50c944e6596af781720b99c8f681752de7e09d32"
+      },
+      "Contents/Resources/translations/pcsx2-qt_pt-PT.qm": {
+        "bytes": 755430,
+        "sha256": "75c16425f08732db75fb8c5670c4986d6881ca76bd353978b1b7d9579dd53a98"
+      },
+      "Contents/Resources/translations/pcsx2-qt_zh-TW.qm": {
+        "bytes": 626984,
+        "sha256": "7229ea6bb8c1f57fb70b1c23b9869a23d16e863bc586d7d609c9a6022f727d2b"
+      },
+      "Contents/Resources/translations/pcsx2-qt_fa-IR.qm": {
+        "bytes": 715688,
+        "sha256": "38a67f8e371e0afc149b5f5d42e3dd35f8285a2e9703ca1342fcf0910ec98e9a"
+      },
+      "Contents/Resources/translations/pcsx2-qt_pt-BR.qm": {
+        "bytes": 769692,
+        "sha256": "4873dd73657a3f92920eb20e3171e582db3d222a5976b03aca61875f5826efe6"
+      },
+      "Contents/Resources/translations/pcsx2-qt_ka-GE.qm": {
+        "bytes": 710336,
+        "sha256": "d3e34a2f804e28123111194048ca4654e147c2b3ad7e0c5d4333e5e32ad4fd51"
+      },
+      "Contents/Resources/translations/pcsx2-qt_bg-BG.qm": {
+        "bytes": 709252,
+        "sha256": "dac9d8f7576f2da0a7b3b75adc2d0fcb453f70d44e937d2f1bc474153099bb09"
+      },
+      "Contents/Resources/translations/pcsx2-qt_fr-FR.qm": {
+        "bytes": 801986,
+        "sha256": "6abed5ecc79f66284d119e945bbcbd782516f0ee7cbbb9f26e42a97151543503"
+      },
+      "Contents/Resources/translations/pcsx2-qt_cs-CZ.qm": {
+        "bytes": 722633,
+        "sha256": "a600d2caed679b770bf0123b9eaf5823656191aff7516fbf8415d351616d49b2"
+      },
+      "Contents/Resources/translations/pcsx2-qt_nl-NL.qm": {
+        "bytes": 756330,
+        "sha256": "873406658672be5172cc2234480ef45d11577c878ebc9b0e80b9642144615cc3"
+      },
+      "Contents/Resources/translations/pcsx2-qt_es-419.qm": {
+        "bytes": 787689,
+        "sha256": "448d39d47870ad72d4bdb56c953f9b9369659482de36519f4f19e5ed6d67229b"
+      },
+      "Contents/Resources/translations/pcsx2-qt_zh-CN.qm": {
+        "bytes": 514234,
+        "sha256": "1cc3ac8e9c6a4e7b910e30e1deeae5198f0e57e6739edb3a9b1ed588fc22c868"
+      },
+      "Contents/Resources/translations/pcsx2-qt_ca-ES.qm": {
+        "bytes": 774892,
+        "sha256": "d00c05eaecd551f6c54958823d33da5c3fd268c96767bf3ed1aeabb1cbf06dba"
+      },
+      "Contents/Resources/translations/pcsx2-qt_ro-RO.qm": {
+        "bytes": 715230,
+        "sha256": "f657c19b1977cff92d553f34461beb4eb0fb89a0af8368497927aa582932ca80"
+      },
+      "Contents/Resources/translations/pcsx2-qt_lt-LT.qm": {
+        "bytes": 727657,
+        "sha256": "ed1b0d5ffc48c32f8229c68a0fadeb54df87e9beb3b91ce2781a115f279ab87e"
+      },
+      "Contents/Resources/translations/pcsx2-qt_tr-TR.qm": {
+        "bytes": 726580,
+        "sha256": "01e7580b8cf01248332f47e1f5f20194d8eb9ce64a65a15c756a5925243074ef"
+      },
+      "Contents/Resources/translations/pcsx2-qt_en-fg.qm": {
+        "bytes": 708180,
+        "sha256": "ae9fb67a8826d4ff63d831aeca1c16b8cab101531062fb67fdeed6fe8a15e2fb"
+      },
+      "Contents/Resources/translations/pcsx2-qt_ko-KR.qm": {
+        "bytes": 583640,
+        "sha256": "e6801f5559cdaf7c63fbaeb9d57e6642ca4214107ac4eac239bfda5eb2bfe534"
+      },
+      "Contents/Resources/translations/pcsx2-qt_sr-SP.qm": {
+        "bytes": 735618,
+        "sha256": "7c3150683f6da97efd2fc49486121ca791673349e5e26f1454aa7ebf5c56c883"
+      },
+      "Contents/Resources/translations/pcsx2-qt_hu-HU.qm": {
+        "bytes": 751566,
+        "sha256": "8bc628638776eb24f7fd567e68f67e7b957e7b0382aac03b76132bdf5e6e0f69"
+      },
+      "Contents/Resources/translations/pcsx2-qt_vi-VN.qm": {
+        "bytes": 708536,
+        "sha256": "3a5397743267c0bbc7a2447d9a017fd673062fadb5d3e37999dcdf75c80ba680"
+      },
+      "Contents/Resources/shaders/common/ffx_cas.h": {
+        "bytes": 63512,
+        "sha256": "58e3eec49d30207287c9a6d692111bf5395f11a181bb40da5a81514f8c4c5a84"
+      },
+      "Contents/Resources/shaders/common/fxaa.fx": {
+        "bytes": 17432,
+        "sha256": "c769d784c3cd47760ed7bf85b867cda545237d4d52feac7290a059d3ff5848fb"
+      },
+      "Contents/Resources/shaders/common/ffx_a.h": {
+        "bytes": 161481,
+        "sha256": "a77e8b8cb03eefc7259cce808fb0c7ed37a97c9d2424a7e6c263bae96871ea68"
+      },
+      "Contents/Resources/shaders/vulkan/convert.glsl": {
+        "bytes": 13888,
+        "sha256": "51bd9b2c785cc4dccb79dada660178bcb757dc5474ca85a1eb06fd0c34e154dd"
+      },
+      "Contents/Resources/shaders/vulkan/imgui.glsl": {
+        "bytes": 791,
+        "sha256": "372e33cccb520a987983dd897c51c6b7e609f16badd67d056a95799a7f768566"
+      },
+      "Contents/Resources/shaders/vulkan/cas.glsl": {
+        "bytes": 2637,
+        "sha256": "ea3f65c6d1b18abe23b42a3d9ddf48d787df287feef6cfac52ca6109d8852d97"
+      },
+      "Contents/Resources/shaders/vulkan/present.glsl": {
+        "bytes": 10324,
+        "sha256": "94abba9d5f3fe9fc806190f93bf9728f64f7191694b4976226054e1d1f1daae1"
+      },
+      "Contents/Resources/shaders/vulkan/tfx.glsl": {
+        "bytes": 52486,
+        "sha256": "2c1ee01e2badc7a37d593d749f1dd85482ca773fc3fc47e0dae497e2f7ef4e2b"
+      },
+      "Contents/Resources/shaders/vulkan/interlace.glsl": {
+        "bytes": 7289,
+        "sha256": "af535e4b871b188957a7169ed883f6f8a209f0908e5b7aff17755605c8d07857"
+      },
+      "Contents/Resources/shaders/vulkan/merge.glsl": {
+        "bytes": 759,
+        "sha256": "3c0eb665db06c289841829a6aa4716e46ce5ae8e08005a82ad4f3020bd8406e7"
+      },
+      "Contents/Resources/shaders/vulkan/shadeboost.glsl": {
+        "bytes": 1914,
+        "sha256": "31ab20c5617e0bdd3e1afaf9cac2212586f94433f176ca30810a1fecf3f338e8"
+      },
+      "Contents/Resources/shaders/opengl/convert.glsl": {
+        "bytes": 14077,
+        "sha256": "f9128f999a06aa0c5eefee625bb829d2e6856a07b191826ab68d4f1be04c0ef5"
+      },
+      "Contents/Resources/shaders/opengl/tfx_vgs.glsl": {
+        "bytes": 14101,
+        "sha256": "3ea3747d8f5e289cd2fc626b4bfaac9d2697641757e35ebb80d5d5f20ed03c54"
+      },
+      "Contents/Resources/shaders/opengl/imgui.glsl": {
+        "bytes": 637,
+        "sha256": "25978439553bbd959fe4eb5d03b739a3d697348458a7bac3df48556148f48027"
+      },
+      "Contents/Resources/shaders/opengl/cas.glsl": {
+        "bytes": 2413,
+        "sha256": "3d5b9cef750ea8bedceef43c4c52215e8280abb81b5b8fa002007bb3f97f0506"
+      },
+      "Contents/Resources/shaders/opengl/tfx_fs.glsl": {
+        "bytes": 36957,
+        "sha256": "3aa5999392096043acd6dad291665453d9f290121ea9f0bd8eed3b9b07572124"
+      },
+      "Contents/Resources/shaders/opengl/present.glsl": {
+        "bytes": 11721,
+        "sha256": "cc88b6ea60863fa5a29616ff6c3a08cb43214b15c4fe11472fa64dbc939038b7"
+      },
+      "Contents/Resources/shaders/opengl/interlace.glsl": {
+        "bytes": 6912,
+        "sha256": "c4de83ccc78ad4e01d97174385cc549af16d417768709b36c8fd000f18cb63f7"
+      },
+      "Contents/Resources/shaders/opengl/merge.glsl": {
+        "bytes": 579,
+        "sha256": "6cd2bc21890426b5430d44b28a89289bcc6fc9ecd632bb3a8eafb6c8b818499c"
+      },
+      "Contents/Resources/shaders/opengl/shadeboost.glsl": {
+        "bytes": 1623,
+        "sha256": "e7297a2e333bb1882bcf82d2a109a2ab033715cce1bba4934f42ec68370f0077"
+      },
+      "Contents/Resources/icons/flags/fr.svg": {
+        "bytes": 220,
+        "sha256": "300974700284682b75e865cc5831236a501f0b37118989357e9e6c7ed9e8d9e0"
+      },
+      "Contents/Resources/icons/flags/se.svg": {
+        "bytes": 199,
+        "sha256": "4bd12863ced707749eff7ffefbd366525f47a1ca509597dc45421fe25f75fd67"
+      },
+      "Contents/Resources/icons/flags/jp.svg": {
+        "bytes": 438,
+        "sha256": "1315f5523a3393347ade906a84084d670c82eeba5ef90a197b703fac2be6d97a"
+      },
+      "Contents/Resources/icons/flags/gb.svg": {
+        "bytes": 504,
+        "sha256": "c8be1e7208798a4ae692ee1e937065d498bb29e741943f6172b29118b8ed8066"
+      },
+      "Contents/Resources/icons/flags/ru.svg": {
+        "bytes": 212,
+        "sha256": "ae514e165c71fa13c8c3a2c3c22343d5d7ef62a327ed597b603ae0d325a8d5b9"
+      },
+      "Contents/Resources/icons/flags/il.svg": {
+        "bytes": 813,
+        "sha256": "c736664c6b556ffe0802eba13f84ec69dd11d9cb01d7604a772d76fac3542ab2"
+      },
+      "Contents/Resources/icons/flags/dk.svg": {
+        "bytes": 225,
+        "sha256": "34e03d70f8978474893c46ae8aa0c770fef1ec145c85a5ff80ebafb657f33749"
+      },
+      "Contents/Resources/icons/flags/kr.svg": {
+        "bytes": 1016,
+        "sha256": "879cba811da7952dff9ed2c843dda75e870709dc386f3bc2a981a764ba4a8f3f"
+      },
+      "Contents/Resources/icons/flags/LICENSE": {
+        "bytes": 1086,
+        "sha256": "9df3746eb31b27308f30e0f43c6ace0c3d330235ef91c5798e87a2538bbbe098"
+      },
+      "Contents/Resources/icons/flags/hk.svg": {
+        "bytes": 727,
+        "sha256": "d9d142b2b97ec3b8190bff3802072c1b4f15573a679eead89a0ce59986dcad0c"
+      },
+      "Contents/Resources/icons/flags/sa.svg": {
+        "bytes": 9885,
+        "sha256": "b7bf0073dcde1ad78484dfa774f2ad11b2f1bbbd4ed40d70452afac7434e0276"
+      },
+      "Contents/Resources/icons/flags/rs.svg": {
+        "bytes": 181232,
+        "sha256": "adbac75456def5ef7ae51f242b0977b26f43f6c9b645fa1e27e9661eaf8cd225"
+      },
+      "Contents/Resources/icons/flags/pl.svg": {
+        "bytes": 204,
+        "sha256": "9b9698cefb1d401cdda698124d40ad4bdb929ea356d6651c2da894d5cbb95f3b"
+      },
+      "Contents/Resources/icons/flags/gr.svg": {
+        "bytes": 814,
+        "sha256": "409464bc7c6979e273cad46d8f2329219b86503c58c90ff3337ad8e8f181c2d7"
+      },
+      "Contents/Resources/icons/flags/in.svg": {
+        "bytes": 1090,
+        "sha256": "91185efa1a9b52cdc0e470712518efeefc4e4d6a6555bae9de997ba71885bb98"
+      },
+      "Contents/Resources/icons/flags/au.svg": {
+        "bytes": 1296,
+        "sha256": "cbb2206c5e59a25d79228306af973666a191e163f0ae337681f447977e6edb18"
+      },
+      "Contents/Resources/icons/flags/at.svg": {
+        "bytes": 183,
+        "sha256": "10c8e3733b51b1c2b28894c5e298d0d0938be9b0b0aac6387cb96c6bdd428daa"
+      },
+      "Contents/Resources/icons/flags/nl.svg": {
+        "bytes": 212,
+        "sha256": "b8af31439662dc22cb30c0d9190bcc7682161ccdbe6b7f9c5d59ac1e3eed4068"
+      },
+      "Contents/Resources/icons/flags/tw.svg": {
+        "bytes": 2450,
+        "sha256": "8af7223542749d427d61a7c749888eb9559d48daa1847b539abb808feaf7ea63"
+      },
+      "Contents/Resources/icons/flags/us.svg": {
+        "bytes": 2524,
+        "sha256": "5017a969bbe067953868084b3ecc1ce72d84d81cdc476d0344312e3520289ce5"
+      },
+      "Contents/Resources/icons/flags/scn.svg": {
+        "bytes": 527,
+        "sha256": "13acd152aa476e42610f3a1e6c35a83832e0e66d2670e938fb78983119fd16df"
+      },
+      "Contents/Resources/icons/flags/ch.svg": {
+        "bytes": 262,
+        "sha256": "0f88c5312df0f8510e95855757481a11dccb5e6ca198bb1c36ed49bacec481ea"
+      },
+      "Contents/Resources/icons/flags/no.svg": {
+        "bytes": 302,
+        "sha256": "1d670757f68642786b5e7343d7e59928354165b8b7e5b25be2d4f5a5a1a898d2"
+      },
+      "Contents/Resources/icons/flags/lt.svg": {
+        "bytes": 381,
+        "sha256": "8f0a9a3cc0b2627b2e9f2b768382a8c00279d1de5ea7770ecf4881afa4527244"
+      },
+      "Contents/Resources/icons/flags/ua.svg": {
+        "bytes": 216,
+        "sha256": "101b1f16defc4bb2a101843418b8be25c3281b2fecb3a5d6f54d234250a05a9b"
+      },
+      "Contents/Resources/icons/flags/tr.svg": {
+        "bytes": 523,
+        "sha256": "f31bbb617fac788c9621a6ca6ff316ef5e236d7c2194c72d68d8291a049e6be5"
+      },
+      "Contents/Resources/icons/flags/cz.svg": {
+        "bytes": 213,
+        "sha256": "21cb48ef26af91dc0928fefa9bc6963d90cf5e45e15edf9eed45b447c9aa52d7"
+      },
+      "Contents/Resources/icons/flags/vn.svg": {
+        "bytes": 461,
+        "sha256": "8bccf756a454a27022dd52cb3a9ace292461860eb2556c8c4f050cdcc38032dd"
+      },
+      "Contents/Resources/icons/flags/cn.svg": {
+        "bytes": 775,
+        "sha256": "3b710fbc0668996b7c076c746fed7509af6600a35e384a6ba7af4e47f921b01c"
+      },
+      "Contents/Resources/icons/flags/lv.svg": {
+        "bytes": 214,
+        "sha256": "9bb9da70a7803e7d14663a72d8a9a93bc3aaba967906a600c6ae3fc73bc89c03"
+      },
+      "Contents/Resources/icons/flags/za.svg": {
+        "bytes": 860,
+        "sha256": "1755a5e16f1c9f5120e4871e8454bdee663beb4fb4827012bcd02cb9044249c2"
+      },
+      "Contents/Resources/icons/flags/LICENSESCN": {
+        "bytes": 22527,
+        "sha256": "2345380edaf31a07c4ba42a6f91696b10849f496926cfc2bfb78dd2dd21c3b3b"
+      },
+      "Contents/Resources/icons/flags/be.svg": {
+        "bytes": 284,
+        "sha256": "8b4d7bf6d708d63d2f00755bb8e5be787a0095daa031a6bcfa5749d91a4bddd5"
+      },
+      "Contents/Resources/icons/flags/br.svg": {
+        "bytes": 6978,
+        "sha256": "7625b5ce78750b4bcaa20156826b16d000106eac13cc7a434b18372cb39e8864"
+      },
+      "Contents/Resources/icons/flags/az.svg": {
+        "bytes": 501,
+        "sha256": "33ad245b2125c36fbf0f863b0edd5c85cbef37587900e101db3a615870504502"
+      },
+      "Contents/Resources/icons/flags/mx.svg": {
+        "bytes": 83734,
+        "sha256": "701dcf88faa1fe109bb3d528dbdaea168708b30b62e03e4c89657e4b27b5ea11"
+      },
+      "Contents/Resources/icons/flags/it.svg": {
+        "bytes": 273,
+        "sha256": "53475462aa1cb3ecd1fce4843b0cf5f91d5ec91bc7e6770a53981b7205097bb6"
+      },
+      "Contents/Resources/icons/flags/de.svg": {
+        "bytes": 209,
+        "sha256": "fba1cb76560166b5ca77b489f47b01dad8a81d20d87c1f23b8c64fba8b6744f7"
+      },
+      "Contents/Resources/icons/flags/pt.svg": {
+        "bytes": 7890,
+        "sha256": "6d9798399c59d9102a2636d7bad071dc9c32586e7a92a901e305cc36f870508f"
+      },
+      "Contents/Resources/icons/flags/eu.svg": {
+        "bytes": 1295,
+        "sha256": "67040ccd286857e513262bc59a6825ea8520b3e6990e42f1075712c072460c09"
+      },
+      "Contents/Resources/icons/flags/hr.svg": {
+        "bytes": 30732,
+        "sha256": "3c98eae5ee93f0d75e10170beb96e26908830e2e6f7f7af2a4b281a097aeb946"
+      },
+      "Contents/Resources/icons/flags/ir.svg": {
+        "bytes": 14695,
+        "sha256": "feacea666409ba0323b072a0cf3c6b6cfa73646c69e03d1e326e3cfebe303127"
+      },
+      "Contents/Resources/icons/flags/ro.svg": {
+        "bytes": 284,
+        "sha256": "e99637b0ee944d7f65e5ee9c312fff66e7e1d80ffd285c69387c386a414daf1c"
+      },
+      "Contents/Resources/icons/flags/Other.svg": {
+        "bytes": 656,
+        "sha256": "5a86b40a9b8c8233cb9bb07d0d69e651ab6c9ed56f455067ec89cc7cd6766520"
+      },
+      "Contents/Resources/icons/flags/id.svg": {
+        "bytes": 163,
+        "sha256": "8ec6c98ffcbf8f32428fd4051675f839dc98d8137d4d8c7a625a9624bd49fdb2"
+      },
+      "Contents/Resources/icons/flags/hu.svg": {
+        "bytes": 259,
+        "sha256": "d3417cb31afd6eb35e5f28da7fbd896776fd86a766bf7320531eb0ee2531bc37"
+      },
+      "Contents/Resources/icons/flags/fi.svg": {
+        "bytes": 216,
+        "sha256": "2cf44ec0ac19b65b9a1c2b0780966e38101d8ff81f637e25ab510f846ccefbb2"
+      },
+      "Contents/Resources/icons/flags/es.svg": {
+        "bytes": 80294,
+        "sha256": "bea77ca3a5894d0515ea473565bf8c8a7daff8f57218f747351d7529d2a0764f"
+      },
+      "Contents/Resources/sounds/achievements/unlock.wav": {
+        "bytes": 202702,
+        "sha256": "d9b8d3b5e4ae0a6ed336e769301546735ff34f29c14be6e1232da6b7096c0988"
+      },
+      "Contents/Resources/sounds/achievements/lbsubmit.wav": {
+        "bytes": 82096,
+        "sha256": "08ca1285218bf04048d2064a20f79e6bf72267fc98d555430502c245d75b42ab"
+      },
+      "Contents/Resources/sounds/achievements/message.wav": {
+        "bytes": 15696,
+        "sha256": "dfd8035387a463722ad07af3c91934e0a685f2afa57e31d305f0602656d1edb1"
+      },
+      "Contents/Resources/sounds/achievements/README.txt": {
+        "bytes": 206,
+        "sha256": "ca2b1da6433a1f69b84e468f83820dcb0f21c97383a65ec2430ca0daeb978888"
+      },
+      "Contents/PlugIns/platforms/libqcocoa.dylib": {
+        "bytes": 1161888,
+        "sha256": "431c8d5a18eb943b3a8937d0aa0703ec2f8ab9c1274723fab791e61b5c9f264b"
+      },
+      "Contents/PlugIns/styles/libqmacstyle.dylib": {
+        "bytes": 300272,
+        "sha256": "0a19751fbe5c95afe28abefc77aac4e7c86030f9e422d2f4f505e9587d0a9983"
+      },
+      "Contents/PlugIns/iconengines/libqsvgicon.dylib": {
+        "bytes": 88784,
+        "sha256": "1c55fe06c32f39645f86360901bb8634ba0ae8912ff245ff07fdcbb1fa028b6e"
+      },
+      "Contents/PlugIns/imageformats/libqgif.dylib": {
+        "bytes": 67808,
+        "sha256": "50892e7b7b8701d3e3e0ed1ca133f66204b844e6ea430fd0ff367b8be77589dc"
+      },
+      "Contents/PlugIns/imageformats/libqwbmp.dylib": {
+        "bytes": 56544,
+        "sha256": "5763f5007696c19d51a3a023b49aa660cdfcab122809859c6bb6f4963b255bcd"
+      },
+      "Contents/PlugIns/imageformats/libqwebp.dylib": {
+        "bytes": 69360,
+        "sha256": "70d07a8f6eeecc8613eb36d62cbd94e48a21e5c8cb30390b77f6abbcbc07b479"
+      },
+      "Contents/PlugIns/imageformats/libqapng.dylib": {
+        "bytes": 80176,
+        "sha256": "6a3174242597061c901236d3e989c1328a3dfd4a4689f294c4f1c12a1f9e8162"
+      },
+      "Contents/PlugIns/imageformats/libqico.dylib": {
+        "bytes": 71152,
+        "sha256": "5f08272c5cebcbe3a30c83b44db09556d78b83b8baa711cded4c490937df8944"
+      },
+      "Contents/PlugIns/imageformats/libqmacheif.dylib": {
+        "bytes": 76608,
+        "sha256": "12ee29fcf4ce1c463a3fdbafeda1abe85ff694e901de6311ea4de6b1f1962418"
+      },
+      "Contents/PlugIns/imageformats/libqjpeg.dylib": {
+        "bytes": 90208,
+        "sha256": "fa7d79af19684a430d9ad42a1e489d0a0aefaededafadd8f000050b3b033abff"
+      },
+      "Contents/PlugIns/imageformats/libqtiff.dylib": {
+        "bytes": 543696,
+        "sha256": "f0b6295d6315dbbbda562228e76165d4a7f43ef45baeff7ccefaa1090af2fc89"
+      },
+      "Contents/PlugIns/imageformats/libqsvg.dylib": {
+        "bytes": 58688,
+        "sha256": "81c738e9ef0f6ad9671f374679f6dbe1a571fdf0665d8c322f14caa5ec6ab260"
+      },
+      "Contents/PlugIns/imageformats/libqicns.dylib": {
+        "bytes": 76960,
+        "sha256": "40d023fd673f1f07f4888cfbe8d1445f2e982d2d764c25dd104b68fe2aa882ae"
+      },
+      "Contents/PlugIns/imageformats/libqtga.dylib": {
+        "bytes": 56976,
+        "sha256": "5a1917ae1c3771e5a27494123b8218af483477e5598ee46dff64e76fede760dd"
+      },
+      "Contents/PlugIns/imageformats/libqmacjp2.dylib": {
+        "bytes": 76272,
+        "sha256": "9109436f90e042d7272eab5afe0e67bc276d36ad1a8894b79197027bb2657e5e"
+      }
+    },
+    "links": {},
+    "problems": [],
+    "metal_resources": {
+      "Contents/Resources/default.metallib": "d3b569bc89fb84ad317d2fadeb53a25683218ab36115029f427e906a7c8eeed7",
+      "Contents/Resources/Metal22.metallib": "7c1ee9a9dd6cc3fb5046c9ebbb6c364d9b510e223dd9d52e8ddf42d16697f9e3",
+      "Contents/Resources/Metal23.metallib": "76c98d7a1931dde5a1b87188d6361b09a51fecf506f78bde10996652019649c6"
+    },
+    "retained_symbol_names": [
+      "_eeMem",
+      "__ZN12vtlb_private8vtlbdataE"
+    ]
+  },
+  "original_tests": {
+    "ctest_programs_passed": 2,
+    "common_passed": 31,
+    "core_passed": 82,
+    "failures": 0,
+    "skipped": 0,
+    "isa_scope": "core multi-ISA tests SSE4 only on this arm64 host",
+    "sources_unmodified": true
+  },
+  "runtime": {
+    "observation": {
+      "tool": "cua_repl",
+      "screenshots": "observed in conversation; not exported",
+      "candidate_v1": [
+        "debugger window in Spanish",
+        "breakpoints tab responds",
+        "main window v2.8.2 and empty game list",
+        "Cmd-Q exit 0"
+      ],
+      "candidate_v2": [
+        "debugger window in Spanish",
+        "breakpoints selection restored from isolated profile",
+        "memory tab responds",
+        "Cmd-Q exit 0"
+      ],
+      "game_or_bios_loaded": false,
+      "final_process_closed": true
+    },
+    "loaded_bundle_files": [
+      "Contents/Frameworks/libQt6Core.6.dylib",
+      "Contents/Frameworks/libQt6Gui.6.dylib",
+      "Contents/Frameworks/libQt6Svg.6.dylib",
+      "Contents/Frameworks/libQt6Widgets.6.dylib",
+      "Contents/Frameworks/libSDL3.0.dylib",
+      "Contents/Frameworks/libavcodec.62.dylib",
+      "Contents/Frameworks/libavformat.62.dylib",
+      "Contents/Frameworks/libavutil.60.dylib",
+      "Contents/Frameworks/libfreetype.6.dylib",
+      "Contents/Frameworks/libharfbuzz.dylib",
+      "Contents/Frameworks/libjpeg.62.dylib",
+      "Contents/Frameworks/libkddockwidgets-qt6.3.dylib",
+      "Contents/Frameworks/liblz4.1.dylib",
+      "Contents/Frameworks/libplutosvg.0.dylib",
+      "Contents/Frameworks/libplutovg.1.dylib",
+      "Contents/Frameworks/libpng16.16.dylib",
+      "Contents/Frameworks/libryml.0.12.1.dylib",
+      "Contents/Frameworks/libsharpyuv.0.dylib",
+      "Contents/Frameworks/libswresample.6.dylib",
+      "Contents/Frameworks/libswscale.9.dylib",
+      "Contents/Frameworks/libwebp.7.dylib",
+      "Contents/Frameworks/libzstd.1.dylib",
+      "Contents/MacOS/PCSX2",
+      "Contents/PlugIns/iconengines/libqsvgicon.dylib",
+      "Contents/PlugIns/platforms/libqcocoa.dylib",
+      "Contents/PlugIns/styles/libqmacstyle.dylib",
+      "Contents/Resources/fonts/Roboto-Regular.ttf",
+      "Contents/Resources/fonts/Twemoji.Mozilla.ttf",
+      "Contents/Resources/translations/pcsx2-qt_es-419.qm"
+    ],
+    "external_dependency_mappings": [],
+    "load_evidence_method": "lsof; DYLD_PRINT_LIBRARIES produced no output under hardened runtime",
+    "testconfig_exit_codes": [
+      0,
+      0
+    ],
+    "ui_exit_codes": [
+      0,
+      0
+    ],
+    "final_group_closed": true,
+    "postcheck_correction": "datapath includes PCSX2 subdirectory; binary first testconfig succeeded"
+  },
+  "final_verification": {
+    "source_clean": true,
+    "prefix": {
+      "files": 5228,
+      "links": 70,
+      "inventory_sha256": "694cbabfc81faf8044b1b252184f5c70b1052c65f81f724f0f6f7865778c6b33"
+    },
+    "candidate_files_verified": 200,
+    "capacity": {
+      "free_bytes": 22200049664,
+      "logical_bytes": 712781014,
+      "allocated_bytes": 719781888
+    }
+  },
+  "repository_validation": {
+    "python_tests_passed": 1920,
+    "total_coverage_percent": 98.45629510825982,
+    "coverage_gate": "passed",
+    "ruff": "passed",
+    "format": "passed",
+    "check_repository": "PASS",
+    "repository_errors": 0,
+    "git_diff_check": 0,
+    "final_supervisor_tests_passed": 23,
+    "remote_ci_executed": false
+  },
+  "source_artifacts": {
+    "tools/qa/supervised_process.py": "e01264017183803ade7ee06d2b607c0b3e0d56c5704c82146b557bd573c67f23",
+    "tests/python/test_supervised_process.py": "9b0fce863a81a04234acee67b8aa4e0c2fac2b6787ddbaf0e1a2b14b41cd1b77",
+    "schemas/pcsx2-baseline-v1.md": "4d63e1ddb430894d9b91105d6e5362c65fb51f8ce8e18bd7ee3a2841e3e104b4",
+    "docs/execution/f02-07-pcsx2-baseline.md": "059bc19dff49fd430806ab67bdb530437e86d56323e0dd3e91a5fff9a6baae6f"
+  },
+  "local_evidence": {
+    "package.py": "fcca13ec94ced201919604dacdcce313a3ff3a5711c28b7dd487903767d8320e",
+    "symbols.txt": "b89db5fd0ff98abfa8cacd7cae192426409a13fa0f76d5f6afbcd155118a1cb3",
+    "sign-component-20.json": "7390ff222d694f41286148038a9b4b5118bd7ab692916bb60191073d4c942290",
+    "v2-sign-2.log": "e256c6d448ca0da1aeed16d105a8c61f52e50ec286400f8bebcf88ecfb549281",
+    "audit-candidate-macho-19.txt": "824c399e36b27b6be7eab3630ec61450d62a69fa6a4cef014ad48f9bdcd079cc",
+    "sign-component-28.log": "0f3a3d8c37dc26e0d739aec40694f293c5202926c6c486dca601a018f9b21cac",
+    "sign-component-2.json": "069a468ce0ee848e8cd64d9036991a578a87b44ad48accb31634e2aa3bcc92fa",
+    "v2-sign-24.json": "c7ca8564a66aaa0cceae976c0240ebf7de38a52c574fd9b6884cf77ffb7bb7d4",
+    "audit-candidate-macho-31.txt": "ae0a9a40821ed9c9a99d30b785ab60821093fe0083cee37387ccb1a44851ff5d",
+    "audit-candidate-macho-25.txt": "fc60a22b692050c87529c534ad6db9344dd05431a911b02fc75a07462ac38840",
+    "sign-component-14.log": "724be184dc3739b39d78d9e7bd02182132e06cdb38dd669b48c8da33f8363539",
+    "v2-rpath-16.json": "880eb7f94483bc06e3da66a294fb1fdd06aaed9c3609045a265e3457d5414bbf",
+    "audit-v2-macho-17.txt": "7b6bcf288309bb18cb3dbe9195266b3da7028c56b109b70e9d6e6d60ba102e78",
+    "v2-sign-32.json": "1af2d1603c60d62a110c71d00c235eb325a01e783d819ec5a5863c63bfcfeeb4",
+    "sign-component-36.json": "d451ca851d090168033297295b5dc75035e04daa45bf735934dca1a4f7cb703e",
+    "audit-v2-macho-16.txt": "9efaf7fd4c719c3dd6d079207e6319efbf7fc872a83a98c6b23ad313bf074bcf",
+    "ctest-v1-samples.jsonl": "cf4d165d8ba4bb901fb786796645a6bca7470f6be6f00bb3fa71a118c6b47c0c",
+    "sign-component-15.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit-candidate-macho-24.txt": "969dc85c3caad46ed16ac64327c2751e10210a495fdeaa003b8c0d6d2795a5fa",
+    "audit-candidate-macho-30.txt": "ec9cd45fdab135fb091faf3ca787ae96e63c7a7263293f5af22f5ed00a2ec342",
+    "entry.json": "397fa2f95c8e1a3d2c3cdb079279df5d1e91d2fddd0a8825090232da3f06ec2b",
+    "sign-component-29.log": "e94ff214f58b9c1937205e0cdd1ea66c41f04acf7a1abad16f256bbb7ed177d9",
+    "audit-candidate-macho-18.txt": "e6a627642e0905f3b562b4e3d9d2f9e4af63a7507d2653758c622f30a2c3937d",
+    "v2-sign-3.log": "ad03a5c1030f8fd4e2356b24e21bc56477a27ec3994d7780d307efefe0d7ae25",
+    "v2-sign-4.json": "aea75f11eb4ab25abd00edb65ef2b97b045c7233153c417bf137be336f0ab882",
+    "v2-rpath-19.log": "2ac9bc8398029393a83c84e8c40f7f708b9ff09be0c7bca81c34ffda23185654",
+    "sign-bundle.json": "d40c83df5f8933f7af4d5a328a368218c2cbcfcb09f9cbb99832063e370035a8",
+    "v2-sign-1.log": "aa1caf3d92e9dbb0f166da304dc1ff093b82e7ad506053984f499d770fc2b94b",
+    "v2-sign-28.json": "06573dbe1b4b6e2d2a76b86e3bb38cacd7d0d62a0e15c743371c86f75ac14f5b",
+    "audit-candidate-macho-26.txt": "fbdd233f6749cc5a400d63e02deb46e28970a0e58efa7df8bb5844387fcfeb11",
+    "sign-component-17.log": "ae41e0fc69750f66a337de3dff30e5a0dae5264a6cf9720b6067dc2c981c41d2",
+    "audit-candidate-macho-32.txt": "56b8a574a794fb98405b54320e746a4f2e91ec1382901b7ec78d3fad5c670181",
+    "audit-v2-macho-14.txt": "476a8c4b2968618db281474c67d2dc8ea06782e09694e4eda9630ebe24562366",
+    "audit-v2-macho-28.txt": "c55712b1e57e1a10338198cb8e4674efed6303e10d0808344e36fc5914a15a76",
+    "run.py": "ff521de5ec81086e2fe1ae7c762ad40bb0d35d8cf3fc0099f9251145648b3cba",
+    "sign-component-41.json": "af5a63d96bc4c8711b820ac0d58cacca0521cef4b27d912e1c27720ed386a102",
+    "v2-sign-12.json": "c340d35b382b159b825fc37c13fae834bd46e35f898636702703de3d36c7e33f",
+    "sign-component-16.json": "c82eacab5e3e3a4b6f90d67c3154e376ad13108df8921ae52322d1a531ba16a0",
+    "audit-v2-macho-29.txt": "2ebf3015a5912814d277aed6703908bd08f9b8a84916d2ad9cc18fed56008f2e",
+    "audit-v2-macho-15.txt": "49338523f09da28934315df191e2ad1b21b775767fd83ef2fff766df532f35a8",
+    "audit-candidate-macho-33.txt": "9abd7343290e66ca83f60547410ad5b70d8d9dd404a2336cab4acc48bb409b1a",
+    "sign-component-16.log": "f76179bf25700d2216737e9581576fab470bf4df0b8ede6ba33a62928e4f7e86",
+    "audit-candidate-macho-27.txt": "f10fe030a23c5516bbe73e829ac7fb6f5f976c063ffb41a9085763ade2e88d7e",
+    "shaderc-install-id.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "profile-created.json": "02a8695f25a70da08acab9f7beb07b944700e3477d0af2e014ebe5cad9995e18",
+    "v2-sign-8.json": "cc2a81f1660c80ac1889d0aaf83a32838c8a54183ced01fbe10825b97322cd2f",
+    "runtime-loads.json": "716332ce0137a524de17fe554909aacd0d48b87c7ab5940d29a01a815ca5591f",
+    "v2-rpath-22.log": "2cfa0c989cf66772a3f3c1646e11617ce0aea2b7a31f8e7009e8a592058cc377",
+    "v2-sign-4.log": "440b9aa8ac892d0baf52f3e19cdb961b37f7704f09534911a1885f81088cfd3e",
+    "v2-sign-9.json": "df5e973e740e1de60c995e2e53baccb039a75451fc46eefbe7fe13a73159aa5b",
+    "sign-component-8.log": "50f859f264d3f6830fbed1ec4198301af97b202d00fbabe9b18c50cf50320d8e",
+    "audit-candidate-macho-23.txt": "9c1fc25f4e74e477280687ec31cec8066d6765bd981ba999a4c0c7c9adff41b5",
+    "sign-component-12.log": "c3d9f6e8b7de17526626d7c4463460f07b42ff3611d5cb351755e1673b19916d",
+    "audit-candidate-macho-37.txt": "d08feb67fd02381ac279059265ddf4a41ec8d1318c2d0c2883b48f654f22cbb5",
+    "tests-build-v1.json": "41b68419fc8f0bc307abf6f5a83f4c93b1bccb852807236b2b8321f4df2314dc",
+    "sign-component-17.json": "80333f8be4e028aa5725e0ba39818e6a41736fa1a3cbed2d7d79572655925b64",
+    "audit-v2-macho-39.txt": "1092ef4eed836d321b80553079861bb99e3a1e47c0b56bd23cca4d0faa7b76e3",
+    "audit-v2-macho-11.txt": "efdba3230ef60f474550250e1c65a128ef3ae7eac89cdf3e2778edc40c02205b",
+    "ui-v2.json": "2eb216dbc7e5922c736b3f8b1d6be0a3fbb2638a85c79771c2820e2313461847",
+    "sign-component-40.json": "517a60307f7acf99f5eb351711852e7aac616a70fa394e51a7c9e7833b825308",
+    "v2-sign-13.json": "ab7fb730f2e8d1f4412cc20fe6207c2d5807ee9926348fff81c2423345cd481f",
+    "audit-v2-macho-10.txt": "f2206b333dea22d7bca39391199dc335ac5978cc75ffb81d411f1ff485ce7d10",
+    "audit-v2-macho-38.txt": "15729ea237523b607342bd9d655365068e94add5e38a4b6cf686edb3cf01fe73",
+    "audit-candidate-macho-36.txt": "541bfcce52541f3f72354da400c459462f456243aea7b9a9b97bf1f2ba3653e2",
+    "sign-component-13.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit-candidate-macho-22.txt": "1dcb7a4bf9d8b9d7ee2a9d59bd92f9d6c597a42b3b14c973008b4bdd2f1f46de",
+    "sign-component-9.log": "d020eb6f011da64b78b197f76c28c12638aa5c05cfc2acd29e93a4f7da7bf7ba",
+    "v2-sign-29.json": "0ba1f75099d33d3c4048a2df0a4193c6e57eac06562b1484b501ed47b113f667",
+    "v2-sign-5.log": "79ca9bc52815b0ef14013f6e47b269a52821db5130b4e29f16ca338cf234f4ee",
+    "v2-sign-5.json": "8edff8e02cf63f989b1138f99da0c5c92300eea864a153d0bd9e222ef2ad4657",
+    "v2-sign-7.log": "cf7f47a69ee74c6a06bec9d56d1b1899dcc0fb2bd9634c034e971d0546d2a4b3",
+    "audit-candidate-macho-34.txt": "e969826e1195294290f8e0ca7ccd4dc95e26628ecc6fe7a3ab0d82625dc40f84",
+    "audit-candidate-macho-20.txt": "31bf61d39ab320a3d24e0cfb10e8e9b849c8ded881a54789ac3d14bab7d59421",
+    "sign-component-11.log": "eb8255146b10d5ca87316fb3c1c9c9c3d69277f03415f03ffa6d2e85883bd2ae",
+    "sign-component-39.log": "371671c0dc079036ba49ce95ab654051bcc78fc5443182499bc010e38073b0b1",
+    "audit-v2-macho-12.txt": "4801f16bc596b56fab60a2fa67db49aee6b47daec140e99d659904b551953498",
+    "sign-component-37.json": "4c1dcd494bbd1a1596e2f592fb4637974533cd5d7e8f5519935581f1d2e1c79a",
+    "configure-v19-samples.jsonl": "90c34da0141a0dd1e3637dcff832e2f226bd58727fd9396376e72126b5b19046",
+    "package-v2.py": "1b610ecee8c68fdae115a2032720fdf1b3dfb71da34aed4ca748fafdcb96b3f0",
+    "audit-v2-macho-13.txt": "563dda1a28c3318055edecba9cc1cab300a69c63288e0711b3f88227bb5aa9c5",
+    "v2-sign-33.json": "b83d65bcfa844e049c5898fbf86d5750333b6816336bec3bf86d8767214bc928",
+    "sign-component-38.log": "a421eb37a3b3cfeefb28ab2fd13aaf93e5f3edb86191817764a2a75602bbb8ca",
+    "sign-component-3.json": "e2c90c9990835cdd7271e376bc396aba08875c8ba9f38e2dd13bf3838e769267",
+    "v2-sign-25.json": "e81c6cce4bea5aa3620eeac2f991b774f92cd6c749c131d97659ff77ef76e5b3",
+    "sign-component-10.log": "587d7bcfa31ef1542c0ad551da4f74d0144411915023c7fb65a7ab71c3ead2ad",
+    "audit-candidate-macho-21.txt": "ca8f66a44ea5d925543f2e201d3677245b4d703acab11aa4a67c6816fd553896",
+    "audit-candidate-macho-35.txt": "f56a4bd3e84d9b6fab2cb09840aa44ff3cfcd7e68b6cd1cba4bc39722be35fc1",
+    "v2-sign-6.log": "67c3d3ae7159d9123e598016a797e43451371ea7c13c6ed74ff797613c6935f3",
+    "sign-component-21.json": "52ae9c33a6ee390256d727f5e25929f15fd56ad698e6e008666e6d228592abbd",
+    "artifact-qa.json": "60c13213d59783b1e384ccbbfe64b6651a19344515de8f4ae01fa3e964dac2f7",
+    "v2-sign-16.log": "a127a69356f58b4902ce87bcf869ad806daed93525656c90585acbd3b133346d",
+    "audit-candidate-macho-3.txt": "4ec57aff7f51667be3d035512ad7b7c7e388e82fe49be902f263b35e9d9b92af",
+    "sign-component-8.json": "81e63fdfe32d6a599b0ca9198455614f7e208c337dd32ed61b4847f87f2e0f08",
+    "macho-1.txt": "a73e4dc6207210df64728f70443dadb1466359b28dd3933f124c90b0718f639d",
+    "v2-sign-38.json": "8c66deca57088112b535f5292738fd8b4160d9f24fc97edc5261f28e322a4b2a",
+    "ui.py": "6571b489f3d4a0cdee414fe20be2da619db7e8e8eee00b5f5d1c06a7b7076068",
+    "ui-v2-samples.jsonl": "80d226c3f5b0ceceeb6a21d0da6c0efdd15cbb865a7cacd1ec21a5e59cde013d",
+    "macho-12.txt": "7ade3a736dc8a807c58edca9e607aa6fe8bdc8ea7f34eec8029af4323253a66a",
+    "v2-sign-14.json": "ed44da7eaebaa478b414e2984f0b53dc179a865723b5705f27c4db153a3dbe1a",
+    "macho-13.txt": "b93e8765b4317ada108e2d00b0cbec348df57e82619fcd5f63fcee8338e517fb",
+    "loads.py": "be18f4be4074ae0679bbad1f07521109c2840db9a49bda6abe898b784c5e39b9",
+    "sign-component-10.json": "62f6e8c3d9b9ae4e9488bfd98a6a1b726ae1e4310215e7ea314af9c57adf362d",
+    "audit-candidate-macho-2.txt": "92cc7a136b5b0c62223138a91bcdc7458d1e822dd51ee746b4c94157768648cb",
+    "v2-sign-17.log": "f66835e31128a5bcb5aa99535461525c1aebce94055d79f0394c72b52cbc63b9",
+    "v2-sign-29.log": "ea0e4ee86930684b9310b654e55a58dc7deb8192cb414dff3fba92436ad460b5",
+    "v2-sign-15.log": "2bae4b722d995be440afdebab8b5a860454e9a721518ef4125089bfcae1b9abd",
+    "sign-component-26.json": "b50743ef6e41ff0e637b91bdab34229b492d7ff53c6912cd7fdfbe801413141d",
+    "macho-2.txt": "6f763e22f34d575efedeae3185dad7f929927c50e8124f265e5abdcfc7fe476e",
+    "v2-sign-22.json": "9984717e08a84d45a3dae06a6f60ffdad67225f66d924105a7ff1b3304ae88e2",
+    "sign-component-4.json": "6e8d4540cfd6337e2e1482b130a340646e3297e6afdfa806cb8e522e1c8ff310",
+    "v2-sign-bundle.json": "037d516fa8135f973d37f2f64f27bba76ee00f8ab46f903cfe20ba222dc186db",
+    "v2-sign-34.json": "c79d6ce95da7e192dcfb409c29e00afb4c6c8eb966299125d35903b3dc71b312",
+    "macho-11.txt": "10607cc46cbfa23a10b4f58219f85e8f2a28963af57cb0625dc5f30af56a0e73",
+    "sign-component-30.json": "387fa750f02298aed445a85252406ae095bfdc43f07fa0b9576d7c115597051c",
+    "macho-39.txt": "b331550402b2cac758eb3b323633580e615844745800e1a742b51d4768e4a2bf",
+    "macho-38.txt": "5135b3fbd32ff4eb29a8ee1401cd61d8c11e8383d5acfb0c604128458f0d18c0",
+    "macho-10.txt": "28b9c78ad5e38043601aaa950816572fc20e8e12a9d9b497e4b660e661add358",
+    "ui-v2.py": "b373b799d5b53115b9f2592763546a33626c6fb3d54e2c62da9592d24a81d637",
+    "v2-sign-18.json": "a7b219dc894256af765eab73c8f33ef9565d0b3987cda13097434ec2c3bdb5f0",
+    "python-tests.xml": "05738d59b9bde5c076bbaf6c40cb12ea9532210d4472e018654ecd4e8daec279",
+    "macho-3.txt": "1500529b846e323409ceb67e1ae6e831c7ea072f736762d02031ee80dc9e295f",
+    "audit-candidate-macho-1.txt": "f313d9537a6abcfe005caaf85700732dfd0a06b20999a8d6617055f229fd31d0",
+    "v2-sign-14.log": "18a1c299277a5634b1e825502c0ad701015852b61376630a8566f157f7783723",
+    "v2-sign-2.json": "6849497f82ec5eccb1cbbd98e212bf95c7033e441bc307cf00fbd7cc9b649553",
+    "v2-sign-28.log": "3407b0c0a28be19a7dee4d275d2e36f2968dc5704291be625c1189821c00731f",
+    "v2-sign-3.json": "ba29a12053b7fa310bcdf49c82bd54b3acf69208301306a6c0fc03cb32ef3038",
+    "v2-sign-10.log": "f7eb857ef76963ad407bfa0717d60e5528b32c31696869f9190677015cd7e965",
+    "v2-sign-38.log": "016628ca4b59af4a9f9c49a964a914bcb7b27eb3485bb70ebbec187ddd152d08",
+    "audit-candidate-macho-5.txt": "383643d6fa8f55564417a04a07482b97369190abeedb2d7cdada60f21dc95e70",
+    "macho-7.txt": "e4dce90908a87de371c287679e0b471971a31ffd04c009e82b332a00e82a8b32",
+    "audit-candidate-macho-40.txt": "9701c0ca6983e20228592c5b2f39f1f432fbc880948a87901fa1a91774459b11",
+    "v2-sign-19.json": "2419e6501675eec92082d3fd2c0949a0ad51f2e2e92bc16bafdeef31a304058c",
+    "macho-28.txt": "44743d26a21e5ef310f50ae3a273a644a9b62f3745231d2fa103f3995f50868f",
+    "final_check.py": "2841bb78abe49de70a4766d3d604e147f404cb4d1fdb6b22990e01306a50d5c8",
+    "macho-14.txt": "b40d71f75e29a3954fd9152d878afd13b2c860eb9998a79b74fc8009040f847c",
+    "macho-15.txt": "804be62cb2836649ed094acf4411c96c2a4a16b450c701f0e592190b0a6a2b88",
+    "sign-component-31.json": "5b00d2ce89b127e7684a27794b603d268d1eca45d341239a3c759a09e61363da",
+    "macho-29.txt": "57ad970f1a4a0f43ebbd826f55fc8ccb7ac713aa657d415112ead87ed773b78b",
+    "build-v1.json": "a0506d6803f47f3a18fd1fe25a3716ddc2dca41d9c096b6e33e5df950063f9d0",
+    "v2-sign-35.json": "2a1bd0a37cab2453026435ad7beaec51df0b65ac2480e3fee6a9db1f0594f451",
+    "v2-rpath-11.json": "57859b32ae5f566c70436720eb14a0d2b7362a70f890e32a393b3790ad132ccc",
+    "supervisor-tests.xml": "2f8a944a3e6de7ce3a431ff7c75abadaf1a57ad7be673925756bd63d98d0966d",
+    "v2-sign-23.json": "9fe9d2fabb61c2c1be4c89577e63e9b61dd9c6afe8b6fd4b8d2506d93d7c8f00",
+    "sign-component-5.json": "c5a2cf60f7b20e49fbd342003836c2e6988688debf1de48cf6e5e4f7b6079f9e",
+    "audit-candidate-macho-41.txt": "ffc88c937ce1d2e0727fa49be6de2ec311224d848c4d8a9695844116c0e19ffe",
+    "macho-6.txt": "0840178b49d5f6d8ea6dc85a5b30c20db67477cfffea51ed93bad23c7c9a010e",
+    "audit-candidate-macho-4.txt": "7f8b93cc1b76190ec5084f4a51662625dc2c1ac7fe6fbd4fefdd6526d5babb06",
+    "sign-component-27.json": "1da209bbff978117c9307e6f4d228e5672d7fec5dfc3d3c052abe28149a000cc",
+    "v2-sign-39.log": "b3ca2bacce1632ac7b793c74573a1810e49f47a067ac6408a9555aee14feb1be",
+    "v2-sign-11.log": "2c4c40c9ef3c4e1c03bbbcf8541d844345161d6273022582336aaef751f19501",
+    "v2-sign-13.log": "76585e1192ffa999e9a30c0e101c8f7df071532f6852518cbe10b0351fd2376f",
+    "audit-candidate-macho-6.txt": "acfca74676f416774c55b3c6198127a51fc191c4a835475f9365050de93e0f53",
+    "macho-4.txt": "a4cefeaba9b228b63271032679178aa01582f1f2e9ca58e43d8ccaf0337f00b9",
+    "testconfig-v1.json": "0258b3c9f5a1c26e2cab0f2bef80831bcef660eaad4f576adeb73b18e8419033",
+    "final-verification.json": "aadde6673ccff9e47686c85c1a791e9a9b8bec2618c4264cd52c30112d169357",
+    "sign-component-11.json": "2bbbcc0e78deeb1ba82d928729c3f288593d668f68f5ea99f4b6683bd2b68c4e",
+    "ui-v1-samples.jsonl": "a420ae4106ec7dae6191857f82c2d70957074c4be0d500b054f9196f0a2ee3c1",
+    "audit-v2-macho-8.txt": "533a3e788e2d40f4430a293554a96a94badca15ff49f535c8444f3be8c4ad2ee",
+    "v2-sign-15.json": "4fd91ece490b1d84b4b446093d1705aa369cb6cba5731594315681a4fc03d55f",
+    "package-v2.json": "11f539ab52bb320bd4c67cf1f443a8e674a1dda8714da3f51b13ed0654dd0bfc",
+    "macho-17.txt": "bd2bc98f1720bdb6747bb13026b916600721900215faa2f116ccca76130bc677",
+    "macho-16.txt": "55809eddece6e95c2e545dd53b25264bd28958634df6775b2e707b75b8486fda",
+    "audit-v2-macho-9.txt": "38a1528d76479f1937df569c492ab34fbc68cf738069bfa8db4b0c7b443c9978",
+    "v2-sign-39.json": "b2d6d8f03421946c9a089f4293d5c61e7ce3ccfcd297b626fb3d0de13b96e7d7",
+    "audit-candidate-macho-42.txt": "7b77ce869dc50e0966c0c3be0e0a02cf407ccecd9d3f16c348c3d9e97f957d31",
+    "macho-5.txt": "d0a8718887dfe3b6cefa12e6c5b2511db3bb62ba92814a6c9916c6c0194fa9d5",
+    "sign-component-9.json": "58b599f31dd7a43d3888237141ddb1bc166e1ede02ba1e9231f4cb71891c5efd",
+    "audit-candidate-macho-7.txt": "162647c7bc0aaaac40bb2e4ea78dc5a3baeb8678b498bb27ba2703a68cca63f2",
+    "v2-sign-12.log": "a5ab488dcf208cce791a194e025fea8c34a5b9a9c8b2e23b5288f00c93245547",
+    "supervisor-coverage.json": "8942dbe6c0c9fa755e50309cf1f7ca8c09b1b34db2d2aac04f29b1b369513464",
+    "python-coverage.json": "0bfb1a357bc561b53414fa80e1303b8d60747b4d3c12a83c7effbb71195b9dcf",
+    "v2-sign-37.log": "17859762e76f44f00f940aaaeb1a1599b06ac7b4eba0765983d539790f6bbd82",
+    "v2-sign-23.log": "d0055ca0ec3f53782032d48e90f3129d7eb1a43cb8dfb883d3c44e56064097fb",
+    "v2-verify-signature.json": "0dd136957b638960d38a69835fb757e79d3a207096b755db95e2713f9cc1766b",
+    "macho-8.txt": "021672358804590ec0fccbaee63c7e6d2ddabeb7d7ac28fb6d249dfac896b933",
+    "testconfig-v2.json": "ca85e2039db7f3c4e13107e0151c40b5cfe37dbbaff6b3b5f835c91fe69e9951",
+    "ui-v2-lsof.log": "5f3f2995efa0fa080349b1cdf804e198bf4628a8bb1a66f2925dd5a27cc45cfa",
+    "audit-v2-macho-41.txt": "9acc5df2837da771b35e52ae09556af20aa5f8f3fd22977085a4dbbb8d23f805",
+    "v2-sign-41.json": "80ad704a7d78fd08c8ef3778ae1662e432a9cc47d397624e3fc1029780f2e211",
+    "sign-component-12.json": "a555a892d07eb2d03f949ba6ff593cbcea6b174765806d2573b86f5867afb455",
+    "audit-v2-macho-4.txt": "6380a698d832a954af3f05d78cd409bf6a1b837aa521a8aaf6a71488753d365b",
+    "macho-27.txt": "69a51b18b6f3385db714b897c55e0eccd4928d9bfdeaaac2825cb2070900f327",
+    "macho-33.txt": "6a36273c13182b1290e8ac586c24e409f4165394d645cbb7ed62f2f363873cab",
+    "v2-sign-16.json": "5ed3f6916614d3bdf56c20003b4d888214bf34e1ead3a0d946bce873b0d7d3f1",
+    "macho-32.txt": "1c4f9649595effac5773488ac04056e4c7a03cd55fc2b6aa7178eacb4ec4b289",
+    "v2-sign-bundle.log": "528ee452fc1c96c13d3c798a2d2fa6ad04235710a779d7c73792456a14f55411",
+    "macho-26.txt": "11c4997141c78eaf037f790259c4dcf67ea4993adb66a08614e87c4ce3424549",
+    "audit-v2-macho-5.txt": "5bfa8ed8f475d92a9a4d73edda59adc8c4bd71a455ebebbbeb86ffa77cfa5830",
+    "audit-v2-macho-40.txt": "e454f896281624cd1f14f4ae4937db6cb77613468813989f6f366d8615e79735",
+    "repository-qa.json": "621d1178ef91ff2b56181c3d86bce43f648ac79add2aa7d178765236f33b47c3",
+    "macho-9.txt": "c153ebf5a24db83393e2a694504a0b63495851ab06b2641722fbc2b9b6e7a8ad",
+    "v2-sign-22.log": "da69ba0b9393a170740ac0d9b28983f3a196d508ba2c8bbf52d174348f4e9afc",
+    "sign-component-28.json": "e281115069fc2665c93c81f2f2ff3c003e15d8aeded4cc6eec0a72942353b65a",
+    "v2-sign-36.log": "13953b7abcc581dce45f7c2253dc5ba51281b40542beefcb0a224d369cc056c7",
+    "validate.py": "86994564bd096c3699d363f8692ec618f737de64e4dcb684a001064242d2eafb",
+    "v2-sign-20.log": "0ae0d2c5d2c1d5331b9c78d9aa1f093cc9827c1fe252eb34a8d34c85d3ce1b8d",
+    "v2-sign-34.log": "495fbadd1ccbe95a1c46799935b09936782d685fdc67d040231d007650fb3985",
+    "audit-candidate-macho-9.txt": "8d3f18a8b58da42f15f7ca85e6184afb29ec6e7c72e400e3757d648cb5f3fb7d",
+    "sign-component-41.log": "0df4bc0947deda363975c2ff272c9e5ac22f43a798e8be1579f9792c8ed1f7ad",
+    "audit-v2-macho-42.txt": "4497a89f3fb6298cb22463ac4d0c9ba843f2864ee4aff0a535792abf67accf25",
+    "audit-v2-macho-7.txt": "04bb5cc8d78266a7fd4332420a3d32f46f710c7d29eff19852a2b9add93cc94b",
+    "macho-30.txt": "575f61c639f58bcb76504434a8aa6010d970869ea3e9b828b9edfbec6499621c",
+    "macho-24.txt": "cafcac607882eb25764f5e8733d47cd7c9ac853f6118a6618fea43060bd98e61",
+    "macho-18.txt": "5d52ef744a7ab2238ae672db3d61437d5d6a681d48cf76607dba635802b96910",
+    "macho-19.txt": "7f6fa2f2950f9c39fc05f2d47357ee718e57106b51d8b24db1424efb8d88d34a",
+    "sign-component-32.json": "bcb68c63592bfb36574fc17fa75170c5e6489c9b623d509606592c53a2bf6158",
+    "macho-25.txt": "5bbfeff4a1587fb32e28f0545a7a03ea19d9af1bf5d460bc413a588967530cdb",
+    "macho-31.txt": "d63acededc97e2241d6342a8e4dc2dcb11be3c1e23572e7dfb623b4c1677c863",
+    "audit-v2-macho-6.txt": "655eee0674d0657dc907f1d13d0ffb922fa94d5720e80a3fca51c08b8ccb3b48",
+    "signature-entitlements.json": "b5dba7d620a94c0e0c5b3fd35aa60ff28734e96d8e62d0b7ac7f8f852897b701",
+    "v2-sign-36.json": "a2095186e21a85c1196419c0887c176628b0e355d20da05dff3d8592ecc8bb2e",
+    "v2-sign-20.json": "161a642996ec12ea339d56054dad6eb653e9642ca7d9ded3bb93f29d21474d5c",
+    "sign-component-6.json": "ec5702078f0550bcfb9be1d6d133ea061691526d5899f6ef1ff866d2d1eab51f",
+    "sign-component-40.log": "45a2f19a4e0a6e45682f5e2b0d111b01ea14f213888946cd970af016082c5b4d",
+    "signature-details.json": "d1cd88e937068e54cd4050d2460f0a8aabcf743dce5e32b205a8b711bc44ee4e",
+    "package.json": "35e017867781f4d7a64f930155df63fe449460a71affaa8c9738e9574a17c1dd",
+    "sign-component-24.json": "a66222f8d28b3f9e804b536ef57ec7e3028ac647ac265fc06017f5976a0cedc3",
+    "supervisor-tests-final.xml": "3782f489bf97faf5743ea644fa58dc12c3d4f74ad6e7848360ea17e159005bc5",
+    "audit-candidate-macho-8.txt": "19200ad704f5e9b54632a181725d9a05abea13c41648dece7f5c0148a76d9787",
+    "v2-sign-35.log": "0ef727643b03ebaa2d43eda2813a00596a44666db6c86ff2303e3f7e00e7a3ae",
+    "v2-audit.json": "5d2297cb530f3d8357089e51b8d066461179376b18d742ded96ac2252e8e09d0",
+    "v2-sign-21.log": "1692062983cac8cb81107332a3fad0c55a52f6d8e63835dcbe107cb76b5dcf2c",
+    "v2-sign-25.log": "8313299678a92644e043dea598db199fe4a65a9172b313ea2c2ca952f810a769",
+    "tests-build-v1-samples.jsonl": "4859a18c90fe07a0318d5abefcefde386c57e3ad67d8d1b084a0e229dabc61a1",
+    "v2-sign-31.log": "b85d487f8945174fed35be3ae5662cf4b7b26973d13ee8bef7c96f1c6930856b",
+    "v2-sign-19.log": "cf5b6ccf33a511d11765ff6e2c7dcbaff1757f6648c5b954cce2813489f82bc5",
+    "sign-component-25.json": "5c1c43fa5737b1b4e3ed58421e2ed551e2f9c80190e8e6a88b814e3f8d439fed",
+    "shaderc-install-id.json": "e8d924815be7073c9b80833e45397854e232f513b08efd8b696e7c8b3449b564",
+    "v2-sign-21.json": "dca2c23ba17eeab220ff97bb67fb18be472c939be03c45db6e7bdf8a2877d7e5",
+    "sign-component-7.json": "47191f0581b74d0e2e262bb329e51f120e943b93cff488da231a658fed2e3409",
+    "v2-sign-37.json": "e093f469ad7d53338224d33b077736f499cd941fc63a3ec0523b3d6417119d1d",
+    "sign-bundle.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit-v2-macho-2.txt": "243f071778957dd89d102978554e98b11a84267e33c565457b6604437ff899a9",
+    "sign-component-33.json": "7597d16d33618cf2a9298ce8eafe55ac60c0aa1820bcc72484d2b3a4c22797a3",
+    "macho-35.txt": "cd53591559f06be90edd3bcf1f7b7ed0bd4ffa440446d4c1c53b4e9f5bb52e4b",
+    "macho-21.txt": "1e6b41b3a22019081638bd6fed84b9e0f60c9fc654a5bbe52f8cf55163e5135a",
+    "macho-20.txt": "b044b7f19bf08709a51aba63e9557164cd5347f78f936b9179def2dc610446ea",
+    "macho-34.txt": "8a67a8386fe589bc56fc823e3b729916d42bb87816af8c8cf4287b982a267c8e",
+    "ui-observation.json": "91d111c61e02726440727bba78ebee47f06761b7e4f0703d97aee0120917b16f",
+    "audit-v2-macho-3.txt": "99b9f69ee9a230f2d7d1ed4611b5c04054ba93b24b60cf9bf75d8896b4ebe9d1",
+    "signature-details.log": "7110f88959c40d2618d5350679608d900fb8d9a2314d58ae8b7a2a6110ef8950",
+    "v2-sign-18.log": "e395b94fd77a169b02119af24199ca7dc56ac09b83e832cc5c936d3cc0bb309f",
+    "v2-sign-1.json": "55bd8453fdb6a042744a9ef82895968a5410578b4056e2fd929eee1ea3ace3fc",
+    "v2-sign-30.log": "3fcdd163465c2a5ff021c31a060a9c65e87c10415db8cae6145fcb607d4f9058",
+    "v2-sign-24.log": "64cd65398b9489e2b432b741e8c101c5052018326d431c2c945d00265d45cb27",
+    "build-v1-samples.jsonl": "3a87ab980e67cf9085209340e5ae7d2ef5df1f7db523ac0669c9773231bc04c2",
+    "v2-sign-32.log": "1bd1666e06521c8e1f6cdba789fd7f49efe65cfaf9f399ac825a0416ef5ed3a5",
+    "core_test-binary.json": "7250cda5990b9b4fb211305658a2c33415520647d28df3418b361a4eed9655e6",
+    "sign-component-29.json": "48b85efaf0194823d39a7a7b664952dd10199d05a994f99a5b46e79b4b783172",
+    "v2-sign-26.log": "66a6a0a8f7e0b3396d422ada5e14da9aa4f0b2cdee8ddf2a00e6b5321d77297e",
+    "signature-entitlements.log": "3318ea5c728567ce0710b8cf4566445a0981a6743e25aa8e88d8cfbd144c1a2d",
+    "audit-v2-macho-1.txt": "bbeb95c9b317966d672aed4f17aa54fcdd5f78fd31758354d750436a33e6354c",
+    "macho-22.txt": "00108239059cbb89ceb1cc6933027b69c58f62d5bc35cdb5ef10bd74e151804e",
+    "macho-36.txt": "09a83624ac94278361508914c506962c2b08667a1ccc9dc313d57bb52335ee58",
+    "macho-37.txt": "775ae4e24fcd00b9ddc1e34f673cd5f83f1d847b28356930bfc97c71de08f273",
+    "macho-23.txt": "57bb7b5475929c982ab391699728229372374ea1e4807637c5fb059fdebd8550",
+    "v2-sign-17.json": "cdf472fcf46ce8e7b4f29f362fe4fd05633be30d45668ec9a8b9de7db76cfd8a",
+    "v2-sign-40.json": "43b18224a86c08efd3802ad12215ced4f1ae5ad2ff192ef56f12ff1fd5c9f287",
+    "sign-component-13.json": "9511808ee02febbc47407f018fdfc7e7404125b481a7108421aac9ea68299bf8",
+    "v2-sign-27.log": "01ce54692ecdc5d3c8a37c6eb96a05c684e44c7370b1ca1a5b0a40e777b97586",
+    "v2-sign-33.log": "ea41088334eb9cadaed384b8e25bbc9ac45b28484cea18349bc188f6e5f828f0",
+    "v2-rpath-11.log": "807df7e0dc0d1fa63525310f55018e7d7de27802439cf69f336698785d1fb3ad",
+    "v2-sign-6.json": "7a6f17786967b73744d82e444df240650a2ecb7c85d1f5bdccf7897dd3d8d177",
+    "v2-sign-40.log": "0bde601959255237565cf56be98d19185c0c61d6951fbc54d0c062f0e493a873",
+    "testconfig-v2-samples.jsonl": "0399725a3fdde934b2da904a1bf00d0ecdfc79138d117a2446ac45caf098e6a0",
+    "v2-verify-signature.log": "fe3ce46f1b081c9cf8e72030677c5b6d52926b5b97c3269bf87ea13c5e3100bc",
+    "inventory.json": "f960ba8e78dc6a16cab42ac190639eec07fe0af37882aa15bf4a83afc8493824",
+    "sign-component-7.log": "40bc86a4dc0d8285cfa78de073a8ae7cb4b0e4135c540840ffa0590e83b3431e",
+    "audit-candidate-macho-38.txt": "7f48a2df7374a10e16c3bb6b33bad18fc93fa9f7937f3e44563dc562cce0739c",
+    "audit-candidate-macho-10.txt": "7eee18b920abb3a95df9ece46b99c74bf82026e3bae11c8ebf9ba3c306582bf1",
+    "sign-component-21.log": "b6e802fa9c3b090f8f2d2883fa0616cd3acc9555bf7a8e61bbc2d9356af24d1d",
+    "sign-component-35.log": "bf38b7a590b000abb8e36bd345e171f8bdcb23ab503f2d7e10a3d013066703d7",
+    "sign-component-18.json": "2fea97a8765742fa550e0034dc6223006c20d8a4eab41b395ea1f48995841c04",
+    "audit-v2-macho-22.txt": "2ea6b67a4b81526b58aeb2234be5f93f613e13df84d9d078957799dae82df87c",
+    "audit-v2-macho-36.txt": "61de8fe7210888b6c617fa3acaaf28f80418d1d50c2502d551e25158d64018a3",
+    "sign-component-34.json": "03648a528c216d6fef1eee3466387d644abf51ecbbe9a3ab7a9e88f47b6d7714",
+    "v2-sign-30.json": "af6282a1890a10885511861d0e47eefc30004815fc1a7a926c99b70fd7699a0c",
+    "audit-v2-macho-37.txt": "d5206e2042c7dcec19a309b00087ffe2a0d76e9e601d9bd5f4aef6dbed8d2671",
+    "audit-v2-macho-23.txt": "29776bf97c291e2e0cd19c19385f7e99772d46945a2a1f038f0add1fd17f0da1",
+    "v2-rpath-14.json": "6f9dcdc4d92eabefc412d5968877c66dc608790da056e09f1d0d05a6441b6cdb",
+    "sign-component-34.log": "f532e9928d43147916de3585e3bb60db9f1c8136e92b06f098ffca86134c20f0",
+    "v2-sign-26.json": "877c05033e38983b55afe2db9ce5c3bd68f1157308e4bbca323c77ba5c7517e8",
+    "sign-component-20.log": "0b470fa5aaac2ec0ea5e6a0cadd8b72fd7c60b483f0541f2819e1832c179b388",
+    "audit-candidate-macho-11.txt": "9ff72306a98fb6fd8e33ddf85ed912b9a6d00f3e3d5579fc49ce26126ca72027",
+    "audit-candidate-macho-39.txt": "0460fd07f134cffcbacf0e7c3d9dc76f0b8d973cb76d4e7b986347c814f6207e",
+    "sign-component-6.log": "8bfd50432b2fe535cb8bedcc633372210f7fc933b394095bfa472184cac507b4",
+    "sign-component-22.json": "b636bbb27141ac61ccb802b93a9b070adcc6893385524964f1bfdd2d9b5899ac",
+    "v2-sign-41.log": "50dfa56b29001de5d2e23a4480f93d55a76ab50d53995c6a5fa3cbee8a4005a3",
+    "v2-rpath-22.json": "9502a8e0658bbf482d0cebdfe1aeb240da6b9d5aa47db12d911a03e4c4841741",
+    "v2-sign-8.log": "220ee8f4803ea9cb90927d6f106f1a26d38ed919baad86ecc55a9152a34c45b6",
+    "verify-signature.json": "d3bd19bb8ad34e938314da9a12db22937051dd1f144a35da8ab15b8471f4b4b9",
+    "sign-component-4.log": "5d143d1575de6eff95019de6ce100e3cba100db7707e0c859ed497d101056de5",
+    "sign-component-36.log": "cf236dac82b84a9a860360b474c392171d275fa2a605bafb1159582b7b5d2f35",
+    "audit-candidate-macho-13.txt": "02198137330aa2be0ff850f3ffc5c9c037db27ab4d417029766883c4733e3232",
+    "sign-component-22.log": "c8c9e01fdff946d8e9011b670185897ee55416473a09274670cefbde178296ff",
+    "audit-v2-macho-35.txt": "00030d2966cb64f08a71a0ba1772c6f14e3bb54ff4ba2b0f2c6ca147c1af8689",
+    "audit-v2-macho-21.txt": "74770978a5a1ebd618a3f88da02d026e37c5b916d539804145b3f2e3b4ed8b8b",
+    "sign-component-14.json": "a9febd9665f64ce8c15af1ff64c889f57eb734c562b18d6350a4647dfc51344e",
+    "ui-v1.json": "0e7595509a206ba7d68dbcc559c13b026af2f525aa7e530838fcb9adf73fd88e",
+    "v2-sign-10.json": "81ea5bdda0a9df5320c5fbb5876bfab0bc6b7cd7e54d5581c572e97bc75cf3e4",
+    "sign-component-38.json": "58cf9c1568dda85ad118fa537024e7610f834bf1683b7155c17d41c84a750456",
+    "audit-v2-macho-20.txt": "67744676f8186fc12cacde8714a5a2e9ffa205d113b7de36065c45ff62c6c42e",
+    "audit-v2-macho-34.txt": "aafec100c00736cd97eb7678309620e8eaec3c41b20232d888da937294275630",
+    "sign-component-23.log": "f740c9fd73311ddab91ac57c7a35ec5f8348143e7a0ce6ab72a24d09371d1407",
+    "audit-candidate-macho-12.txt": "bd281e9b0bda9674a83f4fcadde496c80dbe607ff4c56c2ca4ae8a2c3e8a6393",
+    "sign-component-37.log": "5b44e0b4c17f512a5df1a51168add8dcea5599eb6829cb715c34edca157f9298",
+    "sign-component-5.log": "313e6ed5d6f142b51582d17b966a4b26ec67915d1f178519d4fa79ae0806fb05",
+    "v2-sign-9.log": "ce95173db92bedd2912e76562fd3c564a1468fcb9094cc6bd766160a8386e5bc",
+    "candidate-audit.json": "37cba868baee6e04b4e46b386374209f5c8ccebcbca549e760596470672edf26",
+    "common_test-binary.json": "944c748f3cee8edbc73f44e79cfbf0fa048c17c69eb80f32876170ba0d7c1861",
+    "sign-component-1.log": "40654525ed88566015f20c06cfcaca0566ef3af34e07ba1cc749a456dab6b46c",
+    "sign-component-33.log": "8bc9ed8845c4b0b89611cc432f1ee84582ce196b2369833e357578a75748cf10",
+    "audit-candidate-macho-16.txt": "8ba81442aedc46c006510318e7f6323ba6ec93e468359303a01569ae3a352875",
+    "sign-component-27.log": "ba22cba4c7201dbcd68b65ab4f6ac2a58f212e480e2fb9053c65ce05aa307171",
+    "audit-v2-macho-18.txt": "4c60a40fabbbb0492e78325805470b34f0326947b639d787cbbbcc80a00e362a",
+    "v2-rpath-19.json": "094584bb1192bf68ef3dca410ff4b7e272a2f82ebdfb48d23eb9ff7711e84807",
+    "audit-v2-macho-30.txt": "abdb2360d900c042d8cf40238b543cc3c10aa3004c399aa702ebeccf82f00ea7",
+    "audit-v2-macho-24.txt": "5b8d2ac1796b9859a3eeee47b9f955fe2422e44fc96b33925e9d69ca6ce2e02a",
+    "ctest-v1.json": "21057dbcdf98ed3d9f62bf7c78e539cd1ba990f940287f37a13715e8c2a89d68",
+    "sign-component-39.json": "51d9808cad5a6bcea872da0fd33229dfacd1e7f855e7dc1eab430f6c194b801b",
+    "configure-v19.json": "5d2083b06e7208ecde85ab72dbe54a7bac8c5250661d9b546bcc0742c546d9b8",
+    "macho-42.txt": "8f4784d8ecc5046b1554670fcde8996d130a467b940317a946d6ed3ee13fd3c3",
+    "v2-sign-11.json": "c09dbcaba64973b2f534b26020c40cbb79d4c770c6e7d520351f868b5ec602f7",
+    "audit-v2-macho-25.txt": "fd2ced9a8f79044dae4d5a2ee7e5337fe125092c4c278145b008a4bdbd0547b3",
+    "audit-v2-macho-31.txt": "ee62c9ca5d295c697f779df67dea275075b3f68ebd88f0d7adb34a290cbf8409",
+    "sign-component-15.json": "30c377ce32b46068c2148c04b3ce3f75f6fa2d04838aaad867d03cadebd624d6",
+    "audit-v2-macho-19.txt": "717ebc4291b98c2a14fedc84dfd739220fd096a9fc3fa7c49615b80c0ab1c859",
+    "sign-component-26.log": "389e164e234056e94f6dffd60675519f5996d57985c6b4238c4eae20c831bbb7",
+    "audit-candidate-macho-17.txt": "735fbc0b91164bb32e32f16035243eb071b899125a40f67df7264fce31f91bb4",
+    "sign-component-32.log": "b90704c10ffcf11e54956719e7fd3506dec3b3ade9e0e721bde5678a0e73344d",
+    "v2-rpath-16.log": "1933579a8c71c1bf9ea2346a64f0f1d977316a9fdd89d6f49900804d58a47514",
+    "v2-rpath-14.log": "c9ded89dbac973504fdab294a04f605a39e1247c1557d5b4a096a70dac2ab4f5",
+    "sign-component-23.json": "4f33bd84bb90cff549cc67ea79963165e757df09ca84aa37b76d9e84dba3545f",
+    "sign-component-2.log": "112de031e50bfba24202b9a695e9a5be2aa52970f7e99041d3945940df608472",
+    "testconfig-v1-samples.jsonl": "731a58f3f086fdb5102c959e50e34138013c21ef829100a54e8fae2860412949",
+    "audit-candidate-macho-15.txt": "8a88328fb591c8d83cb53f0d5ff5717036350b245c16e6a7cfd4df8df6c54c0c",
+    "sign-component-24.log": "cb6185d847105f28af63208119d62ff6ed5c9f62a4dec390b8e39639cc8c70a5",
+    "sign-component-1.json": "83653b84dd0e5ee47cf473f278b0970891906264a9fc50c713ac73f2b9f4ca98",
+    "v2-sign-27.json": "430f48389d0981f4d11bde779ce6ccb9f18439f0e4b728332a9339f74f91f79c",
+    "sign-component-30.log": "ec14312b432fa1750dbd901ff125c95a626fb0ff5ffb2bd299290c4ada23de95",
+    "audit-candidate-macho-29.txt": "f9ff017524838eb7ca84c0437cc9b278e74fb57fca0148006ba7a81cf225aa26",
+    "sign-component-18.log": "5bbfe497c986a37adb38adfa19c12255b5c87dd519255487a3f2409fc3cad1a2",
+    "v2-sign-31.json": "5169dabec5110facc84ccb496e3b12b020f6c139ea47d4fdd59505f24e79d06d",
+    "audit-v2-macho-27.txt": "dae87f2b4d28d4152745f3a7b1c7422e0a278cbddbb2fcbbedbde4706875441a",
+    "audit-v2-macho-33.txt": "58ebc399d9522502d654dd459e0c49ebfae9e70e66716d5cc7f13edee199fe06",
+    "publish.py": "9baf4810d7cfaf7c8b7d682330a21ecdee7a3f6d43d4b4364582c2b4d196e66e",
+    "verify-signature.log": "06f694e0427ab11416294823899a61238b0317396bad54dc587996077ca48ca7",
+    "sign-component-35.json": "d3fbbc9ef9ce0fb77966a85d3877885605f2215f315b742422abb951107c7195",
+    "macho-41.txt": "75736a3554fd2f98ac3e3a61c085487e021e793ec226a9b5d59587e1ba3f8d84",
+    "macho-40.txt": "b670f7d6a23cb9213b6e47b74c0a4fbf6751c19649cc7aa07228107120885ca9",
+    "supervisor-coverage-final.json": "44213fb107eb4b6504fefcb02ada71df0b0e75b728f3fda422dd96e90b28612f",
+    "audit-v2-macho-32.txt": "7013c7663616d91d05b060fdb72ccc19e9a80e5989fa8f417d30d3b430c30c1e",
+    "audit-v2-macho-26.txt": "146543af4d5ce3db17d74f1cf0f320967bb92e7fbe53641544954cbf8cef34b3",
+    "sign-component-19.json": "babe793267090b35e93f0977bcaec305fa82c75a808f13835f0b0a931f6a6986",
+    "sign-component-19.log": "257cd4647aa69a1e56a7f941873fb1cb7e5aaa249aeecfff95226192fb20583e",
+    "audit-candidate-macho-28.txt": "3218b8bba003ff805e7b35a6185d2ccfcc9dfdcf247b3460e213e94725d06b45",
+    "sign-component-31.log": "e0142b313bc9386f29bc198e4794d128b0140940af4d8e256969d99c803af2bb",
+    "sign-component-25.log": "a7642f5784673568a509b50d3ee610025c42a1fd6e9e2e5cfcef6c7a4849a90f",
+    "audit-candidate-macho-14.txt": "ed9368a55d9890d8f0b111a990d931341c095329fbc7b86aac48acb96f50480a",
+    "bundle-audit.json": "9c8031a5e34d81ba776dd07266b33497f0ac7c565d09d131a8308f6dfab55152",
+    "sign-component-3.log": "c87c100617f031ec48e375965bad2e094b00e2d7518fbb5e872ef42f3cb4c3a1",
+    "v2-sign-7.json": "ad2f899761eb19bd8252a4724851d821a3292cef255c32974556192d7a2e6e43",
+    "$STAGE/configure-v19.log": "3195747cbb93dd073cbf89bb7c236f2a29b31d11fa3a345f494791a11a8a2194",
+    "$STAGE/build-v1.log": "551240bfdd3d8865994d97165b90eb497018e7c69d6ad37abe3af1baec337f03",
+    "$STAGE/tests-build-v1.log": "e43ee1a72b89274cb0ed54c98b3c2c363f7f0c321c7f76fbb1edcd18fbacaa31",
+    "$STAGE/ctest-v1.log": "d5c9a518c7091971d57dd6a7d779aa6b4be73980be819e9e2f69d46bb569b273",
+    "$STAGE/ctest.xml": "e1c99eb8ad7adf52e4a96f774fa3a058fbb42a7bda6d4810d9cc5d388aba4fcf",
+    "$STAGE/testconfig-v1.log": "8a9c4000682939ec85548bb723dd69ab5152d1ea59b0dce7ac6f92e51eebe6f2",
+    "$STAGE/ui-v1.log": "d0380d006ad4d8ab61bff6d9b70af83fef25e90951ea3a56726389e58fbe3d00",
+    "$STAGE/testconfig-v2.log": "32873570aff8bb8b5bf0a88cb0c7429241163444455397f1c5725c35df78a434",
+    "$STAGE/ui-v2.log": "f52e8b11055d45491f2cc3fdc1926586faae07b61d6bbf7f06b59a0311f0074b",
+    "$STAGE/build/CMakeCache.txt": "d727acff3549769757a9bb00e9bec3bd0bc9ee301748d80bca364f6b93e24b85",
+    "$STAGE/build/compile_commands.json": "a7f59ec7e1885175ba6bdd7aab2e6e9c4ba6c9238a0b13566f0a91972c89ba29",
+    "$STAGE/build/tests/ctest/Testing/Temporary/LastTest.log": "811791a3760ff328fe7ba5f1361038f27bb218b14846969dbf41d714fefa61e6"
+  },
+  "limitations": [
+    "No game or BIOS boot in this unit",
+    "No effective map captured; instrumentation pending",
+    "No physical Nintendo or macOS 11 validation",
+    "No GSRunner, GPU presentation, sanitizers, notarization or full ISA coverage",
+    "Build warnings and historical packaging failures preserved",
+    "Hashes and local metadata do not independently authenticate UI observations"
+  ],
+  "next_unit": "origin/effective-mapping/instrumented-build/observer-contract-and-patch"
+}
