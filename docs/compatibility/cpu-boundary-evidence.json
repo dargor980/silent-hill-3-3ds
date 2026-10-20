@@ -1,0 +1,700 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC73",
+  "task": "F02.07/LP-C/LG-I2/AD-2/CQ-1",
+  "stage": "cpu_lexical_boundary_verified_operational_coordinator_pending",
+  "contracts": [
+    "schemas/cpu-boundary-v1.md",
+    "schemas/pine-exclusion-v1.md",
+    "schemas/admission-profile-v1.md"
+  ],
+  "units": {
+    "CB_T1": "complete_scoped_boundary_batch",
+    "CB_T2": "complete_scoped_boundary_batch",
+    "CB_T3": "complete_scoped_boundary_batch",
+    "CB_T4": "complete_scoped_boundary_batch",
+    "CQ_1": "partial_lexical_boundary_connected_operational_coordination_pending",
+    "CQ_2": "pending_pine_owner_and_paused_event_loop_progress",
+    "CQ_3": "pending_producer_exclusion_and_vu_gs_drain",
+    "CQ_4": "pending_full_provider_integration_and_cost",
+    "AD_2": "partial_cpu_boundary_and_pine_gate_not_composed",
+    "AD_3": "pending_identity_and_endpoints",
+    "AD_4": "pending_vm_and_cost",
+    "LG_I2": "partial",
+    "LG_I3": "pending",
+    "LG_I4": "partial_no_vm_integration",
+    "LP_D": "pending"
+  },
+  "provider_audit": {
+    "activity_functions": [
+      "SetState",
+      "Initialize",
+      "Shutdown",
+      "Reset",
+      "ApplySettings",
+      "ApplyCoreSettings",
+      "DoLoadState",
+      "DoSaveState",
+      "LoadState",
+      "LoadStateFromSlot",
+      "SaveState",
+      "SaveStateToSlot",
+      "Internal::ClearCPUExecutionCaches",
+      "Execute"
+    ],
+    "actual_qt_event_loop_executed": false,
+    "admitted_execution_modes": [],
+    "all_instrumented_transition_bodies_executed": false,
+    "capabilities": [],
+    "common_effects_equal_across_modes_and_previous_functions": true,
+    "continuous_lifetime_verified": false,
+    "cpu_boundary_required_by_sampler": true,
+    "effects_digest": "df4cc8cbdcf04c69",
+    "global_memory_effect_serialization_verified": false,
+    "harness_inputs": {
+      "baseline": {
+        "architecture_specific_initialize_branches_executed": false,
+        "doubles": [
+          "configuration_and_CPU_objects",
+          "allocation_and_subsystems",
+          "PINE_status",
+          "thread_performance_helpers",
+          "achievements",
+          "GS_shutdown",
+          "VIF_constant_matches_pinned_source",
+          "QEventLoop_and_EmuThread_members",
+          "DoLoadState_dependencies"
+        ],
+        "expected_boundary_cases_on": 5,
+        "expected_common_cases": 45,
+        "fragments": [
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "3e607239347fc5644349fff4d0533ac724839b8d4ae0f69a2c975ae48b68aa4b",
+            "name": "load",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "93f05b36223cf137e5221151d892297e00fd8f44ecd2a57bd5acb21874ae2f1c",
+            "name": "qt-run",
+            "source_file": "pcsx2-qt/QtHost.cpp",
+            "source_sha256": "d4619812da7f7e2b1bdb8273e8915b9f1c78e913010d9da9658180f2e37bebd8"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "6baa758f923a84488cbf255e9cf97cfdd1762048da024e733f31e7ae198a4bd5",
+            "name": "qt-pump",
+            "source_file": "pcsx2-qt/QtHost.cpp",
+            "source_sha256": "d4619812da7f7e2b1bdb8273e8915b9f1c78e913010d9da9658180f2e37bebd8"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "401d0e52f9dc3fc66e3b217a1a5dd8130dba9d3884b8b86e587a2f96268da111",
+            "name": "initialize",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "44a164ea22164779a0dfa2e165447d4da2fcab87a922bde1fb3630fe495e703d",
+            "name": "shutdown",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "fd8d14f76381a944a4230e54ddfdd9549b16edc73e1a55dcf865df2443a512eb",
+            "name": "execute",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "aece9461c3df1151aeb226c381179fa755dcf185c343b0f220850bb235763280",
+            "name": "scoped-guard",
+            "source_file": "common/ScopedGuard.h",
+            "source_sha256": "50872a36f592f310485b3fae0b5a49b07c649584b1f10ca3a9dd8ede41aba455"
+          }
+        ],
+        "harness_sha256": "6ffaadd8b007c0c98d59ac750caa5e947b32d87e895ac52f14c2f6a4033e61d9",
+        "private_empty_off_stubs": [
+          "sample",
+          "thread-state"
+        ],
+        "provider_application_executed": false
+      },
+      "new": {
+        "architecture_specific_initialize_branches_executed": false,
+        "doubles": [
+          "configuration_and_CPU_objects",
+          "allocation_and_subsystems",
+          "PINE_status",
+          "thread_performance_helpers",
+          "achievements",
+          "GS_shutdown",
+          "VIF_constant_matches_pinned_source",
+          "QEventLoop_and_EmuThread_members",
+          "DoLoadState_dependencies"
+        ],
+        "expected_boundary_cases_on": 5,
+        "expected_common_cases": 45,
+        "fragments": [
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "82b951154573a2107116057ed067ec8d0a218bee87f67e4dae68607d494c8c66",
+            "name": "load",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6070d93f305ae308efd94299af711ae6fdd6d85bd261facb71c8231524e99145"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "e585170e606ca1d461c75b0f5053535a882c92282ffec3644d4c223cc5f46f63",
+            "name": "qt-run",
+            "source_file": "pcsx2-qt/QtHost.cpp",
+            "source_sha256": "e9f1f301f8e6ddd0254425651a99ea18c98d65930b143125eab36e4a91df3d36"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "1c644c07227fabc5653c673f042ea4414c8cb72e1ce3b947c9dac4ef48430c34",
+            "name": "qt-pump",
+            "source_file": "pcsx2-qt/QtHost.cpp",
+            "source_sha256": "e9f1f301f8e6ddd0254425651a99ea18c98d65930b143125eab36e4a91df3d36"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "f22efce8c5b374f6d2bb6fcdfcd0f34be03bbf2fb4b3145863f9d60b64120583",
+            "name": "initialize",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6070d93f305ae308efd94299af711ae6fdd6d85bd261facb71c8231524e99145"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "f684c0c4a5d26f2f6dba9d4c7a57e6c1684325bd36d9957b04a36dd54cec4723",
+            "name": "shutdown",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6070d93f305ae308efd94299af711ae6fdd6d85bd261facb71c8231524e99145"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "cee5efdd7e8d841433efcee1a9f0a23c83fa0be9025b90230b7bc9a41d7c5052",
+            "name": "execute",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6070d93f305ae308efd94299af711ae6fdd6d85bd261facb71c8231524e99145"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "aece9461c3df1151aeb226c381179fa755dcf185c343b0f220850bb235763280",
+            "name": "scoped-guard",
+            "source_file": "common/ScopedGuard.h",
+            "source_sha256": "50872a36f592f310485b3fae0b5a49b07c649584b1f10ca3a9dd8ede41aba455"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "65a476c7ff2bd187c810b035d1c8d879f2dd44ed26f6033a396aefc656bad0bf",
+            "name": "sample",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6070d93f305ae308efd94299af711ae6fdd6d85bd261facb71c8231524e99145"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "9301d7bf40698fab628bb3d4d8177f856055f04bfc678a9586eee38b374dfe09",
+            "name": "thread-state",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6070d93f305ae308efd94299af711ae6fdd6d85bd261facb71c8231524e99145"
+          }
+        ],
+        "harness_sha256": "6ffaadd8b007c0c98d59ac750caa5e947b32d87e895ac52f14c2f6a4033e61d9",
+        "private_empty_off_stubs": [],
+        "provider_application_executed": false
+      }
+    },
+    "harness_runs": [
+      {
+        "accepted": true,
+        "binary_sha256": "318090674207b76a6132d6af079c675db60751a0670bd8754a81526163ff95b5",
+        "boundary_cases": 5,
+        "common_cases": 45,
+        "log_sha256": "0514325eb55bebf0b76d2e99c7a36cdc796672923f8c2cf39dd723e4eeb18f76",
+        "mode": "on",
+        "receipt_sha256": "b248d02d16f9ba1ef250bd90f4973ff31fbf6302e837678ce4372a5ae51a25b0"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "6a4c20a33cd62085b0a0e4a3998a33144a5bf6edbacfdc4ecc39b2b7a05ebb15",
+        "boundary_cases": 0,
+        "common_cases": 45,
+        "log_sha256": "69871958acf64bac523cb4264b28e8b54ef2de723da6c96cf7695e225ff129c9",
+        "mode": "off",
+        "receipt_sha256": "11217bab06421d94cb166d6573ad1dd7f02a495034e5aded9d50d71bbe1f9611"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "014520bd3890c617cc52a8d6415320da2dd337b1a8a0af99e7c1265231377384",
+        "boundary_cases": 5,
+        "common_cases": 45,
+        "log_sha256": "0514325eb55bebf0b76d2e99c7a36cdc796672923f8c2cf39dd723e4eeb18f76",
+        "mode": "sanitize",
+        "receipt_sha256": "e48860b9aaed7dce923e2fac1ba75bcf92eeb109cba102658930ec04d12e20fb"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "ac818a83828bbb02426597ae33b5862433a5f3a8cfb49f5c1c0bb03e688df99b",
+        "boundary_cases": 0,
+        "common_cases": 45,
+        "log_sha256": "69871958acf64bac523cb4264b28e8b54ef2de723da6c96cf7695e225ff129c9",
+        "mode": "baseline",
+        "receipt_sha256": "a69595ecc629d79a24cc09f9988f0e4c5f3618a1cde63127dbcb742f6f59610f"
+      }
+    ],
+    "historical_public_inputs_verified_with_snapshots": true,
+    "historical_public_scope": "SRC65_to_SRC72_inputs_and_original_adapter_pair",
+    "initial_qt_compile_failure": {
+      "log_sha256": "c498d95d6d5628a04b2ee0d629b1d5001b5ae7f8c03f68172cd73a57dd4fb7c0",
+      "reason": "historical_moc_included_old_header_corrected_by_regeneration",
+      "receipt_sha256": "a6dee01d1fc1bebd52b0ed88e188337ac467f24b1a221ac4d8c9f94c0aac3da0"
+    },
+    "intentional_public_evolution": [
+      {
+        "current_sha256": "418a8724ac94008f3ee3403b59bf1a77ca1f052cc8c5ce26e8af0356a4b3aed9",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "93fc4536e59c5952cf5a01ac9d3fa1694a0ebcabd33bdb9d6048d7332f3b6fcb",
+        "source": "lifetime-guard"
+      },
+      {
+        "current_sha256": "e6012b55179bc4d20194ec215b8543626fc35d1a23bc8ab15ede78fa16e9e97e",
+        "file": "tools/observer/physical_writes.cpp",
+        "snapshot_sha256": "0a39212b2e933ef1f3dd8b2ec2bd97610667acd0c89d40d9196a7d9c29c8252e",
+        "source": "physical-write-probe"
+      },
+      {
+        "current_sha256": "0f935bb9ccb0a322ab65c18e223d1ca6509f2fb5e2c0e80e3a235b7fc8d83137",
+        "file": "tools/observer/include/sh3_observer/physical_writes.hpp",
+        "snapshot_sha256": "856619e83b977e05de98e0e1537601a349d0ad7dcc2d017cba30d613465f849b",
+        "source": "physical-write-probe"
+      },
+      {
+        "current_sha256": "418a8724ac94008f3ee3403b59bf1a77ca1f052cc8c5ce26e8af0356a4b3aed9",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "7cc0a8a1b15e895fd80825715b4433bf8012bcdcccd534b0dbc644450b4b7fc3",
+        "source": "lifecycle-probe"
+      },
+      {
+        "current_sha256": "418a8724ac94008f3ee3403b59bf1a77ca1f052cc8c5ce26e8af0356a4b3aed9",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "177df1e1cdd24ff68a7a8fbe5be48f8749686f2ab4c5b01714d60e5f77220e0e",
+        "source": "admission-profile"
+      },
+      {
+        "current_sha256": "418a8724ac94008f3ee3403b59bf1a77ca1f052cc8c5ce26e8af0356a4b3aed9",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "fe675ecd810879ed8517f210d9328c08496d39e601cc41f7208ea9d7c802c39a",
+        "source": "pine-exclusion"
+      },
+      {
+        "current_sha256": "f2fb13ec008f0b2a5fb598140520317ce185482404448cef15cffd9ab96b2388",
+        "file": "tools/observer/pcsx2/adapter.cpp",
+        "snapshot_sha256": "9aee1fdf0a8b0ba95e9766c0c90b6cb002cbe51a69b8223a890ab1906cf482b4",
+        "source": "SRC50"
+      },
+      {
+        "current_sha256": "c91ef86355d9e806033a22441654d8b5f75b3c24d70c6d621b55b9cba04bf0f6",
+        "file": "tools/observer/pcsx2/adapter.hpp",
+        "snapshot_sha256": "766bb2b0d5303d946241512f3ccbf699adb9aaf14bb1688fdb8323bf92e304cb",
+        "source": "SRC50"
+      }
+    ],
+    "inventory_sources": {
+      "pcsx2-qt/CMakeLists.txt": "167aa2992b55d227ef40a0a838a70be5797947c0972d9ad0037f5922a85f216a",
+      "pcsx2-qt/QtHost.cpp": "e9f1f301f8e6ddd0254425651a99ea18c98d65930b143125eab36e4a91df3d36",
+      "pcsx2-qt/QtHost.h": "41a804c4d96cea9ba17626a39ee50fe950027417dc6ecf9b23bfa70962fe9aa9",
+      "pcsx2/CMakeLists.txt": "326fdc1944186d46223e320a7ded5be70140f9a6fec7bbbeeb36e7041aaa28bb",
+      "pcsx2/Host.h": "59dfd2319d2bc189fe5dd9a6356fef94aea117226bbd1cd943877f0d41b4628a",
+      "pcsx2/MTGS.cpp": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1",
+      "pcsx2/MTGS.h": "5329951cbe6f7f5c83b496ee540c5f0177adb7d9196f77a200f932425362d57e",
+      "pcsx2/MTVU.cpp": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441",
+      "pcsx2/MTVU.h": "bbb1b208049117fc0df63edd04dda222b8de5b5da512a59251db38058c0ef9d9",
+      "pcsx2/PINE.cpp": "e09bc9d044badfdf69e06d650db1a0490e1a201180fe3b177e2b739e5fb0ea6a",
+      "pcsx2/PINE.h": "84ffa647aa62132a440c21667783ebc519e887cbb7847cf19a948e71b2786b72",
+      "pcsx2/SaveState.cpp": "6e854fa3db690474cac87e802157ecfa44f594bfd2376dbcf244c0d3bb23cc00",
+      "pcsx2/VMManager.cpp": "6070d93f305ae308efd94299af711ae6fdd6d85bd261facb71c8231524e99145",
+      "pcsx2/VMManager.h": "574c9ccba3f8d4a41015e695b21f90c57c6863b7c9331d38aabf769c32425a9c",
+      "pcsx2/sh3-observer/include/sh3_observer/completion.hpp": "4c152cb902ba9aea4733418e4958c9b0a95488ce939cdffed29b8d3d8a2b6217",
+      "pcsx2/sh3-observer/pcsx2/adapter.cpp": "f2fb13ec008f0b2a5fb598140520317ce185482404448cef15cffd9ab96b2388",
+      "pcsx2/sh3-observer/pcsx2/adapter.hpp": "c91ef86355d9e806033a22441654d8b5f75b3c24d70c6d621b55b9cba04bf0f6"
+    },
+    "live_acquisition_performed": false,
+    "own_sources_match": true,
+    "prior_evidence_sha256": "ee7927ae851e5d375e0527a08b9b35544a46b692aa55021afa36f15fa65b75c5",
+    "prior_private_sources_unchanged": true,
+    "private_patch_sha256": "4341a0a945b15336a0c5bad0a4e6e54516ec35c9eaca344cb2a394ed92fb7686",
+    "private_source_manifest_sha256": "3d8dbbe517e4c9faa64eddf4a1c8eaacd91044a02836fbd26dd81b387be8f606",
+    "production_binding_added": false,
+    "production_closure_caller_added": false,
+    "provider_application_executed": false,
+    "provider_application_linked": false,
+    "provider_changed": [
+      "pcsx2-qt/CMakeLists.txt",
+      "pcsx2-qt/QtHost.cpp",
+      "pcsx2/CMakeLists.txt",
+      "pcsx2/VMManager.cpp",
+      "pcsx2/VMManager.h"
+    ],
+    "provider_translation_units": [
+      {
+        "accepted": true,
+        "boundary_symbols": 5,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "e2d79d1e332e894be49adccc396e2c0195daedc4225288524d6cf96a85be9bc6",
+        "receipt_sha256": "64adbe3bfb3d2625814ae817b8926c4f29e62e50d60fc0b0eb6ced0ab992f1d7",
+        "source_file": "pcsx2/VMManager.cpp",
+        "source_sha256": "6070d93f305ae308efd94299af711ae6fdd6d85bd261facb71c8231524e99145",
+        "unit": "VMManager-on"
+      },
+      {
+        "accepted": true,
+        "boundary_symbols": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "977d88a861b5e24bc213e1c0ab07a00287d0b8d184b5a5925e814275577c3603",
+        "receipt_sha256": "9cf009fef7dbc8cdd8107f2bae381275184f50bea83f22d8612d186d1dc535d1",
+        "source_file": "pcsx2/VMManager.cpp",
+        "source_sha256": "6070d93f305ae308efd94299af711ae6fdd6d85bd261facb71c8231524e99145",
+        "unit": "VMManager-off"
+      },
+      {
+        "accepted": true,
+        "boundary_symbols": 3,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "602f7de171f905b6c3a6deb7108e2d7f62f16e5b71bfb377ef768417017a3de4",
+        "receipt_sha256": "84fc180c218359b3a40e9bb858826aebe8052487796e4d334ae8b68f66b6700c",
+        "source_file": "pcsx2-qt/QtHost.cpp",
+        "source_sha256": "e9f1f301f8e6ddd0254425651a99ea18c98d65930b143125eab36e4a91df3d36",
+        "unit": "QtHost-v2-on"
+      },
+      {
+        "accepted": true,
+        "boundary_symbols": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "ea9980f23a1511f3caf6760b8ef18eb6da986a41ace3ea159e09872b7f97af1c",
+        "receipt_sha256": "6b75c0d60642123eed97fc464644720cd263353215dd2899ce5e60530662b026",
+        "source_file": "pcsx2-qt/QtHost.cpp",
+        "source_sha256": "e9f1f301f8e6ddd0254425651a99ea18c98d65930b143125eab36e4a91df3d36",
+        "unit": "QtHost-v2-off"
+      }
+    ],
+    "qt_dispatch_scopes_verified": 3,
+    "qt_root_scope_added": true,
+    "read_events_produced": 0,
+    "regenerated_moc": [
+      {
+        "accepted": true,
+        "autogen_info_sha256": "cac22aee348e79f55406b8d4a316c79b79fa657ed1e8cdf484b702f90f154d8c",
+        "generated_sha256": "88ea548e4c6ff2e9ae874449ce225b5eb8208f04bd006346b1553b77d05542ba",
+        "header_sha256": "41a804c4d96cea9ba17626a39ee50fe950027417dc6ecf9b23bfa70962fe9aa9",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "moc_sha256": "bfbe85be41fb1834662299f69625ece561597f466bc504843ea110445ae65ca3",
+        "mode": "on",
+        "predefs_sha256": "a899ac9e172407730991cdf3096d7d5f99e1d9cb9cbea8492157b901a92d0c5f",
+        "receipt_sha256": "2ab8001b6d8318823b710c3fe4122702f1f836b3672c11cccc5dc80d0a3ec3e2"
+      },
+      {
+        "accepted": true,
+        "autogen_info_sha256": "cac22aee348e79f55406b8d4a316c79b79fa657ed1e8cdf484b702f90f154d8c",
+        "generated_sha256": "88ea548e4c6ff2e9ae874449ce225b5eb8208f04bd006346b1553b77d05542ba",
+        "header_sha256": "41a804c4d96cea9ba17626a39ee50fe950027417dc6ecf9b23bfa70962fe9aa9",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "moc_sha256": "bfbe85be41fb1834662299f69625ece561597f466bc504843ea110445ae65ca3",
+        "mode": "off",
+        "predefs_sha256": "a899ac9e172407730991cdf3096d7d5f99e1d9cb9cbea8492157b901a92d0c5f",
+        "receipt_sha256": "0c7bc136580de6064c4765017823995519c42c404d6685cc1464e2b687c59d51"
+      }
+    ],
+    "resource_links": [],
+    "schema_version": 1,
+    "scope_revocation_is_persistent": true,
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_files_verified": {
+      "source-admission-v1": 2949,
+      "source-baseline": 2934,
+      "source-cpu-boundary-v1": 2953,
+      "source-dma-v2": 2945,
+      "source-host-v1": 2945,
+      "source-jit-cache-v2": 2945,
+      "source-lifecycle-v1": 2947,
+      "source-lifetime-v2": 2945,
+      "source-observer-v2": 2941,
+      "source-pine-exclusion-v1": 2951
+    },
+    "status": "cpu_lexical_boundary_verified_pine_coordinator_and_gs_vu_drain_pending"
+  },
+  "custody": {
+    "two_equal_audits": true,
+    "audit_bytes": 18258,
+    "audit_sha256": "26a111fd8386161895c13fbd21f981b6dce04bb06fcac93ae695e250d741df09",
+    "prior_private_sources_unchanged": true,
+    "historical_public_inputs_verified_with_snapshots": true,
+    "historical_public_scope": "SRC65_to_SRC72_inputs_and_original_adapter_pair",
+    "previous_public_snapshot_manifest_sha256": "16508696e66393655a4b6849b7eae89b34a1cf041df42895f45878ad1555ac6c"
+  },
+  "implementation": {
+    "host_only": true,
+    "thread_confined_lexical_scopes": true,
+    "scopes_noncopyable_nonmovable": true,
+    "activity_permanently_revokes_outer_boundary": true,
+    "callbacks_do_not_restore_admission": true,
+    "init_success_activates_shutdown_entry_revokes": true,
+    "root_scope_in_qt_cpu_loop": true,
+    "vm_activity_entries": 14,
+    "qt_dispatch_scopes": 3,
+    "sampler_requires_explicit_boundary": true,
+    "owner_outlives_scopes_and_scopes_require_lexical_thread_local_destruction": true,
+    "no_allocations_mutexes_or_waits": true,
+    "global_thread_exclusion_provided": false,
+    "pine_closure_production_caller_added": false,
+    "production_arming_exposed": false,
+    "new_pine_command_added": false,
+    "epoch_and_physical_bridge_unchanged": true,
+    "provider_cpp_files_modified": 2,
+    "provider_header_updated": true,
+    "provider_cmake_lists_updated": 2,
+    "nintendo_sources_unchanged": true
+  },
+  "validation": {
+    "cpp_runs": [
+      {
+        "artifact": "regression/host-debug.xml",
+        "tests": 100,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "25f376aecebbc29ff57c4b6c35faeef98806d6b8e200d6a94cacc1a16c796c98"
+      },
+      {
+        "artifact": "regression/host-release.xml",
+        "tests": 100,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "6b7b4b1b9d928d0c037810019d0143079fe1c04f5193cd1d1a0afa8fc5d709c9"
+      },
+      {
+        "artifact": "regression/host-sanitize.xml",
+        "tests": 100,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "363845e481d0d6e2f023217442a2489adbe7539adc1015db82e3d06640edcf5b"
+      }
+    ],
+    "harness_common_cases_per_mode": 45,
+    "harness_extra_boundary_cases": {
+      "on": 5,
+      "sanitize": 5,
+      "off": 0,
+      "baseline": 0
+    },
+    "harness_modes": [
+      "ON",
+      "OFF",
+      "ON_ASan_UBSan",
+      "previous_provider_functions_OFF"
+    ],
+    "real_provider_compiled_units": 4,
+    "regenerated_moc_files": 2,
+    "provider_compile_toolchain": "Apple_Clang_21_x86_64_CXX20_ThinLTO_explicit_SDK",
+    "cpp_coverage_remeasured": true,
+    "cpp_coverage_tool": "LLVM",
+    "cpp_coverage_scope": "cpu_boundary_cpp_and_header_only",
+    "cpp_coverage_by_file": {
+      "tools/observer/cpu_boundary.cpp": {
+        "branches": {
+          "count": 10,
+          "covered": 10,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 6,
+          "covered": 6,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 6,
+          "covered": 6,
+          "percent": 100
+        },
+        "lines": {
+          "count": 21,
+          "covered": 21,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 20,
+          "covered": 20,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/include/sh3_observer/cpu_boundary.hpp": {
+        "branches": {
+          "count": 4,
+          "covered": 4,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 5,
+          "covered": 5,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 5,
+          "covered": 5,
+          "percent": 100
+        },
+        "lines": {
+          "count": 5,
+          "covered": 5,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 7,
+          "covered": 7,
+          "notcovered": 0,
+          "percent": 100
+        }
+      }
+    },
+    "cpp_line_branch_gate": "PASS",
+    "line_branch_gate_minimum_percent": 80,
+    "python_suite_rerun": false,
+    "python_previous_result_source": "SRC72",
+    "python_scope_unchanged": true,
+    "gcc_ci_coverage_run": false,
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 137,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_links": "PASS",
+    "thresholds_not_relaxed": true,
+    "public_ci_executes_private_harness": false,
+    "remote_ci_run": false,
+    "full_provider_build_run": false,
+    "provider_configure_run": false,
+    "nintendo_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "QtHost-on.json": "a6dee01d1fc1bebd52b0ed88e188337ac467f24b1a221ac4d8c9f94c0aac3da0",
+      "QtHost-v2-off.json": "6b75c0d60642123eed97fc464644720cd263353215dd2899ce5e60530662b026",
+      "QtHost-v2-on.json": "84fc180c218359b3a40e9bb858826aebe8052487796e4d334ae8b68f66b6700c",
+      "VMManager-off.json": "9cf009fef7dbc8cdd8107f2bae381275184f50bea83f22d8612d186d1dc535d1",
+      "VMManager-on.json": "64adbe3bfb3d2625814ae817b8926c4f29e62e50d60fc0b0eb6ced0ab992f1d7",
+      "baseline-harness-inputs.json": "5b259f43a3b208cca22c861a7281d8185ae4989e98973966f819c5731c35b9eb",
+      "cpp-coverage-summary.json": "6963f71e7f29546ed6f9d615ae3e7cd13ce60cf38cdc58705afc70ab04945f61",
+      "cpp-coverage.json": "f94b5d04cbdb2b5c75be55ca5f799a7a2883aee05891c1a2c5593a8a0225f03e",
+      "harness-v1-baseline-compile.json": "0dc2a485a72afbcddc0673249287ee80edf182bc633a4d9d5da8d9d67f7ab3b5",
+      "harness-v1-baseline-run.json": "a69595ecc629d79a24cc09f9988f0e4c5f3618a1cde63127dbcb742f6f59610f",
+      "harness-v1-off-compile.json": "c6d4beee82165b01fc3087d771d016cfc6bcd0b11837707fa5e10cbb5a967d5a",
+      "harness-v1-off-run.json": "11217bab06421d94cb166d6573ad1dd7f02a495034e5aded9d50d71bbe1f9611",
+      "harness-v1-on-compile.json": "114a6d81646d52763c0a9df47133ab3d54343f79a561abfa5e8c8dc9a05c1712",
+      "harness-v1-on-run.json": "b248d02d16f9ba1ef250bd90f4973ff31fbf6302e837678ce4372a5ae51a25b0",
+      "harness-v1-sanitize-compile.json": "ac454c248392cea76910cfe0a63a4060bbd3999b5e5204d43428cef1cb85e35d",
+      "harness-v1-sanitize-run.json": "e48860b9aaed7dce923e2fac1ba75bcf92eeb109cba102658930ec04d12e20fb",
+      "moc-v2-off.json": "0c7bc136580de6064c4765017823995519c42c404d6685cc1464e2b687c59d51",
+      "moc-v2-on.json": "2ab8001b6d8318823b710c3fe4122702f1f836b3672c11cccc5dc80d0a3ec3e2",
+      "new-harness-inputs.json": "d4b7a2970e8dc4fad1e4312c1939834ef7e7bcf143e4e187dc08e9caaac9f65c",
+      "prepare.json": "3d8dbbe517e4c9faa64eddf4a1c8eaacd91044a02836fbd26dd81b387be8f606",
+      "previous-public.json": "16508696e66393655a4b6849b7eae89b34a1cf041df42895f45878ad1555ac6c",
+      "regression/host-debug-build.log": "ee86cd754109e3bf565aadf259868f95c68ee7adee8b6b629ac7b2d36c03b294",
+      "regression/host-debug-configure.log": "cf672059a3d7fb579d0d5081eeaa614a16e30ea8ed808eedbf86142907fd12b2",
+      "regression/host-debug-tests.log": "299b29ceb6f891cee6130fbf23bbb933bdbfb9dab4d505d87884b173bdbf2cd0",
+      "regression/host-debug.xml": "25f376aecebbc29ff57c4b6c35faeef98806d6b8e200d6a94cacc1a16c796c98",
+      "regression/host-release-build.log": "0e9c5b7e750faa82f4e2ba8c279ef028fbbaead3d01d1320e05c06237551d955",
+      "regression/host-release-configure.log": "51a78c4dfc7c91c51e61c8b783bf3be6a4ecabeaca723480125413a0a156ddd3",
+      "regression/host-release-tests.log": "771c9f2a04fcc768fbc7a96cf944503f1cabf9d5c73806b6f83a373104645c6f",
+      "regression/host-release.xml": "6b7b4b1b9d928d0c037810019d0143079fe1c04f5193cd1d1a0afa8fc5d709c9",
+      "regression/host-sanitize-build.log": "70df8de6fe45721719119de481ecd712d8ef8ebaae178e41c52e5e19b2c06033",
+      "regression/host-sanitize-configure.log": "93ce94a05b0d976b329b875c5329d1faf8db411d3cb8494aad234ed2be5b82a9",
+      "regression/host-sanitize-tests.log": "b9bee6ba60666830cecade6a3d6c4497ed3eaa9a9b08ba81d0f9aeca13ecc3b2",
+      "regression/host-sanitize.xml": "363845e481d0d6e2f023217442a2489adbe7539adc1015db82e3d06640edcf5b"
+    }
+  },
+  "public_inputs_sha256": {
+    "CMakeLists.txt": "418a8724ac94008f3ee3403b59bf1a77ca1f052cc8c5ce26e8af0356a4b3aed9",
+    "schemas/cpu-boundary-v1.md": "c75a97b2ad227f6cbcf14a9961f689bafc3718d5556f6063d2da61ffc1f42c87",
+    "tests/fixtures/pcsx2-cpu-boundary/harness.cpp": "6ffaadd8b007c0c98d59ac750caa5e947b32d87e895ac52f14c2f6a4033e61d9",
+    "tests/fixtures/pcsx2-cpu-boundary/README.md": "f7c7552b8fabb18bd9ed231637caaa0cd11d6c68d7ee671abfb9f7fa2a7074a9",
+    "docs/execution/f02-07-cpu-boundary.md": "ab070d21e296d6a7cbb8f6d6fb989b746d5ebb6bf9302d93f22dcb3863b765e9",
+    "tools/observer/cpu_boundary.cpp": "a20997e9f3d7aacd2df004c9424436fa6cad7923c04218bc7a51f7ea62a74500",
+    "tools/observer/include/sh3_observer/cpu_boundary.hpp": "ad0f1edd34f82061200bdd3ebb8247b726c640d7834d50d49ed5f21a158d2660",
+    "tests/cpp/test_cpu_boundary.cpp": "c9052e5e5ca2f182306a0f395e0f21b54f67abf2824da356ccfeb0e329a0a156",
+    "tools/observer/admission.cpp": "ad7c05139e01ea2491c0c5dc95e0a553c6e9f0d3604807e05e44569cc502ea90",
+    "tools/observer/include/sh3_observer/admission.hpp": "acb7783a5c45336038d555d7eca1b52f3032987de27f1e6abbb7b4c2c5673a9c"
+  },
+  "private_operational_script_sha256": {
+    "audit.py": "6d3a545424e642da31bf05767a73e8f28537f7cd2c4c9954308cd7e022052964",
+    "compile_private.py": "b598a5dc56162a9a78bfd8929574fa5432f30e957314f690355289a906029f57",
+    "compile_qt_v2.py": "d34f59607c51493bd48f6228cc9101d025bfbc63fcb566a85b331c230a10574a",
+    "coverage_cpp.py": "22c65d6bd282e42ffe2c2bbd1dd1aa114c2ef8b841c9ddda6d568e0e7422859f",
+    "finalize_evidence.py": "046f090a275ed7719e100b02c2bfebd70e05b13940ff0e60e4ff6061bf60f28d",
+    "make_harness.py": "59263b36083bc905236052486379a49e09c9659d654e0431d96f853c5eda9316",
+    "prepare-initial.py": "837bc2d6e65f5db2b2198f7390ce37e42655780d16a18000d28482290d9294ec",
+    "prepare.py": "4fc440ffbf9cf668777565d99fc8be65ae633093fb2f6a331b5ee4237d1baca2",
+    "run_harness.py": "72befb13e49b593a2083c2bd57cee146a58744ed0221fc6cec9d6b140f16c1fc",
+    "test_host.py": "8586b989fa62136739cd65eb6167f56d890f4974b2b0699e292e56bd4a965ae9"
+  },
+  "limitations": {
+    "coverage_audit_exhaustive": false,
+    "all_interleavings_verified": false,
+    "production_binding_added": false,
+    "admitted_execution_modes": [],
+    "global_capture_permission_granted": false,
+    "provider_application_linked": false,
+    "provider_application_executed": false,
+    "actual_qt_event_loop_executed": false,
+    "pine_server_lifecycle_verified": false,
+    "pine_closure_production_caller_added": false,
+    "synchronous_run_on_cpu_thread_fast_path_instrumented": false,
+    "gs_vu_job_completion_verified": false,
+    "global_memory_effect_serialization_verified": false,
+    "global_deadlock_freedom_verified": false,
+    "epoch_bound_to_capture_protocol": false,
+    "actual_save_state_executed": false,
+    "all_vm_transition_bodies_executed": false,
+    "vm_transition_bodies_executed": [
+      "Execute",
+      "DoLoadState"
+    ],
+    "qt_run_dependencies_reset_destroyvm_and_event_loop_are_doubles": true,
+    "previous_comparison_uses_previous_functions_and_current_own_libraries": true,
+    "continuous_lifetime_verified": false,
+    "live_acquisition_performed": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

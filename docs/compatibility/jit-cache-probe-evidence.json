@@ -1,0 +1,423 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC68",
+  "task": "F02.07/LP-C/LG-I1/JIT-cache",
+  "stage": "jit_entry_and_cache_function_batch_verified_full_coverage_pending",
+  "contracts": [
+    "schemas/jit-cache-probe-v1.md",
+    "schemas/physical-write-probe-v1.md",
+    "schemas/lifetime-guard-v1.md"
+  ],
+  "units": {
+    "JC_T1": "complete_scoped_function_batch",
+    "JC_T2": "complete_scoped_function_batch",
+    "JC_T3": "complete_scoped_function_batch",
+    "JC_T4": "complete_scoped_function_batch",
+    "JC_1": "complete_static_inventory",
+    "JC_2": "partial_no_generated_store_coverage_or_mode_admission",
+    "JC_3": "partial_no_real_generated_blocks_or_interpreter_jit_equivalence",
+    "JC_4": "partial_no_vm_cost_measurement",
+    "LG_I1": "partial_vtlb_dma_cache_and_jit_entry_rejection",
+    "LG_I2": "pending",
+    "LG_I3": "pending",
+    "LG_I4": "partial_no_vm_integration",
+    "LP_D": "pending"
+  },
+  "provider_audit": {
+    "actual_generated_jit_blocks_executed": false,
+    "added_hook_sites": 5,
+    "admitted_execution_modes": [],
+    "baseline_files_verified": 2934,
+    "capabilities": [],
+    "continuous_lifetime_verified": false,
+    "derived_files_verified": 2945,
+    "effects_digest": "d4f40ee1adc19caf",
+    "effects_equal_across_modes": true,
+    "failed_attempts_preserved": true,
+    "global_memory_effect_serialization_verified": false,
+    "harness_inputs": {
+      "actual_generated_jit_blocks_executed": false,
+      "doubles": [
+        "vmap",
+        "CPU_registers",
+        "logger",
+        "fastjmp",
+        "preexisting_compiled_entry_callback"
+      ],
+      "expected_cases": 70,
+      "fragments": [
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "7560df03f7db0620f7f3a932883fd4a08b1a341688aae191448f9e59c9ba2de9",
+          "name": "cache",
+          "source_file": "pcsx2/Cache.cpp",
+          "source_sha256": "ad54d636922b2d18f3d4a6a9d4c6b3c01505e19364b5ba03b177bb5619e13296"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "e4c402366233e2b2d2f1ba04649ff477653f7cbe5e7332f111ff38d05802f263",
+          "name": "vtlb-scalar",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "717200c55e8517723c2325ec5dd5b7be60a62ed7e91b6ff05c71a569b51810fc"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "99a3570fe75e70bfea14254213472aa0f26eb96596bb9706315a7ed6f3064baf",
+          "name": "vtlb-128",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "717200c55e8517723c2325ec5dd5b7be60a62ed7e91b6ff05c71a569b51810fc"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "9ac283ab151c2b9f132d18d29057926475b44a9be501682042a0f9967358269a",
+          "name": "jit-entry",
+          "source_file": "pcsx2/x86/ix86-32/iR5900.cpp",
+          "source_sha256": "5c276c086ff6e2440ff31e393e89644d1bda6c53505980f496231a888c95ada5"
+        }
+      ],
+      "harness_sha256": "a0972a7e246cdb0653cfb046d0229be4454d3854ee3113ee9c98101f567a66aa"
+    },
+    "harness_runs": [
+      {
+        "accepted": true,
+        "binary_sha256": "daa3045c66c361cd17c1c9f553f21e6487a42afab58af50c5da8d0792b2f31ba",
+        "cases": 70,
+        "mode": "on",
+        "run_log_sha256": "32f94b4df0f4205f479395a838b91ab0db2e12e6442ed54f4fa1611709d2a148",
+        "run_receipt_sha256": "8d0b73441f5b72a8f813e69aa4181e55b316f5c98f65e86aac4e18b01c76b920"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "9c55c0de344ba5db3d2407e7198f9dc69ae1b301eca3f6a4c2cacc6848ffdc39",
+        "cases": 70,
+        "mode": "off",
+        "run_log_sha256": "32f94b4df0f4205f479395a838b91ab0db2e12e6442ed54f4fa1611709d2a148",
+        "run_receipt_sha256": "bde20e25aa7cdb952a2a331546bf5c966128b21a163dc067b2d60db4ae5f1577"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "75f10419af34d0c645c028c194d2b46fa70cc3d7532f17ba0cd1888e5113bb66",
+        "cases": 70,
+        "mode": "sanitize",
+        "run_log_sha256": "32f94b4df0f4205f479395a838b91ab0db2e12e6442ed54f4fa1611709d2a148",
+        "run_receipt_sha256": "649a699839551d925baf046704a1b09b10d61c7c5465c1e71a2e559071f94927"
+      }
+    ],
+    "inventory_sources": {
+      "pcsx2/COP0.cpp": "5c15c34884f06c95074d725415df0d9751092f9bb9115f3324351ec4aba17686",
+      "pcsx2/Cache.cpp": "ad54d636922b2d18f3d4a6a9d4c6b3c01505e19364b5ba03b177bb5619e13296",
+      "pcsx2/Cache.h": "ecbd8f64e41a90708a0eed459a2def9fb9230e1833a5819a4bcfb8988b666263",
+      "pcsx2/Interpreter.cpp": "2d1951d8b98a7bbf697577b6376d966d9266c3fa628cc058ea1cf50adab83048",
+      "pcsx2/SaveState.cpp": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589",
+      "pcsx2/VMManager.cpp": "ab60e27f91af5248f6b6e74a8360611038abbfd6fec5f5e37c8c024f5354f205",
+      "pcsx2/vtlb.cpp": "717200c55e8517723c2325ec5dd5b7be60a62ed7e91b6ff05c71a569b51810fc",
+      "pcsx2/x86/iR5900Misc.cpp": "1aab28927c1355e5cd144a2c48daab9d41209b975d0383a172ea8883964cfa1a",
+      "pcsx2/x86/ix86-32/iR5900.cpp": "5c276c086ff6e2440ff31e393e89644d1bda6c53505980f496231a888c95ada5",
+      "pcsx2/x86/ix86-32/iR5900LoadStore.cpp": "ad7ffcb6e89b35ad0e1badc93eff47a1e781d99f58473d314461a60c752a1376",
+      "pcsx2/x86/ix86-32/recVTLB.cpp": "c833f9be317bced1785224490b8c6c903ef8ee9e3a938dd634aad47684bbbf20"
+    },
+    "jit_generated_stores_unchanged": true,
+    "live_acquisition_performed": false,
+    "mid_block_arming_barrier_sufficient": false,
+    "previous_dma_files_verified": 2945,
+    "previous_lifetime_files_verified": 2945,
+    "previous_observer_files_verified": 2941,
+    "previous_public_inputs_unchanged": true,
+    "prior_evidence_sha256": "8fea89ab8bdfce491101b7b044b5e0c59628b8ea40cfe100bfc7fb86543671bc",
+    "prior_sources_unchanged": true,
+    "private_patch_sha256": "c94b92c6424b4a789e1efd5c08bdb00f402f0c2186a357e6a2818a665be336e0",
+    "private_source_manifest_sha256": "e8caa57b6d765e7189873526d19e5c0daed363e12b040d209877b1a76bd5bcaf",
+    "production_binding_added": false,
+    "provider_application_executed": false,
+    "provider_application_linked": false,
+    "provider_changed": [
+      "pcsx2/Cache.cpp",
+      "pcsx2/vtlb.cpp",
+      "pcsx2/x86/ix86-32/iR5900.cpp"
+    ],
+    "provider_translation_units": [
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "1d62df0af022d6708177fa2563d61752866747a71d7bc7631280bfc5085ed9ea",
+        "receipt_sha256": "5bffd73858328014c209dd615798d81ef0f1d7b049da586c0598749e35bf3439",
+        "source_file": "pcsx2/Cache.cpp",
+        "source_sha256": "ad54d636922b2d18f3d4a6a9d4c6b3c01505e19364b5ba03b177bb5619e13296",
+        "unit": "Cache-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "a65e9bb78d11bce718c1e41d60d3515a0eb8fe51d5c31cb984290f8247996b70",
+        "receipt_sha256": "980105d68d5cbaf2d2322ae2c164bdc3152fa74d3f506e0ba6ccee4992cc3807",
+        "source_file": "pcsx2/Cache.cpp",
+        "source_sha256": "ad54d636922b2d18f3d4a6a9d4c6b3c01505e19364b5ba03b177bb5619e13296",
+        "unit": "Cache-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "92418d71777416fba4bb5f8cafc2ead32b8cf7725c57bf91b9ea7870c639366f",
+        "receipt_sha256": "12dd1cb0bc97ed2881a6b094d9c951ffa9bb4c7dbf27366c4d6c10f20a0bb666",
+        "source_file": "pcsx2/vtlb.cpp",
+        "source_sha256": "717200c55e8517723c2325ec5dd5b7be60a62ed7e91b6ff05c71a569b51810fc",
+        "unit": "vtlb-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "bd36bace835f9cd2d5a617fd292a7d0327e0d3bf6e7bf2302af885b8c9f57f0a",
+        "receipt_sha256": "f44f526eccabfa858008b8f1eefb3fedb4c8143a12022478a7d54d9fcd703e54",
+        "source_file": "pcsx2/vtlb.cpp",
+        "source_sha256": "717200c55e8517723c2325ec5dd5b7be60a62ed7e91b6ff05c71a569b51810fc",
+        "unit": "vtlb-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "13a17c732507ffc35e05f6b5b60b0cf1839e0568c45feebf6430c3d1adbadec6",
+        "receipt_sha256": "d685cd8d5ef3f9556d06c6bcde3a433fb26cd580e9b30cd2e71c3a6b4f7f1925",
+        "source_file": "pcsx2/x86/ix86-32/iR5900.cpp",
+        "source_sha256": "5c276c086ff6e2440ff31e393e89644d1bda6c53505980f496231a888c95ada5",
+        "unit": "iR5900-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "d2d9195cc57f46b20f33730eee45aefae98708b33d7be544a1879b8fdbb3e83f",
+        "receipt_sha256": "a13d05a82a4b99cd43a649052d1e1c9e36b78f8ef7201741d9600f62367f3185",
+        "source_file": "pcsx2/x86/ix86-32/iR5900.cpp",
+        "source_sha256": "5c276c086ff6e2440ff31e393e89644d1bda6c53505980f496231a888c95ada5",
+        "unit": "iR5900-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "ed2ee2512727878146a9fe14bb5835d0744f830bcf0af4feff876873fe273306",
+        "receipt_sha256": "9291e4aa954648a41673520485bb30059a23846ddf283a79bd00baa0b83a2ece",
+        "source_file": "pcsx2/x86/ix86-32/recVTLB.cpp",
+        "source_sha256": "c833f9be317bced1785224490b8c6c903ef8ee9e3a938dd634aad47684bbbf20",
+        "unit": "recVTLB-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "ed2ee2512727878146a9fe14bb5835d0744f830bcf0af4feff876873fe273306",
+        "receipt_sha256": "cc7e53ba133fe843bbe46f7a8f9741c39cc46f8e7a63552c91fc2a4476f6b58f",
+        "source_file": "pcsx2/x86/ix86-32/recVTLB.cpp",
+        "source_sha256": "c833f9be317bced1785224490b8c6c903ef8ee9e3a938dd634aad47684bbbf20",
+        "unit": "recVTLB-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "9356e01658a8fbb17a5aa48f9e5c494f80ca9a0da3727ecc6e6feed2bdf7b134",
+        "receipt_sha256": "81844347a67285f0bf922d70f7bce3d64a272db3e94f71974c7b76a0e411197f",
+        "source_file": "pcsx2/x86/ix86-32/iR5900LoadStore.cpp",
+        "source_sha256": "ad7ffcb6e89b35ad0e1badc93eff47a1e781d99f58473d314461a60c752a1376",
+        "unit": "iR5900LoadStore-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "9356e01658a8fbb17a5aa48f9e5c494f80ca9a0da3727ecc6e6feed2bdf7b134",
+        "receipt_sha256": "3c748682a551ba166c6b35f8419b24c83af3d0a858deebbc28e5a74b0bd15e13",
+        "source_file": "pcsx2/x86/ix86-32/iR5900LoadStore.cpp",
+        "source_sha256": "ad7ffcb6e89b35ad0e1badc93eff47a1e781d99f58473d314461a60c752a1376",
+        "unit": "iR5900LoadStore-off"
+      }
+    ],
+    "read_events_produced": 0,
+    "removed_duplicate_sites": 2,
+    "resource_links": [],
+    "schema_version": 1,
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "status": "jit_entry_rejected_cache_producers_function_tested",
+    "symbol_references": {
+      "Cache-off": 0,
+      "Cache-on": 2,
+      "iR5900-off": 0,
+      "iR5900-on": 1,
+      "iR5900LoadStore-off": 0,
+      "iR5900LoadStore-on": 0,
+      "recVTLB-off": 0,
+      "recVTLB-on": 0,
+      "vtlb-off": 0,
+      "vtlb-on": 2
+    }
+  },
+  "custody": {
+    "two_equal_audits": true,
+    "audit_bytes": 10361,
+    "audit_sha256": "84452ac37e522d6e338dc9004ed35049845e309473ab613b62529c2e707eac35",
+    "prior_sources_unchanged": true,
+    "failed_attempts_preserved": true
+  },
+  "implementation": {
+    "host_only": true,
+    "private_provider_files_modified": 3,
+    "added_hook_sites": 5,
+    "removed_duplicate_vtlb_cache_sites": 2,
+    "prior_guard_and_bridge_unchanged": true,
+    "common_callback_dependency_injection": true,
+    "jit_store_emitters_unchanged": true,
+    "production_arming_exposed": false,
+    "memory_effects_globally_serialized": false,
+    "nintendo_sources_and_build_definition_unchanged_in_this_unit": true
+  },
+  "validation": {
+    "cpp_runs": [
+      {
+        "artifact": "host-debug.xml",
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "d38cd8e80e517e451c255be1e492255f47da8d86925d5593899eaf896bfa7788"
+      },
+      {
+        "artifact": "host-release.xml",
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "28fa75ddddab0e21d71998e6e48b5ef240391f90ba057e36cd2c31b35f392035"
+      },
+      {
+        "artifact": "host-sanitize.xml",
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "5cfa60f4dcd3668ba38ff275074d141062fd3398196f3db67b7fdac63174a024"
+      }
+    ],
+    "python_run": {
+      "artifact": "pytest.xml",
+      "tests": 3096,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "disabled": 0,
+      "sha256": "796222d6694b4e8d5886767fb60433a10f9b4a952e87952350ab474f73ba6862"
+    },
+    "harness_cases_per_mode": 70,
+    "harness_modes": [
+      "ON",
+      "OFF",
+      "ON_ASan_UBSan"
+    ],
+    "real_provider_compiled_units": 10,
+    "total_python_coverage": {
+      "covered_lines": 5303,
+      "num_statements": 5348,
+      "covered_branches": 1449,
+      "num_branches": 1482
+    },
+    "python_line_branch_gate": "PASS",
+    "line_branch_gate_minimum_percent": 80,
+    "cpp_coverage_remeasured": false,
+    "reason_cpp_coverage_not_repeated": "core_and_bridge_unchanged_from_SRC66",
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 137,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_links": "PASS",
+    "public_ci_executes_private_jit_cache_harness": false,
+    "remote_ci_run": false,
+    "full_provider_build_run": false,
+    "provider_configure_run": false,
+    "nintendo_build_run": false,
+    "new_pcsx2_session": false,
+    "thresholds_not_relaxed": true,
+    "failures_preserved": [
+      "prepare_rejected_ambiguous_inverse_pattern_before_compile",
+      "strict_harness_rejected_unused_fixture_constants"
+    ],
+    "final_python_run_outside_sandbox": true,
+    "local_artifact_sha256": {
+      "Cache-off.json": "980105d68d5cbaf2d2322ae2c164bdc3152fa74d3f506e0ba6ccee4992cc3807",
+      "Cache-on.json": "5bffd73858328014c209dd615798d81ef0f1d7b049da586c0598749e35bf3439",
+      "harness-inputs-v2.json": "57e0a4e0fbc9a6c620bf663fc1f34df1947e19d577d698f3ca76d76fb8970503",
+      "harness-inputs.json": "c4a70751a18e50401e2c8238a5cac8ba2f6d9f778ce33dd927a3b708f538fefe",
+      "harness-on-compile.json": "2148b90b543620fbee0884c18079b35b5fcda87d1033606fe02a63ef7b3e0a08",
+      "harness-v2-off-compile.json": "be06a8d607bd7573153c856d7ef928e27f83bc727528ccac5b4666ef36735c36",
+      "harness-v2-off-run.json": "bde20e25aa7cdb952a2a331546bf5c966128b21a163dc067b2d60db4ae5f1577",
+      "harness-v2-on-compile.json": "da9713dc2ace0d5536daf563ac51de070cb44c525714ba17accd3f4bf02e6419",
+      "harness-v2-on-run.json": "8d0b73441f5b72a8f813e69aa4181e55b316f5c98f65e86aac4e18b01c76b920",
+      "harness-v2-sanitize-compile.json": "61bb26e067ef37677fe289e583f8baacf4793e0a4e98afb6728d06b40f4ef181",
+      "harness-v2-sanitize-run.json": "649a699839551d925baf046704a1b09b10d61c7c5465c1e71a2e559071f94927",
+      "host-debug-build.log": "c761843a1066f5f1a979f2f65a1429e8290681564aee7076c0e66a29ed883157",
+      "host-debug-tests.log": "41bdcb1eb7e32663776596b88ccc9c1f12ac813feb5efaef99dffdf97fbf5cb0",
+      "host-debug.xml": "d38cd8e80e517e451c255be1e492255f47da8d86925d5593899eaf896bfa7788",
+      "host-release-build.log": "7ce0e196c34e375b9e6d0d7666b25afeedf276de52e6079f2b42e172e9ec085a",
+      "host-release-tests.log": "5e668afd0f6be82c916b81d93a66dffa21adc61cc2ebb60843fcee68a54c074a",
+      "host-release.xml": "28fa75ddddab0e21d71998e6e48b5ef240391f90ba057e36cd2c31b35f392035",
+      "host-sanitize-build.log": "c761843a1066f5f1a979f2f65a1429e8290681564aee7076c0e66a29ed883157",
+      "host-sanitize-tests.log": "fc91f747047fc7e317d7e441a706db968c7b94e15e011c1bb393eacc6b6a6619",
+      "host-sanitize.xml": "5cfa60f4dcd3668ba38ff275074d141062fd3398196f3db67b7fdac63174a024",
+      "iR5900-off.json": "a13d05a82a4b99cd43a649052d1e1c9e36b78f8ef7201741d9600f62367f3185",
+      "iR5900-on.json": "d685cd8d5ef3f9556d06c6bcde3a433fb26cd580e9b30cd2e71c3a6b4f7f1925",
+      "iR5900LoadStore-off.json": "3c748682a551ba166c6b35f8419b24c83af3d0a858deebbc28e5a74b0bd15e13",
+      "iR5900LoadStore-on.json": "81844347a67285f0bf922d70f7bce3d64a272db3e94f71974c7b76a0e411197f",
+      "prepare-failure.json": "4398f247ac414b61494498eeb9966db1bfd80078efce8bc10e1b609846a35c03",
+      "prepare-v2.json": "e8caa57b6d765e7189873526d19e5c0daed363e12b040d209877b1a76bd5bcaf",
+      "pytest.xml": "796222d6694b4e8d5886767fb60433a10f9b4a952e87952350ab474f73ba6862",
+      "python-coverage.json": "8826c15e5c37d080aa441c6bc2287020a5d27ba09ec90a9a3d7626323d970d1d",
+      "python-coverage.xml": "e7b9362049edbd9cfc8203d621a471c95d077b6a0ed302e579ef1fa10b795263",
+      "recVTLB-off.json": "cc7e53ba133fe843bbe46f7a8f9741c39cc46f8e7a63552c91fc2a4476f6b58f",
+      "recVTLB-on.json": "9291e4aa954648a41673520485bb30059a23846ddf283a79bd00baa0b83a2ece",
+      "vtlb-off.json": "f44f526eccabfa858008b8f1eefb3fedb4c8143a12022478a7d54d9fcd703e54",
+      "vtlb-on.json": "12dd1cb0bc97ed2881a6b094d9c951ffa9bb4c7dbf27366c4d6c10f20a0bb666"
+    }
+  },
+  "public_inputs_sha256": {
+    "schemas/jit-cache-probe-v1.md": "01da2d45adbc6f8b1d450454ca733cb4b3bb5accf5aa86faa95320cbeb3106a9",
+    "tests/fixtures/pcsx2-jit-cache-probe/harness.cpp": "a0972a7e246cdb0653cfb046d0229be4454d3854ee3113ee9c98101f567a66aa",
+    "tests/fixtures/pcsx2-jit-cache-probe/README.md": "b5cfbc6ae03e8191914c8543f2c83ff2d0078adf7854a42538bc370fa03056c6",
+    "docs/execution/f02-07-jit-cache-probe.md": "160ccffee52a35f8595cae4e59e676b0560ebcc71fabb54ab9ec9d57ac7e5790"
+  },
+  "private_operational_script_sha256": {
+    "audit.py": "4dac4b6e6850b34e93eddf590822a001797e87089d139f41a0f87ad2d6cda1c3",
+    "compile_private-v2.py": "943c6ad601c7eeac1a77e40eba28940f44e4c10f6f9d80505d86ca7241806a16",
+    "compile_private.py": "7906d2c8beaaaed3e9c511d6b96c8a365444ae0c3553f6162e52097338bf7991",
+    "finalize_evidence.py": "f71cceefa9a2cd2f0f3c56c9ae0bae591adfea7b8ce01328942470256ef6b0bf",
+    "make_harness.py": "fae1cc5b02126ea64f4804a418fee649f29761a3bc67bdfc39d5942dbf671f8c",
+    "prepare-v2.py": "e460da1b61e58307c013a401a0c380d00779af73c051ba9449b1e07968c885db",
+    "prepare.py": "976e2a884ea91d5556324746f71c3a1539204391d6f3b21a3ee5cc39b60464c7",
+    "run_harness-v2.py": "9e3412551ed3298b2a7563bcc42da257cb55bf396558269530d1b7846ea138c4",
+    "run_harness.py": "89e17b3fd2b720b14a48ca7080a045fa9efee45d00eb502fd848acbb29424bc0"
+  },
+  "limitations": {
+    "coverage_audit_exhaustive": false,
+    "actual_generated_jit_blocks_executed": false,
+    "jit_store_coverage_verified": false,
+    "mid_block_arming_barrier_sufficient": false,
+    "admitted_execution_modes": [],
+    "production_binding_added": false,
+    "provider_application_linked": false,
+    "provider_application_executed": false,
+    "epoch_host_and_global_serialization": "pending",
+    "gs_job_completion": "pending",
+    "host_writers": "pending",
+    "continuous_lifetime_verified": false,
+    "opening_witness_binding": "pending",
+    "transport_and_joint_acceptance": "pending",
+    "live_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

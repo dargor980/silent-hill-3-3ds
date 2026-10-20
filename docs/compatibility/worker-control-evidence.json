@@ -1,0 +1,416 @@
+{
+  "admitted_execution_modes": [],
+  "capabilities": [],
+  "completed_tasks": [
+    "B3-B1",
+    "B3-B2-portable-core",
+    "WC-T1",
+    "WC-T2",
+    "WC-T3"
+  ],
+  "control": {
+    "coalesced_publication_acquire": true,
+    "generation_bits": 32,
+    "held_blocks_stop": true,
+    "independent_binary_wakeup": true,
+    "max_release_cas": 2,
+    "no_wrap": true,
+    "provider_data_queue_in_control": false,
+    "qt_pump_in_control": false,
+    "request_id_bits": 29,
+    "single_cpu_actor": true,
+    "single_wakeup_consumer": true,
+    "single_worker_actor": true,
+    "stop_result_nodiscard": true
+  },
+  "ctest": [
+    {
+      "binary_sha256": {
+        "test_worker_control": "5948b59380afe82e04be1c4d28d6c2d5a943e07a3c200f92f3f0bc4f1dc39224",
+        "test_worker_control_allocation": "061cb3137c23d0647a32ad194cde60456a612ae033ad03b65f1a2e97677d4f4c"
+      },
+      "failures": 0,
+      "initial_137_test_run_sha256": "a324fcd1c525c8308a19a7e63c261a9c34a5b5ef5e71624ab8ff3980fb787b77",
+      "junit_sha256": "8831b1169dc6c64d00253eb1757d663843e7dec70ca6701b3263aa150f9f21b0",
+      "logs_sha256": {
+        "build": "f6c045483211c496e2acbca7bc53467f76353419d7a0b988155861790eb02153",
+        "configure": "9b5721dc4e44327905baa1ff72f328dea58f135b816250452a8f065e775be203",
+        "tests": "2e272ac81e864ec6a1d9a736a9157d046b1dbcb63d62cd406ddb68f2f3f3d454"
+      },
+      "new_tests": [
+        "worker_control_defaults",
+        "worker_control_identity",
+        "worker_control_cancel",
+        "worker_control_lifecycle",
+        "worker_control_retained_stop",
+        "worker_control_exhaustion",
+        "worker_control_wake_coalescing",
+        "worker_control_wake_between_check_and_wait",
+        "worker_control_wake_publication",
+        "worker_control_multiple_notifiers",
+        "worker_control_coalesced_publication",
+        "worker_control_shared_owner",
+        "worker_control_ack_publication",
+        "worker_control_release_ack_race",
+        "worker_control_request_stop_race",
+        "worker_control_stop_release_race",
+        "worker_control_full_data_queue",
+        "worker_control_allocation"
+      ],
+      "preset": "host-debug",
+      "tests": 138
+    },
+    {
+      "binary_sha256": {
+        "test_worker_control": "59fe081db15c3c35dc8633a4b14eedfc7a7ded374977e631ff2cce837b7e8037",
+        "test_worker_control_allocation": "1890608993f4780695b33f6011e87cb7308b13763d8153339999e5a3a488fba6"
+      },
+      "failures": 0,
+      "initial_137_test_run_sha256": "aad2ed6f2eee2a92395c42fa12c5db0009eaea66726df90a91e5d5807268bc9c",
+      "junit_sha256": "45851b487602e9fcf4511fa9e012bc98193342d4aeb7dbc383af0c788cffd8ba",
+      "logs_sha256": {
+        "build": "d0072a48e40fb8a34bd381c5a01cfc1f21cd5edef2894cf03f21eafa16eabe6b",
+        "configure": "df9a876dfa3ffad0178e027462991529f705ea8ac4add8d9a28d1bfa0289d2d8",
+        "tests": "337ff8141c99a16345a1f783a911b5f4179a1f6168b83d9fdd1ccdcd5f02ed7f"
+      },
+      "new_tests": [
+        "worker_control_defaults",
+        "worker_control_identity",
+        "worker_control_cancel",
+        "worker_control_lifecycle",
+        "worker_control_retained_stop",
+        "worker_control_exhaustion",
+        "worker_control_wake_coalescing",
+        "worker_control_wake_between_check_and_wait",
+        "worker_control_wake_publication",
+        "worker_control_multiple_notifiers",
+        "worker_control_coalesced_publication",
+        "worker_control_shared_owner",
+        "worker_control_ack_publication",
+        "worker_control_release_ack_race",
+        "worker_control_request_stop_race",
+        "worker_control_stop_release_race",
+        "worker_control_full_data_queue",
+        "worker_control_allocation"
+      ],
+      "preset": "host-release",
+      "tests": 138
+    },
+    {
+      "binary_sha256": {
+        "test_worker_control": "174b1ee5cab72f8486e0e2ab9f28c51cf52fb0aea5f1c3c2d946dd901599a7af",
+        "test_worker_control_allocation": "5750319ad8129fd80833a1c731bbfbda688126e460fcf09a83619a723600dd57"
+      },
+      "failures": 0,
+      "initial_137_test_run_sha256": "84df5b9966ad242f5959551c09ec9152de78293f7eb20dbd3962a748a8dc77ff",
+      "junit_sha256": "2bff07af700bcf7cb6faa8e58eff7434aa4760345650826865e77d402974ca0c",
+      "logs_sha256": {
+        "build": "cc83e31f6fb26f67fd7098a135f1b5aabcd22c1fddfd915ef8691b06cc2e4f0c",
+        "configure": "7acbe24a7c79280fa1a6f2604ab5f08f78123d7d080b763e20c42f1cbb9ca2a6",
+        "tests": "aa6f895f6a63bc650db91dbe9e5fd4f565f968e450e746d52b8aba91fd3a85cb"
+      },
+      "new_tests": [
+        "worker_control_defaults",
+        "worker_control_identity",
+        "worker_control_cancel",
+        "worker_control_lifecycle",
+        "worker_control_retained_stop",
+        "worker_control_exhaustion",
+        "worker_control_wake_coalescing",
+        "worker_control_wake_between_check_and_wait",
+        "worker_control_wake_publication",
+        "worker_control_multiple_notifiers",
+        "worker_control_coalesced_publication",
+        "worker_control_shared_owner",
+        "worker_control_ack_publication",
+        "worker_control_release_ack_race",
+        "worker_control_request_stop_race",
+        "worker_control_stop_release_race",
+        "worker_control_full_data_queue",
+        "worker_control_allocation"
+      ],
+      "preset": "host-sanitize",
+      "tests": 138
+    }
+  ],
+  "date": "2026-10-18",
+  "full_queue_evidence": "synthetic_one_slot_model_only",
+  "gs_vu_retention_implemented": false,
+  "initial_tested_input_snapshots": {
+    "CMakeLists.txt": {
+      "sha256": "f391ab88611fa01234b21c66512dee457fcb19c22fdc073637de11bc9c617af3",
+      "snapshot": "build/f02-07-worker-control/initial-tested/CMakeLists.txt"
+    },
+    "tests/cpp/test_worker_control.cpp": {
+      "sha256": "121f1ea0d1c685386d915c45aba11675330c63e3692185e8a48c28d51d61564c",
+      "snapshot": "build/f02-07-worker-control/initial-tested/test_worker_control.cpp"
+    },
+    "tests/cpp/test_worker_control_allocation.cpp": {
+      "sha256": "d1bd4bd369608164047dc2a66b39a80d770b3f5dd8a8100b12dd0926ddc653aa",
+      "snapshot": "build/f02-07-worker-control/initial-tested/test_worker_control_allocation.cpp"
+    },
+    "tools/observer/include/sh3_observer/worker_control.hpp": {
+      "sha256": "586a12d3eb4ebd5f4611a911637cf25b3fa76e581cfe0cd1e3f3dd2439540e29",
+      "snapshot": "build/f02-07-worker-control/initial-tested/worker_control.hpp"
+    },
+    "tools/observer/worker_control.cpp": {
+      "sha256": "69b3a1ef53e4aeae3aa1ef48507376f003bfd95581e2c85edcc60371f86189fc",
+      "snapshot": "build/f02-07-worker-control/initial-tested/worker_control.cpp"
+    }
+  },
+  "live_acquisition_performed": false,
+  "llvm_coverage": {
+    "tools/observer/include/sh3_observer/worker_control.hpp": {
+      "branches": {
+        "count": 2,
+        "covered": 2,
+        "notcovered": 0,
+        "percent": 100
+      },
+      "functions": {
+        "count": 3,
+        "covered": 3,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 3,
+        "covered": 3,
+        "percent": 100
+      },
+      "lines": {
+        "count": 5,
+        "covered": 5,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 6,
+        "covered": 6,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/worker_control.cpp": {
+      "branches": {
+        "count": 80,
+        "covered": 77,
+        "notcovered": 3,
+        "percent": 96.25
+      },
+      "functions": {
+        "count": 15,
+        "covered": 15,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 15,
+        "covered": 15,
+        "percent": 100
+      },
+      "lines": {
+        "count": 95,
+        "covered": 93,
+        "percent": 97.89473684210527
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 102,
+        "covered": 99,
+        "notcovered": 3,
+        "percent": 97.05882352941177
+      }
+    }
+  },
+  "llvm_coverage_binary_sha256": "bd9a016d7e6c4fd3fa561f9da7d8f2dfad62d66e05700946a1e5d4b2498862ec",
+  "llvm_coverage_export_sha256": "38f18db0990aaf19e2110469de6585ae502bb48471762f40643271397b9efacb",
+  "local_scripts_sha256": {
+    "build/f02-07-worker-control/audit.py": "de79485a2e35a0ff00642860869ac695c958cc331c1fbf370b0f28521d177d89",
+    "build/f02-07-worker-control/coverage_cpp.py": "c4bd8421b44c94c5e39403ebf37f9a75c9599484474ae771809e95f47c05dd45",
+    "build/f02-07-worker-control/extra_checks.py": "8af385f110a9551bb0acc2af49b06dd742481c486ff6da3a6ab67216e9f8b86f",
+    "build/f02-07-worker-control/test_host-v2.py": "961d61726fa9b5658fecab7e527aa627208dd52c8f72025821f223b160051bd2",
+    "build/f02-07-worker-control/test_host.py": "8586b989fa62136739cd65eb6167f56d890f4974b2b0699e292e56bd4a965ae9"
+  },
+  "negative_controls": [
+    {
+      "binary_sha256": "2d87954761652232994bded4034de02a9fc9e576fc4f319e38ae6a4fe986b4c9",
+      "compile": {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_failure": "control.stop(1) == Stop::retained",
+      "mutated_source_sha256": "fb5cbeec3ae523a3e267e0edd7918e80ef2ae0b7718da15f5d89545749d02080",
+      "mutation": "allow_stop_held",
+      "run": {
+        "exit_code": 1,
+        "log_sha256": "24b1db883a2480618694bde3b7ba7f8a1837efbb19897a9cbab3702150e44269"
+      },
+      "scenario": "retained_stop"
+    },
+    {
+      "binary_sha256": "44e27afe44ca5bd43950b32e1894961f859e412ceaf90d763f83d0208ba3e226",
+      "compile": {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_failure": "!control.acknowledge(later)",
+      "mutated_source_sha256": "c9dd51ec54c101a6b6d3ecc56d2b904280ea8b1b5bf582ad2543e89e0d9b3977",
+      "mutation": "accept_stale_ack",
+      "run": {
+        "exit_code": 1,
+        "log_sha256": "04e818d5c734530ba649cdfbbc486173867aac3d31a5886aeed4cf9d1eb32c45"
+      },
+      "scenario": "identity"
+    },
+    {
+      "binary_sha256": "fe604d7051eba4b5277665aec306f347597387bdd498a0cd41cea37bb886c9a4",
+      "compile": {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected_failure": "Wakeup::Clock::now() < deadline",
+      "mutated_source_sha256": "f264f73558a92c1c8d6964bd8fd2c901052411aeac701649d7f566e683538494",
+      "mutation": "drop_wakeup",
+      "run": {
+        "exit_code": 1,
+        "log_sha256": "2896aa495d9175cd68161d102a9a84e7e82654ba5f32dfe224ecace4ee03588d"
+      },
+      "scenario": "wake_between_check_and_wait"
+    }
+  ],
+  "nintendo_build_rerun": false,
+  "pending_tasks": [
+    "B3-B2-provider-integration",
+    "B3-B3",
+    "B3-C",
+    "B4",
+    "CQ3-C",
+    "CQ3-D",
+    "CQ-4",
+    "AD-3"
+  ],
+  "preceding_custody_audit_sha256": "d0ba6418e043016aa6d9dd5ccc4b5e254563ab606dfb78f064b0903e70b6593c",
+  "preceding_custody_identical": true,
+  "prior_evidence_sha256": "d0ba6418e043016aa6d9dd5ccc4b5e254563ab606dfb78f064b0903e70b6593c",
+  "prior_private_sources_unchanged": true,
+  "prior_public_snapshots": {
+    "CMakeLists.txt": {
+      "sha256": "841e601d1fe31fb05fa068c41d7b9fc531364e8a76ae52fb7c4485693e6eafb6",
+      "snapshot": "build/f02-07-worker-control/CMakeLists-SRC78.txt"
+    }
+  },
+  "private_source_changes": [],
+  "provider_application_executed": false,
+  "provider_application_linked": false,
+  "provider_downstream_port_rejects": true,
+  "provider_workers_executed": false,
+  "public_inputs_sha256": {
+    ".github/workflows/ci.yml": "c7ab4f201ebc3b95c38ffee60f434cbcf8747a5941c41bc898ecaf2c65f043f4",
+    "CMakeLists.txt": "a78026006f6ada75c475cec242fb75d1cb501a93480db2594f958fad3f706874",
+    "CMakePresets.json": "a70af3304b3c21b076b0f3b381c37a4cbb3fe21dacd53990f66f369cfaba0e94",
+    "docs/execution/f02-07-worker-control.md": "3b4c17413813f272eb00688291c0dbb0d60aab7435d39b3855c3f341f154c861",
+    "gcovr.cfg": "244e1cf7588cb46bdc6a64361748595d07d7d457daa5d22e5fdc48381796c540",
+    "schemas/worker-control-v1.md": "1dd06121b2c7aa0e8022f8ba18919ea72fa8025c6151e742ecef7922c22d3a38",
+    "tests/cpp/check.hpp": "9c3fc980d7e994d3b5fe8726af3ba589d367e840b1bf81b2adf1cc516e5510d9",
+    "tests/cpp/test_worker_control.cpp": "8a69c98c3ffb9dfbb4a4bfc1a9f77ac5ace10f4c16ffa5f211bfaa0d124cbf11",
+    "tests/cpp/test_worker_control_allocation.cpp": "d1bd4bd369608164047dc2a66b39a80d770b3f5dd8a8100b12dd0926ddc653aa",
+    "tools/observer/include/sh3_observer/worker_control.hpp": "66317ff431180756e8401c5cb0839dcbb4fc44c4f99d5d010076941531bbf292",
+    "tools/observer/worker_control.cpp": "69b3a1ef53e4aeae3aa1ef48507376f003bfd95581e2c85edcc60371f86189fc"
+  },
+  "python_full_suite_rerun": false,
+  "read_events_produced": 0,
+  "real_ringbuffer_executed": false,
+  "remote_ci_executed": false,
+  "resource_links": [],
+  "scalar_allocation_rejection_test": true,
+  "schema_version": 1,
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_files_verified": {
+    "source-admission-v1": 2949,
+    "source-baseline": 2934,
+    "source-cpu-boundary-v1": 2953,
+    "source-dma-v2": 2945,
+    "source-host-v1": 2945,
+    "source-jit-cache-v2": 2945,
+    "source-lifecycle-v1": 2947,
+    "source-lifetime-v2": 2945,
+    "source-observer-v2": 2941,
+    "source-pine-coordinator-v1": 2955,
+    "source-pine-exclusion-v1": 2951,
+    "source-producer-entry-v1": 2957,
+    "source-qt-dispatch-v1": 2957,
+    "source-retained-drain-v1": 2957
+  },
+  "source_id": "SRC79",
+  "status": "control_core_verified_provider_worker_integration_pending",
+  "thread_sanitizer": {
+    "binary_sha256": "e00a0f749b5b65fded87a224c6f28be975ee1fba8ad58d5a6a628cb85b9fe0c2",
+    "compile": {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runs": [
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "wake_coalescing"
+      },
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "wake_between_check_and_wait"
+      },
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "wake_publication"
+      },
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "multiple_notifiers"
+      },
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "coalesced_publication"
+      },
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "ack_publication"
+      },
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "release_ack_race"
+      },
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "request_stop_race"
+      },
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "stop_release_race"
+      },
+      {
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scenario": "full_data_queue"
+      }
+    ]
+  },
+  "worker_control_core_implemented": true,
+  "worker_control_provider_connected": false
+}

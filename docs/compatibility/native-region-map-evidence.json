@@ -1,0 +1,4166 @@
+{
+  "aba_excluded": false,
+  "admitted_execution_modes": [],
+  "all_cache_ranges_verified": false,
+  "aot_mapping_identity_verified": false,
+  "arm64_executed": false,
+  "artifact_runtime_binding_verified": false,
+  "atomic_snapshot": false,
+  "cache_hashes_reverified": false,
+  "capabilities": [],
+  "compatibility_tests": {
+    "junit_sha256": "dc1a174d776b8b4a6722683f8759219d9800a24ed56ee5899f55273e2175006a",
+    "passed": 122
+  },
+  "complete_loaded_inventory_identity_verified": false,
+  "completed_tasks": [
+    "NV-T1",
+    "NV-T2",
+    "NV-T3"
+  ],
+  "coverage": {
+    "tools/observer/artifact_manifest.cpp": {
+      "branches": {
+        "count": 130,
+        "covered": 127,
+        "notcovered": 3,
+        "percent": 97.6923076923077
+      },
+      "functions": {
+        "count": 13,
+        "covered": 13,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 13,
+        "covered": 13,
+        "percent": 100
+      },
+      "lines": {
+        "count": 106,
+        "covered": 106,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 167,
+        "covered": 167,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/cache_range.cpp": {
+      "branches": {
+        "count": 82,
+        "covered": 82,
+        "notcovered": 0,
+        "percent": 100
+      },
+      "functions": {
+        "count": 7,
+        "covered": 7,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 7,
+        "covered": 7,
+        "percent": 100
+      },
+      "lines": {
+        "count": 65,
+        "covered": 65,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 106,
+        "covered": 106,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/image_identity.cpp": {
+      "branches": {
+        "count": 110,
+        "covered": 104,
+        "notcovered": 6,
+        "percent": 94.54545454545455
+      },
+      "functions": {
+        "count": 12,
+        "covered": 12,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 12,
+        "covered": 12,
+        "percent": 100
+      },
+      "lines": {
+        "count": 75,
+        "covered": 75,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 127,
+        "covered": 127,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/image_layout.cpp": {
+      "branches": {
+        "count": 122,
+        "covered": 118,
+        "notcovered": 4,
+        "percent": 96.72131147540983
+      },
+      "functions": {
+        "count": 7,
+        "covered": 7,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 7,
+        "covered": 7,
+        "percent": 100
+      },
+      "lines": {
+        "count": 92,
+        "covered": 92,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 159,
+        "covered": 159,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/inventory.cpp": {
+      "branches": {
+        "count": 164,
+        "covered": 151,
+        "notcovered": 13,
+        "percent": 92.07317073170732
+      },
+      "functions": {
+        "count": 13,
+        "covered": 13,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 13,
+        "covered": 13,
+        "percent": 100
+      },
+      "lines": {
+        "count": 105,
+        "covered": 105,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 206,
+        "covered": 203,
+        "notcovered": 3,
+        "percent": 98.54368932038835
+      }
+    },
+    "tools/observer/native/macos_artifact_manifest.cpp": {
+      "branches": {
+        "count": 114,
+        "covered": 93,
+        "notcovered": 21,
+        "percent": 81.57894736842105
+      },
+      "functions": {
+        "count": 21,
+        "covered": 21,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 22,
+        "covered": 21,
+        "percent": 95.45454545454545
+      },
+      "lines": {
+        "count": 120,
+        "covered": 119,
+        "percent": 99.16666666666667
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 182,
+        "covered": 175,
+        "notcovered": 7,
+        "percent": 96.15384615384616
+      }
+    },
+    "tools/observer/native/macos_image_identity.cpp": {
+      "branches": {
+        "count": 100,
+        "covered": 80,
+        "notcovered": 20,
+        "percent": 80
+      },
+      "functions": {
+        "count": 12,
+        "covered": 12,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 12,
+        "covered": 12,
+        "percent": 100
+      },
+      "lines": {
+        "count": 81,
+        "covered": 78,
+        "percent": 96.29629629629629
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 145,
+        "covered": 138,
+        "notcovered": 7,
+        "percent": 95.17241379310344
+      }
+    },
+    "tools/observer/native/macos_image_layout.cpp": {
+      "branches": {
+        "count": 32,
+        "covered": 31,
+        "notcovered": 1,
+        "percent": 96.875
+      },
+      "functions": {
+        "count": 3,
+        "covered": 3,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 4,
+        "covered": 3,
+        "percent": 75
+      },
+      "lines": {
+        "count": 14,
+        "covered": 14,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 45,
+        "covered": 45,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/native/macos_page_binding.cpp": {
+      "branches": {
+        "count": 134,
+        "covered": 113,
+        "notcovered": 21,
+        "percent": 84.32835820895522
+      },
+      "functions": {
+        "count": 12,
+        "covered": 12,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 14,
+        "covered": 12,
+        "percent": 85.71428571428571
+      },
+      "lines": {
+        "count": 93,
+        "covered": 92,
+        "percent": 98.9247311827957
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 205,
+        "covered": 202,
+        "notcovered": 3,
+        "percent": 98.53658536585365
+      }
+    },
+    "tools/observer/native/macos_process_birth.cpp": {
+      "branches": {
+        "count": 20,
+        "covered": 20,
+        "notcovered": 0,
+        "percent": 100
+      },
+      "functions": {
+        "count": 4,
+        "covered": 4,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 4,
+        "covered": 4,
+        "percent": 100
+      },
+      "lines": {
+        "count": 23,
+        "covered": 23,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 31,
+        "covered": 31,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/native/macos_region_map.cpp": {
+      "branches": {
+        "count": 24,
+        "covered": 24,
+        "notcovered": 0,
+        "percent": 100
+      },
+      "functions": {
+        "count": 3,
+        "covered": 3,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 4,
+        "covered": 3,
+        "percent": 75
+      },
+      "lines": {
+        "count": 26,
+        "covered": 26,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 44,
+        "covered": 44,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/page_binding.cpp": {
+      "branches": {
+        "count": 54,
+        "covered": 54,
+        "notcovered": 0,
+        "percent": 100
+      },
+      "functions": {
+        "count": 5,
+        "covered": 5,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 5,
+        "covered": 5,
+        "percent": 100
+      },
+      "lines": {
+        "count": 30,
+        "covered": 30,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 60,
+        "covered": 60,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/process_birth.cpp": {
+      "branches": {
+        "count": 50,
+        "covered": 50,
+        "notcovered": 0,
+        "percent": 100
+      },
+      "functions": {
+        "count": 6,
+        "covered": 6,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 6,
+        "covered": 6,
+        "percent": 100
+      },
+      "lines": {
+        "count": 41,
+        "covered": 41,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 64,
+        "covered": 64,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/range_plan.cpp": {
+      "branches": {
+        "count": 78,
+        "covered": 77,
+        "notcovered": 1,
+        "percent": 98.71794871794873
+      },
+      "functions": {
+        "count": 5,
+        "covered": 5,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 5,
+        "covered": 5,
+        "percent": 100
+      },
+      "lines": {
+        "count": 75,
+        "covered": 75,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 94,
+        "covered": 94,
+        "notcovered": 0,
+        "percent": 100
+      }
+    },
+    "tools/observer/region_map.cpp": {
+      "branches": {
+        "count": 70,
+        "covered": 69,
+        "notcovered": 1,
+        "percent": 98.57142857142858
+      },
+      "functions": {
+        "count": 3,
+        "covered": 3,
+        "percent": 100
+      },
+      "instantiations": {
+        "count": 3,
+        "covered": 3,
+        "percent": 100
+      },
+      "lines": {
+        "count": 44,
+        "covered": 44,
+        "percent": 100
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 85,
+        "covered": 85,
+        "notcovered": 0,
+        "percent": 100
+      }
+    }
+  },
+  "coverage_summary_sha256": "8b0a6556f43a018f0af6022d5383af2f838f26548bbb23a82604ffbf5db1b41b",
+  "date": "2026-10-19",
+  "diagnostic_clone": {
+    "executable_sha256": "6b92c74de958d3140f94dc05cddbf02347b77b33d18cc5a88a673ef61c9095b6",
+    "files_verified": 200,
+    "previous_manifest_sha256": "ca7bd4b816a7a1831fb34ce4c3b4fb663de07cdc0bb8ab0ca0c72c6b58d31660",
+    "unchanged": true
+  },
+  "environment": {
+    "architecture": "x86_64",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.5.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+    "existing_ci_sha256": "c7ab4f201ebc3b95c38ffee60f434cbcf8747a5941c41bc898ecaf2c65f043f4",
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5\nBuildVersion:\t\t25F71\n",
+    "root_cmake_sha256": "1a85bc58f9716d433be0e795f8d648a11c330ddca5a1b80f614ac73ed692a1df",
+    "sdk_files_sha256": {
+      "usr/include/CommonCrypto/CommonDigest.h": "83a9705bbc8d44f27ee61801064ee99288496a038d623f152aa30db6819e9ca6",
+      "usr/include/libproc.h": "246d87709fc6b9157ce5cf3c475656ac48e0e1ae8bbdc46cf45acd34294448cd",
+      "usr/include/mach-o/dyld.h": "7c8583f2b4edcfcde7da60ffe02c75974ec87f885fecc4e8d40761fe0b553a80",
+      "usr/include/mach-o/dyld_images.h": "7d979b1522390562bec3618740f1f42b9a9a0ed38d9f619962f3d9d9f37ec436",
+      "usr/include/mach-o/loader.h": "5862aeb7fbf183453080bc887c0d502fe25a86ff5bd81291bbcc408bd7fe6e74",
+      "usr/include/mach/mach_vm.h": "40b7509ce3b64271d1947bfdf1328146ddb2b0cb5b337054e61a6e8e9749cba8",
+      "usr/include/mach/task_info.h": "87aa49ac32cfdea60175f48d9e933f6f9318a4ea82110a9744b204d3c262f1a2",
+      "usr/include/mach/vm_region.h": "d872aab626ae7c83b6451400de146b469e7d5a7454dbbf539524fe94f2e20ea7",
+      "usr/include/mach/vm_statistics.h": "3dcd466ffa164d268b92f5d53357172c26a59e234b488887db164afeb207b132",
+      "usr/include/sys/proc_info.h": "e427fa96b348537b21552b9de71e01039410bcad2cedee5584c5e5fddafd70fc",
+      "usr/include/sys/random.h": "a1b1258a25102266b667023d65fa76968a118009b2524647695b43e3520b17ef",
+      "usr/include/sys/stat.h": "31c8f252b05785343ca577c007657c0fbab45a182b60fc5b73994c621dc318d4",
+      "usr/lib/libSystem.tbd": "20cfce043f11a083e2eb6111efe3579919a8082fa4cc912a7bd839af2010ec57",
+      "usr/lib/system/libdyld.tbd": "c9d4aaa58a50cd544b8f583c4368d23f8c299e39dc8145e1c3f8ecf9b32becf4"
+    },
+    "sdk_name": "MacOSX26.5.sdk"
+  },
+  "environment_sha256": "cac148af612ee16b79d47507371de4947dd33ddb3fba387769f528a9097a7710",
+  "existing_candidate_modified": false,
+  "final_binaries": [
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_process_birth",
+      "sha256": "67c5e3e7b1c2938afebea40d0facd7362af8118a9c0a7d6581f63ffa5dcf880d"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_process_birth",
+      "sha256": "e5992879017a7565948f95033239362ca75f4e464eeb62f81ad584a81d5e9097"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_image_identity",
+      "sha256": "6723a1d46893a8c22d196385ce75790cc29c90ad74c003b0c77cb0c317fb2e06"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_image_identity",
+      "sha256": "ef6cd36b36f6408b5d761a8c830bae547bb51ab3a6232b66044369502a0f8117"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_artifact_manifest",
+      "sha256": "cd4ea7208039a4682a890bc05dec790f015207075e9ccc48daa68c409b81fb53"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_artifact_manifest",
+      "sha256": "125031bc1336eae4f8b865fab1533bef30cfc8734aaa97ef8a95ff508648edb7"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_inventory",
+      "sha256": "3313ee755379aa405a20a4afb9378198661ee368355096c6a85d20e7d84b8817"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_inventory",
+      "sha256": "d128f6550158229c2b083d37128ef86682c9600ea59c5992b31b178083bb8061"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_page_binding",
+      "sha256": "21c4dbf6c01997fa6666fd67a6956f29b2c4de5c53b08d80cd9566356adf9288"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_page_binding",
+      "sha256": "8501285648670ec88d77d8eb4427f86c70b875fe5a1221db337ad24736a555f5"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_cache_integrity",
+      "sha256": "055db31fa5ea9965aaa97b93e55425877b2f7d8827ee74dcff54526ed9155b99"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_cache_integrity",
+      "sha256": "e2c095985630a501baeaf83b3b186f4926337c3ff8823c13547d1203d59a6893"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_image_layout",
+      "sha256": "3920105b23979607c3ef71169aa36200e59c12b46626eab46bc557c32912c303"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_image_layout",
+      "sha256": "bf97c3f62a189aad411f0a783678189455f7fe91a9091f85aba70a425775c8fe"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_range_plan",
+      "sha256": "18925ca2037822ecb570549c0d93f1006436677bc30e6e9601596653920924af"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_range_plan_allocation",
+      "sha256": "1ac1a41304c89a4b14fa70aa79e860814995cc0de21b6269bf8fa92591158195"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_region_map",
+      "sha256": "1a6775e1f94ce7015cbe09eb102e5caaa715bd43ec241c606d1d4718889fd288"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_region_map_allocation",
+      "sha256": "75aaa40f78ea7bdabeaea6f516b7212ccb3e20346990a92a61661ea529675ade"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_region_map",
+      "sha256": "18fabfda10945eb98e0dbce21ac37a7f85cf7ee58239e9bacb7d8cea3b1a01a8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/libimage_fixture.so",
+      "sha256": "7bc3f15308658727589187c10cb93263f2e83194d5ea7220016c0b895ec2af66"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/libimage_fixture_other.so",
+      "sha256": "27863529f3192b868dc967f5bf7e92be1dd5960c87b79354e03d8347a01ed952"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_process_birth",
+      "sha256": "a1b22404268e8413f639979226c0219bc087146d208bbaf2a11356e8181b92a2"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_process_birth",
+      "sha256": "f5feb062106bb2e90a5e7f80df4fe08f5ccecf6192a86f3b1b8158a498198725"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_image_identity",
+      "sha256": "7cbf118a1175139bd84ac415d4ff09133ec14e7c478c7bed4da08586feb37b25"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_image_identity",
+      "sha256": "e18bf175bd95c064b2cce16f6fb8cbc9d05bde15c9389fb5bb953faf2a109cf8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_artifact_manifest",
+      "sha256": "1c6dc920374397417115c3ec3a9a107ab514f46d02e030b2b6b98db0d136dad1"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_artifact_manifest",
+      "sha256": "9f3021bad43c563219800b480b0b1273ccf989f22511fb8270dd4b7a07b5d614"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_inventory",
+      "sha256": "8255e196cde8f8d03cd0fcb777dded23e54103bf69dabdb06e31ca858cf605ca"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_inventory",
+      "sha256": "03e6357b5b59e0f16d5acf806856dea9876b00731f403272d305c5bae0a861ab"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_page_binding",
+      "sha256": "0ae364322d2ca1a2d1f5a87ac64823b7d27bda6ea7d4cca2e25768ee468d2175"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_page_binding",
+      "sha256": "c66b22fb40dcbf2510f755476c3886bb744fae505c48805cc867ba5906b51e87"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_cache_integrity",
+      "sha256": "6d6bbd9c2cc5d63ceea924e8cf3fed5597df9f7834e181046d2ff9828ce80de7"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_cache_integrity",
+      "sha256": "b8bb4db7887d3381eac4bc2ca3042d0eeb52c33659720ad35790861ae7c92c2f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_image_layout",
+      "sha256": "2d139195c988448f5040b5c452a0cd58d70d01f6c1db7248ca2e26a5e7c6bc8a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_image_layout",
+      "sha256": "ac89058a1421de81cecc40737b480599bc47ca8f0c8d159e9a552fdc9e4004d2"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_range_plan",
+      "sha256": "1de151e4453d2f2507fbffd1770b1e85364759df6eac780f9daecb6c725011b8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_range_plan_allocation",
+      "sha256": "4b7cc8f9773e489f3f50cac9b33104e9351be0038d5b02586964fe68e0abeeaa"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_region_map",
+      "sha256": "a067201c09ae47b96087bf46f378e369c9724923b733334551c549d6109994db"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_region_map_allocation",
+      "sha256": "23867235d04b5dbe41c6412b1eb46306e24136dfc1c208942223deb23fd7c291"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_region_map",
+      "sha256": "9235617419f5cc5150a3372978a37c86a82eee7dba6a872bbbe8104835b65401"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/libimage_fixture.so",
+      "sha256": "73d0004ac736acc9bc310884d92d3451d289a4dcd527eee912034e5db4b2bebf"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/libimage_fixture_other.so",
+      "sha256": "324e063fccd9dadabbc473f223fb637cfae82257d172b78e3180cccde71d9fec"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_process_birth",
+      "sha256": "75ecc2853b517a61dac46ca6dd4a13ea1948de811e48a1dd86cc0db5357839af"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_process_birth",
+      "sha256": "020a01e47a05bf2000340c03b2188e3d445babf7d09152b4c8cff9fc6db790f2"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_image_identity",
+      "sha256": "37aa0abd1d2aa9cadfd1c47cbe72f9b2ce72533837fc104ae38ff2ecf01ae210"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_image_identity",
+      "sha256": "d951b618a0f89b2d3a186347882bfa63501b184cdee429d7f0e45558af65af3a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_artifact_manifest",
+      "sha256": "90f87ec69004e73a16c81103c2719b4dd8a134cff5d5c3baef1fae5a67a4d5f0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_artifact_manifest",
+      "sha256": "ca7d03bc0843de556279e3cc089866125d2a9d20849b7e8705a4710760e41d8e"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_inventory",
+      "sha256": "394d189add5a59bcb109f1fbcc8f5dea2221fd72f94fbfb6759e0863f00f18bf"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_inventory",
+      "sha256": "6c94a47f35d7a2510090533a98fbf43fc0eeff371a73b53eb6384e6a83b2a61f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_page_binding",
+      "sha256": "6d584cfb4d34803ae7766456018a8daab6f8617750a74df475f1f8011710df89"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_page_binding",
+      "sha256": "001667f900ca6746d8d6de8ee0e82aa1c134951bc174dd74a06d1c941a9d7dfc"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_cache_integrity",
+      "sha256": "19488097ace97ffbaef992871a5e090350802c5dfca86850c37155e392d4f1ea"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_cache_integrity",
+      "sha256": "78af117760a051f9eeefc8ed6c7c9d20d70d13c6afe215d7f0740edec9bd6b87"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_image_layout",
+      "sha256": "a11d58f8640a046f68810f3625b3984d5b127aa220de39609932f03d5907e13d"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_image_layout",
+      "sha256": "89207c5f3c1a30e115f0e51badc9faa6ebe1ebd9451299b65f36e8c36b1ca585"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_range_plan",
+      "sha256": "258d317a6cb7ef47c361fe3ed31b215b71a52e6aa616ed848988b4e216f889e8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_range_plan_allocation",
+      "sha256": "acc7d39b1758f52fa399fff62090dd437f960f4c6e04f816e67886a2a5b09e14"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_region_map",
+      "sha256": "59eb0ad357f4fb6fb505c4db9972159bdaf5048f8954946a080db0738df5b92a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_region_map_allocation",
+      "sha256": "b81b33801b786913807b62e90f758683f18c5beebbc757660c7a1c5cfa6c7e4a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_region_map",
+      "sha256": "82321d678d92deff203145c75fe5a797b3ecf280c792fd0dd53ee0870131ce1d"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/libimage_fixture.so",
+      "sha256": "0a3b4c3ff12b493f7982b230c88aa3121416b500524d3a7f6459ae830f67da6b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/libimage_fixture_other.so",
+      "sha256": "16952e8a37f1b51ad3a905eb4982b95a871811f471b608c6574a1e2d8470e156"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_process_birth",
+      "sha256": "1919006b5a092c905933bfaced2b9ea44b26faea6905368d9e16ae104afa7b00"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_process_birth",
+      "sha256": "251b140e36afd5725be338d3780184722269b854e05a8388df8a3a5b78bcddda"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_image_identity",
+      "sha256": "4898c5a6bb7d6b38c1c29c9a0b709d73a9266306597e43294bb5e0abacb46e4f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_image_identity",
+      "sha256": "9da889781cf9d08383abcb8bfd497dfc4f586f73c99ada056f599d02f6c60bf5"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_artifact_manifest",
+      "sha256": "27105837c9a7111610e55cae4d43fb08ad475f3b04f5c2ce20b4e32d340da1c0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_artifact_manifest",
+      "sha256": "739e5b5edd66f58cb00d2c06b9143b747e7ad869463d642d7abcfcf8c56c32f7"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_inventory",
+      "sha256": "05dedb3d73efe59e2f66365819de9762addbaf7d75764ac73d7060e645a9e494"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_inventory",
+      "sha256": "9861fd339551f41aa7bb2891208ddc468b0f7c5a063691b75c26aceb84e2dc54"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_page_binding",
+      "sha256": "c00e772adfb75d8e28c053d84d3f9ae74678380bc7181d8f4d8426344841a772"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_page_binding",
+      "sha256": "10377a584566072e6d0559c154634586aaa6214acdb9cd817a4112e6f3c6b587"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_cache_integrity",
+      "sha256": "3826c6828210995be59da4733233b6ed7c51e4ca0f5c754df95b6207606c7cfa"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_cache_integrity",
+      "sha256": "20ecc7556831d1f9f6c2068503162843a508e23537f654bc67c1998c1433c21d"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_image_layout",
+      "sha256": "0e98de5e884610e734b932cb57dff59436adbc2ee4deb4e872309e1bd4a4a2e8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_image_layout",
+      "sha256": "059e024a92fd81ee110ee45fc57a3b7ed92ecc5833c61590d3d3e9d039848e1f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_range_plan",
+      "sha256": "ed36dcb660549c607131e95bef74ab90bd7f3a5042696ae772cbbd1132fd2dee"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_range_plan_allocation",
+      "sha256": "d459346484362516074208c0c8ec536e117fde024d791bfac0176e970bd69f89"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_region_map",
+      "sha256": "1356cc9b613352a26a9340b8df9ad6a33448cd6b4e3cb827e2cd557713f7b7bb"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_region_map_allocation",
+      "sha256": "269afd1f2743318dcd8bf14f66162c4ab9ac904737214fbdfde29b6364473551"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_region_map",
+      "sha256": "8d221fcfd0d9180802abe2c83b0ceceedc42197f82358571452f8dd5e43af212"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/libimage_fixture.so",
+      "sha256": "cdaba52ea369415f655b7884b964400ad47589131c9b739fe01138dee918ceee"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/libimage_fixture_other.so",
+      "sha256": "e58a4045be4894654a9ab7096f95d3f313f80f63fd748bf44ebe892623adedb2"
+    }
+  ],
+  "final_test_executions": 880,
+  "inspection_sha256": "3e683b17ba3963bd0a7efdd49de34e59ec131e00d0e9f4a78fde21011abc6e9c",
+  "installed_application_modified": false,
+  "limits": {
+    "depth": 64,
+    "maximum_queries": 131074,
+    "regions": 65536
+  },
+  "linux_executed": false,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-region-map/analyze-v1.py": "69cb1fd2bf8d7353dd08bd8994172212c349ee76c966c8fae652f300945700e1",
+    "build/f02-07-region-map/audit-v1.py": "56b9b0a602ff05379fc40d67527a1d59d94c7ed0ff25a790d490465ca55a4f76",
+    "build/f02-07-region-map/coverage-v2.py": "c947e020a0856db2e913d0121d248b25442065644d256787a74c2dfb72d93324",
+    "build/f02-07-region-map/coverage-v3.py": "3dc653235bfa69d7237ee644a5201fa8f5436e0d22b480014890618ba8acff2e",
+    "build/f02-07-region-map/diagnostic-v1.cpp": "848392414e835796190f4dfc010e50efa0ad4f1dec6e4ab162327ee02d132aff",
+    "build/f02-07-region-map/diagnostic-v1.py": "af65ed13b7a58cc1f044cda989bf58a9ef5c7e70c888bd359e8008fd4ea96c9d",
+    "build/f02-07-region-map/inspect-v1.py": "64ac89bb85b2503868730b5ac88b8499ef34d9ae53b7f3b2d29f3e1733cdcaa0",
+    "build/f02-07-region-map/mutants-v1.py": "18c1bd54665cdf757e637f661bc92fb17642c0ee29f119f8f4d796dbb8b3efcf",
+    "build/f02-07-region-map/mutants-v2.py": "0efe0a66b07c64cf582ae70d7673cf78bbf53135fa4e31def080958214f2f86b",
+    "build/f02-07-region-map/run-v1.py": "8e7458ccbc34c7a8089de3beda232b1d5e227df50d6177151ed7ca3e930f23fd",
+    "build/f02-07-region-map/run-v2.py": "df0613189c2b58542a6c7a72622c4f5d3bf284762970798893e53dd7073a8fb0",
+    "build/f02-07-region-map/run-v3.py": "58214c76b0f2e187160ebce12bb4d8636483175c6500d016756fad8986245ed8",
+    "build/f02-07-region-map/survey-v1.cpp": "c7e9e675f0355338ba5ba3d4328142825269b36c2344ba61aa35f0c1a1b349b4",
+    "build/f02-07-region-map/survey-v1.py": "263f1f0d263d1c7698f921e44cc26991fcf38023b34f49d3e40620ec1364e956",
+    "build/f02-07-region-map/survey-v2.cpp": "218a01e64c30714c3d0e3df78e57c6779ebf5a28ab6470d6ade5ec6a9797af63",
+    "build/f02-07-region-map/survey-v2.py": "6cf357779c4e048410e90f4633b900cdddb07de5232c4262e0e48b3ce661a15f"
+  },
+  "negative_controls": [
+    {
+      "controls": [
+        {
+          "binary_sha256": "cd2a680b9b5f862c55db807b3bb77287f3b660489d5e8baadbddd3e28df48207",
+          "detected": true,
+          "name": "one_pass",
+          "scenario": "changed_fields",
+          "source_sha256": "fbfde28f5c56c5c55e8b77a9bbee2318e843271d637711c6046c2026c8009267"
+        },
+        {
+          "binary_sha256": "d420b36d5fb1cacde0e4ad30f2bc24701ef5f775fc8e9a0746d723a7a65fabbf",
+          "detected": true,
+          "name": "early_end",
+          "scenario": "stable",
+          "source_sha256": "ca01052ca859af6dea3152e99b8e1e137d9597f339b1d0ce8bd1d8bda647eb8b"
+        },
+        {
+          "binary_sha256": "27960a745f125351038fb7ec07ff904cde8fc7a2aec06a04359c2f9066fdca63",
+          "detected": true,
+          "name": "ignore_permissions",
+          "scenario": "changed_fields",
+          "source_sha256": "e3fe4b26561c6f4e28da83c6f7022ffe0b1c4ff24683492093b254b35a15f9bf"
+        },
+        {
+          "binary_sha256": "1ed5035f98f530c90bbf91274d4b00b1ec50bb60dde3d6773d6b5e96264d0a8e",
+          "detected": true,
+          "name": "error_as_end",
+          "scenario": "api",
+          "source_sha256": "562dd66833d17f41c0a20148519455d8c53f96336b4499ba3829e39fcab4f04f"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "controls": [
+        {
+          "binary_sha256": "2735e49a9ba3ae633c8a8ae3361a6820bc019246d1ba14b737ae5b8733b8d803",
+          "detected": true,
+          "name": "one_pass",
+          "scenario": "changed_fields",
+          "source_sha256": "fbfde28f5c56c5c55e8b77a9bbee2318e843271d637711c6046c2026c8009267"
+        },
+        {
+          "binary_sha256": "771ac4a73ce95b8627640562caaa330c55cbfec3ed627a6b8769e112c9117cd6",
+          "detected": true,
+          "name": "early_end",
+          "scenario": "stable",
+          "source_sha256": "ca01052ca859af6dea3152e99b8e1e137d9597f339b1d0ce8bd1d8bda647eb8b"
+        },
+        {
+          "binary_sha256": "f85f699bb046a8f6706ce5f1e5fe6620cb15e41f7bd25c2c5b0af84343ba0a59",
+          "detected": true,
+          "name": "ignore_permissions",
+          "scenario": "changed_fields",
+          "source_sha256": "e3fe4b26561c6f4e28da83c6f7022ffe0b1c4ff24683492093b254b35a15f9bf"
+        },
+        {
+          "binary_sha256": "7c72af7bd02314b2cce713d6607b2650025a20db07c4c826a2392d5043e69a19",
+          "detected": true,
+          "name": "error_as_end",
+          "scenario": "api",
+          "source_sha256": "562dd66833d17f41c0a20148519455d8c53f96336b4499ba3829e39fcab4f04f"
+        }
+      ],
+      "version": 2
+    }
+  ],
+  "new_native_scenarios": 4,
+  "new_portable_scenarios": 11,
+  "next_tasks": [
+    "CI-T4 transformed page and individual AOT origin including dyld",
+    "CI-T4 Rosetta executable heap lifecycle and provenance",
+    "CI-T4 region integration and full page coverage",
+    "CI-T4 bounded revalidation",
+    "IP-NATIVE3"
+  ],
+  "pcsx2_source_modified": false,
+  "pcsx2_testconfig_executions": 2,
+  "peer_verified": false,
+  "pipeline_extended": true,
+  "preceding_evidence_sha256": "518c108ad5bcf0796aa6e6a07468f9bb22f7f77055fc6b436c5352dd4a0d837a",
+  "preserved_failures": [
+    {
+      "exit_code": 2,
+      "reason": "missing_mach_header",
+      "stage": 1
+    },
+    {
+      "reason": "two_native_test_expectations_incompatible_with_ASan_mapping_count",
+      "stage": 2,
+      "test_exit_code": 8
+    },
+    {
+      "launcher_rejected_missing_final_census": true,
+      "phase": "exit",
+      "process_exit_code": 0,
+      "reason": "changed_map",
+      "survey": 2
+    }
+  ],
+  "previous_public_input_transitions": [
+    {
+      "current_sha256": "cd6d44d89ba6273fce2899d832456974646899fdf0e585214facf49c5c9568fa",
+      "file": "tools/observer/native/CMakeLists.txt",
+      "previous_sha256": "acc812543ffb61dd8956f14379d26e7513d4e54df10ed8ddd531332ffad48409",
+      "previous_snapshot_verified": true
+    }
+  ],
+  "previous_scenarios_retained": 205,
+  "private_stage_files_verified": 6183,
+  "private_stages": [
+    {
+      "files": 707,
+      "name": "native-region-stage-v1"
+    },
+    {
+      "files": 2238,
+      "name": "native-region-stage-v2"
+    },
+    {
+      "files": 3190,
+      "name": "native-region-stage-v3"
+    },
+    {
+      "files": 6,
+      "name": "native-region-survey-v1"
+    },
+    {
+      "files": 6,
+      "name": "native-region-survey-v2"
+    },
+    {
+      "files": 16,
+      "name": "native-region-mutants-v1"
+    },
+    {
+      "files": 16,
+      "name": "native-region-mutants-v2"
+    },
+    {
+      "files": 4,
+      "name": "native-region-diagnostic-v1"
+    }
+  ],
+  "production_profile_changed": false,
+  "public_inputs_sha256": {
+    ".github/workflows/native-process.yml": "47ef32113c3e73dfc1ab4693f88a0dd74a9e2a97f5a0e7c690089fab9f56df3f",
+    "docs/execution/f02-07-native-region-map.md": "34c5c5ec83773531a3841b9605279a400bb6efcf29886ce57b07d23743faf0aa",
+    "schemas/native-region-map-v1.md": "d711c2bb98f2e072de75eecf2d42f3f92dc71fa0b57f7acf507edda3f49aa10b",
+    "tests/cpp/check.hpp": "9c3fc980d7e994d3b5fe8726af3ba589d367e840b1bf81b2adf1cc516e5510d9",
+    "tests/cpp/image_layout_fixture.hpp": "38317e95ce1f164637eeca452111ca258037035ec0ea16614f403f2566be148d",
+    "tests/cpp/native_image_fixture.cpp": "4abf90c68effe03af1d2151171aa994e9bd735b0e1d0221e57684ff6ef48e431",
+    "tests/cpp/test_artifact_manifest.cpp": "4e037e3a267071dd35f40964aa5f6892291e7e5836087cd624ab8418bcc22b93",
+    "tests/cpp/test_cache_integrity.cpp": "a0ce9e9e6965e39289c2802e9f7846d27868f70b1790b64bd6857b05ae27b53f",
+    "tests/cpp/test_image_identity.cpp": "cfc55c6b57218ad165102ecb65e8bbe8c7bc19379b2f2cfb6212f97f16448a4b",
+    "tests/cpp/test_image_layout.cpp": "852f0b4474e98a6b0ed92e1b2adfa678037d33c9e9850e251f935c0f5e9e9460",
+    "tests/cpp/test_inventory.cpp": "7b28262f941c95c8aaf20d97bce5d110cc92d473c7012387bb96d7fe08caf83c",
+    "tests/cpp/test_macos_artifact_manifest.cpp": "4f9ae3c8e7eeea8038c07a6af6378a00a6bd92d721e23ab334db3a7137431896",
+    "tests/cpp/test_macos_cache_integrity.cpp": "4e424283a70e3cdbc991f28b7b9a68967df74ace4cd955c711acbfc3054d949c",
+    "tests/cpp/test_macos_image_identity.cpp": "9c47a8140617d566fc7dd18f5abf8ecb8ca44a1c7111e508902677ee797a75e5",
+    "tests/cpp/test_macos_image_layout.cpp": "ebc780850b94abacae43420db537e68574b2f123ee55418d639527a734aeed01",
+    "tests/cpp/test_macos_inventory.cpp": "ed8af6fb0deb1b0bb044482e19b72c491d7f34501cd2a8967d9d13dc918fa59c",
+    "tests/cpp/test_macos_page_binding.cpp": "d6085bb7ab512c1b1a9d981b04211f44b9d9f180c712816220f3dfb984e38ddf",
+    "tests/cpp/test_macos_process_birth.cpp": "9eed0f3f9766f344ff4eb6e5f219fdfbb3ac71bcbda65b38eee59f807b3fdb0d",
+    "tests/cpp/test_macos_region_map.cpp": "07cb7fa04d2149902d541705a70ff483a9703903afe098e956a651104713f104",
+    "tests/cpp/test_page_binding.cpp": "e80d50916306e1db1fba40d16fc0fa23560acb3dc98f37ae7365622390b7b191",
+    "tests/cpp/test_process_birth.cpp": "6a1b747600d134add241fff7aab3e7dc575bea7bd02e231e843659d443929736",
+    "tests/cpp/test_range_plan.cpp": "c2046c6ad5e6fd1ba58be84a355cdc6c5f146946b431db818ed7c4f916d828de",
+    "tests/cpp/test_range_plan_allocation.cpp": "8ff85b5d8bdb30610a2d7844917ad958990a980b6d382a0e85c1990cd5b142b4",
+    "tests/cpp/test_region_map.cpp": "1b655c236b4f9cbafc6bd3032e2da2d6e0c65a2d22f3a8fba1cfaa1e4105803b",
+    "tests/cpp/test_region_map_allocation.cpp": "ddef3a88ffd7d204fd6ded7942548db0c5a011c31b2cacc674d8bb5872bdcbc1",
+    "tools/observer/artifact_manifest.cpp": "6eb78e91c567350b4c2da7c73b98ecbafd723f81f3ac7a8534c5c5274240da18",
+    "tools/observer/cache_range.cpp": "158b71b49aaeba00014febf73a40c4950a40dd658db51175ef741698ca5f709e",
+    "tools/observer/image_identity.cpp": "aa6edfdd61d08d598c846b68b52883a4a3a9e06fac7fe363ab4986393daccb40",
+    "tools/observer/image_layout.cpp": "37eba42d0b3f727561489b26732816f14c8ecfa6e01b2f74b04994e585206514",
+    "tools/observer/include/sh3_observer/artifact_manifest.hpp": "57ead680801c29dd8a51a25985c931fb6d0717296997115de9db81f6a8f065a9",
+    "tools/observer/include/sh3_observer/cache_range.hpp": "bfd2167d6c3eece077276698a7afbf226f490b8b7f73234d404ab17092e92c4f",
+    "tools/observer/include/sh3_observer/image_identity.hpp": "e7c1de113d14c4d0226ef4d6c2c80837b5fe3be1aa877c54817b58f3019f0c37",
+    "tools/observer/include/sh3_observer/image_layout.hpp": "f779902d5ae259bbd10070a0ca747947f2fc61f11dc7fa6cf15e4f7fe39d120b",
+    "tools/observer/include/sh3_observer/inventory.hpp": "880a329ecb41c077901e41ae32109a7011cf5712ffa686b1be23e8ab294f1865",
+    "tools/observer/include/sh3_observer/macos_artifact_manifest.hpp": "b8eb8289efb9a297a896d2523b5352968d5cc42fa726d7aafd1435a9d8c190ba",
+    "tools/observer/include/sh3_observer/macos_image_identity.hpp": "ca5f8a04a01da846640956e25e8b59619499d4e6c5b36a0eea1bb7f62f4a9ecb",
+    "tools/observer/include/sh3_observer/macos_image_layout.hpp": "6401beeb65e2cd4cd9b2365054fe48140eaf7763acda7df113e1bd1960f8dd9e",
+    "tools/observer/include/sh3_observer/macos_page_binding.hpp": "32ca834f369cecc0451025f52626603d2fa206ba8d91d766b41064ada1224428",
+    "tools/observer/include/sh3_observer/macos_process_birth.hpp": "e39a45b217ff150f52ffbfeb9abdf6fb12dd28f50d9b9391031ed6d2e8b8fccd",
+    "tools/observer/include/sh3_observer/macos_region_map.hpp": "9e7515febe0eec0ac3519730f6cff36439df741a62fd95b55861f7247066ec0c",
+    "tools/observer/include/sh3_observer/page_binding.hpp": "6d082d5a19b445f4bc2635023e74efdce15945af50120cdee781de83211fbca0",
+    "tools/observer/include/sh3_observer/process_birth.hpp": "ee84c38ab576384ae6dfc93221f883289c9c1926fae319ea5529e0cdbd04a98a",
+    "tools/observer/include/sh3_observer/range_plan.hpp": "4798c13cb60697c895af131e10a760ca45dfa074cc7302df8c0c0f0f5c477caf",
+    "tools/observer/include/sh3_observer/region_map.hpp": "8bd99e072532a964fff924456b2c9cdb8df76fc6ce17a05cdf4c025c0b36878b",
+    "tools/observer/inventory.cpp": "1920bb075151c85e35d46e2c806895e639e37496c2c156ab95c8ecd07b1d504f",
+    "tools/observer/native/CMakeLists.txt": "cd6d44d89ba6273fce2899d832456974646899fdf0e585214facf49c5c9568fa",
+    "tools/observer/native/macos_artifact_manifest.cpp": "9eae67d0aaf388c837f9c7319a4e16a32724a2501e9d51488fb9cc497cea046c",
+    "tools/observer/native/macos_image_identity.cpp": "40d28cad8dc9dbf5c1332d94899ebe268cad02cab581ce3d9cbab4be0bd2c488",
+    "tools/observer/native/macos_image_layout.cpp": "43dff89abf2c0191d67852bbbf5cebb3112f10284047cce24c2728af87f49c3e",
+    "tools/observer/native/macos_page_binding.cpp": "7747bb35f9942223888899a24f223f2bfc9183ee009bdbdaa9bad7d9803afea6",
+    "tools/observer/native/macos_process_birth.cpp": "9adbced25578c213aa100468da1b1b9aa2249e0bfcc6ac97d0fdf636f78d945f",
+    "tools/observer/native/macos_region_map.cpp": "6cd59913eeea33b03e0d0c3510083f285e02e77cda52f712af617e402a5dd156",
+    "tools/observer/page_binding.cpp": "a34a8745d21f15eaab3ae7ad3e7b994fce635d5652141c43ee673879cc5bc3f0",
+    "tools/observer/process_birth.cpp": "bbd39e9ca0b5c47761c8cb12ca8a8d43724e9c0bb24ab5d39a224d72ee5e8af6",
+    "tools/observer/range_plan.cpp": "545e399098002af2991804635cb2201e199a34af4a1b99e48488138f67bf70eb",
+    "tools/observer/region_map.cpp": "53ea662192b6cd80802479aa2e1da6ffe14f3bcb417025d83a505f5815aeb5bc"
+  },
+  "read_events_produced": 0,
+  "references": [
+    "https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/osfmk/vm/vm_map.c#L14191"
+  ],
+  "remote_ci_executed": false,
+  "resource_limits": {
+    "floor_gib": 10,
+    "initial_free_gib": 10,
+    "observed_maximum_stage_bytes": 163065856,
+    "observed_minimum_free_bytes": 21203279872,
+    "stage_maximum_mib": 512
+  },
+  "resource_links": [],
+  "rosetta_jit_excluded": false,
+  "schema_version": 1,
+  "source_id": "SRC99",
+  "status": "structural_vm_enumeration_complete_aot_and_transformed_origin_pending",
+  "structural_surveys": [
+    {
+      "binary_sha256": "0fad69fd68777b2bd20ff2a7bc8f2c6345275999eaada1469cc06f252c5dd03b",
+      "log_sha256": "1f41817abf06e74228e7e949f5c0d0bb7d6f64f13a47950540122d8557a14cca",
+      "phases": [
+        {
+          "additional_aot_virtual_bytes": 6152327168,
+          "all_aot_metadata_ranges_mapped": true,
+          "dynamic_aot": [
+            {
+              "address": 4766650368,
+              "bytes": 61440,
+              "index": 0,
+              "key": "0572e0925e17e1fc9b67f044177b3f74fae4aa1dbe88d8ab0a2eafb596eea60b",
+              "mapped_bytes": 61440,
+              "origin_verified": false,
+              "region_indices": [
+                306,
+                307,
+                308,
+                309
+              ],
+              "x86_address": 4766580736,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4802125824,
+              "bytes": 2138112,
+              "index": 1,
+              "key": "06c4e30e1044c42bcafb25b214d3fa0b2acef63fc2ceb230c7017ad97e6b3838",
+              "mapped_bytes": 2138112,
+              "origin_verified": false,
+              "region_indices": [
+                468,
+                469,
+                470,
+                471
+              ],
+              "x86_address": 4800630784,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4849963008,
+              "bytes": 8896512,
+              "index": 2,
+              "key": "cfaa7350ee6b4128d30118326f6187643b6de74703e7e847b03284ad30eebd24",
+              "mapped_bytes": 8896512,
+              "origin_verified": false,
+              "region_indices": [
+                494,
+                495,
+                496,
+                497
+              ],
+              "x86_address": 4842512384,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4832038912,
+              "bytes": 10473472,
+              "index": 3,
+              "key": "7cdfff99ccb93920f704d741a8f32a6b409f40916b81b3901642f39c8029a440",
+              "mapped_bytes": 10473472,
+              "origin_verified": false,
+              "region_indices": [
+                485,
+                486,
+                487,
+                488
+              ],
+              "x86_address": 4824465408,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4814290944,
+              "bytes": 10174464,
+              "index": 4,
+              "key": "87b5e19f73e55e90719321ec596bc141e01e8c33723d41602a28bb8ef1c8ebd1",
+              "mapped_bytes": 10174464,
+              "origin_verified": false,
+              "region_indices": [
+                476,
+                477,
+                478,
+                479
+              ],
+              "x86_address": 4806717440,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4788674560,
+              "bytes": 421888,
+              "index": 5,
+              "key": "7fcb6991bec55aea3ed631199166b1ea2cff73c0b8d123cf5d65bd20053b20ca",
+              "mapped_bytes": 421888,
+              "origin_verified": false,
+              "region_indices": [
+                435,
+                436,
+                437,
+                438
+              ],
+              "x86_address": 4788363264,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4798103552,
+              "bytes": 1040384,
+              "index": 6,
+              "key": "63049b93afa902d9b53d2f76e443710d07bfb5d4d8b9c7f53ef9f5ff7cd686bc",
+              "mapped_bytes": 1040384,
+              "origin_verified": false,
+              "region_indices": [
+                460,
+                461,
+                462,
+                463
+              ],
+              "x86_address": 4797263872,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4768423936,
+              "bytes": 131072,
+              "index": 7,
+              "key": "1e6e9d72ea95bbd190cc1ee06254ebdd5f850fbdf6a657fc461f295d09e42157",
+              "mapped_bytes": 131072,
+              "origin_verified": false,
+              "region_indices": [
+                333,
+                334,
+                335,
+                336
+              ],
+              "x86_address": 4768317440,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4795920384,
+              "bytes": 1343488,
+              "index": 8,
+              "key": "e7ca68aef83ec4753fe3dd9ea590e8f60be2abcf29a944ee985326b71eca59e8",
+              "mapped_bytes": 1343488,
+              "origin_verified": false,
+              "region_indices": [
+                452,
+                453,
+                454,
+                455
+              ],
+              "x86_address": 4794920960,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4788035584,
+              "bytes": 327680,
+              "index": 9,
+              "key": "e6603c6977d7e03185eb1ddcedae19b8c1bfa9aa5010e6910bde988c176056c1",
+              "mapped_bytes": 327680,
+              "origin_verified": false,
+              "region_indices": [
+                427,
+                428,
+                429,
+                430
+              ],
+              "x86_address": 4787752960,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4776120320,
+              "bytes": 270336,
+              "index": 10,
+              "key": "521a61516a63e764f1eedbea13d4d668b053a3bafd1eb5cb606e658c79c171e3",
+              "mapped_bytes": 270336,
+              "origin_verified": false,
+              "region_indices": [
+                384,
+                385,
+                386,
+                387
+              ],
+              "x86_address": 4775915520,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4791984128,
+              "bytes": 2936832,
+              "index": 11,
+              "key": "641869aba32a41fb496693c31284225c796095398cc6c7b27e8e06c49d8e9689",
+              "mapped_bytes": 2936832,
+              "origin_verified": false,
+              "region_indices": [
+                444,
+                445,
+                446,
+                447
+              ],
+              "x86_address": 4789862400,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4775419904,
+              "bytes": 495616,
+              "index": 12,
+              "key": "7ac8109246d3e142355532498d14b275ec44a2557a5e711c46afb8d1f3700131",
+              "mapped_bytes": 495616,
+              "origin_verified": false,
+              "region_indices": [
+                376,
+                377,
+                378,
+                379
+              ],
+              "x86_address": 4775022592,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4786839552,
+              "bytes": 913408,
+              "index": 13,
+              "key": "26ac645894d4bd3e8500c2b3520d88d05ed4b06800ecc448aaec87e03838d785",
+              "mapped_bytes": 913408,
+              "origin_verified": false,
+              "region_indices": [
+                419,
+                420,
+                421,
+                422
+              ],
+              "x86_address": 4786176000,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4784943104,
+              "bytes": 1232896,
+              "index": 14,
+              "key": "e68cefe9ce9ce6c9451fd5aa9fc4dd6b42cb01453010d050f86f967e509e627f",
+              "mapped_bytes": 1232896,
+              "origin_verified": false,
+              "region_indices": [
+                410,
+                411,
+                412,
+                413
+              ],
+              "x86_address": 4783992832,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4782567424,
+              "bytes": 1425408,
+              "index": 15,
+              "key": "203980d1f1bcae150a83f3cdbdcd34e05f829baf4eacb5bc61772285d9ef670e",
+              "mapped_bytes": 1425408,
+              "origin_verified": false,
+              "region_indices": [
+                402,
+                403,
+                404,
+                405
+              ],
+              "x86_address": 4780609536,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4766900224,
+              "bytes": 200704,
+              "index": 16,
+              "key": "fdd9e8d6218d55069d213e2f7468e534d83e4a3c380be9c9818c41f79c93c839",
+              "mapped_bytes": 200704,
+              "origin_verified": false,
+              "region_indices": [
+                317,
+                318,
+                319,
+                320
+              ],
+              "x86_address": 4766736384,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4778336256,
+              "bytes": 2273280,
+              "index": 17,
+              "key": "870380301f4fffaff0fff1e33592b83215b11743efa64830d2f75750e2f5c794",
+              "mapped_bytes": 2273280,
+              "origin_verified": false,
+              "region_indices": [
+                393,
+                394,
+                395,
+                396
+              ],
+              "x86_address": 4776538112,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4774445056,
+              "bytes": 577536,
+              "index": 18,
+              "key": "80ee0cc0d4ad9050ca62a9711e5682045182e19cde72dd54deacd119849a49fe",
+              "mapped_bytes": 577536,
+              "origin_verified": false,
+              "region_indices": [
+                368,
+                369,
+                370,
+                371
+              ],
+              "x86_address": 4773912576,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4767625216,
+              "bytes": 692224,
+              "index": 19,
+              "key": "26c556ec50c575c2763aa86e0786a98b752315da7284b4647b5fb4745584186c",
+              "mapped_bytes": 692224,
+              "origin_verified": false,
+              "region_indices": [
+                325,
+                326,
+                327,
+                328
+              ],
+              "x86_address": 4767100928,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4771319808,
+              "bytes": 2592768,
+              "index": 20,
+              "key": "1f140cb3a12d9f753dda6239860614d57f1a2b3ef61f45ead846c2f6a0469a86",
+              "mapped_bytes": 2592768,
+              "origin_verified": false,
+              "region_indices": [
+                360,
+                361,
+                362,
+                363
+              ],
+              "x86_address": 4768948224,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4766461952,
+              "bytes": 118784,
+              "index": 21,
+              "key": "7ff26a79a3ca4e6d1485d0eb6922be0d844affac4f23b34fcdd4d656bd01775d",
+              "mapped_bytes": 118784,
+              "origin_verified": false,
+              "region_indices": [
+                297,
+                298,
+                299,
+                300
+              ],
+              "x86_address": 4766371840,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4600336384,
+              "bytes": 25927680,
+              "index": 22,
+              "key": "5963cb9be632dc02e142fc9312025abb0c01f8e72a5cda677f01aaaee6b20c5c",
+              "mapped_bytes": 25927680,
+              "origin_verified": false,
+              "region_indices": [
+                7,
+                8,
+                9,
+                10
+              ],
+              "x86_address": 4366786560,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 8898191360,
+              "bytes": 1392640,
+              "index": 23,
+              "key": "7022e13729a8255284942e948bd0f0769534cb6f28060a34953b18b6da7c4007",
+              "mapped_bytes": 1392640,
+              "origin_verified": false,
+              "region_indices": [
+                506,
+                507,
+                508,
+                509
+              ],
+              "x86_address": 8897011712,
+              "x86_in_loader": false,
+              "x86_is_dyld": null
+            }
+          ],
+          "dynamic_aot_bytes": 76058624,
+          "executable_bytes_outside_images": 8710859450,
+          "executable_regions_outside_images": 67,
+          "jit_flag_regions": [
+            {
+              "address": 4626313216,
+              "depth": 0,
+              "external": 0,
+              "flags": 1,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 13,
+              "maximum": 7,
+              "object": 927391266939997082,
+              "offset": 16384,
+              "page_object": 927391266939997082,
+              "page_offset": 16384,
+              "point": 2,
+              "protection": 7,
+              "reference": -1,
+              "shadow": 0,
+              "share": 2,
+              "size": 134201344,
+              "tag": 234
+            }
+          ],
+          "nested_aot_regions": [
+            {
+              "address": 140705747091456,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 541,
+              "maximum": 1,
+              "object": 475666057774892119,
+              "offset": 0,
+              "page_object": 2718397067977701853,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 7,
+              "shadow": 2,
+              "share": 1,
+              "size": 90898432,
+              "tag": 0
+            },
+            {
+              "address": 140705837989888,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 542,
+              "maximum": 5,
+              "object": 2696422384018337844,
+              "offset": 0,
+              "page_object": 2718397067977701853,
+              "page_offset": 90898432,
+              "point": 0,
+              "protection": 5,
+              "reference": 7,
+              "shadow": 2,
+              "share": 1,
+              "size": 780582912,
+              "tag": 0
+            },
+            {
+              "address": 140710074433536,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 553,
+              "maximum": 1,
+              "object": 15358496034956807091,
+              "offset": 0,
+              "page_object": 14951795339678451813,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 8,
+              "shadow": 2,
+              "share": 1,
+              "size": 93945856,
+              "tag": 0
+            },
+            {
+              "address": 140710168379392,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 554,
+              "maximum": 5,
+              "object": 1150896388564551480,
+              "offset": 0,
+              "page_object": 14951795339678451813,
+              "page_offset": 93945856,
+              "point": 0,
+              "protection": 5,
+              "reference": 8,
+              "shadow": 2,
+              "share": 1,
+              "size": 851722240,
+              "tag": 0
+            },
+            {
+              "address": 140714360881152,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 565,
+              "maximum": 1,
+              "object": 8624944680289611494,
+              "offset": 0,
+              "page_object": 11610728804776912037,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 9,
+              "shadow": 2,
+              "share": 1,
+              "size": 93028352,
+              "tag": 0
+            },
+            {
+              "address": 140714453909504,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 566,
+              "maximum": 5,
+              "object": 12765449988675245056,
+              "offset": 0,
+              "page_object": 11610728804776912037,
+              "page_offset": 93028352,
+              "point": 0,
+              "protection": 5,
+              "reference": 9,
+              "shadow": 2,
+              "share": 1,
+              "size": 832700416,
+              "tag": 0
+            },
+            {
+              "address": 140718657077248,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 577,
+              "maximum": 1,
+              "object": 11270059023893990082,
+              "offset": 0,
+              "page_object": 5042570148075055851,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 10,
+              "shadow": 2,
+              "share": 1,
+              "size": 92143616,
+              "tag": 0
+            },
+            {
+              "address": 140718749220864,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 578,
+              "maximum": 5,
+              "object": 2013953358764442466,
+              "offset": 0,
+              "page_object": 5042570148075055851,
+              "page_offset": 92143616,
+              "point": 0,
+              "protection": 5,
+              "reference": 10,
+              "shadow": 2,
+              "share": 1,
+              "size": 777371648,
+              "tag": 0
+            },
+            {
+              "address": 140722923831296,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 589,
+              "maximum": 1,
+              "object": 332834386899925615,
+              "offset": 0,
+              "page_object": 18358335263771821764,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 11,
+              "shadow": 2,
+              "share": 1,
+              "size": 82804736,
+              "tag": 0
+            },
+            {
+              "address": 140723006636032,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 590,
+              "maximum": 5,
+              "object": 4415474875348500814,
+              "offset": 0,
+              "page_object": 18358335263771821764,
+              "page_offset": 82804736,
+              "point": 0,
+              "protection": 5,
+              "reference": 11,
+              "shadow": 2,
+              "share": 1,
+              "size": 699367424,
+              "tag": 0
+            },
+            {
+              "address": 140727260102656,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 601,
+              "maximum": 1,
+              "object": 18068984744105230397,
+              "offset": 0,
+              "page_object": 12544503502959194446,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 12,
+              "shadow": 2,
+              "share": 1,
+              "size": 100335616,
+              "tag": 0
+            },
+            {
+              "address": 140727360438272,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 602,
+              "maximum": 5,
+              "object": 1062030110746598454,
+              "offset": 0,
+              "page_object": 12544503502959194446,
+              "page_offset": 100335616,
+              "point": 0,
+              "protection": 5,
+              "reference": 12,
+              "shadow": 2,
+              "share": 1,
+              "size": 856981504,
+              "tag": 0
+            },
+            {
+              "address": 140731709210624,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 616,
+              "maximum": 1,
+              "object": 11391581072238700627,
+              "offset": 0,
+              "page_object": 12897398663010146784,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 13,
+              "shadow": 2,
+              "share": 1,
+              "size": 74121216,
+              "tag": 0
+            },
+            {
+              "address": 140731783331840,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 617,
+              "maximum": 5,
+              "object": 6055194241300484626,
+              "offset": 0,
+              "page_object": 12897398663010146784,
+              "page_offset": 74121216,
+              "point": 0,
+              "protection": 5,
+              "reference": 13,
+              "shadow": 2,
+              "share": 1,
+              "size": 650264576,
+              "tag": 0
+            }
+          ],
+          "page_origin_verified": false,
+          "phase": "start",
+          "region_records_sha256": "be667ea55d3e56836e9b685ffab7008b56a48302920ac2d25b4dfc56c40ce5c1",
+          "status": "two_pass_structural_map",
+          "summary": {
+            "admitted": 0,
+            "anchors_stable": 1,
+            "aot_base": 140705747091456,
+            "aot_count": 24,
+            "aot_stable": 1,
+            "failed": 0,
+            "full_hash_revalidation": 0,
+            "full_page_coverage": 0,
+            "image_bytes": 2466974455,
+            "images": 556,
+            "loader_stable": 1,
+            "map_ns": 231276167,
+            "matched": 42,
+            "nested_aot": 14,
+            "nested_aot_bytes": 6076268544,
+            "nested_aot_outside_images": 6076268544,
+            "nonclean": 269,
+            "not_sampled": 162,
+            "regions": 619,
+            "total_ns": 299807000,
+            "two_passes": 1,
+            "unknown": 146,
+            "virtual_bytes": 448445767680
+          }
+        },
+        {
+          "additional_aot_virtual_bytes": 6154178560,
+          "all_aot_metadata_ranges_mapped": true,
+          "dynamic_aot": [
+            {
+              "address": 5173784576,
+              "bytes": 364544,
+              "index": 0,
+              "key": "89ea60adda308194e665097190bb3818a4578bbbba04562e45183b4eda96f9ce",
+              "mapped_bytes": 364544,
+              "origin_verified": false,
+              "region_indices": [
+                604,
+                605,
+                606,
+                607
+              ],
+              "x86_address": 5173477376,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4806647808,
+              "bytes": 32768,
+              "index": 1,
+              "key": "8097b0e15c46e015f7fe984ef5c9f44288a1a50e8219a93b5b207b27bd42ad88",
+              "mapped_bytes": 32768,
+              "origin_verified": false,
+              "region_indices": [
+                550,
+                551,
+                552,
+                553
+              ],
+              "x86_address": 4806561792,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4860030976,
+              "bytes": 1454080,
+              "index": 2,
+              "key": "7d21ad2b7e7b87769549cf73886a91385b70d9acfa943893229dfc921afc2d7c",
+              "mapped_bytes": 1454080,
+              "origin_verified": false,
+              "region_indices": [
+                585,
+                586,
+                587,
+                588
+              ],
+              "x86_address": 4858859520,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4766650368,
+              "bytes": 61440,
+              "index": 3,
+              "key": "0572e0925e17e1fc9b67f044177b3f74fae4aa1dbe88d8ab0a2eafb596eea60b",
+              "mapped_bytes": 61440,
+              "origin_verified": false,
+              "region_indices": [
+                310,
+                311,
+                312,
+                313
+              ],
+              "x86_address": 4766580736,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4802125824,
+              "bytes": 2138112,
+              "index": 4,
+              "key": "06c4e30e1044c42bcafb25b214d3fa0b2acef63fc2ceb230c7017ad97e6b3838",
+              "mapped_bytes": 2138112,
+              "origin_verified": false,
+              "region_indices": [
+                537,
+                538,
+                539,
+                540
+              ],
+              "x86_address": 4800630784,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4849963008,
+              "bytes": 8896512,
+              "index": 5,
+              "key": "cfaa7350ee6b4128d30118326f6187643b6de74703e7e847b03284ad30eebd24",
+              "mapped_bytes": 8896512,
+              "origin_verified": false,
+              "region_indices": [
+                576,
+                577,
+                578,
+                579
+              ],
+              "x86_address": 4842512384,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4832038912,
+              "bytes": 10473472,
+              "index": 6,
+              "key": "7cdfff99ccb93920f704d741a8f32a6b409f40916b81b3901642f39c8029a440",
+              "mapped_bytes": 10473472,
+              "origin_verified": false,
+              "region_indices": [
+                567,
+                568,
+                569,
+                570
+              ],
+              "x86_address": 4824465408,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4814290944,
+              "bytes": 10174464,
+              "index": 7,
+              "key": "87b5e19f73e55e90719321ec596bc141e01e8c33723d41602a28bb8ef1c8ebd1",
+              "mapped_bytes": 10174464,
+              "origin_verified": false,
+              "region_indices": [
+                558,
+                559,
+                560,
+                561
+              ],
+              "x86_address": 4806717440,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4788674560,
+              "bytes": 421888,
+              "index": 8,
+              "key": "7fcb6991bec55aea3ed631199166b1ea2cff73c0b8d123cf5d65bd20053b20ca",
+              "mapped_bytes": 421888,
+              "origin_verified": false,
+              "region_indices": [
+                456,
+                457,
+                458,
+                459
+              ],
+              "x86_address": 4788363264,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4798103552,
+              "bytes": 1040384,
+              "index": 9,
+              "key": "63049b93afa902d9b53d2f76e443710d07bfb5d4d8b9c7f53ef9f5ff7cd686bc",
+              "mapped_bytes": 1040384,
+              "origin_verified": false,
+              "region_indices": [
+                507,
+                508,
+                509,
+                510
+              ],
+              "x86_address": 4797263872,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4768423936,
+              "bytes": 131072,
+              "index": 10,
+              "key": "1e6e9d72ea95bbd190cc1ee06254ebdd5f850fbdf6a657fc461f295d09e42157",
+              "mapped_bytes": 131072,
+              "origin_verified": false,
+              "region_indices": [
+                337,
+                338,
+                339,
+                340
+              ],
+              "x86_address": 4768317440,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4795920384,
+              "bytes": 1343488,
+              "index": 11,
+              "key": "e7ca68aef83ec4753fe3dd9ea590e8f60be2abcf29a944ee985326b71eca59e8",
+              "mapped_bytes": 1343488,
+              "origin_verified": false,
+              "region_indices": [
+                499,
+                500,
+                501,
+                502
+              ],
+              "x86_address": 4794920960,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4788035584,
+              "bytes": 327680,
+              "index": 12,
+              "key": "e6603c6977d7e03185eb1ddcedae19b8c1bfa9aa5010e6910bde988c176056c1",
+              "mapped_bytes": 327680,
+              "origin_verified": false,
+              "region_indices": [
+                448,
+                449,
+                450,
+                451
+              ],
+              "x86_address": 4787752960,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4776120320,
+              "bytes": 270336,
+              "index": 13,
+              "key": "521a61516a63e764f1eedbea13d4d668b053a3bafd1eb5cb606e658c79c171e3",
+              "mapped_bytes": 270336,
+              "origin_verified": false,
+              "region_indices": [
+                390,
+                391,
+                392,
+                393
+              ],
+              "x86_address": 4775915520,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4791984128,
+              "bytes": 2936832,
+              "index": 14,
+              "key": "641869aba32a41fb496693c31284225c796095398cc6c7b27e8e06c49d8e9689",
+              "mapped_bytes": 2936832,
+              "origin_verified": false,
+              "region_indices": [
+                491,
+                492,
+                493,
+                494
+              ],
+              "x86_address": 4789862400,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4775419904,
+              "bytes": 495616,
+              "index": 15,
+              "key": "7ac8109246d3e142355532498d14b275ec44a2557a5e711c46afb8d1f3700131",
+              "mapped_bytes": 495616,
+              "origin_verified": false,
+              "region_indices": [
+                382,
+                383,
+                384,
+                385
+              ],
+              "x86_address": 4775022592,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4786839552,
+              "bytes": 913408,
+              "index": 16,
+              "key": "26ac645894d4bd3e8500c2b3520d88d05ed4b06800ecc448aaec87e03838d785",
+              "mapped_bytes": 913408,
+              "origin_verified": false,
+              "region_indices": [
+                440,
+                441,
+                442,
+                443
+              ],
+              "x86_address": 4786176000,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4784943104,
+              "bytes": 1232896,
+              "index": 17,
+              "key": "e68cefe9ce9ce6c9451fd5aa9fc4dd6b42cb01453010d050f86f967e509e627f",
+              "mapped_bytes": 1232896,
+              "origin_verified": false,
+              "region_indices": [
+                431,
+                432,
+                433,
+                434
+              ],
+              "x86_address": 4783992832,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4782567424,
+              "bytes": 1425408,
+              "index": 18,
+              "key": "203980d1f1bcae150a83f3cdbdcd34e05f829baf4eacb5bc61772285d9ef670e",
+              "mapped_bytes": 1425408,
+              "origin_verified": false,
+              "region_indices": [
+                423,
+                424,
+                425,
+                426
+              ],
+              "x86_address": 4780609536,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4766900224,
+              "bytes": 200704,
+              "index": 19,
+              "key": "fdd9e8d6218d55069d213e2f7468e534d83e4a3c380be9c9818c41f79c93c839",
+              "mapped_bytes": 200704,
+              "origin_verified": false,
+              "region_indices": [
+                321,
+                322,
+                323,
+                324
+              ],
+              "x86_address": 4766736384,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4778336256,
+              "bytes": 2273280,
+              "index": 20,
+              "key": "870380301f4fffaff0fff1e33592b83215b11743efa64830d2f75750e2f5c794",
+              "mapped_bytes": 2273280,
+              "origin_verified": false,
+              "region_indices": [
+                414,
+                415,
+                416,
+                417
+              ],
+              "x86_address": 4776538112,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4774445056,
+              "bytes": 577536,
+              "index": 21,
+              "key": "80ee0cc0d4ad9050ca62a9711e5682045182e19cde72dd54deacd119849a49fe",
+              "mapped_bytes": 577536,
+              "origin_verified": false,
+              "region_indices": [
+                374,
+                375,
+                376,
+                377
+              ],
+              "x86_address": 4773912576,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4767625216,
+              "bytes": 692224,
+              "index": 22,
+              "key": "26c556ec50c575c2763aa86e0786a98b752315da7284b4647b5fb4745584186c",
+              "mapped_bytes": 692224,
+              "origin_verified": false,
+              "region_indices": [
+                329,
+                330,
+                331,
+                332
+              ],
+              "x86_address": 4767100928,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4771319808,
+              "bytes": 2592768,
+              "index": 23,
+              "key": "1f140cb3a12d9f753dda6239860614d57f1a2b3ef61f45ead846c2f6a0469a86",
+              "mapped_bytes": 2592768,
+              "origin_verified": false,
+              "region_indices": [
+                366,
+                367,
+                368,
+                369
+              ],
+              "x86_address": 4768948224,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4766461952,
+              "bytes": 118784,
+              "index": 24,
+              "key": "7ff26a79a3ca4e6d1485d0eb6922be0d844affac4f23b34fcdd4d656bd01775d",
+              "mapped_bytes": 118784,
+              "origin_verified": false,
+              "region_indices": [
+                301,
+                302,
+                303,
+                304
+              ],
+              "x86_address": 4766371840,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 4600336384,
+              "bytes": 25927680,
+              "index": 25,
+              "key": "5963cb9be632dc02e142fc9312025abb0c01f8e72a5cda677f01aaaee6b20c5c",
+              "mapped_bytes": 25927680,
+              "origin_verified": false,
+              "region_indices": [
+                7,
+                8,
+                9,
+                10
+              ],
+              "x86_address": 4366786560,
+              "x86_in_loader": true,
+              "x86_is_dyld": null
+            },
+            {
+              "address": 8898191360,
+              "bytes": 1392640,
+              "index": 26,
+              "key": "7022e13729a8255284942e948bd0f0769534cb6f28060a34953b18b6da7c4007",
+              "mapped_bytes": 1392640,
+              "origin_verified": false,
+              "region_indices": [
+                624,
+                625,
+                626,
+                627
+              ],
+              "x86_address": 8897011712,
+              "x86_in_loader": false,
+              "x86_is_dyld": null
+            }
+          ],
+          "dynamic_aot_bytes": 77910016,
+          "executable_bytes_outside_images": 8641473274,
+          "executable_regions_outside_images": 74,
+          "jit_flag_regions": [
+            {
+              "address": 4626313216,
+              "depth": 0,
+              "external": 0,
+              "flags": 1,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 17,
+              "maximum": 7,
+              "object": 927391266939997082,
+              "offset": 16384,
+              "page_object": 927391266939997082,
+              "page_offset": 16384,
+              "point": 2,
+              "protection": 7,
+              "reference": -1,
+              "shadow": 0,
+              "share": 2,
+              "size": 134201344,
+              "tag": 234
+            }
+          ],
+          "nested_aot_regions": [
+            {
+              "address": 140705747091456,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 685,
+              "maximum": 1,
+              "object": 475666057774892119,
+              "offset": 0,
+              "page_object": 2718397067977701853,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 7,
+              "shadow": 2,
+              "share": 1,
+              "size": 90898432,
+              "tag": 0
+            },
+            {
+              "address": 140705837989888,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 686,
+              "maximum": 5,
+              "object": 2696422384018337844,
+              "offset": 0,
+              "page_object": 2718397067977701853,
+              "page_offset": 90898432,
+              "point": 0,
+              "protection": 5,
+              "reference": 7,
+              "shadow": 2,
+              "share": 1,
+              "size": 780582912,
+              "tag": 0
+            },
+            {
+              "address": 140710074433536,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 700,
+              "maximum": 1,
+              "object": 15358496034956807091,
+              "offset": 0,
+              "page_object": 14951795339678451813,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 8,
+              "shadow": 2,
+              "share": 1,
+              "size": 93945856,
+              "tag": 0
+            },
+            {
+              "address": 140710168379392,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 701,
+              "maximum": 5,
+              "object": 1150896388564551480,
+              "offset": 0,
+              "page_object": 14951795339678451813,
+              "page_offset": 93945856,
+              "point": 0,
+              "protection": 5,
+              "reference": 8,
+              "shadow": 2,
+              "share": 1,
+              "size": 851722240,
+              "tag": 0
+            },
+            {
+              "address": 140714360881152,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 714,
+              "maximum": 1,
+              "object": 8624944680289611494,
+              "offset": 0,
+              "page_object": 11610728804776912037,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 9,
+              "shadow": 2,
+              "share": 1,
+              "size": 93028352,
+              "tag": 0
+            },
+            {
+              "address": 140714453909504,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 715,
+              "maximum": 5,
+              "object": 12765449988675245056,
+              "offset": 0,
+              "page_object": 11610728804776912037,
+              "page_offset": 93028352,
+              "point": 0,
+              "protection": 5,
+              "reference": 9,
+              "shadow": 2,
+              "share": 1,
+              "size": 832700416,
+              "tag": 0
+            },
+            {
+              "address": 140718657077248,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 729,
+              "maximum": 1,
+              "object": 11270059023893990082,
+              "offset": 0,
+              "page_object": 5042570148075055851,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 10,
+              "shadow": 2,
+              "share": 1,
+              "size": 92143616,
+              "tag": 0
+            },
+            {
+              "address": 140718749220864,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 730,
+              "maximum": 5,
+              "object": 2013953358764442466,
+              "offset": 0,
+              "page_object": 5042570148075055851,
+              "page_offset": 92143616,
+              "point": 0,
+              "protection": 5,
+              "reference": 10,
+              "shadow": 2,
+              "share": 1,
+              "size": 777371648,
+              "tag": 0
+            },
+            {
+              "address": 140722923831296,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 745,
+              "maximum": 1,
+              "object": 332834386899925615,
+              "offset": 0,
+              "page_object": 18358335263771821764,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 11,
+              "shadow": 2,
+              "share": 1,
+              "size": 82804736,
+              "tag": 0
+            },
+            {
+              "address": 140723006636032,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 746,
+              "maximum": 5,
+              "object": 4415474875348500814,
+              "offset": 0,
+              "page_object": 18358335263771821764,
+              "page_offset": 82804736,
+              "point": 0,
+              "protection": 5,
+              "reference": 11,
+              "shadow": 2,
+              "share": 1,
+              "size": 699367424,
+              "tag": 0
+            },
+            {
+              "address": 140727260102656,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 760,
+              "maximum": 1,
+              "object": 18068984744105230397,
+              "offset": 0,
+              "page_object": 12544503502959194446,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 12,
+              "shadow": 2,
+              "share": 1,
+              "size": 100335616,
+              "tag": 0
+            },
+            {
+              "address": 140727360438272,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 761,
+              "maximum": 5,
+              "object": 1062030110746598454,
+              "offset": 0,
+              "page_object": 12544503502959194446,
+              "page_offset": 100335616,
+              "point": 0,
+              "protection": 5,
+              "reference": 12,
+              "shadow": 2,
+              "share": 1,
+              "size": 856981504,
+              "tag": 0
+            },
+            {
+              "address": 140731709210624,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 776,
+              "maximum": 1,
+              "object": 11391581072238700627,
+              "offset": 0,
+              "page_object": 12897398663010146784,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 13,
+              "shadow": 2,
+              "share": 1,
+              "size": 74121216,
+              "tag": 0
+            },
+            {
+              "address": 140731783331840,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 777,
+              "maximum": 5,
+              "object": 6055194241300484626,
+              "offset": 0,
+              "page_object": 12897398663010146784,
+              "page_offset": 74121216,
+              "point": 0,
+              "protection": 5,
+              "reference": 13,
+              "shadow": 2,
+              "share": 1,
+              "size": 650264576,
+              "tag": 0
+            }
+          ],
+          "page_origin_verified": false,
+          "phase": "exit",
+          "region_records_sha256": "922926bfb81d4322121ab48c2f5c4a4c433902b30e7a5e72930c2a9d578d0902",
+          "status": "two_pass_structural_map",
+          "summary": {
+            "admitted": 0,
+            "anchors_stable": 1,
+            "aot_base": 140705747091456,
+            "aot_count": 27,
+            "aot_stable": 1,
+            "failed": 0,
+            "full_hash_revalidation": 0,
+            "full_page_coverage": 0,
+            "image_bytes": 2550739128,
+            "images": 644,
+            "loader_stable": 1,
+            "map_ns": 253574792,
+            "matched": 42,
+            "nested_aot": 14,
+            "nested_aot_bytes": 6076268544,
+            "nested_aot_outside_images": 6076268544,
+            "nonclean": 285,
+            "not_sampled": 254,
+            "regions": 779,
+            "total_ns": 283338125,
+            "two_passes": 1,
+            "unknown": 198,
+            "virtual_bytes": 449418924032
+          }
+        }
+      ],
+      "source_sha256": "c7e9e675f0355338ba5ba3d4328142825269b36c2344ba61aa35f0c1a1b349b4",
+      "version": 1
+    },
+    {
+      "binary_sha256": "bdda78d5f3a90634f8758e3842f07d45617722137780164d028c75411094992e",
+      "log_sha256": "234b07fff596aae53701f3aee654893af014079d6579451751899753eb8e5f3e",
+      "phases": [
+        {
+          "additional_aot_virtual_bytes": 6152327168,
+          "all_aot_metadata_ranges_mapped": true,
+          "dynamic_aot": [
+            {
+              "address": 4729180160,
+              "bytes": 61440,
+              "index": 0,
+              "key": "0572e0925e17e1fc9b67f044177b3f74fae4aa1dbe88d8ab0a2eafb596eea60b",
+              "mapped_bytes": 61440,
+              "origin_verified": false,
+              "region_indices": [
+                306,
+                307,
+                308,
+                309
+              ],
+              "x86_address": 4729110528,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4764655616,
+              "bytes": 2138112,
+              "index": 1,
+              "key": "06c4e30e1044c42bcafb25b214d3fa0b2acef63fc2ceb230c7017ad97e6b3838",
+              "mapped_bytes": 2138112,
+              "origin_verified": false,
+              "region_indices": [
+                468,
+                469,
+                470,
+                471
+              ],
+              "x86_address": 4763160576,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4812492800,
+              "bytes": 8896512,
+              "index": 2,
+              "key": "cfaa7350ee6b4128d30118326f6187643b6de74703e7e847b03284ad30eebd24",
+              "mapped_bytes": 8896512,
+              "origin_verified": false,
+              "region_indices": [
+                494,
+                495,
+                496,
+                497
+              ],
+              "x86_address": 4805042176,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4794568704,
+              "bytes": 10473472,
+              "index": 3,
+              "key": "7cdfff99ccb93920f704d741a8f32a6b409f40916b81b3901642f39c8029a440",
+              "mapped_bytes": 10473472,
+              "origin_verified": false,
+              "region_indices": [
+                485,
+                486,
+                487,
+                488
+              ],
+              "x86_address": 4786995200,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4776820736,
+              "bytes": 10174464,
+              "index": 4,
+              "key": "87b5e19f73e55e90719321ec596bc141e01e8c33723d41602a28bb8ef1c8ebd1",
+              "mapped_bytes": 10174464,
+              "origin_verified": false,
+              "region_indices": [
+                476,
+                477,
+                478,
+                479
+              ],
+              "x86_address": 4769247232,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4751204352,
+              "bytes": 421888,
+              "index": 5,
+              "key": "7fcb6991bec55aea3ed631199166b1ea2cff73c0b8d123cf5d65bd20053b20ca",
+              "mapped_bytes": 421888,
+              "origin_verified": false,
+              "region_indices": [
+                435,
+                436,
+                437,
+                438
+              ],
+              "x86_address": 4750893056,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4760633344,
+              "bytes": 1040384,
+              "index": 6,
+              "key": "63049b93afa902d9b53d2f76e443710d07bfb5d4d8b9c7f53ef9f5ff7cd686bc",
+              "mapped_bytes": 1040384,
+              "origin_verified": false,
+              "region_indices": [
+                460,
+                461,
+                462,
+                463
+              ],
+              "x86_address": 4759793664,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4730953728,
+              "bytes": 131072,
+              "index": 7,
+              "key": "1e6e9d72ea95bbd190cc1ee06254ebdd5f850fbdf6a657fc461f295d09e42157",
+              "mapped_bytes": 131072,
+              "origin_verified": false,
+              "region_indices": [
+                333,
+                334,
+                335,
+                336
+              ],
+              "x86_address": 4730847232,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4758450176,
+              "bytes": 1343488,
+              "index": 8,
+              "key": "e7ca68aef83ec4753fe3dd9ea590e8f60be2abcf29a944ee985326b71eca59e8",
+              "mapped_bytes": 1343488,
+              "origin_verified": false,
+              "region_indices": [
+                452,
+                453,
+                454,
+                455
+              ],
+              "x86_address": 4757450752,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4750565376,
+              "bytes": 327680,
+              "index": 9,
+              "key": "e6603c6977d7e03185eb1ddcedae19b8c1bfa9aa5010e6910bde988c176056c1",
+              "mapped_bytes": 327680,
+              "origin_verified": false,
+              "region_indices": [
+                427,
+                428,
+                429,
+                430
+              ],
+              "x86_address": 4750282752,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4738650112,
+              "bytes": 270336,
+              "index": 10,
+              "key": "521a61516a63e764f1eedbea13d4d668b053a3bafd1eb5cb606e658c79c171e3",
+              "mapped_bytes": 270336,
+              "origin_verified": false,
+              "region_indices": [
+                384,
+                385,
+                386,
+                387
+              ],
+              "x86_address": 4738445312,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4754513920,
+              "bytes": 2936832,
+              "index": 11,
+              "key": "641869aba32a41fb496693c31284225c796095398cc6c7b27e8e06c49d8e9689",
+              "mapped_bytes": 2936832,
+              "origin_verified": false,
+              "region_indices": [
+                444,
+                445,
+                446,
+                447
+              ],
+              "x86_address": 4752392192,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4737949696,
+              "bytes": 495616,
+              "index": 12,
+              "key": "7ac8109246d3e142355532498d14b275ec44a2557a5e711c46afb8d1f3700131",
+              "mapped_bytes": 495616,
+              "origin_verified": false,
+              "region_indices": [
+                376,
+                377,
+                378,
+                379
+              ],
+              "x86_address": 4737552384,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4749369344,
+              "bytes": 913408,
+              "index": 13,
+              "key": "26ac645894d4bd3e8500c2b3520d88d05ed4b06800ecc448aaec87e03838d785",
+              "mapped_bytes": 913408,
+              "origin_verified": false,
+              "region_indices": [
+                419,
+                420,
+                421,
+                422
+              ],
+              "x86_address": 4748705792,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4747472896,
+              "bytes": 1232896,
+              "index": 14,
+              "key": "e68cefe9ce9ce6c9451fd5aa9fc4dd6b42cb01453010d050f86f967e509e627f",
+              "mapped_bytes": 1232896,
+              "origin_verified": false,
+              "region_indices": [
+                410,
+                411,
+                412,
+                413
+              ],
+              "x86_address": 4746522624,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4745097216,
+              "bytes": 1425408,
+              "index": 15,
+              "key": "203980d1f1bcae150a83f3cdbdcd34e05f829baf4eacb5bc61772285d9ef670e",
+              "mapped_bytes": 1425408,
+              "origin_verified": false,
+              "region_indices": [
+                402,
+                403,
+                404,
+                405
+              ],
+              "x86_address": 4743139328,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4729430016,
+              "bytes": 200704,
+              "index": 16,
+              "key": "fdd9e8d6218d55069d213e2f7468e534d83e4a3c380be9c9818c41f79c93c839",
+              "mapped_bytes": 200704,
+              "origin_verified": false,
+              "region_indices": [
+                317,
+                318,
+                319,
+                320
+              ],
+              "x86_address": 4729266176,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4740866048,
+              "bytes": 2273280,
+              "index": 17,
+              "key": "870380301f4fffaff0fff1e33592b83215b11743efa64830d2f75750e2f5c794",
+              "mapped_bytes": 2273280,
+              "origin_verified": false,
+              "region_indices": [
+                393,
+                394,
+                395,
+                396
+              ],
+              "x86_address": 4739067904,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4736974848,
+              "bytes": 577536,
+              "index": 18,
+              "key": "80ee0cc0d4ad9050ca62a9711e5682045182e19cde72dd54deacd119849a49fe",
+              "mapped_bytes": 577536,
+              "origin_verified": false,
+              "region_indices": [
+                368,
+                369,
+                370,
+                371
+              ],
+              "x86_address": 4736442368,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4730155008,
+              "bytes": 692224,
+              "index": 19,
+              "key": "26c556ec50c575c2763aa86e0786a98b752315da7284b4647b5fb4745584186c",
+              "mapped_bytes": 692224,
+              "origin_verified": false,
+              "region_indices": [
+                325,
+                326,
+                327,
+                328
+              ],
+              "x86_address": 4729630720,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4733849600,
+              "bytes": 2592768,
+              "index": 20,
+              "key": "1f140cb3a12d9f753dda6239860614d57f1a2b3ef61f45ead846c2f6a0469a86",
+              "mapped_bytes": 2592768,
+              "origin_verified": false,
+              "region_indices": [
+                360,
+                361,
+                362,
+                363
+              ],
+              "x86_address": 4731478016,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4728991744,
+              "bytes": 118784,
+              "index": 21,
+              "key": "8ddb0783a572816bcf360ba549e215c2d168c67c11b5e08f795632b128a4e742",
+              "mapped_bytes": 118784,
+              "origin_verified": false,
+              "region_indices": [
+                297,
+                298,
+                299,
+                300
+              ],
+              "x86_address": 4728901632,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 4562866176,
+              "bytes": 25927680,
+              "index": 22,
+              "key": "5963cb9be632dc02e142fc9312025abb0c01f8e72a5cda677f01aaaee6b20c5c",
+              "mapped_bytes": 25927680,
+              "origin_verified": false,
+              "region_indices": [
+                7,
+                8,
+                9,
+                10
+              ],
+              "x86_address": 4329316352,
+              "x86_in_loader": true,
+              "x86_is_dyld": false
+            },
+            {
+              "address": 8859934720,
+              "bytes": 1392640,
+              "index": 23,
+              "key": "7022e13729a8255284942e948bd0f0769534cb6f28060a34953b18b6da7c4007",
+              "mapped_bytes": 1392640,
+              "origin_verified": false,
+              "region_indices": [
+                506,
+                507,
+                508,
+                509
+              ],
+              "x86_address": 8858755072,
+              "x86_in_loader": false,
+              "x86_is_dyld": true
+            }
+          ],
+          "dynamic_aot_bytes": 76058624,
+          "executable_bytes_outside_images": 8710859450,
+          "executable_regions_outside_images": 67,
+          "jit_flag_regions": [
+            {
+              "address": 4588843008,
+              "depth": 0,
+              "external": 0,
+              "flags": 1,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 13,
+              "maximum": 7,
+              "object": 17982715863282717116,
+              "offset": 16384,
+              "page_object": 17982715863282717116,
+              "page_offset": 16384,
+              "point": 2,
+              "protection": 7,
+              "reference": -1,
+              "shadow": 0,
+              "share": 2,
+              "size": 134201344,
+              "tag": 234
+            }
+          ],
+          "nested_aot_regions": [
+            {
+              "address": 140705747091456,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 545,
+              "maximum": 1,
+              "object": 475666057774892119,
+              "offset": 0,
+              "page_object": 2718397067977701853,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 7,
+              "shadow": 2,
+              "share": 1,
+              "size": 90898432,
+              "tag": 0
+            },
+            {
+              "address": 140705837989888,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 546,
+              "maximum": 5,
+              "object": 2696422384018337844,
+              "offset": 0,
+              "page_object": 2718397067977701853,
+              "page_offset": 90898432,
+              "point": 0,
+              "protection": 5,
+              "reference": 7,
+              "shadow": 2,
+              "share": 1,
+              "size": 780582912,
+              "tag": 0
+            },
+            {
+              "address": 140710074433536,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 557,
+              "maximum": 1,
+              "object": 15358496034956807091,
+              "offset": 0,
+              "page_object": 14951795339678451813,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 8,
+              "shadow": 2,
+              "share": 1,
+              "size": 93945856,
+              "tag": 0
+            },
+            {
+              "address": 140710168379392,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 558,
+              "maximum": 5,
+              "object": 1150896388564551480,
+              "offset": 0,
+              "page_object": 14951795339678451813,
+              "page_offset": 93945856,
+              "point": 0,
+              "protection": 5,
+              "reference": 8,
+              "shadow": 2,
+              "share": 1,
+              "size": 851722240,
+              "tag": 0
+            },
+            {
+              "address": 140714360881152,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 569,
+              "maximum": 1,
+              "object": 8624944680289611494,
+              "offset": 0,
+              "page_object": 11610728804776912037,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 9,
+              "shadow": 2,
+              "share": 1,
+              "size": 93028352,
+              "tag": 0
+            },
+            {
+              "address": 140714453909504,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 570,
+              "maximum": 5,
+              "object": 12765449988675245056,
+              "offset": 0,
+              "page_object": 11610728804776912037,
+              "page_offset": 93028352,
+              "point": 0,
+              "protection": 5,
+              "reference": 9,
+              "shadow": 2,
+              "share": 1,
+              "size": 832700416,
+              "tag": 0
+            },
+            {
+              "address": 140718657077248,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 581,
+              "maximum": 1,
+              "object": 11270059023893990082,
+              "offset": 0,
+              "page_object": 5042570148075055851,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 10,
+              "shadow": 2,
+              "share": 1,
+              "size": 92143616,
+              "tag": 0
+            },
+            {
+              "address": 140718749220864,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 582,
+              "maximum": 5,
+              "object": 2013953358764442466,
+              "offset": 0,
+              "page_object": 5042570148075055851,
+              "page_offset": 92143616,
+              "point": 0,
+              "protection": 5,
+              "reference": 10,
+              "shadow": 2,
+              "share": 1,
+              "size": 777371648,
+              "tag": 0
+            },
+            {
+              "address": 140722923831296,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 593,
+              "maximum": 1,
+              "object": 332834386899925615,
+              "offset": 0,
+              "page_object": 18358335263771821764,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 11,
+              "shadow": 2,
+              "share": 1,
+              "size": 82804736,
+              "tag": 0
+            },
+            {
+              "address": 140723006636032,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 594,
+              "maximum": 5,
+              "object": 4415474875348500814,
+              "offset": 0,
+              "page_object": 18358335263771821764,
+              "page_offset": 82804736,
+              "point": 0,
+              "protection": 5,
+              "reference": 11,
+              "shadow": 2,
+              "share": 1,
+              "size": 699367424,
+              "tag": 0
+            },
+            {
+              "address": 140727260102656,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 605,
+              "maximum": 1,
+              "object": 18068984744105230397,
+              "offset": 0,
+              "page_object": 12544503502959194446,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 12,
+              "shadow": 2,
+              "share": 1,
+              "size": 100335616,
+              "tag": 0
+            },
+            {
+              "address": 140727360438272,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 606,
+              "maximum": 5,
+              "object": 1062030110746598454,
+              "offset": 0,
+              "page_object": 12544503502959194446,
+              "page_offset": 100335616,
+              "point": 0,
+              "protection": 5,
+              "reference": 12,
+              "shadow": 2,
+              "share": 1,
+              "size": 856981504,
+              "tag": 0
+            },
+            {
+              "address": 140731709210624,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 620,
+              "maximum": 1,
+              "object": 11391581072238700627,
+              "offset": 0,
+              "page_object": 12897398663010146784,
+              "page_offset": 0,
+              "point": 0,
+              "protection": 1,
+              "reference": 13,
+              "shadow": 2,
+              "share": 1,
+              "size": 74121216,
+              "tag": 0
+            },
+            {
+              "address": 140731783331840,
+              "depth": 1,
+              "external": 1,
+              "flags": 0,
+              "flags_known": 1,
+              "image_bytes": 0,
+              "index": 621,
+              "maximum": 5,
+              "object": 6055194241300484626,
+              "offset": 0,
+              "page_object": 12897398663010146784,
+              "page_offset": 74121216,
+              "point": 0,
+              "protection": 5,
+              "reference": 13,
+              "shadow": 2,
+              "share": 1,
+              "size": 650264576,
+              "tag": 0
+            }
+          ],
+          "page_origin_verified": false,
+          "phase": "start",
+          "region_records_sha256": "c1a040700a5a1925f05bcaf664706d7e78a6552f6653e0fec47832848865ed87",
+          "status": "two_pass_structural_map",
+          "summary": {
+            "admitted": 0,
+            "anchors_stable": 1,
+            "aot_base": 140705747091456,
+            "aot_count": 24,
+            "aot_stable": 1,
+            "failed": 0,
+            "full_hash_revalidation": 0,
+            "full_page_coverage": 0,
+            "image_bytes": 2466974455,
+            "images": 556,
+            "loader_stable": 1,
+            "map_ns": 228237500,
+            "matched": 42,
+            "nested_aot": 14,
+            "nested_aot_bytes": 6076268544,
+            "nested_aot_outside_images": 6076268544,
+            "nonclean": 269,
+            "not_sampled": 166,
+            "regions": 623,
+            "total_ns": 293787834,
+            "two_passes": 1,
+            "unknown": 146,
+            "virtual_bytes": 448730980352
+          }
+        },
+        {
+          "partial_region_map_published": false,
+          "phase": "exit",
+          "status": "rejected_changed"
+        }
+      ],
+      "source_sha256": "218a01e64c30714c3d0e3df78e57c6779ebf5a28ab6470d6ade5ec6a9797af63",
+      "version": 2
+    }
+  ],
+  "structural_vm_enumeration_verified": true,
+  "supervised_commands": [
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "f62aae9f2ba2b18dbd42f34ff752a1851faa129fc4cefdd9b3814e16c56c4697",
+      "meaning": "verification",
+      "name": "v1/debug-configure.json",
+      "samples_sha256": "670f0a8f28de25d07c20c8fcdf8354083556ff745ae56c1a86967cd86c41c08a",
+      "seconds": 0.91,
+      "sha256": "70b14bf7c4bc00952ff795122e17421e1ba9d1f586b05ea97ae119b90576c24f"
+    },
+    {
+      "accepted": false,
+      "exit_code": 2,
+      "log_sha256": "d7d5ad323aa63ff21af0ff17ce79127d930e6d537452ec0ba466815331edfd54",
+      "meaning": "missing_header_failure_preserved",
+      "name": "v1/debug-build.json",
+      "samples_sha256": "9ab455f6244450fa69fd79e4c8889c06c143dd41efdb3689e58135ab8fbd1e34",
+      "seconds": 4.766,
+      "sha256": "93e7b75e577ad29d3a4d357debac5b1e7e4fb65ed06d7f9a3e03598ca6182354"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "72e898ad07dbd577a09092c1654e7584011eae712092557b61692f4663d7d022",
+      "meaning": "verification",
+      "name": "v2/debug-configure.json",
+      "samples_sha256": "c4c81cfed6b84e1d908b50a589083daa8894d00d59243cf56f71326c10975147",
+      "seconds": 0.929,
+      "sha256": "d69ad4e724781abb5ffadb482b13292a261656f0d9232711e088ea89951d8bd3"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "a15c4ef6e43d5a4fd118c3113a32123679e45c8b06b1398a921e9ae7849c8bbc",
+      "meaning": "verification",
+      "name": "v2/debug-build.json",
+      "samples_sha256": "74802506224743573adc9e8466d2c21b75ae77ba6e4c70678a19de0c37d5afb3",
+      "seconds": 7.378,
+      "sha256": "087fa04a169d4369e7cccbdbb6f05cdcc0470af4acf2aabb023e1c6fe29db665"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "080e589d1f559495e1b1a5c74c296cdc1a8b2de0f5810e2dd0d7ddf049588c28",
+      "meaning": "verification",
+      "name": "v2/debug-tests.json",
+      "samples_sha256": "6bebccf82ac8e155f0e3ca98362a1ca148513d790c29bdfa9a1eda22f7bcf4ce",
+      "seconds": 21.401,
+      "sha256": "df3243a84798be104cf1528a506c7c6d4d98db11782cfce45af59817dd49fa28"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "4a7da3e3291613d3e67c92d3ccb1a48fee70d2edfa552cb959516436b15d4c60",
+      "meaning": "verification",
+      "name": "v2/release-configure.json",
+      "samples_sha256": "5cb7a9740c9c9999b37a58a22039114eb2c5dd55c9e7787f829558fbea1c15ac",
+      "seconds": 1.208,
+      "sha256": "2803f5b015bf5e37fa3c41c830a3484f56be411c87c83bfe94e7582b792c2325"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "bc7871dd32d81a9ccd8d2e37c62157d2f17b17f2793f9aabf5edb9bd1a69f22f",
+      "meaning": "verification",
+      "name": "v2/release-build.json",
+      "samples_sha256": "ee7c11920ae17dbe9159f87ed862b20cc04d71ad66792baf52f0d2159ef8525f",
+      "seconds": 8.818,
+      "sha256": "de004c3e1e1bf9ad28253897820f5a90422352d7f0bedef6292f2ebe517c40aa"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "ea5cc109a27ba4957443a263c1508aa5c22d744edb56e7fc56548451bece75ce",
+      "meaning": "verification",
+      "name": "v2/release-tests.json",
+      "samples_sha256": "444b288dd56a8c982beeb03bc46f236b39d86c4be58a34cb2acc0417efef973c",
+      "seconds": 19.335,
+      "sha256": "057873ae8bcd1230cc9a84819115d46dba74e297683801f759848f0727fb69bb"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "0a58c668ad5df95d37a9eb660cd4b20b10ecf70844523c6265fb42ab262671e4",
+      "meaning": "verification",
+      "name": "v2/sanitize-configure.json",
+      "samples_sha256": "52f8d376a4a40a60b3ceddb66246963ca9b87e2d3564228b62db7c97f380c4b8",
+      "seconds": 1.485,
+      "sha256": "68e368354fde2246fef2e50967e34b88e1d19394215d2ce7e5b0ab05d74fd487"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "cefb205885126b11b50dab4174dbaac0642d87b1c46820bbfdcde78f71ef28ff",
+      "meaning": "verification",
+      "name": "v2/sanitize-build.json",
+      "samples_sha256": "d045663c3047a51b943cf9bf803ccbe42d7760c88bf030f2493d2e24fc691382",
+      "seconds": 8.791,
+      "sha256": "b15b28a2ff60b50d797930cc609f096bb2971286c44f43d8d02d7a50f936c109"
+    },
+    {
+      "accepted": false,
+      "exit_code": 8,
+      "log_sha256": "ccc51422f464bc42b5a0e6e649733d133d4dc9f01c42c2cd23421e43978e3bff",
+      "meaning": "superseded_test_expectations",
+      "name": "v2/sanitize-tests.json",
+      "samples_sha256": "bcdc653a7e8ed146bbaf4d7be8ae32da16b6b8be0a8ea5a01479be619184c809",
+      "seconds": 39.209,
+      "sha256": "55b92e87473f23010747be80436d51a2ceb0d7ed51724ea19af2b88ac6601eb8"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "36ef2b73a1e6a5cb795733bdb3c1b945167684da4847538cd159927cfb8c388b",
+      "meaning": "verification",
+      "name": "v3/debug-configure.json",
+      "samples_sha256": "043b8cb9f1fe864e828cb8a31c069b8e0e2e49c2404b163258c18b69b09c1158",
+      "seconds": 0.948,
+      "sha256": "fc7d3f25e0abd9531e1bb247996148893e04382c6f31be380d6e7527504a23f9"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "a0e2c30a3ce46dfb3e30b6bb7190cd16bf82caa145456ebbdcd52e47365124ab",
+      "meaning": "verification",
+      "name": "v3/debug-build.json",
+      "samples_sha256": "cc94feafcb10092e17316f755a03c12553de8694fa370caff29346b28267c4ce",
+      "seconds": 7.379,
+      "sha256": "cac68c7f3997036d6b981354529d95687491a53513236afcd91e1f6d921a8f07"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "aa529cec368e611f4f49a69fb0a6637617f9ba0c240fa85106fe1609d75dd23f",
+      "meaning": "verification",
+      "name": "v3/debug-tests.json",
+      "samples_sha256": "adcef48e37648ac99b48777759892a92f01a42e651880c2e8f9faeec3ca8d458",
+      "seconds": 20.608,
+      "sha256": "05bb78b9d109e82e909b57879c832d2de70ecb0af5d98903b9f35773d7e36c5b"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "ca3010b73a9f7fb52ddf572f9824b36e3460cf9edcb600d3bf9bab077e01b539",
+      "meaning": "verification",
+      "name": "v3/release-configure.json",
+      "samples_sha256": "f8ec3c124cce74dd4a29127df261f149bece6051cf2aa7cf1d2a2b6d729f5d8a",
+      "seconds": 1.063,
+      "sha256": "f9f437db8423846aa8567b3255a7722ebb399c64d97475c1b13c420b965da9d2"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "aed47d1cf0996e289a9ad79dd267fb080e043d38ac59e2d332115acd2175dcf8",
+      "meaning": "verification",
+      "name": "v3/release-build.json",
+      "samples_sha256": "15981784e35431db06dae126e83e2850c8886fc0e394116a27dbf95fd7dbf2cc",
+      "seconds": 8.571,
+      "sha256": "b88d85c5747e93b666fbab18705a84b3075df873dbc4d274583cd7516a0a5a7e"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "7ce7933815e0c90cd4ae31ececefcfa99b5ca38c4edc63a7bf4860d071778332",
+      "meaning": "verification",
+      "name": "v3/release-tests.json",
+      "samples_sha256": "5fea66df43577a534b75d84569079652ece986ca18fba8255e28fae63901fb24",
+      "seconds": 18.852,
+      "sha256": "948c94451e5df08c228d874f3b22eb1bae8fb5a2352ecc93f8170abb17a1ecd0"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "798af4e8d4e80ab1a194a574cd74853f034928016194788cee60ede64f93c4c6",
+      "meaning": "verification",
+      "name": "v3/sanitize-configure.json",
+      "samples_sha256": "253a2cb3218db1ab4386800b934ddd1a609efc63eb0b2834794e90bb6be1f794",
+      "seconds": 1.179,
+      "sha256": "020d4ddb35e592e77a1b64ffc888c39a632df82ebaa3e45abaf3fc4779c53335"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "30802f6074d5d1135537724d268f39e78e308e797fbf787299347b86ff3c2b9b",
+      "meaning": "verification",
+      "name": "v3/sanitize-build.json",
+      "samples_sha256": "2ddca5f694d93c8aa6679e84ce6e77cf78fcb8e8b8bc5c1ff8e25ec43f5b97a8",
+      "seconds": 8.82,
+      "sha256": "9237ae483f028e9cf77aafde77cb304286d2da932d320fc894dab4ee5dce1985"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "8269021b006063590c1b5c340e9afc05e96bb9abb146fc708406c3149c191e3f",
+      "meaning": "verification",
+      "name": "v3/sanitize-tests.json",
+      "samples_sha256": "e3b982b94bdfa89b6a5d8cc76b6a42a486ae8f526fe89c6a96f3e77bb793831c",
+      "seconds": 37.058,
+      "sha256": "03f0beda55fb2b05d63efb7b401b60e74818a34f905cb151adc5b8209dad1384"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "c6c75e0ebf8d0da7052b1b4f35fbdb7de671cdb89f9148f99295b1a9f80ed193",
+      "meaning": "verification",
+      "name": "v3/coverage-configure.json",
+      "samples_sha256": "656f7f63fe07d61f1bf36a2110d1f7dfa1c63a049a7c83aa74d822ae8f244ce2",
+      "seconds": 1.206,
+      "sha256": "732e7b2f1296d5032b27ca87e634ea2e0ad4dcbc526a4d689439825cf3def772"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "5b8e125635f02adae9bff2dd24cc6ee6929c22481393a7ea0207ceac8fb247c1",
+      "meaning": "verification",
+      "name": "v3/coverage-build.json",
+      "samples_sha256": "abbc92dcb476b58c5af6fd266bc48f5653d84aa0ae2e984c93c4e765624f0d28",
+      "seconds": 8.413,
+      "sha256": "7ffedeba741421cd6289f22e81c569681f1af2c9d91322ba0b1818e6f01137ad"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "1f1feaaf69a8ec7bfb89c4ab431a77701f6989630c366a83acd0c22d3048fc79",
+      "meaning": "verification",
+      "name": "v3/coverage-tests.json",
+      "samples_sha256": "57aa7d4a167a8102372d4f672f08f4727bafd0cd01c0ceb1feea92a91561f33b",
+      "seconds": 20.6,
+      "sha256": "001ea8c5d4d039d4643f91dce1dc7b21e909e3844d82731a75a830e218adbbf0"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "v3/coverage-merge.json",
+      "samples_sha256": "107d253649d2a80426d9c7cd77f6f7999ff64b91420fa224f11cd7b3464ab0b1",
+      "seconds": 0.383,
+      "sha256": "fbb16377cde06de921d976e33750d737a39d3805d37b8c6bc99ed2871ac048c2"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "23e96ca99e2a7677dd683e5eac83a3a4374f9af414c31d29f507fbbdbc24dda9",
+      "meaning": "verification",
+      "name": "v3/coverage-export.json",
+      "samples_sha256": "b2c49249ebc837de10b977d05b011a6e117e72c0756762008fe6198099dfd006",
+      "seconds": 0.278,
+      "sha256": "e7862b8e8996569e00c0bd61ceb50702cc2f6cf1f3d9735cf041a9b1b39d445f"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "mutants-v1/one_pass-build.json",
+      "samples_sha256": "757b98c3fa2bb0670e655b705cb685dc40f46ac57c0ea642dc28440096602bfa",
+      "seconds": 1.081,
+      "sha256": "efcc27c3e7f8cba0839e3123eccbc36872471c9e2995cc087abecfa8ac2fd159"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "log_sha256": "17e5ec51ce117bf6fcf56a629b0e8a6838117db70bfd4cf062acf60d0853e4e9",
+      "meaning": "negative_control",
+      "name": "mutants-v1/one_pass-test.json",
+      "samples_sha256": "fcb36b38fb706776d8e582085b19cd5bb87b4cd7a681a6154a34dd4ded628264",
+      "seconds": 0.351,
+      "sha256": "b961b237d3ce13bcadda1a38e0da0ce385181b2143b00a089f01e147d6378970"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "mutants-v1/early_end-build.json",
+      "samples_sha256": "3bc4ec2a6bfa258e5e05dc335b23c9f0a7d0ba4849cd12837d60e7c2c4174332",
+      "seconds": 0.878,
+      "sha256": "a9b646365b4fffe608cb6dfaa6ae9aef37dc0aaa8e1f7260e132c0728eec6be8"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "log_sha256": "465051886eeaa6e987c5146f6c83922071b68cb427e639a2a884f0c30982b971",
+      "meaning": "negative_control",
+      "name": "mutants-v1/early_end-test.json",
+      "samples_sha256": "1c55a133dbb164f011bed382a6d558a9c6b6964b27b98798e5e2b44feecacd10",
+      "seconds": 0.341,
+      "sha256": "50abf49c8e42b044067450218d8082ae6d6fdb9d0d09459bee02cf542073b3fa"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "mutants-v1/ignore_permissions-build.json",
+      "samples_sha256": "e2c210943c8026228f985c506d723133e81b250637fe14f5deec836b43d63424",
+      "seconds": 0.898,
+      "sha256": "955492a8db4cc22981710fd8fc4ec6f0ef5c08849048156781ec0e9b570b92e1"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "log_sha256": "17e5ec51ce117bf6fcf56a629b0e8a6838117db70bfd4cf062acf60d0853e4e9",
+      "meaning": "negative_control",
+      "name": "mutants-v1/ignore_permissions-test.json",
+      "samples_sha256": "7f27a72fa42d1ceac4e3d8c244ef6216b284938a36d102c304d554759a8c76ad",
+      "seconds": 0.35,
+      "sha256": "05c34cae7e8290ff1aff0c5ce71a144486ecd49114661c54bd7d15fc00d0709e"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "mutants-v1/error_as_end-build.json",
+      "samples_sha256": "286d6e469a8b50e5e97d65a7bb8edaf4741ecb31a1349c0bcea3bd183ecff77c",
+      "seconds": 1.31,
+      "sha256": "72dc3d20467f59fc8c29010109107d030e79646aa6c8de8a20971130da6bb37f"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "log_sha256": "f77df8d23f0e2be451daa5438828cddcd1669aaefb4ab385030b0195fe9a681b",
+      "meaning": "negative_control",
+      "name": "mutants-v1/error_as_end-test.json",
+      "samples_sha256": "695b64417b561723af455baf28ca88f0bb4bb719f9d39faeb65753ec83b8ab61",
+      "seconds": 0.339,
+      "sha256": "cc96db531b5b4f80d62ced66f8625814b7a89a1891cae83a08f7e1f63f0e5579"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "mutants-v2/one_pass-build.json",
+      "samples_sha256": "9f5cb7ff85658eaa41b1bc6139b3358390075ce4206eda150374129286dc2435",
+      "seconds": 0.976,
+      "sha256": "aa993e4f226696f60d6c25d5c1ed820e6ad1642edf57a114c80ee25ee24a1ab3"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "log_sha256": "ee7b8a5294225c2d7265ceb833dad6f5e2edf22315f304d7a1503dc324929f01",
+      "meaning": "negative_control",
+      "name": "mutants-v2/one_pass-test.json",
+      "samples_sha256": "35fc60f1b9d9b42d14c73bf2cc13390f388cf8c8ddc73130bc32aded2509b16e",
+      "seconds": 0.342,
+      "sha256": "7f859f5cfb3fdac277bf224554222aa53118f7d9b9d703b94197bdfd3f39f6e6"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "mutants-v2/early_end-build.json",
+      "samples_sha256": "bd3fd96b3106699790faf4344c316c5863d26bae18d3aff7428200cf74df3b87",
+      "seconds": 0.774,
+      "sha256": "4ac6df605c0fce5c6f77a20af4f9fadf3b4b7da31e4bfa51890d94c6fe2164f7"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "log_sha256": "29394f8c5ce5f625d34122bc1257dbe4d9ebf606baf79e92ca31b4e016ce4210",
+      "meaning": "negative_control",
+      "name": "mutants-v2/early_end-test.json",
+      "samples_sha256": "2bb1db20a2712d1a7f0c9e4705cdedb6cb2ee7df06430653a702f71225390a59",
+      "seconds": 0.328,
+      "sha256": "036559c7b2cf8d77b5744444afc9743085244ff86c15ceaf3ab0f33898796960"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "mutants-v2/ignore_permissions-build.json",
+      "samples_sha256": "563cee25e8e0e3de2b66a63e53c43798addf6ed58100ba8b19f4fb5040df0350",
+      "seconds": 0.762,
+      "sha256": "da0a7d9be1a1d33a95a228947ce1a9addb94e1c548926bdfec2691bb70ebf46d"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "log_sha256": "ee7b8a5294225c2d7265ceb833dad6f5e2edf22315f304d7a1503dc324929f01",
+      "meaning": "negative_control",
+      "name": "mutants-v2/ignore_permissions-test.json",
+      "samples_sha256": "3fafdf5b700dc0faffab65a39cf0e56ca5391e8e2224bad43ccb71ec0cb4345c",
+      "seconds": 0.336,
+      "sha256": "795b1e483b18f091dac4a32736f0816832a376e688b4729fe305fe8f7e42f005"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "mutants-v2/error_as_end-build.json",
+      "samples_sha256": "022683b6c8b53e3994d748735155fae69b0418de7b001aaa55e668416d3fe713",
+      "seconds": 1.097,
+      "sha256": "7118453a58a12a25409bfe651a4e57f5d0327a65301e56acace466a3984e2cc7"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "log_sha256": "5b9d92d8ac6d4543b7dddc67586a9e9a4e0378510edc54a3043cc2cd956f3755",
+      "meaning": "negative_control",
+      "name": "mutants-v2/error_as_end-test.json",
+      "samples_sha256": "8eba9ee2b4a1c25920f8ded22798f0eda22d96863f30a62b35a491dcf80ed31a",
+      "seconds": 0.345,
+      "sha256": "a0ddb96ecf1d8542e5b158fc1238161b0c641a627bc7b95a520ccbb85efd39b7"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "diagnostic-v1/build.json",
+      "samples_sha256": "76ee894f75c7d2db7fc811ab1c331fc79b6b9897c41323366662f664f2e5dd58",
+      "seconds": 1.527,
+      "sha256": "55becb45a5cc0d601184404a466f98b755749dcb7a4baa7aba8fbe30f3f7c945"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "4d4509d82a06146781f64f9452caebbcc42732cb32a43cf6a3f95c880b2d32d4",
+      "meaning": "verification",
+      "name": "diagnostic-v1/run.json",
+      "samples_sha256": "f1bd59b5c6853714083f5f64aefbebe5dcb958b39a941deb9bbd57d4cbb6d30d",
+      "seconds": 0.974,
+      "sha256": "7ac967af8e4fb55c359779f5e16a19d9b7823b74430e0d6ad7824867efbe0378"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "survey-v1/survey-build.json",
+      "samples_sha256": "9bf5085018a9f7b80410bd35b0d85077fc8fc05b2698abe615ba54a207ef5b05",
+      "seconds": 0.979,
+      "sha256": "77a402adb9070469012d8a81665d7a874b11a509dbcd44b4be1777ca8e6500f1"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "1f41817abf06e74228e7e949f5c0d0bb7d6f64f13a47950540122d8557a14cca",
+      "meaning": "verification",
+      "name": "survey-v1/survey-run.json",
+      "samples_sha256": "8c9bfb03bf679eccc26fb990a6e41e5eb1a1e331fdf68797475d9ed2b822fed4",
+      "seconds": 3.145,
+      "sha256": "6e48f0823cf1fed3cb6f6a4f8672e20fce737cad6e45b8c1cbf7a605ce90aabc"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meaning": "verification",
+      "name": "survey-v2/survey-build.json",
+      "samples_sha256": "a3ec12aeef00392dbdbcac102ad4ffb346765ac567164ee439df24f053fc73df",
+      "seconds": 1.305,
+      "sha256": "642e0f2d19a94cb39b31822dd4d56f4c791a25ceb3648d5839055f67ef49f3f6"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "log_sha256": "234b07fff596aae53701f3aee654893af014079d6579451751899753eb8e5f3e",
+      "meaning": "testconfig_with_final_map_rejected",
+      "name": "survey-v2/survey-run.json",
+      "samples_sha256": "0d264a3bb9842b788791aeaf65c25551554ca4021ac88ec561dfa8d2e77c7900",
+      "seconds": 3.708,
+      "sha256": "0a27b56805146d595fcce8a76cef8ffb9ec8ae7d7a9c09838eef60daa7d59049"
+    }
+  ],
+  "survey_analysis_sha256": "d34cdf0c51650dfff251fd56f2beead0a7eb221096667625be08f6eaf7065e43",
+  "test_runs": [
+    {
+      "compile_commands_sha256": "1b6092443ba3cae79f0101036faba4a8c5cc01f1a9a96ea679263af32b1d5715",
+      "failed_tests": [],
+      "junit_sha256": "f2fc63310af416a590c2e4a3989f4e331cac34b987dbbd02172adf8ce154574e",
+      "mode": "debug",
+      "passed": 220,
+      "tests": 220,
+      "version": 2
+    },
+    {
+      "compile_commands_sha256": "443d7bf056aa7d8dcdca276633db9a36892e71adf6df9d5fe074f46666dad88d",
+      "failed_tests": [],
+      "junit_sha256": "fa4872f92f9bd7b303975c8dbf03913b4c4c8bef230e31df61357c05ad683f63",
+      "mode": "release",
+      "passed": 220,
+      "tests": 220,
+      "version": 2
+    },
+    {
+      "compile_commands_sha256": "aa9024530318f899a0e710b7d7139013a18fd0439a7354bb4b44ba44bbcdb9b8",
+      "failed_tests": [
+        "macos_region_self",
+        "macos_region_mutation"
+      ],
+      "junit_sha256": "4aded6f4f7975ebcb5732239bd7c505d394dcd3b075995092c311b2992cff93b",
+      "mode": "sanitize",
+      "passed": 218,
+      "tests": 220,
+      "version": 2
+    },
+    {
+      "compile_commands_sha256": "0b108187c18570ba9f3c5234e01e1767c3b8b59e3f5d330757b027d2d84075bf",
+      "failed_tests": [],
+      "junit_sha256": "a3ed462d468cc810a613d26c5212c9f98196163d8122a494ec0bc941092090fb",
+      "mode": "debug",
+      "passed": 220,
+      "tests": 220,
+      "version": 3
+    },
+    {
+      "compile_commands_sha256": "4e9a4ea6edbb605c32a0bc75a23b7a5a103eb73c48f904dbee8ee1ac438f5999",
+      "failed_tests": [],
+      "junit_sha256": "37250cba3f629bd06a47b9a217715f754e84752f3d3b23e98557227ddd810a74",
+      "mode": "release",
+      "passed": 220,
+      "tests": 220,
+      "version": 3
+    },
+    {
+      "compile_commands_sha256": "82bb6b7bdaec36ceb1b77f1b3221c8df250813d1ad2196f8e6dab9abde91f1d6",
+      "failed_tests": [],
+      "junit_sha256": "5fddc46ccc1c69cad493af2cdd378c6b793615b61f60da77a3623b27a1ddf900",
+      "mode": "sanitize",
+      "passed": 220,
+      "tests": 220,
+      "version": 3
+    },
+    {
+      "compile_commands_sha256": "e2348b9ddd89b24cb711d5388394362871d3110179889ea8f38bfd3dfbc04332",
+      "failed_tests": [],
+      "junit_sha256": "9aa6bcf0fa4179931a996a3e9d4326a0b2457b95cf42a2a3bc8630bd1891cd25",
+      "mode": "coverage",
+      "passed": 220,
+      "tests": 220,
+      "version": 3
+    }
+  ],
+  "transformed_page_origin_verified": false,
+  "vm_executed": false
+}

@@ -1,0 +1,1398 @@
+{
+  "admitted_execution_modes": [],
+  "blocking_connections": [
+    {
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "line": 627,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "line": 628,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 866,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 1446,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 1462,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 1712,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 1937,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    }
+  ],
+  "call_counts": {
+    "declaration_or_definition": 2,
+    "default_false": 102,
+    "explicit_false": 2,
+    "explicit_true": 2
+  },
+  "call_references": [
+    {
+      "call_sha256": "7d52a21a25f18c9898a8db1dcc0b91cf72b83398f05d22bf5ed4d0cfc35d6cac",
+      "file": "pcsx2/Achievements.cpp",
+      "first_line": 3885,
+      "kind": "default_false",
+      "last_line": 3889,
+      "source_sha256": "2e896e1a6bda8361dc30f713b04e03bc2517586c1b3158d0e601d7b52e91f350"
+    },
+    {
+      "call_sha256": "232e2dbe9ee8be3a7c4298e6b1354685265e147db2380657db15ca5e2d175e10",
+      "file": "pcsx2/Achievements.cpp",
+      "first_line": 3894,
+      "kind": "default_false",
+      "last_line": 3897,
+      "source_sha256": "2e896e1a6bda8361dc30f713b04e03bc2517586c1b3158d0e601d7b52e91f350"
+    },
+    {
+      "call_sha256": "26a7213cbba2123ac937dfc3b3093e10498f0d467ea142c1ac3f4f88dcd8b050",
+      "file": "pcsx2/GS/Renderers/DX11/GSDevice11.cpp",
+      "first_line": 1075,
+      "kind": "default_false",
+      "last_line": 1075,
+      "source_sha256": "496e68fc29deabbcb518197a37c5f46b7342ee1b703b7608fd1909b0bea6ae5b"
+    },
+    {
+      "call_sha256": "26a7213cbba2123ac937dfc3b3093e10498f0d467ea142c1ac3f4f88dcd8b050",
+      "file": "pcsx2/GS/Renderers/DX12/GSDevice12.cpp",
+      "first_line": 1362,
+      "kind": "default_false",
+      "last_line": 1362,
+      "source_sha256": "392ab5c82f9dba3c0b0e764ed7e042e68cf4e3f0799346e2e540853cdf5780e9"
+    },
+    {
+      "call_sha256": "b5bd56e857f89b3b103952bf12e58cb43c913482f81ecf27a7508192250fcf63",
+      "file": "pcsx2/Host.h",
+      "first_line": 88,
+      "kind": "declaration_or_definition",
+      "last_line": 88,
+      "source_sha256": "8cbbb3a480bcc74c674dc253a1ef0960fdbf17a0ebfa6dc2b8a46b1ce3e63795"
+    },
+    {
+      "call_sha256": "84ccabcd89e86949ac906aaee99a98b6288725fa40312c11eec36d2e07dd2ce1",
+      "file": "pcsx2/Hotkeys.cpp",
+      "first_line": 99,
+      "kind": "default_false",
+      "last_line": 110,
+      "source_sha256": "1e48a2c0d1a0ecc08bc52c1c3d2f233d543d70b8d786babd765789acbbe86e79"
+    },
+    {
+      "call_sha256": "a7e09331a290d5a14e8c63dd5b03bfea4d978d8aea12229933d474a47a89751c",
+      "file": "pcsx2/Hotkeys.cpp",
+      "first_line": 247,
+      "kind": "default_false",
+      "last_line": 250,
+      "source_sha256": "1e48a2c0d1a0ecc08bc52c1c3d2f233d543d70b8d786babd765789acbbe86e79"
+    },
+    {
+      "call_sha256": "9348d23b32b04d0b8038b9a652d18ef66b0a8aea5c3a76a396c019f970f56155",
+      "file": "pcsx2/Hotkeys.cpp",
+      "first_line": 256,
+      "kind": "default_false",
+      "last_line": 258,
+      "source_sha256": "1e48a2c0d1a0ecc08bc52c1c3d2f233d543d70b8d786babd765789acbbe86e79"
+    },
+    {
+      "call_sha256": "dd643e39cf14d3492e1670e04ef1ea6383c2fa6abc87a2a53698532abc5bdb53",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 490,
+      "kind": "default_false",
+      "last_line": 490,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "5456ea4df12ffa2fa33534e74ba93af6f1f3e7a42d4caf02cc243d7a85634047",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 524,
+      "kind": "default_false",
+      "last_line": 524,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "d0b3621ce34bbb1d5e82ef44e53dfedf907793130dfa6353d9e0cd01d7d807b5",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 678,
+      "kind": "default_false",
+      "last_line": 678,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "ec0b7857cf2df57778efed74a5bb6e3ef67a7b9ed0320895579aecb7d351f4d0",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 709,
+      "kind": "default_false",
+      "last_line": 709,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "38104bf158291ac4170369dff6a56255fd7ab4caa0d7660417ef2dda155d944b",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 818,
+      "kind": "default_false",
+      "last_line": 818,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "de6b687a18c8754997029398823dd4d728fdbff16d60c63d3849054d9fc4a723",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 858,
+      "kind": "default_false",
+      "last_line": 860,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "72931ede2eb7144e0706dfa0c1592eb19412b979f0a6bf4c55bf24d6eb6d8c41",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 877,
+      "kind": "default_false",
+      "last_line": 883,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "cabf2fcc7359c9a00c0c0fa60500c49935dc58c269bb44b547f4c38f26fc2ac0",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 891,
+      "kind": "default_false",
+      "last_line": 899,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "fe486bd55b8247e1a1a480efaf6dfe989e022172f8e18b0b901adda15d83d851",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 931,
+      "kind": "default_false",
+      "last_line": 937,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "61544455fb5faee6ebbc9b23fdbb0745146683b78cf517f6b312c93cc06924f6",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 942,
+      "kind": "default_false",
+      "last_line": 947,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "1d5c54f6a6684711cff12f838c6f60ad532a3b3c96065742eb40c692c666f209",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 962,
+      "kind": "default_false",
+      "last_line": 962,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "8cb67a4be0048e5d55636d87434f13eaaa42b0b5eb354b56b8725c0cc6f25c07",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 977,
+      "kind": "default_false",
+      "last_line": 982,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "6aae7d6307f1f2db048020159ee66c7a85e10155bd4581fa822cecaa6a4f44a9",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 996,
+      "kind": "default_false",
+      "last_line": 996,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "78015c65c238f36a9b5cf44c3e900902967ed0d15d113716fcee1c39c92bb595",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 1021,
+      "kind": "default_false",
+      "last_line": 1021,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "49335aaaf72c1fa0f3bb06b82c44d54bcbc83180afd91ec881deb37585cfcee0",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 1026,
+      "kind": "default_false",
+      "last_line": 1026,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "8fbaeb833182a746a1fc15423321c5dc82144fcb912de7bcebd2ecb2a4d7a91c",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 1031,
+      "kind": "default_false",
+      "last_line": 1031,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "be2f298ef5623a23a432a8d56e72546afa28fe80f53f33426c254786dd3df2fb",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 2420,
+      "kind": "default_false",
+      "last_line": 2440,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "03137eab548bc735268db98d07603fff215519d43d5822e73d05a8ec306d5aa8",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 2445,
+      "kind": "default_false",
+      "last_line": 2449,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "8127664af5eef905d3037c0043c77e1f5d8c27c6653753b52cfb804353f2bb5d",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 3397,
+      "kind": "default_false",
+      "last_line": 3402,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "dd643e39cf14d3492e1670e04ef1ea6383c2fa6abc87a2a53698532abc5bdb53",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 3970,
+      "kind": "default_false",
+      "last_line": 3970,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "5456ea4df12ffa2fa33534e74ba93af6f1f3e7a42d4caf02cc243d7a85634047",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 3972,
+      "kind": "default_false",
+      "last_line": 3972,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "dd643e39cf14d3492e1670e04ef1ea6383c2fa6abc87a2a53698532abc5bdb53",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 4001,
+      "kind": "default_false",
+      "last_line": 4001,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "5456ea4df12ffa2fa33534e74ba93af6f1f3e7a42d4caf02cc243d7a85634047",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 4003,
+      "kind": "default_false",
+      "last_line": 4003,
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "call_sha256": "e8174f15492a7be0aff2ab25d102ef9cc3c1834f8ad9a07818173cd2828397fb",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "first_line": 1420,
+      "kind": "default_false",
+      "last_line": 1420,
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "call_sha256": "e8174f15492a7be0aff2ab25d102ef9cc3c1834f8ad9a07818173cd2828397fb",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "first_line": 1449,
+      "kind": "default_false",
+      "last_line": 1449,
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "call_sha256": "4756d553b26d6e1f7d10f1902f25cc2a6ca72cad6a0638b8ec4d98fc589b2d58",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "first_line": 1551,
+      "kind": "default_false",
+      "last_line": 1595,
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "call_sha256": "439409d1f29f91cef8472aceb42b122cdb19a35741b43a690a6cfce618275e2f",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "first_line": 1578,
+      "kind": "default_false",
+      "last_line": 1591,
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "call_sha256": "d0b3621ce34bbb1d5e82ef44e53dfedf907793130dfa6353d9e0cd01d7d807b5",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "first_line": 4561,
+      "kind": "default_false",
+      "last_line": 4561,
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "call_sha256": "d0b3621ce34bbb1d5e82ef44e53dfedf907793130dfa6353d9e0cd01d7d807b5",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "first_line": 4585,
+      "kind": "default_false",
+      "last_line": 4585,
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "call_sha256": "92d888c356e744d1f1f7e2b771272075b85e63ac91bc6308038365283e168b06",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "first_line": 4634,
+      "kind": "default_false",
+      "last_line": 4650,
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "call_sha256": "b5b2f7aaf6c67e06f75e8d9662776f939ee3d59120ce03afa07a66145d8c8557",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "first_line": 4738,
+      "kind": "default_false",
+      "last_line": 4738,
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "call_sha256": "6993a7efdcf2ff64df75595e68c2e3d5d71697b21f6edcc75ce3015e77c0e24d",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "first_line": 5047,
+      "kind": "default_false",
+      "last_line": 5047,
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "call_sha256": "ea19045778b37eb6f3e194512c4d1588e3c767e9da24957f7e3caa962f5e52a6",
+      "file": "pcsx2/ImGui/ImGuiManager.cpp",
+      "first_line": 1127,
+      "kind": "default_false",
+      "last_line": 1134,
+      "source_sha256": "1c062067ffbbbbeadbdd0d1abcf1239ab596844dbea0c3bc045025edaf68f029"
+    },
+    {
+      "call_sha256": "a71e6c49c82277110e6c9cd1fc2ca8c0153f78b2ed1fabf55079d812584c3c44",
+      "file": "pcsx2/ImGui/ImGuiManager.cpp",
+      "first_line": 1455,
+      "kind": "default_false",
+      "last_line": 1455,
+      "source_sha256": "1c062067ffbbbbeadbdd0d1abcf1239ab596844dbea0c3bc045025edaf68f029"
+    },
+    {
+      "call_sha256": "ea89fef7faa13e8c3491a41884802e7506add5e9117288f2676e7dd70d3abf63",
+      "file": "pcsx2/ImGui/ImGuiOverlays.cpp",
+      "first_line": 1763,
+      "kind": "default_false",
+      "last_line": 1767,
+      "source_sha256": "8ac44f0cdbaed051372ea0f0d0219be7f5bca773fc872f444a49f26c76719ab0"
+    },
+    {
+      "call_sha256": "326290d43d834e19814d5b52d46e33284425f2f2ad9819bf5a0dd82eeef06acc",
+      "file": "pcsx2/ImGui/ImGuiOverlays.cpp",
+      "first_line": 1773,
+      "kind": "default_false",
+      "last_line": 1777,
+      "source_sha256": "8ac44f0cdbaed051372ea0f0d0219be7f5bca773fc872f444a49f26c76719ab0"
+    },
+    {
+      "call_sha256": "ba9fe298ce274aa31111ae9062a65e05d9a5e3e32dc420b877da6c231ec8b5f0",
+      "file": "pcsx2/ImGui/ImGuiOverlays.cpp",
+      "first_line": 1783,
+      "kind": "default_false",
+      "last_line": 1787,
+      "source_sha256": "8ac44f0cdbaed051372ea0f0d0219be7f5bca773fc872f444a49f26c76719ab0"
+    },
+    {
+      "call_sha256": "3b4dc31c8eccb3028f95c4e33469ff6e1f1a12d91d0392af085678518158e7f2",
+      "file": "pcsx2/Input/SDLInputSource.cpp",
+      "first_line": 881,
+      "kind": "default_false",
+      "last_line": 890,
+      "source_sha256": "82dc94d2aca1c89509b4dafbf7312c9302cd7e174cf6d18ef455691c0e46bec6"
+    },
+    {
+      "call_sha256": "02ce4ab8755cd4c3043c1a7a30ece5122024c544145600fb6edc887700d96ad1",
+      "file": "pcsx2/PINE.cpp",
+      "first_line": 693,
+      "kind": "default_false",
+      "last_line": 711,
+      "source_sha256": "06394b970869320ec9bfee4e27507ddb27f2b07b50ce886372e59679b82d1a51"
+    },
+    {
+      "call_sha256": "e932107f079d902036332ac1d442ac164c98b6bd9c6c3ddc8c4b63509376c391",
+      "file": "pcsx2/PINE.cpp",
+      "first_line": 721,
+      "kind": "default_false",
+      "last_line": 732,
+      "source_sha256": "06394b970869320ec9bfee4e27507ddb27f2b07b50ce886372e59679b82d1a51"
+    },
+    {
+      "call_sha256": "0f7c6c4284f528977049936d4c4ec0fc1160a8110a554ab65a7233bd831f3555",
+      "file": "pcsx2/Patch.cpp",
+      "first_line": 689,
+      "kind": "default_false",
+      "last_line": 711,
+      "source_sha256": "f4621ca8e04a6ddca20a5ca6f793e854680c3bb183fbdbb00c8eae194f9763c1"
+    },
+    {
+      "call_sha256": "79b678c8f8cabbf5ca4f11719722ef1f753d8ff8db131715989c9c48edec2557",
+      "file": "pcsx2/sh3-observer/pcsx2/adapter.cpp",
+      "first_line": 66,
+      "kind": "explicit_false",
+      "last_line": 70,
+      "source_sha256": "f2fb13ec008f0b2a5fb598140520317ce185482404448cef15cffd9ab96b2388"
+    },
+    {
+      "call_sha256": "00a500b184a69294e76768f05bd484dea21e2e31200ab80a5be7cee27527b4ba",
+      "file": "pcsx2-qt/Debugger/AnalysisOptionsDialog.cpp",
+      "first_line": 29,
+      "kind": "default_false",
+      "last_line": 31,
+      "source_sha256": "5fb60e99f1bb2bfada7855bc6bb1a8776aa88626544060cb74439c7193dfadb8"
+    },
+    {
+      "call_sha256": "3a083f30ad8df34a7da1745b81d56f9527f4b7cebad7c4f5267e7d800cbc779c",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 353,
+      "kind": "default_false",
+      "last_line": 355,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "0139ef256b4707dd46036582305b2f18d7004f6d629172f3573575c9cdda82ec",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 359,
+      "kind": "default_false",
+      "last_line": 362,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "8f81e4bb92d5019ec21fe3b566d5465cf5ff12402a20e7a2949245271125d198",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 377,
+      "kind": "default_false",
+      "last_line": 379,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "e10d39d0c769b4fa5cb0233a38412cf8a89b9140f4b5a967751ac5443abb9477",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 398,
+      "kind": "default_false",
+      "last_line": 400,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "2b7778f12e11b111c2ced329cf5963779ae234bf77eb3bcd608c3e919a2a8f4c",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 411,
+      "kind": "default_false",
+      "last_line": 413,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "8b12269367bab1ffad8fb65579a64f57a15d0133bda60f565ff6aad14a5483a7",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 432,
+      "kind": "default_false",
+      "last_line": 434,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "b9fcf1dc61954676cbd274699bf0210f89de5a0930917f7cfebb69271f6d9347",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 446,
+      "kind": "default_false",
+      "last_line": 448,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "8136f463c70763f397d6fbfb5854e9d81b253bdb89b7f461942667d9e680a7d8",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 454,
+      "kind": "default_false",
+      "last_line": 456,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "c8a373852abcbe054ab243583700290796c9ac25c0794694739dc3393f9c1150",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 480,
+      "kind": "default_false",
+      "last_line": 482,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "090c11fea97331e9e7671d399074abd6e09f8f9095dbbabf0f5da098fcfadd51",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 486,
+      "kind": "default_false",
+      "last_line": 488,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "46cd02c4d111d26262ecbb6041c06561bb11e6268f3654d3f6bc1ae001592e7e",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 515,
+      "kind": "default_false",
+      "last_line": 522,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "162bc155e771527c5ae6fc1065daa0de1d0c329c5cd576befda8c62c94dfb374",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 526,
+      "kind": "default_false",
+      "last_line": 533,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "340019c36d6a6405dd2cb35b8259d007be6f5081a08a051cef41297b80280aee",
+      "file": "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp",
+      "first_line": 545,
+      "kind": "default_false",
+      "last_line": 558,
+      "source_sha256": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df"
+    },
+    {
+      "call_sha256": "15d0da827b592d52d8d78071403e2eace18d4153a3148be694a871d97673f73f",
+      "file": "pcsx2-qt/Debugger/DebuggerWindow.cpp",
+      "first_line": 142,
+      "kind": "default_false",
+      "last_line": 144,
+      "source_sha256": "8baa206abd4c751b429e3791cc708cbdd7254e2573070cb6deee510a9de6a7cf"
+    },
+    {
+      "call_sha256": "0318f58ca3f6e17cce4fecdf4931660b08e632a625ff041e40e4059d1923fd78",
+      "file": "pcsx2-qt/Debugger/DebuggerWindow.cpp",
+      "first_line": 382,
+      "kind": "default_false",
+      "last_line": 390,
+      "source_sha256": "8baa206abd4c751b429e3791cc708cbdd7254e2573070cb6deee510a9de6a7cf"
+    },
+    {
+      "call_sha256": "494b7138a12f3dbdb64e5d6d55c61c65b0b390c8288ba2fc4d97defe901cc8d5",
+      "file": "pcsx2-qt/Debugger/DebuggerWindow.cpp",
+      "first_line": 485,
+      "kind": "default_false",
+      "last_line": 488,
+      "source_sha256": "8baa206abd4c751b429e3791cc708cbdd7254e2573070cb6deee510a9de6a7cf"
+    },
+    {
+      "call_sha256": "494b7138a12f3dbdb64e5d6d55c61c65b0b390c8288ba2fc4d97defe901cc8d5",
+      "file": "pcsx2-qt/Debugger/DebuggerWindow.cpp",
+      "first_line": 535,
+      "kind": "default_false",
+      "last_line": 538,
+      "source_sha256": "8baa206abd4c751b429e3791cc708cbdd7254e2573070cb6deee510a9de6a7cf"
+    },
+    {
+      "call_sha256": "3bebb6fec9f881db7d16f3cc3fdb85f285f72d9ed8aae2af77cc577ccb2843d1",
+      "file": "pcsx2-qt/Debugger/DebuggerWindow.cpp",
+      "first_line": 575,
+      "kind": "default_false",
+      "last_line": 578,
+      "source_sha256": "8baa206abd4c751b429e3791cc708cbdd7254e2573070cb6deee510a9de6a7cf"
+    },
+    {
+      "call_sha256": "9be7c3f73cea9b90e5da4c7d3392f89d9cfd5d2948e94fba0ab49a5989f86095",
+      "file": "pcsx2-qt/Debugger/DebuggerWindow.cpp",
+      "first_line": 594,
+      "kind": "default_false",
+      "last_line": 596,
+      "source_sha256": "8baa206abd4c751b429e3791cc708cbdd7254e2573070cb6deee510a9de6a7cf"
+    },
+    {
+      "call_sha256": "95c7db589def91bfa82bae8e453c55c1d949d21cd571215b3fdaf3f9168f3253",
+      "file": "pcsx2-qt/Debugger/DisassemblyView.cpp",
+      "first_line": 206,
+      "kind": "default_false",
+      "last_line": 214,
+      "source_sha256": "2584334be72dd529a8178d67ada14fc89fd9264333d6209b6af6813f20b29fcb"
+    },
+    {
+      "call_sha256": "fc6fe85cfc4ec8578c26c73b16a4c5af80c8ee815e635a4cbcb9a85f18afa95a",
+      "file": "pcsx2-qt/Debugger/DisassemblyView.cpp",
+      "first_line": 220,
+      "kind": "default_false",
+      "last_line": 223,
+      "source_sha256": "2584334be72dd529a8178d67ada14fc89fd9264333d6209b6af6813f20b29fcb"
+    },
+    {
+      "call_sha256": "c5c2bdc989b8c9226b1f0b292386d12094641490f5a7b5f279ee06b710d614ca",
+      "file": "pcsx2-qt/Debugger/DisassemblyView.cpp",
+      "first_line": 338,
+      "kind": "default_false",
+      "last_line": 352,
+      "source_sha256": "2584334be72dd529a8178d67ada14fc89fd9264333d6209b6af6813f20b29fcb"
+    },
+    {
+      "call_sha256": "0a8f81863a0ea63dc54e31bbc45f3175db215d90bc691073691db4a80d356aeb",
+      "file": "pcsx2-qt/Debugger/DisassemblyView.cpp",
+      "first_line": 370,
+      "kind": "default_false",
+      "last_line": 374,
+      "source_sha256": "2584334be72dd529a8178d67ada14fc89fd9264333d6209b6af6813f20b29fcb"
+    },
+    {
+      "call_sha256": "cdeb0c0f502848b759cc8bde29ea71d71aec296231a5eb8e3128b3251caab591",
+      "file": "pcsx2-qt/Debugger/DisassemblyView.cpp",
+      "first_line": 1077,
+      "kind": "default_false",
+      "last_line": 1088,
+      "source_sha256": "2584334be72dd529a8178d67ada14fc89fd9264333d6209b6af6813f20b29fcb"
+    },
+    {
+      "call_sha256": "9600d7ebaa3e7b2f2134f5d96f25465e150ad98ea5f6e7822c3274064730a5e5",
+      "file": "pcsx2-qt/Debugger/DisassemblyView.cpp",
+      "first_line": 1096,
+      "kind": "default_false",
+      "last_line": 1118,
+      "source_sha256": "2584334be72dd529a8178d67ada14fc89fd9264333d6209b6af6813f20b29fcb"
+    },
+    {
+      "call_sha256": "b5220d0fafb0df4cd4cd7fbbcbdd3bb096defa91c3e22ea7c29f1bcb0678613e",
+      "file": "pcsx2-qt/Debugger/Memory/MemoryView.cpp",
+      "first_line": 296,
+      "kind": "default_false",
+      "last_line": 305,
+      "source_sha256": "0d0753f6ee7d2be668fb00fae62762d21ad25d76da73dbff5d9bab6197467003"
+    },
+    {
+      "call_sha256": "75df8912845d0a96829be1b0f87b290a078c39447a2b17bb8c288ea6b9e62b72",
+      "file": "pcsx2-qt/Debugger/Memory/MemoryView.cpp",
+      "first_line": 334,
+      "kind": "default_false",
+      "last_line": 343,
+      "source_sha256": "0d0753f6ee7d2be668fb00fae62762d21ad25d76da73dbff5d9bab6197467003"
+    },
+    {
+      "call_sha256": "75df8912845d0a96829be1b0f87b290a078c39447a2b17bb8c288ea6b9e62b72",
+      "file": "pcsx2-qt/Debugger/Memory/MemoryView.cpp",
+      "first_line": 371,
+      "kind": "default_false",
+      "last_line": 380,
+      "source_sha256": "0d0753f6ee7d2be668fb00fae62762d21ad25d76da73dbff5d9bab6197467003"
+    },
+    {
+      "call_sha256": "041ba9d0575972d3dc0e1339cb207bdfc6b03dea086df1ba81e94d811932bbfe",
+      "file": "pcsx2-qt/Debugger/Memory/MemoryView.cpp",
+      "first_line": 392,
+      "kind": "default_false",
+      "last_line": 408,
+      "source_sha256": "0d0753f6ee7d2be668fb00fae62762d21ad25d76da73dbff5d9bab6197467003"
+    },
+    {
+      "call_sha256": "b10aa33ec9865ccc21e665c0abd60c105112edcab929f42937b0a1dc30f8d43d",
+      "file": "pcsx2-qt/Debugger/Memory/MemoryView.cpp",
+      "first_line": 563,
+      "kind": "default_false",
+      "last_line": 573,
+      "source_sha256": "0d0753f6ee7d2be668fb00fae62762d21ad25d76da73dbff5d9bab6197467003"
+    },
+    {
+      "call_sha256": "961a12afc8121ca2b89a97eebb3e2307dd3a6ace2709d9141a5c44c052957515",
+      "file": "pcsx2-qt/Debugger/Memory/MemoryView.cpp",
+      "first_line": 583,
+      "kind": "default_false",
+      "last_line": 593,
+      "source_sha256": "0d0753f6ee7d2be668fb00fae62762d21ad25d76da73dbff5d9bab6197467003"
+    },
+    {
+      "call_sha256": "29dee95bea18f0900ea83e360abf5f9988b9ec3388c9b8d4c8b8e1f0600f9727",
+      "file": "pcsx2-qt/DisplayWidget.cpp",
+      "first_line": 272,
+      "kind": "default_false",
+      "last_line": 274,
+      "source_sha256": "a02e657cc1fdd50f48b68602df0463bc886f096e7753525a4f7c458dfb547c9d"
+    },
+    {
+      "call_sha256": "fa1cf7673f0f091a190b6d52f5f2a84225dcc41183aeb2a533ae4157db3723f0",
+      "file": "pcsx2-qt/DisplayWidget.cpp",
+      "first_line": 353,
+      "kind": "default_false",
+      "last_line": 357,
+      "source_sha256": "a02e657cc1fdd50f48b68602df0463bc886f096e7753525a4f7c458dfb547c9d"
+    },
+    {
+      "call_sha256": "53a13e69877c0419033101f1721559afd64df7ac847f8f74ee90bf08fff8378f",
+      "file": "pcsx2-qt/LogWindow.cpp",
+      "first_line": 433,
+      "kind": "default_false",
+      "last_line": 475,
+      "source_sha256": "f34a03587766bea27391c60f849249d7fddfc6693723fe26d230f9150cb7088d"
+    },
+    {
+      "call_sha256": "1e5d1e36c6d07ab037408f4ee2dbf82cc0665038c7b850b09b37379fd4773d9a",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 260,
+      "kind": "explicit_false",
+      "last_line": 260,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "74ec6421c7b2c32dca2aa301c38c2d7094d5e7da428e02ea99da7468445866c7",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 346,
+      "kind": "default_false",
+      "last_line": 351,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "071c924d2ddc06494de07b5cfe8eddd5126261e401a5fbe5b882b96a3a30fc84",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 386,
+      "kind": "default_false",
+      "last_line": 386,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "fb08ab131b988ff1ab4f419366ea0ffed3a8c6e305946ae0c67f27fa7a61d8fc",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 387,
+      "kind": "default_false",
+      "last_line": 387,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "1c6eede8f926c9e62826e4d292011a5895fd3861fac4ba5e3e51bfb915329330",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 388,
+      "kind": "default_false",
+      "last_line": 388,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "92cc9f7169204fb3f1483d183543a1907b279f68d5e5a8a0943b93d90d16b897",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 389,
+      "kind": "default_false",
+      "last_line": 389,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "d3b64d2458cabd5d0d5740adf9ac9bee6dce2601b3bac30125b4b4a68d923f80",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 418,
+      "kind": "default_false",
+      "last_line": 475,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "8ef1fb190d9aceabf795efffce0a31d958e086d282b17709bb8919d2e473ace4",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 2291,
+      "kind": "default_false",
+      "last_line": 2309,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "9ef5348252938b2c9f97c12b6fb3218c343bae00b054a254f6c23136917b79d4",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 2349,
+      "kind": "default_false",
+      "last_line": 2349,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "acec5580cddc2d89402d6eb1a946dbfbd93ed5905558f8adf5bd59e0c4e4e72d",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 2352,
+      "kind": "default_false",
+      "last_line": 2368,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "1c30d5956e9e69ac93dd1c700cd35880b295c5f3b9ada59aa75732ea5aecf425",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 2376,
+      "kind": "default_false",
+      "last_line": 2384,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "call_sha256": "38104bf158291ac4170369dff6a56255fd7ab4caa0d7660417ef2dda155d944b",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "first_line": 239,
+      "kind": "default_false",
+      "last_line": 239,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "call_sha256": "eb5df74bfc594b8f6dcc32c12de93b4ad551ba2af85e1e01a5f5fe861436aba5",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "first_line": 1406,
+      "kind": "default_false",
+      "last_line": 1406,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "call_sha256": "f4dfdbf44ff3fa9c4a3789b04c0bf4222f68e4b61f112b75901665d53a8d1683",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "first_line": 1430,
+      "kind": "declaration_or_definition",
+      "last_line": 1430,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "call_sha256": "0ec49541b47592724acd897991812777d3904c0244382c36ec50719c85ff8f32",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "first_line": 1452,
+      "kind": "default_false",
+      "last_line": 1452,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "call_sha256": "73e53cfc6e58dd4d5908afb1fe68e53559794c768e467a14d618c2933d9245f3",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "first_line": 1964,
+      "kind": "default_false",
+      "last_line": 1969,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "call_sha256": "ee8c785ad191875e746559c3d82c1d24c05084fc744326a961a1d773010fb7b5",
+      "file": "pcsx2-qt/Settings/AchievementLoginDialog.cpp",
+      "first_line": 50,
+      "kind": "default_false",
+      "last_line": 63,
+      "source_sha256": "43a7aec06d63ef639938d78475416cd8a2bd6aa5ee9be376c947db3aed6c17d5"
+    },
+    {
+      "call_sha256": "7cc5d464532ab8f7ceab70676ffaa411e9d5e2cf3d10564cc9515bca06748bf5",
+      "file": "pcsx2-qt/Settings/AchievementLoginDialog.cpp",
+      "first_line": 71,
+      "kind": "default_false",
+      "last_line": 74,
+      "source_sha256": "43a7aec06d63ef639938d78475416cd8a2bd6aa5ee9be376c947db3aed6c17d5"
+    },
+    {
+      "call_sha256": "ae60e28220acd3fb60ad11db2998069405f6135ce84a97492ad0a3c92ebb95a6",
+      "file": "pcsx2-qt/Settings/AchievementSettingsWidget.cpp",
+      "first_line": 89,
+      "kind": "default_false",
+      "last_line": 89,
+      "source_sha256": "417434f7b6446f71c3ae4432dfd88e15aa774fd8d8e4bd9ee6f9ca1484c755a0"
+    },
+    {
+      "call_sha256": "490cf08d18b70d987d7020f1b74182d4f3131929b79cbcf2fe56b0d55bf50012",
+      "file": "pcsx2-qt/Settings/AchievementSettingsWidget.cpp",
+      "first_line": 236,
+      "kind": "explicit_true",
+      "last_line": 236,
+      "source_sha256": "417434f7b6446f71c3ae4432dfd88e15aa774fd8d8e4bd9ee6f9ca1484c755a0"
+    },
+    {
+      "call_sha256": "490cf08d18b70d987d7020f1b74182d4f3131929b79cbcf2fe56b0d55bf50012",
+      "file": "pcsx2-qt/SetupWizardDialog.cpp",
+      "first_line": 488,
+      "kind": "explicit_true",
+      "last_line": 488,
+      "source_sha256": "5e163da26a0e92b4a278e70ad26ba54cf1ef9658d1aca83d8643b3a79a9ab344"
+    },
+    {
+      "call_sha256": "e0bf4fe8ad4aa1d5114040bfd16d1d2da57602bfbe266cbe397134204132021b",
+      "file": "pcsx2-qt/Translations.cpp",
+      "first_line": 209,
+      "kind": "default_false",
+      "last_line": 217,
+      "source_sha256": "e6427696451b650f87c93d707a5c78bbce0320814761e8ddd80730497c2c86ed"
+    },
+    {
+      "call_sha256": "43fde70c7959eed770280a07763b96e7f3b9b7abf4d1e0d55044a402e8195e74",
+      "file": "pcsx2-qt/Translations.cpp",
+      "first_line": 608,
+      "kind": "default_false",
+      "last_line": 621,
+      "source_sha256": "e6427696451b650f87c93d707a5c78bbce0320814761e8ddd80730497c2c86ed"
+    }
+  ],
+  "callback_progress_not_implied_by_observer_cancellation": true,
+  "capabilities": [],
+  "close_input_references": [
+    {
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "line": 710,
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 856,
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.h",
+      "line": 106,
+      "source_sha256": "41a804c4d96cea9ba17626a39ee50fe950027417dc6ecf9b23bfa70962fe9aa9"
+    }
+  ],
+  "complete_call_graph_proven": false,
+  "completed_tasks": [
+    "IW-CALLERS1",
+    "IW-CALLERS2",
+    "IW-CALLERS3"
+  ],
+  "date": "2026-10-18",
+  "dependency_witnesses": [
+    {
+      "body_sha256": "fa2e7477205aff714596249755636b6dfcf36329beceb533bdcac5420757f59a",
+      "file": "pcsx2-qt/SetupWizardDialog.cpp",
+      "first_line": 484,
+      "last_line": 512,
+      "observation": "Calls Logout synchronously; caller does not retain a visible settings lock across the invocation.",
+      "signature": "void SetupWizardDialog::onRetroAchievementsLoginLogoutPressed()",
+      "source_sha256": "5e163da26a0e92b4a278e70ad26ba54cf1ef9658d1aca83d8643b3a79a9ab344"
+    },
+    {
+      "body_sha256": "7c4e69c5156cbb43be4b38578ded3b4a9723dec4fbdef46bbd7acc783e12099a",
+      "file": "pcsx2-qt/Settings/AchievementSettingsWidget.cpp",
+      "first_line": 232,
+      "last_line": 260,
+      "observation": "Second explicit true caller; refresh follows synchronous Logout.",
+      "signature": "void AchievementSettingsWidget::onLoginLogoutPressed()",
+      "source_sha256": "417434f7b6446f71c3ae4432dfd88e15aa774fd8d8e4bd9ee6f9ca1484c755a0"
+    },
+    {
+      "body_sha256": "00227320c3415fff57cf427941e4f474622a82d2d23c2aeba3edd0113cc4e3cd",
+      "file": "pcsx2/Achievements.cpp",
+      "first_line": 1968,
+      "last_line": 1990,
+      "observation": "May acquire achievements mutex, unload game, remove settings, queue UI save and save secret settings under their lock; body is not demonstrated nonblocking.",
+      "signature": "void Achievements::Logout()",
+      "source_sha256": "2e896e1a6bda8361dc30f713b04e03bc2517586c1b3158d0e601d7b52e91f350"
+    },
+    {
+      "body_sha256": "cf70495e47bcaa5c6c01bb76e6e11c326ac011a752f0996c7b38d4edb44f3453",
+      "file": "pcsx2/Achievements.cpp",
+      "first_line": 254,
+      "last_line": 257,
+      "observation": "Returns ownership of the achievements recursive mutex.",
+      "signature": "std::unique_lock<std::recursive_mutex> Achievements::GetLock()",
+      "source_sha256": "2e896e1a6bda8361dc30f713b04e03bc2517586c1b3158d0e601d7b52e91f350"
+    },
+    {
+      "body_sha256": "572f596012ee03a11d4224f45affcb61137f1a4559fff3d51721755ee1acf5fb",
+      "file": "pcsx2/Achievements.cpp",
+      "first_line": 1105,
+      "last_line": 1131,
+      "observation": "If GS is open, enqueues ClearUIState before clearing the game; reachable while Logout owns the achievements mutex.",
+      "signature": "void Achievements::ClearGameInfo()",
+      "source_sha256": "2e896e1a6bda8361dc30f713b04e03bc2517586c1b3158d0e601d7b52e91f350"
+    },
+    {
+      "body_sha256": "081faa9d606545f5c3ebe4949effc317dd85f359c5548b968c9160b75f01f21c",
+      "file": "pcsx2/Achievements.cpp",
+      "first_line": 2163,
+      "last_line": 2335,
+      "observation": "Renderer path acquires the achievements mutex after enabled/active checks.",
+      "signature": "void Achievements::DrawGameOverlays()",
+      "source_sha256": "2e896e1a6bda8361dc30f713b04e03bc2517586c1b3158d0e601d7b52e91f350"
+    },
+    {
+      "body_sha256": "30c3537b22201afb69a88658b464309a3a25b474be9f1e9afc1fbde564a79524",
+      "file": "pcsx2/Host.cpp",
+      "first_line": 296,
+      "last_line": 300,
+      "observation": "Acquires the settings mutex; does not rely on a lock-free getter.",
+      "signature": "void Host::RemoveBaseSettingValue(const char* section, const char* key)",
+      "source_sha256": "4c6b27e56f8c1887f8c7411348cf667070b8aad9a2266cf8a76246c315e839e4"
+    },
+    {
+      "body_sha256": "867376589d9296d84297e12cdb7120557ba4b9054ebafb9c887b80159671216c",
+      "file": "pcsx2/Host.cpp",
+      "first_line": 168,
+      "last_line": 171,
+      "observation": "Returns ownership of the secret settings mutex.",
+      "signature": "std::unique_lock<std::mutex> Host::GetSecretsSettingsLock()",
+      "source_sha256": "4c6b27e56f8c1887f8c7411348cf667070b8aad9a2266cf8a76246c315e839e4"
+    },
+    {
+      "body_sha256": "2d123938e77f7d0f4e7876306ab7958d41517e467020d2e3716e8f75074ff21f",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "first_line": 1659,
+      "last_line": 1686,
+      "observation": "CPU calls queue this operation to UI without block=true; UI schedules persistence.",
+      "signature": "void Host::CommitBaseSettingChanges()",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "body_sha256": "0f1732da8c768cdf63dae4211b5a675ac095cc0c0e47cb9b8bb35751e37a50cf",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "first_line": 1325,
+      "last_line": 1352,
+      "observation": "Emits notification through EmuThread; actual connection receivers remain outside this bounded audit.",
+      "signature": "void Host::OnAchievementsRefreshed()",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "body_sha256": "3ad74a061171b2aaf75d209d91e75fa79758fbd0a283229b42b2abed24811898",
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "first_line": 695,
+      "last_line": 739,
+      "observation": "Waits for surfaceless using event processing, then synchronously calls closeInputSources before replacing the window.",
+      "signature": "void MainWindow::recreate()",
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "body_sha256": "9e1ae203cfb78f503779becf5760e7b35dcaaad2d76ee21587c3ca6448540eee",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "first_line": 856,
+      "last_line": 871,
+      "observation": "Foreign caller announces wait but retains the preexisting reloadInputDevices destination; CPU-local branch closes sources.",
+      "signature": "void EmuThread::closeInputSources()",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "body_sha256": "4ff690b85512030e3385c07826dc8c84bfb708a0eed0b46f0101bb7fab38ceb3",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "first_line": 842,
+      "last_line": 854,
+      "observation": "CPU receiver invokes InputManager::ReloadDevices; external branch queues rather than blocks.",
+      "signature": "void EmuThread::reloadInputDevices()",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "body_sha256": "d56019e79772785474cbe15f605adca2ea955840019c4fc6955933973a6e2437",
+      "file": "pcsx2/Input/InputManager.cpp",
+      "first_line": 1688,
+      "last_line": 1699,
+      "observation": "Calls virtual ReloadDevices for initialized input backends; backend and OS progress remain unknown.",
+      "signature": "bool InputManager::ReloadDevices()",
+      "source_sha256": "00ff4915ced5cea1845485fbcdd2fd013c60836a019a8b646e0ace1c159129bb"
+    },
+    {
+      "body_sha256": "dfd1e033daa3b476353c6ab86db3753a6927743e243150b5ec8a6425fd576e97",
+      "file": "pcsx2/sh3-observer/pcsx2/adapter.cpp",
+      "first_line": 63,
+      "last_line": 72,
+      "observation": "Queues CPU work with block=false then waits Completion for 2000 ms. Callback owns copied PINE Work through execution/disposal; no Qt external-wait scope.",
+      "signature": "Result dispatch(const Request& request, CooperativeGate::Work work)",
+      "source_sha256": "f2fb13ec008f0b2a5fb598140520317ce185482404448cef15cffd9ab96b2388"
+    },
+    {
+      "body_sha256": "ece11c5db8b3f1b52651960dc7e7f097deb169b2d2a1d57c2c0a327738ac3cec",
+      "file": "pcsx2/PINE.cpp",
+      "first_line": 549,
+      "last_line": 562,
+      "observation": "Rejects new command work if the cooperative gate denies entry.",
+      "source_sha256": "06394b970869320ec9bfee4e27507ddb27f2b07b50ce886372e59679b82d1a51"
+    },
+    {
+      "body_sha256": "9a6f77beee1e69a4ef9472a9f2e240c1c676843ec4850e60b48f1c78907a5c10",
+      "file": "pcsx2/PINE.cpp",
+      "first_line": 784,
+      "last_line": 807,
+      "observation": "Forwards the accepted Work reservation to observer dispatch.",
+      "source_sha256": "06394b970869320ec9bfee4e27507ddb27f2b07b50ce886372e59679b82d1a51"
+    },
+    {
+      "body_sha256": "c91ef86355d9e806033a22441654d8b5f75b3c24d70c6d621b55b9cba04bf0f6",
+      "file": "pcsx2/sh3-observer/pcsx2/adapter.hpp",
+      "first_line": 1,
+      "last_line": 7,
+      "observation": "Internal dispatch parameter has an empty default; only the checked production caller is evidenced.",
+      "source_sha256": "c91ef86355d9e806033a22441654d8b5f75b3c24d70c6d621b55b9cba04bf0f6"
+    },
+    {
+      "body_sha256": "7d1af246e0bff00c5f985237f7c8f3f3abb3ada86e690c91ad3279fb498ba261",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "first_line": 606,
+      "last_line": 651,
+      "observation": "Renderer UI reaches achievements overlay/windows, conditional on state.",
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    }
+  ],
+  "full_application_rebuilt": false,
+  "host_ctest_rerun": false,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-blocking-callers/audit.py": "5d07fd95ecea56b1419b87d440fbb16bfe416f1e7b3dc3eac6ce5c7c33bedc3a",
+    "build/f02-07-blocking-callers/loader.py": "c8f308bec3f7f48c2211aa689828a464ea02aa48dba0becceef7940cffcdbf19",
+    "build/f02-07-blocking-callers/prepare.py": "15ae83fab09c644c3c71301f23150dc7464286cdff3a9cbfc14ad27c0c4edc38",
+    "build/f02-07-blocking-callers/run_probe.py": "dc9690ec26c3b045a0d176fab2647751fef8fa18fea1ec31cfea0e2ac4d57c51",
+    "build/f02-07-blocking-callers/run_probe_qt_tsan.py": "ca5b31aa24c0d354b099c28fbe31f1100c6709a37b4dbb799be946ac1b6435a3",
+    "build/f02-07-blocking-callers/witnesses-v2.py": "91d309511504371437b12002f728488bf82449d99cdb3be84437121aa23e69ed",
+    "build/f02-07-blocking-callers/witnesses.py": "6d712cd6c0a8ecf9bf020f200ed0e336f5febc8757081a8fc0c05f23b7275c03"
+  },
+  "mutex_released_by_owning_thread": true,
+  "next_tasks": [
+    "IW-PINE-JOINT",
+    "CQ3-C/D",
+    "CQ-4",
+    "AD-3"
+  ],
+  "nintendo_build_rerun": false,
+  "observer_retired_before_callback_lock": true,
+  "passing_scenarios": 6,
+  "preceding_custody_evidence_sha256": "a9b101ae60de11760e8d2d2ea760c6c5ccc363bf4a4922de3594984a4ef3e70a",
+  "preceding_public_inputs_unchanged": true,
+  "preparation_sha256": "02a85a8c22a17a18253638c8443df51f1d8353c048f3473380e3463948713211",
+  "private_source_modified": false,
+  "private_stage_files_sha256": {
+    "call-review.json": "829add59ab67b5cd8021f2bacfa1831b35c49b971790e0927670d56d3372973b",
+    "fragments/activity.inc": "522c801b7395b162d840d9b1adcc8ec1045fe300b03a76244ad582047ff719a9",
+    "fragments/before_producer.inc": "941548ec138c826177782d86cdc1f74a4d70a064dc6d2b3b1cab8400093149ee",
+    "fragments/cancel.inc": "6094c66accd0d26e8480c5bb79443dbdbaaf68e18bf29b7013dced85257e86c9",
+    "fragments/check_for_work.inc": "63266793a33be4be7494c9b55bfa4616f624b02f1af199469b9dfc7e06e1182a",
+    "fragments/close.inc": "8b4a488d85d2212eb3e01a59394606c439d7a23748107ba9844aaf674f2e5fd3",
+    "fragments/close_inputs.inc": "9e1ae203cfb78f503779becf5760e7b35dcaaad2d76ee21587c3ca6448540eee",
+    "fragments/commands.inc": "9d2ad4ea1607ab8551e1e59bf9f416d7cd3a9c442a36fe78781bd6451c578f3b",
+    "fragments/commit_read.inc": "8a5b435bd1e56346a601aad47f0d85b07e21367877b906645c339dcb9d9c6f1a",
+    "fragments/commit_write.inc": "d288dade83aa915c65928ea8bf9629c5acb4f226cac9282227ada4704116e81f",
+    "fragments/constructor.inc": "04d6d11ef298f4e3aa8a968d98eff015957e30dc9d001dc88d68f91825d2c2a8",
+    "fragments/cpu_actor.inc": "929b92c071c95ca4ea27a7ca8d0ba968df0b3b52a3ed2509361d4a062d2705e8",
+    "fragments/cpu_dispatch.inc": "87cf486707ea8efb2989ab86f044aae1e9c0bb49befa54f2ab915117e9065ae0",
+    "fragments/cpu_guard.inc": "4446640e79ec18e6f9695231a1b9ee807250126a650fc2513c35d1c2b6fad257",
+    "fragments/cpu_slot.inc": "dc55386bd4d9a34c175f4530e88f7922ed8a8bbaef88eae0015f28dc79cd99c2",
+    "fragments/destructor.inc": "28aa16b8ef51a33d1ffb86934e97e897121d3c349c5a4527bdb6289d92356753",
+    "fragments/dispatch_step.inc": "e75741064f230e21a4e7a79acaad22562958659a50e72a075b60bb8771005619",
+    "fragments/done.inc": "de5af54212b0e97dc35dda5864abd8383655e7b9d15167a204157a6baef48df0",
+    "fragments/execute.inc": "7838dba2712ef731b44b77dcda46f64f1f736a45a6da621a9cdc08ca612aeb81",
+    "fragments/external_scope.inc": "0b574378e6b62ce6723fbaa9b5dae6f15d094ed6126a9ba41ab77939bcb38438",
+    "fragments/gs_async.inc": "842800d0252361a59334affc0aa2feeb17e4f3157ac1a897909a5fc1abf2cfae",
+    "fragments/gs_close.inc": "ffd36c9793bc1e5660c83dbe92f21eade8e64151ebb02506a4e8bff86ec4759e",
+    "fragments/gs_entry.inc": "c7d7d646beed903e647fd88cfc2355025843fe0c3bf85ea1a0c86f8d044c560a",
+    "fragments/gs_event.inc": "8cfc128cbe4503db02fe6ff7feb1ec52465b07c51ecfcffe05a11d15272debf5",
+    "fragments/gs_finish.inc": "e10c690f0314baa3f1172e36a3fa118a56b1525761b4b692474ec4c5243a1036",
+    "fragments/gs_header.inc": "3115f7471ed7d5a506200935dfd7f3d31af7c7f570432e20f5f5704dc176bc8d",
+    "fragments/gs_idle.inc": "fac3ed23d538142aed8d58b8d79dab67ee0a896fa466a65c9847c520735a6c07",
+    "fragments/gs_main.inc": "36d488e3ef9448363efe28b0f36b0dda1cd421f7f5b12b2da3b18511ed0dbb8f",
+    "fragments/gs_open.inc": "25af557123b0e9f3738375bae66f0f32c588a55fd4c19fec98af007d925c8f24",
+    "fragments/gs_open_query.inc": "5ba1080f704e1d73cfd82a1ee59216db0dad33bb44e85cb122df3d101d368440",
+    "fragments/gs_pointer.inc": "a152395eaf03ab202f9fde27b7dd66bfa104473b7c93886745cb143981cd5c4f",
+    "fragments/gs_shutdown.inc": "6deced2bfc7cda660cb190eb04996ef7a452b2d8e9870f3f3d85054dbfb83511",
+    "fragments/gs_simple.inc": "04d169c5d9413e1411ae723a7e765ec909fae71721c38d5e89c863d095954df0",
+    "fragments/gs_stall.inc": "bc827b92073d98b58eb3e8f716abadfe2c304b6c09537992685e15e507be653a",
+    "fragments/gs_start.inc": "b52ebc9ebebc9cfb012aa513e84eeff1d0e15e401b01edb1e3546252696daeee",
+    "fragments/gs_state.inc": "c82d8a8e592e9f776ff2dafc6fd536d7a3e3e2271187384769690cd4ea582907",
+    "fragments/gs_wait.inc": "bb696ca9a8f3ed5369ac032c583e90f0d27bb74d3104c7b4e753a4f216b41a31",
+    "fragments/joint_setup.inc": "34ff1646a76a6621b2e67e3805a19b101fbd02452e9a1d93fc1b7e3d39a6abdb",
+    "fragments/kernel_class.inc": "7bb27f5127a3b62957a3fbddb0bb4b3c7d2f94b13d41cbd07c4285289aff57b0",
+    "fragments/kernel_darwin.inc": "b57999385dffba5afe4937e2be69208076a39f84e2b43db487009cabf0643340",
+    "fragments/kick.inc": "b3ce030690698d20add1ea26b68ae1c41b3be716cc33deb498c821aef459c521",
+    "fragments/kill.inc": "85d7b0c3204758cd382be2de1d9d0c371c8318959b6d971a9a1a1afaacdd40d0",
+    "fragments/open.inc": "a181c08980b67a94e6ec15235854af148831fe9d26ec06f2f11112d99280f840",
+    "fragments/owner.inc": "12f9cb12de2c4af73615648d1fc463d0ee31c84315017e51c006fbefeb440e10",
+    "fragments/packet_tag.inc": "fbef2c3c2349baaff42d046682121c99513c081fdd2090761dfb75b4cb8b0623",
+    "fragments/pending.inc": "f9fec93c36e4d0c406437d8d556cdb2bef86836791fae13a0666a4992b7c41bc",
+    "fragments/poll.inc": "dad659e3d5621d3bead27a9527368efd68a1d7c53c115b8a314b821434825805",
+    "fragments/queue.inc": "bba89b1010cf4888956b13c711967860ce04b713ededf3de3b96c48f6d6a2c57",
+    "fragments/read_bytes.inc": "56f2bf40e8e648d947d71a53d5f9ce44ee758715ae2bfeac518a9862c91673b0",
+    "fragments/read_pos.inc": "fc0a2c9c4dca08e5f219ce401ad3d2f5d3aef01a2221a741aa91cc06d974f007",
+    "fragments/read_regs.inc": "8388e03ecda12c61009be258824de1f23818c69f6bfe7e3c4025419d312d92db",
+    "fragments/read_word.inc": "11750d68866842d21e114537d09dbcd343fa30173db65b1bfdf5d16d1e235e5e",
+    "fragments/reload_devices.inc": "4ff690b85512030e3385c07826dc8c84bfb708a0eed0b46f0101bb7fab38ceb3",
+    "fragments/reserve.inc": "3d5569dcab39396f555014e4bb0a5abfd7631e145d7511c7ae6cdd87d3e09709",
+    "fragments/reset.inc": "921e3130219aa2c653319270fe3c04a8091d10ad34fb7c59ffa0e5b4c67cd5a4",
+    "fragments/result.inc": "8be687e2cb971c6bd5d664fa8684cd1d36e5a68ca2b62fbcb4b6b357090f5f7c",
+    "fragments/stop_owner.inc": "f0d57e7b9032092c0657814bbc3e62a10511a85f8a5d3b5c77826d67585addd0",
+    "fragments/ui_dispatch.inc": "e0aaa26c05eee7794ff452a433a5748966aed106bd6fac83c751ced2a7108530",
+    "fragments/ui_slot.inc": "a2995d9f0d2b4ac88adaa1ed6461485c51d76724d898c2ee81e954ec6d01ad65",
+    "fragments/vu_class.inc": "bfd34abafac5528eaeffc998b3a08044f00bdb31a697dcff117d6a4ff95b67c9",
+    "fragments/vu_reset.inc": "72e4bd92fbf4d9a3d0a9e1634416201808ffac16274b0aa965adb3d2ddb8bd08",
+    "fragments/wait_control.inc": "c9e9373486c46210011077348ddaab656eeca09e7ca66aff16fa61e617e04146",
+    "fragments/wait_for_empty.inc": "f292f8f45cd67b70585c95a37f1b7af647acd2831a638d96e25d8c44abb2ec3a",
+    "fragments/wait_for_work.inc": "15b7ff24294e4bbd0701ffec65a2591da2fb7ff37515f5dc142d3ee7c2bacb26",
+    "fragments/wait_size.inc": "a986771bf0560072fcb2d5032aedd287c74b226d8a0c09435a7f9ffd6b986fd8",
+    "fragments/wait_vu.inc": "038850205529a4b70a8b9a18651d07be13a1954ce1071afd84aa6ec43a309576",
+    "fragments/work_sema_class.inc": "e1cd4d83b8c9e56b3623d91ffcca56d675496f9af31a6ef5fd3938ccd369e4f2",
+    "fragments/write_bytes.inc": "f72f947f45c5b8d2b5882e53cec74ceaa8ae638f6f9f1a2a9c71f232fd11d1ba",
+    "fragments/write_data.inc": "af3fabdb926cf91422621393e3a32ab3087e8168ce628c9babe51df209687c67",
+    "fragments/write_pos.inc": "abbfe15c6123052e786ea01c06f56fb2bb8ac9367d31f4cb23d7537a9c586be6",
+    "fragments/write_ptr.inc": "b2f4fa2b53714e78cd967a72ae1d3979254ffbe9258e6de0f46e5414e757518d",
+    "fragments/write_regs.inc": "ea5f333bb8a30f2cf25db2439132a3cdda90ee5202cdd6ea5fe1100463011e45",
+    "fragments/write_word.inc": "d00f5f16cc54125f87b3f1cb9861cd17a44c6824aec18476c92c08ed1a0addbe",
+    "harness-v1-normal-native.cpp": "6ed9d02a721127ccd74b4e8a6bcf9b59a49f2b0344a2d60f347a41de5b28034e",
+    "harness-v1-sanitize-native.cpp": "6ed9d02a721127ccd74b4e8a6bcf9b59a49f2b0344a2d60f347a41de5b28034e",
+    "harness-v1-tsan-native.cpp": "6ed9d02a721127ccd74b4e8a6bcf9b59a49f2b0344a2d60f347a41de5b28034e",
+    "moc-v1-normal-native/frontend.moc": "f9d99bfd86f26c94c19b0b77c1b74d0a53268cdf2eb2cfde954e9dff7c544fde",
+    "moc-v1-sanitize-native/frontend.moc": "9c9f824dc562a76e8d7d0e33a97ae38a5d3309af0c5c75cdbb92ed70f9b2a70e",
+    "moc-v1-tsan-native/frontend.moc": "22a20ee8a0643cd52367572dfbc013841f506b199f68731d4d59de94d6ba8c23",
+    "probe-v1-normal-native": "584e428de322d328940a8afbd0a98b28874f896489d3c839bc1d9974329af37a",
+    "probe-v1-normal-native-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe-v1-normal-native-contended.log": "4c1d4f4ef14c31ff57c3d73d168e25fc6bbfb8e17701bcc802b00fb387a5f43a",
+    "probe-v1-normal-native-free.log": "73ac6ea6f3644a8b45255e6ef4e92efbbd71bb1eb0d5a2bf7d1256114bba0c85",
+    "probe-v1-normal-native-moc.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe-v1-sanitize-native": "f9c3c614bea40a833cfd295720229aad67abc624d379256a3ede03729444a4cb",
+    "probe-v1-sanitize-native-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe-v1-sanitize-native-contended.log": "4c1d4f4ef14c31ff57c3d73d168e25fc6bbfb8e17701bcc802b00fb387a5f43a",
+    "probe-v1-sanitize-native-free.log": "73ac6ea6f3644a8b45255e6ef4e92efbbd71bb1eb0d5a2bf7d1256114bba0c85",
+    "probe-v1-sanitize-native-moc.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe-v1-sanitize-native.dSYM/Contents/Info.plist": "f143c4eed8fa6b8d6697b47561dfc5a89bb6bdf6d5951b0cecb1465e5def876f",
+    "probe-v1-sanitize-native.dSYM/Contents/Resources/DWARF/probe-v1-sanitize-native": "f887ff92781c35edb6ca33c0aa7848bb774accadff107e5a03fb256ee51e443f",
+    "probe-v1-sanitize-native.dSYM/Contents/Resources/Relocations/x86_64/probe-v1-sanitize-native.yml": "d0465ab343a52ea7df4fc23756f6724bef5996e2db3663767b077b86ebc52f04",
+    "probe-v1-tsan-native": "df87140b87112d4ce0633f8ccb9f5102477687a79de313aa319cc97fd77f0c5c",
+    "probe-v1-tsan-native-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe-v1-tsan-native-contended.log": "4c1d4f4ef14c31ff57c3d73d168e25fc6bbfb8e17701bcc802b00fb387a5f43a",
+    "probe-v1-tsan-native-free.log": "73ac6ea6f3644a8b45255e6ef4e92efbbd71bb1eb0d5a2bf7d1256114bba0c85",
+    "probe-v1-tsan-native-moc.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe-v1-tsan-native.dSYM/Contents/Info.plist": "a8e4cc36dddb4a4d8ca602f813f88f1d167f401d2e3c750b0be9e225e73b5bf3",
+    "probe-v1-tsan-native.dSYM/Contents/Resources/DWARF/probe-v1-tsan-native": "00d44778a371b4e5ed5a61acf13c8242c71c7902d57e796a2039773f7da46ec0",
+    "probe-v1-tsan-native.dSYM/Contents/Resources/Relocations/x86_64/probe-v1-tsan-native.yml": "b2992a5b9c14af7e96be95fbc43738af23fe2776f9a299c3eb0e1b3b1952968d",
+    "qt-tsan-loader-v1.log": "0adf0e1d08c212d9abc79bbe6e4f3df462d6d78e4d6464ab402022ac4ea3a1e3"
+  },
+  "probe_runs": [
+    {
+      "binary_sha256": "584e428de322d328940a8afbd0a98b28874f896489d3c839bc1d9974329af37a",
+      "cases": [
+        "free",
+        "contended"
+      ],
+      "mode": "normal-native",
+      "passed": 2,
+      "receipts": [
+        {
+          "label": "probe-v1-normal-native-moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "b7ae4d7b5188298e4dba38d7dd903a44cd41ee3990e538afe407472b677847b9",
+          "shutdown_verified": true
+        },
+        {
+          "label": "probe-v1-normal-native-compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "94005e33560d461f8842ca979dc36753a3efeeaeedcd9b5cc77fc18870ae631f",
+          "shutdown_verified": true
+        },
+        {
+          "label": "probe-v1-normal-native-free",
+          "log_sha256": "73ac6ea6f3644a8b45255e6ef4e92efbbd71bb1eb0d5a2bf7d1256114bba0c85",
+          "receipt_sha256": "0541d97341d28f06c0a868bbae24112c1310ca42560cbf318cd9c6a7b7032e89",
+          "shutdown_verified": true
+        },
+        {
+          "label": "probe-v1-normal-native-contended",
+          "log_sha256": "4c1d4f4ef14c31ff57c3d73d168e25fc6bbfb8e17701bcc802b00fb387a5f43a",
+          "receipt_sha256": "8449d100725cf873f3fc8640a2be4be5095b5127013330027a3dcf51b0c5d38d",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "f9c3c614bea40a833cfd295720229aad67abc624d379256a3ede03729444a4cb",
+      "cases": [
+        "free",
+        "contended"
+      ],
+      "mode": "sanitize-native",
+      "passed": 2,
+      "receipts": [
+        {
+          "label": "probe-v1-sanitize-native-moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "a150ab7f55295d756afc4ea5cf05ed82618340bf0fd0b1a7fc8663f3970bc81b",
+          "shutdown_verified": true
+        },
+        {
+          "label": "probe-v1-sanitize-native-compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "20b326bead1fb7bef97e20e97ad9b7d512f77d42e956a21c97dc55d2208063e4",
+          "shutdown_verified": true
+        },
+        {
+          "label": "probe-v1-sanitize-native-free",
+          "log_sha256": "73ac6ea6f3644a8b45255e6ef4e92efbbd71bb1eb0d5a2bf7d1256114bba0c85",
+          "receipt_sha256": "da2d5735fdb378a73f38955fd87915aadcd9e19e746f3cd921a5a98877525ae4",
+          "shutdown_verified": true
+        },
+        {
+          "label": "probe-v1-sanitize-native-contended",
+          "log_sha256": "4c1d4f4ef14c31ff57c3d73d168e25fc6bbfb8e17701bcc802b00fb387a5f43a",
+          "receipt_sha256": "a83fed04fe072f4cb18fba2990b0ef9874063b37053a80994f67ae485b0cca2e",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "df87140b87112d4ce0633f8ccb9f5102477687a79de313aa319cc97fd77f0c5c",
+      "cases": [
+        "free",
+        "contended"
+      ],
+      "mode": "tsan-native",
+      "passed": 2,
+      "receipts": [
+        {
+          "label": "probe-v1-tsan-native-moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "dbadfc08d9afe6058723542396283c526cb63c2f970913a3adf6fd8526585f45",
+          "shutdown_verified": true
+        },
+        {
+          "label": "probe-v1-tsan-native-compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "c3b2276a51af08d1a58ae92acf019bd899a64f49985f53bd7a3196cef8882cce",
+          "shutdown_verified": true
+        },
+        {
+          "label": "probe-v1-tsan-native-free",
+          "log_sha256": "73ac6ea6f3644a8b45255e6ef4e92efbbd71bb1eb0d5a2bf7d1256114bba0c85",
+          "receipt_sha256": "b1ff8ec451f12fed8f80f6c1a6a4a65b10b88e3607502987af802efec47e7f0d",
+          "shutdown_verified": true
+        },
+        {
+          "label": "probe-v1-tsan-native-contended",
+          "log_sha256": "4c1d4f4ef14c31ff57c3d73d168e25fc6bbfb8e17701bcc802b00fb387a5f43a",
+          "receipt_sha256": "4aa0906c2aa8db607edc0b270c60d1b8f1ae4ccba3d6ae590ffd25e38fe84a14",
+          "shutdown_verified": true
+        }
+      ]
+    }
+  ],
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-blocking-callers.md": "84408eb0fb1b25749095e82f46e095c8dc40e112393c42fa7cc8a600681e406e",
+    "schemas/blocking-callers-v1.md": "c0826d92e072454041f31caf3aedc7f8da091c7bc8535f2d95ed67181638977c",
+    "tests/fixtures/pcsx2-blocking-callers/README.md": "ecaecfdd468a4dc791568e72bd77d79f87f7471b3f740ff04c82c446a6c612f1",
+    "tests/fixtures/pcsx2-blocking-callers/probe.cpp": "6ed9d02a721127ccd74b4e8a6bcf9b59a49f2b0344a2d60f347a41de5b28034e"
+  },
+  "python_full_suite_rerun": false,
+  "qt_tsan_loader_proof": {
+    "expected_library_found": true,
+    "fixture_sha256": "df87140b87112d4ce0633f8ccb9f5102477687a79de313aa319cc97fd77f0c5c",
+    "previous_prefix_qtcore_loaded": false,
+    "selected_qtcore_sha256": "d3a734c2376c9e25f6debc470ef37c072b8078549b5bb146ac6a4cae1301dfff"
+  },
+  "read_events_produced": 0,
+  "real_logout_or_input_backend_executed": false,
+  "real_mutex_used": true,
+  "real_pine_server_joint_execution": false,
+  "reference_inventory_is_lexical": true,
+  "remote_ci_executed": false,
+  "resource_links": [],
+  "schema_version": 1,
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_files_sha256": {
+    "pcsx2-qt/Debugger/AnalysisOptionsDialog.cpp": "5fb60e99f1bb2bfada7855bc6bb1a8776aa88626544060cb74439c7193dfadb8",
+    "pcsx2-qt/Debugger/Breakpoints/BreakpointModel.cpp": "a01e2e927fbacfb1af4e71e84546ccd90cf31d9b31df0dd373ac3ad0620dc8df",
+    "pcsx2-qt/Debugger/DebuggerWindow.cpp": "8baa206abd4c751b429e3791cc708cbdd7254e2573070cb6deee510a9de6a7cf",
+    "pcsx2-qt/Debugger/DisassemblyView.cpp": "2584334be72dd529a8178d67ada14fc89fd9264333d6209b6af6813f20b29fcb",
+    "pcsx2-qt/Debugger/Memory/MemoryView.cpp": "0d0753f6ee7d2be668fb00fae62762d21ad25d76da73dbff5d9bab6197467003",
+    "pcsx2-qt/DisplayWidget.cpp": "a02e657cc1fdd50f48b68602df0463bc886f096e7753525a4f7c458dfb547c9d",
+    "pcsx2-qt/LogWindow.cpp": "f34a03587766bea27391c60f849249d7fddfc6693723fe26d230f9150cb7088d",
+    "pcsx2-qt/MainWindow.cpp": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923",
+    "pcsx2-qt/QtHost.cpp": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f",
+    "pcsx2-qt/QtHost.h": "41a804c4d96cea9ba17626a39ee50fe950027417dc6ecf9b23bfa70962fe9aa9",
+    "pcsx2-qt/Settings/AchievementLoginDialog.cpp": "43a7aec06d63ef639938d78475416cd8a2bd6aa5ee9be376c947db3aed6c17d5",
+    "pcsx2-qt/Settings/AchievementSettingsWidget.cpp": "417434f7b6446f71c3ae4432dfd88e15aa774fd8d8e4bd9ee6f9ca1484c755a0",
+    "pcsx2-qt/SetupWizardDialog.cpp": "5e163da26a0e92b4a278e70ad26ba54cf1ef9658d1aca83d8643b3a79a9ab344",
+    "pcsx2-qt/Translations.cpp": "e6427696451b650f87c93d707a5c78bbce0320814761e8ddd80730497c2c86ed",
+    "pcsx2/Achievements.cpp": "2e896e1a6bda8361dc30f713b04e03bc2517586c1b3158d0e601d7b52e91f350",
+    "pcsx2/GS/Renderers/DX11/GSDevice11.cpp": "496e68fc29deabbcb518197a37c5f46b7342ee1b703b7608fd1909b0bea6ae5b",
+    "pcsx2/GS/Renderers/DX12/GSDevice12.cpp": "392ab5c82f9dba3c0b0e764ed7e042e68cf4e3f0799346e2e540853cdf5780e9",
+    "pcsx2/Host.h": "8cbbb3a480bcc74c674dc253a1ef0960fdbf17a0ebfa6dc2b8a46b1ce3e63795",
+    "pcsx2/Hotkeys.cpp": "1e48a2c0d1a0ecc08bc52c1c3d2f233d543d70b8d786babd765789acbbe86e79",
+    "pcsx2/ImGui/FullscreenUI.cpp": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a",
+    "pcsx2/ImGui/FullscreenUI_Settings.cpp": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe",
+    "pcsx2/ImGui/ImGuiManager.cpp": "1c062067ffbbbbeadbdd0d1abcf1239ab596844dbea0c3bc045025edaf68f029",
+    "pcsx2/ImGui/ImGuiOverlays.cpp": "8ac44f0cdbaed051372ea0f0d0219be7f5bca773fc872f444a49f26c76719ab0",
+    "pcsx2/Input/SDLInputSource.cpp": "82dc94d2aca1c89509b4dafbf7312c9302cd7e174cf6d18ef455691c0e46bec6",
+    "pcsx2/PINE.cpp": "06394b970869320ec9bfee4e27507ddb27f2b07b50ce886372e59679b82d1a51",
+    "pcsx2/Patch.cpp": "f4621ca8e04a6ddca20a5ca6f793e854680c3bb183fbdbb00c8eae194f9763c1",
+    "pcsx2/sh3-observer/pcsx2/adapter.cpp": "f2fb13ec008f0b2a5fb598140520317ce185482404448cef15cffd9ab96b2388"
+  },
+  "source_files_verified": 2966,
+  "source_id": "SRC86",
+  "status": "blocking_callers_inventoried_callback_mutex_limit_verified_pine_joint_pending",
+  "tsan_suppressions_used": false
+}

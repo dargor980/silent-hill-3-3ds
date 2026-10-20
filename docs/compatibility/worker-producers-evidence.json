@@ -1,0 +1,1898 @@
+{
+  "admitted_execution_modes": [],
+  "all_eleven_prior_source_copies_verified_by_preceding_audit": true,
+  "capabilities": [],
+  "date": "2026-10-18",
+  "fragments": [
+    {
+      "first_line": 151,
+      "fragment_sha256": "e1cd4d83b8c9e56b3623d91ffcca56d675496f9af31a6ef5fd3938ccd369e4f2",
+      "last_line": 222,
+      "name": "work_sema_class",
+      "source_file": "common/Threading.h",
+      "source_sha256": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb"
+    },
+    {
+      "first_line": 18,
+      "fragment_sha256": "63266793a33be4be7494c9b55bfa4616f624b02f1af199469b9dfc7e06e1182a",
+      "last_line": 42,
+      "name": "check_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 43,
+      "fragment_sha256": "15b7ff24294e4bbd0701ffec65a2591da2fb7ff37515f5dc142d3ee7c2bacb26",
+      "last_line": 62,
+      "name": "wait_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 94,
+      "fragment_sha256": "f292f8f45cd67b70585c95a37f1b7af647acd2831a638d96e25d8c44abb2ec3a",
+      "last_line": 109,
+      "name": "wait_for_empty",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 128,
+      "fragment_sha256": "85d7b0c3204758cd382be2de1d9d0c371c8318959b6d971a9a1a1afaacdd40d0",
+      "last_line": 134,
+      "name": "kill",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 135,
+      "fragment_sha256": "921e3130219aa2c653319270fe3c04a8091d10ad34fb7c59ffa0e5b4c67cd5a4",
+      "last_line": 139,
+      "name": "reset",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 435,
+      "fragment_sha256": "b04f074c6aec0ff95682dc494de00dd084e718bebce8ff288b76e665e08015ec",
+      "last_line": 440,
+      "name": "wait_vu",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+    }
+  ],
+  "gs_vu_retention_implemented": false,
+  "host_ctest_rerun": false,
+  "lexical_reference_patterns": {
+    "gif": "\\bGif_(?:AddGSPacketMTVU|AddCompletedGSPacket|AddBlankGSPacket|MTGS_Wait)\\b",
+    "gs": "\\bMTGS::(?:RunOnGSThread|ResetGS|PostVsyncStart|InitAndReadFIFO|Freeze|WaitGS|WaitForOpen|WaitForClose|StartThread|ShutdownThread|SetRunIdle|GameChanged|ApplySettings|ResizeDisplayWindow|UpdateDisplayWindow|SetVSyncMode|UpdateVSyncMode|SetSoftwareRendering|ToggleSoftwareRendering|SaveMemorySnapshot|PresentCurrentFrame)\\b",
+    "vu": "\\bvu1Thread\\.(?:ExecuteVU|VifUnpack|WriteMicroMem|WriteDataMem|WriteVIRegs|WriteVFRegs|WriteCol|WriteRow|Reset|Open|Close|WaitVU|IsDone|KickStart)\\b"
+  },
+  "lexical_reference_scope": [
+    "pcsx2",
+    "pcsx2-qt",
+    "pcsx2-gsrunner",
+    "common"
+  ],
+  "lexical_references": [
+    {
+      "family": "gs",
+      "file": "pcsx2-gsrunner/Main.cpp",
+      "line": 1012,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-gsrunner/Main.cpp",
+      "line": 1013,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 165,
+      "symbol": "MTGS::WaitForOpen"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 195,
+      "symbol": "MTGS::WaitForClose"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 548,
+      "symbol": "MTGS::UpdateDisplayWindow"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 549,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 568,
+      "symbol": "MTGS::UpdateDisplayWindow"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 569,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 636,
+      "symbol": "MTGS::UpdateDisplayWindow"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 637,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 663,
+      "symbol": "MTGS::ToggleSoftwareRendering"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 824,
+      "symbol": "MTGS::ResizeDisplayWindow"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 870,
+      "symbol": "MTGS::PresentCurrentFrame"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 892,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 906,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 912,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 926,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/QtHost.cpp",
+      "line": 1304,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/Translations.cpp",
+      "line": 208,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2-qt/Translations.cpp",
+      "line": 604,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 261,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1090,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1108,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1166,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1179,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1218,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1241,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1268,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1287,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1306,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1335,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1366,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1493,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1506,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1611,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1632,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Achievements.cpp",
+      "line": 1927,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Counters.cpp",
+      "line": 483,
+      "symbol": "MTGS::SetSoftwareRendering"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Dmac.cpp",
+      "line": 107,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/FiFo.cpp",
+      "line": 41,
+      "symbol": "MTGS::InitAndReadFIFO"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS.cpp",
+      "line": 25,
+      "symbol": "MTGS::ResetGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS.cpp",
+      "line": 44,
+      "symbol": "MTGS::ResetGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS.cpp",
+      "line": 334,
+      "symbol": "MTGS::PostVsyncStart"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1167,
+      "symbol": "MTGS::ApplySettings"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1190,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1199,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1200,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1204,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1210,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1217,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1222,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1233,
+      "symbol": "MTGS::ToggleSoftwareRendering"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1275,
+      "symbol": "MTGS::ApplySettings"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1304,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1329,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1353,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1364,
+      "symbol": "MTGS::ApplySettings"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1378,
+      "symbol": "MTGS::ApplySettings"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GS/GS.cpp",
+      "line": 1395,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GSDumpReplayer.cpp",
+      "line": 211,
+      "symbol": "MTGS::Freeze"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/GSDumpReplayer.cpp",
+      "line": 229,
+      "symbol": "Gif_AddCompletedGSPacket"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GSDumpReplayer.cpp",
+      "line": 321,
+      "symbol": "MTGS::PostVsyncStart"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/GSDumpReplayer.cpp",
+      "line": 336,
+      "symbol": "MTGS::InitAndReadFIFO"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Gif_Unit.cpp",
+      "line": 221,
+      "symbol": "vu1Thread.IsDone"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Gif_Unit.cpp",
+      "line": 222,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/Gif_Unit.h",
+      "line": 16,
+      "symbol": "Gif_MTGS_Wait"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/Gif_Unit.h",
+      "line": 21,
+      "symbol": "Gif_AddBlankGSPacket"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/Gif_Unit.h",
+      "line": 22,
+      "symbol": "Gif_AddGSPacketMTVU"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/Gif_Unit.h",
+      "line": 23,
+      "symbol": "Gif_AddCompletedGSPacket"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/Gif_Unit.h",
+      "line": 274,
+      "symbol": "Gif_MTGS_Wait"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/Gif_Unit.h",
+      "line": 278,
+      "symbol": "Gif_MTGS_Wait"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/Gif_Unit.h",
+      "line": 302,
+      "symbol": "Gif_AddBlankGSPacket"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/Gif_Unit.h",
+      "line": 583,
+      "symbol": "Gif_AddGSPacketMTVU"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/Gif_Unit.h",
+      "line": 585,
+      "symbol": "Gif_AddCompletedGSPacket"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 333,
+      "symbol": "MTGS::SetRunIdle"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 382,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 391,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 397,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 402,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 413,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 427,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 443,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 465,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 506,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 725,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 812,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 839,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 946,
+      "symbol": "MTGS::ToggleSoftwareRendering"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 3639,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 3644,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 3861,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 3905,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 3946,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "line": 3984,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "line": 108,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "line": 115,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "line": 1553,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "line": 1586,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/ImGuiManager.cpp",
+      "line": 1128,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/ImGuiManager.cpp",
+      "line": 1152,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/ImGuiManager.cpp",
+      "line": 1164,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/ImGuiManager.cpp",
+      "line": 1203,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/ImGuiManager.cpp",
+      "line": 1266,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/ImGuiManager.cpp",
+      "line": 1440,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/ImGuiOverlays.cpp",
+      "line": 1498,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/ImGuiOverlays.cpp",
+      "line": 1550,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/ImGui/ImGuiOverlays.cpp",
+      "line": 1570,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 118,
+      "symbol": "MTGS::StartThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 129,
+      "symbol": "MTGS::ShutdownThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 201,
+      "symbol": "MTGS::ResetGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 239,
+      "symbol": "MTGS::PostVsyncStart"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 283,
+      "symbol": "MTGS::InitAndReadFIFO"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 475,
+      "symbol": "Gif_MTGS_Wait"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 613,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 876,
+      "symbol": "MTGS::WaitForOpen"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 898,
+      "symbol": "MTGS::WaitForClose"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 913,
+      "symbol": "MTGS::Freeze"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 925,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 933,
+      "symbol": "MTGS::GameChanged"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 939,
+      "symbol": "MTGS::ApplySettings"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 954,
+      "symbol": "MTGS::ResizeDisplayWindow"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 966,
+      "symbol": "MTGS::UpdateDisplayWindow"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 983,
+      "symbol": "MTGS::SetVSyncMode"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 990,
+      "symbol": "MTGS::UpdateVSyncMode"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 995,
+      "symbol": "MTGS::SetSoftwareRendering"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 1015,
+      "symbol": "MTGS::ToggleSoftwareRendering"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 1021,
+      "symbol": "MTGS::SaveMemorySnapshot"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 1032,
+      "symbol": "MTGS::PresentCurrentFrame"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 1045,
+      "symbol": "MTGS::SetRunIdle"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 1052,
+      "symbol": "Gif_AddGSPacketMTVU"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 1057,
+      "symbol": "Gif_AddCompletedGSPacket"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 1075,
+      "symbol": "Gif_AddBlankGSPacket"
+    },
+    {
+      "family": "gif",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 1082,
+      "symbol": "Gif_MTGS_Wait"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/MTGS.cpp",
+      "line": 1084,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/MTVU.cpp",
+      "line": 51,
+      "symbol": "vu1Thread.IsDone"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/MTVU.cpp",
+      "line": 54,
+      "symbol": "vu1Thread.Reset"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/MTVU.cpp",
+      "line": 55,
+      "symbol": "vu1Thread.WriteCol"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/MTVU.cpp",
+      "line": 56,
+      "symbol": "vu1Thread.WriteRow"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/MTVU.cpp",
+      "line": 57,
+      "symbol": "vu1Thread.WriteMicroMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/MTVU.cpp",
+      "line": 58,
+      "symbol": "vu1Thread.WriteDataMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/MTVU.cpp",
+      "line": 59,
+      "symbol": "vu1Thread.WriteVIRegs"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/MTVU.cpp",
+      "line": 60,
+      "symbol": "vu1Thread.WriteVFRegs"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 789,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 796,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 803,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 810,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 816,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 828,
+      "symbol": "vu1Thread.WriteMicroMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 841,
+      "symbol": "vu1Thread.WriteMicroMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 854,
+      "symbol": "vu1Thread.WriteMicroMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 867,
+      "symbol": "vu1Thread.WriteMicroMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 883,
+      "symbol": "vu1Thread.WriteMicroMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 896,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 902,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 908,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 914,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 920,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 929,
+      "symbol": "vu1Thread.WriteDataMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 938,
+      "symbol": "vu1Thread.WriteDataMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 947,
+      "symbol": "vu1Thread.WriteDataMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 956,
+      "symbol": "vu1Thread.WriteDataMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Memory.cpp",
+      "line": 966,
+      "symbol": "vu1Thread.WriteDataMem"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Recording/InputRecording.cpp",
+      "line": 143,
+      "symbol": "MTGS::PresentCurrentFrame"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Recording/InputRecording.cpp",
+      "line": 399,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Recording/InputRecordingControls.cpp",
+      "line": 33,
+      "symbol": "MTGS::PresentCurrentFrame"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Recording/InputRecordingControls.cpp",
+      "line": 50,
+      "symbol": "MTGS::PresentCurrentFrame"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Recording/InputRecordingControls.cpp",
+      "line": 76,
+      "symbol": "MTGS::PresentCurrentFrame"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/SPR.cpp",
+      "line": 33,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/SPU2/spu2.cpp",
+      "line": 146,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/SPU2/spu2.cpp",
+      "line": 147,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/SaveState.cpp",
+      "line": 61,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/SaveState.cpp",
+      "line": 62,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/SaveState.cpp",
+      "line": 359,
+      "symbol": "MTGS::Freeze"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/SaveState.cpp",
+      "line": 771,
+      "symbol": "MTGS::SaveMemorySnapshot"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 311,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 312,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 497,
+      "symbol": "MTGS::ShutdownThread"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 807,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 808,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 836,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 837,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 953,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 962,
+      "symbol": "MTGS::RunOnGSThread"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1210,
+      "symbol": "MTGS::GameChanged"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1591,
+      "symbol": "MTGS::WaitForOpen"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1600,
+      "symbol": "MTGS::WaitForClose"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1726,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1727,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1784,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1785,
+      "symbol": "MTGS::ResetGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1786,
+      "symbol": "MTGS::GameChanged"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1790,
+      "symbol": "MTGS::WaitForClose"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1861,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1862,
+      "symbol": "vu1Thread.Reset"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1863,
+      "symbol": "MTGS::WaitGS"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1883,
+      "symbol": "MTGS::PresentCurrentFrame"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 1991,
+      "symbol": "MTGS::PresentCurrentFrame"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 2351,
+      "symbol": "MTGS::UpdateVSyncMode"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 2775,
+      "symbol": "vu1Thread.Open"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 2799,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 3192,
+      "symbol": "MTGS::UpdateVSyncMode"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 3195,
+      "symbol": "MTGS::ApplySettings"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/VMManager.cpp",
+      "line": 3222,
+      "symbol": "MTGS::ApplySettings"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VU1micro.cpp",
+      "line": 29,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VU1micro.cpp",
+      "line": 62,
+      "symbol": "vu1Thread.ExecuteVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/VUmicroMem.cpp",
+      "line": 57,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 306,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 310,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 314,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 318,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 323,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 327,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 331,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 335,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 377,
+      "symbol": "vu1Thread.WriteRow"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 381,
+      "symbol": "vu1Thread.WriteRow"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 385,
+      "symbol": "vu1Thread.WriteRow"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 389,
+      "symbol": "vu1Thread.WriteRow"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 394,
+      "symbol": "vu1Thread.WriteCol"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 398,
+      "symbol": "vu1Thread.WriteCol"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 402,
+      "symbol": "vu1Thread.WriteCol"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif.cpp",
+      "line": 406,
+      "symbol": "vu1Thread.WriteCol"
+    },
+    {
+      "family": "gs",
+      "file": "pcsx2/Vif1_Dma.cpp",
+      "line": 69,
+      "symbol": "MTGS::InitAndReadFIFO"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif_Codes.cpp",
+      "line": 323,
+      "symbol": "vu1Thread.WriteMicroMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif_Codes.cpp",
+      "line": 326,
+      "symbol": "vu1Thread.WriteMicroMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif_Codes.cpp",
+      "line": 331,
+      "symbol": "vu1Thread.WriteMicroMem"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif_Codes.cpp",
+      "line": 646,
+      "symbol": "vu1Thread.WriteCol"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif_Codes.cpp",
+      "line": 667,
+      "symbol": "vu1Thread.WriteRow"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/Vif_Unpack.cpp",
+      "line": 364,
+      "symbol": "vu1Thread.VifUnpack"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/arm64/RecStubs.cpp",
+      "line": 19,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/x86/microVU.cpp",
+      "line": 318,
+      "symbol": "vu1Thread.Open"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/x86/microVU.cpp",
+      "line": 328,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/x86/microVU.cpp",
+      "line": 343,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/x86/microVU.cpp",
+      "line": 415,
+      "symbol": "vu1Thread.WaitVU"
+    },
+    {
+      "family": "vu",
+      "file": "pcsx2/x86/microVU_Misc.inl",
+      "line": 294,
+      "symbol": "vu1Thread.WaitVU"
+    }
+  ],
+  "lexical_references_are_not_call_graph": true,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-worker-producers/audit.py": "da612572e9179efe2e08e1fcc9a634cc5a4b21ce10dcddc304f7dc04febaba01",
+    "build/f02-07-worker-producers/prepare.py": "4435a1687b59b6baa822553a7d96db7aa9ef469de38459ac11a53ecb3f5bcf42",
+    "build/f02-07-worker-producers/run_probe.py": "f01fbe282b14923c0c1c49a501804ddc28162b53a2f926624b107fc0a54e1729"
+  },
+  "native_provider_semaphores_executed": false,
+  "preceding_custody_audit_bytes": 22800,
+  "preceding_custody_audit_sha256": "ac4fd51ef450c136235c917a0015f1c964bbbbc49e9c492da086904654323c07",
+  "prior_evidence_sha256": "746b5810696b26827ca9e39894d4c1e7c0352c90775fbd40bd88ebe273c83463",
+  "probe_failed_attempts": 0,
+  "probe_runs": [
+    {
+      "binary_sha256": "3caa40a9d0751ebf9ac4b4479bd3f67e35bf9ef50745132f81be38a2ddf927fd",
+      "cases": 5,
+      "full_vm_executed": false,
+      "mode": "normal",
+      "os_semaphore_replaced": true,
+      "provider_wait_vu_body": true,
+      "provider_work_sema_bodies": true,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "6fc10ce0f8085e222337fdad3cf9729f8ee4ed4f41aca8eaabbf7a1ea101b251"
+        },
+        {
+          "action": "run",
+          "log_sha256": "6a74eac5751f25d7b9485766397027bf21a9a6c40877e295ba8a0341119368b1",
+          "receipt_sha256": "c9fab3c94fd9945472fce28701a48a56b77db35e89a884df92e9721b45214ab7"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "binary_sha256": "8261b8c200a2397baef458812c24498b63ffac85a10e42f22e188a480fddeecd",
+      "cases": 5,
+      "full_vm_executed": false,
+      "mode": "sanitize",
+      "os_semaphore_replaced": true,
+      "provider_wait_vu_body": true,
+      "provider_work_sema_bodies": true,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "4209e23ec17bcdc8f55ca514f7a228fd87bc273dede089c35c6d9e5ef33feae0"
+        },
+        {
+          "action": "run",
+          "log_sha256": "6a74eac5751f25d7b9485766397027bf21a9a6c40877e295ba8a0341119368b1",
+          "receipt_sha256": "be8b342b310721e2281001f884609d844d47b1123cfec75d7e4cc6417690428c"
+        }
+      ],
+      "result": "PASS"
+    }
+  ],
+  "producer_exclusion_implemented": false,
+  "producer_family_count": 14,
+  "provider_application_executed": false,
+  "provider_application_linked": false,
+  "provider_changes": [],
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-worker-producers.md": "22acd90ebcce075b7d0b521e4abdd208f48fb6757f31eb9bd2863cf9ac7b5575",
+    "schemas/worker-drain-v1.md": "96a211152ef0dae24149b7c1a901497edc51743d2cb3e60f6937bc9b6c473a0c",
+    "tests/fixtures/pcsx2-worker-drain/README.md": "93b54e197f600506af81780e83398aebedfe7dade25691a3e3a5efcade071537",
+    "tests/fixtures/pcsx2-worker-drain/work_sema.cpp": "795891e2ee8ef43cac9d7e6b2fc77fdf15543aef5d55dddd024c21f40cad6fe5"
+  },
+  "python_suite_rerun": false,
+  "read_events_produced": 0,
+  "remote_ci_executed": false,
+  "resource_links": [],
+  "reviewed_anchors": [
+    {
+      "file": "pcsx2/MTGS.cpp",
+      "id": "gs_single_producer_comment",
+      "lines": [
+        67
+      ],
+      "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+    },
+    {
+      "file": "pcsx2/MTGS.cpp",
+      "id": "gs_mutable_packet_preparation",
+      "lines": [
+        794
+      ],
+      "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+    },
+    {
+      "file": "pcsx2/MTGS.cpp",
+      "id": "gs_fifo_bypasses_queue",
+      "lines": [
+        288
+      ],
+      "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+    },
+    {
+      "file": "pcsx2/MTGS.cpp",
+      "id": "gs_fifo_direct_zero",
+      "lines": [
+        290
+      ],
+      "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+    },
+    {
+      "file": "pcsx2/MTGS.cpp",
+      "id": "gs_waits_for_vu",
+      "lines": [
+        467
+      ],
+      "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+    },
+    {
+      "file": "pcsx2/MTGS.cpp",
+      "id": "gs_releases_busy_mutex",
+      "lines": [
+        337,
+        465
+      ],
+      "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+    },
+    {
+      "file": "pcsx2/MTVU.cpp",
+      "id": "vu_publishes_xgkick",
+      "lines": [
+        155
+      ],
+      "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+    },
+    {
+      "file": "pcsx2/Gif_Unit.h",
+      "id": "vu_waits_for_gs_space",
+      "lines": [
+        274,
+        278
+      ],
+      "source_sha256": "7ef080a9d889e9b015bd4e8f233473a748006b894af7ac40544eddda1b513032"
+    },
+    {
+      "file": "pcsx2/MTGS.cpp",
+      "id": "gs_weak_wait_partial",
+      "lines": [
+        641
+      ],
+      "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+    },
+    {
+      "file": "pcsx2/MTGS.cpp",
+      "id": "gs_idle_after_empty",
+      "lines": [
+        329
+      ],
+      "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+    },
+    {
+      "file": "pcsx2/MTGS.cpp",
+      "id": "gs_close_forces_equal_positions",
+      "lines": [
+        605
+      ],
+      "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+    },
+    {
+      "file": "common/Semaphore.cpp",
+      "id": "work_sema_single_waiter",
+      "lines": [
+        105,
+        123
+      ],
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "file": "pcsx2/MTVU.cpp",
+      "id": "wait_vu_discards_result",
+      "lines": [
+        438
+      ],
+      "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+    },
+    {
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "id": "ui_language_entry",
+      "lines": [
+        2237
+      ],
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "file": "pcsx2-qt/Translations.cpp",
+      "id": "ui_direct_mtgs_locale",
+      "lines": [
+        209
+      ],
+      "source_sha256": "8474baca189fbf2be54f9a03c4f9f32c415d0b66498eacb7ef0ac2ae495db56d"
+    },
+    {
+      "file": "pcsx2-qt/Translations.cpp",
+      "id": "cpu_serialized_fonts",
+      "lines": [
+        601
+      ],
+      "source_sha256": "8474baca189fbf2be54f9a03c4f9f32c415d0b66498eacb7ef0ac2ae495db56d"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.cpp",
+      "id": "qt_resize_producer",
+      "lines": [
+        819
+      ],
+      "source_sha256": "fe18e9919103a645b5df08bc56be795458ed638e5ec5d31669f1d69f6c758348"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.cpp",
+      "id": "qt_paused_redraw",
+      "lines": [
+        858
+      ],
+      "source_sha256": "fe18e9919103a645b5df08bc56be795458ed638e5ec5d31669f1d69f6c758348"
+    },
+    {
+      "file": "pcsx2-qt/QtHost.cpp",
+      "id": "qt_host_gs_routes_via_cpu",
+      "lines": [
+        1304
+      ],
+      "source_sha256": "fe18e9919103a645b5df08bc56be795458ed638e5ec5d31669f1d69f6c758348"
+    },
+    {
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "id": "gs_ui_blocking_acquire",
+      "lines": [
+        627
+      ],
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "file": "pcsx2-qt/MainWindow.cpp",
+      "id": "gs_ui_blocking_release",
+      "lines": [
+        628
+      ],
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "file": "pcsx2/GS/Renderers/Common/GSDevice.cpp",
+      "id": "gs_device_acquire",
+      "lines": [
+        394
+      ],
+      "source_sha256": "eb61b3aca3c68cff238397fe83a58bb8a8c6141a92b4a76a50da4e9d4c8fa51e"
+    },
+    {
+      "file": "pcsx2/GS/Renderers/Common/GSRenderer.cpp",
+      "id": "gs_render_ui",
+      "lines": [
+        574
+      ],
+      "source_sha256": "5774e19a40b68e0f5c661852ce76ce53181bdb6474fd33a579254e95c1cd0251"
+    },
+    {
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "id": "gs_idle_enabled",
+      "lines": [
+        333
+      ],
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "id": "gs_ui_enqueues_cpu",
+      "lines": [
+        490,
+        3970,
+        4001
+      ],
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "file": "pcsx2/ImGui/FullscreenUI_Settings.cpp",
+      "id": "settings_lock",
+      "lines": [
+        393,
+        552,
+        1216,
+        1260,
+        1330,
+        1381,
+        1414,
+        1443,
+        1579,
+        1942,
+        2081,
+        2133,
+        2221,
+        2329,
+        2377,
+        2411,
+        2487,
+        2727,
+        3473,
+        3714,
+        3893,
+        3998,
+        4135,
+        4204,
+        4214,
+        4240,
+        4250,
+        4262,
+        4982,
+        4996,
+        5144,
+        5245,
+        5388,
+        5419
+      ],
+      "source_sha256": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe"
+    },
+    {
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "id": "achievements_lock",
+      "lines": [
+        1327,
+        1587
+      ],
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "file": "pcsx2/ImGui/FullscreenUI.cpp",
+      "id": "game_list_lock",
+      "lines": [
+        1616,
+        1949,
+        2567
+      ],
+      "source_sha256": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a"
+    },
+    {
+      "file": "pcsx2/VMManager.cpp",
+      "id": "paused_before_wait",
+      "lines": [
+        303
+      ],
+      "source_sha256": "49b01cf9322d2efda6bab4bf2a3a09fce18db0bca55d6c738ad891bd13b9efb4"
+    },
+    {
+      "file": "pcsx2/Vif_Dynarec.h",
+      "id": "vif_dynarec_enabled",
+      "lines": [
+        46
+      ],
+      "source_sha256": "3013f434f6737694d518e9e6422981ca0a55a4579b6a3f5ec0fcac0578c977ce"
+    }
+  ],
+  "runtime_changes": [],
+  "schema_version": 1,
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_files": {
+    "common/Semaphore.cpp": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04",
+    "common/Threading.h": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb",
+    "pcsx2-gsrunner/Main.cpp": "f8a992ecb68dd5305355ce4f417bf2b1c6a7a0b9287ad1cb4c9981527fe55cf6",
+    "pcsx2-qt/MainWindow.cpp": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923",
+    "pcsx2-qt/QtHost.cpp": "fe18e9919103a645b5df08bc56be795458ed638e5ec5d31669f1d69f6c758348",
+    "pcsx2-qt/Translations.cpp": "8474baca189fbf2be54f9a03c4f9f32c415d0b66498eacb7ef0ac2ae495db56d",
+    "pcsx2/Achievements.cpp": "2e896e1a6bda8361dc30f713b04e03bc2517586c1b3158d0e601d7b52e91f350",
+    "pcsx2/Counters.cpp": "f77f569ee7f8e2cadbd1b4c6ea96837ffdf9506ef26e65a1fa1d507e4e62ee37",
+    "pcsx2/Dmac.cpp": "93761abcb9179758a920fc27b562f90c8b27fc58469284f3f2745ca1145d4d43",
+    "pcsx2/FiFo.cpp": "842ca99f14d604f853c0d90053a2ee0b794f3568e018f36a41a39ad4947c17cd",
+    "pcsx2/GS.cpp": "cbbbe9c635b2e43c5cb2f531d221c4bf28a3d4ed290f246301e06b633628195c",
+    "pcsx2/GS/GS.cpp": "44fd090f22ab9f73f6b8fa703618a63069987f8e6c33c7967316af19208224aa",
+    "pcsx2/GS/Renderers/Common/GSDevice.cpp": "eb61b3aca3c68cff238397fe83a58bb8a8c6141a92b4a76a50da4e9d4c8fa51e",
+    "pcsx2/GS/Renderers/Common/GSRenderer.cpp": "5774e19a40b68e0f5c661852ce76ce53181bdb6474fd33a579254e95c1cd0251",
+    "pcsx2/GSDumpReplayer.cpp": "0f0b7e6b5093451261eb9dc2ae66f270af3019918fe8acafbab4e0f1c8f2c663",
+    "pcsx2/Gif_Unit.cpp": "e8a029a4a630bc7969fbe2b0e27a27f203cb75ec4660e119105fbad90211531b",
+    "pcsx2/Gif_Unit.h": "7ef080a9d889e9b015bd4e8f233473a748006b894af7ac40544eddda1b513032",
+    "pcsx2/ImGui/FullscreenUI.cpp": "84d0c118072e4b06b2527d5cfeb6769dbb5ca3007950f01e4c9940781d5a8b4a",
+    "pcsx2/ImGui/FullscreenUI_Settings.cpp": "b153810892095457a035489b8d6d14573cb0ada5fb80d7535a5b9f3a0adb70fe",
+    "pcsx2/ImGui/ImGuiManager.cpp": "1c062067ffbbbbeadbdd0d1abcf1239ab596844dbea0c3bc045025edaf68f029",
+    "pcsx2/ImGui/ImGuiOverlays.cpp": "8ac44f0cdbaed051372ea0f0d0219be7f5bca773fc872f444a49f26c76719ab0",
+    "pcsx2/MTGS.cpp": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1",
+    "pcsx2/MTGS.h": "5329951cbe6f7f5c83b496ee540c5f0177adb7d9196f77a200f932425362d57e",
+    "pcsx2/MTVU.cpp": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441",
+    "pcsx2/MTVU.h": "bbb1b208049117fc0df63edd04dda222b8de5b5da512a59251db38058c0ef9d9",
+    "pcsx2/Memory.cpp": "4a76caca4ded51b21ee6f4f8e4bb2907bca52ffa8e728ab2efb1defddcd7e904",
+    "pcsx2/PINE.cpp": "06394b970869320ec9bfee4e27507ddb27f2b07b50ce886372e59679b82d1a51",
+    "pcsx2/Recording/InputRecording.cpp": "b8763389014ea107978bab644fc440010646e802bb4e0971fc338c02939aeb9b",
+    "pcsx2/Recording/InputRecordingControls.cpp": "90eca909f850f6c55d3340b8badf9292a0b0ed76b75ba8250f98548bf63875d7",
+    "pcsx2/SPR.cpp": "4dabae0430cf10ac128647c151a51adec2087d48811930142563adc5a5458e28",
+    "pcsx2/SPU2/spu2.cpp": "bd288bb73ccaa0b369a42c6fcf1e603650cee6e1ae864376d4346a4056f3de09",
+    "pcsx2/SaveState.cpp": "6e854fa3db690474cac87e802157ecfa44f594bfd2376dbcf244c0d3bb23cc00",
+    "pcsx2/VMManager.cpp": "49b01cf9322d2efda6bab4bf2a3a09fce18db0bca55d6c738ad891bd13b9efb4",
+    "pcsx2/VU1micro.cpp": "7fbf0dee255c21cbc6117edab5ab53b13e4acd2bf50b8cdc28c1d6ec1fc33d89",
+    "pcsx2/VUmicroMem.cpp": "ca3e1f1cf349479e46f43c48b5bc1d46fef6c734f41d61005890e8213993d8f2",
+    "pcsx2/Vif.cpp": "956712f71b8460649eb4b296c2446736da1e6d97e53a019134e7e5d886cccfb3",
+    "pcsx2/Vif1_Dma.cpp": "5b64cce221ffb016f27fca7bccf8e2df5c4f6dfd311e74023a02fdfbb0f36e83",
+    "pcsx2/Vif_Codes.cpp": "659e95720d49b7f047f499fa31770e522dccb610c2d595647231e1f28748396c",
+    "pcsx2/Vif_Dynarec.h": "3013f434f6737694d518e9e6422981ca0a55a4579b6a3f5ec0fcac0578c977ce",
+    "pcsx2/Vif_Unpack.cpp": "3ea4634ef1019627327cf25ac3a4f3a996146d2d6a1cf0c0c0c22afefbc6ecfa",
+    "pcsx2/arm64/RecStubs.cpp": "9c4c64ab614e5866ebb5343208e986185a4ee93f777059a0b61036f4a6c668ec",
+    "pcsx2/x86/microVU.cpp": "f6b259e71d04228f11b9382533534d41afe7c96b8f840390820844dac7f16578",
+    "pcsx2/x86/microVU_Misc.inl": "95b093363a4de55e3303eb89b2b9e39825fab7d8e4dcb30478d3235400bc2774"
+  },
+  "source_files_verified": 2955,
+  "source_id": "SRC75",
+  "source_inventory_verified": true,
+  "source_manifest_sha256": "77818a97f82006cea48982513f9c97443b0830bc5d26552c75d3697e0ffff411",
+  "status": "producer_inventory_and_drain_contract_complete_integration_pending"
+}

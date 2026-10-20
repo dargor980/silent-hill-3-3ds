@@ -1,0 +1,1118 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC70",
+  "task": "F02.07/LP-C/LG-I2/lifecycle",
+  "stage": "lifecycle_function_batch_and_host_epoch_verified_admission_pending",
+  "contracts": [
+    "schemas/lifecycle-probe-v1.md",
+    "schemas/physical-write-probe-v1.md",
+    "schemas/lifetime-guard-v1.md"
+  ],
+  "units": {
+    "LC_T1": "complete_scoped_function_batch",
+    "LC_T2": "complete_scoped_function_batch",
+    "LC_T3": "complete_scoped_function_batch",
+    "LC_T4": "complete_scoped_function_batch",
+    "LC_1": "partial_vm_exclusion_and_admission_pending",
+    "LC_2": "partial_vm_exclusion_and_admission_pending",
+    "LC_3": "partial_vm_exclusion_and_admission_pending",
+    "LC_4": "partial_vm_exclusion_and_admission_pending",
+    "LG_I1": "partial_vtlb_dma_cache_jit_rejection_and_host_batch",
+    "LG_I2": "partial_lifecycle_notifications_and_host_epoch",
+    "LG_I3": "pending",
+    "LG_I4": "partial_no_vm_integration",
+    "LP_D": "pending"
+  },
+  "provider_audit": {
+    "admitted_execution_modes": [],
+    "baseline_harness_inputs": {
+      "doubles": [
+        "maps_and_fastmem",
+        "CPU_and_memory_reset",
+        "workers",
+        "settings",
+        "ZIP_and_entry_loaders",
+        "OS_allocation",
+        "provider_subsystems"
+      ],
+      "expected_cases": 54,
+      "fragments": [
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "f0cac6ec9c35e63fa6bb8cc8a9655907fa0d6100c8f385975dd3607a54d27f2e",
+          "name": "memory-allocate",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "d0fe8073d5bc9b52ed50bffe38c3c8111fd61e735a9f0eb4b1a1f7db02cb5830"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "1266031a104efad9b17cc88bd956f29ba16af902060edd5bf33b1e785da8e064",
+          "name": "memory-release",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "d0fe8073d5bc9b52ed50bffe38c3c8111fd61e735a9f0eb4b1a1f7db02cb5830"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "7cb06904c83d4adbf0fe518d4142bb190424d131ee1ffdaeb34c16e25341fc49",
+          "name": "system-allocate",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "d0fe8073d5bc9b52ed50bffe38c3c8111fd61e735a9f0eb4b1a1f7db02cb5830"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "b176882357917427b20fea0f7e6a3d4ddbb777b8987abcc581e66804f04cb141",
+          "name": "system-release",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "d0fe8073d5bc9b52ed50bffe38c3c8111fd61e735a9f0eb4b1a1f7db02cb5830"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "16c1a637925088fa88d68a22deeca68762b4b630419711f7bc858ed38b90d3df",
+          "name": "system-reset",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "d0fe8073d5bc9b52ed50bffe38c3c8111fd61e735a9f0eb4b1a1f7db02cb5830"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "afd7f48fe219e184f4f34e706eeaa2e8d380394b7ded7b2884b69c6e53472d27",
+          "name": "map-handler",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "2c8d6a8a279e272641815e1b586d699976784b5c0fcf4fa68383bd4fb71a51e9",
+          "name": "map-block",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "cd6acda01c6d90126635ab0aa2a014e3577d7a10233d368ce111683f44876957",
+          "name": "mirror",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "da9f477e1a9ec1b62c66f117d7ab09b4a1b511a7944ac748bbe30c6a369f3c81",
+          "name": "vmap",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "989fb51b2c005cb8d450ecc556539ef4ac3ee6056bef9d956922e1713db0e6ab",
+          "name": "vmap-buffer",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "9fe259de299ad58c9662b307fb86e6bf8a7de0ad6df15752f3f15b758472814e",
+          "name": "unmap",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "6fcb496804ba72755c045f13e9cb036ad1489200b96328714417e144d1de1118",
+          "name": "tlb-reset",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "c330ca6a268f7f83c416db85e611a57d980175eaecadfd1a50f3340b4c21f157",
+          "name": "tlb-shutdown",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "5ca1ece12e8a8c5957efcf6f4472633c3b05baf27a033f74391111e5b3553cf0",
+          "name": "fastmem-reset",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "b67c61c765abd8e3d7ae30bca59ff9a8e138f21ab9ef740c6bae7104ab7c1306",
+          "name": "core-free",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "59d469fd71e7254556af35553dc55d1a0f659575557a69c853815fb27a7cf26b"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "9cda8c5e8f1663d0492af0ede4487aedc4a6447483c90e601de340eb6e04abbb",
+          "name": "preload",
+          "source_file": "pcsx2/SaveState.cpp",
+          "source_sha256": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "193b077e8e83fb967b88f3f4907657f50c92a285f58fef89a34f0f02d2bccce8",
+          "name": "unzip",
+          "source_file": "pcsx2/SaveState.cpp",
+          "source_sha256": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "667dd6f998aafcfeecc1b4fac7df78680e9ebddb9291e9e187ba9c79aa2e0bdf",
+          "name": "execute",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "ab60e27f91af5248f6b6e74a8360611038abbfd6fec5f5e37c8c024f5354f205"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "0ad40092586aaa2186f13833aea81fc4973675d7c4b6e00d925b283a89deba3b",
+          "name": "reset",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "ab60e27f91af5248f6b6e74a8360611038abbfd6fec5f5e37c8c024f5354f205"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "f3f3d47046a27d2b7f8bf3a2c67ab563c1fb082af2f3856b904d580f4da6b5d0",
+          "name": "settings",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "ab60e27f91af5248f6b6e74a8360611038abbfd6fec5f5e37c8c024f5354f205"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "c2dfc1fe91bc928de81c56c5ef38e03456849f2185e9ab9acfd6f31ab6b6b91d",
+          "name": "core-settings",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "ab60e27f91af5248f6b6e74a8360611038abbfd6fec5f5e37c8c024f5354f205"
+        }
+      ],
+      "harness_sha256": "d4eece43bfc1ae73bd62aff984381972da0febd1d22ae98c0920220df5a0eef8",
+      "ipc_protocol_executed": false,
+      "provider_application_executed": false,
+      "windows_ra_application_executed": false
+    },
+    "capabilities": [],
+    "continuous_lifetime_verified": false,
+    "effects_digest": "499577d87d4e9261",
+    "effects_equal_across_modes_and_previous_functions": true,
+    "global_memory_effect_serialization_verified": false,
+    "harness_inputs": {
+      "doubles": [
+        "maps_and_fastmem",
+        "CPU_and_memory_reset",
+        "workers",
+        "settings",
+        "ZIP_and_entry_loaders",
+        "OS_allocation",
+        "provider_subsystems"
+      ],
+      "expected_cases": 54,
+      "fragments": [
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "d0a988b116f6d6d6fcd1e53d90eecd2620459872755f03803c459fc1dba3bfd9",
+          "name": "memory-allocate",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "4a76caca4ded51b21ee6f4f8e4bb2907bca52ffa8e728ab2efb1defddcd7e904"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "ef776304129daa2e86ca2ca2c029ddf740583428ff5b098557c7fcb28fc06bdb",
+          "name": "memory-release",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "4a76caca4ded51b21ee6f4f8e4bb2907bca52ffa8e728ab2efb1defddcd7e904"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "4973eeb345f89c93ff8b2af10f8657971c51e37456fe55263706b51e1ddaa67e",
+          "name": "system-allocate",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "4a76caca4ded51b21ee6f4f8e4bb2907bca52ffa8e728ab2efb1defddcd7e904"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "8300677a1c05b9b461dd08a148d1e2f5b1076afbba8a3769f59ad2d4f0cca40f",
+          "name": "system-release",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "4a76caca4ded51b21ee6f4f8e4bb2907bca52ffa8e728ab2efb1defddcd7e904"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "16c1a637925088fa88d68a22deeca68762b4b630419711f7bc858ed38b90d3df",
+          "name": "system-reset",
+          "source_file": "pcsx2/Memory.cpp",
+          "source_sha256": "4a76caca4ded51b21ee6f4f8e4bb2907bca52ffa8e728ab2efb1defddcd7e904"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "4824a8fc786a875eadf33f23c41994ec703165cc3e6722058f85e36ad5908957",
+          "name": "map-handler",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "09e7bbe76cfc64194e73c36bcf789b4d912718e65e8aca9e0661dd12e513a746",
+          "name": "map-block",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "8ab0b412d73b37a1dcfa69e2736b9c63f8c9045970d6f1952135c4a4f31ae911",
+          "name": "mirror",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "dccec14a62f1da97d59791d2212eca4bc5de5059004eecf2f75997b46cab0c99",
+          "name": "vmap",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "364ee54253c66f5e95555c170a6993eaf40e9308164e74bdb292b5f1f5d01652",
+          "name": "vmap-buffer",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "c2934207b1eb4407c7aa4ff4118b8794c57401c50d20be948d4cb36627c701b8",
+          "name": "unmap",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "06329998d7b92fbae5b4ddeea8e6bf0d8e0a14d50a6dcfa90978f85e3670101f",
+          "name": "tlb-reset",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "149161f1471d7b7a9d5edc4d73086b091ef949a8fcf74b2dd458427008c82636",
+          "name": "tlb-shutdown",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "bd6c87bb5cf15298ba435238f818ef4cb2f60107707235771dd26317a76dbd91",
+          "name": "fastmem-reset",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "14ce4a19b64aa2dfad3677b26cabee4ccbeb21aedb97c3386035f20a29ecb7fa",
+          "name": "core-free",
+          "source_file": "pcsx2/vtlb.cpp",
+          "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "5ce0ea449251d78a161f98e170e83a9161b61684348042af3771957024973ab3",
+          "name": "preload",
+          "source_file": "pcsx2/SaveState.cpp",
+          "source_sha256": "6e854fa3db690474cac87e802157ecfa44f594bfd2376dbcf244c0d3bb23cc00"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "193b077e8e83fb967b88f3f4907657f50c92a285f58fef89a34f0f02d2bccce8",
+          "name": "unzip",
+          "source_file": "pcsx2/SaveState.cpp",
+          "source_sha256": "6e854fa3db690474cac87e802157ecfa44f594bfd2376dbcf244c0d3bb23cc00"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "a24d14abb403514beeb7806b35488ee5a7e1bda1df91affeac38c0f50efea249",
+          "name": "execute",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "927d03feb02b3389c6443ac90ab4e56d147102b3ddd836b1c8eca2dbb7207bc3",
+          "name": "reset",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "7cc5c040119161ab40854b7959db9ffbd29ea45a9314be62d604e4c9771023ef",
+          "name": "settings",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e"
+        },
+        {
+          "body_copied_exactly": true,
+          "fragment_sha256": "0d39d8a039d67d580cd99b11be88b6f314df9cf7abea39b56de02f98259c2a58",
+          "name": "core-settings",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e"
+        }
+      ],
+      "harness_sha256": "d4eece43bfc1ae73bd62aff984381972da0febd1d22ae98c0920220df5a0eef8",
+      "ipc_protocol_executed": false,
+      "provider_application_executed": false,
+      "windows_ra_application_executed": false
+    },
+    "harness_runs": [
+      {
+        "accepted": true,
+        "binary_sha256": "82805f124f134ad108f49122c6a46b2995cc5f3c64d04be21314f14a05781a7f",
+        "cases": 54,
+        "mode": "on",
+        "run_log_sha256": "2bfcc52762ad2896ef3cb7fe7b69d1f932e15cf96d8ebd8454860d70cb76d39f",
+        "run_receipt_sha256": "ff4ca79c8ff00c8ddd66f8394c7c26e18b7af8cc70977f0acd32025420eae238"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "d13601c1541dc2236973eb610e995f2aa5cadb2749310023b9cb5af21d196d2b",
+        "cases": 54,
+        "mode": "off",
+        "run_log_sha256": "2bfcc52762ad2896ef3cb7fe7b69d1f932e15cf96d8ebd8454860d70cb76d39f",
+        "run_receipt_sha256": "96e1a23310e9bf22c838e960f8b8768dd685dd257f8d74d98c655f9b2fa7213d"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "a46c56cb674d6c6eb912cf92c525a107c035e00a2b74b7ab68dcc6e4953722e1",
+        "cases": 54,
+        "mode": "sanitize",
+        "run_log_sha256": "2bfcc52762ad2896ef3cb7fe7b69d1f932e15cf96d8ebd8454860d70cb76d39f",
+        "run_receipt_sha256": "6ec1189d807f210d1716342d206e769848fc2996d65d40a30c827898ae188159"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "7abe94d6b2daa39bd4b1834f89de5226655d6fd6a14c01c8dc3ed8fc68b6138f",
+        "cases": 54,
+        "mode": "previous_provider_functions_off",
+        "run_log_sha256": "2bfcc52762ad2896ef3cb7fe7b69d1f932e15cf96d8ebd8454860d70cb76d39f",
+        "run_receipt_sha256": "b4c1667e3ea272b8a4ce98e4239289b0ff77ba25c2f7057ac2fe7bd17a654626"
+      }
+    ],
+    "historical_public_inputs_verified_with_snapshots": true,
+    "hook_sites": [
+      {
+        "entry": "bool SysMemory::Allocate()",
+        "file": "pcsx2/Memory.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void SysMemory::Release()",
+        "file": "pcsx2/Memory.cpp",
+        "kind": "shutdown"
+      },
+      {
+        "entry": "void memAllocate()",
+        "file": "pcsx2/Memory.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void memReset()",
+        "file": "pcsx2/Memory.cpp",
+        "kind": "reset"
+      },
+      {
+        "entry": "void memRelease()",
+        "file": "pcsx2/Memory.cpp",
+        "kind": "shutdown"
+      },
+      {
+        "entry": "static void PreLoadPrep()",
+        "file": "pcsx2/SaveState.cpp",
+        "kind": "restore"
+      },
+      {
+        "entry": "void vtlb_MapHandler(vtlbHandler handler, u32 start, u32 size)",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void vtlb_MapBlock(void* base, u32 start, u32 size, u32 blocksize)",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void vtlb_Mirror(u32 new_region, u32 start, u32 size)",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void vtlb_VMap(u32 vaddr, u32 paddr, u32 size)",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void vtlb_VMapBuffer(u32 vaddr, void* buffer, u32 size)",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void vtlb_VMapUnmap(u32 vaddr, u32 size)",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void vtlb_Init()",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void vtlb_Reset()",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "reset"
+      },
+      {
+        "entry": "void vtlb_Shutdown()",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "shutdown"
+      },
+      {
+        "entry": "void vtlb_ResetFastmem()",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "remap"
+      },
+      {
+        "entry": "void vtlb_Core_Free()",
+        "file": "pcsx2/vtlb.cpp",
+        "kind": "shutdown"
+      },
+      {
+        "entry": "void VMManager::ApplySettings()",
+        "file": "pcsx2/VMManager.cpp",
+        "kind": "settings"
+      },
+      {
+        "entry": "void VMManager::ApplyCoreSettings()",
+        "file": "pcsx2/VMManager.cpp",
+        "kind": "settings"
+      },
+      {
+        "entry": "void VMManager::Shutdown(bool save_resume_state)",
+        "file": "pcsx2/VMManager.cpp",
+        "kind": "shutdown"
+      },
+      {
+        "entry": "VMManager::Reset deferred",
+        "file": "pcsx2/VMManager.cpp",
+        "kind": "reset"
+      },
+      {
+        "entry": "VMManager::Reset confirmed",
+        "file": "pcsx2/VMManager.cpp",
+        "kind": "reset"
+      },
+      {
+        "entry": "VMManager::Execute implementation switch",
+        "file": "pcsx2/VMManager.cpp",
+        "kind": "settings"
+      },
+      {
+        "entry": "void cpuReset()",
+        "file": "pcsx2/R5900.cpp",
+        "kind": "reset"
+      }
+    ],
+    "host_epoch_outside_vm_state": true,
+    "intentional_public_evolution": [
+      {
+        "current_sha256": "7cc0a8a1b15e895fd80825715b4433bf8012bcdcccd534b0dbc644450b4b7fc3",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "93fc4536e59c5952cf5a01ac9d3fa1694a0ebcabd33bdb9d6048d7332f3b6fcb",
+        "source": "lifetime-guard"
+      },
+      {
+        "current_sha256": "e6012b55179bc4d20194ec215b8543626fc35d1a23bc8ab15ede78fa16e9e97e",
+        "file": "tools/observer/physical_writes.cpp",
+        "snapshot_sha256": "0a39212b2e933ef1f3dd8b2ec2bd97610667acd0c89d40d9196a7d9c29c8252e",
+        "source": "physical-write-probe"
+      },
+      {
+        "current_sha256": "0f935bb9ccb0a322ab65c18e223d1ca6509f2fb5e2c0e80e3a235b7fc8d83137",
+        "file": "tools/observer/include/sh3_observer/physical_writes.hpp",
+        "snapshot_sha256": "856619e83b977e05de98e0e1537601a349d0ad7dcc2d017cba30d613465f849b",
+        "source": "physical-write-probe"
+      }
+    ],
+    "inventory_sources": {
+      "pcsx2/CMakeLists.txt": "2529c3372d8db062fec8317e14acfb901cb3d28de5b3487e2b8bfaf31b0b20cc",
+      "pcsx2/COP0.cpp": "5c15c34884f06c95074d725415df0d9751092f9bb9115f3324351ec4aba17686",
+      "pcsx2/Interpreter.cpp": "2d1951d8b98a7bbf697577b6376d966d9266c3fa628cc058ea1cf50adab83048",
+      "pcsx2/Memory.cpp": "4a76caca4ded51b21ee6f4f8e4bb2907bca52ffa8e728ab2efb1defddcd7e904",
+      "pcsx2/Memory.h": "1a3623b2348551bb32686f415c7cf7f23f0e2365f26de3ccc673a500f26c84bd",
+      "pcsx2/MemoryTypes.h": "7f0066d74627959fffe68767f45038c7b3213f6de63e1a6822771b32867f2e8c",
+      "pcsx2/PINE.cpp": "b2a4cd6d83ba01e49954e76c216be2d2fcdd94aa9436ee7b776906461ab9503c",
+      "pcsx2/R5900.cpp": "d11f2b5b084307e69a37321f1ce6f40039737afaf153c8383e56879432a1f995",
+      "pcsx2/SaveState.cpp": "6e854fa3db690474cac87e802157ecfa44f594bfd2376dbcf244c0d3bb23cc00",
+      "pcsx2/SaveState.h": "6c47daa3be4a4b7c3df236b0ac1dae27af0a948038774ba6e2a8a6bc45493720",
+      "pcsx2/VMManager.cpp": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e",
+      "pcsx2/VMManager.h": "5e4d91ea84df8e6e2ef3a40b0ce6cd17a007efc9abadf0b36a6e502d497d8ad2",
+      "pcsx2/vtlb.cpp": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0",
+      "pcsx2/vtlb.h": "0c8a1f9331995fbb287d0a7564f8897efa4c17c909f186562f62bf9e28cd9a58"
+    },
+    "live_acquisition_performed": false,
+    "own_sources_match": true,
+    "prior_evidence_sha256": "37d5b28d4437040eecfea0d26ef90d1e8bd37b47e58615e1a5a106712471324a",
+    "prior_private_sources_unchanged": true,
+    "private_patch_sha256": "dac86233e84e536ad39542a6e6ac805a2965a48c577b18bc00dad199f8ff3a98",
+    "private_source_manifest_sha256": "5797619a8946f34ee3faad9d9823aadd47d998939906c797857bb2ae8d9f6854",
+    "production_binding_added": false,
+    "provider_application_executed": false,
+    "provider_application_linked": false,
+    "provider_changed": [
+      "pcsx2/CMakeLists.txt",
+      "pcsx2/Memory.cpp",
+      "pcsx2/R5900.cpp",
+      "pcsx2/SaveState.cpp",
+      "pcsx2/VMManager.cpp",
+      "pcsx2/vtlb.cpp"
+    ],
+    "provider_hooks_function_tested": 20,
+    "provider_hooks_only_compiled": [
+      "memReset",
+      "cpuReset",
+      "vtlb_Init",
+      "VMManager::Shutdown"
+    ],
+    "provider_translation_units": [
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "1a06a6e3e950fd44f32e9416a9fc7d431aca453c2ca7aedf1e96f6be07d0bd87",
+        "receipt_sha256": "814ab18718ac7459e7b0ddb6ea74d4dee70115206da0c69fff06100fec8336eb",
+        "source_file": "pcsx2/Memory.cpp",
+        "source_sha256": "4a76caca4ded51b21ee6f4f8e4bb2907bca52ffa8e728ab2efb1defddcd7e904",
+        "unit": "Memory-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "0863d2509568e58f8cedd3e2979ea3d90c2ef9ae9ae88de780f9cf5c04616dbd",
+        "receipt_sha256": "2033bcb1c5fe698fe0297a1b862490d7c1dd19db4f99f9d0c5bf8677748ae742",
+        "source_file": "pcsx2/Memory.cpp",
+        "source_sha256": "4a76caca4ded51b21ee6f4f8e4bb2907bca52ffa8e728ab2efb1defddcd7e904",
+        "unit": "Memory-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "dd201abad9e0e927f11d3377542e23136259ded64feeb171be1a98699c27a66a",
+        "receipt_sha256": "4b2dd53093b93dab7e755a9a50d4ed81a0d2517e02b69386dfa06dd0bbc6c367",
+        "source_file": "pcsx2/SaveState.cpp",
+        "source_sha256": "6e854fa3db690474cac87e802157ecfa44f594bfd2376dbcf244c0d3bb23cc00",
+        "unit": "SaveState-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "340bcf7ca1ffe105ceaaf9a47750effb0507a8332ad00b571587f3489537e072",
+        "receipt_sha256": "5ba3c89d8b7f7a6c78751b7135c3ae20a1ca39545294518ae98d7a92d3fe56e5",
+        "source_file": "pcsx2/SaveState.cpp",
+        "source_sha256": "6e854fa3db690474cac87e802157ecfa44f594bfd2376dbcf244c0d3bb23cc00",
+        "unit": "SaveState-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "7a58fa4098533eb88c85bef1735d08d5048a2a95232c1dc8ef4061d8d5a938e1",
+        "receipt_sha256": "6c3db4b6c8193dc971d8f19f620dab2c7a66ebc5245f4f72cee2299131ce1103",
+        "source_file": "pcsx2/vtlb.cpp",
+        "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0",
+        "unit": "vtlb-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "5342a861fcd15fca1f52be4bef08736525354628a6c8aaf64a16151762c46f47",
+        "receipt_sha256": "9f1bb507ed54eb3cae254d22d0460a38302a7358ffe34e66064ce5bc628342f6",
+        "source_file": "pcsx2/vtlb.cpp",
+        "source_sha256": "e4051c5c8baad0ae3b29ccee951ae2a0874615bba2000c98106ab67add59b3f0",
+        "unit": "vtlb-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "b4399beb377275660d7431a6f35be03532f40b10576292fe37004ff0f5094134",
+        "receipt_sha256": "5d8967a05292875798a87e03aabec22ca42538636d176ae95023d3159159861d",
+        "source_file": "pcsx2/VMManager.cpp",
+        "source_sha256": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e",
+        "unit": "VMManager-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "2912c1a1916bb97f1e4a9119ed9bb4574d03d6918019a600aaa67bf9b29c28ba",
+        "receipt_sha256": "bec5f5a6635250a142bbf6feaf560b80966874f9ed7d24272510210b90887799",
+        "source_file": "pcsx2/VMManager.cpp",
+        "source_sha256": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e",
+        "unit": "VMManager-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "a6278fa03aae39d08659a3bd3bd48d8378af1c34ef7986a1a346a6cb3e214036",
+        "receipt_sha256": "5773e6890b3912f0cdbfa8db23dc7b4d1f045adc0ef19d911b09e8afaf0d4a74",
+        "source_file": "pcsx2/R5900.cpp",
+        "source_sha256": "d11f2b5b084307e69a37321f1ce6f40039737afaf153c8383e56879432a1f995",
+        "unit": "R5900-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "5ba1c5031ba96c9110092c7168326891b5982c9c3cdf641e90191ec105d36569",
+        "receipt_sha256": "b17772f216ba516815ce2501eb925ae71dabacc7349a27568c0e60255bfd69f4",
+        "source_file": "pcsx2/R5900.cpp",
+        "source_sha256": "d11f2b5b084307e69a37321f1ce6f40039737afaf153c8383e56879432a1f995",
+        "unit": "R5900-off"
+      }
+    ],
+    "read_events_produced": 0,
+    "resource_links": [],
+    "schema_version": 1,
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_files_verified": {
+      "source-baseline": 2934,
+      "source-dma-v2": 2945,
+      "source-host-v1": 2945,
+      "source-jit-cache-v2": 2945,
+      "source-lifecycle-v1": 2947,
+      "source-lifetime-v2": 2945,
+      "source-observer-v2": 2941
+    },
+    "status": "lifecycle_functions_and_host_epoch_verified_admission_pending",
+    "symbol_references": {
+      "Memory-off": {
+        "before_host_write": 0,
+        "before_lifecycle": 0,
+        "before_untracked_write": 0
+      },
+      "Memory-on": {
+        "before_host_write": 0,
+        "before_lifecycle": 1,
+        "before_untracked_write": 0
+      },
+      "R5900-off": {
+        "before_host_write": 0,
+        "before_lifecycle": 0,
+        "before_untracked_write": 0
+      },
+      "R5900-on": {
+        "before_host_write": 1,
+        "before_lifecycle": 1,
+        "before_untracked_write": 0
+      },
+      "SaveState-off": {
+        "before_host_write": 0,
+        "before_lifecycle": 0,
+        "before_untracked_write": 0
+      },
+      "SaveState-on": {
+        "before_host_write": 0,
+        "before_lifecycle": 1,
+        "before_untracked_write": 0
+      },
+      "VMManager-off": {
+        "before_host_write": 0,
+        "before_lifecycle": 0,
+        "before_untracked_write": 0
+      },
+      "VMManager-on": {
+        "before_host_write": 0,
+        "before_lifecycle": 1,
+        "before_untracked_write": 0
+      },
+      "vtlb-off": {
+        "before_host_write": 0,
+        "before_lifecycle": 0,
+        "before_untracked_write": 0
+      },
+      "vtlb-on": {
+        "before_host_write": 1,
+        "before_lifecycle": 1,
+        "before_untracked_write": 1
+      }
+    }
+  },
+  "custody": {
+    "two_equal_audits": true,
+    "audit_bytes": 28409,
+    "audit_sha256": "4daae92d75ee0fc172bb26747078d1f8e296a2fd51c780b4d256be68f6257546",
+    "prior_private_sources_unchanged": true,
+    "historical_public_inputs_verified_with_snapshots": true,
+    "intentional_public_evolution": [
+      {
+        "current_sha256": "7cc0a8a1b15e895fd80825715b4433bf8012bcdcccd534b0dbc644450b4b7fc3",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "93fc4536e59c5952cf5a01ac9d3fa1694a0ebcabd33bdb9d6048d7332f3b6fcb",
+        "source": "lifetime-guard"
+      },
+      {
+        "current_sha256": "e6012b55179bc4d20194ec215b8543626fc35d1a23bc8ab15ede78fa16e9e97e",
+        "file": "tools/observer/physical_writes.cpp",
+        "snapshot_sha256": "0a39212b2e933ef1f3dd8b2ec2bd97610667acd0c89d40d9196a7d9c29c8252e",
+        "source": "physical-write-probe"
+      },
+      {
+        "current_sha256": "0f935bb9ccb0a322ab65c18e223d1ca6509f2fb5e2c0e80e3a235b7fc8d83137",
+        "file": "tools/observer/include/sh3_observer/physical_writes.hpp",
+        "snapshot_sha256": "856619e83b977e05de98e0e1537601a349d0ad7dcc2d017cba30d613465f849b",
+        "source": "physical-write-probe"
+      }
+    ],
+    "previous_public_snapshot_manifest_sha256": "1b425447a92155a2fab6e2bb05ce7d3500455d4b9b79ca42f3e3b85b8edb64ad"
+  },
+  "implementation": {
+    "host_only": true,
+    "provider_cpp_files_modified": 5,
+    "provider_cmake_list_updated": true,
+    "added_hook_sites": 24,
+    "host_epoch_implemented": true,
+    "host_epoch_outside_vm_state": true,
+    "host_epoch_resets_on_vm_restore": false,
+    "host_epoch_zero_is_permanent_exhaustion": true,
+    "binding_changes_do_not_reset_epoch": true,
+    "nested_hooks_may_advance_epoch_multiple_times": true,
+    "lifecycle_and_write_notices_share_binding_mutex": true,
+    "invalid_lifecycle_kinds_invalidate_conservatively": true,
+    "lifetime_guard_core_unchanged": true,
+    "epoch_bound_to_capture_protocol": false,
+    "production_arming_exposed": false,
+    "memory_effects_globally_serialized": false,
+    "nintendo_sources_unchanged_in_this_unit": true
+  },
+  "validation": {
+    "cpp_runs": [
+      {
+        "artifact": "host-debug.xml",
+        "tests": 75,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "29c5dbb6c2ed1132b9ec1710fe0ca9683143db95c8a07f63c3a02c7074111907"
+      },
+      {
+        "artifact": "host-release.xml",
+        "tests": 75,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "105561f27eb2e7c858bf5e90d0d103470d65be18baace46a9f1b4999187fbe66"
+      },
+      {
+        "artifact": "host-sanitize.xml",
+        "tests": 75,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "f70711903d718eb08277c675c456c4d60d512fb23ea6829cb27b71b1314d14c8"
+      }
+    ],
+    "python_run": {
+      "artifact": "pytest.xml",
+      "tests": 3096,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "disabled": 0,
+      "sha256": "57c94d50c0968044f1722b4aef42d3a0ea5201af12b9f074ba0f02b69af680b1"
+    },
+    "harness_cases_per_mode": 54,
+    "harness_modes": [
+      "ON",
+      "OFF",
+      "ON_ASan_UBSan",
+      "previous_provider_functions_OFF"
+    ],
+    "real_provider_compiled_units": 10,
+    "provider_hooks_function_tested": 20,
+    "provider_hooks_only_compiled": [
+      "memReset",
+      "cpuReset",
+      "vtlb_Init",
+      "VMManager::Shutdown"
+    ],
+    "total_python_coverage": {
+      "covered_lines": 5303,
+      "num_statements": 5348,
+      "covered_branches": 1449,
+      "num_branches": 1482
+    },
+    "python_line_branch_gate": "PASS",
+    "line_branch_gate_minimum_percent": 80,
+    "cpp_coverage_remeasured": true,
+    "cpp_coverage_tool": "LLVM",
+    "cpp_coverage_scope": "host_epoch_and_physical_writes_cpp_and_headers_only",
+    "cpp_coverage_tests": [
+      "test_host_lifecycle",
+      "test_physical_writes"
+    ],
+    "cpp_coverage_by_file": {
+      "tools/observer/host_epoch.cpp": {
+        "branches": {
+          "count": 6,
+          "covered": 6,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "lines": {
+          "count": 8,
+          "covered": 8,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 9,
+          "covered": 9,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/include/sh3_observer/host_epoch.hpp": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "functions": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "lines": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 3,
+          "covered": 3,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/include/sh3_observer/physical_writes.hpp": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "functions": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "lines": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 4,
+          "covered": 4,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/physical_writes.cpp": {
+        "branches": {
+          "count": 44,
+          "covered": 44,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 10,
+          "covered": 10,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 10,
+          "covered": 10,
+          "percent": 100
+        },
+        "lines": {
+          "count": 51,
+          "covered": 51,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 50,
+          "covered": 50,
+          "notcovered": 0,
+          "percent": 100
+        }
+      }
+    },
+    "cpp_line_branch_gate": "PASS",
+    "gcc_ci_coverage_run": false,
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 137,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_links": "PASS",
+    "python_run_outside_sandbox": true,
+    "thresholds_not_relaxed": true,
+    "public_ci_executes_private_lifecycle_harness": false,
+    "remote_ci_run": false,
+    "full_provider_build_run": false,
+    "provider_configure_run": false,
+    "nintendo_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "Memory-off.json": "2033bcb1c5fe698fe0297a1b862490d7c1dd19db4f99f9d0c5bf8677748ae742",
+      "Memory-on.json": "814ab18718ac7459e7b0ddb6ea74d4dee70115206da0c69fff06100fec8336eb",
+      "R5900-off.json": "b17772f216ba516815ce2501eb925ae71dabacc7349a27568c0e60255bfd69f4",
+      "R5900-on.json": "5773e6890b3912f0cdbfa8db23dc7b4d1f045adc0ef19d911b09e8afaf0d4a74",
+      "SaveState-off.json": "5ba3c89d8b7f7a6c78751b7135c3ae20a1ca39545294518ae98d7a92d3fe56e5",
+      "SaveState-on.json": "4b2dd53093b93dab7e755a9a50d4ed81a0d2517e02b69386dfa06dd0bbc6c367",
+      "VMManager-off.json": "bec5f5a6635250a142bbf6feaf560b80966874f9ed7d24272510210b90887799",
+      "VMManager-on.json": "5d8967a05292875798a87e03aabec22ca42538636d176ae95023d3159159861d",
+      "baseline-harness-inputs.json": "40fcfd6b772ba9b8abf846006cd85e3172f8a690df20d0ab91be0c8bf2785f9a",
+      "cpp-coverage-summary.json": "c0d501c494508c13710bde9929777d241f3787fb0e94b596d44d4b626641ac8d",
+      "cpp-coverage.json": "c30cac148d56d71cdb7cb105ffabe6a75012d110147741e0634e8851546d193b",
+      "harness-baseline-off-compile.json": "a74a6d3ad1ac434fb45cc23f13addf2ceefb4aa41f338df94e91c875ca5e174b",
+      "harness-baseline-off-run.json": "b4c1667e3ea272b8a4ce98e4239289b0ff77ba25c2f7057ac2fe7bd17a654626",
+      "harness-inputs-final.json": "4b30cdf318882b058a9415c7aafebc137e1decce89be73595abf065451212359",
+      "harness-inputs.json": "3319e47d7d4fcc85dec31177e597b6fac679ade0562f8c9af7e6a3730897fc0e",
+      "harness-v1-off-compile.json": "fe1a61606546ca8612a2386f400a4e85439ea2fac6609d97fd01e0a8654bb318",
+      "harness-v1-off-run.json": "96e1a23310e9bf22c838e960f8b8768dd685dd257f8d74d98c655f9b2fa7213d",
+      "harness-v1-on-compile.json": "f8ca6d474e2310aa893040c3ae680d5b609bf6da207f39a208ac0ed2bb92bb8a",
+      "harness-v1-on-run.json": "ff4ca79c8ff00c8ddd66f8394c7c26e18b7af8cc70977f0acd32025420eae238",
+      "harness-v1-sanitize-compile.json": "68a32dd124492316e81c930e2809bbd15c2a9918cc97c7dc5b07ec45577a34d7",
+      "harness-v1-sanitize-run.json": "6ec1189d807f210d1716342d206e769848fc2996d65d40a30c827898ae188159",
+      "host-debug-build.log": "96666b23f4bfd186cc2c45ea7fb1cdcc27a18a9f2c651e9797ce587b4797a951",
+      "host-debug-tests.log": "44982eb252c83e2c7d232acff2577d27f9a55ed842fcfcd233358b149cb1b324",
+      "host-debug.xml": "29c5dbb6c2ed1132b9ec1710fe0ca9683143db95c8a07f63c3a02c7074111907",
+      "host-release-build.log": "7975301fffc89437b365c7663a3e77e2690be6b1dbaf4f2166380c6cbe5ce9b3",
+      "host-release-tests.log": "601c1c0afe5c8668596b1c97ac12d087ecc87ed5261b3e8c7754dbf3b80c8485",
+      "host-release.xml": "105561f27eb2e7c858bf5e90d0d103470d65be18baace46a9f1b4999187fbe66",
+      "host-sanitize-build.log": "468d372a2cd2ab833e9eed713d9331e6055d26fa034957fa040e2e7892b4f1a7",
+      "host-sanitize-tests.log": "10c9772eaf8c21de58615c02079c8160a27295b61cf5fcec5a77b7ef8c418351",
+      "host-sanitize.xml": "f70711903d718eb08277c675c456c4d60d512fb23ea6829cb27b71b1314d14c8",
+      "initial-host-lifecycle.xml": "a281c2d6fb939f8c9fc6e4bfe9303b9d72f26180fd564146fd75c82fe191d43e",
+      "prepare.json": "5797619a8946f34ee3faad9d9823aadd47d998939906c797857bb2ae8d9f6854",
+      "previous-public.json": "1b425447a92155a2fab6e2bb05ce7d3500455d4b9b79ca42f3e3b85b8edb64ad",
+      "pytest.xml": "57c94d50c0968044f1722b4aef42d3a0ea5201af12b9f074ba0f02b69af680b1",
+      "python-coverage.json": "7fc9e73d5185f1678ce33520ee9c1f2439fefedbad7192745dae736ac45e9488",
+      "python-coverage.xml": "e37095a35bab2ecba63b5bc250e32faf3c75b20e77bd5ac461b21052c75632f1",
+      "vtlb-off.json": "9f1bb507ed54eb3cae254d22d0460a38302a7358ffe34e66064ce5bc628342f6",
+      "vtlb-on.json": "6c3db4b6c8193dc971d8f19f620dab2c7a66ebc5245f4f72cee2299131ce1103"
+    }
+  },
+  "public_inputs_sha256": {
+    "CMakeLists.txt": "7cc0a8a1b15e895fd80825715b4433bf8012bcdcccd534b0dbc644450b4b7fc3",
+    "schemas/lifecycle-probe-v1.md": "ae5917426ed9786a6fbd3bd4c0a37379db7a78c1d9ddc34efef0cc8a0f685504",
+    "tests/fixtures/pcsx2-lifecycle-probe/harness.cpp": "d4eece43bfc1ae73bd62aff984381972da0febd1d22ae98c0920220df5a0eef8",
+    "tests/fixtures/pcsx2-lifecycle-probe/README.md": "6b12a066cedb0c7e363c6b233d1477f318f840bcfa48575a4791ddec0e35bd8a",
+    "docs/execution/f02-07-lifecycle-probe.md": "f9ec3bc9f1c0f89887351f8731754976461fb7471bc60a4ccc5d1bc8e57ba9b4",
+    "tools/observer/host_epoch.cpp": "dab6223dab476403dedcd9c9303ba9cd60f24207fef4e3c1a8e761007ba461bf",
+    "tools/observer/include/sh3_observer/host_epoch.hpp": "2de8b1a76304538805a48dfa31ebcd1b5d2bf7b2bf9ceb4416281019161fd062",
+    "tools/observer/physical_writes.cpp": "e6012b55179bc4d20194ec215b8543626fc35d1a23bc8ab15ede78fa16e9e97e",
+    "tools/observer/include/sh3_observer/physical_writes.hpp": "0f935bb9ccb0a322ab65c18e223d1ca6509f2fb5e2c0e80e3a235b7fc8d83137",
+    "tools/observer/lifetime.cpp": "2633522bc0040646826ffe8fea8cf6f4f984345e6308c9c277945c0db7400ed8",
+    "tools/observer/include/sh3_observer/lifetime.hpp": "3aee9d6c84422a83c6f3d8c45a92ec84ad78c415a609f316d12527228a759c16",
+    "tests/cpp/test_host_lifecycle.cpp": "66468b1e7f78e360c1c22c5907e887993fbe3f10a2d5015ed6db30a5ccab215e",
+    "tests/cpp/test_physical_writes.cpp": "478267ba5b6108cf42d99b404a71340057d0f07b481f1d144fb7e4ebc4fd35e0"
+  },
+  "private_operational_script_sha256": {
+    "audit.py": "324e51c74d4839ada005d0430e18e6af682815b90a837ee6b2e2aab336c753bf",
+    "compile_private.py": "3fdca241f6cefde785d7407df185c2d99d4c05bde61948881c355a7688e0b248",
+    "coverage_cpp.py": "c4c26b1363b444fad1dba086dd6ef43e3e9760e1d1d284377708557eea8755f0",
+    "finalize_evidence.py": "821ba227b5337dd514496755ae65895abf19b1b2a35437f0b8ed0bfca8d770ef",
+    "make_baseline_harness.py": "50d61fe6b93142cde2f476bc54ef15e8d6a1dba59408ab8b50aac9c00f0a8f28",
+    "make_harness.py": "936ed7b3f6e0d6ba9fd0e47c6578026bbd781df6526a9fa396e4bf83e43e4d24",
+    "prepare.py": "ea336add44a5d694969ea990aacdbd2c12b48b93a19b6d5f3f38b8c3ab4e8471",
+    "run_baseline_harness.py": "8431eabdb5899b48c8d23328c0a740c397b09d88c115e23d1be5d90142146dc2",
+    "run_harness.py": "6e3af017ba7e496385d382739b08ee17c26210792f7edd470297db425e2d5c85"
+  },
+  "limitations": {
+    "coverage_audit_exhaustive": false,
+    "production_binding_added": false,
+    "admitted_execution_modes": [],
+    "provider_application_linked": false,
+    "provider_application_executed": false,
+    "ipc_protocol_executed": false,
+    "pine_thread_exclusion_verified": false,
+    "gs_vu_job_completion_verified": false,
+    "jit_generated_stores_supported": false,
+    "epoch_bound_to_capture_protocol": false,
+    "global_memory_effect_serialization_verified": false,
+    "real_save_state_executed": false,
+    "loaders_map_types_os_workers_and_subsystems_are_doubles": true,
+    "previous_source_comparison_uses_previous_provider_functions_and_current_own_bridge": true,
+    "provider_hooks_only_compiled": [
+      "memReset",
+      "cpuReset",
+      "vtlb_Init",
+      "VMManager::Shutdown"
+    ],
+    "continuous_lifetime_verified": false,
+    "opening_witness_binding": "pending",
+    "transport_and_joint_acceptance": "pending",
+    "live_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

@@ -38,7 +38,7 @@ cmake --build --preset host-debug --parallel 2
 ctest --preset host-debug
 ```
 
-Todos los presets fallan si no encuentran pruebas y limitan cada caso a 120 segundos, salvo límites específicos menores. Las pruebas Python de automatización requieren CMake/CTest en PATH. Presets adicionales: `host-release`, `host-sanitize` (ASan/UBSan) y `host-coverage` (GCC). Ejecutar `ctest` también en Release: los checks no desaparecen con `NDEBUG`. CTest incluye 49 casos: ocho suites de núcleo/archivos/métricas/smoke, treinta y tres contratos de composición 3DS, cinco del adaptador de audio, uno de recursos y dos del observador host. Compila composición y `tone.cpp` reales en targets host separados con dobles del SDK; esos casos no acreditan hardware ni escucha. La cobertura C++ se obtiene con `.venv/bin/python -m gcovr --config gcovr.cfg` tras construir y probar `host-coverage`.
+Todos los presets fallan si no encuentran pruebas y limitan cada caso a 120 segundos, salvo límites específicos menores. Las pruebas Python de automatización requieren CMake/CTest en PATH. Presets adicionales: `host-release`, `host-sanitize` (ASan/UBSan) y `host-coverage` (GCC). Ejecutar `ctest` también en Release: los checks no desaparecen con `NDEBUG`. CTest incluye 67 casos: ocho suites de núcleo/archivos/métricas/smoke, treinta y tres contratos de composición 3DS, cinco del adaptador de audio, uno de recursos, dos del observador host, once de la guardia de continuidad y siete del puente de escrituras físicas. Compila composición y `tone.cpp` reales en targets host separados con dobles del SDK; esos casos no acreditan hardware ni escucha. La cobertura C++ se obtiene con `.venv/bin/python -m gcovr --config gcovr.cfg` tras construir y probar `host-coverage`.
 
 Para identificar el fixture propio, sin ejecutar extracción:
 
@@ -166,8 +166,391 @@ once pausas/81 rangos enlazan apertura y copia sin recodificar evidencias. Inclu
 diagnóstico explícito sin generar `Read`. Siguen observación de continuidad,
 progreso temprano del worker y descubrimiento para la captura real.
 
+[Núcleo de guardia de continuidad](docs/execution/f02-07-lifetime-guard.md):
+contrato LG01–LG08 y núcleo C++17 que invalida escrituras protegidas, reciclaje,
+huecos y restauraciones. Once escenarios nuevos; 60 pruebas host pasan en Debug,
+Release y ASan/UBSan, con cobertura del núcleo del 100 % en líneas y ramas.
+3.096 pruebas Python aprobadas y dos análisis estáticos iguales. La integración
+de escritores y ciclo de vida de PCSX2 sigue pendiente; aún no acredita continuidad.
+
+[Primer lote de productores VTLB](docs/execution/f02-07-physical-write-probe.md):
+cuatro rutas de escritura instrumentadas en una copia privada, con ocho hooks.
+Cuatro unidades reales PCSX2 x86_64 compiladas; 26 casos de funciones del proveedor
+pasan con ON, OFF y sanitizadores usando memoria propia y dobles explícitos.
+67 pruebas host por configuración, 3.096 Python y cobertura del puente del 100 %.
+Siguen DMA, JIT/caché y ciclo de vida antes de habilitar continuidad real.
+
+[Segundo lote: productores DMA](docs/execution/f02-07-dma-write-probe.md):
+diez puntos de aviso en SPR/MFIFO/SIF/IPU y rechazo conservador del retorno GS.
+26 unidades reales compiladas ON/OFF y 54 casos por modalidad ON/OFF/sanitizadores,
+con los mismos efectos comprobados. LG-I1 sigue parcial; la siguiente unidad
+es JIT/caché. La sincronización global, ciclo de vida y captura real siguen pendientes.
+
+[Caché y barrera de entrada JIT](docs/execution/f02-07-jit-cache-probe.md):
+devoluciones físicas de líneas observadas y rechazo conservador de escrituras
+lógicas, mantenimiento y entrada JIT. Diez unidades ON/OFF y 70 casos por modalidad
+ON/OFF/sanitizadores aprobados. JIT generado y armado durante ejecución siguen
+sin cobertura; la siguiente unidad es escritores host, antes de época y admisión.
+
+[Productores host](docs/execution/f02-07-host-write-probe.md): nueve puntos nuevos
+en arranque y funciones auxiliares, conservando las hojas compartidas de
+depurador/PINE/parches. Dieciséis objetos ON/OFF y 85 casos por modalidad,
+incluida la copia anterior, con efectos equivalentes. Siguiente: ciclo de vida,
+época y exclusión de escritores antes de admitir captura.
+
+[Barrera cooperativa de PINE](docs/execution/f02-07-pine-exclusion.md): reservas
+que siguen solicitudes y callbacks, incluso tras respuesta o timeout. Cierre
+consultable con rechazo de nuevas entradas, cancelación y drenaje. Cinco objetos,
+44 casos comunes en cuatro modos y trece casos adicionales ON/sanitizadores.
+Pendiente integrar el coordinador CPU y GS/VU; no habilita captura real.
+
+[Diagnóstico de admisión](docs/execution/f02-07-admission-profile.md): evaluador
+de 18 condiciones y sampler interno del proveedor, con incompatibilidades y
+desconocidos separados. Comprueba hilo CPU, reentrada, configuración y punteros;
+PINE/GS/VU y otros escritores siguen sin exclusión demostrada. 34 escenarios en
+cuatro modos y cuatro objetos ON/OFF. No habilita captura ni admite una VM.
+
+[Ciclo de vida y época host](docs/execution/f02-07-lifecycle-probe.md): contador
+no restaurable y 24 puntos de invalidación en reset, carga, remapeo, configuración
+y cierre. Diez objetos reales, 54 escenarios por modalidad y ocho pruebas nuevas
+del núcleo. Siguiente: admisión con exclusión de CPU/trabajos/PINE y validación de VM.
+
+[Frontera CPU explícita](docs/execution/f02-07-cpu-boundary.md): el diagnóstico
+exige una iteración exterior sin actividad ni reentrada. Despacho Qt y catorce
+entradas VM revocan la frontera hasta la siguiente iteración. Cuatro objetos
+ON/OFF, 45 casos comunes por modalidad y cinco adicionales ON/sanitizadores;
+100 pruebas CTest por configuración. Sigue la coordinación PINE y el drenaje
+GS/VU antes de habilitar captura real.
+
+[Coordinación de drenaje PINE](docs/execution/f02-07-pine-coordinator.md): cierre
+retenido entre iteraciones CPU, callbacks sin Execute durante drenaje y cancelación
+por plazo/cambio de épocas. Seis objetos ON/OFF, 110 CTest por preset y probe con
+QtCore real. La API sigue interna; quedan servidor completo, GS/VU y captura real.
+
+[Productores y dependencias VU/GS](docs/execution/f02-07-worker-producers.md):
+matriz de catorce familias, entrada UI directa a GS y esperas VU↔GS. Cinco pruebas
+aisladas en normal/sanitizadores confirman que cola vacía no concede exclusión.
+CQ3-A completada; sigue implementar cierre de productores y acuses de trabajadores.
+
+[Propietario persistente del intento](docs/execution/f02-07-retained-drain.md):
+PINE permanece cerrado hasta liberar la fase posterior. Diez escenarios nuevos,
+120 CTest por preset, cuatro objetos ON/OFF y 26 casos adicionales con cuerpos
+del proveedor. La fase GS/VU se rechaza hasta implementar sus barreras; sigue B2.
+
+[Entradas productoras CPU](docs/execution/f02-07-producer-entry.md): 38 avisos antes
+de efectos y cambio de idioma por CPU→GS. Seis objetos ON/OFF y 110 casos comunes
+más seis de idioma en cuatro modos. B2 completada; sigue B3, eventos Qt restantes
+y canal de control. GS/VU continúa rechazado hasta demostrar sus retenciones.
+
+[Entradas y bombeo Qt](docs/execution/f02-07-qt-dispatch.md): B3-A completada con
+48 avisos previos a efectos/despacho y 112 escenarios por modo con QtCore real.
+Cancelar antes de Qt protege el intento; el drenaje real continúa pendiente.
+
+[Canal CPU↔worker](docs/execution/f02-07-worker-control.md): B3-B1 y núcleo de
+B3-B2 completos, con identidad, cancelación, acuses y avisos fuera de la cola de
+datos. 138 CTest por configuración, diez escenarios TSan y tres controles
+negativos. Sigue B3-B3: fijar los puntos reales VU/GS y sus esperas para integrar
+el canal. El puerto productivo permanece rechazado hasta demostrar retención.
+
+[Fronteras y despertar VU/GS](docs/execution/f02-07-worker-boundary.md): B3-B3a/b
+definidas y puente de despertar probado con WorkSema real, semáforo doble y Mach.
+57 ejecuciones normal/ASan-UBSan/TSan y tres negativos detectados. Sigue integrar
+VU en una copia nueva y probar su bucle real; GS y captura permanecen pendientes.
+
+[Retención MTVU integrada](docs/execution/f02-07-vu-control.md): IW-VU1–3
+completadas en una copia privada corregida, con cancelación CPU y reconsulta de
+cola antes del acuse. 45 ejecuciones finales con Mach y sanitizadores, seis
+objetos ON/OFF y cinco negativos. El bucle MTVU usa efectos dobles en estas
+pruebas; siguen GS, coordinación global y validación de la VM completa.
+
+[Retención MTGS integrada](docs/execution/f02-07-gs-control.md): IW-GS1–3
+completadas, con generación por apertura exitosa, señales antes del acuse y mutex
+liberado durante held. Pasan 63 ejecuciones GS y 45 de regresión VU con sanitizadores,
+seis objetos ON/OFF y seis negativos. Sigue el coordinador VU→GS; los efectos y
+el worker contraparte de estos probes son dobles y la captura global sigue pendiente.
+
 ## CI y mantenimiento
 
 [GitHub Actions](.github/workflows/ci.yml) configura calidad Python, arquitectura y trazabilidad, tests host Linux/macOS, sanitizadores, cobertura y compilación 3DS. Selecciona artefactos de desarrollo sintéticos y reportes; no crea releases. La ejecución remota está pendiente. Antes de compartir los binarios debe completarse su revisión de avisos y fuentes [LIC07](docs/compatibility/licenses.md), también cuando procedan de CI.
 
 Conservar dependencias fijadas y un test por regresión. Cada cambio de herramientas, esquema, contrato o receta requiere repetir las pruebas afectadas. La CI no necesita originales. La ISO local de `binaries` y los informes de `reports/local` están excluidos de Git; las extracciones siguen en un directorio externo.
+
+[Coordinador conjunto VU/GS](docs/execution/f02-07-worker-coordinator.md):
+IW-COORD1–3 incorpora retención VU→GS, retiro GS→VU e identidad por intento/sesión.
+154 CTest por preset, 60 ejecuciones de los bucles conjuntos con sanitizadores y
+QtCore, ocho objetos ON/OFF y seis controles negativos. Sigue la validación del
+frontend completo; admisión vacía y captura global deshabilitada.
+
+[Frontend y enlace completo](docs/execution/f02-07-worker-frontend.md): nuevo
+candidato privado compilado/enlazado, 113 tests originales y testconfig aprobados.
+Pruebas entre hilos Qt con TSan instrumentado; una espera circular se recupera
+por deadline y requiere cancelación prioritaria. Sin VM ni captura nueva.
+
+[Cancelación ante esperas externas](docs/execution/f02-07-external-waits.md):
+CPU retira el intento antes de atender una llamada bloqueante; conserva payload,
+retorno y scopes concurrentes. 160 CTest por preset, 24 casos Qt con sanitizadores,
+cinco negativos y nuevo build completo con 113 tests originales/testconfig.
+Continúan pendientes dependencias de callbacks, PINE conjunto y VM.
+
+[Llamadores y dependencias](docs/execution/f02-07-blocking-callers.md):
+106 llamadas clasificadas y seis ensayos con mutex real. Retirar el observador
+no garantiza progreso de un callback con otras esperas; siguen PINE conjunto,
+locks/backend y VM. No se modifica el proveedor ni se amplía admisión.
+
+[Servidor PINE conjunto](docs/execution/f02-07-pine-joint.md): 63 pruebas finales
+con sanitizadores, tres controles negativos y dos objetos ON/OFF. Corrige
+alineación, cierre concurrente y mensajes consecutivos; veintidós copias
+preservadas. El [enlace SRC88](docs/execution/f02-07-pine-link.md) está completado: 113 tests
+originales, firma del candidato y testconfig aprobados. No inicia VM ni habilita
+capturas del juego.
+
+
+[RDebug en el candidato](docs/execution/f02-07-rdebug-artifact.md): auditoría de
+403 objetos, 19 archivos estáticos, 806 dependencias y 42 binarios, con siete
+controles negativos. La evidencia está ligada al artefacto; falta vincularla al
+proceso y completar el perfil de diagnóstico antes de habilitar capturas.
+
+[Identidad y diagnóstico](docs/execution/f02-07-process-diagnostic.md): inventario
+del proveedor, matriz de dieciocho condiciones y consumidor con 87 pruebas.
+Detecta cambios o pérdida de identidad y descarta el diagnóstico permanentemente.
+El adaptador nativo que vincule el proceso real continúa pendiente; las pruebas
+del consumidor usan dobles y no habilitan captura ni cambian el perfil productivo.
+
+[Nacimiento nativo del proveedor](docs/execution/f02-07-native-birth.md): adaptador
+macOS con PID/nacimiento del sistema y nonce propio. 88 ensayos finales, incluidos
+exec/fork reales, tres controles negativos y pipeline host dedicado. Falta ligar
+esta clave a las imágenes cargadas y al canal de PCSX2; la admisión sigue cerrada.
+
+[Mappings y eventos nativos](docs/execution/f02-07-native-images.md): vínculo de
+archivo con región del kernel y registro de cargas/descargas, probado con
+reemplazos reales. IP-NATIVE2 sigue abierto por manifiesto/digests y evidencia de
+caché del sistema; no habilita capturas.
+
+[Manifiesto nativo de archivos](docs/execution/f02-07-native-manifest.md): hashes
+desde descriptores retenidos y dos pasadas del manifiesto; 42 binarios conservados
+comprobados. Caché/AOT y composición del inventario siguen pendientes.
+
+[Composición del inventario](docs/execution/f02-07-native-inventory.md): combina
+nacimiento, manifiesto, mappings y revisión del cargador; rechaza todo el conjunto
+si una imagen carece de evidencia. 476 ejecuciones finales y tres controles
+negativos. La caché del sistema y AOT siguen pendientes; las pruebas positivas
+usan bibliotecas propias y no habilitan la ejecución del port.
+
+[Vínculo de páginas de caché](docs/execution/f02-07-native-pages.md): la consulta
+del kernel relaciona puntos de las catorce partes x86_64/AOT y 44 bibliotecas con
+archivos retenidos. 576 ejecuciones finales y cuatro negativos. Falta verificar
+integridad y cobertura completa de la caché antes de integrar el proveedor.
+
+[Integridad y rangos de caché](docs/execution/f02-07-native-cache-integrity.md):
+hashes completos de catorce archivos y recorrido exhaustivo de rangos declarados,
+con políticas de tamaño separadas del bundle. 664 ejecuciones y cuatro regresiones
+detectadas. Una segunda sonda verificó el manifiesto local fijado; falta integrar
+la cobertura de todos los segmentos del candidato y acotar la revalidación.
+
+[Inventario de segmentos del candidato](docs/execution/f02-07-native-layout.md):
+645 imágenes y 3020 segmentos enumerados en una copia privada de diagnóstico,
+con revisión estable del cargador. Se amplió el inventario a 1024 imágenes sin
+cambiar los límites de archivos del bundle. 756 ejecuciones y cuatro regresiones
+detectadas; falta acreditar los objetos de datos transformados y todos los rangos.
+
+[Unión de intervalos y dependencias](docs/execution/f02-07-native-range-plan.md):
+el planificador conserva los 3020 segmentos del censo en 2442 intervalos disjuntos,
+sin sumar aliases: 2550806551 bytes virtuales únicos. 820 ejecuciones y cuatro
+regresiones detectadas. Incluye clasificación zero-fill, conflictos y límites;
+siguen pendientes el origen de páginas transformadas y la enumeración AOT real.
+
+[Mapa virtual y cobertura AOT](docs/execution/f02-07-native-region-map.md):
+enumeración desde cero con dos pasadas, límites y rechazo de cambios. 880
+ejecuciones finales y cuatro regresiones detectadas. El diagnóstico localiza
+caché AOT y traducciones individuales fuera de los segmentos Mach-O, incluido
+dyld, y un heap ejecutable de Rosetta. Falta acreditar su origen e integrar la
+verificación de páginas con un coste de revalidación acotado.
+
+[Asociación puntual de región y archivo](docs/execution/f02-07-native-region-vnode.md):
+912 ejecuciones y cuatro regresiones detectadas. Las 24/27 traducciones AOT
+observadas tienen vnode, pero sus archivos devuelven EPERM y no hay descriptores
+retenibles en esas fases. La API de nombres puede apuntar a otro mapping y se
+excluye como prueba de origen. La [dirección de confianza en la plataforma](docs/execution/f02-07-platform-trust-decision.md)
+se desarrolla mediante un perfil separado; captura y admisión permanecen cerradas.
+
+[Perfil de aplicación con plataforma asumida](docs/execution/f02-07-platform-inventory.md):
+núcleo PT con tipos, evidencias y hashes propios; 1016 ejecuciones en cuatro
+configuraciones, cuatro regresiones detectadas y 122 pruebas Python. Una sonda
+aislada clasifica 343 de 345 cabeceras por membresía exacta en la caché de dyld
+y rechaza una biblioteca que imita el nombre de otra del sistema. Sigue PT-T3:
+adaptador nativo y validación dentro del candidato PCSX2. El perfil aún no está
+integrado y no acredita páginas AOT ni permite captura.
+
+[Origen nativo del perfil PT](docs/execution/f02-07-platform-origin.md): adaptador
+implementado con 1096 ejecuciones, cuatro regresiones detectadas y 122 pruebas
+Python. Clasifica las 557 cabeceras del arranque de PCSX2; rechaza la salida por
+el mapping de `libobjc-trampolines.dylib`, cuyo slice x86_64 empieza en offset
+16384. Sigue PO-T3b: contrato y vinculación de slices Mach-O universales.
+Este límite queda resuelto en [Slices Mach-O y PT v2](docs/execution/f02-07-macho-slices.md):
+parser y vínculo nativo con perfil explícito; 1216 ejecuciones C++, cuatro regresiones
+detectadas y 153 Python. Testconfig clasifica 557 cabeceras al inicio y 647 al
+cerrar, incluido el slice universal a offset 16384. PT-T3 completo; sigue PT-T4,
+manifiesto esperado y medición de costes.
+
+[Manifiesto previo y composición PT v2](docs/execution/f02-07-launch-manifest.md)
+completa PT-T4: 26 archivos fijados antes de lanzar, seis muestras positivas y
+cuatro controles de rechazo en PCSX2. 1292 ejecuciones C++ y 153 Python correctas.
+Cada muestra relee 215,10 MiB y tarda 832–875 ms en la ejecución medida. Sigue
+PT-T5: diagnóstico/peer y presupuesto con cancelación. La captura sigue deshabilitada.
+
+[Diagnóstico tipado PT v2](docs/execution/f02-07-platform-diagnostic.md) completa
+PT-T5a: mensajes acotados, evidencias locales y consumidor separado de IP.
+1328 ejecuciones C++, 230 Python y seis mensajes de una copia testconfig validados.
+Sigue PT-T5b: autenticar peer y vincular la sesión; después deadline/cancelación.
+El codec no autentica el canal ni habilita captura.
+
+[Peer y sesión de diagnóstico](docs/execution/f02-07-diagnostic-peer.md) completa
+PT-T5b: identidad nativa del canal y rechazo terminal de replay/cambios/pérdidas.
+1356 ejecuciones C++, 335 Python y nueve testconfig privados verificados. Sigue
+PT-T5c: presupuesto total, cancelación fuera del hilo CPU y gates del emulador;
+la captura sigue cerrada.
+
+[Ejecutor de diagnóstico](docs/execution/f02-07-diagnostic-worker.md) completa
+DW-T1 / PT-T5c.1: presupuesto único de 5 s/2 s, cancelación cooperativa y cierre
+confirmado después de terminar el trabajador. 1456 ejecuciones x86_64, 24 con
+ThreadSanitizer arm64 y seis regresiones detectadas. Sigue DW-T2: integrar los
+adaptadores nativos y comprobarlos en PCSX2; la captura permanece deshabilitada.
+
+[Inventario nativo con presupuesto](docs/execution/f02-07-native-diagnostic-work.md)
+completa NW-T1–2 / DW-T2a–b: preparación, lectura/hash y cierre en el trabajador.
+1504 ejecuciones C++ finales, cuatro regresiones detectadas y nueve casos privados
+finales de PCSX2 sin VM. Sigue NW-T3 / DW-T2c, presupuesto del canal; después
+DW-T3, guardias runtime. DW-T2 sigue abierto y la captura deshabilitada.
+
+[Consumidor con plazo total](docs/execution/f02-07-budgeted-consumer.md) completa
+BC-T1 / NW-T3a: 5 s/2 s desde peer hasta admisión, IO no bloqueante y cancelación
+señalada al dueño. 384 pruebas Python, cuatro regresiones detectadas y ocho
+escenarios de procesos nativos con payload sintético. Siguen NW-T3b, productor,
+y NW-T3c, sonda conjunta PCSX2. Captura deshabilitada.
+
+[Entrega del productor](docs/execution/f02-07-worker-delivery.md) completa
+WD-T1 / NW-T3b: el plazo sigue activo hasta confirmar el envío, con escrituras
+parciales y cierre del canal por su dueño. Pasan 1608 ejecuciones C++, 41 TSan
+y cinco controles de regresión. Sigue NW-T3c, composición privada PCSX2.
+La captura continúa deshabilitada.
+
+[Composición privada](docs/execution/f02-07-diagnostic-composition.md) completa
+NW-T3 / DW-T2: 20 casos finales de PCSX2 sin VM y diez muestras de inventario
+aceptadas, con plazos por extremo, backpressure, fallos y cierres verificados.
+Se conserva un intento rechazado antes de alcanzar su inyección. Sigue DW-T3,
+integración de guardias runtime; la captura continúa deshabilitada.
+
+
+[Vinculación runtime revocable](docs/execution/f02-07-runtime-diagnostic-binding.md)
+completa RB-T1 / DW-T3a: el trabajador invalida muestras y entregas al retirar su
+alcance, incluso mientras espera ocioso. Pasan 1712 ejecuciones finales, 67 TSan
+y ocho controles negativos. Sigue RB-T2, conexión con el coordinador privado;
+la VM y la captura todavía no se validan con esta vinculación.
+
+[Coordinador runtime privado](docs/execution/f02-07-runtime-coordinator.md) completa
+RB-T2 / DW-T3b: conserva guardias CPU/PINE/VU/GS y revoca antes de las transiciones
+cubiertas. Pasan 108 pruebas privadas, 1.820 nativas, 94 TSan adicionales y diez
+controles negativos; se compilan unidades completas ON/OFF. Sigue RB-T3, enlace
+y validación con VM. DW-T3 y captura permanecen pendientes.
+
+[Entrega asíncrona IO–CPU](docs/execution/f02-07-runtime-handoff.md) completa
+RB-T3a: el callback conserva el plazo original, rechaza intentos tardíos y confirma
+liberación antes de unir DW. Pasan 1.900 pruebas nativas, 148 de integración,
+114 TSan adicionales y seis negativos. Sigue RB-T3b: socket/inventario nativo,
+candidato enlazado y VM. RB-T3, DW-T3 y captura siguen pendientes.
+
+[Sesión runtime y socket](docs/execution/f02-07-runtime-session.md) completa
+RS-T1/RS-T2: vínculo exacto con DW, recepción macOS autenticada, plazos acumulados
+y cierre después de retirada CPU. Agrega 42 escenarios al pipeline nativo.
+Sigue RS-T3: launcher/inventario nativo válido, candidato enlazado y VM.
+RB-T3, DW-T3 y captura permanecen pendientes.
+
+[Composición nativa con runtime](docs/execution/f02-07-native-runtime-composition.md)
+completa RS-T3a sin VM: 17 controles alcanzados y 11 muestras con inventario
+nativo real. El último control requiere traza del loader; se conservan los
+rechazos previos. Host/CPU siguen siendo dobles. Sigue RS-T3b: integración real,
+candidato enlazado y validación con VM; la captura permanece pendiente.
+
+[Servicio del candidato enlazado](docs/execution/f02-07-runtime-service.md)
+completa RT-T1/RT-T2: integra IO con Host/VMManager reales, construye un candidato
+firmado y repara su cierre. La ISO europea inicializa una VM pausada; el inventario
+rechaza su preflight y el candidato final sale correctamente. La siguiente tarea
+es diagnosticar ese rechazo. Aún no hay muestras aceptadas ni captura habilitada.
+
+[SRC118 — Diagnóstico del preflight](docs/execution/f02-07-native-preflight.md)
+completa RT-T3a: el registro se invalida ante un alta con sus 1.024 entradas
+ocupadas. Pasan 198 regresiones; dos repeticiones confirman la misma causa y
+cierre correcto. Falta medir la demanda completa y corregir capacidad con
+presupuesto explícito; no hay inventario válido ni muestras aceptadas.
+
+[SRC119 — Censo independiente](docs/execution/f02-07-native-census.md) completa
+RT-T3b.1: el alta 1.025 es nueva y las repeticiones miden 1.067 módulos sin VM y
+1.069 con VM pausada. Pasan 186 casos nativos y 27 TSan. Se propone evaluar
+2.048 entradas con tamaños ABI medidos; faltan presupuesto de pila/plazo,
+ajuste coordinado del contrato y validación positiva. El límite sigue en 1.024
+y la captura permanece pendiente. El harness final añade 80 ejecuciones de
+portabilidad en GCC/Clang y sanitizadores locales.
+
+[SRC120 — Capacidad y almacenamiento](docs/execution/f02-07-image-capacity.md)
+completa RT-T3b.2 en fuentes y pruebas: 2.048 entradas, buffers propios fuera
+de pila y protocolo PD v2 coordinado con Python. Pasan 2.224 ejecuciones nativas,
+48 TSan, seis GCC y 304 Python. Sigue RT-T3b.3: reconstruir los 128 objetos
+afectados del candidato y verificar muestras positivas con VM y sus plazos.
+El candidato anterior conserva sus bytes; la captura permanece pendiente.
+
+[SRC121 — Candidato y componentes del host](docs/execution/f02-07-capacity-candidate.md)
+reconstruye los 128 objetos afectados y verifica 390 miembros estáticos. El
+manifiesto fija tres componentes Apple fuera de la caché; dos perfiles aceptan
+dos muestras PD v2 cada uno. Pasan 304 pruebas Python. El cierre inmediato del
+productor impide aceptar la tercera respuesta y mantiene RT-T3b.3 abierto;
+la captura continúa pendiente.
+
+[SRC122 — Liberación de la última respuesta](docs/execution/f02-07-service-release.md)
+completa RT-T3b/RT-T3b.3: el productor espera el medio cierre autenticado del
+consumidor y dos perfiles de confirmación aceptan tres respuestas cada uno.
+Pasan 433 ejecuciones nativas, 304 Python y 58 de repositorio/supervisor.
+Se conserva un intento que agotó el plazo global; el margen bajo carga sigue
+pendiente. Continúa RT-T3c: cancelación/callbacks tardíos, coste del inventario
+y validación independiente de escritores y ciclo de vida. Captura aún cerrada.
+
+[SRC123 — Abandono del consumidor](docs/execution/f02-07-peer-exit.md) completa
+RT-T3c.1a: ocho perfiles con VM verifican cierre antes de pedir datos, tras la
+primera o tercera respuesta y rechazo de bytes adicionales. Todos terminan
+limpiamente con el motivo esperado; pasan 58 pruebas de repositorio/supervisor.
+El candidato se conserva sin recompilar. Siguen cancelación UI, callbacks
+tardíos, margen temporal y gates de escritores.
+
+[SRC124 — Cancelación desde la interfaz](docs/execution/f02-07-ui-cancel.md)
+completa RT-T3c.1b.UI: doce perfiles observados y dos acciones visibles en el
+candidato sin sonda cancelan limpiamente; IO se une antes de detener CPU.
+El control normal conserva las tres respuestas. Pasan 445 ejecuciones nativas
+y 58 de repositorio/supervisor. Siguen entrega parcial, Apagar VM, callbacks
+tardíos, margen temporal y gates de captura.
+
+[SRC125 — Cancelación durante entrega parcial](docs/execution/f02-07-partial-cancel.md)
+completa RT-T3c.1b.partial-delivery: la señal de UI se consulta dentro del envío.
+Ocho perfiles con prefijos de 1/293 bytes y contrapresión inyectada rechazan el
+frame incompleto y cierran ordenadamente; el control sin sonda conserva tres
+respuestas. Pasan 453 nativas y 58 de repositorio/supervisor. Siguen Apagar VM,
+callbacks reales, margen temporal y gates; no se habilita captura.
+
+[SRC126 — Apagar VM y confirmación](docs/execution/f02-07-vm-shutdown.md) completa
+RT-T3c.1b: No conserva la VM y su estado de pausa; Sí vuelve a la lista de juegos
+con PCSX2 abierto. Pasan dieciséis perfiles Qt, el contraste CUA sin sonda,
+el control normal de tres respuestas, 465 ejecuciones nativas y 58 pruebas del
+repositorio/supervisor. Siguen callbacks tardíos/duplicados en Host real, margen
+temporal y gates; la captura permanece cerrada.
+
+[SRC127 — Callbacks en Host real](docs/execution/f02-07-host-callback.md) completa
+RT-T3c.1: ocho perfiles verifican rechazo tardío, ejecución única y vida útil del
+handoff; no cambia producción. Se conservan los dos órdenes del duplicado y el
+rechazo de un peer ya cerrado. Pasan 228 ejecuciones nativas, ocho negativas del
+checker y 58 pruebas de repositorio. Sigue medir el margen temporal del inventario;
+gates y captura permanecen pendientes.
+
+[SRC128 — Margen temporal del inventario](docs/execution/f02-07-inventory-timing.md)
+completa RT-T3c.2: doce sesiones aceptan 36 respuestas y cierran limpiamente.
+Los manifiestos consumen alrededor del 95 % del muestreo; el margen global
+mínimo observado es 463 ms. Se conserva producción y se documentan límites de
+la medida; pasan 20 pruebas propias y 58 de repositorio/supervisor. Sigue el mapa
+de hechos/gates de JIT, caché, DMA y lifecycle; no se habilita captura.

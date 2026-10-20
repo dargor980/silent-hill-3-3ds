@@ -1,0 +1,513 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC66",
+  "task": "F02.07/camera-resource-link-eu/origin/load-provenance/LP-C/LG-I1/vtlb",
+  "stage": "vtlb_probe_compiled_function_harness_passed_full_coverage_pending",
+  "contracts": [
+    "schemas/physical-write-probe-v1.md",
+    "schemas/lifetime-guard-v1.md"
+  ],
+  "units": {
+    "PW_T1": "complete",
+    "PW_T2": "complete",
+    "PW_T3": "complete_units_and_function_harness",
+    "PW_T4": "complete",
+    "LG_I1": "partial_vtlb",
+    "LG_I2": "pending",
+    "LG_I3": "pending",
+    "LG_I4": "partial_no_vm_integration",
+    "LP_C": "partial",
+    "LP_D": "pending"
+  },
+  "provider_audit": {
+    "baseline_and_previous_observer_unchanged": true,
+    "baseline_files_verified": 2934,
+    "capabilities": [],
+    "continuous_lifetime_verified": false,
+    "coverage_audit_exhaustive": false,
+    "derived_files_verified": 2945,
+    "harness_inputs": {
+      "doubles": [
+        "vmap",
+        "CPU_cycle",
+        "config",
+        "cache",
+        "handler",
+        "r128_store"
+      ],
+      "expected_cases_per_run": 26,
+      "fragments_sha256": "0a111f4b0ec206a464f3b6ff9712ce0134f0b4279f7478db698c3734ef5b8842",
+      "functions": 4,
+      "harness_sha256": "f28c190886d678067a78d87c49b2991448cd1741e6cfafc567ee9bb3a05eb7f1",
+      "hook_sites": 8,
+      "instrumented_function_bodies_copied_exactly": true,
+      "provider_sha256": "921358b342485db8bd43984e63408a19f60810e9feeab6525f309fd9d5a1e8e8"
+    },
+    "harness_runs": [
+      {
+        "accepted": true,
+        "binary_sha256": "5bebdbd1b59b5963a2eb2255a9111af87d6b0cfed975d7583c3c9a720c4c36ef",
+        "cases": 26,
+        "mode": "on",
+        "run_log_sha256": "fc7ef556c2d006de7b0103b5bdc7fea1d590bf26c75d1fec82aa85de385bb6ea",
+        "run_receipt_sha256": "810fb4cafb0468c5c626cdc270deaba6ee6ae52def76f357a63f4ce33a70ddd2"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "1c2fa61c6607b11d64f2261bc896de5802f68b167dcb14c2b281e7bd654c285d",
+        "cases": 26,
+        "mode": "off",
+        "run_log_sha256": "fc7ef556c2d006de7b0103b5bdc7fea1d590bf26c75d1fec82aa85de385bb6ea",
+        "run_receipt_sha256": "7f835e984728c83623893237814f939eb59cbc4ce1eb2d7b785af8948f41c828"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "57cfd3b747840cb405280b65b27ea850688fb6898555141917a374959e69a645",
+        "cases": 26,
+        "mode": "sanitize",
+        "run_log_sha256": "fc7ef556c2d006de7b0103b5bdc7fea1d590bf26c75d1fec82aa85de385bb6ea",
+        "run_receipt_sha256": "c0dbb26173318b720167a1c6b879a1e129948a844bd975a1a307998798c9392d"
+      }
+    ],
+    "hook_sites": 8,
+    "live_acquisition_performed": false,
+    "mapped_routes": 4,
+    "own_files_added": 4,
+    "own_sources_match": true,
+    "previous_observer_files_verified": 2941,
+    "prior_evidence_sha256": "06d90ac252565a1f36fdc3e1ed0ffac5c6c2a177bfa4ef41d51926d552615ddd",
+    "private_patch_sha256": "73dba3d31b0032b2ffdf40280d8a3a321f775e987584f2f1fa0d3b8c86cddbcf",
+    "private_source_manifest_sha256": "870eb94666ea3832e0310cdf5afd6bf15f7576bc1cfb2bd3db9d85fea3cf459d",
+    "production_binding_added": false,
+    "provider_application_executed": false,
+    "provider_application_linked": false,
+    "provider_changed": [
+      "pcsx2/CMakeLists.txt",
+      "pcsx2/vtlb.cpp"
+    ],
+    "provider_source_size": 129628708,
+    "provider_translation_units": [
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "ee730ed4b5dbd84e1fe77c7753c19f33499bbfaf7a68165a0fd525e6dce44d03",
+        "receipt_sha256": "863627625aa7f02a7ea2d4ef44219d3d186a69050442b1f279f0f4ba42615e1e",
+        "source_sha256": "921358b342485db8bd43984e63408a19f60810e9feeab6525f309fd9d5a1e8e8",
+        "unit": "vtlb-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "299ef217333b7d6070faf2e31df2a7faf8ad1a70b85d3ca670548fc43d965e65",
+        "receipt_sha256": "9c2ee47ab3f1832bc8f212cc31a3af4dc1f5ddbc70866ee6172fe3c02ece12be",
+        "source_sha256": "921358b342485db8bd43984e63408a19f60810e9feeab6525f309fd9d5a1e8e8",
+        "unit": "vtlb-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "12fe86260680750b8c24af9ce4614eb8b53f0c2155f65daf05f8742269c8dad7",
+        "receipt_sha256": "d1b6bc64820eed8e74ba1ca3159d0bb58b03411367bd2c7ce1fb193f5ef41b1f",
+        "source_sha256": "2633522bc0040646826ffe8fea8cf6f4f984345e6308c9c277945c0db7400ed8",
+        "unit": "lifetime"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "5fb177ea45c6d0a28cdf0e0d73f55d348fa7eddf05f053393a4c0e4755b42c99",
+        "receipt_sha256": "ffefb375cfa6e5d18c87d52ffe2d555703a5994c548769151d7716198002a97b",
+        "source_sha256": "0a39212b2e933ef1f3dd8b2ec2bd97610667acd0c89d40d9196a7d9c29c8252e",
+        "unit": "physical_writes"
+      }
+    ],
+    "read_events_produced": 0,
+    "remaining_surfaces": [
+      {
+        "file": "pcsx2/x86/ix86-32/iR5900LoadStore.cpp",
+        "sha256": "ad7ffcb6e89b35ad0e1badc93eff47a1e781d99f58473d314461a60c752a1376",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/x86/ix86-32/recVTLB.cpp",
+        "sha256": "c833f9be317bced1785224490b8c6c903ef8ee9e3a938dd634aad47684bbbf20",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/Cache.cpp",
+        "sha256": "29c31323fe84695f4b1a06a9ced3760f3b14a6fbe3a1633277fcbf5875ef8d9b",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/SPR.cpp",
+        "sha256": "722c702202ecaa62aaa8a1181429696821a9fe7e8e17d0d9d31abf5f03c421d3",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/Hw.cpp",
+        "sha256": "215c0707e81519d8d8f590d73abeec5cedaf9b5ea615fe69cc75bed6bf69e918",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/Sif0.cpp",
+        "sha256": "d034ff7989d02747a18622695eaa28d115c8124917bd9fde3feb7b8e1eb3805b",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/sif2.cpp",
+        "sha256": "9a33b21a160455b80ac9b006e7320d346ea2729e24d0d695626ff729aa38159a",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/IPU/IPUdma.cpp",
+        "sha256": "2d16c4639da1292a5858439a418aab9f3d2d7702dbae85ccfba8abf8b5706b8a",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/Vif1_Dma.cpp",
+        "sha256": "681d80c62eccdb481b4ad31ae03d983d0747579a475d430d6f51d4c73a2819ac",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/MTGS.cpp",
+        "sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/Memory.cpp",
+        "sha256": "d0fe8073d5bc9b52ed50bffe38c3c8111fd61e735a9f0eb4b1a1f7db02cb5830",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/VMManager.cpp",
+        "sha256": "ab60e27f91af5248f6b6e74a8360611038abbfd6fec5f5e37c8c024f5354f205",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/SaveState.cpp",
+        "sha256": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/COP0.cpp",
+        "sha256": "5c15c34884f06c95074d725415df0d9751092f9bb9115f3324351ec4aba17686",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/R5900.cpp",
+        "sha256": "63a07b9eff4f84d0558c205e0297250634cc061c4313da9092c04670402134a6",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/DebugTools/DebugInterface.cpp",
+        "sha256": "61790fc48d688633d416f9301dac27afa18db9dcd12a28b8f6f13d7f9ccbe27c",
+        "status": "pending_coverage"
+      },
+      {
+        "file": "pcsx2/Patch.cpp",
+        "sha256": "f4621ca8e04a6ddca20a5ca6f793e854680c3bb183fbdbb00c8eae194f9763c1",
+        "status": "pending_coverage"
+      }
+    ],
+    "resource_links": [],
+    "schema_version": 1,
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "status": "vtlb_write_probe_compiled_and_function_harness_validated",
+    "symbol_references": {
+      "off": 0,
+      "on": 2
+    },
+    "unsupported_cache_handler_sites": 4
+  },
+  "reproducibility": {
+    "runs": 2,
+    "identical": true,
+    "report_size": 7523,
+    "report_sha256": "e3f89c9f22e3f100c378fb7e0869af7b828272d18dfdbb932a79a30edb0cf566",
+    "original_source_unchanged": true,
+    "failed_attempts_preserved": true
+  },
+  "implementation": {
+    "modules": [
+      "tools/observer/physical_writes.cpp",
+      "tools/observer/include/sh3_observer/physical_writes.hpp"
+    ],
+    "kind": "resolved_host_pointer_bridge_and_raii_binding",
+    "dereferences_host_pointer": false,
+    "mutates_emulated_memory": false,
+    "allows_original_write_after_rejection": true,
+    "serializes_callbacks": true,
+    "serializes_memory_effects": false,
+    "authenticates_coverage": false,
+    "production_arming_exposed": false,
+    "prior_lifetime_core_unchanged": true,
+    "build_definition_sha256": "7882763a75366c7d05732221af24115203a449fc7da752dce1a79d946a94b72f",
+    "host_only": true,
+    "ci_jobs_automatically_discover_target": true,
+    "nintendo_engine_sources_unchanged": true,
+    "nintendo_build_identity_changes_due_to_cmake": true
+  },
+  "validation": {
+    "new_ctest_scenarios": 7,
+    "final_host_tests_per_configuration": 67,
+    "cpp_runs": [
+      {
+        "artifact": "host-debug.xml",
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 4.0,
+        "sha256": "0fff7bdcc83c59a0292ca9f75a9a779a7ec6adb2db4e269431f46d31e3775774"
+      },
+      {
+        "artifact": "host-release.xml",
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 6.0,
+        "sha256": "eaf1a857e85a1f4cff7aff1b7197e115b4e551fb1e6f7b0bd5403bc1e67550bc"
+      },
+      {
+        "artifact": "host-sanitize.xml",
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 10.0,
+        "sha256": "c77cbd6e152eff40d348f6392d57bf4d0fc9a77262a87f915ce8f959b201baed"
+      },
+      {
+        "artifact": "host-debug-final.xml",
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 0.0,
+        "sha256": "c2ed2abec5e872f481838ee33939efbacbb76554eee824e5dc140dc13529c266"
+      },
+      {
+        "artifact": "host-release-final.xml",
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 0.0,
+        "sha256": "f242bdc4b44f621c13b8b0fe7d873d3d8bdfdcdd098686dd32141d85bc5e7f79"
+      },
+      {
+        "artifact": "host-sanitize-final.xml",
+        "tests": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 5.0,
+        "sha256": "bc707e4eea3a491c3345461cdca4a6cee9f218f6728dcd79b49f1d5282b6ac2c"
+      }
+    ],
+    "python_run": {
+      "artifact": "pytest.xml",
+      "tests": 3096,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "junit_seconds": 124.247,
+      "sha256": "273d2b7754cbf180a81b25f2753bc6e84fa43c786a760387d9016dd9cf9314de"
+    },
+    "harness_cases_per_mode": 26,
+    "harness_modes": [
+      "ON",
+      "OFF",
+      "ON_ASan_UBSan"
+    ],
+    "real_provider_compiled_units": 4,
+    "cpp_coverage": {
+      "tools/observer/include/sh3_observer/physical_writes.hpp": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "functions": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "lines": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 4,
+          "covered": 4,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/physical_writes.cpp": {
+        "branches": {
+          "count": 28,
+          "covered": 28,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 7,
+          "covered": 7,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 7,
+          "covered": 7,
+          "percent": 100
+        },
+        "lines": {
+          "count": 37,
+          "covered": 37,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 38,
+          "covered": 38,
+          "notcovered": 0,
+          "percent": 100
+        }
+      }
+    },
+    "cpp_coverage_tool": "LLVM_Apple_Clang_21_explicit_macos_sdk",
+    "cpp_global_gcc_coverage_run": false,
+    "total_python_coverage": {
+      "covered_lines": 5303,
+      "num_statements": 5348,
+      "covered_branches": 1449,
+      "num_branches": 1482
+    },
+    "line_branch_gate_minimum_percent": 80,
+    "cpp_module_line_branch_gate": "PASS",
+    "python_line_branch_gate": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 137,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_links": "PASS",
+    "operational_reports_completed_before_full_suite": true,
+    "remote_ci_run": false,
+    "full_provider_build_run": false,
+    "provider_configure_run": false,
+    "nintendo_build_run": false,
+    "new_pcsx2_session": false,
+    "sanitizer_log_error_scan": "PASS",
+    "local_artifact_sha256": {
+      "host-debug.xml": "0fff7bdcc83c59a0292ca9f75a9a779a7ec6adb2db4e269431f46d31e3775774",
+      "host-release.xml": "eaf1a857e85a1f4cff7aff1b7197e115b4e551fb1e6f7b0bd5403bc1e67550bc",
+      "host-sanitize.xml": "c77cbd6e152eff40d348f6392d57bf4d0fc9a77262a87f915ce8f959b201baed",
+      "host-debug-final.xml": "c2ed2abec5e872f481838ee33939efbacbb76554eee824e5dc140dc13529c266",
+      "host-release-final.xml": "f242bdc4b44f621c13b8b0fe7d873d3d8bdfdcdd098686dd32141d85bc5e7f79",
+      "host-sanitize-final.xml": "bc707e4eea3a491c3345461cdca4a6cee9f218f6728dcd79b49f1d5282b6ac2c",
+      "pytest.xml": "273d2b7754cbf180a81b25f2753bc6e84fa43c786a760387d9016dd9cf9314de",
+      "cpp-coverage.json": "2d5d607cf318dab64839023460d72bc1922d0babc723acec6ac56ee0ad07ae49",
+      "cpp-coverage-summary.json": "1f63eae3d773fb53558bfe9f6ad50a71bf5031a6d9c5d44bf351625b80dbd2e6",
+      "python-coverage.json": "2b2df0426bc58df52a6b0604e61faaded960ef754acc2c6589e554e3b9776549",
+      "python-coverage.xml": "0e6d8a847cb21d3cc3cf51aac14962befe83e0a38452e64aaa941a87c79c812f",
+      "prepare.json": "870eb94666ea3832e0310cdf5afd6bf15f7576bc1cfb2bd3db9d85fea3cf459d",
+      "prepare-failure.json": "6b10b71b9c93e9244361417c68d1008253da57056a9695ea38030fa1749b6ebe",
+      "compile-preflight-failure.json": "1e451d31231ba1c4ca6b61208f983bc196a13ec050ff217634511a6fc4591c44",
+      "harness-inputs.json": "785ad6ca913fab565d9ed7ccaf7a5b4ba30147241f80180b867ba749a7735677",
+      "harness-inputs-v2.json": "830c3172515a5795c811e0972f9e802ea73eee3521a8359d239e8e499847206e",
+      "vtlb-on-v2.json": "863627625aa7f02a7ea2d4ef44219d3d186a69050442b1f279f0f4ba42615e1e",
+      "vtlb-off-v2.json": "9c2ee47ab3f1832bc8f212cc31a3af4dc1f5ddbc70866ee6172fe3c02ece12be",
+      "physical_writes-v2.json": "ffefb375cfa6e5d18c87d52ffe2d555703a5994c548769151d7716198002a97b",
+      "lifetime-v2.json": "d1b6bc64820eed8e74ba1ca3159d0bb58b03411367bd2c7ce1fb193f5ef41b1f",
+      "harness-v2-sanitize-run.json": "c0dbb26173318b720167a1c6b879a1e129948a844bd975a1a307998798c9392d",
+      "harness-on-run.json": "4e30fa5c63f2b4131e45db9647f5e692d68df02576b7966caf914ebf7df536f4",
+      "harness-v2-on-compile.json": "6257ebee81389e55d7122fadf6a747dd957d9e345a884b5502b2e552a1c5eef7",
+      "harness-v2-sanitize-compile.json": "fb77802bd9de159bf584a93f4d773c42931fd1d1a564cac50a33cb7135dece9c",
+      "harness-sanitize-run.json": "9034b1cee77f117ad9b6cd1289c60c640f8f35ed129b1969ea4b14ae0b5fc34e",
+      "harness-v2-on-run.json": "810fb4cafb0468c5c626cdc270deaba6ee6ae52def76f357a63f4ce33a70ddd2",
+      "harness-v2-off-run.json": "7f835e984728c83623893237814f939eb59cbc4ce1eb2d7b785af8948f41c828",
+      "harness-v2-off-compile.json": "c01e7d513ea804602f651bf87c85a16cc37b3ae8966ded85918a457647e26e74",
+      "harness-sanitize-compile.json": "107a895f0d9541c4e78ecd2815792624e58981b1cef3aa5be35c37b316500ee4",
+      "harness-on-compile.json": "c182b719667179a11f56d27acc7aa65673e7110c1a2bab58d5a7906c3af1a3ae",
+      "harness-off-compile.json": "94190395f97e201445822522a341b4b61f166df28533eff2957c96c1c50aad0b"
+    },
+    "failures_preserved": [
+      "ambiguous_read_write_patch_pattern_rejected",
+      "invalid_supervisor_measurement_before_compiler_start",
+      "unused_cycle_fixture_in_OFF_with_Werror"
+    ],
+    "thresholds_not_relaxed": true
+  },
+  "public_inputs_sha256": {
+    "schemas/physical-write-probe-v1.md": "8da51642823c4aa2ac43d5d402cb147b0b1662ace1d56a3408d759882af7bc99",
+    "tools/observer/physical_writes.cpp": "0a39212b2e933ef1f3dd8b2ec2bd97610667acd0c89d40d9196a7d9c29c8252e",
+    "tools/observer/include/sh3_observer/physical_writes.hpp": "856619e83b977e05de98e0e1537601a349d0ad7dcc2d017cba30d613465f849b",
+    "tests/cpp/test_physical_writes.cpp": "478267ba5b6108cf42d99b404a71340057d0f07b481f1d144fb7e4ebc4fd35e0",
+    "docs/execution/f02-07-physical-write-probe.md": "9d25f3710d99266664c572c8822b0355c7687ebe42f89200593bb5b6f5d77e39"
+  },
+  "historical_input_updates": [
+    {
+      "source_id": "SRC65",
+      "path": "CMakeLists.txt",
+      "previous_sha256": "93fc4536e59c5952cf5a01ac9d3fa1694a0ebcabd33bdb9d6048d7332f3b6fcb",
+      "current_sha256": "7882763a75366c7d05732221af24115203a449fc7da752dce1a79d946a94b72f",
+      "previous_snapshot_preserved": true,
+      "previous_snapshot_artifact": "CMakeLists-SRC65.txt",
+      "reason": "register_new_host_library_and_seven_tests",
+      "historical_evidence_unchanged": true
+    }
+  ],
+  "private_operational_script_sha256": {
+    "audit.py": "9b8c26315209f022aa5f5d74029bc3f2a66cd5462e7cb5208f24413f5e19b597",
+    "compile-private-initial.py": "c10ff2368395cbfa762a577faa63234fc4b6f0eec3492cd53676b6f0dab97f83",
+    "compile_private.py": "926b11a09e5ab7b3c99e0182f2147ba50359f8d0a16402cbc52b9a0f960d6f3f",
+    "coverage_cpp.py": "5d2d3fb41d3208dcceaca6ae0a036816a0a2e3a3d4e2971bdcfeff99e0c202b9",
+    "make-harness-initial.py": "d89918f08c97ea6d37e87433d73478d7c40a63e8ebff752278c09a63e0e42834",
+    "make_harness.py": "8df78b3fb9a34467303d0cc5ca8391dd19ae46d507f3de419e49a6ac5ae853f3",
+    "prepare-initial.py": "5275d50c26d3a100c57bf72835fefdd7cf7c4c24e9e368145332372a5a938b3d",
+    "prepare.py": "0992981c18cf85f24e306d377d5814f4e524c8062d32946d74a2416a9e0bac29",
+    "run-harness-initial.py": "2e4b374bd4dc5306b9a017bb8ecf0068dbd4d9915c2e8aa49482a073bd5aa200",
+    "run_harness.py": "112d2c5b924bc6794509f23d5bedebb3ba57820d300f53ecbc624bd36695e959"
+  },
+  "limitations": {
+    "coverage_audit_exhaustive": false,
+    "production_binding_added": false,
+    "provider_application_linked": false,
+    "provider_application_executed": false,
+    "epoch_host_and_global_serialization": "pending",
+    "continuous_lifetime_verified": false,
+    "opening_witness_binding": "pending",
+    "transport_and_joint_acceptance": "pending",
+    "live_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

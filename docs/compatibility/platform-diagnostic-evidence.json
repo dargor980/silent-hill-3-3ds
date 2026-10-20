@@ -1,0 +1,1537 @@
+{
+  "aba_excluded": false,
+  "admitted_execution_modes": [],
+  "arm64_executed": false,
+  "atomic_snapshot": false,
+  "cache_bytes_verified": false,
+  "capabilities": [],
+  "complete_memory_inventory_verified": false,
+  "completed_tasks": [
+    "PD-T1",
+    "PD-T2",
+    "PD-T3",
+    "PT-T5a"
+  ],
+  "coverage": {
+    "branches": {
+      "count": 108,
+      "covered": 106,
+      "notcovered": 2,
+      "percent": 98.14814814814815
+    },
+    "functions": {
+      "count": 16,
+      "covered": 16,
+      "percent": 100
+    },
+    "instantiations": {
+      "count": 20,
+      "covered": 20,
+      "percent": 100
+    },
+    "lines": {
+      "count": 86,
+      "covered": 86,
+      "percent": 100
+    },
+    "mcdc": {
+      "count": 0,
+      "covered": 0,
+      "notcovered": 0,
+      "percent": 0
+    },
+    "regions": {
+      "count": 125,
+      "covered": 125,
+      "notcovered": 0,
+      "percent": 100
+    }
+  },
+  "date": "2026-10-19",
+  "environment": {
+    "architecture": "x86_64",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.5.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+    "existing_ci_sha256": "c7ab4f201ebc3b95c38ffee60f434cbcf8747a5941c41bc898ecaf2c65f043f4",
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5\nBuildVersion:\t\t25F71\n",
+    "root_cmake_sha256": "1a85bc58f9716d433be0e795f8d648a11c330ddca5a1b80f614ac73ed692a1df",
+    "sdk_files_sha256": {
+      "usr/include/CommonCrypto/CommonDigest.h": "83a9705bbc8d44f27ee61801064ee99288496a038d623f152aa30db6819e9ca6",
+      "usr/include/libproc.h": "246d87709fc6b9157ce5cf3c475656ac48e0e1ae8bbdc46cf45acd34294448cd",
+      "usr/include/mach-o/dyld.h": "7c8583f2b4edcfcde7da60ffe02c75974ec87f885fecc4e8d40761fe0b553a80",
+      "usr/include/mach-o/dyld_images.h": "7d979b1522390562bec3618740f1f42b9a9a0ed38d9f619962f3d9d9f37ec436",
+      "usr/include/mach-o/fat.h": "19925cdb5fed9b5b7981b05420856f65b99abb54bca34ea95e0e581da8cc580f",
+      "usr/include/mach-o/loader.h": "5862aeb7fbf183453080bc887c0d502fe25a86ff5bd81291bbcc408bd7fe6e74",
+      "usr/include/mach/mach_vm.h": "40b7509ce3b64271d1947bfdf1328146ddb2b0cb5b337054e61a6e8e9749cba8",
+      "usr/include/mach/task_info.h": "87aa49ac32cfdea60175f48d9e933f6f9318a4ea82110a9744b204d3c262f1a2",
+      "usr/include/mach/vm_region.h": "d872aab626ae7c83b6451400de146b469e7d5a7454dbbf539524fe94f2e20ea7",
+      "usr/include/mach/vm_statistics.h": "3dcd466ffa164d268b92f5d53357172c26a59e234b488887db164afeb207b132",
+      "usr/include/sys/proc_info.h": "e427fa96b348537b21552b9de71e01039410bcad2cedee5584c5e5fddafd70fc",
+      "usr/include/sys/random.h": "a1b1258a25102266b667023d65fa76968a118009b2524647695b43e3520b17ef",
+      "usr/include/sys/stat.h": "31c8f252b05785343ca577c007657c0fbab45a182b60fc5b73994c621dc318d4",
+      "usr/lib/libSystem.tbd": "20cfce043f11a083e2eb6111efe3579919a8082fa4cc912a7bd839af2010ec57",
+      "usr/lib/system/libdyld.tbd": "c9d4aaa58a50cd544b8f583c4368d23f8c299e39dc8145e1c3f8ecf9b32becf4"
+    },
+    "sdk_name": "MacOSX26.5.sdk"
+  },
+  "existing_candidate_modified": false,
+  "final_binaries": [
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_process_birth",
+      "sha256": "d832e1198e07d2ed33e233dceff05057ec4042caae24a6bb18ee4ab7e3c8f9c7"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_process_birth",
+      "sha256": "740e3717a22256e2cc5c4d3614e6b49da9a5af82a4c0d1b68c8f4b52390947ba"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_image_identity",
+      "sha256": "96ae2bb430b2cbb5e658e44b2f4727e1992cc9378f32ca8a7a70b547b6c372c2"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_image_identity",
+      "sha256": "2f791a9d6122192d992c83ebc38c14096b85d5ae62ce902089caa8ec028e9544"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_artifact_manifest",
+      "sha256": "3491ec1c0c65d2a7eed2d59ee8efb6c10ae834af8406f395e8402fa4c11e00e0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_artifact_manifest",
+      "sha256": "b151a7e76a66838f55fa06f95a36f45d3bf6853d0c445db392a898cf89d536a6"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_inventory",
+      "sha256": "e867efde8fa36dd238b57a00a30a6b0fbb2d8b17457d7c438dcba3f3aef41963"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_inventory",
+      "sha256": "60d4d4edbfb08eba3603e83dea49fe8a68500ab0623b66e3bbca5300576b835b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_page_binding",
+      "sha256": "1fa794e675db26272edf7a44de09ae5cae88cbada489aabb42d3be34c75e3cf8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_page_binding",
+      "sha256": "aba3da1ea9ef520890c6321a6adf36bf1b2afd9f008dc51b85d35ed37b2a1590"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_cache_integrity",
+      "sha256": "48a424b58d66010ac8976fb0b8486a1d803a2e1d02c77570f1bba9894307a4f0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_cache_integrity",
+      "sha256": "941b269a9d37ec45a613ab764100b26382c99c067a0a997a946216347d3838fe"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_image_layout",
+      "sha256": "ac9a885e5266666a0971c69bbe8db064970b191d5a19ab2e13d22dc4bd34f70b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_image_layout",
+      "sha256": "ed5761e0960391476d00b6808bf2b0d53af5a931357a2bfe19828515e20d4cf2"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_range_plan",
+      "sha256": "27bb153470e296f00d150ed5dc15261e6687b95f34b4d2cae4d022de4057c532"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_range_plan_allocation",
+      "sha256": "b5954e2fcd07df04aeeccbf1b2915ba8f60fb8796254c10590c82c093fd02b39"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_region_map",
+      "sha256": "38b8db15adf4c172a3384c1e7160611c04880e3d1bb31d9565a369be566d3dca"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_region_map_allocation",
+      "sha256": "396e5393ae9d2dd313e3d2575dec570d0a851cabaa82c4b865c2da5526366d25"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_region_map",
+      "sha256": "86dacf8005b647be7d5ba3f1eaa0c1dca7afedc1c122b921b7b49c2e4e52f558"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_region_vnode",
+      "sha256": "cc4c0985a5fb29f9bd645a92656ca82071b9d2782305d02e9564490061b15660"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_platform_inventory",
+      "sha256": "dd89524c66844a568b7af9be807787584ff17fd822b88b1fcf0c0ded9bbaae50"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_platform_origin",
+      "sha256": "276cb01b57df9af7477bdd5ea1ec772c354a923dd79928539812d01f6b69e897"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macho_slice",
+      "sha256": "014351ff9d61da54918eec6ec0ceb70ec3b663fc10d74f41627e3a5ad612f661"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_platform_slices",
+      "sha256": "4823463fba5a342806fecb1ca42342b144ffe0ed3cd20225a03fa957d3ecfe58"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_slice_binding",
+      "sha256": "88a668706375f83b1cfc2376d5dd000055149bb15e2ffd026e300ae5698797ab"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_launch_manifest",
+      "sha256": "0270939d93303b1d035ee1c533e8781b9337fa9a55cfd232b696afcd0ed674fc"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_launch_files",
+      "sha256": "01acdbbd8c8c186438b0466a132a78d1dc38b1b7b969cf800f7217d68a70b8da"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_platform_diagnostic",
+      "sha256": "43139855b972fd22f34ea04281ee8e5c8339dcc0edddaac7408310fdd2fd24c8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/libsqlite3.dylib",
+      "sha256": "b91729be883788293e1bf110cc3053a929e9c5a12a6dc5bb6c7a191e672ed662"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/libimage_fixture.so",
+      "sha256": "96e159dc4c5618fcec170a44b7bbee9ba379716c99d3aee4a2b5de1fd7e66c87"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/libimage_fixture_other.so",
+      "sha256": "35a371e244c1023da5eecf26d5248dd94c6ff79cb4ae3a88d44af131cdb834f9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_process_birth",
+      "sha256": "9a61af1367c09bce8463ac15338379747e53859863a798b375c3296190a5cbe4"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_process_birth",
+      "sha256": "a0d686f1de4ff651bd7b014c6f5c8b2785f9cb43cd204a4384b4015efe39b365"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_image_identity",
+      "sha256": "cb86665799d93be573b8d22856b7bac7b324bfd87dd2213d114a3433c997ecf6"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_image_identity",
+      "sha256": "30b7d106b45922984ccdffdbff5c6831b7ac89e33e35664d08a405fac2eec3e3"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_artifact_manifest",
+      "sha256": "aa0791e09c217f982ca02ff27a08769565693b84afae1f32ce746f726c7666c8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_artifact_manifest",
+      "sha256": "3ce8dd2de9a583a0949159ce9dd07a506630df67d3af2314909196ef91bfcab1"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_inventory",
+      "sha256": "bc76459d0138b649227ab346aed2e3f7ea0130413fff8aa282aaa8869e18a1f9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_inventory",
+      "sha256": "84eda88bbf886287a344150be353014cb476c6477b467100ac83ba3c51c862cc"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_page_binding",
+      "sha256": "d75207259a9eb4ef6fa0785adedf1be3c7fa5d15a872f3fc654e22857757f89b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_page_binding",
+      "sha256": "81d9c2e5f492dc4d350748e866005281696d4f1be6b073936dbec4673d2b3146"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_cache_integrity",
+      "sha256": "178caea0e4737c050920cead47233f7435a5750960e513167ffd9dd18ad02d67"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_cache_integrity",
+      "sha256": "634e9fb456b8196be0cf5f07b89e20d78608c0aca1f76f43e176515585237fa4"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_image_layout",
+      "sha256": "cc13789a74c8768a918e174023a313dcaa82ec650695ecda573bd51b87a3179a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_image_layout",
+      "sha256": "d9577bebf1cfb20d6dbc6e5327f8138762b9c6c94212f7a31ca24ffe7ee90863"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_range_plan",
+      "sha256": "ad5ed11cf614646a79c16a10f69f620d597429a287d93fb13a9e8c30cea20d5b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_range_plan_allocation",
+      "sha256": "052bc8c3664e8c6341fe9f9d41247058f6d30b1691f13dea55b1e9e8aabaa009"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_region_map",
+      "sha256": "38a15f44eed6c2ddcd63850a04b77e451ad0e73e16b958e071a646a8df1ef367"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_region_map_allocation",
+      "sha256": "5f864f1ed7fd67b2dbd2c1c79159fa8001735b3f7927bc4c633e89e95c766343"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_region_map",
+      "sha256": "d46e771cd8c35b89e9325b9805b390ade3ccbfdb894c2bba89a57305bc878f6b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_region_vnode",
+      "sha256": "a00efc6caaa9897f5b5b41c9d4ae398315e5deb16cddc94ad776544169fa1a12"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_platform_inventory",
+      "sha256": "088e7857af4bed10a2113ae29b03f5b95ecf6faa227d840a6bdadecac4503190"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_platform_origin",
+      "sha256": "27cae1a19cd2ed94558760111dbcd0fc9396514c65a735bbd18d8b1592c139e1"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macho_slice",
+      "sha256": "81cd98b286f76be10c3feca316afda97ec0dc1ad8307e417f05560c871eeb4c0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_platform_slices",
+      "sha256": "5453a6511736f2b43137806be42e4b609cc9b35a87312cce8e18302e369d1673"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_slice_binding",
+      "sha256": "0c9eac2cb6935b72dcff1e70ccfb5bfb3b5e816ca7a4a2effde404d25f59af4e"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_launch_manifest",
+      "sha256": "3d82690d931e599d4da1cfbdfb3647f84e9e94860890fd26fb04f2a6ec60a9c3"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_launch_files",
+      "sha256": "dd9addfcb128aebb3d297066338e2dcde844a5f9f5e42b98bed3e7c29e31b7b9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_platform_diagnostic",
+      "sha256": "b6c4424e05e3b46ce5c21ef939c5eb110740ee753e900ddc5d7993ddba878482"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/libsqlite3.dylib",
+      "sha256": "ac54c3e4ea976c35d419c7c5956c799611c115a0deb47c34701c9741c5df6f8a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/libimage_fixture.so",
+      "sha256": "73d0004ac736acc9bc310884d92d3451d289a4dcd527eee912034e5db4b2bebf"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/libimage_fixture_other.so",
+      "sha256": "324e063fccd9dadabbc473f223fb637cfae82257d172b78e3180cccde71d9fec"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_process_birth",
+      "sha256": "34f45b807e8862bce57ae236a61c535c93fd221c8c02311fe52a99d153f3a038"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_process_birth",
+      "sha256": "59ad33efeff9841c2e8cbdcc69a4525dbdef0d487b1a2bc5c8732b2cbdf3d0f9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_image_identity",
+      "sha256": "8c35c24444c4d0a891a254a1a85f0afa826980a03dcad5a2f19027d6b89e63d4"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_image_identity",
+      "sha256": "b5041893eada400c35f42a4492920f7e3829b9ef2bf23a762aab2cef5e30916b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_artifact_manifest",
+      "sha256": "433c8323c239e415478538d103d074fd6bc373ed0173efcc1dbc0ab853670e5a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_artifact_manifest",
+      "sha256": "79619824a639d761177970f7f277d21136be785d1a23cb872fd83d853830cb86"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_inventory",
+      "sha256": "9c9d9c68ca15f4759438578aada2c07fc9f8551be1d784f02ad7788b37aeb2dd"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_inventory",
+      "sha256": "961bbf57bab57d81c076a9757a3b6a6aa0825f6df322e9ba9311ec414dc4af9a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_page_binding",
+      "sha256": "b2630dcfd47e278de4b34518bdfa479211974ec0b1bd0cf79ec08d6d56fe17b1"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_page_binding",
+      "sha256": "ff790188426b5d5bd8e664797cbb99615af693a0dbac08b62f1519343a8bba3f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_cache_integrity",
+      "sha256": "3feff7ee9b48a9a643ea7c29b3d6f478bdb3cf692b563bbfbb80722a0e894fc8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_cache_integrity",
+      "sha256": "7f51ead4006b021f2aa24e56156ea4045c6fbda94a8c415d697f3413e642d8e8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_image_layout",
+      "sha256": "fe209b9c5608d93682165d31473cb6efeec89bd2830f58a53f387ad89eb01724"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_image_layout",
+      "sha256": "68a6aa609626e1d55d518d6337ed7037fa142418d81ec6373c361da558978364"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_range_plan",
+      "sha256": "24ed73a8832abb33872f589128597169b1fce191b78a65db80e38113d7f07531"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_range_plan_allocation",
+      "sha256": "788c89fc182fe420bec4ed218011dd9b007404fea1d3a5631aaec39899fa95e1"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_region_map",
+      "sha256": "239f8c92127658f8fc29a590e617030bd882a82992a1f7a9b87103631c1ba619"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_region_map_allocation",
+      "sha256": "768ce8b3cdf290e7e7ae378e93edfb9f1f15f5ea5ac630eec3ed6eb77e0de207"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_region_map",
+      "sha256": "fea002f6f817e820f5c611d452b6e87191ebec6cd3594f6cb64715f66af78ea7"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_region_vnode",
+      "sha256": "e88f68d5b170b0ae7bfcc280ff16f95fcbda703228834d6ceb1296165d49ae1a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_platform_inventory",
+      "sha256": "ee9c85f2699ff494f5bdb843b034f305b4a7d7b9f79ccf60ee27967cb47fcdb9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_platform_origin",
+      "sha256": "9238feacb897bf51e567cb5546c824d0b6dce23c1f18e35b5b3a4a86fd034c1c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macho_slice",
+      "sha256": "e1cb8710388b651d4d833865cc5c649a074494040d779affc0eb02b1e1ae6960"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_platform_slices",
+      "sha256": "7d5dc7c3bdac5c5c24bea130aec1d2a039ed38d1b22d02405743fbd45bcc0d54"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_slice_binding",
+      "sha256": "b020cd34cb9e3c14b428e0949b850fa23fd41be7b162ae39b57d8021c3e6f82f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_launch_manifest",
+      "sha256": "399db65730dc2bd17535be7a1dc4ecdd6571b5145bbed7a633f427c54c5dff75"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_launch_files",
+      "sha256": "6e345da8bf09afae72cb58e27356b90cd9ebf54d057b882a0f9050d7b3bdc648"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_platform_diagnostic",
+      "sha256": "a7b098a7ae28962807246fedcc516a11420d88d6fc3ea8930f416ec8a804d681"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/libsqlite3.dylib",
+      "sha256": "158a48737778a2d12b80521be85ec48b02628b1d8e380ca9a92736ae4e1c80f4"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/libimage_fixture.so",
+      "sha256": "be6b9a3ea084a7147fb58125aacf3c6d0101d7f9d8159dd8cd6fe81d6f003c0a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/libimage_fixture_other.so",
+      "sha256": "f292e7e663565ffaa32b58007d7a01c3eaa249c635baf6a14dc6ff2f6fc74534"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_process_birth",
+      "sha256": "342ef4f8bf25691f93a9ef9b857677923e78f9cf5cc35ca567136085d83e6dd1"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_process_birth",
+      "sha256": "4c57bdc5b7efc871ef326e20e6e64d5083d99ae84ab6c91486a9e750b7f1d89d"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_image_identity",
+      "sha256": "c325c75ca739be373c3653382fd7bceefc429ac2e98c251e631d28d841156559"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_image_identity",
+      "sha256": "77eb747b9abc87ce04970cb0311a6b924d7c643094b058c3710a92ce4c83a2fe"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_artifact_manifest",
+      "sha256": "deb7c87b5361d76685695a26fa2ed0b38666960227fa61ecfcb317efff66a826"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_artifact_manifest",
+      "sha256": "f64cc3e86d25dbbc3688b561f104bfe606e1d2d78ef201034b058fea6f687616"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_inventory",
+      "sha256": "397b88c6b47e7074e6ed87980341b8cb9380c2416c522baefc88438eb2d70571"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_inventory",
+      "sha256": "fb06887e373410bb2e0c0a615e82655784774dd2d66011af6455c7827654ed3d"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_page_binding",
+      "sha256": "f1ff9fbca67cd70537e003dfea8ab0f10d10b1f94c5e519068530fb8ded2e6e3"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_page_binding",
+      "sha256": "90779427d8c4c7d5d49b6e0873779cb65eb9a6b4d4e321b83192b6e99bd381c8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_cache_integrity",
+      "sha256": "076f364f409c974d11705b8de6116d4ab583f00c9f0dc21e8ae8f8eb032203d9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_cache_integrity",
+      "sha256": "2648d1f5858162e7cd459ae3711de2f6bb8ce9e65444dc5cf09621017ede52c4"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_image_layout",
+      "sha256": "4424c709f2575f1c2121e700dd921115ee7524b0848235d68dbf74ee24677c6c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_image_layout",
+      "sha256": "17f44e60ef675b82fbb7302913edab2b094509d1edb17582b0d7302977f2e9b6"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_range_plan",
+      "sha256": "e4959d2d6d993f0b5ef4e3f5184e898d3fdcfe9f1820f4bbbfee67985289d084"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_range_plan_allocation",
+      "sha256": "e2d20f7766950aa4863702e372908f26aaba83845c02f1cdf020cef7be216799"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_region_map",
+      "sha256": "21cddda59c41043496ca43507f3d6a7ae246a08a783b933c5ad1d05549a05143"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_region_map_allocation",
+      "sha256": "e13c1091638b187ea11b4a3c1026777201b0b50da70f46e0f9682c89df831089"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_region_map",
+      "sha256": "4d60df13c12796d42eb4e7d8142db8928c54b42507ac6eb50c8851b547921793"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_region_vnode",
+      "sha256": "16e1be5874ecf492b570681fb079b19be5dc59bd3e3fe1991f8815126bb6198d"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_platform_inventory",
+      "sha256": "7321346cfb735e83fc02b064941a3f8e93d493dba26e47d0b7c2795077f0cbae"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_platform_origin",
+      "sha256": "d3f910e9f8338a57d2417cc54ff60072b28aded2f964cf744d18292d37f55b95"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macho_slice",
+      "sha256": "afe7e6b2dca845eb5a09a97f21719c98a1a423f3d0e03bf9e66e1922ca34e8ad"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_platform_slices",
+      "sha256": "8830aa5d4af8295e66a9bf16404cf183af90411e2d8c0d81238a0216be9aa054"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_slice_binding",
+      "sha256": "cbae1011bd5aea1d0df90f7117290dd392cd636940d5acfa8137eaa46304c2bf"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_launch_manifest",
+      "sha256": "718dff466950b93ab5d3518693f35ba2c569d649f73e1f0455ebf179243b9864"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_launch_files",
+      "sha256": "865a49fa15db9e448e74a6435b34b6e8ccd7d61e5aee13f84daf5ce10ed73312"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_platform_diagnostic",
+      "sha256": "c46b2bd21057af5671517e701e7b8d4631139c3a4fe72370f0b5dc22f502b947"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/libsqlite3.dylib",
+      "sha256": "0fc01237079b746a01d7dde4ed1538d0d9d9735b4ef4bb9207884cd8470f16dd"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/libimage_fixture.so",
+      "sha256": "3630ba5c1d7e226c851a31ed396cab9b64fa818e320fac7449bb19f25bd408cd"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/libimage_fixture_other.so",
+      "sha256": "0ca137f98442a36475cb3cd0a784db1c0ecabe57b1e9447806c1095b232d17ea"
+    }
+  ],
+  "final_test_executions": 1328,
+  "inspection_sha256": "7c5e8b7ccd6929db61adb4ca491db90ea7dfc969d70c0a9088760d0e1310c746",
+  "installed_application_modified": false,
+  "isolated_coverage_stderr": "",
+  "legacy_ip_unchanged": true,
+  "linux_executed": false,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-platform-diagnostic/audit-v1.py": "d38379e9129053c14521c13d7b7f29739575cc1a09073998f41aa402d9b4e1f0",
+    "build/f02-07-platform-diagnostic/coverage-v1.py": "c7df150ae93d1d4c480d5138ffba50001fee2dd9a0c7c10b6aa72e915eadfd84",
+    "build/f02-07-platform-diagnostic/inspect-v1.py": "0496a3558716eb7403a84fad6e72a329dea4a3ab4724a1829464fa105d0f2143",
+    "build/f02-07-platform-diagnostic/mutants-v1.py": "6b5ae9378f0eda864730717bc5b67856c844ef0a6006b6c262632359d2b98ad0",
+    "build/f02-07-platform-diagnostic/run-v1.py": "1bcc99f688c55b6dda59ba96781a2a550d6715d7f1304a8ca6b6f318ed755f35",
+    "build/f02-07-platform-diagnostic/survey-v1.cpp": "3a148139d3a4e51a7009390877199a474b2130ef6921e05bab672b35813cf97c",
+    "build/f02-07-platform-diagnostic/survey-v1.py": "937b6969e63402002000359094575b1968896f7a338a219fe746631bcb6b1e62",
+    "build/f02-07-platform-diagnostic/verify-survey-v1.py": "b6755512c9159f61d2eb718d23ac9d62368bb0e3274d0eb8a3883adb63503177"
+  },
+  "negative_controls": [
+    {
+      "binary_sha256": "23e1ce44bebefbac144f7a90671cc3b7f959220a846f7bda274fc0d71cc7a169",
+      "detected": true,
+      "name": "skip_profile",
+      "scenario": "identity",
+      "source_sha256": "cbaca4d5876bbeec4a4493d5be33942197f933fda71a6a0b334cd854c2a45d8b"
+    },
+    {
+      "binary_sha256": "dcf3ea9f39cdc677e3eb1093e8185bf5b6cc65b8cb9f009d45c42c2df0a7bfc8",
+      "detected": true,
+      "name": "skip_evidence",
+      "scenario": "evidence",
+      "source_sha256": "87fd83e965ddb0c0840a7e8193a577503f3f360723565d8c3bd6f6bf39a05447"
+    },
+    {
+      "binary_sha256": "2a410f00e7428504f1c9be69ce221ca9c0f63e3bbbeffca43a1c934986556483",
+      "detected": true,
+      "name": "skip_epoch_binding",
+      "scenario": "epochs",
+      "source_sha256": "3e614a641257bfb322ec4b0841d600b4b8663e0cd9febffe2f51086fb99829a9"
+    },
+    {
+      "binary_sha256": "c1ba03f2de4cccc5032d983e0d7d949e0b2d03b6b6ddcd08bf4762527168e8ff",
+      "detected": true,
+      "name": "skip_clear",
+      "scenario": "configuration",
+      "source_sha256": "efa3631cc0797a3952ce519ee109856e7948ccfd06789e9c4c111fc8edc7aada"
+    }
+  ],
+  "new_scenarios": 9,
+  "next_tasks": [
+    "PT-T5b peer identity and session binding",
+    "PT-T5c enforced budget cancellation and emulator gates"
+  ],
+  "pcsx2_source_modified": false,
+  "peer_verified": false,
+  "pipeline_extended_via_host_cmake": true,
+  "platform_assumption_explicit": true,
+  "platform_inventory_core_unchanged": true,
+  "preceding_evidence_sha256": "51dc7e3e8eaeb392dd4050391bf298a12777cd8c01274ba74b370fffdad074dd",
+  "preexisting_coverage_warning": [
+    "warning: 15 functions have mismatched data"
+  ],
+  "preserved_failures": [
+    {
+      "fixed": true,
+      "junit_sha256": "8e1382a154124f3723268359a00e3b04b35c28762fdca34a402083de61705ec6",
+      "kind": "pytest_reserved_parameter_name"
+    },
+    {
+      "failed": 6,
+      "junit_sha256": "c855d5c74f668ec70804700e94855092ea3425d309e2d16abebf0851ef0af45c",
+      "kind": "sandbox_denied_ps",
+      "rerun_passed": 230,
+      "supervisor_unchanged": true
+    }
+  ],
+  "previous_public_input_transitions": [
+    {
+      "current_sha256": "468609206a55acf9eda292c1c3a5f52f8045b102c5f4d79e6e5183b2950f5ffb",
+      "file": "schemas/platform-inventory-v1.md",
+      "previous_sha256": "2e54387b39f4e585f1bda2aa0fe4c704eb0b115c216ec0da5839ddefaff84030",
+      "previous_snapshot_verified": true
+    },
+    {
+      "current_sha256": "ffe46f44e8f0d52fbd594112c43f56d7468898dde9600b962163df7c0f42cad9",
+      "file": "tools/observer/native/CMakeLists.txt",
+      "previous_sha256": "cd35ebb21c1cda41e182b3508d28d88e90ab4aa6ae0a735d4e41e5daec3aa47d",
+      "previous_snapshot_verified": true
+    }
+  ],
+  "previous_scenarios_retained": 323,
+  "private_stage_files_verified": 4599,
+  "private_stages": [
+    {
+      "files": 4371,
+      "name": "platform-diagnostic-stage-v1"
+    },
+    {
+      "files": 16,
+      "name": "platform-diagnostic-mutants-v1"
+    },
+    {
+      "files": 212,
+      "name": "platform-diagnostic-survey-v1"
+    }
+  ],
+  "production_deadline_enforced": false,
+  "production_profile_changed": false,
+  "public_inputs_sha256": {
+    ".github/workflows/native-process.yml": "47ef32113c3e73dfc1ab4693f88a0dd74a9e2a97f5a0e7c690089fab9f56df3f",
+    "docs/execution/f02-07-launch-manifest.md": "2a25c4bab93bc077c58fd247e0dea9ab3c99764e2f4683bb2869bb2690988944",
+    "docs/execution/f02-07-macho-slices.md": "b569981f9b88eec52e2f606aaeecb5ee249de8a145d43c517bbe7285fafd4ef4",
+    "docs/execution/f02-07-platform-diagnostic.md": "38ba5268115e3b5ae701776948e7df83e93ca42d41c791cc0df33ef0b0dece21",
+    "schemas/macho-slice-binding-v1.md": "0e4973c4e1dbf7bc38afac31dff923bcf963279192bc022b795e8e1eb243b3ad",
+    "schemas/native-platform-origin-v1.md": "cf3de3074a4269669847b7919ca98709bfc06b713c995489bf1f2ae29231727c",
+    "schemas/platform-diagnostic-v1.md": "20f5a63f88d112a1bbee2c5b871e445c5e504b7c7b0d4d61a6f4f0fbc8e3c691",
+    "schemas/platform-inventory-v1.md": "468609206a55acf9eda292c1c3a5f52f8045b102c5f4d79e6e5183b2950f5ffb",
+    "schemas/platform-launch-manifest-v1.md": "ee2b4b37cbbcdf74cf1c095589bacf734e703e680a2668c366fee957f4a92936",
+    "tests/cpp/check.hpp": "9c3fc980d7e994d3b5fe8726af3ba589d367e840b1bf81b2adf1cc516e5510d9",
+    "tests/cpp/image_layout_fixture.hpp": "38317e95ce1f164637eeca452111ca258037035ec0ea16614f403f2566be148d",
+    "tests/cpp/launch_manifest_fixture.hpp": "b632aa989a800fe40936ab8b3191aadcaeb9907c795f2c342d2c14716e794822",
+    "tests/cpp/macho_slice_fixture.hpp": "77a4789cc19a47f7463a0ffe9eec6d33f41cd369310ef0e0e67ae763aa5672a5",
+    "tests/cpp/native_image_fixture.cpp": "4abf90c68effe03af1d2151171aa994e9bd735b0e1d0221e57684ff6ef48e431",
+    "tests/cpp/platform_inventory_vector.hpp": "8c6e68a6ae4adb0d4821fd4f38be5b4fd0fad77a4d40d5f3a3745f884fa8d11d",
+    "tests/cpp/platform_slices_vector.hpp": "065c1cd03c437066383067b9ced0fe5d3be7630cd3dfb7650c5be36b79bd6cc2",
+    "tests/cpp/test_artifact_manifest.cpp": "4e037e3a267071dd35f40964aa5f6892291e7e5836087cd624ab8418bcc22b93",
+    "tests/cpp/test_cache_integrity.cpp": "a0ce9e9e6965e39289c2802e9f7846d27868f70b1790b64bd6857b05ae27b53f",
+    "tests/cpp/test_image_identity.cpp": "cfc55c6b57218ad165102ecb65e8bbe8c7bc19379b2f2cfb6212f97f16448a4b",
+    "tests/cpp/test_image_layout.cpp": "852f0b4474e98a6b0ed92e1b2adfa678037d33c9e9850e251f935c0f5e9e9460",
+    "tests/cpp/test_inventory.cpp": "7b28262f941c95c8aaf20d97bce5d110cc92d473c7012387bb96d7fe08caf83c",
+    "tests/cpp/test_launch_manifest.cpp": "d20a5b0be6f671bb72ed3cea321773497292041631d995e0ba4e5932b7edfe63",
+    "tests/cpp/test_macho_slice.cpp": "cf2586030d3f2fc2a44e750ac9f16792829d5c6e30a1fd00c386911225edbf3b",
+    "tests/cpp/test_macos_artifact_manifest.cpp": "4f9ae3c8e7eeea8038c07a6af6378a00a6bd92d721e23ab334db3a7137431896",
+    "tests/cpp/test_macos_cache_integrity.cpp": "4e424283a70e3cdbc991f28b7b9a68967df74ace4cd955c711acbfc3054d949c",
+    "tests/cpp/test_macos_image_identity.cpp": "9c47a8140617d566fc7dd18f5abf8ecb8ca44a1c7111e508902677ee797a75e5",
+    "tests/cpp/test_macos_image_layout.cpp": "ebc780850b94abacae43420db537e68574b2f123ee55418d639527a734aeed01",
+    "tests/cpp/test_macos_inventory.cpp": "ed8af6fb0deb1b0bb044482e19b72c491d7f34501cd2a8967d9d13dc918fa59c",
+    "tests/cpp/test_macos_launch_files.cpp": "fa3a1a8e6601e57de03a0c5212ad5f2a5f67e35ff1f6919356b64e2235781b1a",
+    "tests/cpp/test_macos_page_binding.cpp": "d6085bb7ab512c1b1a9d981b04211f44b9d9f180c712816220f3dfb984e38ddf",
+    "tests/cpp/test_macos_platform_origin.cpp": "6dfbd68367c5cfb374ff1b595ca5520b21885d8cf78b24190510441d16166684",
+    "tests/cpp/test_macos_process_birth.cpp": "9eed0f3f9766f344ff4eb6e5f219fdfbb3ac71bcbda65b38eee59f807b3fdb0d",
+    "tests/cpp/test_macos_region_map.cpp": "07cb7fa04d2149902d541705a70ff483a9703903afe098e956a651104713f104",
+    "tests/cpp/test_macos_region_vnode.cpp": "d30790330ea16b295f63b52f23320518c57ad1e1989ad9ac72dbad23fc7ccc99",
+    "tests/cpp/test_macos_slice_binding.cpp": "5bad0b32c51d2070eae708c94ef64ba6a888b60e2c3becece172e8800e7dedc3",
+    "tests/cpp/test_page_binding.cpp": "e80d50916306e1db1fba40d16fc0fa23560acb3dc98f37ae7365622390b7b191",
+    "tests/cpp/test_platform_diagnostic.cpp": "3bc9eb66fb7cbf783366e9a8416dd74505bd5196f712783a62a91deadb0a63ff",
+    "tests/cpp/test_platform_inventory.cpp": "1d001980c4d93e4dbca8f8e526b29414b21d5a166413a04bef18e184aeada965",
+    "tests/cpp/test_platform_slices.cpp": "8ef6e4fc07d9676af99e8e6e8b464ce04831e23fc7244b3861bc683991d4ee50",
+    "tests/cpp/test_process_birth.cpp": "6a1b747600d134add241fff7aab3e7dc575bea7bd02e231e843659d443929736",
+    "tests/cpp/test_range_plan.cpp": "c2046c6ad5e6fd1ba58be84a355cdc6c5f146946b431db818ed7c4f916d828de",
+    "tests/cpp/test_range_plan_allocation.cpp": "8ff85b5d8bdb30610a2d7844917ad958990a980b6d382a0e85c1990cd5b142b4",
+    "tests/cpp/test_region_map.cpp": "1b655c236b4f9cbafc6bd3032e2da2d6e0c65a2d22f3a8fba1cfaa1e4105803b",
+    "tests/cpp/test_region_map_allocation.cpp": "ddef3a88ffd7d204fd6ded7942548db0c5a011c31b2cacc674d8bb5872bdcbc1",
+    "tests/fixtures/platform-diagnostic/README.md": "f2b47dcd3a2259e161d9daa23fa89c822b40181cda2fc37dafd2da6e0394ab1d",
+    "tests/fixtures/platform-diagnostic/observed.hex": "6ff763b5dd0b50a992ed63ef5e6308d828f3e19f099c4e17bd260956edb3f2d9",
+    "tests/fixtures/platform-diagnostic/rejected.hex": "1b24e3225239d98830d69efea2515bba16ae498791ba56f6425cf4cb5b89e611",
+    "tests/fixtures/platform-diagnostic/request.hex": "502ab3243286d5eab734f09a67b818ab8e4adcfa8d25eff4ca2f6be1c1b5ac22",
+    "tests/python/test_platform_diagnostic.py": "e45d6cf5363aae0e0fcc52fa5b25d45b97728e087eebb6c7a3008d6dcf547385",
+    "tools/inspectors/platform_diagnostic.py": "1aadcd265c42514fad2801b56a5fd34eedfa668085e05127995f00c1a074007c",
+    "tools/observer/artifact_manifest.cpp": "6eb78e91c567350b4c2da7c73b98ecbafd723f81f3ac7a8534c5c5274240da18",
+    "tools/observer/cache_range.cpp": "158b71b49aaeba00014febf73a40c4950a40dd658db51175ef741698ca5f709e",
+    "tools/observer/image_identity.cpp": "aa6edfdd61d08d598c846b68b52883a4a3a9e06fac7fe363ab4986393daccb40",
+    "tools/observer/image_layout.cpp": "37eba42d0b3f727561489b26732816f14c8ecfa6e01b2f74b04994e585206514",
+    "tools/observer/include/sh3_observer/admission.hpp": "acb7783a5c45336038d555d7eca1b52f3032987de27f1e6abbb7b4c2c5673a9c",
+    "tools/observer/include/sh3_observer/artifact_manifest.hpp": "57ead680801c29dd8a51a25985c931fb6d0717296997115de9db81f6a8f065a9",
+    "tools/observer/include/sh3_observer/cache_range.hpp": "bfd2167d6c3eece077276698a7afbf226f490b8b7f73234d404ab17092e92c4f",
+    "tools/observer/include/sh3_observer/image_identity.hpp": "e7c1de113d14c4d0226ef4d6c2c80837b5fe3be1aa877c54817b58f3019f0c37",
+    "tools/observer/include/sh3_observer/image_layout.hpp": "f779902d5ae259bbd10070a0ca747947f2fc61f11dc7fa6cf15e4f7fe39d120b",
+    "tools/observer/include/sh3_observer/inventory.hpp": "880a329ecb41c077901e41ae32109a7011cf5712ffa686b1be23e8ab294f1865",
+    "tools/observer/include/sh3_observer/launch_manifest.hpp": "2f208bd1e1b13e7a081f08c85a7c2af82d50931f9f61ff81204c4e8c97d3fd08",
+    "tools/observer/include/sh3_observer/macho_slice.hpp": "09df4f88d1863c4c6ccb9159325871e2b7331318b54975dfb50b186a62f8b485",
+    "tools/observer/include/sh3_observer/macos_artifact_manifest.hpp": "b8eb8289efb9a297a896d2523b5352968d5cc42fa726d7aafd1435a9d8c190ba",
+    "tools/observer/include/sh3_observer/macos_image_identity.hpp": "ca5f8a04a01da846640956e25e8b59619499d4e6c5b36a0eea1bb7f62f4a9ecb",
+    "tools/observer/include/sh3_observer/macos_image_layout.hpp": "6401beeb65e2cd4cd9b2365054fe48140eaf7763acda7df113e1bd1960f8dd9e",
+    "tools/observer/include/sh3_observer/macos_launch_files.hpp": "c63891eaab1c74b4680a541eac11eaff60eeaab1574c43f8a79d3d50a929b0e1",
+    "tools/observer/include/sh3_observer/macos_page_binding.hpp": "32ca834f369cecc0451025f52626603d2fa206ba8d91d766b41064ada1224428",
+    "tools/observer/include/sh3_observer/macos_platform_origin.hpp": "9efb0f1e29b30c1e4c5b454b8d3d9ca1790ba4f5d08165fdc4911591d0cd1227",
+    "tools/observer/include/sh3_observer/macos_process_birth.hpp": "e39a45b217ff150f52ffbfeb9abdf6fb12dd28f50d9b9391031ed6d2e8b8fccd",
+    "tools/observer/include/sh3_observer/macos_region_map.hpp": "9e7515febe0eec0ac3519730f6cff36439df741a62fd95b55861f7247066ec0c",
+    "tools/observer/include/sh3_observer/macos_region_vnode.hpp": "10fa0074b2a324011d4486db83a1175f27ed230e7b0df7cf2da72bf36e45b2d1",
+    "tools/observer/include/sh3_observer/macos_slice_binding.hpp": "8f23558b02e93869aa7db5e677358ef8911f6c0519f175d09efb1b52048c7bca",
+    "tools/observer/include/sh3_observer/page_binding.hpp": "6d082d5a19b445f4bc2635023e74efdce15945af50120cdee781de83211fbca0",
+    "tools/observer/include/sh3_observer/platform_diagnostic.hpp": "11a8a2389f9a9bcb1faded1ce84d74850c97c2bc48880be5a13f1fe7022e596f",
+    "tools/observer/include/sh3_observer/platform_inventory.hpp": "3183f90c96a194926960a281460bd5ee00bbbd277da7d1dd918a64aac62d2f59",
+    "tools/observer/include/sh3_observer/process_birth.hpp": "ee84c38ab576384ae6dfc93221f883289c9c1926fae319ea5529e0cdbd04a98a",
+    "tools/observer/include/sh3_observer/range_plan.hpp": "4798c13cb60697c895af131e10a760ca45dfa074cc7302df8c0c0f0f5c477caf",
+    "tools/observer/include/sh3_observer/region_map.hpp": "8bd99e072532a964fff924456b2c9cdb8df76fc6ce17a05cdf4c025c0b36878b",
+    "tools/observer/inventory.cpp": "1920bb075151c85e35d46e2c806895e639e37496c2c156ab95c8ecd07b1d504f",
+    "tools/observer/launch_manifest.cpp": "4badd0161c5dc4c9ebd499439f62f7b4f22bc0e4318c7922d85121042b91cdeb",
+    "tools/observer/macho_slice.cpp": "71a7fce075e201f16518d0dd84350274d59efdadab16b628009322b4ad64bbe4",
+    "tools/observer/native/CMakeLists.txt": "ffe46f44e8f0d52fbd594112c43f56d7468898dde9600b962163df7c0f42cad9",
+    "tools/observer/native/macos_artifact_manifest.cpp": "9eae67d0aaf388c837f9c7319a4e16a32724a2501e9d51488fb9cc497cea046c",
+    "tools/observer/native/macos_image_identity.cpp": "40d28cad8dc9dbf5c1332d94899ebe268cad02cab581ce3d9cbab4be0bd2c488",
+    "tools/observer/native/macos_image_layout.cpp": "43dff89abf2c0191d67852bbbf5cebb3112f10284047cce24c2728af87f49c3e",
+    "tools/observer/native/macos_launch_files.cpp": "da4af853d7eee3f2d41e07e8ff97155ea1d9af438149eb6999b825039ac669a9",
+    "tools/observer/native/macos_page_binding.cpp": "7747bb35f9942223888899a24f223f2bfc9183ee009bdbdaa9bad7d9803afea6",
+    "tools/observer/native/macos_platform_origin.cpp": "099573fd77dda34dc735f473a9bf33489b4c1eb48d80748fb4a672dc891cdec7",
+    "tools/observer/native/macos_process_birth.cpp": "9adbced25578c213aa100468da1b1b9aa2249e0bfcc6ac97d0fdf636f78d945f",
+    "tools/observer/native/macos_region_map.cpp": "6cd59913eeea33b03e0d0c3510083f285e02e77cda52f712af617e402a5dd156",
+    "tools/observer/native/macos_region_vnode.cpp": "e0d18f59ad4d6a0acce87d45547573cf50029b3b764823a395e4d51faa91b922",
+    "tools/observer/native/macos_slice_binding.cpp": "6971402210f92dc50911a8046964249a3101d85c4e05b09be13993945da70173",
+    "tools/observer/page_binding.cpp": "a34a8745d21f15eaab3ae7ad3e7b994fce635d5652141c43ee673879cc5bc3f0",
+    "tools/observer/platform_diagnostic.cpp": "b077984e2ac739f2ee77bd7dc76d4ed2ac91075951c639499f0983a00811caad",
+    "tools/observer/platform_inventory.cpp": "3c312defc3fa3b2e59cdd77c3e64990efd79c66e1821606511284c85caa97905",
+    "tools/observer/process_birth.cpp": "bbd39e9ca0b5c47761c8cb12ca8a8d43724e9c0bb24ab5d39a224d72ee5e8af6",
+    "tools/observer/range_plan.cpp": "545e399098002af2991804635cb2201e199a34af4a1b99e48488138f67bf70eb",
+    "tools/observer/region_map.cpp": "53ea662192b6cd80802479aa2e1da6ffe14f3bcb417025d83a505f5815aeb5bc"
+  },
+  "python": {
+    "coverage": {
+      "covered_branches": 6,
+      "covered_lines": 76,
+      "excluded_lines": 0,
+      "missing_branches": 0,
+      "missing_lines": 0,
+      "num_branches": 6,
+      "num_partial_branches": 0,
+      "num_statements": 76,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100",
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100"
+    },
+    "coverage_sha256": "3dda8384a968127402aaf7e0eb20862bd1bcba78a3c6d4b6080826d05098bfd2",
+    "junit_sha256": "3a144215faa568882b282db27ad94eb6a38a1a3c2f528ba43efd4a4114e99397",
+    "new_tests": 120,
+    "passed": 230
+  },
+  "read_events_produced": 0,
+  "remote_ci_executed": false,
+  "replay_protection": false,
+  "resource_limits": {
+    "floor_gib": 10,
+    "initial_free_gib": 10,
+    "observed_maximum_stage_bytes": 214839296,
+    "observed_minimum_free_bytes": 12650446848,
+    "stage_maximum_mib": 512
+  },
+  "resource_links": [],
+  "schema_version": 1,
+  "source_id": "SRC105",
+  "status": "typed_platform_diagnostic_v1_with_pt_v2_complete_peer_and_deadline_pending",
+  "strict_inventory_unchanged": true,
+  "supervised_commands": [
+    {
+      "exit_code": 0,
+      "log_sha256": "be95da8283de40e15776f2ff4039a654ebb9004ffd3009d3ec75d026ffa791b3",
+      "name": "v1/debug-configure.json",
+      "samples_sha256": "f4a5b72717ea248043c22e6e279382bc96b7d24705cee01968913602ee32939c",
+      "seconds": 0.949,
+      "sha256": "a2f275ebe013d12b1f23327f7334286ff14d1a7db7be65662f5ed98c5a482485"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "44e00930b25730c0f847cb8a12900df2de96628492ce329b49679929517f025c",
+      "name": "v1/debug-build.json",
+      "samples_sha256": "74dcc957d65c16ad7e2d044b4373c6607d1f936916db60fa5c11b16526ffa044",
+      "seconds": 11.013,
+      "sha256": "e461caeb9105d168803b9294728b94e5072fcf787f11162aa079a34332362459"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "d00210c381856eab1f3254169ac4c577af5e67b3bc2fe1440d9e755ad6a9bbea",
+      "name": "v1/debug-tests.json",
+      "samples_sha256": "9c664693812e33af14a8d3924bcbb063308b9e6a8eb016cc820efd766b03a9b4",
+      "seconds": 23.792,
+      "sha256": "edea4499e70ebec48550c302e79bc95d7643d675f309056f34f626dc8510847d"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "57c1a8630b2536d20e02bcde1421d63f8e7c77080ba8f00aead55245fd94ea95",
+      "name": "v1/release-configure.json",
+      "samples_sha256": "b27f3c7f417cd757a3487fc36c9dbaaad9131917c1ab2d7bb5b240e7f3732ad8",
+      "seconds": 1.211,
+      "sha256": "1e4d4bc07fac1263cc8305b0f4c18e0999af7aa8157e58868653788952f8a9bf"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "ba9055354419b82e47edade327ed23b2fa8faea06c8c0fc834884df40632d7b2",
+      "name": "v1/release-build.json",
+      "samples_sha256": "50ac026c6f80500668e58e866a4be271193c3a7c669a3fb74f9577677f328751",
+      "seconds": 13.508,
+      "sha256": "20ff4e77f1a297b391e24986f8f2d062d79875cc519d2f7cdfb63148661d6ed7"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "dc53883c011356e5a4e61b120d6c9990ad1091b90551725a0834982e29c339f9",
+      "name": "v1/release-tests.json",
+      "samples_sha256": "cb5cc3c54602614fd20fce696107223adc260855b03dbad52a056c8144fe2fd2",
+      "seconds": 22.937,
+      "sha256": "83e50cf4d49b6a1b915c924d430f4538f5cb8d9517c95b2c7f2ce318656efdf6"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "c260ab27425c869814c0f4cb9ba4989c33bdfdd8e1220e51c7d625cd0acbaac7",
+      "name": "v1/sanitize-configure.json",
+      "samples_sha256": "ef11b09861a10cab643f2704182c07b6eca97ebe759876c3507947da65ca5a6f",
+      "seconds": 1.389,
+      "sha256": "2b1b974b55c1087527bf3bfe81359432986274772a90328ff436e0648e012955"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "96cb27a63294caffee0df4c2b6d9f26c9e578eb16c58d58ee006957895faec7c",
+      "name": "v1/sanitize-build.json",
+      "samples_sha256": "30ed72bf95780fdf8480154f33f9ccc04ad0bade5fcc0ea38b20ed606e87621b",
+      "seconds": 12.862,
+      "sha256": "6ba98483f13a8927acadae8f3fdc5cb08d3afa9760a7861e796a200cdc02e7e1"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "c4969389d6b8137caf50b79e114dd72f7b08d84ef97cb7ec4f194858c5616b9b",
+      "name": "v1/sanitize-tests.json",
+      "samples_sha256": "c4f4fb0e0d0f3500054af09a427db424b372e2cb33ec645cd41c750435e952b2",
+      "seconds": 42.574,
+      "sha256": "671e0f8548668c7fca36a706b51c548e38821d00cf5cbebf051639753f2c7753"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "89064014c884e6607ad038f519ae6e1d97ecf81936ae6c72cdd8df949d5bccb9",
+      "name": "v1/coverage-configure.json",
+      "samples_sha256": "eb80e84a5cf289c976eefb212b90093269fb615c6a98004833f0381dc71c00b8",
+      "seconds": 1.434,
+      "sha256": "cac1796366ae0ec215c86283e81e04bec36264940ef914d9bc4ec7301a0b0e80"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "0cdae56b81be2c8b1467f7f579c3863e4915ecba39188a6f58bfa19d111e1dc5",
+      "name": "v1/coverage-build.json",
+      "samples_sha256": "e51db5f30e987cb568067bd9db13e7f7631c67067c47f9cd7299a99222d53868",
+      "seconds": 21.951,
+      "sha256": "ea53e93ced36799f2bc7d0aa866ad7f6dece6cb6b062f4f0ec18b6ab9194fcdd"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "240f12127d4cbf03fcbae0f21d4dd428a340f246a945c4c4345de36217750461",
+      "name": "v1/coverage-tests.json",
+      "samples_sha256": "4e3c506587b6d72bd52f4977f1d3a38290b63f09e821a8c378fd02c48c59e412",
+      "seconds": 24.214,
+      "sha256": "b503d02db6e824d7b3de4310ce6732a4b52d23d9032f61badd02c5da6c941ffb"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "v1/coverage-merge.json",
+      "samples_sha256": "4a5c5974bc88bf1c142243c0e433ba7258253236260535786cebe68cd481bd5d",
+      "seconds": 0.469,
+      "sha256": "820edcbe5dce5fdb33ccabff909a0472ec2f86d7e57b7a8cdf9d0cb8a6b8739c"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "aa9dc8c6ee6cbda39d2f4c6d1d38f3be3a9f4a0626478fee36941396137250ad",
+      "name": "v1/coverage-export.json",
+      "samples_sha256": "8b789712eceeafc7c1115be440dc0444287a0ef8d831062f5fd9043bdef2adfc",
+      "seconds": 0.365,
+      "sha256": "33dd804d6adcba2d64c125c304e909057c9bdfa82cfa8622edfc104c057baa7b"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutants-v1/skip_profile-build.json",
+      "samples_sha256": "860fc0af122bb14bc5e85bf1e98d6c4035d69bb2780d25d57a3de702ad76b310",
+      "seconds": 1.437,
+      "sha256": "a8b2c93522c7b24dcc7577999cfa383e764e23c35f49e1986b7016be590bd222"
+    },
+    {
+      "exit_code": 1,
+      "log_sha256": "75f47d7c5133812426f7407f898dc6f4cf808372eee7e47875cf2091dfcd5543",
+      "name": "mutants-v1/skip_profile-test.json",
+      "samples_sha256": "b2aed06e7802b9a8d8950924490ea3eaa296f968338dd462ac514199b05dcd79",
+      "seconds": 0.894,
+      "sha256": "017075a3c919b0ff166ba5d0948e77c4b74f118ac696a36e80293b4e004b29e7"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutants-v1/skip_evidence-build.json",
+      "samples_sha256": "e54f8496707a08a5d0ccbb47f5678ed98bad6a2486946d1c4b5c90de358569bd",
+      "seconds": 0.875,
+      "sha256": "cf3eaa30ab1bb6251077b95ae0694d617292ddb4565418336f4f5fd34d24159f"
+    },
+    {
+      "exit_code": 1,
+      "log_sha256": "75f47d7c5133812426f7407f898dc6f4cf808372eee7e47875cf2091dfcd5543",
+      "name": "mutants-v1/skip_evidence-test.json",
+      "samples_sha256": "7ddd2021ee35c5215883769f702bb23c7c3c9494ae4226d5e624de538c77c877",
+      "seconds": 0.549,
+      "sha256": "b4ea6ecfdb34f961fc770d7eb51460058ecf7f5d2172d43a9ec29839eaceb6c5"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutants-v1/skip_epoch_binding-build.json",
+      "samples_sha256": "37aebfa297dd5b9bdeef368caffac5ebc20e27a3a0c95c47d6434f9d440bf380",
+      "seconds": 0.883,
+      "sha256": "cea48758cd8fffa3ac9afd0d6853231fe00543ddc80deccbe7ac6773704d6a0c"
+    },
+    {
+      "exit_code": 1,
+      "log_sha256": "75f47d7c5133812426f7407f898dc6f4cf808372eee7e47875cf2091dfcd5543",
+      "name": "mutants-v1/skip_epoch_binding-test.json",
+      "samples_sha256": "4103533455ea70156314b2d1d3ae0ca29f818d8292505d7d32fff9b63c47c18f",
+      "seconds": 0.563,
+      "sha256": "eae365c615c1abda023f42f139ce448d63242facd849626d31b91019fc385875"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutants-v1/skip_clear-build.json",
+      "samples_sha256": "07406d50a9ae7472f8f9335f3d8f66ebed0ccbe45cda0b78508ee41b304abcdd",
+      "seconds": 0.889,
+      "sha256": "f023842d69bc757306f2d8c9d9f2d546011f7636593ce0e524e80f3fee50e01c"
+    },
+    {
+      "exit_code": 1,
+      "log_sha256": "fe72d1cd77c6fa37bb2302bd271185fcdcdb9442de081c8749ad2a5a9dda6c82",
+      "name": "mutants-v1/skip_clear-test.json",
+      "samples_sha256": "035a9e10c4bbc7b10b9603ea89c4830334a5b2e9a70a37d3fa6be59f5e33cd2c",
+      "seconds": 0.782,
+      "sha256": "9e99f6e1446b43c1fa65b700842e84332723782d5a0115b239f1c57f52614e40"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "survey-v1/preflight-build.json",
+      "samples_sha256": "78bd2a7a3bd391da803e99614bce05041b0a7c7f321c0d26f750394fb2abf329",
+      "seconds": 3.323,
+      "sha256": "25ee713dbf31ac63ddeec442aef79a57e627d196fcafaf6d34ea4d70feaa6ec3"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "d238a65d3cdf3097222b6f389e4d36d40bb3296d2a00a45211de65a68968a6c9",
+      "name": "survey-v1/preflight-run.json",
+      "samples_sha256": "bfcdf14eec93c2867e501ce37c02519592d1aff87bc8d2b2bceb80d9b08f0388",
+      "seconds": 2.639,
+      "sha256": "cb5cde8711cfd72c3dc98059fa6aba2bc46571d92b31aa8c40c91a2093cf5a49"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "survey-v1/survey-build.json",
+      "samples_sha256": "4e6fe8e3ae0cfd1567a07291019ac594f801a8a3802cb79c0d8d5b1e4f538fdf",
+      "seconds": 0.905,
+      "sha256": "0557c67f58c636310c3c82dd89cf1daf51ef350ad626e4e538da5d95ce16c47c"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "968e17107a4d147d7924a7f3977ac3ea0cef23910310f1d911a5be278756bddb",
+      "name": "survey-v1/positive.json",
+      "samples_sha256": "1f4ce3eef0b3e5a8ca0b31c14b91a90935f9413ae6dc4df617896165d75b619c",
+      "seconds": 20.265,
+      "sha256": "81d79f5d192df83b187375bde62f269d8826b2fa28e6a96a805937cc1012078c"
+    }
+  ],
+  "survey": {
+    "binary_sha256": "a08c7603e392704c8caab763bf9aef1a728d098f320a2696cdba8ed049bbaf72",
+    "clone_files_verified": 200,
+    "consumer_negatives": 60,
+    "empty_rejections": 6,
+    "executions": 1,
+    "expected_files": 26,
+    "expected_total_bytes": 56392728,
+    "frames": [
+      {
+        "all_runtime_facts_unknown": true,
+        "application_images": 23,
+        "consumer_negative_controls": [
+          {
+            "case": "wire_version",
+            "reason": "version"
+          },
+          {
+            "case": "profile_v1",
+            "reason": "profile"
+          },
+          {
+            "case": "unknown_profile",
+            "reason": "profile"
+          },
+          {
+            "case": "policy_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "application_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "platform_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "challenge",
+            "reason": "correlation"
+          },
+          {
+            "case": "sequence",
+            "reason": "correlation"
+          },
+          {
+            "case": "scope",
+            "reason": "scope"
+          },
+          {
+            "case": "unbound_facts",
+            "reason": "unbound_facts"
+          }
+        ],
+        "epochs_unobserved": true,
+        "phase": "start",
+        "platform_images": 534,
+        "prepare_ns": 248500958,
+        "producer_negative_controls": 3,
+        "rejection_sha256": "28a5610ccd5362fc80c28dffd41a8ab80e6ec5485b4543b82f0fff3d8187df38",
+        "sample_ns": 868922000,
+        "sequence": 1,
+        "wire_sha256": "5e1d59403baf4f6c34d743df8649714b2ea7109d403b34f9986e2db923ff2e82"
+      },
+      {
+        "all_runtime_facts_unknown": true,
+        "application_images": 23,
+        "consumer_negative_controls": [
+          {
+            "case": "wire_version",
+            "reason": "version"
+          },
+          {
+            "case": "profile_v1",
+            "reason": "profile"
+          },
+          {
+            "case": "unknown_profile",
+            "reason": "profile"
+          },
+          {
+            "case": "policy_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "application_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "platform_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "challenge",
+            "reason": "correlation"
+          },
+          {
+            "case": "sequence",
+            "reason": "correlation"
+          },
+          {
+            "case": "scope",
+            "reason": "scope"
+          },
+          {
+            "case": "unbound_facts",
+            "reason": "unbound_facts"
+          }
+        ],
+        "epochs_unobserved": true,
+        "phase": "start",
+        "platform_images": 534,
+        "prepare_ns": 248500958,
+        "producer_negative_controls": 3,
+        "rejection_sha256": "21922065ad4104f27b3e9dca4a44c2fe33d32086d9611d2c5dee465fd914f0fa",
+        "sample_ns": 814005083,
+        "sequence": 2,
+        "wire_sha256": "ceab854adae606ba4660f5e14840c309e9dbf9c0a0b282cd1428249309aa95dd"
+      },
+      {
+        "all_runtime_facts_unknown": true,
+        "application_images": 23,
+        "consumer_negative_controls": [
+          {
+            "case": "wire_version",
+            "reason": "version"
+          },
+          {
+            "case": "profile_v1",
+            "reason": "profile"
+          },
+          {
+            "case": "unknown_profile",
+            "reason": "profile"
+          },
+          {
+            "case": "policy_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "application_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "platform_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "challenge",
+            "reason": "correlation"
+          },
+          {
+            "case": "sequence",
+            "reason": "correlation"
+          },
+          {
+            "case": "scope",
+            "reason": "scope"
+          },
+          {
+            "case": "unbound_facts",
+            "reason": "unbound_facts"
+          }
+        ],
+        "epochs_unobserved": true,
+        "phase": "start",
+        "platform_images": 534,
+        "prepare_ns": 248500958,
+        "producer_negative_controls": 3,
+        "rejection_sha256": "0e7d0b0ef3da3b0743503e48414abb6cf0a437390da7e101bc744726c907307d",
+        "sample_ns": 852484000,
+        "sequence": 3,
+        "wire_sha256": "a94d5fe5005d379910b072234abc0f2a60769b2b9250c4e4d13a38027251ab32"
+      },
+      {
+        "all_runtime_facts_unknown": true,
+        "application_images": 26,
+        "consumer_negative_controls": [
+          {
+            "case": "wire_version",
+            "reason": "version"
+          },
+          {
+            "case": "profile_v1",
+            "reason": "profile"
+          },
+          {
+            "case": "unknown_profile",
+            "reason": "profile"
+          },
+          {
+            "case": "policy_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "application_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "platform_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "challenge",
+            "reason": "correlation"
+          },
+          {
+            "case": "sequence",
+            "reason": "correlation"
+          },
+          {
+            "case": "scope",
+            "reason": "scope"
+          },
+          {
+            "case": "unbound_facts",
+            "reason": "unbound_facts"
+          }
+        ],
+        "epochs_unobserved": true,
+        "phase": "exit",
+        "platform_images": 621,
+        "prepare_ns": 43783042,
+        "producer_negative_controls": 3,
+        "rejection_sha256": "1b5bd9ac1bb32783cbbadfeb6c63ed6f7ee763c09a8eecbaf4563fcaaf8320f5",
+        "sample_ns": 891405291,
+        "sequence": 4,
+        "wire_sha256": "fc8ff56d20c82274260b9fc7eefe4c1c75bf9b377ccadab137e60759d305d59b"
+      },
+      {
+        "all_runtime_facts_unknown": true,
+        "application_images": 26,
+        "consumer_negative_controls": [
+          {
+            "case": "wire_version",
+            "reason": "version"
+          },
+          {
+            "case": "profile_v1",
+            "reason": "profile"
+          },
+          {
+            "case": "unknown_profile",
+            "reason": "profile"
+          },
+          {
+            "case": "policy_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "application_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "platform_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "challenge",
+            "reason": "correlation"
+          },
+          {
+            "case": "sequence",
+            "reason": "correlation"
+          },
+          {
+            "case": "scope",
+            "reason": "scope"
+          },
+          {
+            "case": "unbound_facts",
+            "reason": "unbound_facts"
+          }
+        ],
+        "epochs_unobserved": true,
+        "phase": "exit",
+        "platform_images": 621,
+        "prepare_ns": 43783042,
+        "producer_negative_controls": 3,
+        "rejection_sha256": "70c05a0b662dbf4209e682ca79ea9d5f936d83760b7bee7bef14c421fb55a3e8",
+        "sample_ns": 823904500,
+        "sequence": 5,
+        "wire_sha256": "10505b15995fc4d6b5328e47899ef9c5dfb7e598c58202e58e966c3b893a6227"
+      },
+      {
+        "all_runtime_facts_unknown": true,
+        "application_images": 26,
+        "consumer_negative_controls": [
+          {
+            "case": "wire_version",
+            "reason": "version"
+          },
+          {
+            "case": "profile_v1",
+            "reason": "profile"
+          },
+          {
+            "case": "unknown_profile",
+            "reason": "profile"
+          },
+          {
+            "case": "policy_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "application_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "platform_evidence",
+            "reason": "evidence"
+          },
+          {
+            "case": "challenge",
+            "reason": "correlation"
+          },
+          {
+            "case": "sequence",
+            "reason": "correlation"
+          },
+          {
+            "case": "scope",
+            "reason": "scope"
+          },
+          {
+            "case": "unbound_facts",
+            "reason": "unbound_facts"
+          }
+        ],
+        "epochs_unobserved": true,
+        "phase": "exit",
+        "platform_images": 621,
+        "prepare_ns": 43783042,
+        "producer_negative_controls": 3,
+        "rejection_sha256": "068046626c043999c9cc44cde2e5b4328787d036fcae46c2822061a2fbd6e73f",
+        "sample_ns": 828771208,
+        "sequence": 6,
+        "wire_sha256": "39c2d1f1fd05ff946cf62aa2fa5a503a9003d6e26265e3b84fa866bf9802c2e8"
+      }
+    ],
+    "identity_stable_within_each_phase": true,
+    "manifest_sha256": "f37acbc156d454a882d9d83bda410df160b7a728c403736e1cbfd0de41649562",
+    "observations": 6,
+    "peer_authenticated": false,
+    "platform_evidence_sha256": "51dc7e3e8eaeb392dd4050391bf298a12777cd8c01274ba74b370fffdad074dd",
+    "policy_snapshot_sha256": "27dc652e677b1c3af52729c5488c63db3e58788fb8625f4577c3f53ca9c64b27",
+    "producer_negatives": 18,
+    "replay_protected": false,
+    "request_sha256": "399a1cba55544fd7dc5970c851a5003a88e9508ed5bb991f6bcc43de6d38cef2",
+    "request_size": 32,
+    "source_sha256": "3a148139d3a4e51a7009390877199a474b2130ef6921e05bab672b35813cf97c",
+    "wire_size": 294
+  },
+  "test_runs": [
+    {
+      "compile_commands_sha256": "14f9d14228484bcdd5e6b7c1b71e3c4428d5da587c5a309572aea11982f3f5b0",
+      "junit_sha256": "fcb0ee7eaa1085061b088fbdf167f1c3c4d8e920e1e2db442754eb7103826d0d",
+      "mode": "debug",
+      "passed": 332,
+      "tests": 332
+    },
+    {
+      "compile_commands_sha256": "fb73a7c57236e303451b58b20db4cc7d33bfc668caf94203e081110ba5ae0c38",
+      "junit_sha256": "7be8fded0411a7428a1f0aab9d1055c2158fc32af83798e4d6e4be178e191ca1",
+      "mode": "release",
+      "passed": 332,
+      "tests": 332
+    },
+    {
+      "compile_commands_sha256": "efb33a66bfd8ae0bb99a219448bcff9fd9fdf2c629c73d0143c7e01d0d97878d",
+      "junit_sha256": "186954f41bee8d2e754a65c36e537077db983eaacda1c54fbc663039c7b6e137",
+      "mode": "sanitize",
+      "passed": 332,
+      "tests": 332
+    },
+    {
+      "compile_commands_sha256": "160f4d7f7094d4031ce769d8e6ae1db5df2d0bf3905ef82c902ca93269804035",
+      "junit_sha256": "5f5d68133668beb8b1608af555fa522b1f4bb8391931935ba61dd5b5911e9b12",
+      "mode": "coverage",
+      "passed": 332,
+      "tests": 332
+    }
+  ],
+  "vm_executed": false
+}

@@ -1,0 +1,1674 @@
+{
+  "admitted_execution_modes": [],
+  "all_failed_attempts_preserved": true,
+  "arbitrary_callback_locks_proven_safe": false,
+  "baseline_failures": [
+    {
+      "abort_reason": null,
+      "diagnostic": "load of misaligned address",
+      "exit_code": -6,
+      "label": "probe-v2-sanitize-native-memory",
+      "log_sha256": "4cf3c07f651dc7bd41a9a5f257873eaf44e550adc9d76c896d21f09c565fa612",
+      "receipt_sha256": "3e38ac7d6c18233318055d398fd7e81853e9f7240fafd70df35c51a7b7154398",
+      "shutdown_verified": true
+    },
+    {
+      "abort_reason": null,
+      "diagnostic": "WARNING: ThreadSanitizer: data race",
+      "exit_code": -6,
+      "label": "probe-v2-tsan-native-connected_stop",
+      "log_sha256": "bc7d8f240278c62555cab40f7d2cd9a0001596b25788c65c698a2207dd5e927c",
+      "receipt_sha256": "256815016b0dbc6e2675db777efb505f53cabe219cea66ff50f2ee6dc705d3ba",
+      "shutdown_verified": true
+    },
+    {
+      "abort_reason": null,
+      "diagnostic": "check failed: n>0",
+      "exit_code": -6,
+      "label": "probe-v3-normal-native-coalesced",
+      "log_sha256": "92f5883ff96c74d1dce8c4b6f15fa85f305e22a30c2909f30228f27f9e16b7d5",
+      "receipt_sha256": "bf452fb3193e9a2fa537ab3f5f8f120da3f39b62d310cbe34d75a9964fe5c70e",
+      "shutdown_verified": true
+    }
+  ],
+  "capabilities": [],
+  "completed_tasks": [
+    "IW-PINE-JOINT1",
+    "IW-PINE-JOINT2"
+  ],
+  "concurrent_lifecycle_owners_supported": false,
+  "date": "2026-10-18",
+  "external_wait_evidence_sha256": "a9b101ae60de11760e8d2d2ea760c6c5ccc363bf4a4922de3594984a4ef3e70a",
+  "first_repair_deadlines": [
+    {
+      "abort_reason": "deadline",
+      "exit_code": -15,
+      "label": "probe-v4-normal-native-memory",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "f4b0008dcdbe28678552a9cc450225b5930d144060ccb62f7a78e13bac39cdff",
+      "shutdown_verified": true
+    },
+    {
+      "abort_reason": "deadline",
+      "exit_code": -15,
+      "label": "probe-v4-normal-native-observer_timeout",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "dcbb5a92e2c5afd59a334f48ed81bedf32c823987e7da8456b46f2a56e569efe",
+      "shutdown_verified": true
+    },
+    {
+      "abort_reason": "deadline",
+      "exit_code": -15,
+      "label": "probe-v4-normal-native-discard",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "aa40b8ca00ead34dea689904f2c772da152f26d3e50711e682316e7839d261b3",
+      "shutdown_verified": true
+    },
+    {
+      "abort_reason": "deadline",
+      "exit_code": -15,
+      "label": "probe-v4-tsan-native-observer_timeout",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "8129d13739e4b9b4f414e2da6803b4b35fc447b498c6cd3dd187c438e06023e7",
+      "shutdown_verified": true
+    }
+  ],
+  "full_build_capacity": {
+    "eligible": false,
+    "free_bytes": 20517474304,
+    "free_gib": 19.108386993408203,
+    "initial_required_bytes": 21474836480
+  },
+  "full_build_inventory": {
+    "cmake_cache_sha256": "f9e2f27aa74a39a43142af1fdb02ddeb1500bf2ccc9f7c1ceec8b26238b7a5ac",
+    "compilation_entries": 825,
+    "compile_commands_sha256": "be1ae722f0d4740caa349be9d7149500271a10c0626eb081e9b018210e341dbf",
+    "own_entries": 14,
+    "policy": {
+      "floor_gib": 10,
+      "jobs": 2,
+      "max_stage_gib": 8,
+      "seconds": 2700,
+      "start_gib": 20
+    }
+  },
+  "full_configuration": {
+    "abort_reason": null,
+    "exit_code": 0,
+    "label": "full-configure-v1",
+    "log_sha256": "0bcabad62c6e2528a9d48c16615257eb33f6d9f93130f608b15a10613714183c",
+    "receipt_sha256": "f1769bef412b771585c79496d0f1e8480007f2c9f7f10dda1c580a31363b3a42",
+    "shutdown_verified": true
+  },
+  "historic_private_files_verified": 308,
+  "historic_receipts_verified": 327,
+  "history_manifest_sha256": "07354d8d41e5b8809141e28294990fcf08922a3b727aca8eb8528cfd2e750db1",
+  "host_core_unchanged": true,
+  "host_ctest_rerun": false,
+  "installed_application_modified": false,
+  "joint_passing_scenarios": 21,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-pine-joint/audit.py": "9d68d29d05d242f5aa12c5393dda94359372b4dae79db1075a21c586643ec083",
+    "build/f02-07-pine-joint/compile_private.py": "47b5d47f4c426313f4f8cd43a96c8b1fe64309d22ae2248dbde06665f07a0509",
+    "build/f02-07-pine-joint/diagnose_shutdown.py": "a9e557139805ac520816771a1713b39aff437ceb5edab4324d14b144a9872241",
+    "build/f02-07-pine-joint/full_build.py": "05b6bcc610671cf2e265fdcde6090eb11f94bfdfcf3f256e73990a8a50f1ee7e",
+    "build/f02-07-pine-joint/history.py": "ec10cb8113ace1b39c3668332ff6bf70b6493dd0b1262c5863c3997456b90d1a",
+    "build/f02-07-pine-joint/loader.py": "78f053ab664ac6cc0bcfacb28b2fa68326e05d761ffa64d2cb00567008979e7e",
+    "build/f02-07-pine-joint/negative_controls-v2.py": "33fa2b231b55a6b2ce510b464c03688eadcabd106dd265228088b8ef15f36011",
+    "build/f02-07-pine-joint/negative_controls.py": "2ff0ff0c3194a8e2d56e210ae56c0f886c10ec28ea922f06fe3893f24b17470c",
+    "build/f02-07-pine-joint/prepare.py": "32a83521951f78480641af6684e2c7728ed90dbbe6cdc3c4540b4ae579cc1ebf",
+    "build/f02-07-pine-joint/prepare_joint.py": "732f6b4f1f4acd01b558db44c31644bfdcffb0347d48a9d8539768cf1e80c526",
+    "build/f02-07-pine-joint/repair_source-v2.py": "5810d08915862e813a526a8f68f24410e2b3516063bc1c5199472ffa39d150dc",
+    "build/f02-07-pine-joint/repair_source.py": "ecddd4e5f8c1c1387b7d992b415fbd2bb03c5a8c505ef65855a70a47c74a2e28",
+    "build/f02-07-pine-joint/run_joint.py": "5b2ecadaa2af2af0afdde2895c22f51818634b85ee0a1e4c19e192113af3f603",
+    "build/f02-07-pine-joint/run_server-v2.py": "e927c3886e8a70385f9d08156fbdf104203d3fa13f42a64b8babb4e9b653d60a",
+    "build/f02-07-pine-joint/run_server-v3.py": "72a1c9ae8ffed4e8c46e70aaeb47564e72218c9d787372bfed434f43628c9b3e",
+    "build/f02-07-pine-joint/run_server-v4.py": "85b5d3618358d9257345402fe12993c1ee7e2e02306f24fba78d823ab0fef984",
+    "build/f02-07-pine-joint/run_server-v5.py": "5bda2866dc61ef23ce56973ed5e503a529b89d9295104de4858b0ddd47954124",
+    "build/f02-07-pine-joint/run_server.py": "b56ce5ce12cf06b499e227f9dcbc49e34631bc5d7b46ebed60963344c7dd4fc1"
+  },
+  "negative_controls": [
+    {
+      "binary_sha256": "ff67d94379cb616559dd7c43f54a6f1839ddcbe4423cc992f00634565832f3ef",
+      "case": "prior",
+      "fragment": "pine_server.inc",
+      "mutated_fragment_sha256": "1dceeb6e6263e7b33bff9ec3eade93a42e56e77c189b9b6bb069ef57555fc67a",
+      "mutation": "lost_load_reservation",
+      "original_fragment_sha256": "56ddc0d4774b7720ba3436428dfcc8c18f08d8b5c8cef2645f945b6eae3f6961",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "c70915626b2df618d9b9e3dd5941f1d915e11f189d3d6ae35e619e0cc19c284f"
+        },
+        {
+          "abort_reason": null,
+          "action": "run",
+          "exit_code": -6,
+          "log_sha256": "7549203c30f36184fd58c381216bf789257ffcfa5be085a8a5892a55e928f05b",
+          "receipt_sha256": "e366f1a9bc5fe6be4862ad03d59734cde64ed45b8d33414055861982baab994a"
+        }
+      ]
+    },
+    {
+      "binary_sha256": "cefc60d5b0bea792e18dfb7c1e3b33aacc7f61c1c163c9ecdcf449bfc3c3d71a",
+      "case": "timeout",
+      "fragment": "dispatch.inc",
+      "mutated_fragment_sha256": "b908f986e4c100e896cb0a6893f15fcf351e9859935b693befbbc1786767562d",
+      "mutation": "lost_timeout_reservation",
+      "original_fragment_sha256": "bac2bc9eda37edadce42af576595d2c273e3f063a78a8bf07731807546aec1f1",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "16327eb5274dbe7e74d0d17eddc0d1de687f86b9d0517d27b7be2977e4aeb3e2"
+        },
+        {
+          "abort_reason": null,
+          "action": "run",
+          "exit_code": -6,
+          "log_sha256": "7549203c30f36184fd58c381216bf789257ffcfa5be085a8a5892a55e928f05b",
+          "receipt_sha256": "f215d21cb7d9be19722879d3c325b77437d4341adca72694f6283f996685f2a9"
+        }
+      ]
+    },
+    {
+      "binary_sha256": "95d86a48b56dd4210ebf4aab44eec39981d5b351aa6b5c87b31920910fd3c673",
+      "case": "generation",
+      "fragment": "pine_server.inc",
+      "mutated_fragment_sha256": "fe7292f30ed6751c40fef2b000038508336c3c9f164bac455e8c7c18b5fd1608",
+      "mutation": "fixed_generation",
+      "original_fragment_sha256": "56ddc0d4774b7720ba3436428dfcc8c18f08d8b5c8cef2645f945b6eae3f6961",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "d5a9327cbfcb6798b26955b3b13fde23fc0fca681a2e9ea97d3f2c31531666c2"
+        },
+        {
+          "abort_reason": null,
+          "action": "run",
+          "exit_code": -6,
+          "log_sha256": "b6411525bd3a1b397c763c2ae43db1ef9c4110df93765acffc72c9a85e7bb283",
+          "receipt_sha256": "666cccc9cebf0940c87dfb2ac611fc271373db63152aca921baeb5aba1f83e1e"
+        }
+      ]
+    }
+  ],
+  "negative_controls_detected": 3,
+  "next_tasks": [
+    "IW-PINE-JOINT3-full-build",
+    "B3-C/B4",
+    "CQ3-C/D",
+    "CQ-4",
+    "AD-3"
+  ],
+  "nintendo_build_rerun": false,
+  "object_builds": [
+    {
+      "abort_reason": null,
+      "exit_code": 0,
+      "label": "PINE-on",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "on",
+      "object_sha256": "01615d05acfb961bcfb2ba78d89f3d06ac657712fe7d952df806fa7455204a10",
+      "receipt_sha256": "f590da9772ffe19bf38acd5413abd836466bd0ac586c7616c1aa28f29dff6c75",
+      "shutdown_verified": true
+    },
+    {
+      "abort_reason": null,
+      "exit_code": 0,
+      "label": "PINE-off",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "off",
+      "object_sha256": "30f87d45a160145681ff865d128d1545df222a1a41341387d05fe6456f09ef8b",
+      "receipt_sha256": "1a6a679d0845da5c8e1b1a7fa309f945c5fb9089a3002351d21a1b69da2c86f0",
+      "shutdown_verified": true
+    }
+  ],
+  "partial_tasks": [
+    "IW-PINE-JOINT3"
+  ],
+  "preceding_evidence_sha256": "d10d6bb4b814f0dc93e1de3646b29280452abf5ecbd44791bc9163b5b0542e58",
+  "previous_public_inputs_verified": true,
+  "prior_private_sources_unchanged": true,
+  "provider_application_linked": false,
+  "provider_application_testconfig_executed": false,
+  "provider_application_vm_executed": false,
+  "provider_fragment_count": 73,
+  "provider_fragments": [
+    {
+      "ends_with_newline": true,
+      "file": "pcsx2/PINE.cpp",
+      "first_line": 31,
+      "fragment_sha256": "56ddc0d4774b7720ba3436428dfcc8c18f08d8b5c8cef2645f945b6eae3f6961",
+      "last_line": 909,
+      "name": "pine_server",
+      "source_sha256": "10bb131d40e65ce8ce4acee044cf51a347d3e4e3f7b0ee0f5d17aaaf1d26e23d"
+    },
+    {
+      "ends_with_newline": false,
+      "file": "pcsx2/sh3-observer/pcsx2/adapter.cpp",
+      "first_line": 63,
+      "fragment_sha256": "bac2bc9eda37edadce42af576595d2c273e3f063a78a8bf07731807546aec1f1",
+      "last_line": 72,
+      "name": "dispatch",
+      "source_sha256": "f2fb13ec008f0b2a5fb598140520317ce185482404448cef15cffd9ab96b2388"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 129,
+      "fragment_sha256": "7bb27f5127a3b62957a3fbddb0bb4b3c7d2f94b13d41cbd07c4285289aff57b0",
+      "last_line": 144,
+      "name": "kernel_class",
+      "source_file": "common/Threading.h",
+      "source_sha256": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 110,
+      "fragment_sha256": "b57999385dffba5afe4937e2be69208076a39f84e2b43db487009cabf0643340",
+      "last_line": 148,
+      "name": "kernel_darwin",
+      "source_file": "common/Darwin/DarwinThreads.cpp",
+      "source_sha256": "7a683e8f282425b5c43cfa7529c5c04607ecf0662af09fc758cbe8a34701235a"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 151,
+      "fragment_sha256": "e1cd4d83b8c9e56b3623d91ffcca56d675496f9af31a6ef5fd3938ccd369e4f2",
+      "last_line": 222,
+      "name": "work_sema_class",
+      "source_file": "common/Threading.h",
+      "source_sha256": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 18,
+      "fragment_sha256": "63266793a33be4be7494c9b55bfa4616f624b02f1af199469b9dfc7e06e1182a",
+      "last_line": 42,
+      "name": "check_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 43,
+      "fragment_sha256": "15b7ff24294e4bbd0701ffec65a2591da2fb7ff37515f5dc142d3ee7c2bacb26",
+      "last_line": 62,
+      "name": "wait_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 94,
+      "fragment_sha256": "f292f8f45cd67b70585c95a37f1b7af647acd2831a638d96e25d8c44abb2ec3a",
+      "last_line": 109,
+      "name": "wait_for_empty",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 128,
+      "fragment_sha256": "85d7b0c3204758cd382be2de1d9d0c371c8318959b6d971a9a1a1afaacdd40d0",
+      "last_line": 134,
+      "name": "kill",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 135,
+      "fragment_sha256": "921e3130219aa2c653319270fe3c04a8091d10ad34fb7c59ffa0e5b4c67cd5a4",
+      "last_line": 139,
+      "name": "reset",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 22,
+      "fragment_sha256": "3115f7471ed7d5a506200935dfd7f3d31af7c7f570432e20f5f5704dc176bc8d",
+      "last_line": 104,
+      "name": "gs_header",
+      "source_file": "pcsx2/MTGS.h",
+      "source_sha256": "260645fa709bd3175688f9815e1582f51a460a684bf63ba43efe8ef040cb1733"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 36,
+      "fragment_sha256": "c82d8a8e592e9f776ff2dafc6fd536d7a3e3e2271187384769690cd4ea582907",
+      "last_line": 106,
+      "name": "gs_state",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 324,
+      "fragment_sha256": "fbef2c3c2349baaff42d046682121c99513c081fdd2090761dfb75b4cb8b0623",
+      "last_line": 338,
+      "name": "packet_tag",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 120,
+      "fragment_sha256": "5ba1080f704e1d73cfd82a1ee59216db0dad33bb44e85cb122df3d101d368440",
+      "last_line": 123,
+      "name": "gs_open_query",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 125,
+      "fragment_sha256": "b52ebc9ebebc9cfb012aa513e84eeff1d0e15e401b01edb1e3546252696daeee",
+      "last_line": 137,
+      "name": "gs_start",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 139,
+      "fragment_sha256": "6deced2bfc7cda660cb190eb04996ef7a452b2d8e9870f3f3d85054dbfb83511",
+      "last_line": 155,
+      "name": "gs_shutdown",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 157,
+      "fragment_sha256": "c7d7d646beed903e647fd88cfc2355025843fe0c3bf85ea1a0c86f8d044c560a",
+      "last_line": 215,
+      "name": "gs_entry",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 339,
+      "fragment_sha256": "36d488e3ef9448363efe28b0f36b0dda1cd421f7f5b12b2da3b18511ed0dbb8f",
+      "last_line": 648,
+      "name": "gs_main",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 920,
+      "fragment_sha256": "25af557123b0e9f3738375bae66f0f32c588a55fd4c19fec98af007d925c8f24",
+      "last_line": 943,
+      "name": "gs_open",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 945,
+      "fragment_sha256": "ffd36c9793bc1e5660c83dbe92f21eade8e64151ebb02506a4e8bff86ec4759e",
+      "last_line": 961,
+      "name": "gs_close",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 654,
+      "fragment_sha256": "bb696ca9a8f3ed5369ac032c583e90f0d27bb74d3104c7b4e753a4f216b41a31",
+      "last_line": 703,
+      "name": "gs_wait",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 707,
+      "fragment_sha256": "8cfc128cbe4503db02fe6ff7feb1ec52465b07c51ecfcffe05a11d15272debf5",
+      "last_line": 711,
+      "name": "gs_event",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 749,
+      "fragment_sha256": "bc827b92073d98b58eb3e8f716abadfe2c304b6c09537992685e15e507be653a",
+      "last_line": 836,
+      "name": "gs_stall",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 867,
+      "fragment_sha256": "e10c690f0314baa3f1172e36a3fa118a56b1525761b4b692474ec4c5243a1036",
+      "last_line": 877,
+      "name": "gs_finish",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 879,
+      "fragment_sha256": "04d169c5d9413e1411ae723a7e765ec909fae71721c38d5e89c863d095954df0",
+      "last_line": 892,
+      "name": "gs_simple",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 906,
+      "fragment_sha256": "a152395eaf03ab202f9fde27b7dd66bfa104473b7c93886745cb143981cd5c4f",
+      "last_line": 918,
+      "name": "gs_pointer",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 978,
+      "fragment_sha256": "842800d0252361a59334affc0aa2feeb17e4f3157ac1a897909a5fc1abf2cfae",
+      "last_line": 987,
+      "name": "gs_async",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 1131,
+      "fragment_sha256": "fac3ed23d538142aed8d58b8d79dab67ee0a896fa466a65c9847c520735a6c07",
+      "last_line": 1135,
+      "name": "gs_idle",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 187,
+      "fragment_sha256": "f0d57e7b9032092c0657814bbc3e62a10511a85f8a5d3b5c77826d67585addd0",
+      "last_line": 195,
+      "name": "stop_owner",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2902,
+      "fragment_sha256": "929b92c071c95ca4ea27a7ca8d0ba968df0b3b52a3ed2509361d4a062d2705e8",
+      "last_line": 2905,
+      "name": "cpu_actor",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2907,
+      "fragment_sha256": "4446640e79ec18e6f9695231a1b9ee807250126a650fc2513c35d1c2b6fad257",
+      "last_line": 2910,
+      "name": "cpu_guard",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2917,
+      "fragment_sha256": "941548ec138c826177782d86cdc1f74a4d70a064dc6d2b3b1cab8400093149ee",
+      "last_line": 2929,
+      "name": "before_producer",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 22,
+      "fragment_sha256": "bfd34abafac5528eaeffc998b3a08044f00bdb31a697dcff117d6a4ff95b67c9",
+      "last_line": 142,
+      "name": "vu_class",
+      "source_file": "pcsx2/MTVU.h",
+      "source_sha256": "4e4e96cccbe3deca4ac004e89e899ce06207b3f85fa9beccd15bd31a46426d47"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 24,
+      "fragment_sha256": "9d2ad4ea1607ab8551e1e59bf9f416d7cd3a9c442a36fe78781bd6451c578f3b",
+      "last_line": 37,
+      "name": "commands",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 86,
+      "fragment_sha256": "04d6d11ef298f4e3aa8a968d98eff015957e30dc9d001dc88d68f91825d2c2a8",
+      "last_line": 89,
+      "name": "constructor",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 91,
+      "fragment_sha256": "28aa16b8ef51a33d1ffb86934e97e897121d3c349c5a4527bdb6289d92356753",
+      "last_line": 94,
+      "name": "destructor",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 96,
+      "fragment_sha256": "a181c08980b67a94e6ec15235854af148831fe9d26ec06f2f11112d99280f840",
+      "last_line": 109,
+      "name": "open",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 111,
+      "fragment_sha256": "8b4a488d85d2212eb3e01a59394606c439d7a23748107ba9844aaf674f2e5fd3",
+      "last_line": 122,
+      "name": "close",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 124,
+      "fragment_sha256": "72e4bd92fbf4d9a3d0a9e1634416201808ffac16274b0aa965adb3d2ddb8bd08",
+      "last_line": 139,
+      "name": "vu_reset",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 141,
+      "fragment_sha256": "7838dba2712ef731b44b77dcda46f64f1f736a45a6da621a9cdc08ca612aeb81",
+      "last_line": 232,
+      "name": "execute",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 236,
+      "fragment_sha256": "a986771bf0560072fcb2d5032aedd287c74b226d8a0c09435a7f9ffd6b986fd8",
+      "last_line": 259,
+      "name": "wait_size",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 263,
+      "fragment_sha256": "3d5569dcab39396f555014e4bb0a5abfd7631e145d7511c7ae6cdd87d3e09709",
+      "last_line": 279,
+      "name": "reserve",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 282,
+      "fragment_sha256": "fc0a2c9c4dca08e5f219ce401ad3d2f5d3aef01a2221a741aa91cc06d974f007",
+      "last_line": 285,
+      "name": "read_pos",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 288,
+      "fragment_sha256": "abbfe15c6123052e786ea01c06f56fb2bb8ac9367d31f4cb23d7537a9c586be6",
+      "last_line": 291,
+      "name": "write_pos",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 294,
+      "fragment_sha256": "b2f4fa2b53714e78cd967a72ae1d3979254ffbe9258e6de0f46e5414e757518d",
+      "last_line": 298,
+      "name": "write_ptr",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 300,
+      "fragment_sha256": "d288dade83aa915c65928ea8bf9629c5acb4f226cac9282227ada4704116e81f",
+      "last_line": 308,
+      "name": "commit_write",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 310,
+      "fragment_sha256": "8a5b435bd1e56346a601aad47f0d85b07e21367877b906645c339dcb9d9c6f1a",
+      "last_line": 313,
+      "name": "commit_read",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 315,
+      "fragment_sha256": "11750d68866842d21e114537d09dbcd343fa30173db65b1bfdf5d16d1e235e5e",
+      "last_line": 320,
+      "name": "read_word",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 322,
+      "fragment_sha256": "56f2bf40e8e648d947d71a53d5f9ce44ee758715ae2bfeac518a9862c91673b0",
+      "last_line": 326,
+      "name": "read_bytes",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 328,
+      "fragment_sha256": "8388e03ecda12c61009be258824de1f23818c69f6bfe7e3c4025419d312d92db",
+      "last_line": 338,
+      "name": "read_regs",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 340,
+      "fragment_sha256": "d00f5f16cc54125f87b3f1cb9861cd17a44c6824aec18476c92c08ed1a0addbe",
+      "last_line": 344,
+      "name": "write_word",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 346,
+      "fragment_sha256": "f72f947f45c5b8d2b5882e53cec74ceaa8ae638f6f9f1a2a9c71f232fd11d1ba",
+      "last_line": 350,
+      "name": "write_bytes",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 352,
+      "fragment_sha256": "ea5f333bb8a30f2cf25db2439132a3cdda90ee5202cdd6ea5fe1100463011e45",
+      "last_line": 362,
+      "name": "write_regs",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 452,
+      "fragment_sha256": "b3ce030690698d20add1ea26b68ae1c41b3be716cc33deb498c821aef459c521",
+      "last_line": 458,
+      "name": "kick",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 460,
+      "fragment_sha256": "de5af54212b0e97dc35dda5864abd8383655e7b9d15167a204157a6baef48df0",
+      "last_line": 463,
+      "name": "done",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 465,
+      "fragment_sha256": "038850205529a4b70a8b9a18651d07be13a1954ce1071afd84aa6ec43a309576",
+      "last_line": 472,
+      "name": "wait_vu",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 535,
+      "fragment_sha256": "af3fabdb926cf91422621393e3a32ab3087e8168ce628c9babe51df209687c67",
+      "last_line": 548,
+      "name": "write_data",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2931,
+      "fragment_sha256": "c9e9373486c46210011077348ddaab656eeca09e7ca66aff16fa61e617e04146",
+      "last_line": 2939,
+      "name": "wait_control",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2946,
+      "fragment_sha256": "bba89b1010cf4888956b13c711967860ce04b713ededf3de3b96c48f6d6a2c57",
+      "last_line": 2955,
+      "name": "queue",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2957,
+      "fragment_sha256": "6094c66accd0d26e8480c5bb79443dbdbaaf68e18bf29b7013dced85257e86c9",
+      "last_line": 2963,
+      "name": "cancel",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2965,
+      "fragment_sha256": "f9fec93c36e4d0c406437d8d556cdb2bef86836791fae13a0666a4992b7c41bc",
+      "last_line": 2968,
+      "name": "pending",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2970,
+      "fragment_sha256": "8be687e2cb971c6bd5d664fa8684cd1d36e5a68ca2b62fbcb4b6b357090f5f7c",
+      "last_line": 2973,
+      "name": "result",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2975,
+      "fragment_sha256": "dad659e3d5621d3bead27a9527368efd68a1d7c53c115b8a314b821434825805",
+      "last_line": 2992,
+      "name": "poll",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2941,
+      "fragment_sha256": "522c801b7395b162d840d9b1adcc8ec1045fe300b03a76244ad582047ff719a9",
+      "last_line": 2944,
+      "name": "activity",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 170,
+      "fragment_sha256": "12f9cb12de2c4af73615648d1fc463d0ee31c84315017e51c006fbefeb440e10",
+      "last_line": 186,
+      "name": "owner",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": false,
+      "first_line": 429,
+      "fragment_sha256": "e75741064f230e21a4e7a79acaad22562958659a50e72a075b60bb8771005619",
+      "last_line": 444,
+      "name": "dispatch_step",
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 1001,
+      "fragment_sha256": "dc55386bd4d9a34c175f4530e88f7922ed8a8bbaef88eae0015f28dc79cd99c2",
+      "last_line": 1008,
+      "name": "cpu_slot",
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 1430,
+      "fragment_sha256": "87cf486707ea8efb2989ab86f044aae1e9c0bb49befa54f2ab915117e9065ae0",
+      "last_line": 1448,
+      "name": "cpu_dispatch",
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 1709,
+      "fragment_sha256": "e0aaa26c05eee7794ff452a433a5748966aed106bd6fac83c751ced2a7108530",
+      "last_line": 1714,
+      "name": "ui_dispatch",
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 1656,
+      "fragment_sha256": "a2995d9f0d2b4ac88adaa1ed6461485c51d76724d898c2ee81e954ec6d01ad65",
+      "last_line": 1659,
+      "name": "ui_slot",
+      "source_file": "pcsx2-qt/MainWindow.cpp",
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 2912,
+      "fragment_sha256": "0b574378e6b62ce6723fbaa9b5dae6f15d094ed6126a9ba41ab77939bcb38438",
+      "last_line": 2915,
+      "name": "external_scope",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 856,
+      "fragment_sha256": "9e1ae203cfb78f503779becf5760e7b35dcaaad2d76ee21587c3ca6448540eee",
+      "last_line": 871,
+      "name": "close_inputs",
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    },
+    {
+      "ends_with_newline": true,
+      "first_line": 842,
+      "fragment_sha256": "4ff690b85512030e3385c07826dc8c84bfb708a0eed0b46f0101bb7fab38ceb3",
+      "last_line": 854,
+      "name": "reload_devices",
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "09f63cd691034d2facd48b79ed4850d14687c7eeed9e3a201e893ef798988c2f"
+    }
+  ],
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-pine-joint.md": "c10244779760e3b60b3ca08bdb82a34bd56c092c2f33d26ac9f26fa13e3b678e",
+    "schemas/pine-joint-v1.md": "dafa47065433445811b71ed549306e4bb89235760810dfae4d679b1f25eb2046",
+    "tests/fixtures/pcsx2-pine-joint/README.md": "518b945b57360487f5b5e1f1e84e4e79a3eaf501ff902d454ceb2022c10c704b",
+    "tests/fixtures/pcsx2-pine-joint/joint.cpp": "750f2aabcb595eba263ac9e6f2a6bfec8f28785e96708777bff920e36f8941af",
+    "tests/fixtures/pcsx2-pine-joint/joint_support.hpp": "e5e801519eb96e7be299f18cc5ee8f57e6b923c401bbb676d35d3f81456b070b",
+    "tests/fixtures/pcsx2-pine-joint/server.cpp": "31a26fbb2e6a7c254c63404e8c5f8e1291c983da5ac0011e4c8d82e77f993491"
+  },
+  "python_full_suite_rerun": false,
+  "qt_tsan_loader_proof": {
+    "expected_library_found": true,
+    "fixture_sha256": "cbdb9f25572e0ccbb6d7a17c31cdc7ddebe258b748458b27b801487c01f089bf",
+    "previous_prefix_qtcore_loaded": false,
+    "selected_qtcore_sha256": "d3a734c2376c9e25f6debc470ef37c072b8078549b5bb146ac6a4cae1301dfff"
+  },
+  "read_events_produced": 0,
+  "remote_ci_executed": false,
+  "resource_links": [],
+  "runs": [
+    {
+      "binary_sha256": "b04b4058ff86a53cffaf61f091c6c61d3fc4e3d7ce72eae3ed077a92337500fe",
+      "cases": [
+        "status",
+        "memory",
+        "partial",
+        "closed",
+        "queued",
+        "observer_timeout",
+        "connected_stop",
+        "partial_stop",
+        "coalesced",
+        "restart",
+        "disconnect",
+        "idle_stop",
+        "discard",
+        "stress_stop"
+      ],
+      "kind": "probe",
+      "mode": "normal-native",
+      "passed": 14,
+      "receipts": [
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "a93b0be3a31a4c502d91d11a2550deb249d3c24f50f39317e907a9f8ed81d403",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-status",
+          "log_sha256": "6e83352e3e82acc55a34002bebe4b1807bdd206cfdc43ac8abc89178a2e53dcd",
+          "receipt_sha256": "b33c42438cb9ae546e3297231b8e641e1cff1017a8d39eb1e353514198448325",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-memory",
+          "log_sha256": "73ba53459e8f9b925d27d423804accfcf89ca0e606714709ded1219869561f26",
+          "receipt_sha256": "6dafc61f0fb9193bf1677dfaf6b0329924795620abe5be585c662024f6aa13ec",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-partial",
+          "log_sha256": "64861e6b65d29c7554e07a1f811e35e1241493f83a4fa2d39b35083823358436",
+          "receipt_sha256": "e31e6c3032c15570bcdb0b4f27d0ea6873b07bb3d677c67048e3916258c0e3c8",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-closed",
+          "log_sha256": "23053184eb78bf91d9d637ecf9b7c14eafc12152471727237efca46abe67edbb",
+          "receipt_sha256": "7691f1926398cbd2277684783d380f7e351a790ecca92e4e5f6a3d7a6968990f",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-queued",
+          "log_sha256": "0a03c3779ba2e078325b6ab71e90d281fef9756c044580f2bc9240badfbe3f78",
+          "receipt_sha256": "13f73c9397422cc3a29bca229c26eca928ddaa486ab16d06d33949683ee88501",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-observer_timeout",
+          "log_sha256": "dc2738b7533e9bb7377d4fb2f548f4e7950677bc6222782a557c85db1a5d0bce",
+          "receipt_sha256": "065fac275f2994ed6959dbd7c00e2af58821d05605e7ff1dbb9940e95e8b6dcf",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-connected_stop",
+          "log_sha256": "03833cdd0370cde62bf2032ab43bced87f769eb08c073a77705695c8c3184c92",
+          "receipt_sha256": "80bbc07eb9e2ac2ae77e868f9de6abbc3414c7b04513dec6004db7404ffa96d3",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-partial_stop",
+          "log_sha256": "d2f68c321211eec1f952ab7b10f5eef20dbb7ee5fce3596181c0515da65428cc",
+          "receipt_sha256": "26f8880ec07fe3d2d77b185d0f1fa942fde2573cb4e68d11047bea239108b504",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-coalesced",
+          "log_sha256": "d4bafd1f7c5a6bfb1e289ef0ec78086ec2a9d6cd7217fbdcc26c95a705c353a8",
+          "receipt_sha256": "c5d3a5a57271d019e9e61babc4455621bf578404c1fde16b362f839db019f45a",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "55d4966bceb04a2f31ae6cb2bad311250408e64665c6253e82df2062a2969a80",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-disconnect",
+          "log_sha256": "53ad08c9d146163330031146e10944cc23c1fbc2f7b85dd93cb4cc7b9033335c",
+          "receipt_sha256": "0279a06bf9b39cd7693ada383143d839dced16197e47c7b104d6103ee6a4c932",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-idle_stop",
+          "log_sha256": "7099fa5f1a94e0f2aa6f1e527e1bb6beb31ef0c55a68cd4426acdc941494d5ac",
+          "receipt_sha256": "231c6ac6a45c66c5407f89fcd91c758b1bb95cae9fe903c8782bcf3727173bce",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-discard",
+          "log_sha256": "361f6f72e0b14b9c86b31b91521abee8430fea128cd6a295cc0867040edd7c80",
+          "receipt_sha256": "1fbafe44cf9c651d953ad036191a27939440250830e82fc5f779cd1c3e04cf5a",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-normal-native-stress_stop",
+          "log_sha256": "1fc326531a5971410116ff4bc190b93ee3dea779b216a2c899b707ddba4fc296",
+          "receipt_sha256": "7ba4a6eb2e8a162e097229a471707b1b6394d44b3624d05c9de6d918a5259835",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "15d8a0a630f954b56ed2a9b7e9a0d8f0bf5c989bddbd1ade8eb1f28b9351932d",
+      "cases": [
+        "status",
+        "memory",
+        "partial",
+        "closed",
+        "queued",
+        "observer_timeout",
+        "connected_stop",
+        "partial_stop",
+        "coalesced",
+        "restart",
+        "disconnect",
+        "idle_stop",
+        "discard",
+        "stress_stop"
+      ],
+      "kind": "probe",
+      "mode": "sanitize-native",
+      "passed": 14,
+      "receipts": [
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "de274d016c6375fac9430fc2f153df34ca0276fdd3d4f2593b8b11a1f96f8318",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-status",
+          "log_sha256": "6e83352e3e82acc55a34002bebe4b1807bdd206cfdc43ac8abc89178a2e53dcd",
+          "receipt_sha256": "a689e9c980bc54bde0f5734d487dd0bc96876df8827c15c9bc4bbddcc4e4362d",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-memory",
+          "log_sha256": "73ba53459e8f9b925d27d423804accfcf89ca0e606714709ded1219869561f26",
+          "receipt_sha256": "04fc7cf86b6465425b80c8de1c33d404ad99a59ed1e9e4290ab60d79edd2db26",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-partial",
+          "log_sha256": "64861e6b65d29c7554e07a1f811e35e1241493f83a4fa2d39b35083823358436",
+          "receipt_sha256": "eb214001aea08b3f85d7d312b483c12c7bcc08835ab40e13413471f6696dcca6",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-closed",
+          "log_sha256": "23053184eb78bf91d9d637ecf9b7c14eafc12152471727237efca46abe67edbb",
+          "receipt_sha256": "265ce6556d3e0b7ed5631c57359c86ccba98af1ebdf2d1380ed056cd3790d83c",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-queued",
+          "log_sha256": "0a03c3779ba2e078325b6ab71e90d281fef9756c044580f2bc9240badfbe3f78",
+          "receipt_sha256": "35afd462095e8cba5c93ad92268f7f3e358d5f8fff149df7fbf3d949b377546d",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-observer_timeout",
+          "log_sha256": "dc2738b7533e9bb7377d4fb2f548f4e7950677bc6222782a557c85db1a5d0bce",
+          "receipt_sha256": "ad658b27332c6352c1cf685e697661d320fc00b6a6a3e3a20ea6e9584272268d",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-connected_stop",
+          "log_sha256": "03833cdd0370cde62bf2032ab43bced87f769eb08c073a77705695c8c3184c92",
+          "receipt_sha256": "24e134a8998a22c475ce4ef42494b2fa5b23114ea6a60aa5d0f92424870c4f81",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-partial_stop",
+          "log_sha256": "d2f68c321211eec1f952ab7b10f5eef20dbb7ee5fce3596181c0515da65428cc",
+          "receipt_sha256": "b6ea610c1c7630682616ccfe507c96484de6433b1113e6d530804076272f6b87",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-coalesced",
+          "log_sha256": "d4bafd1f7c5a6bfb1e289ef0ec78086ec2a9d6cd7217fbdcc26c95a705c353a8",
+          "receipt_sha256": "c31c583ea43252456431136c306e7901aa08e6e6802a09ef6c580e5d88bbdcc6",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "e255c39d1165cbe6e7eeb5c25d04461182ba88d96e7ebe83f1141a6379c5b416",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-disconnect",
+          "log_sha256": "53ad08c9d146163330031146e10944cc23c1fbc2f7b85dd93cb4cc7b9033335c",
+          "receipt_sha256": "851de7519f958dd79f8ff60df32b484a39298c737f001ba59f7dda06b482f4ed",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-idle_stop",
+          "log_sha256": "7099fa5f1a94e0f2aa6f1e527e1bb6beb31ef0c55a68cd4426acdc941494d5ac",
+          "receipt_sha256": "c7f0baa8b06feb4ca21d0cb81a165313c87dc61812880b4c5b944e56f6c896eb",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-discard",
+          "log_sha256": "361f6f72e0b14b9c86b31b91521abee8430fea128cd6a295cc0867040edd7c80",
+          "receipt_sha256": "caf71c281355213f1480134d597356d3726e8df1c854c9527e7b70dd8de0395e",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-sanitize-native-stress_stop",
+          "log_sha256": "1fc326531a5971410116ff4bc190b93ee3dea779b216a2c899b707ddba4fc296",
+          "receipt_sha256": "89d6b97478d0c6ccb847c15b20367f840a1c0edd071309b4260e2cf3bea9429f",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "83921bc14df58af246247c2e65f4016699217cdf5c44246963259b7cf466a7d2",
+      "cases": [
+        "status",
+        "memory",
+        "partial",
+        "closed",
+        "queued",
+        "observer_timeout",
+        "connected_stop",
+        "partial_stop",
+        "coalesced",
+        "restart",
+        "disconnect",
+        "idle_stop",
+        "discard",
+        "stress_stop"
+      ],
+      "kind": "probe",
+      "mode": "tsan-native",
+      "passed": 14,
+      "receipts": [
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "e551b3732247509853506f8268270dc535c2bda7c6a1cd0be6ca239a764d8f87",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-status",
+          "log_sha256": "6e83352e3e82acc55a34002bebe4b1807bdd206cfdc43ac8abc89178a2e53dcd",
+          "receipt_sha256": "ebae17f16d5336631a5fb32fb830f54dd5065ab159774f9e413f17e8281da2e1",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-memory",
+          "log_sha256": "73ba53459e8f9b925d27d423804accfcf89ca0e606714709ded1219869561f26",
+          "receipt_sha256": "ddee954edcda22626791edbff4982b3b1845d0ff5c2a45c9405967f121b74be1",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-partial",
+          "log_sha256": "64861e6b65d29c7554e07a1f811e35e1241493f83a4fa2d39b35083823358436",
+          "receipt_sha256": "f3c2e2369a7d4d648d47be1c4b3673b7d44b139f9154285e313245c46cc4c71b",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-closed",
+          "log_sha256": "23053184eb78bf91d9d637ecf9b7c14eafc12152471727237efca46abe67edbb",
+          "receipt_sha256": "641025079340ea23f2c2fcfe17955672961bb4baa5e5fca2ea1f0bc6aabe8ac3",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-queued",
+          "log_sha256": "0a03c3779ba2e078325b6ab71e90d281fef9756c044580f2bc9240badfbe3f78",
+          "receipt_sha256": "cd0c17db161cbc3912f443119ff14dd77f357a0c984f39e31793aba9acac2bb2",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-observer_timeout",
+          "log_sha256": "dc2738b7533e9bb7377d4fb2f548f4e7950677bc6222782a557c85db1a5d0bce",
+          "receipt_sha256": "4e73e709f44b2cae57988182b54567bc7068268a84d1539df0e4db149803866c",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-connected_stop",
+          "log_sha256": "03833cdd0370cde62bf2032ab43bced87f769eb08c073a77705695c8c3184c92",
+          "receipt_sha256": "81db026524866e2527e299654b690808f11a379e12592f8752276d4088cc082c",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-partial_stop",
+          "log_sha256": "d2f68c321211eec1f952ab7b10f5eef20dbb7ee5fce3596181c0515da65428cc",
+          "receipt_sha256": "e41122f276b4b5b95ba02d6953b13f23b60e5b9f38890ef86ce4f00e812593cd",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-coalesced",
+          "log_sha256": "d4bafd1f7c5a6bfb1e289ef0ec78086ec2a9d6cd7217fbdcc26c95a705c353a8",
+          "receipt_sha256": "544fc61797dd77bb56bee07b15cdd12e1724ac8c3c0647708937f3e4b9f5be13",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "77514179d694f7172cc3796df782fcbb91505cc315e9f46e5496818af3b1199a",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-disconnect",
+          "log_sha256": "53ad08c9d146163330031146e10944cc23c1fbc2f7b85dd93cb4cc7b9033335c",
+          "receipt_sha256": "e12d2724f9e6c3adc5a766309a0c5ac79719beacf9b7f6f07a44edad280df4b6",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-idle_stop",
+          "log_sha256": "7099fa5f1a94e0f2aa6f1e527e1bb6beb31ef0c55a68cd4426acdc941494d5ac",
+          "receipt_sha256": "9898faa541cd1e67dcdad43256641bc0c11802849b5eacf6591d269f33ae4ea6",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-discard",
+          "log_sha256": "361f6f72e0b14b9c86b31b91521abee8430fea128cd6a295cc0867040edd7c80",
+          "receipt_sha256": "2705a75b3066e7717f3a2ff2bf092e14f936a3afc5d208c5db208d890182eb5c",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "probe-v5-tsan-native-stress_stop",
+          "log_sha256": "1fc326531a5971410116ff4bc190b93ee3dea779b216a2c899b707ddba4fc296",
+          "receipt_sha256": "a7fbe70e6cbfe71c40c048685fbeaecd46e0c4ae5adbde4f6458b3e1f3a3e90f",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "e5cfbb0e082cf590701605671750e96a2db488f316c5f94393ab0eda756cc380",
+      "cases": [
+        "prior",
+        "discard",
+        "timeout",
+        "generation",
+        "stop_pending",
+        "deadline",
+        "late"
+      ],
+      "kind": "joint",
+      "mode": "normal-native",
+      "passed": 7,
+      "receipts": [
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-normal-native-moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "a9e7ae8433e94ebfd756679fa352fbd81353a4d2ba6f3f6a5c232317ab5257fb",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-normal-native-compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "e6915814a1d282f5394be2aa41f4d90379ad103c84c994f9d3a4d3aa43953010",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-normal-native-prior",
+          "log_sha256": "4cfefdf2a8ed30ddef09d0e743a25c635da132e5c5800917d3f8daaf8c047e1e",
+          "receipt_sha256": "b266c5eb0636b8be24f0ebcd98c7c3875e56d47c7ffba1fe8b7f0d04d848d3d7",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-normal-native-discard",
+          "log_sha256": "361f6f72e0b14b9c86b31b91521abee8430fea128cd6a295cc0867040edd7c80",
+          "receipt_sha256": "4b07adcbfb2fcab147c9ab82233e13ab777ba005e3cb6f53f5f6c5364083b4c0",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-normal-native-timeout",
+          "log_sha256": "2be453141c8f6ff6c8f4233c6cc3de16fd704d43ded5a46da92f854f67bf52cc",
+          "receipt_sha256": "d615f1d17462efb130323950a5b32aba443d2cba640bd36a3f87431c74e72b7d",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-normal-native-generation",
+          "log_sha256": "34748aafaef7d3433cff5309fd0d20961bff9d22934f458314c3a536585384ce",
+          "receipt_sha256": "7b4e4296c0e4a3221429dcbd90766afd2097b25c4eef5c6860709e74d71fe027",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-normal-native-stop_pending",
+          "log_sha256": "0eb0dc83cd4e9a2f828839aba2fd593a6ad7a13ccc1cecf74d53c2c3f0c65dab",
+          "receipt_sha256": "bcf732a12d9d2e85c073f4357acfad9c5029aeb051e34017d8ad55b1149e1c86",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-normal-native-deadline",
+          "log_sha256": "4e71f39a1b5d75a97493c0d9fc5100b9bd44545d16e83c3180b3fc38a3151306",
+          "receipt_sha256": "83b83be486265b5270baa1c73d72aed01a3a45d010dd7640d3d31c8432f8f7e8",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-normal-native-late",
+          "log_sha256": "127f5e4dc96c57a2c655c75a50c4b0c649b8bea8a07c67bd2b6061d0310f7afd",
+          "receipt_sha256": "cb629a9da96055612ea33b0c7760488405b9048655783fdb96b5ee1d34024cd2",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "cd8f1382e0f6d271e9da518410c3ee07a1bb45463fec05caed93e7ed83b6b9f5",
+      "cases": [
+        "prior",
+        "discard",
+        "timeout",
+        "generation",
+        "stop_pending",
+        "deadline",
+        "late"
+      ],
+      "kind": "joint",
+      "mode": "sanitize-native",
+      "passed": 7,
+      "receipts": [
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-sanitize-native-moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "32e5252e629239b9b132a054e2b74f34c763668ab9ee2df6bc34a4111846deae",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-sanitize-native-compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "65275c7d404d2972e4e7793e832975e7db9082190dbf3b8101a30a509e593464",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-sanitize-native-prior",
+          "log_sha256": "4cfefdf2a8ed30ddef09d0e743a25c635da132e5c5800917d3f8daaf8c047e1e",
+          "receipt_sha256": "3a2a9632d4f261981f3cb16dbe83923e0a336141ac1b51f3bc5db2f66ee424cc",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-sanitize-native-discard",
+          "log_sha256": "361f6f72e0b14b9c86b31b91521abee8430fea128cd6a295cc0867040edd7c80",
+          "receipt_sha256": "cb4b6c62f07a1ef7cfe42157a581fd6fb1d994e2d3da9eae896df08b6cb3c21c",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-sanitize-native-timeout",
+          "log_sha256": "2be453141c8f6ff6c8f4233c6cc3de16fd704d43ded5a46da92f854f67bf52cc",
+          "receipt_sha256": "061098cf644ced08068812075689dc44a3e71bade8be70256d9fbec66663b47e",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-sanitize-native-generation",
+          "log_sha256": "34748aafaef7d3433cff5309fd0d20961bff9d22934f458314c3a536585384ce",
+          "receipt_sha256": "b36e1cf8d64c50a687e3da75a5e3d3d86e60853f4071f4c72ded5982052b8207",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-sanitize-native-stop_pending",
+          "log_sha256": "0eb0dc83cd4e9a2f828839aba2fd593a6ad7a13ccc1cecf74d53c2c3f0c65dab",
+          "receipt_sha256": "d9f3013d3415def61b5c627faf597e3f767e1852671d01676b5c9d3b822c2b50",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-sanitize-native-deadline",
+          "log_sha256": "4e71f39a1b5d75a97493c0d9fc5100b9bd44545d16e83c3180b3fc38a3151306",
+          "receipt_sha256": "49c017074a958481cbe1060d26a86b3818fb11e3e6410be8fa4866ec64fb0d26",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-sanitize-native-late",
+          "log_sha256": "127f5e4dc96c57a2c655c75a50c4b0c649b8bea8a07c67bd2b6061d0310f7afd",
+          "receipt_sha256": "4a1bd7922de6e26b36ee433c0703d2448d4b2b04ec7af24a882aa46a939d196f",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "cbdb9f25572e0ccbb6d7a17c31cdc7ddebe258b748458b27b801487c01f089bf",
+      "cases": [
+        "prior",
+        "discard",
+        "timeout",
+        "generation",
+        "stop_pending",
+        "deadline",
+        "late"
+      ],
+      "kind": "joint",
+      "mode": "tsan-native",
+      "passed": 7,
+      "receipts": [
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-tsan-native-moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "35706428ab8c79c79b0989ecd0b4bff97bbf116f189b6361385684d586637be8",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-tsan-native-compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "6b79d5d1935edc606b6fd40777f4c8c8845e0902443e7038cfb8fef4da1bc716",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-tsan-native-prior",
+          "log_sha256": "4cfefdf2a8ed30ddef09d0e743a25c635da132e5c5800917d3f8daaf8c047e1e",
+          "receipt_sha256": "f95d924572e7579ca3d737adcea8c7a9c70e633e256974617680bd364b07d715",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-tsan-native-discard",
+          "log_sha256": "361f6f72e0b14b9c86b31b91521abee8430fea128cd6a295cc0867040edd7c80",
+          "receipt_sha256": "e052932766ff1492b750c07294ac8b60852c98ed670d4cd4173d2e24c9f80c63",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-tsan-native-timeout",
+          "log_sha256": "2be453141c8f6ff6c8f4233c6cc3de16fd704d43ded5a46da92f854f67bf52cc",
+          "receipt_sha256": "1cd58ba163f807b80f44f883d122b9066ee351d8a288c834fbbbb6afb8833521",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-tsan-native-generation",
+          "log_sha256": "34748aafaef7d3433cff5309fd0d20961bff9d22934f458314c3a536585384ce",
+          "receipt_sha256": "80b8994d8f5d5eada09b90ecdeadc54a09e09d6f0cfbd16784809a736c0b81a4",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-tsan-native-stop_pending",
+          "log_sha256": "0eb0dc83cd4e9a2f828839aba2fd593a6ad7a13ccc1cecf74d53c2c3f0c65dab",
+          "receipt_sha256": "55c549198085f66d81cb0e373e9591a90ece2443f490e72a184d97228e397e6f",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-tsan-native-deadline",
+          "log_sha256": "4e71f39a1b5d75a97493c0d9fc5100b9bd44545d16e83c3180b3fc38a3151306",
+          "receipt_sha256": "c9893c6f7abf3004c4788b693d57f3344d8fc278cc5bb715503937820372c9ac",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "exit_code": 0,
+          "label": "joint-v1-tsan-native-late",
+          "log_sha256": "127f5e4dc96c57a2c655c75a50c4b0c649b8bea8a07c67bd2b6061d0310f7afd",
+          "receipt_sha256": "161a37755d1db23c11fea7f7cc761c1b5abd6f75a6a5687bf450075b43f411dd",
+          "shutdown_verified": true
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "server_passing_scenarios": 42,
+  "shutdown_hang_sample_sha256": "d677d32bd072ee849b2158a0e093e7171437d48f1045bd0da75a9ef4b9d02695",
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_files_verified": {
+    "source-admission-v1": 2949,
+    "source-baseline": 2934,
+    "source-cpu-boundary-v1": 2953,
+    "source-dma-v2": 2945,
+    "source-external-waits-v1": 2966,
+    "source-gs-control-v1": 2961,
+    "source-host-v1": 2945,
+    "source-jit-cache-v2": 2945,
+    "source-lifecycle-v1": 2947,
+    "source-lifetime-v2": 2945,
+    "source-observer-v2": 2941,
+    "source-pine-coordinator-v1": 2955,
+    "source-pine-exclusion-v1": 2951,
+    "source-pine-transport-v1": 2966,
+    "source-pine-transport-v2": 2966,
+    "source-producer-entry-v1": 2957,
+    "source-qt-dispatch-v1": 2957,
+    "source-retained-drain-v1": 2957,
+    "source-vu-control-v1": 2960,
+    "source-vu-control-v2": 2960,
+    "source-worker-coordinator-v1": 2964,
+    "source-worker-frontend-v1": 2964
+  },
+  "source_id": "SRC87",
+  "source_repairs": [
+    {
+      "changed": [
+        "pcsx2/PINE.cpp"
+      ],
+      "preparation_sha256": "1b6141608ace7c33795d8a8f784c2e6ba4e9a4132b2fec0473f9c6920ad53c75",
+      "private_patch_sha256": "2f2b4c8437c3cdedd2c5b178fbad9ade3d46b761d8cce440500a6908e57c1ccd",
+      "source": "source-pine-transport-v1"
+    },
+    {
+      "changed": [
+        "pcsx2/PINE.cpp"
+      ],
+      "preparation_sha256": "d024cf6262f7560e25c6333eaf26c3bcfe363b026dfed1800561c1490ba7bb34",
+      "private_patch_sha256": "748d012a68f84f37e8b82dc1ad07ce652e3bf964f33e6e8035680523510d6fba",
+      "source": "source-pine-transport-v2"
+    }
+  ],
+  "status": "transport_repaired_server_and_joint_probes_passed_full_link_pending_capacity",
+  "tsan_suppressions_used": false,
+  "windows_linux_runtime_verified": false
+}

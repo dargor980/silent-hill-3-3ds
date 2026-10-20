@@ -1,0 +1,382 @@
+{
+  "admitted_execution_modes": [],
+  "candidate_binaries_verified": 42,
+  "candidate_executable_sha256": "e76d1e79ff017914bbcbd8d6488eab373041df687deb314e4da02e12be98b254",
+  "capabilities": [],
+  "completed_tasks": [
+    "IP-1",
+    "IP-2",
+    "IP-3"
+  ],
+  "coverage": {
+    "global_summary": {
+      "covered_branches": 1485,
+      "covered_lines": 5412,
+      "excluded_lines": 22,
+      "missing_branches": 33,
+      "missing_lines": 45,
+      "num_branches": 1518,
+      "num_partial_branches": 33,
+      "num_statements": 5457,
+      "percent_branches_covered": 97.82608695652173,
+      "percent_branches_covered_display": "98",
+      "percent_covered": 98.88172043010752,
+      "percent_covered_display": "99",
+      "percent_statements_covered": 99.17537108301265,
+      "percent_statements_covered_display": "99"
+    },
+    "report_sha256": "15cce2117dc832a23ffbf518e6c9fd9fbfe46257525285c2194e0e304609ef21",
+    "unit_summary": {
+      "covered_branches": 36,
+      "covered_lines": 109,
+      "excluded_lines": 3,
+      "missing_branches": 0,
+      "missing_lines": 0,
+      "num_branches": 36,
+      "num_partial_branches": 0,
+      "num_statements": 109,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100",
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100"
+    }
+  },
+  "date": "2026-10-18",
+  "initial_sandbox_attempt": {
+    "cause": "process_table_ps_denied",
+    "failures": 6,
+    "junit_sha256": "93c17ef7b4f80ada603afa54d2d5a67b5911871fc932a31f27c3ba7d17d5a6f1",
+    "passed": 3177,
+    "receipts_sha256": "efa23d58bdb421b49f0d972ba8c2cb9f5b79baf729b0e586a58b041de0113480",
+    "verification": [
+      {
+        "exit_code": 0,
+        "label": "ruff-check",
+        "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+        "seconds": 0.14087179201305844
+      },
+      {
+        "exit_code": 0,
+        "label": "ruff-format",
+        "log_sha256": "def7d5fe293998feda91cfaff6149deb141c94f9f83de6ae65bf83b362fab66d",
+        "seconds": 0.020833041984587908
+      },
+      {
+        "exit_code": 1,
+        "label": "pytest",
+        "log_sha256": "0f55a032ad2151c2965a80d3d2d04b43b73bd51e23b627752120b640bce841cf",
+        "seconds": 133.30846845800988
+      },
+      {
+        "exit_code": 0,
+        "label": "coverage-gate",
+        "log_sha256": "ac722ee9e2ee0010214fea803e85ddaf9d8fdd3dbaf557ad6faa7e18ea85826f",
+        "seconds": 0.13387187500484288
+      }
+    ]
+  },
+  "installed_application_modified": false,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-process-diagnostic/audit.py": "212c3a6dab6c219720c3db9137d8c638d7d035062ea700dd74c0018f894c76f8",
+    "build/f02-07-process-diagnostic/verify-v2.py": "75b9ede5c88351b6dfe26ff05d70b672b12182294aa3fab02b9d36937a344954",
+    "build/f02-07-process-diagnostic/verify-v3.py": "dfccf26d88ace7f3f2af2e4e2769cc9591ad7f635894fc02c3a9fdafeeb93bcb",
+    "build/f02-07-process-diagnostic/verify.py": "c495989c61d6be5748edd9063cd86466393721695ee200be110cbbfad567e01e"
+  },
+  "next_tasks": [
+    "IP-NATIVE",
+    "VIF/writers",
+    "frontend/VM",
+    "AD-3"
+  ],
+  "preceding_evidence_sha256": "ed0d31771fd2a28b5cceb1b0da165f9c4fd27b2357b5dd8deb7152aed5919cb2",
+  "previous_private_history_file_count": 2910,
+  "previous_private_history_verified": true,
+  "previous_public_inputs_verified": true,
+  "probe_tests_use_doubles": true,
+  "production_profile_changed": false,
+  "profile_matrix": [
+    {
+      "artifact_constraint": "unknown",
+      "condition": "cpu_thread",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "cpu_boundary",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "paused",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "implementations_settled",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "ee_interpreter",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "iop_interpreter",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "vu0_interpreter",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "vu1_interpreter",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "ee_cache_disabled",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "fastmem_disabled",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "mtvu_disabled",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "violated",
+      "condition": "vif_dynarec_disabled",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "raintegration_disabled",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "pine_excluded",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "satisfied_for_examined_component_only",
+      "condition": "rdebug_excluded",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "gs_drained",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "vu_drained",
+      "runtime_fact": "unknown"
+    },
+    {
+      "artifact_constraint": "unknown",
+      "condition": "other_writers_excluded",
+      "runtime_fact": "unknown"
+    }
+  ],
+  "provider_probe_implemented": false,
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-process-diagnostic.md": "0325b11ef385b3e995b32f6a04ebe94e98c426c9910ba3d484417570b9c9d688",
+    "schemas/process-diagnostic-v1.md": "f4d1ed1242aeb53c5c747c656b1488adffff4fd09848447e062ac6df2886adc5",
+    "tests/python/test_process_diagnostic.py": "c958835738523bca8f9b0cf6952886a5d11a64c20bad7a28149526af51119c3e",
+    "tools/inspectors/process_diagnostic.py": "8e2eef32568b255edf9c74ef6ac310fb7c7c11e48451db44d956599afe5c9649"
+  },
+  "publication_order_attempt": {
+    "cause": "links_added_before_evidence_publication",
+    "failures": 1,
+    "junit_sha256": "01be68180a3bfb247085814239ee9d51d21913dfe12d635493d8490f303b3dd3",
+    "passed": 3182,
+    "receipts_sha256": "7f6e4dd39bde14f13eb133f613dca2d3ce82bda964b27e182f67771cfd4fa3a6",
+    "verification": [
+      {
+        "exit_code": 0,
+        "label": "ruff-check",
+        "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+        "seconds": 0.1411261250032112
+      },
+      {
+        "exit_code": 0,
+        "label": "ruff-format",
+        "log_sha256": "def7d5fe293998feda91cfaff6149deb141c94f9f83de6ae65bf83b362fab66d",
+        "seconds": 0.019541542016668245
+      },
+      {
+        "exit_code": 1,
+        "label": "pytest",
+        "log_sha256": "e055f7310252f1af3bc57f8c515cf0632c8a641353500ad1dfdf3c6231cac0b8",
+        "seconds": 129.7127832500264
+      },
+      {
+        "exit_code": 0,
+        "label": "coverage-gate",
+        "log_sha256": "ac722ee9e2ee0010214fea803e85ddaf9d8fdd3dbaf557ad6faa7e18ea85826f",
+        "seconds": 0.07787366700358689
+      }
+    ]
+  },
+  "pytest": {
+    "junit_sha256": "678d69876ba0515f4ed6691617f064ed4149345e3e84f0a752674acf05d0232a",
+    "new_tests": 87,
+    "skipped": 0,
+    "tests": 3183
+  },
+  "read_events_produced": 0,
+  "resource_links": [],
+  "runtime_identity_bound": false,
+  "schema_version": 1,
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_files_verified": 2966,
+  "source_id": "SRC90",
+  "source_manifest_sha256": "d024cf6262f7560e25c6333eaf26c3bcfe363b026dfed1800561c1490ba7bb34",
+  "source_modified": false,
+  "status": "identity_inventory_and_diagnostic_consumer_verified_native_binding_pending",
+  "verification": [
+    {
+      "exit_code": 0,
+      "label": "ruff-check",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "seconds": 0.14054079199559055
+    },
+    {
+      "exit_code": 0,
+      "label": "ruff-format",
+      "log_sha256": "def7d5fe293998feda91cfaff6149deb141c94f9f83de6ae65bf83b362fab66d",
+      "seconds": 0.01988062501186505
+    },
+    {
+      "exit_code": 0,
+      "label": "pytest",
+      "log_sha256": "023ac45e912e0867592f69db6ad2f288bae0c538b339908053c72931f0f0a1ba",
+      "seconds": 131.8159220420057
+    },
+    {
+      "exit_code": 0,
+      "label": "coverage-gate",
+      "log_sha256": "ac722ee9e2ee0010214fea803e85ddaf9d8fdd3dbaf557ad6faa7e18ea85826f",
+      "seconds": 0.07192058299551718
+    }
+  ],
+  "verification_receipts_sha256": "e7e87cf38969a44d9b0f3c9f303c570cab13ff634f4f7c3f52580c6d78e8a2eb",
+  "vm_executed": false,
+  "witnesses": [
+    {
+      "file": "pcsx2/VMManager.cpp",
+      "file_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e",
+      "first_line": 2994,
+      "label": "admission_sampler",
+      "last_line": 3023,
+      "range_sha256": "4b65b3753a75765aa070743fdf91a563eec1f565fe663a5c8c029744887ac7ed"
+    },
+    {
+      "file": "pcsx2/VMManager.cpp",
+      "file_sha256": "e3270294b2a894da8ea3e9d4df94355e8b241f02b5d42edf7cf35b7d234cd62e",
+      "first_line": 2975,
+      "label": "cpu_epoch_revalidation",
+      "last_line": 2990,
+      "range_sha256": "7021ee7fedc7040450a616d4eb8bfb5c258555ad82194fd0b66e41424f0b25b3"
+    },
+    {
+      "file": "pcsx2/PINE.cpp",
+      "file_sha256": "10bb131d40e65ce8ce4acee044cf51a347d3e4e3f7b0ee0f5d17aaaf1d26e23d",
+      "first_line": 107,
+      "label": "pine_epoch",
+      "last_line": 107,
+      "range_sha256": "753360a9b3248ba6fc02428b2b670d4344a4904fa22792718bb6885b95e2506d"
+    },
+    {
+      "file": "pcsx2/PINE.cpp",
+      "file_sha256": "10bb131d40e65ce8ce4acee044cf51a347d3e4e3f7b0ee0f5d17aaaf1d26e23d",
+      "first_line": 424,
+      "label": "pine_generation_reader",
+      "last_line": 426,
+      "range_sha256": "dc416b995b346acd014ae01b31bd2926864fa72e4e946aa1dfc1f9715d0f0b29"
+    },
+    {
+      "file": "pcsx2/Vif_Dynarec.h",
+      "file_sha256": "3013f434f6737694d518e9e6422981ca0a55a4579b6a3f5ec0fcac0578c977ce",
+      "first_line": 46,
+      "label": "vif_enabled",
+      "last_line": 46,
+      "range_sha256": "3e5d2fea7a08e86f4f40f0e5aaaab5e64471cb355fc24dfd3695be141c79d434"
+    },
+    {
+      "file": "pcsx2/BuildVersion.cpp",
+      "file_sha256": "bc291935b3a4df93bfd0f1c5f918766fe9fa217e6a0a945a41f8b87856474f50",
+      "first_line": 13,
+      "label": "version_label",
+      "last_line": 13,
+      "range_sha256": "18ff2dea51e1591a92805e0451ad41476fd84f9e04ccc7407568c359aabf57f2"
+    },
+    {
+      "file": "common/include/svnrev.h",
+      "file_sha256": "ec728c93b6148998db5e6cae0fd205b82d6972430cadccdcf78cc11d4be1df73",
+      "first_line": 6,
+      "label": "generated_revision_unknown",
+      "last_line": 7,
+      "range_sha256": "c6345254bf8d7691c1063f746e8f4dd38b4f454e6a70b15bc26eda0184a6c5ab"
+    },
+    {
+      "file": "tools/observer/pcsx2/adapter.cpp",
+      "file_sha256": "f2fb13ec008f0b2a5fb598140520317ce185482404448cef15cffd9ab96b2388",
+      "first_line": 37,
+      "label": "pid_only",
+      "last_line": 37,
+      "range_sha256": "030addf4570c4f0a3d202110ba86e0d8621cafb789954e6a720b1e3c7f7ac11c"
+    },
+    {
+      "file": "tools/observer/include/sh3_observer/capture.hpp",
+      "file_sha256": "a8661c9a081a4eb7cfa9bd5c32e1e7dfe90e4c564c0ef19c531188f4043abfb9",
+      "first_line": 16,
+      "label": "client_session",
+      "last_line": 17,
+      "range_sha256": "94bc6ec4d87c62364c295b94f7fc94284c4bd938a070f8d9e33d78ef11801436"
+    },
+    {
+      "file": "tools/observer/include/sh3_observer/host_epoch.hpp",
+      "file_sha256": "2de8b1a76304538805a48dfa31ebcd1b5d2bf7b2bf9ceb4416281019161fd062",
+      "first_line": 10,
+      "label": "process_local_epoch",
+      "last_line": 15,
+      "range_sha256": "2612c5ff4ddf602c69a34467f0440dedf76f4a0aecb654263274ec349985cabd"
+    },
+    {
+      "file": "tools/observer/physical_writes.cpp",
+      "file_sha256": "e6012b55179bc4d20194ec215b8543626fc35d1a23bc8ab15ede78fa16e9e97e",
+      "first_line": 62,
+      "label": "epoch_before_lifecycle",
+      "last_line": 65,
+      "range_sha256": "660865a55332f9726370ff695470eb04b8dea9111038e575c39d4f08da31403a"
+    },
+    {
+      "file": "tools/observer/include/sh3_observer/worker_control.hpp",
+      "file_sha256": "66317ff431180756e8401c5cb0839dcbb4fc44c4f99d5d010076941531bbf292",
+      "first_line": 31,
+      "label": "worker_lifecycle",
+      "last_line": 31,
+      "range_sha256": "ba68706e2576ce60f90dc8086cb630e4670d258785ca55f9d92fcea8dedca9b4"
+    },
+    {
+      "file": "tools/inspectors/observer_identity.py",
+      "file_sha256": "bee90c6e352708b5f599f11976cdf7c147595b66185c19f6ecedaea07bcf092b",
+      "first_line": 43,
+      "label": "exploratory_guard_limits",
+      "last_line": 133,
+      "range_sha256": "22a6ffa31996ef5eed6410823240eda4cc7acc794a92f0370c7715f49051d27b"
+    }
+  ]
+}

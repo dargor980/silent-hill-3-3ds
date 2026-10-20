@@ -1,0 +1,593 @@
+{
+  "actual_qt_core_event_loop_rerun": false,
+  "admitted_execution_modes": [],
+  "capabilities": [],
+  "common_effects_equal_across_modes_and_previous_functions": true,
+  "date": "2026-10-18",
+  "entry_hooks": 38,
+  "entry_hooks_before_all_original_body_statements": true,
+  "entry_hooks_compiled_audited_only": 22,
+  "entry_hooks_executed": 16,
+  "foreign_thread_producer_exclusion_verified": false,
+  "global_memory_effect_serialization_verified": false,
+  "gs_vu_retention_implemented": false,
+  "harness_inputs": {
+    "baseline": {
+      "exact_fragments": 22,
+      "fragments": [
+        {
+          "fragment_sha256": "9556a1e499aeece534b91ba287b3d057c7873b3b5c8ad7e2d7f9b24e6bf47ca0",
+          "name": "fifo",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+        },
+        {
+          "fragment_sha256": "a50a53e8f6d74fef7f811dd0fb3ef733f308e455564ec08a4a0a5f36fda7511e",
+          "name": "async",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+        },
+        {
+          "fragment_sha256": "db4c035590541a221fdeaea75b7ad1ac60e37af9fcb40a56f9bf4a0c91ae1d8e",
+          "name": "freeze",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+        },
+        {
+          "fragment_sha256": "4d079542acb0471e3ce95b78128c7a60bb0ba00eba6a3f3bec6fbf8210f9bdbf",
+          "name": "snapshot",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+        },
+        {
+          "fragment_sha256": "0c1c1b657bb8d3b81a6efb7ee9d9e07586e0bb9d11291d090c954c4bc8992dd1",
+          "name": "blank",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+        },
+        {
+          "fragment_sha256": "bc9a198d39c4c0fb61d747c95c3f341f2be083a390a8ab2767a3477f5edea42b",
+          "name": "completed",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+        },
+        {
+          "fragment_sha256": "4910e3de9e44da44150575b8fd174201005bc67437f06918b0ca3b494a632590",
+          "name": "mtvu-packet",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1"
+        },
+        {
+          "fragment_sha256": "1419ea726fa2e96626f76ba8353aea2b7806bdab6166885b46942228371927a7",
+          "name": "execute",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+        },
+        {
+          "fragment_sha256": "fdb7cd4858630f22b8ccec0fe789927fa6df15769563c9005d917cca0eef405b",
+          "name": "unpack",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+        },
+        {
+          "fragment_sha256": "dd32350edcfcb557c5e84c60c9c4fa8928149b56b6945ee9c2535297315c9de4",
+          "name": "micro",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+        },
+        {
+          "fragment_sha256": "990b625113df2c790a34ca7a061b9e329c4649fd3f595287dec9b93a64ae79e6",
+          "name": "data",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+        },
+        {
+          "fragment_sha256": "916e8126358d76c3120adcc006be34e7204cf54a83b1f9e9fadb96e25860ea6c",
+          "name": "vi",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+        },
+        {
+          "fragment_sha256": "d3e67de69ef75df02bd9286ed7f80f4b80b7602f4e776929c08e4dc1e29dc573",
+          "name": "vf",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+        },
+        {
+          "fragment_sha256": "0714e4cccded84130afc02dec3ab21823359ef5901c79a2c179eed854c5bfde1",
+          "name": "col",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+        },
+        {
+          "fragment_sha256": "192befece4b084bccc638c4a7a1bc5c79fa0904a3a97d0e9e4f2bd827b421fb6",
+          "name": "row",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+        },
+        {
+          "fragment_sha256": "1a198f3784d2dd9002c56fa2de8b12eed00e0abba9e8aed3e6f4e8c04ea146da",
+          "name": "wait-vu",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441"
+        },
+        {
+          "fragment_sha256": "1b9ebc87ab481a2fea3ac95889aae90a4213a893510e405ee8ae3964b423b051",
+          "name": "stop",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "d6a244fc8dc86a2d62a99627f92479ded01ab88e5d046d5168394e20bb0fe236",
+          "name": "before",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "522c801b7395b162d840d9b1adcc8ec1045fe300b03a76244ad582047ff719a9",
+          "name": "activity",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "dc55386bd4d9a34c175f4530e88f7922ed8a8bbaef88eae0015f28dc79cd99c2",
+          "name": "qt-slot",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "523ad7e2c30efc71a1685418f07d756c9c2e799b0a698e9a45e4e31fafe690b5",
+          "name": "qt-dispatch",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "ac28903e1042b3a89c9a23706f02da3e105f26d4f73ef5366619fa2e032318f1",
+          "name": "locale",
+          "source_file": "pcsx2-qt/Translations.cpp",
+          "source_sha256": "8474baca189fbf2be54f9a03c4f9f32c415d0b66498eacb7ef0ac2ae495db56d"
+        }
+      ],
+      "harness_sha256": "c3cef244d924a5dac7d57d7715b281e394ad31f60c86458125fefdfb84d6e759",
+      "provider_application_executed": false,
+      "provider_functions_executed": 21
+    },
+    "new": {
+      "exact_fragments": 22,
+      "fragments": [
+        {
+          "fragment_sha256": "7eb9e6b5d6f274bf364f59096ffba73a1a234d75ad2a16ddf03c73796badaa41",
+          "name": "fifo",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+        },
+        {
+          "fragment_sha256": "842800d0252361a59334affc0aa2feeb17e4f3157ac1a897909a5fc1abf2cfae",
+          "name": "async",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+        },
+        {
+          "fragment_sha256": "935493e2dc011028b66e4d4805aaa5eb8aef93573533211869940d75a2051359",
+          "name": "freeze",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+        },
+        {
+          "fragment_sha256": "56c3b84abb652dd3c04c79927e6cd7272fc614c6e36e2aeb5b7abb772cfe6586",
+          "name": "snapshot",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+        },
+        {
+          "fragment_sha256": "1af3f3098e1ec25d6f71aa248c2a16691f8ea35454d0b1532a2da745e7767283",
+          "name": "blank",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+        },
+        {
+          "fragment_sha256": "2945a972965f43b0dcbbe1968032ebba2387b9303ab3e4b29c65d130f097eb13",
+          "name": "completed",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+        },
+        {
+          "fragment_sha256": "c86c504c67824f89431baeb545b72af6b8bc232f2603646e4403620ad2fe2387",
+          "name": "mtvu-packet",
+          "source_file": "pcsx2/MTGS.cpp",
+          "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+        },
+        {
+          "fragment_sha256": "ab2cef98c8308bb8f33903e5332884505bdbc4f5551c314d37448a22c245105b",
+          "name": "execute",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+        },
+        {
+          "fragment_sha256": "2839ba70ccc8bd934d89b6fec441da3d66dff8f04c434055b9d3988f56d2bbf5",
+          "name": "unpack",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+        },
+        {
+          "fragment_sha256": "ec59820508440459e65704efe5f773b177a2fa7e16155afaf5ffac23f53b3fee",
+          "name": "micro",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+        },
+        {
+          "fragment_sha256": "af3fabdb926cf91422621393e3a32ab3087e8168ce628c9babe51df209687c67",
+          "name": "data",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+        },
+        {
+          "fragment_sha256": "548041525be30f0808d1813da4f734bd0e6b13d6ee722b05e9e139090bb1a2d5",
+          "name": "vi",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+        },
+        {
+          "fragment_sha256": "8905ca996aea5a4391e9879112d43d8e49afa86f44eb464cb034583cc845378c",
+          "name": "vf",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+        },
+        {
+          "fragment_sha256": "510634ffde5266f7befa7a277effb34ab5c2e77c340c59087a65c10a8fca256c",
+          "name": "col",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+        },
+        {
+          "fragment_sha256": "ad67fb36b384ccb32b7541c267cdaa5eef95f09e6c69f885098619bf9a7cc897",
+          "name": "row",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+        },
+        {
+          "fragment_sha256": "038850205529a4b70a8b9a18651d07be13a1954ce1071afd84aa6ec43a309576",
+          "name": "wait-vu",
+          "source_file": "pcsx2/MTVU.cpp",
+          "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+        },
+        {
+          "fragment_sha256": "1b9ebc87ab481a2fea3ac95889aae90a4213a893510e405ee8ae3964b423b051",
+          "name": "stop",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "d6a244fc8dc86a2d62a99627f92479ded01ab88e5d046d5168394e20bb0fe236",
+          "name": "before",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "522c801b7395b162d840d9b1adcc8ec1045fe300b03a76244ad582047ff719a9",
+          "name": "activity",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "dc55386bd4d9a34c175f4530e88f7922ed8a8bbaef88eae0015f28dc79cd99c2",
+          "name": "qt-slot",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "523ad7e2c30efc71a1685418f07d756c9c2e799b0a698e9a45e4e31fafe690b5",
+          "name": "qt-dispatch",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "a8dec112d348e41cce8f21dde2a306d2a91690ee915f088127254bda5b74e852",
+          "name": "locale",
+          "source_file": "pcsx2-qt/Translations.cpp",
+          "source_sha256": "e6427696451b650f87c93d707a5c78bbce0320814761e8ddd80730497c2c86ed"
+        }
+      ],
+      "harness_sha256": "c3cef244d924a5dac7d57d7715b281e394ad31f60c86458125fefdfb84d6e759",
+      "provider_application_executed": false,
+      "provider_functions_executed": 21
+    }
+  },
+  "harness_runs": [
+    {
+      "binary_sha256": "ec1291d8c83bb43ddd257cc2b2071d272b7560cd8e66ae24f6f607be128a6448",
+      "common_cases": 110,
+      "effects_digest": "71852b6e507507ad",
+      "locale_cases": 6,
+      "mode": "on",
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "e3756eee8165e332f0fd0d8230aa7539bb66d8b0174db53bf7457a879ef8ec26"
+        },
+        {
+          "action": "run",
+          "log_sha256": "d542c560451695e6318b0c99b4714851d77e726e2623c126d470992b44fcc1d9",
+          "receipt_sha256": "1ae4e57f9743317dfc5c980c9c6173873e571cc36ae47bb8b893c07500a98e87"
+        }
+      ],
+      "result": "PASS",
+      "thread_cases": 1
+    },
+    {
+      "binary_sha256": "c421cc7b2ee74d439bb1e60049fbaf298db1957d6fad41d7304ec777bd55dae6",
+      "common_cases": 110,
+      "effects_digest": "71852b6e507507ad",
+      "locale_cases": 6,
+      "mode": "off",
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "ee73381983081683370d982b18104fedc86910cfe40784c6cc5d7e951edaf0c0"
+        },
+        {
+          "action": "run",
+          "log_sha256": "c906324434c9b090547651cf3b6eb31a8c9ee32d7bf263f61a290c9b0de1d4d3",
+          "receipt_sha256": "8ec0706d8c9e3b47b20bb9fdf067a42064ef6180cf3c46fc2dfbc49b90bef815"
+        }
+      ],
+      "result": "PASS",
+      "thread_cases": 0
+    },
+    {
+      "binary_sha256": "00846901a26dc0841490a63dd5e7413173d79d4245b37a744834130adfddf66d",
+      "common_cases": 110,
+      "effects_digest": "71852b6e507507ad",
+      "locale_cases": 6,
+      "mode": "sanitize",
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "0730496e3c5e39061df6bf9d07c0de50ada03ac8445a47fd78a39fad13e2d11f"
+        },
+        {
+          "action": "run",
+          "log_sha256": "d542c560451695e6318b0c99b4714851d77e726e2623c126d470992b44fcc1d9",
+          "receipt_sha256": "83093f18f4708ef9a18e7ae78d611eabe09ba27c5ba93295a6613e8111cd2f3c"
+        }
+      ],
+      "result": "PASS",
+      "thread_cases": 1
+    },
+    {
+      "binary_sha256": "cdb1f03804ca2c53eea24d4511dec42bfdab1d851481d2ddce7c3063541f9e17",
+      "common_cases": 110,
+      "effects_digest": "71852b6e507507ad",
+      "locale_cases": 6,
+      "mode": "baseline",
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "10cecf3af9eceedd79fc94e330ce43f6efb480cc87ebbd7712fc2dfe21a58de3"
+        },
+        {
+          "action": "run",
+          "log_sha256": "c906324434c9b090547651cf3b6eb31a8c9ee32d7bf263f61a290c9b0de1d4d3",
+          "receipt_sha256": "8feb8246aad06e4b6b68e8d2cb78db674b80425ca44bb3cb87e03f710f7700ee"
+        }
+      ],
+      "result": "PASS",
+      "thread_cases": 0
+    }
+  ],
+  "host_ctest_rerun": false,
+  "initial_audit_failure": "system_python_missing_pycdlib_retried_with_existing_project_venv",
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-producer-entry/audit.py": "1dffc0dfd2131e1aad6e48744ab0097bc1814df184c6e01dfd53a2aaf3a9c11c",
+    "build/f02-07-producer-entry/compile_private.py": "45cb71c47b7ab3c3c60c3a0a47702943426782cf46090c3bef099b5002e02078",
+    "build/f02-07-producer-entry/make_harness.py": "e5ba38b47e76280c94aa29ef1ba13582e25724cec8982fe2828b47ec580023f9",
+    "build/f02-07-producer-entry/negative_controls.py": "db122548e74068e93a1e6270e22c793294cd10af2ca1c390ced97aa98e566364",
+    "build/f02-07-producer-entry/prepare.py": "fad13af11e86c50522f7c012dc5cfa08c54dcad5734c7d4b3d30e7dcc6f9f246",
+    "build/f02-07-producer-entry/run_harness.py": "546f49f215f069ed244ca6eec6e7568f47a4bb7f21c57b5c6b9957c1c0ee55cc"
+  },
+  "locale_comparison_excluded_from_common_digest": true,
+  "locale_off_behavior_intentionally_changed": true,
+  "negative_controls": [
+    {
+      "binary_sha256": "b3bdc187459ec6c631a8dfa6c71b8de318252a7e75a0cc03859dcade4fb879f6",
+      "changed_fragment": "blank.inc",
+      "expected_failure": "gifUnit.gifPath[1].readAmount==0",
+      "mutated_fragment_sha256": "f17cf04a660f71cc40c3375af051513095ca1a3fac5d72c3955064ee977bbfd1",
+      "mutation": "late-readAmount",
+      "receipts": [
+        {
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "107894f3935a09fd3667a39d0f5daef24f24310271530b43b13137672edec662"
+        },
+        {
+          "action": "run",
+          "exit_code": 1,
+          "log_sha256": "60ea70d30763c033fdb4026fa2a35fc474e33916d7ee0e27edcd8ed6e9f39557",
+          "receipt_sha256": "2df06c31edccd2b757d9e507639d9beed8c5896cbd6b3efc71659a5180f998e9"
+        }
+      ]
+    },
+    {
+      "binary_sha256": "e593eda52cf3b1b3eb5e68c2a854ca47b932b6e57d7e11ab4ad1bf0573d0f563",
+      "changed_fragment": "locale.inc",
+      "expected_failure": "packets.empty()",
+      "mutated_fragment_sha256": "ac28903e1042b3a89c9a23706f02da3e105f26d4f73ef5366619fa2e032318f1",
+      "mutation": "direct-ui",
+      "receipts": [
+        {
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "a9558373172f863db37b1cfa06af790243e3d5dcf33f2bfc4481d7d36f70820f"
+        },
+        {
+          "action": "run",
+          "exit_code": 1,
+          "log_sha256": "f16792d2e6990a1fd65a8feeac74b9042e5bca51e857dd7d63810cb272a58325",
+          "receipt_sha256": "0d401f5dce54c868292ce38ba86583ba8be680963123c8bd39250a877ba8f4b2"
+        }
+      ]
+    }
+  ],
+  "pine_socket_lifecycle_executed": false,
+  "preceding_custody_audit_sha256": "2128c8bf4bf493f7d651ce376ff446e8eb811e40830774062c1e2461ac58c716",
+  "preceding_custody_identical": true,
+  "prior_evidence_sha256": "2128c8bf4bf493f7d651ce376ff446e8eb811e40830774062c1e2461ac58c716",
+  "prior_private_sources_unchanged": true,
+  "private_patch_sha256": "d24af5aef1ffdb6927de4253882911af95411d9625bf1f25fbf42752a568a2ea",
+  "private_source_manifest_sha256": "cf932945ed9ce2b1510e574b2db23a8ae313410ea7976e8f2fe4d9de136fef00",
+  "producer_entries": {
+    "pcsx2/MTGS.cpp": [
+      "MTGS::StartThread",
+      "MTGS::ShutdownThread",
+      "MTGS::ResetGS",
+      "MTGS::PostVsyncStart",
+      "MTGS::InitAndReadFIFO",
+      "MTGS::WaitGS",
+      "MTGS::WaitForOpen",
+      "MTGS::WaitForClose",
+      "MTGS::Freeze",
+      "MTGS::RunOnGSThread",
+      "MTGS::GameChanged",
+      "MTGS::ApplySettings",
+      "MTGS::ResizeDisplayWindow",
+      "MTGS::UpdateDisplayWindow",
+      "MTGS::SetVSyncMode",
+      "MTGS::UpdateVSyncMode",
+      "MTGS::SetSoftwareRendering",
+      "MTGS::ToggleSoftwareRendering",
+      "MTGS::SaveMemorySnapshot",
+      "MTGS::PresentCurrentFrame",
+      "Gif_AddGSPacketMTVU",
+      "Gif_AddCompletedGSPacket",
+      "Gif_AddBlankGSPacket",
+      "Gif_MTGS_Wait"
+    ],
+    "pcsx2/MTVU.cpp": [
+      "VU_Thread::Open",
+      "VU_Thread::Close",
+      "VU_Thread::Reset",
+      "VU_Thread::Get_MTVUChanges",
+      "VU_Thread::KickStart",
+      "VU_Thread::WaitVU",
+      "VU_Thread::ExecuteVU",
+      "VU_Thread::VifUnpack",
+      "VU_Thread::WriteMicroMem",
+      "VU_Thread::WriteDataMem",
+      "VU_Thread::WriteVIRegs",
+      "VU_Thread::WriteVFRegs",
+      "VU_Thread::WriteCol",
+      "VU_Thread::WriteRow"
+    ]
+  },
+  "producer_exclusion_complete": false,
+  "provider_added": [],
+  "provider_application_executed": false,
+  "provider_application_linked": false,
+  "provider_changed": [
+    "pcsx2-qt/Translations.cpp",
+    "pcsx2/MTGS.cpp",
+    "pcsx2/MTVU.cpp"
+  ],
+  "provider_downstream_port_rejects": true,
+  "provider_pending_held_port_executed": false,
+  "provider_translation_units": [
+    {
+      "accepted": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "5fe5949a398ddae1a4e6e5eb57523a0330b30da83a54b643a1d44d4bde6058ca",
+      "producer_symbols": 1,
+      "receipt_sha256": "49b5bdded09622461fc98e332f97254d796c8273008cbad8f448f75e44130b51",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12",
+      "unit": "MTGS-on"
+    },
+    {
+      "accepted": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "3511fe9169ba2b513c18b08ae835e431215ee80286d16fadfed91c446b0a8ef8",
+      "producer_symbols": 0,
+      "receipt_sha256": "500145adaee487f1866d7d7786b5c0eb5d37e11c54fbc1ca8baf7d1708f25ef2",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12",
+      "unit": "MTGS-off"
+    },
+    {
+      "accepted": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "a8324e3f02e5c55970647a5600770b6f8d23d55ebe3b2f4955f3d712cb8864d9",
+      "producer_symbols": 1,
+      "receipt_sha256": "63e1f08936f325b5f0e7d06e70c9040f1ccaf81d28167b05066356d68ce6d21d",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae",
+      "unit": "MTVU-on"
+    },
+    {
+      "accepted": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "6b2cd9560f3fd32530dbb67ca82df3057ef605ca213d3c1a8a3272478ce89b0b",
+      "producer_symbols": 0,
+      "receipt_sha256": "32704dfb90ba3d6ea93e6d22df19045ac485292a182e592b9b443bc9a279e928",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae",
+      "unit": "MTVU-off"
+    },
+    {
+      "accepted": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "d274986abdf3cd60ef34673a70c82c57cd1128efb8462901fac4aaa1fdea326d",
+      "producer_symbols": 0,
+      "receipt_sha256": "7073bd0ab2d9d831b038732dcc35c2e83c4a98dc500dbcbf29c04634d82d2542",
+      "source_file": "pcsx2-qt/Translations.cpp",
+      "source_sha256": "e6427696451b650f87c93d707a5c78bbce0320814761e8ddd80730497c2c86ed",
+      "unit": "Translations-on"
+    },
+    {
+      "accepted": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "d274986abdf3cd60ef34673a70c82c57cd1128efb8462901fac4aaa1fdea326d",
+      "producer_symbols": 0,
+      "receipt_sha256": "f147909565511b9242302adfb35401afeaa6b027ac7d798c37f0550b71e369b5",
+      "source_file": "pcsx2-qt/Translations.cpp",
+      "source_sha256": "e6427696451b650f87c93d707a5c78bbce0320814761e8ddd80730497c2c86ed",
+      "unit": "Translations-off"
+    }
+  ],
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-producer-entry.md": "a982df3a48ef47fd5d0de717110a7adecfe2cb9d7dcc8e58709ac8ddfc53d93d",
+    "schemas/producer-entry-v1.md": "ab88c122514ace78c7f849b55686d27b716d9dd5919a15bd9cdc2336e6ccba54",
+    "tests/fixtures/pcsx2-producer-entry/README.md": "dcd03e4af84a9b0acf35eb16c10a0a817ed90def57cc1e1ad499f98bd4cf79d7",
+    "tests/fixtures/pcsx2-producer-entry/harness.cpp": "c3cef244d924a5dac7d57d7715b281e394ad31f60c86458125fefdfb84d6e759"
+  },
+  "python_full_suite_rerun": false,
+  "read_events_produced": 0,
+  "remote_ci_executed": false,
+  "resource_links": [],
+  "schema_version": 1,
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_files_verified": {
+    "source-admission-v1": 2949,
+    "source-baseline": 2934,
+    "source-cpu-boundary-v1": 2953,
+    "source-dma-v2": 2945,
+    "source-host-v1": 2945,
+    "source-jit-cache-v2": 2945,
+    "source-lifecycle-v1": 2947,
+    "source-lifetime-v2": 2945,
+    "source-observer-v2": 2941,
+    "source-pine-coordinator-v1": 2955,
+    "source-pine-exclusion-v1": 2951,
+    "source-producer-entry-v1": 2957,
+    "source-retained-drain-v1": 2957
+  },
+  "source_id": "SRC77",
+  "status": "cpu_producer_entries_guarded_qt_dispatch_and_worker_retention_pending",
+  "synthetic_pending_held_port_executed": true
+}

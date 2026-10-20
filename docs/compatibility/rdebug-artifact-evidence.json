@@ -1,0 +1,468 @@
+{
+  "admitted_execution_modes": [],
+  "archive_members_inspected": 409,
+  "artifact_rdebug_absence_supported": true,
+  "binaries": [
+    {
+      "file": "Contents/MacOS/PCSX2",
+      "rdebug_matches": [],
+      "sha256": "e76d1e79ff017914bbcbd8d6488eab373041df687deb314e4da02e12be98b254",
+      "symbol_lines": 34158
+    },
+    {
+      "file": "Contents/Frameworks/libavformat.62.dylib",
+      "rdebug_matches": [],
+      "sha256": "026e8b93788628275cc2f4a4a7552ccae2bbd89a6eb755bac244e1a801be656a",
+      "symbol_lines": 618
+    },
+    {
+      "file": "Contents/Frameworks/libQt6Svg.6.dylib",
+      "rdebug_matches": [],
+      "sha256": "0c840e8600ab0baacdf755e942594ec6e98f03936e72a8764ecd1fefad27ede2",
+      "symbol_lines": 2174
+    },
+    {
+      "file": "Contents/Frameworks/libQt6Core.6.dylib",
+      "rdebug_matches": [],
+      "sha256": "1ff89e8e6c6cf435b1e4bc7f66b0dcd43673833f901c0ed96fcd74956e220221",
+      "symbol_lines": 30858
+    },
+    {
+      "file": "Contents/Frameworks/libpng16.16.dylib",
+      "rdebug_matches": [],
+      "sha256": "92dbace5c0ecfdb579fc6689da7562b14907c029010b02ce4c15c489e9ac6ff8",
+      "symbol_lines": 561
+    },
+    {
+      "file": "Contents/Frameworks/libQt6Gui.6.dylib",
+      "rdebug_matches": [],
+      "sha256": "158099a6d15f82bbded9be36cec9c230ea6cd8151559a95cce915fddf1a8913c",
+      "symbol_lines": 32898
+    },
+    {
+      "file": "Contents/Frameworks/libSDL3.0.dylib",
+      "rdebug_matches": [],
+      "sha256": "521a32eb9276b0baf834514fb183c496e04a2c4af92f5b4d6a18a82382da3dc8",
+      "symbol_lines": 7081
+    },
+    {
+      "file": "Contents/Frameworks/libswresample.6.dylib",
+      "rdebug_matches": [],
+      "sha256": "b7a0094fc61aab0e276f3f85ae3489aed8d7ec9f3369402bbe28f9b635c6b792",
+      "symbol_lines": 64
+    },
+    {
+      "file": "Contents/Frameworks/libplutosvg.0.dylib",
+      "rdebug_matches": [],
+      "sha256": "c0fc0aff90713023fe433a75e556183a646259c660c661b3c559e5fc35bd0f51",
+      "symbol_lines": 115
+    },
+    {
+      "file": "Contents/Frameworks/libplutovg.1.dylib",
+      "rdebug_matches": [],
+      "sha256": "1d2065d34ac916abdc3ffd02261594fc85e7c0e08de8dc2cee435fbdb7a7a203",
+      "symbol_lines": 485
+    },
+    {
+      "file": "Contents/Frameworks/libfreetype.6.dylib",
+      "rdebug_matches": [],
+      "sha256": "d0bbdaa4b252712a0096f11f99a505949b43fe0ddd13f38d1079b70a904367fa",
+      "symbol_lines": 1816
+    },
+    {
+      "file": "Contents/Frameworks/libsharpyuv.0.dylib",
+      "rdebug_matches": [],
+      "sha256": "0258418f95d3c5969327be4598a8d9d5f7c5b3502eb9c456e96fc16fe178f588",
+      "symbol_lines": 47
+    },
+    {
+      "file": "Contents/Frameworks/libavcodec.62.dylib",
+      "rdebug_matches": [],
+      "sha256": "d8a5bd08df41e3bdd3f00fd8a28339d33aa5b46aed8ba723c64a0c84e290f987",
+      "symbol_lines": 588
+    },
+    {
+      "file": "Contents/Frameworks/libMoltenVK.dylib",
+      "rdebug_matches": [],
+      "sha256": "1970075a8820acc236c27b577980982aaf389f94273ccce107d344f334a57400",
+      "symbol_lines": 14838
+    },
+    {
+      "file": "Contents/Frameworks/libwebp.7.dylib",
+      "rdebug_matches": [],
+      "sha256": "9f61ddc5a79ba90a6af7cfd9a3f3a52f11e17c223839985564c1c8d3a7802907",
+      "symbol_lines": 1070
+    },
+    {
+      "file": "Contents/Frameworks/libshaderc_shared.1.dylib",
+      "rdebug_matches": [],
+      "sha256": "142dd8b116da8e5096d7e44747371119333659f28a28e236aafaff18c2e6c462",
+      "symbol_lines": 12854
+    },
+    {
+      "file": "Contents/Frameworks/libwebpmux.3.dylib",
+      "rdebug_matches": [],
+      "sha256": "146d0dc2ad519873803d4f24405722c16ec20ee53cf6c40b746296657bd715e6",
+      "symbol_lines": 106
+    },
+    {
+      "file": "Contents/Frameworks/libQt6Widgets.6.dylib",
+      "rdebug_matches": [],
+      "sha256": "c7de3ac159cc05cc5f817c0c9b26f907393fb7c30a97abc9cd67f380616c94d5",
+      "symbol_lines": 33463
+    },
+    {
+      "file": "Contents/Frameworks/liblz4.1.dylib",
+      "rdebug_matches": [],
+      "sha256": "d5c006d2468585dc05bd8081b27465d9ee89b35bde744ffe7170fe5a18228d53",
+      "symbol_lines": 186
+    },
+    {
+      "file": "Contents/Frameworks/libwebpdemux.2.dylib",
+      "rdebug_matches": [],
+      "sha256": "2244a88df80775567f099297ba4ed1929c675134f14f2fea284dd21ad15b71e9",
+      "symbol_lines": 39
+    },
+    {
+      "file": "Contents/Frameworks/libzstd.1.dylib",
+      "rdebug_matches": [],
+      "sha256": "43df7665b443a7fe59d2f881b97650b1a7910016a6a3d071f4710d64ce6bd387",
+      "symbol_lines": 997
+    },
+    {
+      "file": "Contents/Frameworks/libkddockwidgets-qt6.3.dylib",
+      "rdebug_matches": [],
+      "sha256": "1950fcf661a5b741a6b82ed27118e5a53647b684158e81471519ffd013f662d6",
+      "symbol_lines": 9598
+    },
+    {
+      "file": "Contents/Frameworks/libjpeg.62.dylib",
+      "rdebug_matches": [],
+      "sha256": "9084efcbe370307f00171ecb277e6adf969a7b15855f4ff5de4924a61d5b97da",
+      "symbol_lines": 1905
+    },
+    {
+      "file": "Contents/Frameworks/libharfbuzz.dylib",
+      "rdebug_matches": [],
+      "sha256": "c6a264ecd8ff34f29d27c63294cf757c18f73687f876ab89b6e6a4d7fe310ed5",
+      "symbol_lines": 2654
+    },
+    {
+      "file": "Contents/Frameworks/libryml.0.12.1.dylib",
+      "rdebug_matches": [],
+      "sha256": "df44311e5a8726a7506ad071d42b0bc4dc4af37bc8de6901ae09b02985b84b57",
+      "symbol_lines": 861
+    },
+    {
+      "file": "Contents/Frameworks/libswscale.9.dylib",
+      "rdebug_matches": [],
+      "sha256": "c41f113d58384545c59560c433b1a48dbbb1693fcee6dfe5f25fe352bd0ac6c0",
+      "symbol_lines": 120
+    },
+    {
+      "file": "Contents/Frameworks/libavutil.60.dylib",
+      "rdebug_matches": [],
+      "sha256": "15471a31cff7ce914dc02c1d7b264fa7662c284af7f15d8722fe9520758c378e",
+      "symbol_lines": 800
+    },
+    {
+      "file": "Contents/PlugIns/platforms/libqcocoa.dylib",
+      "rdebug_matches": [],
+      "sha256": "431c8d5a18eb943b3a8937d0aa0703ec2f8ab9c1274723fab791e61b5c9f264b",
+      "symbol_lines": 5853
+    },
+    {
+      "file": "Contents/PlugIns/styles/libqmacstyle.dylib",
+      "rdebug_matches": [],
+      "sha256": "0a19751fbe5c95afe28abefc77aac4e7c86030f9e422d2f4f505e9587d0a9983",
+      "symbol_lines": 1236
+    },
+    {
+      "file": "Contents/PlugIns/iconengines/libqsvgicon.dylib",
+      "rdebug_matches": [],
+      "sha256": "1c55fe06c32f39645f86360901bb8634ba0ae8912ff245ff07fdcbb1fa028b6e",
+      "symbol_lines": 197
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqgif.dylib",
+      "rdebug_matches": [],
+      "sha256": "50892e7b7b8701d3e3e0ed1ca133f66204b844e6ea430fd0ff367b8be77589dc",
+      "symbol_lines": 170
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqwbmp.dylib",
+      "rdebug_matches": [],
+      "sha256": "5763f5007696c19d51a3a023b49aa660cdfcab122809859c6bb6f4963b255bcd",
+      "symbol_lines": 118
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqwebp.dylib",
+      "rdebug_matches": [],
+      "sha256": "70d07a8f6eeecc8613eb36d62cbd94e48a21e5c8cb30390b77f6abbcbc07b479",
+      "symbol_lines": 175
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqapng.dylib",
+      "rdebug_matches": [],
+      "sha256": "6a3174242597061c901236d3e989c1328a3dfd4a4689f294c4f1c12a1f9e8162",
+      "symbol_lines": 249
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqico.dylib",
+      "rdebug_matches": [],
+      "sha256": "5f08272c5cebcbe3a30c83b44db09556d78b83b8baa711cded4c490937df8944",
+      "symbol_lines": 207
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqmacheif.dylib",
+      "rdebug_matches": [],
+      "sha256": "12ee29fcf4ce1c463a3fdbafeda1abe85ff694e901de6311ea4de6b1f1962418",
+      "symbol_lines": 223
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqjpeg.dylib",
+      "rdebug_matches": [],
+      "sha256": "fa7d79af19684a430d9ad42a1e489d0a0aefaededafadd8f000050b3b033abff",
+      "symbol_lines": 323
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqtiff.dylib",
+      "rdebug_matches": [],
+      "sha256": "f0b6295d6315dbbbda562228e76165d4a7f43ef45baeff7ccefaa1090af2fc89",
+      "symbol_lines": 977
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqsvg.dylib",
+      "rdebug_matches": [],
+      "sha256": "81c738e9ef0f6ad9671f374679f6dbe1a571fdf0665d8c322f14caa5ec6ab260",
+      "symbol_lines": 137
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqicns.dylib",
+      "rdebug_matches": [],
+      "sha256": "40d023fd673f1f07f4888cfbe8d1445f2e982d2d764c25dd104b68fe2aa882ae",
+      "symbol_lines": 157
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqtga.dylib",
+      "rdebug_matches": [],
+      "sha256": "5a1917ae1c3771e5a27494123b8218af483477e5598ee46dff64e76fede760dd",
+      "symbol_lines": 131
+    },
+    {
+      "file": "Contents/PlugIns/imageformats/libqmacjp2.dylib",
+      "rdebug_matches": [],
+      "sha256": "9109436f90e042d7272eab5afe0e67bc276d36ad1a8894b79197027bb2657e5e",
+      "symbol_lines": 220
+    }
+  ],
+  "candidate_executable_sha256": "e76d1e79ff017914bbcbd8d6488eab373041df687deb314e4da02e12be98b254",
+  "capabilities": [],
+  "classified_input_sha256": "e41697d05d21e1e7064d02d361db725e9bed4e3483c6b5bfab6dbe0d690cc50d",
+  "cmake_sha256": "96ef6231b23c09effb68df860712d20822542c88cab7163aa8f37d8f03cc376e",
+  "cmake_source_variable_occurrences": 1,
+  "compilation_entries": 825,
+  "compile_commands_sha256": "be1ae722f0d4740caa349be9d7149500271a10c0626eb081e9b018210e341dbf",
+  "completed_tasks": [
+    "RD-T1",
+    "RD-T2",
+    "RD-T3"
+  ],
+  "date": "2026-10-18",
+  "declared_sources": [
+    "RDebug/deci2.cpp",
+    "RDebug/deci2_dbgp.cpp",
+    "RDebug/deci2_dcmp.cpp",
+    "RDebug/deci2_drfp.cpp",
+    "RDebug/deci2_iloadp.cpp",
+    "RDebug/deci2_netmp.cpp",
+    "RDebug/deci2_ttyp.cpp"
+  ],
+  "dependency_files_verified": 806,
+  "dependency_inventory_sha256": "d30a6abfe23bc9e2d9b41c3cecd95b324144801891eb031ce6693d3ae05295a9",
+  "inspection_sha256": "3db21523c2f1349d36875ba292c059163f31741ae2f43feb5d0172d2b52315ca",
+  "installed_application_modified": false,
+  "link_archive_count": 19,
+  "link_command_sha256": "4ac63f35d4cd3a4e5c54720cf562c2d18fb4aa8d78e79aa6882c1f64c4792a07",
+  "link_input_inventory_sha256": "4fcb09495436209103cceed5fabf0e3802dcb24c047db565b3e70db770cc8c75",
+  "link_object_count": 403,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-rdebug-artifact/audit-v2.py": "c6cf40e39a08fd717f4450a13db79642844471a1a7c2f68aedc735cd69bb8158",
+    "build/f02-07-rdebug-artifact/audit.py": "b3864bb7a510ec115b894ee6897878abf06f9e1eae2dd25bfd74c2829217a61f",
+    "build/f02-07-rdebug-artifact/inspect.py": "79012f1aa91ca55fb928c8ca88dd7a64cfe5a101f3a7467af0af6820f093be8e"
+  },
+  "negative_controls": [
+    {
+      "mutation": "source",
+      "reasons": [
+        "compiled_rdebug_source"
+      ],
+      "rejected": true
+    },
+    {
+      "mutation": "object",
+      "reasons": [
+        "linked_rdebug_object"
+      ],
+      "rejected": true
+    },
+    {
+      "mutation": "dependency",
+      "reasons": [
+        "rdebug_dependency"
+      ],
+      "rejected": true
+    },
+    {
+      "mutation": "symbol",
+      "reasons": [
+        "rdebug_symbol"
+      ],
+      "rejected": true
+    },
+    {
+      "mutation": "missing",
+      "reasons": [
+        "incomplete_or_failed_tool"
+      ],
+      "rejected": true
+    },
+    {
+      "mutation": "failed",
+      "reasons": [
+        "incomplete_or_failed_tool"
+      ],
+      "rejected": true
+    },
+    {
+      "mutation": "positive",
+      "reasons": [
+        "missing_positive_control"
+      ],
+      "rejected": true
+    }
+  ],
+  "next_tasks": [
+    "artifact-process-identity",
+    "profile-integration",
+    "B3-C/B4",
+    "CQ3-C/D",
+    "CQ-4",
+    "AD-3"
+  ],
+  "positive_symbols_verified": true,
+  "preceding_evidence_sha256": "a2a567e42175dcf1868cf875f6c9f0f086ef8304ae8824f0ca8594d792abc144",
+  "previous_private_history_verified": true,
+  "previous_public_inputs_verified": true,
+  "production_profile_changed": false,
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-rdebug-artifact.md": "92fbdc759e9181f846a906e125ee85e0af1ac29b372c670c76d93d9a79f0604a",
+    "schemas/rdebug-artifact-v1.md": "919a8f5f249f008cefc0b45674f7d330c4a2948a294278bf1f3f114b2bac5bb2"
+  },
+  "rdebug_compilation_entries": 0,
+  "rdebug_files": {
+    "pcsx2/RDebug/deci2.cpp": "d82fc65cf01c5e2a1c9e2150e3e81dc8d550ba9ae88c395519c11c65c53381a3",
+    "pcsx2/RDebug/deci2.h": "413a121e44aff54796e2204ed9c46758e69117559327d9fd06ac044e4972c343",
+    "pcsx2/RDebug/deci2.txt": "ebe2cc9d2d00b078f86e7deb6bba7150817ec306420294558e62e56f07cc6457",
+    "pcsx2/RDebug/deci2_dbgp.cpp": "2d09e94ed736985a09a15e8bc82238d3c622b06309c83bbba54ebd95c2830215",
+    "pcsx2/RDebug/deci2_dbgp.h": "e4df09bb5de38f9ad330e341b1931921fdfae6b513c5d59d441bc6a472d818d0",
+    "pcsx2/RDebug/deci2_dcmp.cpp": "321dfa0922c6114788aa444e4c034a2b9db9c2450265622d6a08b1d2ba9c25eb",
+    "pcsx2/RDebug/deci2_dcmp.h": "bdf35f8451862c9d204db683f321c9fda6e39bfcf971ec6ce3e423756f63131b",
+    "pcsx2/RDebug/deci2_drfp.cpp": "ed01deaf00f5a95cf945291b12b8fbbae27c0264bac67507b07419f94daae1c7",
+    "pcsx2/RDebug/deci2_drfp.h": "5dd86150b0e109edcfe77270d7fe1b9b9df8997e553a08f7f51395275c83219e",
+    "pcsx2/RDebug/deci2_iloadp.cpp": "8431f94291d1942c996f97e88ea207e34f3ec6e9e76d9c5e3f500650e9066e21",
+    "pcsx2/RDebug/deci2_iloadp.h": "b9d01c791d8ae3f9f9017c4110542b2bd0b974663e8c5c069deb299401fe9b14",
+    "pcsx2/RDebug/deci2_netmp.cpp": "3023efcb28e0b7b7b9b453013e97b74a9e2c2c54e050edf7ee593b93c4458fcb",
+    "pcsx2/RDebug/deci2_netmp.h": "2b793f95b943396a8201dcef7b86590d755256ed109492704f5ee54f98983076",
+    "pcsx2/RDebug/deci2_ttyp.cpp": "e2741f196bc25045adc04c669ec607e8fbccaaa359fcc6cffdc414743a8fe307",
+    "pcsx2/RDebug/deci2_ttyp.h": "459e8860589118b54f3948c7d3cc3c71e2832b1498990625b9ff8fdfca61eb2e",
+    "pcsx2/RDebug/iloadp.txt": "f04927efff49850d950cd2fecd1a0201eeabe84300d66232914351ac5b36c6be"
+  },
+  "read_events_produced": 0,
+  "resource_links": [],
+  "runtime_identity_bound": false,
+  "schema_version": 1,
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_id": "SRC89",
+  "source_manifest_sha256": "d024cf6262f7560e25c6333eaf26c3bcfe363b026dfed1800561c1490ba7bb34",
+  "source_modified": false,
+  "specific_symbols": [
+    "D2_DBGP",
+    "D2_DCMP",
+    "D2_ILOADP",
+    "D2_NETMP",
+    "sendDCMP",
+    "sendBREAK",
+    "sendTTYP",
+    "exchangeSD"
+  ],
+  "status": "rdebug_artifact_absence_audited_runtime_binding_and_global_admission_pending",
+  "tool_logs_sha256": {
+    "ar-0": "cb80e5303e0c9e9abac23ff7a7ddaf288cd0eca7e06f2905be4edcd7f14b721b",
+    "ar-1": "cb80e5303e0c9e9abac23ff7a7ddaf288cd0eca7e06f2905be4edcd7f14b721b",
+    "ar-10": "6259bdfae146b79f025253055dbfe1010f6bce97fb9b33d66e268931dbaa48ba",
+    "ar-11": "838dd944ef65d3e77efddeed34ddbfd6898058443fe284fafc92ab982e1dd57f",
+    "ar-12": "466054d928ac0677566cc7aa4763b331bb89257039bccc3baba6913511fb2739",
+    "ar-13": "4a30494ce9b61f9fe49926efb067f809936d5e6582f8df72e61a09825d24803a",
+    "ar-14": "00a5b0708d72200856b3abedc6d18c9db64e3910dc3baccf3380361a2c3a55f6",
+    "ar-15": "5c6552a0286fe7d2dce18bde09f4acc5ac5dbdb2878d2e0a782a14c917b99860",
+    "ar-16": "f277bdd298d26f6664daa862029e3290c7fa8c231ffe100db281d3d7cc736b04",
+    "ar-17": "542e573c181c3e15a7377e90438c6afecfe4191411cf738d84a2c4e941b2d1f4",
+    "ar-18": "062db2d3eea4f7935746d8949ab9e1f3a02333a33d9cbc40645abb9d7d4ed49a",
+    "ar-2": "cb80e5303e0c9e9abac23ff7a7ddaf288cd0eca7e06f2905be4edcd7f14b721b",
+    "ar-3": "bccc86b2090081817fb6cd24d97c30941293d02e72b7cb61e548b5b701a2ae23",
+    "ar-4": "4dec7587acb4c7fb27bfe0c48113deebc14eba474b5407d827a2d87b97e183bb",
+    "ar-5": "2a561fe077dcac648725beca33e25d7d9ed530d2cd6aee97d04186d8997d3928",
+    "ar-6": "d5737840236f83607904eed36910e9e814db7c60d3bd7668cf2258fab12c8ed9",
+    "ar-7": "24b2eda7567bf925bec3735f8a450e6561fafb7fa4582623fbc1c608d2081314",
+    "ar-8": "d9d3577542bfabac795dc8e6284923fc0d8dc912c684b600c83ed0f8096d0fd6",
+    "ar-9": "e158f00bfebc6073d597dbe99285ca57859e56e51e4da68b8bc817265ccc2ae0",
+    "nm-0": "99a0e329ec453ba8672c7c4d74da75a965932ae17a9f9faa78dca6fd46f92e88",
+    "nm-1": "3b63f65d3124d61b9cc2aacce177b23aaba111a6565d7e8216be4b4b2c1ac5e9",
+    "nm-10": "a7dc33269db47733c482cbaa4bda09aaf66f66c722f719c5c02239fb655084db",
+    "nm-11": "7ef805fd8e1a9175fec0779094715713be2309280f61122918f02bcc2f42df99",
+    "nm-12": "92f455c09fae34d84612fe269ada11c6b90896177685bc6ad854a9f9a16e52f0",
+    "nm-13": "a39040464d1ff8976fb6f795b4f8b1f9388e4ad4341c34d73cbf65d101b54bfb",
+    "nm-14": "8abb16bb2ec4a0c01cc4f3742d437b775574d2886b16fb2593212ab10743f1c6",
+    "nm-15": "829c15e547f4beea6156da8e9dd3f2472253e8f33044d204b5ded13e83220c5c",
+    "nm-16": "c8de9b57a73aaaab2b7f15e961ab273e087da1fd1d089dbbaee76b011add9df8",
+    "nm-17": "560c748843f4f4f8121173e3a64e42e368c8521c03d5e25d2549a8501d04c03d",
+    "nm-18": "77125ede7b6342bdd39a2f4306c3f7e58d754a3a0e91887b960ef38a1bd8de12",
+    "nm-19": "21aa3ad95292c29c3e05fbab6e137200bc2cdb108ec461fd9dd219779a0fe6db",
+    "nm-2": "6c452b7d2cb2263cb08b15d96094ab484493805556f8e6c2c5c427288b487d22",
+    "nm-20": "a3b1b3b4381255fa99b2b8d0e96f7fa19012b5b8fd3aba9e8bc01f1696c28926",
+    "nm-21": "0facb6c3d635e99e477a5544c9e372707a013b4042f341d6911cc87047efee7e",
+    "nm-22": "7e4b591935541ea8f5293fec385d0b3b408f91ac832b72c68b90abf2362b17c1",
+    "nm-23": "a10f63c5bd41e6ff3e7558e1a6c8c27c30dc499cf21e2f3f2baa5cc700fe0127",
+    "nm-24": "88506d971892da92dd383aac5f00f6755f2c36cb0d21fb02ec2573e3ea6bc209",
+    "nm-25": "2c3587083c37696181431fdfb3561ec1e728195a30f591cb9a2fc0d447e275ec",
+    "nm-26": "46a7887c418ba3fbb6dbc7b3780662fe903dd28944a666f2bb5fd210951f5a70",
+    "nm-27": "49f72b647f42fc1d35966597f8bb839bd60f317eb57d9ec64b2554eab4a5b31a",
+    "nm-28": "3a6e8c3e58af6d22502b5a58f04cdfe8df474627478986db6e28f44eb75a07a2",
+    "nm-29": "7976e3d92f5657fb8d450b182db1e44726c0f85e0ed1346f7016ad7e9881aa69",
+    "nm-3": "f26f6bcb8a62187ed375df40049756267ef355b56206e17be84e4d82f04c24d5",
+    "nm-30": "5185dcf85e38799bfd884e0085263ea15863c976dc31a5f3195b5794132de0d8",
+    "nm-31": "0ae56a968a16aed3d9ad1f8324819cad755c735ac3ed834056b55cd3cfabf69c",
+    "nm-32": "c9b54061c5c982349b8123c263f22abecf87adf7c57e873924e775e2ee437323",
+    "nm-33": "bb9a7968357786a6ced85a865db6d92b5ef5002072148969f524e31968cfef70",
+    "nm-34": "87e667756b6ca89a9e0369e95b36e7b61bb1d7e6b4ad471d615a94d0771500b8",
+    "nm-35": "5cebcd67fb52205e7b1ee0e1671edffa30c704befbac8911f383186eae69e479",
+    "nm-36": "d9eddae5b6f8df3eae8df403367b012eb6628b8416583442cfde92af88c16d54",
+    "nm-37": "3ba8142dce98a864628f0fc79cb27f444c81f297c6286cde71360d2b28d67f5d",
+    "nm-38": "bfdaaf3abfaaf5e41488a32d7a969ab18cd43b8e5b0166dd51ebd6f8f92121c0",
+    "nm-39": "70d1dc08e832e02bd3b0b290e828c31a6b90c011ad51d23cf1c7d13509dc1d3c",
+    "nm-4": "432a79d4faa51bd1ad454e322e816a72c49bd821bab6e82da01a4d9ca07f75e3",
+    "nm-40": "f52749924f506424d28914cc46729061de8f00db46277c830395ca342b347b29",
+    "nm-41": "e173fe833bee9a783df55917ff74e66c7c0986c7067e1cb0839cb863f2c1c2a3",
+    "nm-5": "e3f1b4bc69bb5fd48d3b8de5eab2b097cdd4de28caf57928786dc4c224c41233",
+    "nm-6": "ebb238500277f616ecbd8920f6bae24e2205dc20991d7113924ed0896327aaf9",
+    "nm-7": "f554c0fb30660206984ff18c957b1834defc954951bb43710af583b92f437b5b",
+    "nm-8": "9ffb3f6b8c0de64b74796f7eb4c905c8a0dc9e96739cc42f00087b62f767c71c",
+    "nm-9": "629f19d463665025cde641d0f984ccf8586f4d8ffb76e171b9aa8a04feb29b6e"
+  },
+  "tool_receipts_sha256": "2b987f2690a7f33c7f1a86451605cc0a1b4cf0ea528fb022d1874325bb71d40a",
+  "tool_result_count": 61,
+  "tools_all_succeeded": true,
+  "vm_executed": false
+}

@@ -1,0 +1,733 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC71",
+  "task": "F02.07/LP-C/LG-I2/AD-1",
+  "stage": "admission_diagnostic_verified_effect_exclusion_and_production_integration_pending",
+  "contracts": [
+    "schemas/admission-profile-v1.md",
+    "schemas/lifecycle-probe-v1.md",
+    "schemas/lifetime-guard-v1.md"
+  ],
+  "units": {
+    "AP_T1": "complete_scoped_diagnostic_batch",
+    "AP_T2": "complete_scoped_diagnostic_batch",
+    "AP_T3": "complete_scoped_diagnostic_batch",
+    "AP_T4": "complete_scoped_diagnostic_batch",
+    "AD_1": "partial_diagnostic_implemented_no_production_caller",
+    "AD_2": "pending_effect_exclusion",
+    "AD_3": "pending_identity_and_endpoints",
+    "AD_4": "pending_vm_and_cost",
+    "LG_I2": "partial",
+    "LG_I3": "pending",
+    "LG_I4": "partial_no_vm_integration",
+    "LP_D": "pending"
+  },
+  "provider_audit": {
+    "admitted_execution_modes": [],
+    "capabilities": [],
+    "condition_count": 18,
+    "continuous_lifetime_verified": false,
+    "cpu_thread_and_execute_scope_tested_with_doubles": true,
+    "effects_digest": "df3df8e1e5d72d1b",
+    "effects_equal_across_modes_and_previous_functions": true,
+    "global_memory_effect_serialization_verified": false,
+    "harness_inputs": {
+      "baseline": {
+        "architecture_specific_initialize_branches_executed": false,
+        "doubles": [
+          "configuration_and_CPU_objects",
+          "allocation_and_subsystems",
+          "PINE_status",
+          "thread_performance_helpers",
+          "achievements",
+          "GS_shutdown",
+          "VIF_constant_matches_pinned_source"
+        ],
+        "expected_cases": 34,
+        "fragments": [
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "c493255ad300613884b91dd0095d4396035809200ed953c24b2449593b172c96",
+            "name": "initialize",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "8c1af62eb9bf18f516639aaa9e070ef5c32c92ae508f698d0a7c24b22ee81b8e",
+            "name": "shutdown",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "a24d14abb403514beeb7806b35488ee5a7e1bda1df91affeac38c0f50efea249",
+            "name": "execute",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "b125b4b85200ee421e9d3fc476518b82d9c7127218c76bf2c75dda575c974b9e"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "aece9461c3df1151aeb226c381179fa755dcf185c343b0f220850bb235763280",
+            "name": "scoped-guard",
+            "source_file": "common/ScopedGuard.h",
+            "source_sha256": "50872a36f592f310485b3fae0b5a49b07c649584b1f10ca3a9dd8ede41aba455"
+          }
+        ],
+        "harness_sha256": "6cccdf26e03e71aa6189faca9a57a333181bef39adc933d0cdd899d2c59a30d2",
+        "private_empty_off_stubs": [
+          "sample",
+          "thread-state"
+        ],
+        "provider_application_executed": false
+      },
+      "new": {
+        "architecture_specific_initialize_branches_executed": false,
+        "doubles": [
+          "configuration_and_CPU_objects",
+          "allocation_and_subsystems",
+          "PINE_status",
+          "thread_performance_helpers",
+          "achievements",
+          "GS_shutdown",
+          "VIF_constant_matches_pinned_source"
+        ],
+        "expected_cases": 34,
+        "fragments": [
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "401d0e52f9dc3fc66e3b217a1a5dd8130dba9d3884b8b86e587a2f96268da111",
+            "name": "initialize",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "44a164ea22164779a0dfa2e165447d4da2fcab87a922bde1fb3630fe495e703d",
+            "name": "shutdown",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "fd8d14f76381a944a4230e54ddfdd9549b16edc73e1a55dcf865df2443a512eb",
+            "name": "execute",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "aece9461c3df1151aeb226c381179fa755dcf185c343b0f220850bb235763280",
+            "name": "scoped-guard",
+            "source_file": "common/ScopedGuard.h",
+            "source_sha256": "50872a36f592f310485b3fae0b5a49b07c649584b1f10ca3a9dd8ede41aba455"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "95c484075fb0c5d20bf968aefc6dea19c319a649289d4d3f3e4d549b2adc2cea",
+            "name": "sample",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84"
+          },
+          {
+            "body_copied_exactly": true,
+            "fragment_sha256": "87290586bbb9a2547619f83613898631d1485dc4e7874f83f3e1118bade03921",
+            "name": "thread-state",
+            "source_file": "pcsx2/VMManager.cpp",
+            "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84"
+          }
+        ],
+        "harness_sha256": "6cccdf26e03e71aa6189faca9a57a333181bef39adc933d0cdd899d2c59a30d2",
+        "private_empty_off_stubs": [],
+        "provider_application_executed": false
+      }
+    },
+    "harness_runs": [
+      {
+        "accepted": true,
+        "binary_sha256": "8144099b04d8c78021c628dc88befe02041e2275902ed8dc85dd51431bf6bb7d",
+        "cases": 34,
+        "log_sha256": "18233ed8d8fe8c09b3e5a20ab0a5798a65f7e3e07a9d6208f4de1a62eb08e2ce",
+        "mode": "on",
+        "receipt_sha256": "f453402beb3844e66030fde35fb34f816d2b672dd9d01efa981e9e4d5127a12f"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "f4b3fbb4ac277e3d572e24e341dd275bad54c91f87765ce2d7c50a007e1f0056",
+        "cases": 34,
+        "log_sha256": "18233ed8d8fe8c09b3e5a20ab0a5798a65f7e3e07a9d6208f4de1a62eb08e2ce",
+        "mode": "off",
+        "receipt_sha256": "17a48394bdee0ccd5fdface3a7b488d1ec39645e23cff36759026e2150f9eac5"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "07e68716f43b86ca7e520c03a54566944936f282c6e24f3f89a7bf5bb69829aa",
+        "cases": 34,
+        "log_sha256": "18233ed8d8fe8c09b3e5a20ab0a5798a65f7e3e07a9d6208f4de1a62eb08e2ce",
+        "mode": "sanitize",
+        "receipt_sha256": "339c892ab57013b1398493bec35a416ad6b59b4890efc6c72b3b9cae3b6be954"
+      },
+      {
+        "accepted": true,
+        "binary_sha256": "79aa8e94c910cc2ddcf07bcb15b044bc1694e1c7208a60f046e9269e26cf7275",
+        "cases": 34,
+        "log_sha256": "18233ed8d8fe8c09b3e5a20ab0a5798a65f7e3e07a9d6208f4de1a62eb08e2ce",
+        "mode": "baseline",
+        "receipt_sha256": "d34f853a736504a7f51d327c53390ed31e6c2f5ef8f8dc33339c4805241ff918"
+      }
+    ],
+    "historical_public_inputs_verified_with_snapshots": true,
+    "initial_failures_preserved": [
+      {
+        "log_sha256": "ac9b103d9cbaeb5e637889f44c2c9385cd1739e2be025314e1d7c92067a5dea2",
+        "mode": "off",
+        "reason": "unused_variables_in_own_OFF_doubles_corrected_in_v2",
+        "receipt_sha256": "9084491f1de6b10eb76e6919a30ab318ddc74895cd8d8a9ffae426a483934307"
+      },
+      {
+        "log_sha256": "ac9b103d9cbaeb5e637889f44c2c9385cd1739e2be025314e1d7c92067a5dea2",
+        "mode": "baseline",
+        "reason": "unused_variables_in_own_OFF_doubles_corrected_in_v2",
+        "receipt_sha256": "2dfb84324b396f5179993d2d24599078fe2161117909def48a51eca4fa50beac"
+      }
+    ],
+    "intentional_public_evolution": [
+      {
+        "current_sha256": "177df1e1cdd24ff68a7a8fbe5be48f8749686f2ab4c5b01714d60e5f77220e0e",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "93fc4536e59c5952cf5a01ac9d3fa1694a0ebcabd33bdb9d6048d7332f3b6fcb",
+        "source": "lifetime-guard"
+      },
+      {
+        "current_sha256": "e6012b55179bc4d20194ec215b8543626fc35d1a23bc8ab15ede78fa16e9e97e",
+        "file": "tools/observer/physical_writes.cpp",
+        "snapshot_sha256": "0a39212b2e933ef1f3dd8b2ec2bd97610667acd0c89d40d9196a7d9c29c8252e",
+        "source": "physical-write-probe"
+      },
+      {
+        "current_sha256": "0f935bb9ccb0a322ab65c18e223d1ca6509f2fb5e2c0e80e3a235b7fc8d83137",
+        "file": "tools/observer/include/sh3_observer/physical_writes.hpp",
+        "snapshot_sha256": "856619e83b977e05de98e0e1537601a349d0ad7dcc2d017cba30d613465f849b",
+        "source": "physical-write-probe"
+      },
+      {
+        "current_sha256": "177df1e1cdd24ff68a7a8fbe5be48f8749686f2ab4c5b01714d60e5f77220e0e",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "7cc0a8a1b15e895fd80825715b4433bf8012bcdcccd534b0dbc644450b4b7fc3",
+        "source": "lifecycle-probe"
+      }
+    ],
+    "inventory_sources": {
+      "common/ScopedGuard.h": "50872a36f592f310485b3fae0b5a49b07c649584b1f10ca3a9dd8ede41aba455",
+      "pcsx2/Achievements.cpp": "2e896e1a6bda8361dc30f713b04e03bc2517586c1b3158d0e601d7b52e91f350",
+      "pcsx2/Achievements.h": "e6423dca226b1f001875e4bf0a63bb3582fc3245b71006a4130650676ba80a84",
+      "pcsx2/CMakeLists.txt": "770aee3a0a12b7dbcd203e319db06b12394e48e24df54d6042d1c29ba9576d8f",
+      "pcsx2/Config.h": "e2cda66f55be4108b8a26000e5653622da7880642fbc1384f348269dd4521f0b",
+      "pcsx2/MTGS.cpp": "7e7fbb95fee590573766cef54e1186a1ef9a23c51901c29e55380b8ef7e302d1",
+      "pcsx2/MTGS.h": "5329951cbe6f7f5c83b496ee540c5f0177adb7d9196f77a200f932425362d57e",
+      "pcsx2/MTVU.cpp": "2d392384fed9aa3a1873c39cf234276c98af39d63490cf4e6260e0b35e734441",
+      "pcsx2/MTVU.h": "bbb1b208049117fc0df63edd04dda222b8de5b5da512a59251db38058c0ef9d9",
+      "pcsx2/PINE.cpp": "b2a4cd6d83ba01e49954e76c216be2d2fcdd94aa9436ee7b776906461ab9503c",
+      "pcsx2/PINE.h": "961a943726ce5fdb6da2a759b44e950401169fb6eb229b4d7491edfdd643ed0d",
+      "pcsx2/VMManager.cpp": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84",
+      "pcsx2/VMManager.h": "c9bb9b5501df87855eef6dda9e8c747a5d3eeb75c9ac64b2799d43c71e509c9f",
+      "pcsx2/Vif_Dynarec.h": "3013f434f6737694d518e9e6422981ca0a55a4579b6a3f5ec0fcac0578c977ce",
+      "pcsx2/Vif_Unpack.cpp": "3ea4634ef1019627327cf25ac3a4f3a996146d2d6a1cf0c0c0c22afefbc6ecfa"
+    },
+    "live_acquisition_performed": false,
+    "own_sources_match": true,
+    "prior_evidence_sha256": "65fbddfb9b1148f0a1c71d0a9080dc834e65bb86db62c9148965be1277e8634b",
+    "prior_private_sources_unchanged": true,
+    "private_patch_sha256": "5084eb90b507e1ffef7bbb08616635d22ce3a3359186a75db784eb0b52ea12fd",
+    "private_source_manifest_sha256": "e511b45ce40ce86504b59a4d4034e1a98b3de37d8d93556feb7dcec3adc689c7",
+    "production_binding_added": false,
+    "production_sampler_caller_added": false,
+    "profile_observed_from_provider": true,
+    "provider_application_executed": false,
+    "provider_application_linked": false,
+    "provider_changed": [
+      "pcsx2/CMakeLists.txt",
+      "pcsx2/VMManager.cpp",
+      "pcsx2/VMManager.h"
+    ],
+    "provider_translation_units": [
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "6ccf15281917da111547e55a1c7cb60a9ca3e8e2e54947517a5cb32325f4afc2",
+        "receipt_sha256": "f0a5956b01737630a60c5b86a839cca21f9afd218163b174dd73e7051642933b",
+        "sampler_symbols": 1,
+        "source_file": "pcsx2/VMManager.cpp",
+        "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84",
+        "unit": "VMManager-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "016f218350162a7526c115b8934dcefa582fcff439afb3241189ab38a9d3d67e",
+        "receipt_sha256": "d97c2474bed5ecf198c661848a5ecbd97cecb026e444720e9ae6a1d8df9289df",
+        "sampler_symbols": 0,
+        "source_file": "pcsx2/VMManager.cpp",
+        "source_sha256": "6c24b7c85a4ad3c3f615fd0a252bcc5a3ad1327f7d085fea91015e07cbb90e84",
+        "unit": "VMManager-off"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "cac9b61734e91761ddfda4994becedc17eca1482fc867694b6de890ea8b8c90b",
+        "receipt_sha256": "4a8215de18888b3ed84a1017a9c88106a62c0c2e5cec35588e7bc2e17e63280b",
+        "sampler_symbols": 0,
+        "source_file": "pcsx2/PINE.cpp",
+        "source_sha256": "b2a4cd6d83ba01e49954e76c216be2d2fcdd94aa9436ee7b776906461ab9503c",
+        "unit": "PINE-on"
+      },
+      {
+        "accepted": true,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "object_sha256": "a169fa3fa8feb5735b68450ced9e5692ccf870c9e0376478fb16fd7884562b9e",
+        "receipt_sha256": "15a8b1f2b68ad268181274dc8e329d7c76c1142204bfe97e250932583eb1c8cc",
+        "sampler_symbols": 0,
+        "source_file": "pcsx2/PINE.cpp",
+        "source_sha256": "b2a4cd6d83ba01e49954e76c216be2d2fcdd94aa9436ee7b776906461ab9503c",
+        "unit": "PINE-off"
+      }
+    ],
+    "read_events_produced": 0,
+    "resource_links": [],
+    "sampler_unknown_exclusions": [
+      "PINE_when_reported_stopped",
+      "RDebug",
+      "GS",
+      "VU",
+      "other_writers"
+    ],
+    "schema_version": 1,
+    "scope_is_global_effect_exclusion": false,
+    "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "source_files_verified": {
+      "source-admission-v1": 2949,
+      "source-baseline": 2934,
+      "source-dma-v2": 2945,
+      "source-host-v1": 2945,
+      "source-jit-cache-v2": 2945,
+      "source-lifecycle-v1": 2947,
+      "source-lifetime-v2": 2945,
+      "source-observer-v2": 2941
+    },
+    "status": "admission_diagnostic_verified_effect_exclusion_pending",
+    "vif_dynarec_compiled_enabled": true
+  },
+  "custody": {
+    "two_equal_audits": true,
+    "audit_bytes": 12993,
+    "audit_sha256": "78f78371a5dd37944677b7f25b4bc64a36a7d96dc894d29d758924db913f4199",
+    "prior_private_sources_unchanged": true,
+    "historical_public_inputs_verified_with_snapshots": true,
+    "intentional_public_evolution": [
+      {
+        "current_sha256": "177df1e1cdd24ff68a7a8fbe5be48f8749686f2ab4c5b01714d60e5f77220e0e",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "93fc4536e59c5952cf5a01ac9d3fa1694a0ebcabd33bdb9d6048d7332f3b6fcb",
+        "source": "lifetime-guard"
+      },
+      {
+        "current_sha256": "e6012b55179bc4d20194ec215b8543626fc35d1a23bc8ab15ede78fa16e9e97e",
+        "file": "tools/observer/physical_writes.cpp",
+        "snapshot_sha256": "0a39212b2e933ef1f3dd8b2ec2bd97610667acd0c89d40d9196a7d9c29c8252e",
+        "source": "physical-write-probe"
+      },
+      {
+        "current_sha256": "0f935bb9ccb0a322ab65c18e223d1ca6509f2fb5e2c0e80e3a235b7fc8d83137",
+        "file": "tools/observer/include/sh3_observer/physical_writes.hpp",
+        "snapshot_sha256": "856619e83b977e05de98e0e1537601a349d0ad7dcc2d017cba30d613465f849b",
+        "source": "physical-write-probe"
+      },
+      {
+        "current_sha256": "177df1e1cdd24ff68a7a8fbe5be48f8749686f2ab4c5b01714d60e5f77220e0e",
+        "file": "CMakeLists.txt",
+        "snapshot_sha256": "7cc0a8a1b15e895fd80825715b4433bf8012bcdcccd534b0dbc644450b4b7fc3",
+        "source": "lifecycle-probe"
+      }
+    ],
+    "previous_public_snapshot_manifest_sha256": "961ffffcc34e37b01054d050daa067b3cf509ac02fdc344e7e94ce36c7dfa664",
+    "initial_public_snapshot_manifest_sha256": "f616b0a1767dc6c00bb5480a096df0a3900bd757ba784ef2a98aad2fde5b43c5",
+    "initial_failures_preserved": true
+  },
+  "implementation": {
+    "host_only": true,
+    "condition_count": 18,
+    "policy_is_pure": true,
+    "failures_and_unknowns_reported_separately": true,
+    "unknown_or_invalid_facts_never_satisfy": true,
+    "sampler_takes_no_client_facts": true,
+    "other_threads_return_before_shared_reads": true,
+    "cpu_scope_covers_switch_execute_reentry_and_unwinding": true,
+    "cpu_scope_is_global_effect_exclusion": false,
+    "provider_cpp_files_modified": 1,
+    "provider_header_updated": true,
+    "provider_cmake_list_updated": true,
+    "production_sampler_caller_added": false,
+    "new_pine_command_added": false,
+    "production_arming_exposed": false,
+    "lifetime_guard_epoch_and_bridge_unchanged": true,
+    "nintendo_sources_unchanged": true
+  },
+  "validation": {
+    "cpp_runs": [
+      {
+        "artifact": "regression-v2/host-debug.xml",
+        "tests": 81,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "0203298870885fff3cf810b7ebf5cacc91af5a24f28fe19315ebe78f51597f49"
+      },
+      {
+        "artifact": "regression-v2/host-release.xml",
+        "tests": 81,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "5181fb90cb735d856c99c476f289b22ce78defff609cb254eac609f29459727d"
+      },
+      {
+        "artifact": "regression-v2/host-sanitize.xml",
+        "tests": 81,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "disabled": 0,
+        "sha256": "fba77bb91fd7671c1711c0b46a6faf1c31a1d1a49d31813eaa7c27f4c571f444"
+      }
+    ],
+    "python_run": {
+      "artifact": "pytest.xml",
+      "tests": 3096,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "disabled": 0,
+      "sha256": "4ffc8f5a0236e6b3595bffc5e45b2e0ab0a7e5062ea5025434e55135c3ef4546"
+    },
+    "harness_cases_per_mode": 34,
+    "harness_modes": [
+      "ON",
+      "OFF",
+      "ON_ASan_UBSan",
+      "previous_provider_functions_OFF"
+    ],
+    "real_provider_compiled_units": 4,
+    "exhaustive_violated_subsets_in_pure_test": 262144,
+    "all_vm_states_exhaustively_tested": false,
+    "total_python_coverage": {
+      "covered_lines": 5303,
+      "num_statements": 5348,
+      "covered_branches": 1449,
+      "num_branches": 1482
+    },
+    "python_line_branch_gate": "PASS",
+    "line_branch_gate_minimum_percent": 80,
+    "cpp_coverage_remeasured": true,
+    "cpp_coverage_tool": "LLVM",
+    "cpp_coverage_scope": "admission_cpp_and_header_only",
+    "cpp_coverage_by_file": {
+      "tools/observer/admission.cpp": {
+        "branches": {
+          "count": 8,
+          "covered": 8,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "lines": {
+          "count": 12,
+          "covered": 12,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 8,
+          "covered": 8,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/include/sh3_observer/admission.hpp": {
+        "branches": {
+          "count": 2,
+          "covered": 2,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "lines": {
+          "count": 4,
+          "covered": 4,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 4,
+          "covered": 4,
+          "notcovered": 0,
+          "percent": 100
+        }
+      }
+    },
+    "cpp_line_branch_gate": "PASS",
+    "initial_cpp_coverage_by_file": {
+      "tools/observer/admission.cpp": {
+        "branches": {
+          "count": 8,
+          "covered": 8,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "lines": {
+          "count": 12,
+          "covered": 12,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 8,
+          "covered": 8,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/include/sh3_observer/admission.hpp": {
+        "branches": {
+          "count": 2,
+          "covered": 1,
+          "notcovered": 1,
+          "percent": 50
+        },
+        "functions": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 1,
+          "covered": 1,
+          "percent": 100
+        },
+        "lines": {
+          "count": 4,
+          "covered": 4,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 4,
+          "covered": 3,
+          "notcovered": 1,
+          "percent": 75
+        }
+      }
+    },
+    "initial_cpp_gate": "FAIL_header_branch_50_percent",
+    "initial_cpp_gate_correction": "exercise_dynamic_invalid_condition_values",
+    "initial_harness_failures": [
+      {
+        "log_sha256": "ac9b103d9cbaeb5e637889f44c2c9385cd1739e2be025314e1d7c92067a5dea2",
+        "mode": "off",
+        "reason": "unused_variables_in_own_OFF_doubles_corrected_in_v2",
+        "receipt_sha256": "9084491f1de6b10eb76e6919a30ab318ddc74895cd8d8a9ffae426a483934307"
+      },
+      {
+        "log_sha256": "ac9b103d9cbaeb5e637889f44c2c9385cd1739e2be025314e1d7c92067a5dea2",
+        "mode": "baseline",
+        "reason": "unused_variables_in_own_OFF_doubles_corrected_in_v2",
+        "receipt_sha256": "2dfb84324b396f5179993d2d24599078fe2161117909def48a51eca4fa50beac"
+      }
+    ],
+    "gcc_ci_coverage_run": false,
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 137,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_links": "PASS",
+    "python_run_outside_sandbox": true,
+    "thresholds_not_relaxed": true,
+    "public_ci_executes_private_admission_harness": false,
+    "remote_ci_run": false,
+    "full_provider_build_run": false,
+    "provider_configure_run": false,
+    "nintendo_build_run": false,
+    "new_pcsx2_session": false,
+    "local_artifact_sha256": {
+      "PINE-off.json": "15a8b1f2b68ad268181274dc8e329d7c76c1142204bfe97e250932583eb1c8cc",
+      "PINE-on.json": "4a8215de18888b3ed84a1017a9c88106a62c0c2e5cec35588e7bc2e17e63280b",
+      "VMManager-off.json": "d97c2474bed5ecf198c661848a5ecbd97cecb026e444720e9ae6a1d8df9289df",
+      "VMManager-on.json": "f0a5956b01737630a60c5b86a839cca21f9afd218163b174dd73e7051642933b",
+      "baseline-harness-inputs-v2.json": "039ec921a5a37f667f928ff7d196fee29fc57eb4a93d88a43abb18fb495931d4",
+      "baseline-harness-inputs.json": "04028db3e32e5eecaf62fbe3af2a8e74b2e799c29f87f071cf85d27e26bf71be",
+      "coverage-v2/cpp-coverage-summary.json": "3c689ed3cd9771e74be279e80422f11067138ec43d1b1325b85a633a302f96ac",
+      "coverage-v2/cpp-coverage.json": "1337a2040f135b2594526fa40b9a5fd110d17bb59fb98e006fa06ed55fa6de35",
+      "cpp-coverage-summary.json": "7c2268e6548ece9122759732cfa673f714bdeac1138e2b39d7f7bcdab497b2b4",
+      "cpp-coverage.json": "faf690748159494e840feb5852485885ad1dcbf5324b6a9bf2480b72f6d2670e",
+      "harness-v1-baseline-compile.json": "2dfb84324b396f5179993d2d24599078fe2161117909def48a51eca4fa50beac",
+      "harness-v1-off-compile.json": "9084491f1de6b10eb76e6919a30ab318ddc74895cd8d8a9ffae426a483934307",
+      "harness-v1-on-compile.json": "92c6dfd4ef7d2555296d2453d566d207dc57f5f21bdab0d44fc949cade6501f0",
+      "harness-v1-on-run.json": "24527280b37d5267453e550b81caa9faaef65049e35ce419be4458cc9c87d38a",
+      "harness-v1-sanitize-compile.json": "e0cda61ce53083484adcfd1c41b975e5717a0b15717bcb4407038eab10d70578",
+      "harness-v1-sanitize-run.json": "c6ba19ed893f0314dbc72f5c4be95a27016305c844cbfc2109c03b3856d4706f",
+      "harness-v2-baseline-compile.json": "8096fc469ed8d202093ac13269de8862c7eafb0dcff477876389e6e341b010ca",
+      "harness-v2-baseline-run.json": "d34f853a736504a7f51d327c53390ed31e6c2f5ef8f8dc33339c4805241ff918",
+      "harness-v2-off-compile.json": "57096ceef3405af82eb0c66253c0dd07eb8af080575f4aa52bff030fad6a30bd",
+      "harness-v2-off-run.json": "17a48394bdee0ccd5fdface3a7b488d1ec39645e23cff36759026e2150f9eac5",
+      "harness-v2-on-compile.json": "0977bca4a217318cc11c07e1a100c1147de6c8c35fad5a2b67341945ac4281a5",
+      "harness-v2-on-run.json": "f453402beb3844e66030fde35fb34f816d2b672dd9d01efa981e9e4d5127a12f",
+      "harness-v2-sanitize-compile.json": "73ebafe12ec49ede2083149b966ff96fdf849ce73d433488c4960b33f2335baf",
+      "harness-v2-sanitize-run.json": "339c892ab57013b1398493bec35a416ad6b59b4890efc6c72b3b9cae3b6be954",
+      "host-debug-build.log": "911fdbe72e92273a2111eb6fe636f88d419cd4d9fe555a22cf91e69156e7c2ab",
+      "host-debug-configure.log": "cf672059a3d7fb579d0d5081eeaa614a16e30ea8ed808eedbf86142907fd12b2",
+      "host-debug-tests.log": "46e8f8cd45d646097e8d69af0fdeab8747ad329ecca65310690111a988694b04",
+      "host-debug.xml": "36d9d5a3c7dde015dffb4b1941db52544b6ecffb9ae60cb07036190dae40504e",
+      "host-release-build.log": "8aee4b2363842c5de300255c88981e298cf1e57ff98bb1cf1c7530607e063816",
+      "host-release-configure.log": "df9a876dfa3ffad0178e027462991529f705ea8ac4add8d9a28d1bfa0289d2d8",
+      "host-release-tests.log": "6971e4267e6b06243aec04ce8028d02f5808db62040b5318c13d487b25a5ce8d",
+      "host-release.xml": "cafc0765d09046b89e21fdfdc02a4f45ca6ff3f07377efd726761ab72c770a0d",
+      "host-sanitize-build.log": "3586cb4d92a58f9f5312ff7bd4bb17086b42511dacd559be174098fde59e2fbe",
+      "host-sanitize-configure.log": "edfe9a96ad91933c852bd6b2b8c27f311112e74486f73c7ef350d1c41fbfb505",
+      "host-sanitize-tests.log": "636884d0d19b053b4d9128ad07e46a01266cd6552f9f41606a55ab369e1534c3",
+      "host-sanitize.xml": "44eae8250c123dd4cd314b2145be7201ac5a2fd7beb61a7173047a711769be3f",
+      "initial-public.json": "f616b0a1767dc6c00bb5480a096df0a3900bd757ba784ef2a98aad2fde5b43c5",
+      "new-harness-inputs-v2.json": "9aed8c8462fbba62053f65101c0b31a3d131a54606ff0dbb173241c0a741798f",
+      "new-harness-inputs.json": "1de79119d38acb9ac02152d2fbdc3301821acac2a49adc162c9710596c9e6647",
+      "prepare.json": "e511b45ce40ce86504b59a4d4034e1a98b3de37d8d93556feb7dcec3adc689c7",
+      "previous-public.json": "961ffffcc34e37b01054d050daa067b3cf509ac02fdc344e7e94ce36c7dfa664",
+      "pytest.xml": "4ffc8f5a0236e6b3595bffc5e45b2e0ab0a7e5062ea5025434e55135c3ef4546",
+      "python-coverage.json": "9050f503ee5ab293645fffddce7c70d804be16f44a4dfa61110abefae2aa4744",
+      "python-coverage.xml": "f83a27f921bf6b7a16093edcb5a1794912f17353d20369d12e5612011bc8412f",
+      "regression-v2/host-debug-build.log": "8457debfba66baec367c031a8951a753b01a0d6cf4e40b94e33fa9ea19e6390d",
+      "regression-v2/host-debug-configure.log": "cf672059a3d7fb579d0d5081eeaa614a16e30ea8ed808eedbf86142907fd12b2",
+      "regression-v2/host-debug-tests.log": "c2aa422f8003859216cbe85c6ab51bf7b4d0ad37bada39cdb3164338175d025a",
+      "regression-v2/host-debug.xml": "0203298870885fff3cf810b7ebf5cacc91af5a24f28fe19315ebe78f51597f49",
+      "regression-v2/host-release-build.log": "41841c276e144745ef70388b22a8230ce2f528abbf7c6054255cf35be38046f1",
+      "regression-v2/host-release-configure.log": "51a78c4dfc7c91c51e61c8b783bf3be6a4ecabeaca723480125413a0a156ddd3",
+      "regression-v2/host-release-tests.log": "fde3a9c3923446750e20cdf9ec5d58e70c03b0b99e2260656ec50bede48f1005",
+      "regression-v2/host-release.xml": "5181fb90cb735d856c99c476f289b22ce78defff609cb254eac609f29459727d",
+      "regression-v2/host-sanitize-build.log": "41841c276e144745ef70388b22a8230ce2f528abbf7c6054255cf35be38046f1",
+      "regression-v2/host-sanitize-configure.log": "edfe9a96ad91933c852bd6b2b8c27f311112e74486f73c7ef350d1c41fbfb505",
+      "regression-v2/host-sanitize-tests.log": "d2d84c6ea95bccca47c53caece1d14d36b1b94df5d5852098840793275959ee6",
+      "regression-v2/host-sanitize.xml": "fba77bb91fd7671c1711c0b46a6faf1c31a1d1a49d31813eaa7c27f4c571f444"
+    }
+  },
+  "public_inputs_sha256": {
+    "CMakeLists.txt": "177df1e1cdd24ff68a7a8fbe5be48f8749686f2ab4c5b01714d60e5f77220e0e",
+    "schemas/admission-profile-v1.md": "40188a6073a0aa268c321ff05b426b9cb4ac18149a8dec01b9f2891907bbb69a",
+    "tests/fixtures/pcsx2-admission-profile/harness.cpp": "6cccdf26e03e71aa6189faca9a57a333181bef39adc933d0cdd899d2c59a30d2",
+    "tests/fixtures/pcsx2-admission-profile/README.md": "b3c3b146dd7050959d7816aa8c9ae4f2774b61a6afb371e9c73034f3ab8a6475",
+    "docs/execution/f02-07-admission-profile.md": "65a0cb0ab35abc2477500e820c279eb5e9129218d943ed162653065b1941c366",
+    "tools/observer/admission.cpp": "ad7c05139e01ea2491c0c5dc95e0a553c6e9f0d3604807e05e44569cc502ea90",
+    "tools/observer/include/sh3_observer/admission.hpp": "acb7783a5c45336038d555d7eca1b52f3032987de27f1e6abbb7b4c2c5673a9c",
+    "tests/cpp/test_admission.cpp": "885200516ef020f78aadd957301118d6d90ef7efacd7a307b0c0eceb138176f3",
+    "tools/observer/physical_writes.cpp": "e6012b55179bc4d20194ec215b8543626fc35d1a23bc8ab15ede78fa16e9e97e",
+    "tools/observer/include/sh3_observer/physical_writes.hpp": "0f935bb9ccb0a322ab65c18e223d1ca6509f2fb5e2c0e80e3a235b7fc8d83137",
+    "tools/observer/host_epoch.cpp": "dab6223dab476403dedcd9c9303ba9cd60f24207fef4e3c1a8e761007ba461bf",
+    "tools/observer/include/sh3_observer/host_epoch.hpp": "2de8b1a76304538805a48dfa31ebcd1b5d2bf7b2bf9ceb4416281019161fd062",
+    "tools/observer/lifetime.cpp": "2633522bc0040646826ffe8fea8cf6f4f984345e6308c9c277945c0db7400ed8",
+    "tools/observer/include/sh3_observer/lifetime.hpp": "3aee9d6c84422a83c6f3d8c45a92ec84ad78c415a609f316d12527228a759c16"
+  },
+  "private_operational_script_sha256": {
+    "audit.py": "c6c8ba6f3b8d230b770d1b41fda7a8942b50063f5b4b0a5ceb105a75c4397475",
+    "compile_private.py": "1419ba9206b98316707e23f00e2d81a091053cdcefd58d829120fc73af897edf",
+    "coverage_cpp.py": "b81d1ae9248c7a2a673f6350cc9e1b5a424e2cc3a1ad90a5b95e0dc70b7ed72e",
+    "coverage_cpp_v2.py": "f8f84a76fbc56c14ef3624bf72001f2962e51d249708c97b7bfeba30820d9403",
+    "finalize_evidence.py": "1a966949e4fbd4e5110609be8f47c22bca377af7f012734686db2652eefb2a54",
+    "make_harness.py": "85c4f3dbc1de9961c1467f18dcef2a22c483e8117f8db7c275d090a03f7743fa",
+    "prepare.py": "7ae0cfe97181c9ca59b0364293240d90338cb8879b09a59d52d0bf2880ed9bae",
+    "run_harness.py": "4c4d741d88c31e3e3d304d8710ae0ebb7e18aef7760579675ac2b1032710eb33",
+    "run_harness_v2.py": "179a7f7f5cb9d365d6262db48e222c91c09be9ae6eeaf00b7f2a827ba7db98fd",
+    "run_remaining_v2.py": "d94be4b6f8abbee130ea90b486aa96da1515a9d639da81496ebf0521c4119fb6",
+    "test_host.py": "eb129ed96c4dac9756a789e2e2ea488fe0d4fe74f42bb583edb40b6506664c02",
+    "test_host_v2.py": "961d61726fa9b5658fecab7e527aa627208dd52c8f72025821f223b160051bd2"
+  },
+  "limitations": {
+    "coverage_audit_exhaustive": false,
+    "production_binding_added": false,
+    "admitted_execution_modes": [],
+    "production_sampler_caller_added": false,
+    "profile_report_grants_capture": false,
+    "provider_application_linked": false,
+    "provider_application_executed": false,
+    "ipc_protocol_executed": false,
+    "pine_thread_exclusion_verified": false,
+    "gs_vu_job_completion_verified": false,
+    "rdebug_absence_verified_in_final_binary": false,
+    "vif_dynarec_enabled_in_pinned_source": true,
+    "jit_generated_stores_supported": false,
+    "global_memory_effect_serialization_verified": false,
+    "deadlock_freedom_verified": false,
+    "epoch_bound_to_capture_protocol": false,
+    "configuration_cpu_pine_subsystems_are_doubles": true,
+    "architecture_specific_initialize_branches_executed_in_harness": false,
+    "previous_comparison_uses_previous_provider_functions_and_current_own_bridge": true,
+    "continuous_lifetime_verified": false,
+    "live_acquisition_performed": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

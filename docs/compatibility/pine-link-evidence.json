@@ -1,0 +1,1736 @@
+{
+  "admitted_execution_modes": [],
+  "candidate_ad_hoc_signature_verified": true,
+  "candidate_executable_sha256": "e76d1e79ff017914bbcbd8d6488eab373041df687deb314e4da02e12be98b254",
+  "candidate_files": {
+    "Contents/Frameworks/libMoltenVK.dylib": {
+      "bytes": 5420064,
+      "sha256": "1970075a8820acc236c27b577980982aaf389f94273ccce107d344f334a57400"
+    },
+    "Contents/Frameworks/libQt6Core.6.dylib": {
+      "bytes": 7429616,
+      "sha256": "1ff89e8e6c6cf435b1e4bc7f66b0dcd43673833f901c0ed96fcd74956e220221"
+    },
+    "Contents/Frameworks/libQt6Gui.6.dylib": {
+      "bytes": 7528624,
+      "sha256": "158099a6d15f82bbded9be36cec9c230ea6cd8151559a95cce915fddf1a8913c"
+    },
+    "Contents/Frameworks/libQt6Svg.6.dylib": {
+      "bytes": 686960,
+      "sha256": "0c840e8600ab0baacdf755e942594ec6e98f03936e72a8764ecd1fefad27ede2"
+    },
+    "Contents/Frameworks/libQt6Widgets.6.dylib": {
+      "bytes": 7571008,
+      "sha256": "c7de3ac159cc05cc5f817c0c9b26f907393fb7c30a97abc9cd67f380616c94d5"
+    },
+    "Contents/Frameworks/libSDL3.0.dylib": {
+      "bytes": 2105936,
+      "sha256": "521a32eb9276b0baf834514fb183c496e04a2c4af92f5b4d6a18a82382da3dc8"
+    },
+    "Contents/Frameworks/libavcodec.62.dylib": {
+      "bytes": 531680,
+      "sha256": "d8a5bd08df41e3bdd3f00fd8a28339d33aa5b46aed8ba723c64a0c84e290f987"
+    },
+    "Contents/Frameworks/libavformat.62.dylib": {
+      "bytes": 519920,
+      "sha256": "026e8b93788628275cc2f4a4a7552ccae2bbd89a6eb755bac244e1a801be656a"
+    },
+    "Contents/Frameworks/libavutil.60.dylib": {
+      "bytes": 841856,
+      "sha256": "15471a31cff7ce914dc02c1d7b264fa7662c284af7f15d8722fe9520758c378e"
+    },
+    "Contents/Frameworks/libfreetype.6.dylib": {
+      "bytes": 826880,
+      "sha256": "d0bbdaa4b252712a0096f11f99a505949b43fe0ddd13f38d1079b70a904367fa"
+    },
+    "Contents/Frameworks/libharfbuzz.dylib": {
+      "bytes": 1483600,
+      "sha256": "c6a264ecd8ff34f29d27c63294cf757c18f73687f876ab89b6e6a4d7fe310ed5"
+    },
+    "Contents/Frameworks/libjpeg.62.dylib": {
+      "bytes": 937360,
+      "sha256": "9084efcbe370307f00171ecb277e6adf969a7b15855f4ff5de4924a61d5b97da"
+    },
+    "Contents/Frameworks/libkddockwidgets-qt6.3.dylib": {
+      "bytes": 2366192,
+      "sha256": "1950fcf661a5b741a6b82ed27118e5a53647b684158e81471519ffd013f662d6"
+    },
+    "Contents/Frameworks/liblz4.1.dylib": {
+      "bytes": 202336,
+      "sha256": "d5c006d2468585dc05bd8081b27465d9ee89b35bde744ffe7170fe5a18228d53"
+    },
+    "Contents/Frameworks/libplutosvg.0.dylib": {
+      "bytes": 99968,
+      "sha256": "c0fc0aff90713023fe433a75e556183a646259c660c661b3c559e5fc35bd0f51"
+    },
+    "Contents/Frameworks/libplutovg.1.dylib": {
+      "bytes": 307936,
+      "sha256": "1d2065d34ac916abdc3ffd02261594fc85e7c0e08de8dc2cee435fbdb7a7a203"
+    },
+    "Contents/Frameworks/libpng16.16.dylib": {
+      "bytes": 267200,
+      "sha256": "92dbace5c0ecfdb579fc6689da7562b14907c029010b02ce4c15c489e9ac6ff8"
+    },
+    "Contents/Frameworks/libryml.0.12.1.dylib": {
+      "bytes": 388848,
+      "sha256": "df44311e5a8726a7506ad071d42b0bc4dc4af37bc8de6901ae09b02985b84b57"
+    },
+    "Contents/Frameworks/libshaderc_shared.1.dylib": {
+      "bytes": 7241376,
+      "sha256": "142dd8b116da8e5096d7e44747371119333659f28a28e236aafaff18c2e6c462"
+    },
+    "Contents/Frameworks/libsharpyuv.0.dylib": {
+      "bytes": 53424,
+      "sha256": "0258418f95d3c5969327be4598a8d9d5f7c5b3502eb9c456e96fc16fe178f588"
+    },
+    "Contents/Frameworks/libswresample.6.dylib": {
+      "bytes": 155552,
+      "sha256": "b7a0094fc61aab0e276f3f85ae3489aed8d7ec9f3369402bbe28f9b635c6b792"
+    },
+    "Contents/Frameworks/libswscale.9.dylib": {
+      "bytes": 1513600,
+      "sha256": "c41f113d58384545c59560c433b1a48dbbb1693fcee6dfe5f25fe352bd0ac6c0"
+    },
+    "Contents/Frameworks/libwebp.7.dylib": {
+      "bytes": 659168,
+      "sha256": "9f61ddc5a79ba90a6af7cfd9a3f3a52f11e17c223839985564c1c8d3a7802907"
+    },
+    "Contents/Frameworks/libwebpdemux.2.dylib": {
+      "bytes": 45152,
+      "sha256": "2244a88df80775567f099297ba4ed1929c675134f14f2fea284dd21ad15b71e9"
+    },
+    "Contents/Frameworks/libwebpmux.3.dylib": {
+      "bytes": 69008,
+      "sha256": "146d0dc2ad519873803d4f24405722c16ec20ee53cf6c40b746296657bd715e6"
+    },
+    "Contents/Frameworks/libzstd.1.dylib": {
+      "bytes": 983424,
+      "sha256": "43df7665b443a7fe59d2f881b97650b1a7910016a6a3d071f4710d64ce6bd387"
+    },
+    "Contents/Info.plist": {
+      "bytes": 7451,
+      "sha256": "2396ae163738d39e1a517f7f0132b1c5be59a38920df9ef18542aaf80882308a"
+    },
+    "Contents/MacOS/PCSX2": {
+      "bytes": 17788192,
+      "sha256": "e76d1e79ff017914bbcbd8d6488eab373041df687deb314e4da02e12be98b254"
+    },
+    "Contents/PlugIns/iconengines/libqsvgicon.dylib": {
+      "bytes": 88784,
+      "sha256": "1c55fe06c32f39645f86360901bb8634ba0ae8912ff245ff07fdcbb1fa028b6e"
+    },
+    "Contents/PlugIns/imageformats/libqapng.dylib": {
+      "bytes": 80176,
+      "sha256": "6a3174242597061c901236d3e989c1328a3dfd4a4689f294c4f1c12a1f9e8162"
+    },
+    "Contents/PlugIns/imageformats/libqgif.dylib": {
+      "bytes": 67808,
+      "sha256": "50892e7b7b8701d3e3e0ed1ca133f66204b844e6ea430fd0ff367b8be77589dc"
+    },
+    "Contents/PlugIns/imageformats/libqicns.dylib": {
+      "bytes": 76960,
+      "sha256": "40d023fd673f1f07f4888cfbe8d1445f2e982d2d764c25dd104b68fe2aa882ae"
+    },
+    "Contents/PlugIns/imageformats/libqico.dylib": {
+      "bytes": 71152,
+      "sha256": "5f08272c5cebcbe3a30c83b44db09556d78b83b8baa711cded4c490937df8944"
+    },
+    "Contents/PlugIns/imageformats/libqjpeg.dylib": {
+      "bytes": 90208,
+      "sha256": "fa7d79af19684a430d9ad42a1e489d0a0aefaededafadd8f000050b3b033abff"
+    },
+    "Contents/PlugIns/imageformats/libqmacheif.dylib": {
+      "bytes": 76608,
+      "sha256": "12ee29fcf4ce1c463a3fdbafeda1abe85ff694e901de6311ea4de6b1f1962418"
+    },
+    "Contents/PlugIns/imageformats/libqmacjp2.dylib": {
+      "bytes": 76272,
+      "sha256": "9109436f90e042d7272eab5afe0e67bc276d36ad1a8894b79197027bb2657e5e"
+    },
+    "Contents/PlugIns/imageformats/libqsvg.dylib": {
+      "bytes": 58688,
+      "sha256": "81c738e9ef0f6ad9671f374679f6dbe1a571fdf0665d8c322f14caa5ec6ab260"
+    },
+    "Contents/PlugIns/imageformats/libqtga.dylib": {
+      "bytes": 56976,
+      "sha256": "5a1917ae1c3771e5a27494123b8218af483477e5598ee46dff64e76fede760dd"
+    },
+    "Contents/PlugIns/imageformats/libqtiff.dylib": {
+      "bytes": 543696,
+      "sha256": "f0b6295d6315dbbbda562228e76165d4a7f43ef45baeff7ccefaa1090af2fc89"
+    },
+    "Contents/PlugIns/imageformats/libqwbmp.dylib": {
+      "bytes": 56544,
+      "sha256": "5763f5007696c19d51a3a023b49aa660cdfcab122809859c6bb6f4963b255bcd"
+    },
+    "Contents/PlugIns/imageformats/libqwebp.dylib": {
+      "bytes": 69360,
+      "sha256": "70d07a8f6eeecc8613eb36d62cbd94e48a21e5c8cb30390b77f6abbcbc07b479"
+    },
+    "Contents/PlugIns/platforms/libqcocoa.dylib": {
+      "bytes": 1161888,
+      "sha256": "431c8d5a18eb943b3a8937d0aa0703ec2f8ab9c1274723fab791e61b5c9f264b"
+    },
+    "Contents/PlugIns/styles/libqmacstyle.dylib": {
+      "bytes": 300272,
+      "sha256": "0a19751fbe5c95afe28abefc77aac4e7c86030f9e422d2f4f505e9587d0a9983"
+    },
+    "Contents/Resources/GameIndex.yaml": {
+      "bytes": 2681184,
+      "sha256": "565c0f3454147c11f4aae150a0fc3ecd12d691e11af1b0fba57f308223bf3e8a"
+    },
+    "Contents/Resources/Metal22.metallib": {
+      "bytes": 390109,
+      "sha256": "7c1ee9a9dd6cc3fb5046c9ebbb6c364d9b510e223dd9d52e8ddf42d16697f9e3"
+    },
+    "Contents/Resources/Metal23.metallib": {
+      "bytes": 413205,
+      "sha256": "76c98d7a1931dde5a1b87188d6361b09a51fecf506f78bde10996652019649c6"
+    },
+    "Contents/Resources/PCSX2.icns": {
+      "bytes": 84675,
+      "sha256": "df72fdda75209ae7fb2a59c838c52f875d46051f75df2fa0b3c181170c84fe63"
+    },
+    "Contents/Resources/RedumpDatabase.yaml": {
+      "bytes": 1906463,
+      "sha256": "755962450efd5effd2f3fe2f9a60c73d6cb3f9b4acea964abf5bb25a86ee25bc"
+    },
+    "Contents/Resources/cover-placeholder.png": {
+      "bytes": 56075,
+      "sha256": "1f00d0eba7f55dfa696950eda6ed635b433f28913b37545b61c4674d6454fa03"
+    },
+    "Contents/Resources/default.metallib": {
+      "bytes": 332812,
+      "sha256": "d3b569bc89fb84ad317d2fadeb53a25683218ab36115029f427e906a7c8eeed7"
+    },
+    "Contents/Resources/docs/GPL.html": {
+      "bytes": 37279,
+      "sha256": "f20948605b5d8e349977579aae01357e50f9fe4d158fc044d33c35b5fab41684"
+    },
+    "Contents/Resources/docs/GameIndex.pdf": {
+      "bytes": 55211,
+      "sha256": "b000e6386e931b5ccf12f626a2868a7034b667efb2d158050b0e13e9ce286e51"
+    },
+    "Contents/Resources/docs/ThirdPartyLicenses.html": {
+      "bytes": 302517,
+      "sha256": "b0d35939ad14fd0d9eef98d4ab63f4922d76ea7f666d6b262d27c27e64862383"
+    },
+    "Contents/Resources/fonts/Roboto-Regular-copyright": {
+      "bytes": 1276,
+      "sha256": "8fb8f30f9898fcecec3620dba5847de9b56fa1c111760873ed40c6d466839549"
+    },
+    "Contents/Resources/fonts/Roboto-Regular.ttf": {
+      "bytes": 305608,
+      "sha256": "797e35f7f5d6020a5c6ea13b42ecd668bcfb3bbc4baa0e74773527e5b6cb3174"
+    },
+    "Contents/Resources/fonts/RobotoMono-Medium.ttf": {
+      "bytes": 86820,
+      "sha256": "4d901b560f20f455b3c82c6616b17b72360956747cb35c3808aa370052fe8e32"
+    },
+    "Contents/Resources/fonts/Twemoji.Mozilla-license": {
+      "bytes": 2168,
+      "sha256": "0b6a48b98dd4c1dcccf54510735749b9c3c2007157afe6c56467247b338c6072"
+    },
+    "Contents/Resources/fonts/Twemoji.Mozilla.ttf": {
+      "bytes": 1574620,
+      "sha256": "c4541eefde3f31e4216559ada91f52d1b7ec95b849f7e9afc7a05613a56c8bf2"
+    },
+    "Contents/Resources/fonts/fa-solid-900.ttf": {
+      "bytes": 414664,
+      "sha256": "8a2db53f7927abee48e52262090d99ced56a22d46752fba13c8f8782ce632d73"
+    },
+    "Contents/Resources/fonts/promptfont-license": {
+      "bytes": 4302,
+      "sha256": "9019d15ccd7a175946a326812b70c3603d074f3016edfe0fc7b261006643f934"
+    },
+    "Contents/Resources/fonts/promptfont.otf": {
+      "bytes": 263548,
+      "sha256": "92848f15d5eeea9fdfe87e272e4c9ea32f876b3665f5b27ef059711b7c757502"
+    },
+    "Contents/Resources/fullscreenui/applications-system.svg": {
+      "bytes": 3797,
+      "sha256": "3456c17385c637e5359b815f497c1341d95a7d2b072e5628aab03dba2527fec1"
+    },
+    "Contents/Resources/fullscreenui/back-icon.svg": {
+      "bytes": 1364,
+      "sha256": "2930e4849159a1bbeee650c469989b8ab8fb6d14d2c19b36d3f5c28a519dda62"
+    },
+    "Contents/Resources/fullscreenui/desktop-mode.svg": {
+      "bytes": 1269,
+      "sha256": "0cd9e13beb9965bdb6ba355a6bdb89a4c94a6fb799a3707c75b3ba0371bd0a85"
+    },
+    "Contents/Resources/fullscreenui/drive-cdrom.svg": {
+      "bytes": 1037,
+      "sha256": "2e6210f4d43dcadb9ba97984c7991fd83e76ee85b3192365f26e87d8adcc9dbb"
+    },
+    "Contents/Resources/fullscreenui/exit.svg": {
+      "bytes": 4042,
+      "sha256": "9dacf195fc9c6f183093fdcd045a44bafb28efe19dc672f1d2c4efa1d4ad4355"
+    },
+    "Contents/Resources/fullscreenui/media-cdrom.svg": {
+      "bytes": 3318,
+      "sha256": "022c8b05d8f3e7e6046077a2d6ad2d3da1e7fa0e69c8321f3c556b9963be2477"
+    },
+    "Contents/Resources/fullscreenui/no-save.png": {
+      "bytes": 9655,
+      "sha256": "ab829598e15b771112130cbafbd982736400690c11e3d7c81e3fc8c582c24f47"
+    },
+    "Contents/Resources/fullscreenui/placeholder.png": {
+      "bytes": 2668,
+      "sha256": "0a42ffa04c5895647026f4cbbd30cae3e1455bd6e36d069ae83142e0c229c74b"
+    },
+    "Contents/Resources/fullscreenui/start-bios.svg": {
+      "bytes": 1295,
+      "sha256": "c0a9204f361b449bd75465c22aaf3257fcf9a6554c3c34fbd164bd3654f3fea6"
+    },
+    "Contents/Resources/fullscreenui/start-file.svg": {
+      "bytes": 1120,
+      "sha256": "c0ca66cdb8081b7d9caa450d8e606f9fd3f9046180bef441e28013e65e11340e"
+    },
+    "Contents/Resources/fullscreenui/start-game.svg": {
+      "bytes": 2839,
+      "sha256": "51e2ce4df2f9a756e74d9a4a0811fac1e8767492bbbb7f7d3feff8a73938c749"
+    },
+    "Contents/Resources/game_controller_db.txt": {
+      "bytes": 520295,
+      "sha256": "373c19912e71958ddfde500a42b6af6cadf34121bd602a6d6d4cf6e17d3ecbf5"
+    },
+    "Contents/Resources/icons/AppBanner.svg": {
+      "bytes": 2649,
+      "sha256": "4bb22e528622898ca5afdb01e2d9190449f1ed0c7b82d56c6e5074553ed4fa27"
+    },
+    "Contents/Resources/icons/AppIconLarge.ico": {
+      "bytes": 302430,
+      "sha256": "b13d849f560d39b6607eec818b4a9455db39378597495b93041cf839738e2a2b"
+    },
+    "Contents/Resources/icons/AppIconLarge.png": {
+      "bytes": 93501,
+      "sha256": "956278a74b5ed2e6ea7a17dfa95f984282af3252a61838e7cb4cf2e0ed80ca87"
+    },
+    "Contents/Resources/icons/flags/LICENSE": {
+      "bytes": 1086,
+      "sha256": "9df3746eb31b27308f30e0f43c6ace0c3d330235ef91c5798e87a2538bbbe098"
+    },
+    "Contents/Resources/icons/flags/LICENSESCN": {
+      "bytes": 22527,
+      "sha256": "2345380edaf31a07c4ba42a6f91696b10849f496926cfc2bfb78dd2dd21c3b3b"
+    },
+    "Contents/Resources/icons/flags/Other.svg": {
+      "bytes": 656,
+      "sha256": "5a86b40a9b8c8233cb9bb07d0d69e651ab6c9ed56f455067ec89cc7cd6766520"
+    },
+    "Contents/Resources/icons/flags/at.svg": {
+      "bytes": 183,
+      "sha256": "10c8e3733b51b1c2b28894c5e298d0d0938be9b0b0aac6387cb96c6bdd428daa"
+    },
+    "Contents/Resources/icons/flags/au.svg": {
+      "bytes": 1296,
+      "sha256": "cbb2206c5e59a25d79228306af973666a191e163f0ae337681f447977e6edb18"
+    },
+    "Contents/Resources/icons/flags/az.svg": {
+      "bytes": 501,
+      "sha256": "33ad245b2125c36fbf0f863b0edd5c85cbef37587900e101db3a615870504502"
+    },
+    "Contents/Resources/icons/flags/be.svg": {
+      "bytes": 284,
+      "sha256": "8b4d7bf6d708d63d2f00755bb8e5be787a0095daa031a6bcfa5749d91a4bddd5"
+    },
+    "Contents/Resources/icons/flags/br.svg": {
+      "bytes": 6978,
+      "sha256": "7625b5ce78750b4bcaa20156826b16d000106eac13cc7a434b18372cb39e8864"
+    },
+    "Contents/Resources/icons/flags/ch.svg": {
+      "bytes": 262,
+      "sha256": "0f88c5312df0f8510e95855757481a11dccb5e6ca198bb1c36ed49bacec481ea"
+    },
+    "Contents/Resources/icons/flags/cn.svg": {
+      "bytes": 775,
+      "sha256": "3b710fbc0668996b7c076c746fed7509af6600a35e384a6ba7af4e47f921b01c"
+    },
+    "Contents/Resources/icons/flags/cz.svg": {
+      "bytes": 213,
+      "sha256": "21cb48ef26af91dc0928fefa9bc6963d90cf5e45e15edf9eed45b447c9aa52d7"
+    },
+    "Contents/Resources/icons/flags/de.svg": {
+      "bytes": 209,
+      "sha256": "fba1cb76560166b5ca77b489f47b01dad8a81d20d87c1f23b8c64fba8b6744f7"
+    },
+    "Contents/Resources/icons/flags/dk.svg": {
+      "bytes": 225,
+      "sha256": "34e03d70f8978474893c46ae8aa0c770fef1ec145c85a5ff80ebafb657f33749"
+    },
+    "Contents/Resources/icons/flags/es.svg": {
+      "bytes": 80294,
+      "sha256": "bea77ca3a5894d0515ea473565bf8c8a7daff8f57218f747351d7529d2a0764f"
+    },
+    "Contents/Resources/icons/flags/eu.svg": {
+      "bytes": 1295,
+      "sha256": "67040ccd286857e513262bc59a6825ea8520b3e6990e42f1075712c072460c09"
+    },
+    "Contents/Resources/icons/flags/fi.svg": {
+      "bytes": 216,
+      "sha256": "2cf44ec0ac19b65b9a1c2b0780966e38101d8ff81f637e25ab510f846ccefbb2"
+    },
+    "Contents/Resources/icons/flags/fr.svg": {
+      "bytes": 220,
+      "sha256": "300974700284682b75e865cc5831236a501f0b37118989357e9e6c7ed9e8d9e0"
+    },
+    "Contents/Resources/icons/flags/gb.svg": {
+      "bytes": 504,
+      "sha256": "c8be1e7208798a4ae692ee1e937065d498bb29e741943f6172b29118b8ed8066"
+    },
+    "Contents/Resources/icons/flags/gr.svg": {
+      "bytes": 814,
+      "sha256": "409464bc7c6979e273cad46d8f2329219b86503c58c90ff3337ad8e8f181c2d7"
+    },
+    "Contents/Resources/icons/flags/hk.svg": {
+      "bytes": 727,
+      "sha256": "d9d142b2b97ec3b8190bff3802072c1b4f15573a679eead89a0ce59986dcad0c"
+    },
+    "Contents/Resources/icons/flags/hr.svg": {
+      "bytes": 30732,
+      "sha256": "3c98eae5ee93f0d75e10170beb96e26908830e2e6f7f7af2a4b281a097aeb946"
+    },
+    "Contents/Resources/icons/flags/hu.svg": {
+      "bytes": 259,
+      "sha256": "d3417cb31afd6eb35e5f28da7fbd896776fd86a766bf7320531eb0ee2531bc37"
+    },
+    "Contents/Resources/icons/flags/id.svg": {
+      "bytes": 163,
+      "sha256": "8ec6c98ffcbf8f32428fd4051675f839dc98d8137d4d8c7a625a9624bd49fdb2"
+    },
+    "Contents/Resources/icons/flags/il.svg": {
+      "bytes": 813,
+      "sha256": "c736664c6b556ffe0802eba13f84ec69dd11d9cb01d7604a772d76fac3542ab2"
+    },
+    "Contents/Resources/icons/flags/in.svg": {
+      "bytes": 1090,
+      "sha256": "91185efa1a9b52cdc0e470712518efeefc4e4d6a6555bae9de997ba71885bb98"
+    },
+    "Contents/Resources/icons/flags/ir.svg": {
+      "bytes": 14695,
+      "sha256": "feacea666409ba0323b072a0cf3c6b6cfa73646c69e03d1e326e3cfebe303127"
+    },
+    "Contents/Resources/icons/flags/it.svg": {
+      "bytes": 273,
+      "sha256": "53475462aa1cb3ecd1fce4843b0cf5f91d5ec91bc7e6770a53981b7205097bb6"
+    },
+    "Contents/Resources/icons/flags/jp.svg": {
+      "bytes": 438,
+      "sha256": "1315f5523a3393347ade906a84084d670c82eeba5ef90a197b703fac2be6d97a"
+    },
+    "Contents/Resources/icons/flags/kr.svg": {
+      "bytes": 1016,
+      "sha256": "879cba811da7952dff9ed2c843dda75e870709dc386f3bc2a981a764ba4a8f3f"
+    },
+    "Contents/Resources/icons/flags/lt.svg": {
+      "bytes": 381,
+      "sha256": "8f0a9a3cc0b2627b2e9f2b768382a8c00279d1de5ea7770ecf4881afa4527244"
+    },
+    "Contents/Resources/icons/flags/lv.svg": {
+      "bytes": 214,
+      "sha256": "9bb9da70a7803e7d14663a72d8a9a93bc3aaba967906a600c6ae3fc73bc89c03"
+    },
+    "Contents/Resources/icons/flags/mx.svg": {
+      "bytes": 83734,
+      "sha256": "701dcf88faa1fe109bb3d528dbdaea168708b30b62e03e4c89657e4b27b5ea11"
+    },
+    "Contents/Resources/icons/flags/nl.svg": {
+      "bytes": 212,
+      "sha256": "b8af31439662dc22cb30c0d9190bcc7682161ccdbe6b7f9c5d59ac1e3eed4068"
+    },
+    "Contents/Resources/icons/flags/no.svg": {
+      "bytes": 302,
+      "sha256": "1d670757f68642786b5e7343d7e59928354165b8b7e5b25be2d4f5a5a1a898d2"
+    },
+    "Contents/Resources/icons/flags/pl.svg": {
+      "bytes": 204,
+      "sha256": "9b9698cefb1d401cdda698124d40ad4bdb929ea356d6651c2da894d5cbb95f3b"
+    },
+    "Contents/Resources/icons/flags/pt.svg": {
+      "bytes": 7890,
+      "sha256": "6d9798399c59d9102a2636d7bad071dc9c32586e7a92a901e305cc36f870508f"
+    },
+    "Contents/Resources/icons/flags/ro.svg": {
+      "bytes": 284,
+      "sha256": "e99637b0ee944d7f65e5ee9c312fff66e7e1d80ffd285c69387c386a414daf1c"
+    },
+    "Contents/Resources/icons/flags/rs.svg": {
+      "bytes": 181232,
+      "sha256": "adbac75456def5ef7ae51f242b0977b26f43f6c9b645fa1e27e9661eaf8cd225"
+    },
+    "Contents/Resources/icons/flags/ru.svg": {
+      "bytes": 212,
+      "sha256": "ae514e165c71fa13c8c3a2c3c22343d5d7ef62a327ed597b603ae0d325a8d5b9"
+    },
+    "Contents/Resources/icons/flags/sa.svg": {
+      "bytes": 9885,
+      "sha256": "b7bf0073dcde1ad78484dfa774f2ad11b2f1bbbd4ed40d70452afac7434e0276"
+    },
+    "Contents/Resources/icons/flags/scn.svg": {
+      "bytes": 527,
+      "sha256": "13acd152aa476e42610f3a1e6c35a83832e0e66d2670e938fb78983119fd16df"
+    },
+    "Contents/Resources/icons/flags/se.svg": {
+      "bytes": 199,
+      "sha256": "4bd12863ced707749eff7ffefbd366525f47a1ca509597dc45421fe25f75fd67"
+    },
+    "Contents/Resources/icons/flags/tr.svg": {
+      "bytes": 523,
+      "sha256": "f31bbb617fac788c9621a6ca6ff316ef5e236d7c2194c72d68d8291a049e6be5"
+    },
+    "Contents/Resources/icons/flags/tw.svg": {
+      "bytes": 2450,
+      "sha256": "8af7223542749d427d61a7c749888eb9559d48daa1847b539abb808feaf7ea63"
+    },
+    "Contents/Resources/icons/flags/ua.svg": {
+      "bytes": 216,
+      "sha256": "101b1f16defc4bb2a101843418b8be25c3281b2fecb3a5d6f54d234250a05a9b"
+    },
+    "Contents/Resources/icons/flags/us.svg": {
+      "bytes": 2524,
+      "sha256": "5017a969bbe067953868084b3ecc1ce72d84d81cdc476d0344312e3520289ce5"
+    },
+    "Contents/Resources/icons/flags/vn.svg": {
+      "bytes": 461,
+      "sha256": "8bccf756a454a27022dd52cb3a9ace292461860eb2556c8c4f050cdcc38032dd"
+    },
+    "Contents/Resources/icons/flags/za.svg": {
+      "bytes": 860,
+      "sha256": "1755a5e16f1c9f5120e4871e8454bdee663beb4fb4827012bcd02cb9044249c2"
+    },
+    "Contents/Resources/icons/ra-icon.svg": {
+      "bytes": 2092,
+      "sha256": "0d30848f6a4eb24e64cc430c2d84c1509bfcfcd0923b90a84fb8fe14e2a93700"
+    },
+    "Contents/Resources/icons/star-0.svg": {
+      "bytes": 5315,
+      "sha256": "921e158c3d82a4b74db3e39233d2344105c9a48a68394fa998c87cca55fe02d4"
+    },
+    "Contents/Resources/icons/star-1.svg": {
+      "bytes": 5300,
+      "sha256": "7209b9c7ec77bc290ede0a82c53583c3eeae6d7c5cc44fec5f9e6e96264adb56"
+    },
+    "Contents/Resources/icons/star-2.svg": {
+      "bytes": 5285,
+      "sha256": "566019480f4f6e058a43025896b90d86a4fa00cbddd2524ae5c02afc38191aa2"
+    },
+    "Contents/Resources/icons/star-3.svg": {
+      "bytes": 5270,
+      "sha256": "ee201d2d5ebe2f0d04f83200f9d8ee593cc25bd7b79a23939bb1b29bd6a6d8d7"
+    },
+    "Contents/Resources/icons/star-4.svg": {
+      "bytes": 5255,
+      "sha256": "c711d4905fcd7dfc940c550cfa88ba6b60455a954057610ba5ca69e3fecd6604"
+    },
+    "Contents/Resources/icons/star-5.svg": {
+      "bytes": 5240,
+      "sha256": "21cf4038f25fccd8aac11731ed9eaf2e5cc5ded51116edeac68d678553b4a5d4"
+    },
+    "Contents/Resources/qt.conf": {
+      "bytes": 77,
+      "sha256": "7da2de3426c478dd95719705312f245057cc455cee936fadad56a01dfca5ab6d"
+    },
+    "Contents/Resources/shaders/common/ffx_a.h": {
+      "bytes": 161481,
+      "sha256": "a77e8b8cb03eefc7259cce808fb0c7ed37a97c9d2424a7e6c263bae96871ea68"
+    },
+    "Contents/Resources/shaders/common/ffx_cas.h": {
+      "bytes": 63512,
+      "sha256": "58e3eec49d30207287c9a6d692111bf5395f11a181bb40da5a81514f8c4c5a84"
+    },
+    "Contents/Resources/shaders/common/fxaa.fx": {
+      "bytes": 17432,
+      "sha256": "c769d784c3cd47760ed7bf85b867cda545237d4d52feac7290a059d3ff5848fb"
+    },
+    "Contents/Resources/shaders/opengl/cas.glsl": {
+      "bytes": 2413,
+      "sha256": "3d5b9cef750ea8bedceef43c4c52215e8280abb81b5b8fa002007bb3f97f0506"
+    },
+    "Contents/Resources/shaders/opengl/convert.glsl": {
+      "bytes": 14077,
+      "sha256": "f9128f999a06aa0c5eefee625bb829d2e6856a07b191826ab68d4f1be04c0ef5"
+    },
+    "Contents/Resources/shaders/opengl/imgui.glsl": {
+      "bytes": 637,
+      "sha256": "25978439553bbd959fe4eb5d03b739a3d697348458a7bac3df48556148f48027"
+    },
+    "Contents/Resources/shaders/opengl/interlace.glsl": {
+      "bytes": 6912,
+      "sha256": "c4de83ccc78ad4e01d97174385cc549af16d417768709b36c8fd000f18cb63f7"
+    },
+    "Contents/Resources/shaders/opengl/merge.glsl": {
+      "bytes": 579,
+      "sha256": "6cd2bc21890426b5430d44b28a89289bcc6fc9ecd632bb3a8eafb6c8b818499c"
+    },
+    "Contents/Resources/shaders/opengl/present.glsl": {
+      "bytes": 11721,
+      "sha256": "cc88b6ea60863fa5a29616ff6c3a08cb43214b15c4fe11472fa64dbc939038b7"
+    },
+    "Contents/Resources/shaders/opengl/shadeboost.glsl": {
+      "bytes": 1623,
+      "sha256": "e7297a2e333bb1882bcf82d2a109a2ab033715cce1bba4934f42ec68370f0077"
+    },
+    "Contents/Resources/shaders/opengl/tfx_fs.glsl": {
+      "bytes": 36957,
+      "sha256": "3aa5999392096043acd6dad291665453d9f290121ea9f0bd8eed3b9b07572124"
+    },
+    "Contents/Resources/shaders/opengl/tfx_vgs.glsl": {
+      "bytes": 14101,
+      "sha256": "3ea3747d8f5e289cd2fc626b4bfaac9d2697641757e35ebb80d5d5f20ed03c54"
+    },
+    "Contents/Resources/shaders/vulkan/cas.glsl": {
+      "bytes": 2637,
+      "sha256": "ea3f65c6d1b18abe23b42a3d9ddf48d787df287feef6cfac52ca6109d8852d97"
+    },
+    "Contents/Resources/shaders/vulkan/convert.glsl": {
+      "bytes": 13888,
+      "sha256": "51bd9b2c785cc4dccb79dada660178bcb757dc5474ca85a1eb06fd0c34e154dd"
+    },
+    "Contents/Resources/shaders/vulkan/imgui.glsl": {
+      "bytes": 791,
+      "sha256": "372e33cccb520a987983dd897c51c6b7e609f16badd67d056a95799a7f768566"
+    },
+    "Contents/Resources/shaders/vulkan/interlace.glsl": {
+      "bytes": 7289,
+      "sha256": "af535e4b871b188957a7169ed883f6f8a209f0908e5b7aff17755605c8d07857"
+    },
+    "Contents/Resources/shaders/vulkan/merge.glsl": {
+      "bytes": 759,
+      "sha256": "3c0eb665db06c289841829a6aa4716e46ce5ae8e08005a82ad4f3020bd8406e7"
+    },
+    "Contents/Resources/shaders/vulkan/present.glsl": {
+      "bytes": 10324,
+      "sha256": "94abba9d5f3fe9fc806190f93bf9728f64f7191694b4976226054e1d1f1daae1"
+    },
+    "Contents/Resources/shaders/vulkan/shadeboost.glsl": {
+      "bytes": 1914,
+      "sha256": "31ab20c5617e0bdd3e1afaf9cac2212586f94433f176ca30810a1fecf3f338e8"
+    },
+    "Contents/Resources/shaders/vulkan/tfx.glsl": {
+      "bytes": 52486,
+      "sha256": "2c1ee01e2badc7a37d593d749f1dd85482ca773fc3fc47e0dae497e2f7ef4e2b"
+    },
+    "Contents/Resources/sounds/achievements/README.txt": {
+      "bytes": 206,
+      "sha256": "ca2b1da6433a1f69b84e468f83820dcb0f21c97383a65ec2430ca0daeb978888"
+    },
+    "Contents/Resources/sounds/achievements/lbsubmit.wav": {
+      "bytes": 82096,
+      "sha256": "08ca1285218bf04048d2064a20f79e6bf72267fc98d555430502c245d75b42ab"
+    },
+    "Contents/Resources/sounds/achievements/message.wav": {
+      "bytes": 15696,
+      "sha256": "dfd8035387a463722ad07af3c91934e0a685f2afa57e31d305f0602656d1edb1"
+    },
+    "Contents/Resources/sounds/achievements/unlock.wav": {
+      "bytes": 202702,
+      "sha256": "d9b8d3b5e4ae0a6ed336e769301546735ff34f29c14be6e1232da6b7096c0988"
+    },
+    "Contents/Resources/translations/pcsx2-qt_af-ZA.qm": {
+      "bytes": 710018,
+      "sha256": "753817897c67d9e641c632ff8e0254159b91f5c7c44207f9eb6346712167b609"
+    },
+    "Contents/Resources/translations/pcsx2-qt_ar-SA.qm": {
+      "bytes": 703105,
+      "sha256": "6c9c153321ace73ed38d6e94c532934b3d2e18cc08293120bf7954641842818b"
+    },
+    "Contents/Resources/translations/pcsx2-qt_az-AZ.qm": {
+      "bytes": 723818,
+      "sha256": "0ba423d1e3be48c8412c172c5aca4301dfa222da32ee84d3ff72120e1a508583"
+    },
+    "Contents/Resources/translations/pcsx2-qt_bg-BG.qm": {
+      "bytes": 709252,
+      "sha256": "dac9d8f7576f2da0a7b3b75adc2d0fcb453f70d44e937d2f1bc474153099bb09"
+    },
+    "Contents/Resources/translations/pcsx2-qt_ca-ES.qm": {
+      "bytes": 774892,
+      "sha256": "d00c05eaecd551f6c54958823d33da5c3fd268c96767bf3ed1aeabb1cbf06dba"
+    },
+    "Contents/Resources/translations/pcsx2-qt_cs-CZ.qm": {
+      "bytes": 722633,
+      "sha256": "a600d2caed679b770bf0123b9eaf5823656191aff7516fbf8415d351616d49b2"
+    },
+    "Contents/Resources/translations/pcsx2-qt_da-DK.qm": {
+      "bytes": 708374,
+      "sha256": "77ae9ae1d6162daab7c13e1f50c944e6596af781720b99c8f681752de7e09d32"
+    },
+    "Contents/Resources/translations/pcsx2-qt_de-DE.qm": {
+      "bytes": 766086,
+      "sha256": "66b954db16883452a2a79374e218c475c142784957e1c57d43a9af40c0020603"
+    },
+    "Contents/Resources/translations/pcsx2-qt_el-GR.qm": {
+      "bytes": 804544,
+      "sha256": "31d298a7955af6daeab91b4c7d46a3330daf50e90be2ba57a1242581df95efa3"
+    },
+    "Contents/Resources/translations/pcsx2-qt_en-US.qm": {
+      "bytes": 1816,
+      "sha256": "693273d4809760c6dd490fb8e908671c00046a97ca6269b406e07002c4e6b9a6"
+    },
+    "Contents/Resources/translations/pcsx2-qt_en-fg.qm": {
+      "bytes": 708180,
+      "sha256": "ae9fb67a8826d4ff63d831aeca1c16b8cab101531062fb67fdeed6fe8a15e2fb"
+    },
+    "Contents/Resources/translations/pcsx2-qt_es-419.qm": {
+      "bytes": 787689,
+      "sha256": "448d39d47870ad72d4bdb56c953f9b9369659482de36519f4f19e5ed6d67229b"
+    },
+    "Contents/Resources/translations/pcsx2-qt_es-ES.qm": {
+      "bytes": 797332,
+      "sha256": "cb28ec3087eea75dd8618152b0852242488fbf1de1f5bae073221819569ce465"
+    },
+    "Contents/Resources/translations/pcsx2-qt_fa-IR.qm": {
+      "bytes": 715688,
+      "sha256": "38a67f8e371e0afc149b5f5d42e3dd35f8285a2e9703ca1342fcf0910ec98e9a"
+    },
+    "Contents/Resources/translations/pcsx2-qt_fi-FI.qm": {
+      "bytes": 738650,
+      "sha256": "3ece4ee65554947f15c850eec3a7a2f6ee7ac353b032cea2186b8b18d8cdb5f8"
+    },
+    "Contents/Resources/translations/pcsx2-qt_fr-FR.qm": {
+      "bytes": 801986,
+      "sha256": "6abed5ecc79f66284d119e945bbcbd782516f0ee7cbbb9f26e42a97151543503"
+    },
+    "Contents/Resources/translations/pcsx2-qt_gn-PY.qm": {
+      "bytes": 713302,
+      "sha256": "969e624da7a76ca87bd99ebbd1880112f73c267bcc922a5e9cf3d2c772ec8ea2"
+    },
+    "Contents/Resources/translations/pcsx2-qt_he-IL.qm": {
+      "bytes": 702818,
+      "sha256": "c7fa381b0a0c9d8cdbd76437c2138860fcd9bbe5b99a4ea03628eae18e3eb2c2"
+    },
+    "Contents/Resources/translations/pcsx2-qt_hi-IN.qm": {
+      "bytes": 708706,
+      "sha256": "1fce105874b7aea131eaa8a3a27af2d389506d0b73de9dd360e352a3cd2fcd2a"
+    },
+    "Contents/Resources/translations/pcsx2-qt_hr-HR.qm": {
+      "bytes": 740424,
+      "sha256": "345c4f372a6774cdb34afc50745c65a5495608304265f0a6ce237c6fa9c1817a"
+    },
+    "Contents/Resources/translations/pcsx2-qt_hu-HU.qm": {
+      "bytes": 751566,
+      "sha256": "8bc628638776eb24f7fd567e68f67e7b957e7b0382aac03b76132bdf5e6e0f69"
+    },
+    "Contents/Resources/translations/pcsx2-qt_id-ID.qm": {
+      "bytes": 736268,
+      "sha256": "df87d206697d700dfbc3fa80b636fa61b27a9b95dad19da830b6a57bd780451f"
+    },
+    "Contents/Resources/translations/pcsx2-qt_it-IT.qm": {
+      "bytes": 777864,
+      "sha256": "6fcb57ff0279559f891f17c15b11f1c492bbfc6a58e51e818d32a0653f1da47a"
+    },
+    "Contents/Resources/translations/pcsx2-qt_ja-JP.qm": {
+      "bytes": 614198,
+      "sha256": "08c5393390150fe9bd1b9d188add9c664e13459fc528d73a266df5ce3f225bcd"
+    },
+    "Contents/Resources/translations/pcsx2-qt_ka-GE.qm": {
+      "bytes": 710336,
+      "sha256": "d3e34a2f804e28123111194048ca4654e147c2b3ad7e0c5d4333e5e32ad4fd51"
+    },
+    "Contents/Resources/translations/pcsx2-qt_ko-KR.qm": {
+      "bytes": 583640,
+      "sha256": "e6801f5559cdaf7c63fbaeb9d57e6642ca4214107ac4eac239bfda5eb2bfe534"
+    },
+    "Contents/Resources/translations/pcsx2-qt_lt-LT.qm": {
+      "bytes": 727657,
+      "sha256": "ed1b0d5ffc48c32f8229c68a0fadeb54df87e9beb3b91ce2781a115f279ab87e"
+    },
+    "Contents/Resources/translations/pcsx2-qt_lv-LV.qm": {
+      "bytes": 744067,
+      "sha256": "3ac9406da807b855461c7cf59cbb9c696242a6dafc3b56a5d7048789150bdf4e"
+    },
+    "Contents/Resources/translations/pcsx2-qt_nl-NL.qm": {
+      "bytes": 756330,
+      "sha256": "873406658672be5172cc2234480ef45d11577c878ebc9b0e80b9642144615cc3"
+    },
+    "Contents/Resources/translations/pcsx2-qt_no-NO.qm": {
+      "bytes": 716156,
+      "sha256": "4ec84c0ffb64b3b4aa0e68fde8e184ebd8a05bdd1350cddc48cd8f16c5a9464d"
+    },
+    "Contents/Resources/translations/pcsx2-qt_pl-PL.qm": {
+      "bytes": 742679,
+      "sha256": "bd64a17aa7b2c5c691c0f4ec66e57197ace5c86bb687fd2d18da5bc8bf6fe43e"
+    },
+    "Contents/Resources/translations/pcsx2-qt_pt-BR.qm": {
+      "bytes": 769692,
+      "sha256": "4873dd73657a3f92920eb20e3171e582db3d222a5976b03aca61875f5826efe6"
+    },
+    "Contents/Resources/translations/pcsx2-qt_pt-PT.qm": {
+      "bytes": 755430,
+      "sha256": "75c16425f08732db75fb8c5670c4986d6881ca76bd353978b1b7d9579dd53a98"
+    },
+    "Contents/Resources/translations/pcsx2-qt_qu-PE.qm": {
+      "bytes": 708180,
+      "sha256": "00e6d165f0137cfc5243e63b9e0156db890083c80569b2e1895e07f57b3981b9"
+    },
+    "Contents/Resources/translations/pcsx2-qt_ro-RO.qm": {
+      "bytes": 715230,
+      "sha256": "f657c19b1977cff92d553f34461beb4eb0fb89a0af8368497927aa582932ca80"
+    },
+    "Contents/Resources/translations/pcsx2-qt_ru-RU.qm": {
+      "bytes": 762638,
+      "sha256": "19de8f2d62aa963062616e001435be06ae3f3d080f37e32caab0f5b1018b7834"
+    },
+    "Contents/Resources/translations/pcsx2-qt_sr-SP.qm": {
+      "bytes": 735618,
+      "sha256": "7c3150683f6da97efd2fc49486121ca791673349e5e26f1454aa7ebf5c56c883"
+    },
+    "Contents/Resources/translations/pcsx2-qt_sv-SE.qm": {
+      "bytes": 733200,
+      "sha256": "e0dea490b7b0afb39febc1cd36d9985bf3061a46fb52862de0d2994e4d6ce3d4"
+    },
+    "Contents/Resources/translations/pcsx2-qt_tr-TR.qm": {
+      "bytes": 726580,
+      "sha256": "01e7580b8cf01248332f47e1f5f20194d8eb9ce64a65a15c756a5925243074ef"
+    },
+    "Contents/Resources/translations/pcsx2-qt_uk-UA.qm": {
+      "bytes": 728044,
+      "sha256": "766627edeeff8af09dbe87ee2b788a91b2068a0dbcbd60d81526890d55bb9c4a"
+    },
+    "Contents/Resources/translations/pcsx2-qt_vi-VN.qm": {
+      "bytes": 708536,
+      "sha256": "3a5397743267c0bbc7a2447d9a017fd673062fadb5d3e37999dcdf75c80ba680"
+    },
+    "Contents/Resources/translations/pcsx2-qt_zh-CN.qm": {
+      "bytes": 514234,
+      "sha256": "1cc3ac8e9c6a4e7b910e30e1deeae5198f0e57e6739edb3a9b1ed588fc22c868"
+    },
+    "Contents/Resources/translations/pcsx2-qt_zh-TW.qm": {
+      "bytes": 626984,
+      "sha256": "7229ea6bb8c1f57fb70b1c23b9869a23d16e863bc586d7d609c9a6022f727d2b"
+    },
+    "Contents/_CodeSignature/CodeResources": {
+      "bytes": 51369,
+      "sha256": "aee8c3214bc38c2d2b11e1292e219191728b85cc682084420b88583b9d19a49d"
+    }
+  },
+  "candidate_machos": [
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libkddockwidgets-qt6.3.dylib",
+        "@executable_path/../Frameworks/libavformat.62.dylib",
+        "@executable_path/../Frameworks/libavcodec.62.dylib",
+        "@executable_path/../Frameworks/libswscale.9.dylib",
+        "@executable_path/../Frameworks/libswresample.6.dylib",
+        "@executable_path/../Frameworks/libavutil.60.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libcurl.4.dylib",
+        "@executable_path/../Frameworks/libjpeg.62.dylib",
+        "@executable_path/../Frameworks/libwebp.7.dylib",
+        "@executable_path/../Frameworks/libryml.0.12.1.dylib",
+        "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "@executable_path/../Frameworks/libSDL3.0.dylib",
+        "@executable_path/../Frameworks/liblz4.1.dylib",
+        "@executable_path/../Frameworks/libpng16.16.dylib",
+        "/usr/lib/libz.1.dylib",
+        "@executable_path/../Frameworks/libzstd.1.dylib",
+        "@executable_path/../Frameworks/libplutosvg.0.dylib",
+        "@executable_path/../Frameworks/libfreetype.6.dylib",
+        "@executable_path/../Frameworks/libplutovg.1.dylib",
+        "/usr/lib/libpcap.A.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "@executable_path/../Frameworks/libQt6Widgets.6.dylib",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "path": "Contents/MacOS/PCSX2",
+      "rpaths": [],
+      "sha256": "e76d1e79ff017914bbcbd8d6488eab373041df687deb314e4da02e12be98b254"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libavformat.62.dylib",
+        "@executable_path/../Frameworks/libavcodec.62.dylib",
+        "@executable_path/../Frameworks/libavutil.60.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+      ],
+      "path": "Contents/Frameworks/libavformat.62.dylib",
+      "rpaths": [],
+      "sha256": "026e8b93788628275cc2f4a4a7552ccae2bbd89a6eb755bac244e1a801be656a"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Svg.6.dylib",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libQt6Svg.6.dylib",
+      "rpaths": [
+        "@loader_path"
+      ],
+      "sha256": "0c840e8600ab0baacdf755e942594ec6e98f03936e72a8764ecd1fefad27ede2"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/usr/lib/libz.1.dylib",
+        "@executable_path/../Frameworks/libzstd.1.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "path": "Contents/Frameworks/libQt6Core.6.dylib",
+      "rpaths": [
+        "@loader_path"
+      ],
+      "sha256": "1ff89e8e6c6cf435b1e4bc7f66b0dcd43673833f901c0ed96fcd74956e220221"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libpng16.16.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libpng16.16.dylib",
+      "rpaths": [],
+      "sha256": "92dbace5c0ecfdb579fc6689da7562b14907c029010b02ce4c15c489e9ac6ff8"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "@executable_path/../Frameworks/libpng16.16.dylib",
+        "/usr/lib/libz.1.dylib",
+        "@executable_path/../Frameworks/libharfbuzz.dylib",
+        "@executable_path/../Frameworks/libfreetype.6.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "path": "Contents/Frameworks/libQt6Gui.6.dylib",
+      "rpaths": [
+        "@loader_path"
+      ],
+      "sha256": "158099a6d15f82bbded9be36cec9c230ea6cd8151559a95cce915fddf1a8913c"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libSDL3.0.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/ForceFeedback.framework/Versions/A/ForceFeedback",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/GameController.framework/Versions/A/GameController",
+        "/System/Library/Frameworks/CoreHaptics.framework/Versions/A/CoreHaptics",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "path": "Contents/Frameworks/libSDL3.0.dylib",
+      "rpaths": [],
+      "sha256": "521a32eb9276b0baf834514fb183c496e04a2c4af92f5b4d6a18a82382da3dc8"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libswresample.6.dylib",
+        "@executable_path/../Frameworks/libavutil.60.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+      ],
+      "path": "Contents/Frameworks/libswresample.6.dylib",
+      "rpaths": [],
+      "sha256": "b7a0094fc61aab0e276f3f85ae3489aed8d7ec9f3369402bbe28f9b635c6b792"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libplutosvg.0.dylib",
+        "@executable_path/../Frameworks/libplutovg.1.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "@executable_path/../Frameworks/libfreetype.6.dylib"
+      ],
+      "path": "Contents/Frameworks/libplutosvg.0.dylib",
+      "rpaths": [],
+      "sha256": "c0fc0aff90713023fe433a75e556183a646259c660c661b3c559e5fc35bd0f51"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libplutovg.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libplutovg.1.dylib",
+      "rpaths": [],
+      "sha256": "1d2065d34ac916abdc3ffd02261594fc85e7c0e08de8dc2cee435fbdb7a7a203"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libfreetype.6.dylib",
+        "@executable_path/../Frameworks/libpng16.16.dylib",
+        "@executable_path/../Frameworks/libharfbuzz.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libfreetype.6.dylib",
+      "rpaths": [],
+      "sha256": "d0bbdaa4b252712a0096f11f99a505949b43fe0ddd13f38d1079b70a904367fa"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libsharpyuv.0.dylib",
+      "rpaths": [
+        "@loader_path"
+      ],
+      "sha256": "0258418f95d3c5969327be4598a8d9d5f7c5b3502eb9c456e96fc16fe178f588"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libavcodec.62.dylib",
+        "@executable_path/../Frameworks/libavutil.60.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+        "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+      ],
+      "path": "Contents/Frameworks/libavcodec.62.dylib",
+      "rpaths": [],
+      "sha256": "d8a5bd08df41e3bdd3f00fd8a28339d33aa5b46aed8ba723c64a0c84e290f987"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@rpath/libMoltenVK.dylib",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/usr/lib/libc++.1.dylib",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "path": "Contents/Frameworks/libMoltenVK.dylib",
+      "rpaths": [],
+      "sha256": "1970075a8820acc236c27b577980982aaf389f94273ccce107d344f334a57400"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libwebp.7.dylib",
+        "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libwebp.7.dylib",
+      "rpaths": [
+        "@loader_path"
+      ],
+      "sha256": "9f61ddc5a79ba90a6af7cfd9a3f3a52f11e17c223839985564c1c8d3a7802907"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@rpath/libshaderc_shared.1.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libshaderc_shared.1.dylib",
+      "rpaths": [],
+      "sha256": "142dd8b116da8e5096d7e44747371119333659f28a28e236aafaff18c2e6c462"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libwebpmux.3.dylib",
+        "@executable_path/../Frameworks/libwebp.7.dylib",
+        "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libwebpmux.3.dylib",
+      "rpaths": [
+        "@loader_path"
+      ],
+      "sha256": "146d0dc2ad519873803d4f24405722c16ec20ee53cf6c40b746296657bd715e6"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Widgets.6.dylib",
+        "/usr/lib/libz.1.dylib",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "path": "Contents/Frameworks/libQt6Widgets.6.dylib",
+      "rpaths": [
+        "@loader_path"
+      ],
+      "sha256": "c7de3ac159cc05cc5f817c0c9b26f907393fb7c30a97abc9cd67f380616c94d5"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/liblz4.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/liblz4.1.dylib",
+      "rpaths": [],
+      "sha256": "d5c006d2468585dc05bd8081b27465d9ee89b35bde744ffe7170fe5a18228d53"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libwebpdemux.2.dylib",
+        "@executable_path/../Frameworks/libwebp.7.dylib",
+        "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libwebpdemux.2.dylib",
+      "rpaths": [
+        "@loader_path"
+      ],
+      "sha256": "2244a88df80775567f099297ba4ed1929c675134f14f2fea284dd21ad15b71e9"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libzstd.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libzstd.1.dylib",
+      "rpaths": [],
+      "sha256": "43df7665b443a7fe59d2f881b97650b1a7910016a6a3d071f4710d64ce6bd387"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libkddockwidgets-qt6.3.dylib",
+        "@executable_path/../Frameworks/libQt6Widgets.6.dylib",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libkddockwidgets-qt6.3.dylib",
+      "rpaths": [],
+      "sha256": "1950fcf661a5b741a6b82ed27118e5a53647b684158e81471519ffd013f662d6"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libjpeg.62.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libjpeg.62.dylib",
+      "rpaths": [
+        "@loader_path"
+      ],
+      "sha256": "9084efcbe370307f00171ecb277e6adf969a7b15855f4ff5de4924a61d5b97da"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libharfbuzz.dylib",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText"
+      ],
+      "path": "Contents/Frameworks/libharfbuzz.dylib",
+      "rpaths": [],
+      "sha256": "c6a264ecd8ff34f29d27c63294cf757c18f73687f876ab89b6e6a4d7fe310ed5"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libryml.0.12.1.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/Frameworks/libryml.0.12.1.dylib",
+      "rpaths": [],
+      "sha256": "df44311e5a8726a7506ad071d42b0bc4dc4af37bc8de6901ae09b02985b84b57"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libswscale.9.dylib",
+        "@executable_path/../Frameworks/libavutil.60.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+      ],
+      "path": "Contents/Frameworks/libswscale.9.dylib",
+      "rpaths": [],
+      "sha256": "c41f113d58384545c59560c433b1a48dbbb1693fcee6dfe5f25fe352bd0ac6c0"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libavutil.60.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+      ],
+      "path": "Contents/Frameworks/libavutil.60.dylib",
+      "rpaths": [],
+      "sha256": "15471a31cff7ce914dc02c1d7b264fa7662c284af7f15d8722fe9520758c378e"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo",
+        "/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface",
+        "/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "path": "Contents/PlugIns/platforms/libqcocoa.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "431c8d5a18eb943b3a8937d0aa0703ec2f8ab9c1274723fab791e61b5c9f264b"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Widgets.6.dylib",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "path": "Contents/PlugIns/styles/libqmacstyle.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "0a19751fbe5c95afe28abefc77aac4e7c86030f9e422d2f4f505e9587d0a9983"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Svg.6.dylib",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/iconengines/libqsvgicon.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "1c55fe06c32f39645f86360901bb8634ba0ae8912ff245ff07fdcbb1fa028b6e"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqgif.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "50892e7b7b8701d3e3e0ed1ca133f66204b844e6ea430fd0ff367b8be77589dc"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqwbmp.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "5763f5007696c19d51a3a023b49aa660cdfcab122809859c6bb6f4963b255bcd"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "@executable_path/../Frameworks/libwebpdemux.2.dylib",
+        "@executable_path/../Frameworks/libwebpmux.3.dylib",
+        "@executable_path/../Frameworks/libwebp.7.dylib",
+        "@executable_path/../Frameworks/libsharpyuv.0.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqwebp.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "70d07a8f6eeecc8613eb36d62cbd94e48a21e5c8cb30390b77f6abbcbc07b479"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libpng16.16.dylib",
+        "/usr/lib/libz.1.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqapng.dylib",
+      "rpaths": [],
+      "sha256": "6a3174242597061c901236d3e989c1328a3dfd4a4689f294c4f1c12a1f9e8162"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqico.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "5f08272c5cebcbe3a30c83b44db09556d78b83b8baa711cded4c490937df8944"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqmacheif.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "12ee29fcf4ce1c463a3fdbafeda1abe85ff694e901de6311ea4de6b1f1962418"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "@executable_path/../Frameworks/libjpeg.62.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqjpeg.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "fa7d79af19684a430d9ad42a1e489d0a0aefaededafadd8f000050b3b033abff"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqtiff.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "f0b6295d6315dbbbda562228e76165d4a7f43ef45baeff7ccefaa1090af2fc89"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Svg.6.dylib",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqsvg.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "81c738e9ef0f6ad9671f374679f6dbe1a571fdf0665d8c322f14caa5ec6ab260"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqicns.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "40d023fd673f1f07f4888cfbe8d1445f2e982d2d764c25dd104b68fe2aa882ae"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqtga.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "5a1917ae1c3771e5a27494123b8218af483477e5598ee46dff64e76fede760dd"
+    },
+    {
+      "architecture": "x86_64",
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "@executable_path/../Frameworks/libQt6Gui.6.dylib",
+        "@executable_path/../Frameworks/libQt6Core.6.dylib",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO",
+        "/System/Library/Frameworks/Metal.framework/Versions/A/Metal",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "path": "Contents/PlugIns/imageformats/libqmacjp2.dylib",
+      "rpaths": [
+        "@loader_path/../../lib"
+      ],
+      "sha256": "9109436f90e042d7272eab5afe0e67bc276d36ad1a8894b79197027bb2657e5e"
+    }
+  ],
+  "candidate_original_preserved": true,
+  "candidate_testconfig_profile": {
+    "ini_sha256": "4285872179fd0954eeb18078e62a9a63fb6ebd27d2f5a4b268ece0c7aede1e9d",
+    "no_game_requested": true
+  },
+  "capabilities": [],
+  "capacity": {
+    "initial_free_bytes": 22454239232,
+    "maximum_stage_allocated_bytes": 341725184,
+    "maximum_stage_logical_bytes": 333714616,
+    "minimum_free_bytes": 22164951040,
+    "sample_count": 335,
+    "samples_sha256": "bc82ec313f532777e7e1e3af7c96bd402a20e3e1ad49d0ef1792d4f6db47e2d4"
+  },
+  "completed_tasks": [
+    "IW-PINE-JOINT3"
+  ],
+  "date": "2026-10-18",
+  "full_build_inventory": {
+    "cmake_cache_sha256": "f9e2f27aa74a39a43142af1fdb02ddeb1500bf2ccc9f7c1ceec8b26238b7a5ac",
+    "compilation_entries": 825,
+    "compile_commands_sha256": "be1ae722f0d4740caa349be9d7149500271a10c0626eb081e9b018210e341dbf",
+    "own_entries": 14,
+    "policy": {
+      "floor_gib": 10,
+      "jobs": 2,
+      "max_stage_gib": 8,
+      "seconds": 2700,
+      "start_gib": 20
+    }
+  },
+  "full_build_runs": [
+    {
+      "duration_seconds": 7.153,
+      "label": "full-configure-v1",
+      "log_sha256": "0bcabad62c6e2528a9d48c16615257eb33f6d9f93130f608b15a10613714183c",
+      "receipt_sha256": "f1769bef412b771585c79496d0f1e8480007f2c9f7f10dda1c580a31363b3a42",
+      "shutdown_verified": true
+    },
+    {
+      "duration_seconds": 347.658,
+      "label": "full-build-v1",
+      "log_sha256": "0a7eb86ba1603f09b8165ad1d35c85b52c5f59b1ea85c8a6eb03c00f865e9270",
+      "receipt_sha256": "ca7cfde98e74aaa94c7f1c56c60598ff7af53d7623743849bdca4b9120d90422",
+      "shutdown_verified": true
+    },
+    {
+      "duration_seconds": 35.407,
+      "label": "full-tests-build-v1",
+      "log_sha256": "dd584bb9ee584fd8a0d851d912e5826d73001d378ee1a01471a18aed4e6bec96",
+      "receipt_sha256": "ee052f2a2f576d38cc9a90471fc379c6cd51f45b3574e5dc392385bc1864c25b",
+      "shutdown_verified": true
+    },
+    {
+      "duration_seconds": 5.486,
+      "label": "full-ctest-v1",
+      "log_sha256": "e0693b42aefcfa7f75c9a8b91d757a3866059ad11efb5ebd2928f06f84b74f01",
+      "receipt_sha256": "f8db5814086b8a54cf6b900b9fc182dc7a63e8d87668ce36303760ea6d3eea33",
+      "shutdown_verified": true
+    },
+    {
+      "duration_seconds": 13.861,
+      "label": "candidate-testconfig-v1",
+      "log_sha256": "95b40e3e5b2c022fccf5e2d05428f64f5270f2bb3a21008ad80759ad755cb998",
+      "receipt_sha256": "aa5adc9fce42fb693a45b656da8c77819654eb91e399499cb1893b3d018b5a3c",
+      "shutdown_verified": true
+    }
+  ],
+  "historic_private_files_verified": 2910,
+  "historic_receipts_verified": 58,
+  "history_manifest_sha256": "5e86a9b9441fa2ed563d216dc92d50b4b3e88bd5d6b55053e2c2f1e125fed7a1",
+  "host_core_unchanged": true,
+  "host_ctest_rerun": false,
+  "installed_application_modified": false,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-pine-link/audit.py": "fdaa808d8131539ae8e33c32ff7af10ba53d8a972cb38b6b0f2d05d886faeb79",
+    "build/f02-07-pine-link/context.py": "65ac34fcc4859223f1b687a09e366113b68847cb651a4b1260d8a2ce9af86d20",
+    "build/f02-07-pine-link/history.py": "3cda1ac3a4f5667aa3a14106b399b3cb55ce94aadc41a5807ff23c542726a131",
+    "build/f02-07-pine-link/package_full.py": "2fc74769835d81339a969d58c14ae27e07740ef0326fc6f616bd45056610a637",
+    "build/f02-07-pine-link/runtime_smoke.py": "b0c73ef1d3eb792e093dd9f6fa19a8987095da71de785964d66951d43f82e305",
+    "build/f02-07-pine-link/validate_full.py": "a292f6f635f844b555c9afa4977e5fc749baf6639c0dc3b42e87010479a0ce77"
+  },
+  "new_provider_edits": false,
+  "next_tasks": [
+    "RD-T1",
+    "RD-T2",
+    "RD-T3",
+    "B3-C/B4",
+    "CQ3-C/D",
+    "CQ-4",
+    "AD-3"
+  ],
+  "nintendo_build_rerun": false,
+  "original_ctest_log_sha256": "83e795566247de00278fde474324e1345d9df7119d7da09b8ccb93f64fb21f1a",
+  "original_ctest_programs_passed": 2,
+  "original_internal_tests_passed": 113,
+  "preceding_evidence_sha256": "3493d5f39ccf5c0e1b8f2794b25115e4d1f84a536bb67753d0dc045744603d4c",
+  "prefix_verification": {
+    "files": 5228,
+    "manifest_sha256": "694cbabfc81faf8044b1b252184f5c70b1052c65f81f724f0f6f7865778c6b33",
+    "matched": true
+  },
+  "previous_report_describes_historical_capacity_block": true,
+  "previous_report_replayed": false,
+  "prior_private_history_verified": true,
+  "prior_public_inputs_verified": true,
+  "prior_source_copies_reverified": [
+    "source-pine-transport-v1",
+    "source-external-waits-v1"
+  ],
+  "provider_application_linked": true,
+  "provider_application_testconfig_executed": true,
+  "provider_application_vm_executed": false,
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-pine-link.md": "817afef0714fbfc965d9165c718ac112574c252a2935ca60b5bc8069af2106e2"
+  },
+  "python_full_suite_rerun": false,
+  "read_events_produced": 0,
+  "remote_ci_executed": false,
+  "resource_links": [],
+  "schema_version": 1,
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_copy": "source-pine-transport-v2",
+  "source_files_verified": 2966,
+  "source_id": "SRC88",
+  "source_manifest_sha256": "d024cf6262f7560e25c6333eaf26c3bcfe363b026dfed1800561c1490ba7bb34",
+  "status": "pine_transport_full_application_linked_original_tests_and_testconfig_passed_vm_pending",
+  "total_preserved_source_copies": 22
+}

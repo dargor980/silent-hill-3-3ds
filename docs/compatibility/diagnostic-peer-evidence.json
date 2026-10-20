@@ -1,0 +1,1469 @@
+{
+  "aba_excluded": false,
+  "admitted_execution_modes": [],
+  "arm64_bridge_executed": true,
+  "async_cancellation_verified": false,
+  "atomic_snapshot": false,
+  "cache_bytes_verified": false,
+  "capabilities": [],
+  "complete_memory_inventory_verified": false,
+  "completed_tasks": [
+    "PS-T1",
+    "PS-T2",
+    "PS-T3",
+    "PD-T4",
+    "PT-T5b"
+  ],
+  "coverage": {
+    "branches": {
+      "count": 100,
+      "covered": 83,
+      "notcovered": 17,
+      "percent": 83
+    },
+    "functions": {
+      "count": 10,
+      "covered": 10,
+      "percent": 100
+    },
+    "instantiations": {
+      "count": 11,
+      "covered": 11,
+      "percent": 100
+    },
+    "lines": {
+      "count": 70,
+      "covered": 70,
+      "percent": 100
+    },
+    "mcdc": {
+      "count": 0,
+      "covered": 0,
+      "notcovered": 0,
+      "percent": 0
+    },
+    "regions": {
+      "count": 144,
+      "covered": 140,
+      "notcovered": 4,
+      "percent": 97.22222222222221
+    }
+  },
+  "date": "2026-10-19",
+  "environment": {
+    "architecture": "x86_64",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.5.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+    "existing_ci_sha256": "c7ab4f201ebc3b95c38ffee60f434cbcf8747a5941c41bc898ecaf2c65f043f4",
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5\nBuildVersion:\t\t25F71\n",
+    "root_cmake_sha256": "1a85bc58f9716d433be0e795f8d648a11c330ddca5a1b80f614ac73ed692a1df",
+    "sdk_files_sha256": {
+      "usr/include/CommonCrypto/CommonDigest.h": "83a9705bbc8d44f27ee61801064ee99288496a038d623f152aa30db6819e9ca6",
+      "usr/include/bsm/libbsm.h": "103f140eeeb89cfe35f0f5b8f6c5dd27e53d01c2ae13e82514777c2e6f33de2b",
+      "usr/include/libproc.h": "246d87709fc6b9157ce5cf3c475656ac48e0e1ae8bbdc46cf45acd34294448cd",
+      "usr/include/mach-o/dyld.h": "7c8583f2b4edcfcde7da60ffe02c75974ec87f885fecc4e8d40761fe0b553a80",
+      "usr/include/mach-o/dyld_images.h": "7d979b1522390562bec3618740f1f42b9a9a0ed38d9f619962f3d9d9f37ec436",
+      "usr/include/mach-o/fat.h": "19925cdb5fed9b5b7981b05420856f65b99abb54bca34ea95e0e581da8cc580f",
+      "usr/include/mach-o/loader.h": "5862aeb7fbf183453080bc887c0d502fe25a86ff5bd81291bbcc408bd7fe6e74",
+      "usr/include/mach/mach_vm.h": "40b7509ce3b64271d1947bfdf1328146ddb2b0cb5b337054e61a6e8e9749cba8",
+      "usr/include/mach/message.h": "86e9e87ba2a736236613f2c0a8563dbacaeec1a761654b12812eaf8599b55e67",
+      "usr/include/mach/task_info.h": "87aa49ac32cfdea60175f48d9e933f6f9318a4ea82110a9744b204d3c262f1a2",
+      "usr/include/mach/vm_region.h": "d872aab626ae7c83b6451400de146b469e7d5a7454dbbf539524fe94f2e20ea7",
+      "usr/include/mach/vm_statistics.h": "3dcd466ffa164d268b92f5d53357172c26a59e234b488887db164afeb207b132",
+      "usr/include/sys/proc_info.h": "e427fa96b348537b21552b9de71e01039410bcad2cedee5584c5e5fddafd70fc",
+      "usr/include/sys/random.h": "a1b1258a25102266b667023d65fa76968a118009b2524647695b43e3520b17ef",
+      "usr/include/sys/stat.h": "31c8f252b05785343ca577c007657c0fbab45a182b60fc5b73994c621dc318d4",
+      "usr/include/sys/un.h": "a733cb89955ef81312f4bc3a42002c6cc873e27381eb43656c7158ef9a433c24",
+      "usr/lib/libSystem.tbd": "20cfce043f11a083e2eb6111efe3579919a8082fa4cc912a7bd839af2010ec57",
+      "usr/lib/system/libdyld.tbd": "c9d4aaa58a50cd544b8f583c4368d23f8c299e39dc8145e1c3f8ecf9b32becf4"
+    },
+    "sdk_name": "MacOSX26.5.sdk"
+  },
+  "existing_candidate_modified": false,
+  "final_binaries": [
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_process_birth",
+      "sha256": "74272ee067b670e9da596a8067256672dd3e658a38b19bb61d78bfba75ffa3b9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_process_birth",
+      "sha256": "636becf078313740db182d2c20e78911a49f7eee8b69df79a8a0aaa40d55fe7c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_image_identity",
+      "sha256": "54e4de7fb04feee370003064d7fc9f89bbf93cee040ae936277463feabf1e3ca"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_image_identity",
+      "sha256": "2452351557838d93378c1240494ccd467745a84fb83bd2f68a88e82d92b9fccf"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_artifact_manifest",
+      "sha256": "300eff0cb018075281bb8672bcf54e93d8450bf7c1f39e451c5c7776dbe05c19"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_artifact_manifest",
+      "sha256": "61e249fe20ec6fc72d672a902d8d8f51c2fb3efb71821fe2ea1efb0b38ce0dcf"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_inventory",
+      "sha256": "168ab99c4625c85088acb3d6387bab34c21a33755bb5d7d1c5a165dd2bbe1eaf"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_inventory",
+      "sha256": "7a03fd327f5b34be3894ff3a2219f0e78b3c8c14109b5f97898efa44a493e312"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_page_binding",
+      "sha256": "dfa63f3be1063798e8445088eae4e6385652c5149f1e9de8f6f6e889823816f1"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_page_binding",
+      "sha256": "e9782579e62e29f94e0a4002521c3fb8bfe16500567c3da6577631ee4d7ac20e"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_cache_integrity",
+      "sha256": "541cf4cdf2cbfd647bdce780b71dae6c86f47be0af002c212e38adca4f50d367"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_cache_integrity",
+      "sha256": "cc8eab881d44bd6d65f4081be5cee382785ca276b5db00021c760f96eba8062c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_image_layout",
+      "sha256": "54037330048539f50357a29bac1628ac874808e18d24578e6dfb539a3a27f710"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_image_layout",
+      "sha256": "45cdfa724918b7c72616318c5bf903953969d316f30e5755f779224548b8398b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_range_plan",
+      "sha256": "3c6ca05ab0cbed9c0a982e47c92aeaac4d1f57967a4f1ec21033b3d4a98dbbaa"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_range_plan_allocation",
+      "sha256": "734177a991c1510933d16f374ecc39614b1ea6044a9133de9ae83b1b1802a17f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_region_map",
+      "sha256": "60361cb2193c4abb2f4cb986a97a6dc8f41c8592d5afde56ed85c52bf3c4429c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_region_map_allocation",
+      "sha256": "68da467fc97da1fa1ae313782173261bc84b002bc3670faf44d9ca634645b4c0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_region_map",
+      "sha256": "ae7589cc13965605ba5bc627d92f954b2b4645f47d304e682983a361e48db904"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_region_vnode",
+      "sha256": "caa7a3c33c43ce24ad7d498a580b89d6388592d23c8357177e85c96cc02fe6c0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_platform_inventory",
+      "sha256": "679f1e72b0a8b5e7bea391cbfcdb6f36f6ef0255cfdf1ec909c0d0a79bfc64f5"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_platform_origin",
+      "sha256": "d1c39405d822bed870809571ee10ce8e09f165c1b75b1484a6b6b80b2a22ed4c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macho_slice",
+      "sha256": "41b58fe3aa6f6d728f9196131e4d5f44408f33f1cb8a544e1263e0b6b2961669"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_platform_slices",
+      "sha256": "f65cbb8b12c0b0ee05a523cd7a66a0f5b2e4cd5df3e5ad668d8a75d831db2290"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_slice_binding",
+      "sha256": "19faeff5e7f38df720ac47c88598620a4516e65d3b712a09505e47d72bf7e3cb"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_launch_manifest",
+      "sha256": "c31b3c233c21dceb5df82c6cce50c9962580f021be71808864c6d0b97433be5a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_launch_files",
+      "sha256": "ba061327ff324402994b9c1c2c150fcd6730636f59af6026c29e2512757a647c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_platform_diagnostic",
+      "sha256": "e13becf863843030f0411dc6a338302ee5376c57d40be11d5a1eb773dab421c6"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/test_macos_peer",
+      "sha256": "58111be63585b86d9f55006cda6499a9926fd815d4b4207fea0ffe79e711a67c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/libsh3_macos_peer.dylib",
+      "sha256": "eb276e301faf621d475610b131c5eadab7fbb5e2b5dcab763e22259d42f2f6fb"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/libsqlite3.dylib",
+      "sha256": "b19aeca8f5b51de1a3eac65cf02efe4111999f1222b402cd21211ae0881bcc7a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/libimage_fixture.so",
+      "sha256": "353310cba5705639631da9ca16a02164ab9f0a56b3e26f689588d119d353e11f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "debug/libimage_fixture_other.so",
+      "sha256": "37d0210bbb17e49d6f934ff1b76c0937c1f1f513c1d4b65161fa6d74c3e24716"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_process_birth",
+      "sha256": "41f4c9c60b0a36616f84884e08db642f2d8d16bceab722b0dc491fec63e854cd"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_process_birth",
+      "sha256": "c4043c8a438c2f5bfdcf94a9750dc0901ae840041a694ef2645bb2b49a34f555"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_image_identity",
+      "sha256": "800c6ba67dcb572bdaf0c18422b647c1a68a7f3e818bef6b7cff45d7080ca2d5"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_image_identity",
+      "sha256": "d59aaf09b686b78fc153dc373a6a0eb615ff9351bcefed7cbd80857dee032fb9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_artifact_manifest",
+      "sha256": "22bc91c57267fe79ef3d9951c83b062c485501d38daa53768766b5e200518806"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_artifact_manifest",
+      "sha256": "2de64298b30397864db437871b4be5c848dcbe6ee0f129019a7146925e63d497"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_inventory",
+      "sha256": "257a223100b0286ad2ca09e6504fd701ada3079138773dc98302d821c37d8cf9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_inventory",
+      "sha256": "ebff7c43f32b56f9f02ec3fa4f4f1d524cc8868483d9751c24982dd5f94f5625"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_page_binding",
+      "sha256": "a774a7db43369d27e2e200e38e8849da89ec3ab72571d0078960ad688fd469aa"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_page_binding",
+      "sha256": "ad4412c11058d9f2c7aef5ee50c1f4697618e2e9dccb40b990be630bb8fe47aa"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_cache_integrity",
+      "sha256": "643b430cb62ad85d5950e8ccfcef25d29ec2de0c65bd6c29899d2015284a8a1f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_cache_integrity",
+      "sha256": "3816a19c724e75425c7d2675be74e3d2a61cf35f6e9daa055f0c8d0828a6b173"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_image_layout",
+      "sha256": "6150230a49d526c98e31a83c11326c37de668eb618b7e60f3b3278d31d5ed6de"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_image_layout",
+      "sha256": "39cf1be6f1ff7558254d77d567698fb8803e1a032b71756cb2e650c675d8d850"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_range_plan",
+      "sha256": "5bec71ba4c6f68009bbabb4d761126f8ca343e65cf78f0889fdf56b17f7f894f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_range_plan_allocation",
+      "sha256": "bcc0205a31ff0332b8620bdb38e3db818250d706da98e01fe77878f1e8643143"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_region_map",
+      "sha256": "dd279947590fecea131274b2d7ec397ad39d28f8f9a56576fefdac73343e371f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_region_map_allocation",
+      "sha256": "15b248b77a38bac4e4a2caf04a4558e852aa93ecec0d490165d1f299ccd1352a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_region_map",
+      "sha256": "a46c784735217afc1e21355add7b95dc0d2d04d1c6b7ef491023cd9c8b0ce193"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_region_vnode",
+      "sha256": "819402914746cf8c46b17e8fe2c0bce320f698d2de51e4c30d3cbea3c528baef"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_platform_inventory",
+      "sha256": "6c8905603f71aefc62e73f5588cd765e08b725007a8be644821f00c4e05a9612"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_platform_origin",
+      "sha256": "cd7204b5ff8a178f71d4cb317c06e865f7fadde2c9f28c9e4e8f51ced9d2833a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macho_slice",
+      "sha256": "4348299339499cd5a54307a1e936c7ff6e34f01ad5dab68c2e9ae68b77f150eb"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_platform_slices",
+      "sha256": "23951424d90e7649531ae16995eca5dc1ee7dc5c2a5f7e47dfcdeb562a1caf53"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_slice_binding",
+      "sha256": "ffe499036fcc913839e580e81de968caf866f835bc2415063ba0a74c76bb66be"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_launch_manifest",
+      "sha256": "cb7052dd714aaca4b02e166c0a67ba7b9f443e93ffaf9fea3d44728c03a3e660"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_launch_files",
+      "sha256": "c45d5a068fab48429d289a98e33ca3b2fc2a59c39e9b2ea3d8cb2ed8d0027b29"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_platform_diagnostic",
+      "sha256": "5ace7a2f3e9a79a0b7aae99265385033b610b88fbe0d324d65e1f47d9ce3a341"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/test_macos_peer",
+      "sha256": "7f191851601aa28b72790abeb0d473026eb9629f848a2227e47a0ff059fef5a0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/libsh3_macos_peer.dylib",
+      "sha256": "7b6dea5871339a002de6203e24dee486e13c27582e7b92e577cba236c8fe93bb"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/libsqlite3.dylib",
+      "sha256": "ac54c3e4ea976c35d419c7c5956c799611c115a0deb47c34701c9741c5df6f8a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/libimage_fixture.so",
+      "sha256": "73d0004ac736acc9bc310884d92d3451d289a4dcd527eee912034e5db4b2bebf"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "release/libimage_fixture_other.so",
+      "sha256": "324e063fccd9dadabbc473f223fb637cfae82257d172b78e3180cccde71d9fec"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_process_birth",
+      "sha256": "a1747aa08b6c5e27c04d6a9cf6ae7ab1f9b96abc5b5be8eb69f61b743c2315e4"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_process_birth",
+      "sha256": "a1f9f4289258722da7888f0dbdc934bda603dd6560b4271bb539347b12afda85"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_image_identity",
+      "sha256": "1202d3469b16d15b668560047ccca12a587f80ca0c1117ba4271a9560ec97355"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_image_identity",
+      "sha256": "05936b6da95befd466b66a0326022eaa9cb95e3811066a1d742a4c5f5f11a19c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_artifact_manifest",
+      "sha256": "9b0a481ba38df9b21157e334d0a2c67da3277b3b9cd8f335902c7b979576a7aa"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_artifact_manifest",
+      "sha256": "c05093a16f940ce4bae8a2b75293e9cd361b387d6e6a4d777ab1a11fee5b3005"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_inventory",
+      "sha256": "799019b0fa5cbc1ef6608e432cdafc34ee19ccae61194b0df4048eb9df129d79"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_inventory",
+      "sha256": "bef73bb94e77cae49920daceeb08b709d1711b96a569a97646dbbf5f20e275af"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_page_binding",
+      "sha256": "3c69f9103081822f1de22261d14528247c30fd3d0efb5a17b79bc272bb4cf90c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_page_binding",
+      "sha256": "2f7c1ad6832668664bd4d5a9d450c29193220e4c7107371a9755730a887e3b5f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_cache_integrity",
+      "sha256": "4a78be1d7d23c32e40b7be0ef0c07ed5209ad3d63652e78ff34a775335d96075"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_cache_integrity",
+      "sha256": "786e31151ff0bee7aa8de8385ac154aeed92ac8796f02ccb37b6f09094cc0904"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_image_layout",
+      "sha256": "619c8aa1e22d0fa73eb28044fa8be8d480d1b5157959ce40c88bffe96c663e98"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_image_layout",
+      "sha256": "3de40773acd5c9ebebd7e2feb70bbe76843dc1f6f86bb283cf03210983d9e22f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_range_plan",
+      "sha256": "6ab96983d99d3dc85356cdf47d01eb26bf791875d3f08b89090da951930289e8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_range_plan_allocation",
+      "sha256": "b4c45e791e6eaa008621ce1227c97a4e04fea7128ededb9b5e574a34088fb235"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_region_map",
+      "sha256": "133acaaae46f438ea6477915177b2c37c2e87b268a2b00e26e4c63e657c34292"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_region_map_allocation",
+      "sha256": "05739ec6d85754d45d22f09ab385e786efdb45d19c00f450c85c98f909446289"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_region_map",
+      "sha256": "4025bdb5373786c84c8d2784f0170718aa287fcc68ba587888ae071907c394f5"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_region_vnode",
+      "sha256": "ad5ba15fed622e94faf6524e6d986736e8965d0ff39f0d638168df38132984cc"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_platform_inventory",
+      "sha256": "e1f901f4424bf6f1f44b72c7c2db1bfa4b772d89f4b0a080e234c82ab910f043"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_platform_origin",
+      "sha256": "cbccdd4c9942bd727e41ad397c54ad01946f6bf7d91058520eba73f2bca3b002"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macho_slice",
+      "sha256": "3e052b8cc31467b4711ebf0b0ef2e6a3996d7c3096a65c32f7cfb3ed1ae35cc9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_platform_slices",
+      "sha256": "0905ba83c08478959c871788a7b15de8c21f1f93c64b8fc419ab269d199615c9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_slice_binding",
+      "sha256": "1e1fbe1823b9b0a52bec3465b9dac9ddb31968e4aed4377e329561d43ddc015a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_launch_manifest",
+      "sha256": "6be4d490ed319f2638e05ee882bb2ca365194904c8a3e00d1a327e4896d946ea"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_launch_files",
+      "sha256": "cd45932312ee5a78a4ef9d6fa33925e2adfd827683f9f1d0b7c55ac9376a5980"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_platform_diagnostic",
+      "sha256": "b4f2fee650381daab54112192df2fa83eeced9a720c6adbd88ec80b2a6c05ecf"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/test_macos_peer",
+      "sha256": "eeb8ac538b7f8dc0e031330ba2893e9118e27ff4ee61509ba73a1dec2bb16ced"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/libsh3_macos_peer.dylib",
+      "sha256": "455968c7b6b75ebe86462aac4e990d172e44209e69ec4876fb1a71a36baa7537"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/libsqlite3.dylib",
+      "sha256": "f715e71213ecaf414a35cddecb26e257b718aaf0df6866feb8f180d74dda72dd"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/libimage_fixture.so",
+      "sha256": "9040586a7e240ea6b4ab2addc0b9453ebe8811c060545924e1f990e8a0fc2e3d"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "sanitize/libimage_fixture_other.so",
+      "sha256": "6b62b84e59110f8a99e4c336a7db499fc1a306d492fb502a22b46d722ac78f1c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_process_birth",
+      "sha256": "f1f781ee9238f62b61b18bea0065c7238272584472da02f8e94d65ffe9525e11"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_process_birth",
+      "sha256": "6003ccfcc41bd960af317ae1d906703e009d37d622ec2814aea1b1769035d113"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_image_identity",
+      "sha256": "1a06d1172d62f90a8b62c936e5cb4b860c23fe6ba14a386664569846f29f846b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_image_identity",
+      "sha256": "6438941568fbcfba7897c841e6037882d3f47dd75eb676374e77057ba728257b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_artifact_manifest",
+      "sha256": "7d785d929056624538d015f92f3617f59a25208aff35bc883b3c9561ce6c71e9"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_artifact_manifest",
+      "sha256": "0cb7594d4ce6167edf8ed61234de0c1161d4895f44500622b34b82d880bb93b0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_inventory",
+      "sha256": "5ea4b8b824c50cef63cfd7c0d1c31c33fedc59a75315e2a1ff56ec9e7f7d7d04"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_inventory",
+      "sha256": "f1cbad1f1e72de6e553cdc266b9a567b7856c16689f6de0741351d089303b9c8"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_page_binding",
+      "sha256": "32c770d950d6e3bc43e332e99d450cacacabfb790ab532c63c717a28c159fc71"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_page_binding",
+      "sha256": "b964a4ac5c1c88ba3bdc57d1a9ad276d037127024df0b6448f9fe0913e2f8d81"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_cache_integrity",
+      "sha256": "231222862f4fdc35373e26e9308576b3bb70ba7f199277aac819da493c707a7d"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_cache_integrity",
+      "sha256": "b1ebefb188cf5aaa99e7a1303cd147dc54096b8f26791dc032c91182b4b9819f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_image_layout",
+      "sha256": "fa5d3c1a26059720567e48617b5d75b7c833d44f04cf4a356f883ee0d828fa05"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_image_layout",
+      "sha256": "e9500da3a59334278ba90f86868b3780dcc97ef37ccfc5322f6ce08ac3760d2a"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_range_plan",
+      "sha256": "390a869eb78e007c7ee05b939b0a08c6cecea7f3a64d9a4ab0d3b888ff1b66c0"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_range_plan_allocation",
+      "sha256": "86f08109a3eb5f83e242cfb4b98e81ab5f1a7f6cb3ea7005d0d2e770aaa8f326"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_region_map",
+      "sha256": "e3b7ffce0bdfb8e25e536d1a74a9448bec1d6e3a73678635d9c26ffd9bc54edb"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_region_map_allocation",
+      "sha256": "5326cb993b750b95d7c1d9ad0d0f9fc7e4205022f50578f44aceb937bc74ae75"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_region_map",
+      "sha256": "9f053bb8450a4d10887a9577fb3b6c812feb857b9a4bf9206844a3c86aac869c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_region_vnode",
+      "sha256": "921fefe702a5d74264243c464bd553b1f3444a690abd417e34b6e018d6949638"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_platform_inventory",
+      "sha256": "d8620a0a6594d63d8c34c4bb795ecf25473b926ef26bc38e53f5b0d7c0d1be55"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_platform_origin",
+      "sha256": "733ad562c2dad01d30e347bd3bbb5db9762a25c2c1821a5d5aee83bc17640321"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macho_slice",
+      "sha256": "d3540eec7bf23660335d300bf585661122a03b3eb05150f448f1e974a8d71e60"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_platform_slices",
+      "sha256": "46f4902972e06b94a18c6819e3d58c965f2e7884f74c8d5ddc583db5cd3244ba"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_slice_binding",
+      "sha256": "541ebaf540f62ec857f79ee744ac72b0a4e46a100f18380bf12c5d4749c8487f"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_launch_manifest",
+      "sha256": "89dfaae71536eef6915e9f7346a0917de1a92769dc0899fad3f383be80a61008"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_launch_files",
+      "sha256": "939bc41b03b0cb00759c164e46e5b6614185b1fcf180e00b448244efdd439c51"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_platform_diagnostic",
+      "sha256": "b02c523d25ee678cc06742122d39443b95c2f25a7cf545d7e795bd72075466ee"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/test_macos_peer",
+      "sha256": "ef750ea9447d137b3f514433f85104840ed68b91f47b2000550e0ea85030b201"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/libsh3_macos_peer.dylib",
+      "sha256": "dc80332ace6a13b929398ea6e54b7719baee66dc40c892da52c44e5ca1fe771c"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/libsqlite3.dylib",
+      "sha256": "a80c4b598c4bc882b23cc2e91e457a245716209886052ad975d8191ea38b1197"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/libimage_fixture.so",
+      "sha256": "f2f14d1aed6388d226ec6b5d6bcefb6f9682801a5bf220b326476cde7c51942b"
+    },
+    {
+      "architecture": "x86_64",
+      "file": "coverage/libimage_fixture_other.so",
+      "sha256": "2c6d4203deffda197d4400ab3061a1f9c7474789c170f59d51252c11c1b0c718"
+    }
+  ],
+  "final_test_executions": 1356,
+  "full_arm64_suite_executed": false,
+  "inspection_sha256": "a7b35d88b1a36371e93318bc11d51b85fbfde1d0cf3bbc875ea1e5af896d811f",
+  "installed_application_modified": false,
+  "isolated_coverage_stderr": "",
+  "legacy_ip_unchanged": true,
+  "linux_executed": false,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-diagnostic-peer/audit-v1.py": "41d85312b732d5223483e119df4a2e8d96da4a6719733370bfb5efa2ea8d6b75",
+    "build/f02-07-diagnostic-peer/audit-v2.py": "bc91595d6cd7b7dcd5fadfb3d9ff33de862bf90c3c6c87784d9794a3c112dd72",
+    "build/f02-07-diagnostic-peer/client-v1.py": "38fbe6f72b0129b69e7e36227deac1ac99f2ad88f7757d76db04ca63d42c73b0",
+    "build/f02-07-diagnostic-peer/coverage-v1.py": "474596f08f213ce1cd625dda091873faa6c8d95b8ca61c8a26c90287a122bba0",
+    "build/f02-07-diagnostic-peer/inspect-v1.py": "acf0110dce7e4cb7fdcd8475859e33e42f43e51fa9bbea15ef66cab2b1927966",
+    "build/f02-07-diagnostic-peer/mutants-v1.py": "83cad4d778cabe1673c2758d91dfdc933239cd869a9bdcb75a2a9acd9781b251",
+    "build/f02-07-diagnostic-peer/run-v1.py": "d8f38efc4851e7eabccf5acdd7a05ad7b710ad8a3da17be6ac88c25d4ef3c4bb",
+    "build/f02-07-diagnostic-peer/survey-v1.cpp": "c13b57b71ba34d73782f528923d447a99b513de56cdbdb0b00691129631bb0a4",
+    "build/f02-07-diagnostic-peer/survey-v1.py": "a6602b56fc4dc99771880c768138201ca861a3f3c8307744bf61ca045bc1b514"
+  },
+  "negative_controls": [
+    {
+      "binary_sha256": "5cc505032de82e9910f9ba2618ca6fcfb27b723f2d83e48b5d59587eb071386a",
+      "detected": true,
+      "name": "skip_birth_stability",
+      "scenario": "changes",
+      "source_sha256": "92304c6e777b8623efcd3c11b441bbfac3af49d600eaba954a17a877614b165a"
+    },
+    {
+      "binary_sha256": "6830003b1d48858bbea283e081eeb454a7507692429a7cff1043d1bb868954c1",
+      "detected": true,
+      "name": "skip_token_validation",
+      "scenario": "api",
+      "source_sha256": "c15640d97a8511d3b20629806f2df850f56404bee5762a877b9febc05b1888a4"
+    },
+    {
+      "binary_sha256": "6accd7e03fbfb0e3b89f4dfc99e06e31d1c4a141c13f72da8b9a5f791508e5b0",
+      "detected": true,
+      "name": "skip_exact_option_size",
+      "scenario": "api",
+      "source_sha256": "8c5f25f5f58d3cba9d9959a64b664a2d450aec9e47d3a6fb8ca813860e53f699"
+    },
+    {
+      "binary_sha256": "68edf73477c13eafc7cab0d2741e740487d8c94fae4c1ac6dacf1d7c2aeb88e6",
+      "detected": true,
+      "name": "skip_output_clear",
+      "scenario": "invalid",
+      "source_sha256": "e2dfd96cb66892b0db1594b2e7aa3b66d0fde0565db22bc8e0789c49bc199ee1"
+    }
+  ],
+  "new_scenarios": 7,
+  "next_tasks": [
+    "PT-T5c enforced total budget cancellation outside CPU thread and emulator gates"
+  ],
+  "pcsx2_source_modified": false,
+  "peer_verified_in_private_diagnostic_channel": true,
+  "pid_reuse_doubles_tested": true,
+  "pipeline_extended_via_host_cmake": true,
+  "platform_assumption_explicit": true,
+  "platform_inventory_core_unchanged": true,
+  "preceding_evidence_sha256": "8b7a185c2147e17d074992a512253780208d7905a5c17a5b90422475c6840e02",
+  "preexisting_coverage_warning": [
+    "warning: 15 functions have mismatched data"
+  ],
+  "preserved_audit_count_correction": {
+    "actual_commands": 35,
+    "expected_in_v1": 36,
+    "source_v1_sha256": "41d85312b732d5223483e119df4a2e8d96da4a6719733370bfb5efa2ea8d6b75"
+  },
+  "previous_public_input_transitions": [
+    {
+      "current_sha256": "576659be309d77519f689f2d5c25dc84df941f31d82e3416e6c3cbad7c2d3e52",
+      "file": ".github/workflows/native-process.yml",
+      "previous_sha256": "47ef32113c3e73dfc1ab4693f88a0dd74a9e2a97f5a0e7c690089fab9f56df3f",
+      "previous_snapshot_verified": true
+    },
+    {
+      "current_sha256": "2e2fd7b07ca33c0e088c9ed4275466ef661d8ad5b9287efc49cb00cf21d8977b",
+      "file": "schemas/platform-diagnostic-v1.md",
+      "previous_sha256": "20f5a63f88d112a1bbee2c5b871e445c5e504b7c7b0d4d61a6f4f0fbc8e3c691",
+      "previous_snapshot_verified": true
+    },
+    {
+      "current_sha256": "1d78e50c5d713059b7ebbd0a40667872dfab647de8afa6c9668cc144027f3be4",
+      "file": "schemas/platform-inventory-v1.md",
+      "previous_sha256": "468609206a55acf9eda292c1c3a5f52f8045b102c5f4d79e6e5183b2950f5ffb",
+      "previous_snapshot_verified": true
+    },
+    {
+      "current_sha256": "b5e45703eb5ebb780dba0a98fa049def46c0df7b5403ee071a021fef23a87ba1",
+      "file": "tools/observer/native/CMakeLists.txt",
+      "previous_sha256": "ffe46f44e8f0d52fbd594112c43f56d7468898dde9600b962163df7c0f42cad9",
+      "previous_snapshot_verified": true
+    }
+  ],
+  "previous_scenarios_retained": 332,
+  "private_stage_files_verified": 4759,
+  "private_stages": [
+    {
+      "files": 4486,
+      "name": "diagnostic-peer-stage-v1"
+    },
+    {
+      "files": 16,
+      "name": "diagnostic-peer-mutants-v1"
+    },
+    {
+      "files": 257,
+      "name": "diagnostic-peer-survey-v1"
+    }
+  ],
+  "production_deadline_enforced": false,
+  "production_profile_changed": false,
+  "public_inputs_sha256": {
+    ".github/workflows/native-process.yml": "576659be309d77519f689f2d5c25dc84df941f31d82e3416e6c3cbad7c2d3e52",
+    "docs/execution/f02-07-diagnostic-peer.md": "44564970b881c59100f54bf038de88572aebddb2a66d2eeec6a5e558815d09ac",
+    "docs/execution/f02-07-launch-manifest.md": "2a25c4bab93bc077c58fd247e0dea9ab3c99764e2f4683bb2869bb2690988944",
+    "docs/execution/f02-07-macho-slices.md": "b569981f9b88eec52e2f606aaeecb5ee249de8a145d43c517bbe7285fafd4ef4",
+    "docs/execution/f02-07-platform-diagnostic.md": "38ba5268115e3b5ae701776948e7df83e93ca42d41c791cc0df33ef0b0dece21",
+    "schemas/diagnostic-peer-v1.md": "1254a7e30671cdaa2cdcd69c426af1299abec57b262815ba69720325159c28bb",
+    "schemas/macho-slice-binding-v1.md": "0e4973c4e1dbf7bc38afac31dff923bcf963279192bc022b795e8e1eb243b3ad",
+    "schemas/native-platform-origin-v1.md": "cf3de3074a4269669847b7919ca98709bfc06b713c995489bf1f2ae29231727c",
+    "schemas/platform-diagnostic-v1.md": "2e2fd7b07ca33c0e088c9ed4275466ef661d8ad5b9287efc49cb00cf21d8977b",
+    "schemas/platform-inventory-v1.md": "1d78e50c5d713059b7ebbd0a40667872dfab647de8afa6c9668cc144027f3be4",
+    "schemas/platform-launch-manifest-v1.md": "ee2b4b37cbbcdf74cf1c095589bacf734e703e680a2668c366fee957f4a92936",
+    "tests/cpp/check.hpp": "9c3fc980d7e994d3b5fe8726af3ba589d367e840b1bf81b2adf1cc516e5510d9",
+    "tests/cpp/image_layout_fixture.hpp": "38317e95ce1f164637eeca452111ca258037035ec0ea16614f403f2566be148d",
+    "tests/cpp/launch_manifest_fixture.hpp": "b632aa989a800fe40936ab8b3191aadcaeb9907c795f2c342d2c14716e794822",
+    "tests/cpp/macho_slice_fixture.hpp": "77a4789cc19a47f7463a0ffe9eec6d33f41cd369310ef0e0e67ae763aa5672a5",
+    "tests/cpp/native_image_fixture.cpp": "4abf90c68effe03af1d2151171aa994e9bd735b0e1d0221e57684ff6ef48e431",
+    "tests/cpp/platform_inventory_vector.hpp": "8c6e68a6ae4adb0d4821fd4f38be5b4fd0fad77a4d40d5f3a3745f884fa8d11d",
+    "tests/cpp/platform_slices_vector.hpp": "065c1cd03c437066383067b9ced0fe5d3be7630cd3dfb7650c5be36b79bd6cc2",
+    "tests/cpp/test_artifact_manifest.cpp": "4e037e3a267071dd35f40964aa5f6892291e7e5836087cd624ab8418bcc22b93",
+    "tests/cpp/test_cache_integrity.cpp": "a0ce9e9e6965e39289c2802e9f7846d27868f70b1790b64bd6857b05ae27b53f",
+    "tests/cpp/test_image_identity.cpp": "cfc55c6b57218ad165102ecb65e8bbe8c7bc19379b2f2cfb6212f97f16448a4b",
+    "tests/cpp/test_image_layout.cpp": "852f0b4474e98a6b0ed92e1b2adfa678037d33c9e9850e251f935c0f5e9e9460",
+    "tests/cpp/test_inventory.cpp": "7b28262f941c95c8aaf20d97bce5d110cc92d473c7012387bb96d7fe08caf83c",
+    "tests/cpp/test_launch_manifest.cpp": "d20a5b0be6f671bb72ed3cea321773497292041631d995e0ba4e5932b7edfe63",
+    "tests/cpp/test_macho_slice.cpp": "cf2586030d3f2fc2a44e750ac9f16792829d5c6e30a1fd00c386911225edbf3b",
+    "tests/cpp/test_macos_artifact_manifest.cpp": "4f9ae3c8e7eeea8038c07a6af6378a00a6bd92d721e23ab334db3a7137431896",
+    "tests/cpp/test_macos_cache_integrity.cpp": "4e424283a70e3cdbc991f28b7b9a68967df74ace4cd955c711acbfc3054d949c",
+    "tests/cpp/test_macos_image_identity.cpp": "9c47a8140617d566fc7dd18f5abf8ecb8ca44a1c7111e508902677ee797a75e5",
+    "tests/cpp/test_macos_image_layout.cpp": "ebc780850b94abacae43420db537e68574b2f123ee55418d639527a734aeed01",
+    "tests/cpp/test_macos_inventory.cpp": "ed8af6fb0deb1b0bb044482e19b72c491d7f34501cd2a8967d9d13dc918fa59c",
+    "tests/cpp/test_macos_launch_files.cpp": "fa3a1a8e6601e57de03a0c5212ad5f2a5f67e35ff1f6919356b64e2235781b1a",
+    "tests/cpp/test_macos_page_binding.cpp": "d6085bb7ab512c1b1a9d981b04211f44b9d9f180c712816220f3dfb984e38ddf",
+    "tests/cpp/test_macos_peer.cpp": "9d63693c7e66470169287bf8a4751f27ede6f3901fe72341947ce52092126fc1",
+    "tests/cpp/test_macos_platform_origin.cpp": "6dfbd68367c5cfb374ff1b595ca5520b21885d8cf78b24190510441d16166684",
+    "tests/cpp/test_macos_process_birth.cpp": "9eed0f3f9766f344ff4eb6e5f219fdfbb3ac71bcbda65b38eee59f807b3fdb0d",
+    "tests/cpp/test_macos_region_map.cpp": "07cb7fa04d2149902d541705a70ff483a9703903afe098e956a651104713f104",
+    "tests/cpp/test_macos_region_vnode.cpp": "d30790330ea16b295f63b52f23320518c57ad1e1989ad9ac72dbad23fc7ccc99",
+    "tests/cpp/test_macos_slice_binding.cpp": "5bad0b32c51d2070eae708c94ef64ba6a888b60e2c3becece172e8800e7dedc3",
+    "tests/cpp/test_page_binding.cpp": "e80d50916306e1db1fba40d16fc0fa23560acb3dc98f37ae7365622390b7b191",
+    "tests/cpp/test_platform_diagnostic.cpp": "3bc9eb66fb7cbf783366e9a8416dd74505bd5196f712783a62a91deadb0a63ff",
+    "tests/cpp/test_platform_inventory.cpp": "1d001980c4d93e4dbca8f8e526b29414b21d5a166413a04bef18e184aeada965",
+    "tests/cpp/test_platform_slices.cpp": "8ef6e4fc07d9676af99e8e6e8b464ce04831e23fc7244b3861bc683991d4ee50",
+    "tests/cpp/test_process_birth.cpp": "6a1b747600d134add241fff7aab3e7dc575bea7bd02e231e843659d443929736",
+    "tests/cpp/test_range_plan.cpp": "c2046c6ad5e6fd1ba58be84a355cdc6c5f146946b431db818ed7c4f916d828de",
+    "tests/cpp/test_range_plan_allocation.cpp": "8ff85b5d8bdb30610a2d7844917ad958990a980b6d382a0e85c1990cd5b142b4",
+    "tests/cpp/test_region_map.cpp": "1b655c236b4f9cbafc6bd3032e2da2d6e0c65a2d22f3a8fba1cfaa1e4105803b",
+    "tests/cpp/test_region_map_allocation.cpp": "ddef3a88ffd7d204fd6ded7942548db0c5a011c31b2cacc674d8bb5872bdcbc1",
+    "tests/fixtures/platform-diagnostic/README.md": "f2b47dcd3a2259e161d9daa23fa89c822b40181cda2fc37dafd2da6e0394ab1d",
+    "tests/fixtures/platform-diagnostic/observed.hex": "6ff763b5dd0b50a992ed63ef5e6308d828f3e19f099c4e17bd260956edb3f2d9",
+    "tests/fixtures/platform-diagnostic/rejected.hex": "1b24e3225239d98830d69efea2515bba16ae498791ba56f6425cf4cb5b89e611",
+    "tests/fixtures/platform-diagnostic/request.hex": "502ab3243286d5eab734f09a67b818ab8e4adcfa8d25eff4ca2f6be1c1b5ac22",
+    "tests/native_peer_oracle.py": "1fda48b2189f2cbc2627449c1e408056dd5f3cc245bf92ad551da53fd6510c33",
+    "tests/python/test_diagnostic_channel.py": "f995fb06ee81958ef27176427bc4860d26288e3c67a0d105433ee8ffd035048a",
+    "tests/python/test_diagnostic_session.py": "694985705996cf78baea3326a90dbc261839f824f22c8da2bad44eb7038984da",
+    "tests/python/test_platform_diagnostic.py": "e45d6cf5363aae0e0fcc52fa5b25d45b97728e087eebb6c7a3008d6dcf547385",
+    "tools/inspectors/diagnostic_channel.py": "2cc253d3c39a03101cfb0934ee1451ae4aff468d8ad154365b39c72dafa17892",
+    "tools/inspectors/diagnostic_session.py": "3e7735f9cbe8451814d095246f8354c5381a04deb531a0302edbf5100017d815",
+    "tools/inspectors/platform_diagnostic.py": "1aadcd265c42514fad2801b56a5fd34eedfa668085e05127995f00c1a074007c",
+    "tools/observer/artifact_manifest.cpp": "6eb78e91c567350b4c2da7c73b98ecbafd723f81f3ac7a8534c5c5274240da18",
+    "tools/observer/cache_range.cpp": "158b71b49aaeba00014febf73a40c4950a40dd658db51175ef741698ca5f709e",
+    "tools/observer/image_identity.cpp": "aa6edfdd61d08d598c846b68b52883a4a3a9e06fac7fe363ab4986393daccb40",
+    "tools/observer/image_layout.cpp": "37eba42d0b3f727561489b26732816f14c8ecfa6e01b2f74b04994e585206514",
+    "tools/observer/include/sh3_observer/admission.hpp": "acb7783a5c45336038d555d7eca1b52f3032987de27f1e6abbb7b4c2c5673a9c",
+    "tools/observer/include/sh3_observer/artifact_manifest.hpp": "57ead680801c29dd8a51a25985c931fb6d0717296997115de9db81f6a8f065a9",
+    "tools/observer/include/sh3_observer/cache_range.hpp": "bfd2167d6c3eece077276698a7afbf226f490b8b7f73234d404ab17092e92c4f",
+    "tools/observer/include/sh3_observer/image_identity.hpp": "e7c1de113d14c4d0226ef4d6c2c80837b5fe3be1aa877c54817b58f3019f0c37",
+    "tools/observer/include/sh3_observer/image_layout.hpp": "f779902d5ae259bbd10070a0ca747947f2fc61f11dc7fa6cf15e4f7fe39d120b",
+    "tools/observer/include/sh3_observer/inventory.hpp": "880a329ecb41c077901e41ae32109a7011cf5712ffa686b1be23e8ab294f1865",
+    "tools/observer/include/sh3_observer/launch_manifest.hpp": "2f208bd1e1b13e7a081f08c85a7c2af82d50931f9f61ff81204c4e8c97d3fd08",
+    "tools/observer/include/sh3_observer/macho_slice.hpp": "09df4f88d1863c4c6ccb9159325871e2b7331318b54975dfb50b186a62f8b485",
+    "tools/observer/include/sh3_observer/macos_artifact_manifest.hpp": "b8eb8289efb9a297a896d2523b5352968d5cc42fa726d7aafd1435a9d8c190ba",
+    "tools/observer/include/sh3_observer/macos_image_identity.hpp": "ca5f8a04a01da846640956e25e8b59619499d4e6c5b36a0eea1bb7f62f4a9ecb",
+    "tools/observer/include/sh3_observer/macos_image_layout.hpp": "6401beeb65e2cd4cd9b2365054fe48140eaf7763acda7df113e1bd1960f8dd9e",
+    "tools/observer/include/sh3_observer/macos_launch_files.hpp": "c63891eaab1c74b4680a541eac11eaff60eeaab1574c43f8a79d3d50a929b0e1",
+    "tools/observer/include/sh3_observer/macos_page_binding.hpp": "32ca834f369cecc0451025f52626603d2fa206ba8d91d766b41064ada1224428",
+    "tools/observer/include/sh3_observer/macos_peer.hpp": "9fe39118c60e7e69a3a4e915b8027e450a976d361811487e56e2555728f900f4",
+    "tools/observer/include/sh3_observer/macos_platform_origin.hpp": "9efb0f1e29b30c1e4c5b454b8d3d9ca1790ba4f5d08165fdc4911591d0cd1227",
+    "tools/observer/include/sh3_observer/macos_process_birth.hpp": "e39a45b217ff150f52ffbfeb9abdf6fb12dd28f50d9b9391031ed6d2e8b8fccd",
+    "tools/observer/include/sh3_observer/macos_region_map.hpp": "9e7515febe0eec0ac3519730f6cff36439df741a62fd95b55861f7247066ec0c",
+    "tools/observer/include/sh3_observer/macos_region_vnode.hpp": "10fa0074b2a324011d4486db83a1175f27ed230e7b0df7cf2da72bf36e45b2d1",
+    "tools/observer/include/sh3_observer/macos_slice_binding.hpp": "8f23558b02e93869aa7db5e677358ef8911f6c0519f175d09efb1b52048c7bca",
+    "tools/observer/include/sh3_observer/page_binding.hpp": "6d082d5a19b445f4bc2635023e74efdce15945af50120cdee781de83211fbca0",
+    "tools/observer/include/sh3_observer/platform_diagnostic.hpp": "11a8a2389f9a9bcb1faded1ce84d74850c97c2bc48880be5a13f1fe7022e596f",
+    "tools/observer/include/sh3_observer/platform_inventory.hpp": "3183f90c96a194926960a281460bd5ee00bbbd277da7d1dd918a64aac62d2f59",
+    "tools/observer/include/sh3_observer/process_birth.hpp": "ee84c38ab576384ae6dfc93221f883289c9c1926fae319ea5529e0cdbd04a98a",
+    "tools/observer/include/sh3_observer/range_plan.hpp": "4798c13cb60697c895af131e10a760ca45dfa074cc7302df8c0c0f0f5c477caf",
+    "tools/observer/include/sh3_observer/region_map.hpp": "8bd99e072532a964fff924456b2c9cdb8df76fc6ce17a05cdf4c025c0b36878b",
+    "tools/observer/inventory.cpp": "1920bb075151c85e35d46e2c806895e639e37496c2c156ab95c8ecd07b1d504f",
+    "tools/observer/launch_manifest.cpp": "4badd0161c5dc4c9ebd499439f62f7b4f22bc0e4318c7922d85121042b91cdeb",
+    "tools/observer/macho_slice.cpp": "71a7fce075e201f16518d0dd84350274d59efdadab16b628009322b4ad64bbe4",
+    "tools/observer/native/CMakeLists.txt": "b5e45703eb5ebb780dba0a98fa049def46c0df7b5403ee071a021fef23a87ba1",
+    "tools/observer/native/macos_artifact_manifest.cpp": "9eae67d0aaf388c837f9c7319a4e16a32724a2501e9d51488fb9cc497cea046c",
+    "tools/observer/native/macos_image_identity.cpp": "40d28cad8dc9dbf5c1332d94899ebe268cad02cab581ce3d9cbab4be0bd2c488",
+    "tools/observer/native/macos_image_layout.cpp": "43dff89abf2c0191d67852bbbf5cebb3112f10284047cce24c2728af87f49c3e",
+    "tools/observer/native/macos_launch_files.cpp": "da4af853d7eee3f2d41e07e8ff97155ea1d9af438149eb6999b825039ac669a9",
+    "tools/observer/native/macos_page_binding.cpp": "7747bb35f9942223888899a24f223f2bfc9183ee009bdbdaa9bad7d9803afea6",
+    "tools/observer/native/macos_peer.cpp": "6b56d9ff3a8a03dedbe6818c1ac7b7dbec311cb1e058724b9fc45bb27d00da11",
+    "tools/observer/native/macos_platform_origin.cpp": "099573fd77dda34dc735f473a9bf33489b4c1eb48d80748fb4a672dc891cdec7",
+    "tools/observer/native/macos_process_birth.cpp": "9adbced25578c213aa100468da1b1b9aa2249e0bfcc6ac97d0fdf636f78d945f",
+    "tools/observer/native/macos_region_map.cpp": "6cd59913eeea33b03e0d0c3510083f285e02e77cda52f712af617e402a5dd156",
+    "tools/observer/native/macos_region_vnode.cpp": "e0d18f59ad4d6a0acce87d45547573cf50029b3b764823a395e4d51faa91b922",
+    "tools/observer/native/macos_slice_binding.cpp": "6971402210f92dc50911a8046964249a3101d85c4e05b09be13993945da70173",
+    "tools/observer/page_binding.cpp": "a34a8745d21f15eaab3ae7ad3e7b994fce635d5652141c43ee673879cc5bc3f0",
+    "tools/observer/platform_diagnostic.cpp": "b077984e2ac739f2ee77bd7dc76d4ed2ac91075951c639499f0983a00811caad",
+    "tools/observer/platform_inventory.cpp": "3c312defc3fa3b2e59cdd77c3e64990efd79c66e1821606511284c85caa97905",
+    "tools/observer/process_birth.cpp": "bbd39e9ca0b5c47761c8cb12ca8a8d43724e9c0bb24ab5d39a224d72ee5e8af6",
+    "tools/observer/range_plan.cpp": "545e399098002af2991804635cb2201e199a34af4a1b99e48488138f67bf70eb",
+    "tools/observer/region_map.cpp": "53ea662192b6cd80802479aa2e1da6ffe14f3bcb417025d83a505f5815aeb5bc"
+  },
+  "python": {
+    "coverage": {
+      "tools/inspectors/diagnostic_channel.py": {
+        "covered_branches": 26,
+        "covered_lines": 85,
+        "excluded_lines": 0,
+        "missing_branches": 0,
+        "missing_lines": 0,
+        "num_branches": 26,
+        "num_partial_branches": 0,
+        "num_statements": 85,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100",
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100"
+      },
+      "tools/inspectors/diagnostic_session.py": {
+        "covered_branches": 32,
+        "covered_lines": 125,
+        "excluded_lines": 5,
+        "missing_branches": 0,
+        "missing_lines": 0,
+        "num_branches": 32,
+        "num_partial_branches": 0,
+        "num_statements": 125,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100",
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100"
+      }
+    },
+    "coverage_sha256": "9366caf9e18637075e386ed2ad0713bb1abd23f56e27058c878e65495fcf4fdb",
+    "junit_sha256": "11f5cb2af119e20dfe909289b28dc034c6deec1d9ef99ee648d09c0985c97757",
+    "native_oracle": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"native_python_bridge\": \"passed\", \"negative_inputs\": 12, \"architecture\": \"arm64\"}\n"
+    },
+    "native_oracle_receipt_sha256": "8ad42c1c591d32a9d89dd38273380920eb4ffb6374301cb4747bd277cd9a568c",
+    "new_tests": 105,
+    "passed": 335
+  },
+  "python_native_oracle_added_to_macos_ci": true,
+  "read_events_produced": 0,
+  "real_exec_tested": true,
+  "real_pid_reuse_tested": false,
+  "remote_ci_executed": false,
+  "replay_rejected": true,
+  "resource_limits": {
+    "floor_gib": 10,
+    "initial_free_gib": 10,
+    "observed_maximum_stage_bytes": 217452544,
+    "observed_minimum_free_bytes": 12153782272,
+    "stage_maximum_mib": 512
+  },
+  "resource_links": [],
+  "schema_version": 1,
+  "source_id": "SRC106",
+  "status": "native_peer_and_platform_diagnostic_session_complete_total_deadline_pending",
+  "strict_inventory_unchanged": true,
+  "supervised_commands": [
+    {
+      "exit_code": 0,
+      "log_sha256": "e5ed52b9f52ab5645010110d57fce52153a1c07629c29b05b0d6586970c6abce",
+      "name": "v1/debug-configure.json",
+      "samples_sha256": "44faecef9cd3f237bbd392d8d8673d24f9168edbc2409efa6470bd6afbebfd7c",
+      "seconds": 0.967,
+      "sha256": "3a30596011f35bc09ebc60cd2e3eaca31ec98a0189f093b61019f7ca33e24ce8"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "28163f9d62073147dc2c1c6902921270d0a4f0609d701aca126d8344a45572d7",
+      "name": "v1/debug-build.json",
+      "samples_sha256": "99dd83e839a6fdb7df3d1e1ea92e9ab5587e1f2aa552c368e4d8dba4b5b70ca8",
+      "seconds": 13.248,
+      "sha256": "c75f52c6323b7c4e6d2745553bf0fb3f6f136bf6dd3f095b5eed22bf93279157"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "6b66c9adccbd8b8a87ae723443d3ee5883d822b66417dd74ab1d9fcfa50ca9b1",
+      "name": "v1/debug-tests.json",
+      "samples_sha256": "8be0c257d4cf4a3277c820be3194e824cfea4465b2ffb2031ec693fbb57f28c1",
+      "seconds": 25.466,
+      "sha256": "879ec8200baae433df16d4409638b20a7a41f3bc9c62b6b7372c618f924596a0"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "caa0f817f590f8392ba77715693cd71712b1966469c66d3af4ae0541fdadcd4b",
+      "name": "v1/release-configure.json",
+      "samples_sha256": "af1eadc16e9d522f7749bb290d8c7cc6c2409687038965fa60a4f0274acacc61",
+      "seconds": 1.354,
+      "sha256": "3d9e9051e7f670b3fce22b1638321783bdae62b9ad93a659898c4da115415504"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "73daa894a8ed64cd25a420505aba4a3d91cc2b4e0427087dc0e405ae6081f440",
+      "name": "v1/release-build.json",
+      "samples_sha256": "3a8d3102f208ac39362379b9fbc21588fd4f4f99d143700ab5d6b2b5dc6cdba1",
+      "seconds": 13.055,
+      "sha256": "59688c07d603316ca1578e1fdd7d7826696558e3da381a0226130bd87e779c2f"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "ffd50886adc72337e7d3ac02a66a707a9d3a2d859874ebc1bed683fb421f0cc5",
+      "name": "v1/release-tests.json",
+      "samples_sha256": "14d83dd191073700fab8a92d4864c0235a152a3bfd0672c957723be691848a1a",
+      "seconds": 23.711,
+      "sha256": "e97d7e3423bd594192d00a2ab667e0b9f0d387f95eb032997781e4591ffd88b9"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "d36bd2715e288a03f23ac1d40c9c11b6d66dcef7fb55cc912ea6de688c9cfe62",
+      "name": "v1/sanitize-configure.json",
+      "samples_sha256": "a602f84880fd98ba29581a8a3c04473a559ae0edeb2a501ef5fe41d6f806ec54",
+      "seconds": 1.183,
+      "sha256": "4cbb6e79f126707c8d4f1c93bda8428b66d468fea4ae536cb5024516093fe91d"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "f264a52af99ee20520c3b6a88366060c08aaabd65b4a13dc71ddbc731670e742",
+      "name": "v1/sanitize-build.json",
+      "samples_sha256": "8a5701ad2b19520b1f855b9ab15e987be6a70f992635ff9cb67192fa55fb96bf",
+      "seconds": 13.488,
+      "sha256": "ebd3a204d25221c263eac8592b806ee9fc006634f383db61144cbffd718fc5f8"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "891f54d588ba85227527e3245348064289b391990617dd541b405e2ea722ecbc",
+      "name": "v1/sanitize-tests.json",
+      "samples_sha256": "fb055403558217f8bd23028698ed8d27d4688c46813276d48861af6534d617e7",
+      "seconds": 42.406,
+      "sha256": "2199f2cb9fcf75d32e41af88db80b5c511824fc545b0ac8259899cbf34d352e4"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "8ecd8cf35602073492839fc3b5cdca29329eb5a6a49eba51a55307c4d17765d6",
+      "name": "v1/coverage-configure.json",
+      "samples_sha256": "95f6c3da3600c85938427b9fe6adfe8ca66ee13c7c4cf27793891e590a3b8ea7",
+      "seconds": 1.263,
+      "sha256": "b1c71caaf806cc0950fba0afae7a108f51d51472473cbd6ec6552bdcf4459c06"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "51f1a34f33e6d7afccf45f4d4342d4743b86feb6a9d8292a2e1e6738e0eed30e",
+      "name": "v1/coverage-build.json",
+      "samples_sha256": "49d7c74bf2e4504e15b5f991981ec8ca0fdd3990bd22277df324ce22570b8796",
+      "seconds": 11.775,
+      "sha256": "0188e4a66b0d8c527338489ea27a2f45f70ef059512d4f176ed21f8da9a7cb21"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "50a5a6843c3203a0759f82ec3995960b94f2c9bca81e60c8a398ac08ebf4d663",
+      "name": "v1/coverage-tests.json",
+      "samples_sha256": "b7cff36ce4867f79545c77b4015264597c947fb6dd7081e4f4ec0c143eb67344",
+      "seconds": 24.549,
+      "sha256": "69be4f5ffd6ed93082df33beebe80c97aa2f51ae47e6555f21c8ce564fbe4a38"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "v1/coverage-merge.json",
+      "samples_sha256": "dbf30671700ff48efda24f80a5b99638c84665609fc0eb06446864d65605b054",
+      "seconds": 0.502,
+      "sha256": "ba1e853124f42f967bed8eff6ecd5a7f07617299eb9bc13777bc1d0547bf3707"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "f3516b930382f3a21da64f2e602836c02b1322c81814898114a9e45f9cd978ad",
+      "name": "v1/coverage-export.json",
+      "samples_sha256": "2903643c6a7ac9cac1ad52bc23637bd1b75d22256255e1b11650c4dcb50f1e9b",
+      "seconds": 0.413,
+      "sha256": "0b134ba064e16e3bd0f6b02bb9a1e715d5dc335823d887954ac4b0f86be69c48"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutants-v1/skip_birth_stability-build.json",
+      "samples_sha256": "55ae50eef5ae62db18709305ec575e3360ff4f1115724e03efa4d86122a2dcd3",
+      "seconds": 7.847,
+      "sha256": "85b51e167dff2da61a291d1a09c738124b38265b72052c55b960c6b76b78c481"
+    },
+    {
+      "exit_code": 1,
+      "log_sha256": "027ad998bb088033556f874546d54af016eb57940ff8ba40d6aa3061f213fce0",
+      "name": "mutants-v1/skip_birth_stability-test.json",
+      "samples_sha256": "ce660138ffcd711eb3bc61a06d45ef78e67509ddd0fff8c3fbac7c633cd06fd3",
+      "seconds": 1.717,
+      "sha256": "b2716550b66456f80f0a1cb5fc249b2b9a176ba21c0bbf068b2608f03959c974"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutants-v1/skip_token_validation-build.json",
+      "samples_sha256": "72b37bbda86da04566287d2e124ed4badfe0160ea5902444c5ae393b1d8d72e3",
+      "seconds": 1.279,
+      "sha256": "272e8d0a3b3289cf2d74334b2b61beebff2c12d54d06424118a1e08fd7fa59ea"
+    },
+    {
+      "exit_code": 1,
+      "log_sha256": "9480990502941abf7e2073b7c50a745f027210e9807770d5b26df5943393709d",
+      "name": "mutants-v1/skip_token_validation-test.json",
+      "samples_sha256": "f1747788bc6c6e4f27dd9a884e404b1e2ddd1bf7fc3fa141fb15d51d3ca910b5",
+      "seconds": 0.546,
+      "sha256": "c019a783d6f5d7cf64ad77df5feaf238aa44b98943e665aa621abd9294efc175"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutants-v1/skip_exact_option_size-build.json",
+      "samples_sha256": "81b642c33f06c91854d566e98a281768304c9c7f593cac765b6308b265e03ba0",
+      "seconds": 1.06,
+      "sha256": "ada4e9493196265688059c02a49f7dc05b14fc07642da85a053952e80133a3df"
+    },
+    {
+      "exit_code": 1,
+      "log_sha256": "027ad998bb088033556f874546d54af016eb57940ff8ba40d6aa3061f213fce0",
+      "name": "mutants-v1/skip_exact_option_size-test.json",
+      "samples_sha256": "411eafe925adcd128607fd7f83745902135b9a52dc62dda208e554715ff82d68",
+      "seconds": 0.546,
+      "sha256": "5abb75546e246d9b5c0c1ff977652270e705faee0c06cba31a187e75a8b834d2"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutants-v1/skip_output_clear-build.json",
+      "samples_sha256": "d1557d4c3ab55d39eeb204eceec816beb4561d436d703823cd870e00775c262c",
+      "seconds": 0.64,
+      "sha256": "7831ff6f8c33f56859c2177eddebf90a405b6b8a3b3f0c6714f8cf1ea9037e3a"
+    },
+    {
+      "exit_code": 1,
+      "log_sha256": "35cc37cf826e671682e0665651636f8b8855a2fad786041d4058397c4c7edbcb",
+      "name": "mutants-v1/skip_output_clear-test.json",
+      "samples_sha256": "a7d353178ced0f83c3abfe45edd1d3a450f2b59af86e12fbff350b7916021b86",
+      "seconds": 0.433,
+      "sha256": "71ff8198e255d9487164afda3f3b4def276475a4784628cf18870999db148cdf"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "survey-v1/preflight-build.json",
+      "samples_sha256": "be3aec4092e43868b73d97f987a4b8ec9dae6977ab5d76bf807b153b97730526",
+      "seconds": 1.005,
+      "sha256": "90833781cff2d763cea29e9a7df363dabd3c10acda0196552c0d95ddd2d5e6bb"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "d238a65d3cdf3097222b6f389e4d36d40bb3296d2a00a45211de65a68968a6c9",
+      "name": "survey-v1/preflight-run.json",
+      "samples_sha256": "58d36cfcfdb2531d193dac97ba5d3d6afc49c16da9d092f754076427d21b37a6",
+      "seconds": 2.035,
+      "sha256": "1f8a43124ad90b63f709763dd572dfcc40e2a30ae66856c93745290803a974a5"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "survey-v1/survey-build.json",
+      "samples_sha256": "9fbbe1892e06e64136b02408a89a48928b5e3f04182629c1b1fc3f6aedd66d6d",
+      "seconds": 1.253,
+      "sha256": "a950ce31afc3217da0fde04fee386a24495e75620f64d2db509cf91fa69b4e0e"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "survey-v1/reader-build.json",
+      "samples_sha256": "46fc9ebb48449da89e24bb3cdead8feea0f11feb2e51a41d451e24391cb690c5",
+      "seconds": 0.366,
+      "sha256": "6596bc4836c5cc6a3845ad59ba369927fe5d2aa7ff810083ba82ce57840b54e8"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "56587cf177cec606e429c6f89c0caf45c0b4cca7d3596366bfc8656c01fbd73e",
+      "name": "survey-v1/positive.json",
+      "samples_sha256": "45432219678ffa828016921f10701e464af621d1a8d9f5cec209391ec4d656d4",
+      "seconds": 16.287,
+      "sha256": "9203f8609b3385ce9a309079c98548ec13228b46e8e7d8f3b6c4e0aad8beae3b"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "396c9ac3a3d63553db74d458802e0182046abab9d5a3def86d9bcec0bb4a2c0d",
+      "name": "survey-v1/replay.json",
+      "samples_sha256": "f57d628a7842abe179c73c7212853c80fc7b7756cb36bb1aa1872b8004444ece",
+      "seconds": 4.441,
+      "sha256": "d592cbd1f9fc912b7af8dfe1eaed1a539ffab0227c77b40a2885cf6a3983e7d3"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "e88d163d48a2e6050edf07051cdaa55f574bead8aa56cf8ee48aae77c8f1241f",
+      "name": "survey-v1/nonce.json",
+      "samples_sha256": "d94d212928870d33566dc64dd374eb75e3ee62dc445653c27e28a9f80e7da129",
+      "seconds": 3.15,
+      "sha256": "13209f320e3504809a30c82c46af43274b7963263e94ec0fce15091c41ca5bc7"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "6c03d539a80b1ff2de4826618a152b384ce10ad49bbc00bb616ec4ef8a703b3c",
+      "name": "survey-v1/profile.json",
+      "samples_sha256": "3e6f9e728ce98ce0449252d61d8b7cb4296ef4bf302ed054cb5699827c0094c8",
+      "seconds": 2.146,
+      "sha256": "3f9f8deef673c2b443df096fb85fb9c6899653c7ddf98470d1e8d65f8c520e60"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "477bd6165dcb3bc1c260fb436fb42b2ac8d03da01596e9733294f69fff0f2acb",
+      "name": "survey-v1/evidence.json",
+      "samples_sha256": "24b8ecbb715cde96add1819a226b4c28c38d051e54dde8b81d4fa4f090b25648",
+      "seconds": 2.055,
+      "sha256": "be85e90681ff864de5d1cde6581715565ed6d5b190c5d022f089e25ac53b2737"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "2c14d3b7880483c3e55f0603d6d4c2e355e99d68278ca3f2f8da908004daec25",
+      "name": "survey-v1/challenge.json",
+      "samples_sha256": "5b0e232f93ae03f93dafaa2ba7f64d7fb46b7d3fb87d9ab6aec01487f6ccc4e4",
+      "seconds": 2.007,
+      "sha256": "97d6df41425b9623bb31b145236996443a20c153eef32496ec2db8e19145aef4"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "a9e41d5704bdf3acec125be26fd890c33782bdde9262f88bc36d86f54e874886",
+      "name": "survey-v1/pid.json",
+      "samples_sha256": "a781fd0bb6048aecb50cd740cf43ae0e428b201c23cf9c8331fb6beaadeac7e3",
+      "seconds": 2.096,
+      "sha256": "b40d9c6f60ca80f1792adcdcbdc99734705c970317bef133494c7443d8c69a90"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "cce940f72d8838e44f9a79cbe70c7678bdd868dd6714899420bc3338c32a86da",
+      "name": "survey-v1/disconnect.json",
+      "samples_sha256": "251ae89eec57993990e28e40aebc2a502fafbfb7d3f6cecee14bf0266f365e5d",
+      "seconds": 1.21,
+      "sha256": "9e4bfc91555463fe27ceec1afa4684942d330f4b723771674b4ca09aa90f8f9f"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "ed6fee9d7b93c90e67f43a6d8660f4b589c7dcc0fc7a94ac456c6c85db4138dd",
+      "name": "survey-v1/wrong_peer.json",
+      "samples_sha256": "b1803b3288a4eddd96ce8229744f28ad38a90ff8b70440e3fd1d994d9e60f19b",
+      "seconds": 0.401,
+      "sha256": "87a1aaf8ae15b1a990150d55f9eceafad8a93d77f2cfac3f6de643ab93e39f94"
+    }
+  ],
+  "survey": {
+    "bidirectional_peer_checks": true,
+    "binary_sha256": "7ad18f1e3f9a259db335fafc1b1284051be9de687a60ccdb696306337e01cc5e",
+    "cases": [
+      {
+        "accepted": 3,
+        "all_runtime_facts_unknown": true,
+        "case": "positive",
+        "client_result_sha256": "1f00074d849bcd877e93361449b98607267f5b2a8b13ae17e755f6ec73265abf",
+        "consumer_verified_provider": true,
+        "pcsx2_log_sha256": "c7d1f3d18de7d9889be00a04aaa927e3d2a8e913b4049791f203e2e92c637219",
+        "platform_assumed": true,
+        "provider_verified_launcher": true,
+        "terminal_reason": "closed",
+        "wire_frames": 3
+      },
+      {
+        "accepted": 1,
+        "all_runtime_facts_unknown": true,
+        "case": "replay",
+        "client_result_sha256": "5e9c81b99a689e0f994d69c190e18901c9176dced85211af5d0fe3935f77529f",
+        "consumer_verified_provider": true,
+        "pcsx2_log_sha256": "925b2fb43bfe78ed36f35ecbe7bcda91126be142aaaf00f9fd4124a51d0802bb",
+        "platform_assumed": true,
+        "provider_verified_launcher": true,
+        "terminal_reason": "message_invalid",
+        "wire_frames": 2
+      },
+      {
+        "accepted": 1,
+        "all_runtime_facts_unknown": true,
+        "case": "nonce",
+        "client_result_sha256": "1216061ad373281754dc286eee4a9c012c5ea8f217018fb414e4c68fc90edf16",
+        "consumer_verified_provider": true,
+        "pcsx2_log_sha256": "f2bb4313ce8cca6ff703050708d4627868889fcb01de20a2181ba7857ce5a8b5",
+        "platform_assumed": true,
+        "provider_verified_launcher": true,
+        "terminal_reason": "identity_changed",
+        "wire_frames": 2
+      },
+      {
+        "accepted": 1,
+        "all_runtime_facts_unknown": true,
+        "case": "profile",
+        "client_result_sha256": "a39e1ba4beaaa5e377cb43cc1a09eb95c8c3ac38f8b5953605588e5ae294e9c9",
+        "consumer_verified_provider": true,
+        "pcsx2_log_sha256": "19add0cafe373b69f4799e1051c7e6e497cd16fef880d83a9b74179025404c9f",
+        "platform_assumed": true,
+        "provider_verified_launcher": true,
+        "terminal_reason": "message_invalid",
+        "wire_frames": 2
+      },
+      {
+        "accepted": 1,
+        "all_runtime_facts_unknown": true,
+        "case": "evidence",
+        "client_result_sha256": "3bfffb723037c67f5c46e0d4046893264d0b95d9edc9ecab649a76b9594316d0",
+        "consumer_verified_provider": true,
+        "pcsx2_log_sha256": "c1c7b81d44e4689301d3f63433ad03b37eb465b0369601e5b0f75673815f17f7",
+        "platform_assumed": true,
+        "provider_verified_launcher": true,
+        "terminal_reason": "message_invalid",
+        "wire_frames": 2
+      },
+      {
+        "accepted": 1,
+        "all_runtime_facts_unknown": true,
+        "case": "challenge",
+        "client_result_sha256": "7266d5c5731ad2bcde52b221485c1dc657c65601e1b2b6e1e9cbaf72949e6b81",
+        "consumer_verified_provider": true,
+        "pcsx2_log_sha256": "f5a25a896214892f5507a4b659df5d73a872ef9f23b87e0ee83f39bf7bfd4753",
+        "platform_assumed": true,
+        "provider_verified_launcher": true,
+        "terminal_reason": "message_invalid",
+        "wire_frames": 2
+      },
+      {
+        "accepted": 1,
+        "all_runtime_facts_unknown": true,
+        "case": "pid",
+        "client_result_sha256": "b331eb082da38675b1e3d7318c72da474b971d50f7e626605b4d77f11128d061",
+        "consumer_verified_provider": true,
+        "pcsx2_log_sha256": "5bcaf4f0a565c9d69d1edab79da4030d75ea05f9253c32e19664d78eea372249",
+        "platform_assumed": true,
+        "provider_verified_launcher": true,
+        "terminal_reason": "process_mismatch",
+        "wire_frames": 2
+      },
+      {
+        "accepted": 1,
+        "all_runtime_facts_unknown": true,
+        "case": "disconnect",
+        "client_result_sha256": "46de1003810906e8356e0b03d8b47fb43a9e858fe70e4ebdbfff5cdec6fb9236",
+        "consumer_verified_provider": true,
+        "pcsx2_log_sha256": "440659eab601c071a454f46b77c50eb0627db100769988edb8bcfd38b69f2c1f",
+        "platform_assumed": true,
+        "provider_verified_launcher": true,
+        "terminal_reason": "channel_unavailable",
+        "wire_frames": 1
+      },
+      {
+        "accepted": 0,
+        "all_runtime_facts_unknown": true,
+        "case": "wrong_peer",
+        "client_result_sha256": "d66057b1310f1048a61717bcd602e364fd1bdbe301b8d3176f099b9b58aa0a81",
+        "consumer_verified_provider": false,
+        "pcsx2_log_sha256": "834f7d0b1b24a4061faa89ca54760337ca3383be681c672dabd6c30812a99ffd",
+        "platform_assumed": true,
+        "provider_verified_launcher": true,
+        "terminal_reason": "peer_mismatch",
+        "wire_frames": 0
+      }
+    ],
+    "client_source_sha256": "38fbe6f72b0129b69e7e36227deac1ac99f2ad88f7757d76db04ca63d42c73b0",
+    "clone_files_verified": 200,
+    "executions": 9,
+    "expected_files": 26,
+    "manifest_sha256": "b0551d734e022bc058699f0833b660aeb96a209d11f1a64eeea69e28fabb424d",
+    "native_reader_architecture": "arm64",
+    "native_reader_sha256": "aa4921185555cf2ede89972b0d63f7869de93ff2f4d0fbfd4ba1c8b045ca1de2",
+    "negative_cases": 8,
+    "platform_evidence_sha256": "8b7a185c2147e17d074992a512253780208d7905a5c17a5b90422475c6840e02",
+    "policy_snapshot_sha256": "48d79c20915bae5b440c444e171e3fa90f8789f6f6977d8dddf1013491c9ad70",
+    "positive_samples": 3,
+    "source_sha256": "c13b57b71ba34d73782f528923d447a99b513de56cdbdb0b00691129631bb0a4"
+  },
+  "test_runs": [
+    {
+      "compile_commands_sha256": "29e5f302573133b002bea07528dcfd399c284f111c28a897c36340f2df74f116",
+      "junit_sha256": "6ded2c61dae7fa387ae9e307ef0a037f8d94db00dd785bd0397b57534f90a5e0",
+      "mode": "debug",
+      "passed": 339,
+      "tests": 339
+    },
+    {
+      "compile_commands_sha256": "0f528331c8546a49fc119970a5b43296549d458d2660b3812fc5c9896f3a6ac2",
+      "junit_sha256": "c48c7dd15922af87a1947e84dfcce1b3ef24afb64d4a00ada66e8e4c6a1f47f0",
+      "mode": "release",
+      "passed": 339,
+      "tests": 339
+    },
+    {
+      "compile_commands_sha256": "9c1c6bff2a941d14a5dc3f980b0a9871b5d29d72922feabc8a16bca60f72e5e2",
+      "junit_sha256": "ec02777d8aed161dd5e57b3f5124f0018745506b3aeee61ad0cea9a7a5adc343",
+      "mode": "sanitize",
+      "passed": 339,
+      "tests": 339
+    },
+    {
+      "compile_commands_sha256": "ce0f6fe331be65e6ab3530c3b18d10a6531933aa43ebd5b1dcfc4f799554564e",
+      "junit_sha256": "141c9449795b2744b83bacc5318e553e26e1165bb1ae872944e7f1db4482a85a",
+      "mode": "coverage",
+      "passed": 339,
+      "tests": 339
+    }
+  ],
+  "vm_executed": false
+}

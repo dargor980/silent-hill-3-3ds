@@ -1,0 +1,590 @@
+{
+  "actual_qt_core_event_loop_executed": true,
+  "admitted_execution_modes": [],
+  "capabilities": [],
+  "date": "2026-10-18",
+  "entries": [
+    "EmuThread::loadSettings",
+    "EmuThread::checkForSettingChanges",
+    "EmuThread::startFullscreenUI",
+    "EmuThread::stopFullscreenUI",
+    "EmuThread::startVM",
+    "EmuThread::resetVM",
+    "EmuThread::setVMPaused",
+    "EmuThread::shutdownVM",
+    "EmuThread::loadState",
+    "EmuThread::loadStateFromSlot",
+    "EmuThread::saveState",
+    "EmuThread::saveStateToSlot",
+    "EmuThread::toggleFullscreen",
+    "EmuThread::setFullscreen",
+    "EmuThread::setSurfaceless",
+    "EmuThread::applySettings",
+    "EmuThread::reloadGameSettings",
+    "EmuThread::updateEmuFolders",
+    "EmuThread::toggleSoftwareRendering",
+    "EmuThread::changeDisc",
+    "EmuThread::setELFOverride",
+    "EmuThread::changeGSDump",
+    "EmuThread::reloadPatches",
+    "EmuThread::reloadInputSources",
+    "EmuThread::reloadInputBindings",
+    "EmuThread::reloadInputDevices",
+    "EmuThread::closeInputSources",
+    "EmuThread::requestDisplaySize",
+    "EmuThread::enumerateInputDevices",
+    "EmuThread::enumerateVibrationMotors",
+    "EmuThread::queueSnapshot",
+    "EmuThread::beginCapture",
+    "EmuThread::endCapture",
+    "EmuThread::stopInThread",
+    "EmuThread::doBackgroundControllerPoll",
+    "EmuThread::onDisplayWindowResized",
+    "EmuThread::onApplicationStateChanged",
+    "EmuThread::redrawDisplayWindow",
+    "EmuThread::destroyVM",
+    "EmuThread::createBackgroundControllerPollTimer",
+    "EmuThread::destroyBackgroundControllerPollTimer",
+    "EmuThread::startBackgroundControllerPollTimer",
+    "EmuThread::stopBackgroundControllerPollTimer",
+    "EmuThread::updatePerformanceMetrics",
+    "Host::PumpMessagesOnCPUThread"
+  ],
+  "entry_hooks_compiled_only": 36,
+  "entry_hooks_executed": 9,
+  "foreign_thread_producer_exclusion_verified": false,
+  "global_memory_effect_serialization_verified": false,
+  "gs_vu_retention_implemented": false,
+  "harness_inputs": {
+    "baseline": {
+      "exact_fragments": 14,
+      "fragments": [
+        {
+          "fragment_sha256": "f5724687af720f6e97c45c0502c3c9f3de303b6ebe24d9e20a5a58032d09fb0b",
+          "name": "fullscreen",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "f14871f08caa5f7fac2f332b11844cf87c233e1d2a5e934ce4a56acb4e67bc38",
+          "name": "surfaceless",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "3ea6cd5da7a1052abe45f9c89b7a3eb7877fd42c2badc8a963a723cc96f9e347",
+          "name": "focus",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "665db6d4c886b9e51b71103defc2e182871c6a340ded56abd6537e8515ce9624",
+          "name": "idle",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "13dd7b7d14f21f8897a3951b43e0000f5b00c248d8a3458f1b37bd2b0aa9f358",
+          "name": "shutdown",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "8617e32b6d5595db9a91e0ce257de0fb6ec4f2604ce1add28e4d326be0ee67c2",
+          "name": "settings",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "0f5e15784a5caf3578e0c068d955be479a60d77b10f48efc87c7a977b76bf1c0",
+          "name": "timer-start",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "2dd1b01141bd3877dbdbf758ff621ec21871a08754495de922ca64ca6177c47c",
+          "name": "timer-stop",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "1c644c07227fabc5653c673f042ea4414c8cb72e1ce3b947c9dac4ef48430c34",
+          "name": "pump",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "dc55386bd4d9a34c175f4530e88f7922ed8a8bbaef88eae0015f28dc79cd99c2",
+          "name": "slot",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "523ad7e2c30efc71a1685418f07d756c9c2e799b0a698e9a45e4e31fafe690b5",
+          "name": "dispatch",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "bab6fdb324890de5b258207b7b9ab0c7bbf61963588fdd1eab7df0a0ca5eaa53"
+        },
+        {
+          "fragment_sha256": "1b9ebc87ab481a2fea3ac95889aae90a4213a893510e405ee8ae3964b423b051",
+          "name": "stop",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "d6a244fc8dc86a2d62a99627f92479ded01ab88e5d046d5168394e20bb0fe236",
+          "name": "before",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "522c801b7395b162d840d9b1adcc8ec1045fe300b03a76244ad582047ff719a9",
+          "name": "activity",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        }
+      ],
+      "full_emu_thread_executed": false,
+      "harness_sha256": "29b2a3bfce6e6e05b245491122e6c6646b40ad95ec5466a3f21114ec56291bed",
+      "new_entry_bodies_executed": 9
+    },
+    "new": {
+      "exact_fragments": 14,
+      "fragments": [
+        {
+          "fragment_sha256": "068a65e50c3286d9f097cd52f7fd2cf0ecadd57c8947191797e83230c1378b89",
+          "name": "fullscreen",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "cebe47b5f0b8fb939298768612f11d0708398cd18943e67a2e40c7d650e0e56b",
+          "name": "surfaceless",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "44fa9931c222049e6584637769a59003cfd3cb84397c24b4699e722816fb30b3",
+          "name": "focus",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "8828bc5d3bed8bb66d1d15e15aad213fbb43b75399a528a5be67b7bf4b4357cf",
+          "name": "idle",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "09cab2a8444965e7c78475a6fd48f05cbb2f023444883ad7741df9095fa2a71f",
+          "name": "shutdown",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "e1b4ec276f7471d68ee96863cb675ffc5b418f69d8344c09ca0ccf0ab0444f67",
+          "name": "settings",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "d2f21ebc4cdcde21a05ae0b672cb6ac7b103e1cef31bb6654ee59c0ecea4fcb9",
+          "name": "timer-start",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "efed2bdc631d795508d86344b51e49c784153c908888d30d1add220548c7983d",
+          "name": "timer-stop",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "3e5213d76d04377e250da8e1f24de9317cf65e2014f2fd451b3941cf6131c86c",
+          "name": "pump",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "dc55386bd4d9a34c175f4530e88f7922ed8a8bbaef88eae0015f28dc79cd99c2",
+          "name": "slot",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "523ad7e2c30efc71a1685418f07d756c9c2e799b0a698e9a45e4e31fafe690b5",
+          "name": "dispatch",
+          "source_file": "pcsx2-qt/QtHost.cpp",
+          "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+        },
+        {
+          "fragment_sha256": "1b9ebc87ab481a2fea3ac95889aae90a4213a893510e405ee8ae3964b423b051",
+          "name": "stop",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "d6a244fc8dc86a2d62a99627f92479ded01ab88e5d046d5168394e20bb0fe236",
+          "name": "before",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        },
+        {
+          "fragment_sha256": "522c801b7395b162d840d9b1adcc8ec1045fe300b03a76244ad582047ff719a9",
+          "name": "activity",
+          "source_file": "pcsx2/VMManager.cpp",
+          "source_sha256": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+        }
+      ],
+      "full_emu_thread_executed": false,
+      "harness_sha256": "29b2a3bfce6e6e05b245491122e6c6646b40ad95ec5466a3f21114ec56291bed",
+      "new_entry_bodies_executed": 9
+    }
+  },
+  "harness_runs": [
+    {
+      "binary_sha256": "361b2b7307882aa48d6fd31eb062e0c85c8c0be14790f85dfd5e0c20090334b6",
+      "cases": 112,
+      "effects_digest": "82bcb24eba918bac",
+      "mode": "on",
+      "qt": "6.11.1",
+      "qt_core_sha256": "ec33970adfed85e24ec60dd14c59f5b9b28daec2a9b466c564cef46cff423ef1",
+      "receipts": [
+        {
+          "action": "moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "778feb62075b09e0413ffec195e8d82a332994b79df0fe2c3440d4a9fa9f1c24"
+        },
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "11fdaef8377f23959520de452db6d6875e1f96505b1f5c863e10e026c9e36668"
+        },
+        {
+          "action": "run",
+          "log_sha256": "a47387c84086f3ce2188a5bebae3af77c56bd937c6212f291ee9a8fb2de3dc5c",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "3ef26416f41dca71a9ecb404b16e86a3b97acdff08c08c360203d0684ad4884d"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "binary_sha256": "ab84920ab6c12f8e2c9941e3939229e69cde9e3b57178272a4fcd025e2d22334",
+      "cases": 112,
+      "effects_digest": "82bcb24eba918bac",
+      "mode": "off",
+      "qt": "6.11.1",
+      "qt_core_sha256": "ec33970adfed85e24ec60dd14c59f5b9b28daec2a9b466c564cef46cff423ef1",
+      "receipts": [
+        {
+          "action": "moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "e8fb8d9abb6afba9fc3b4b3d3cb8a94dcf6efd28956725fb19331fc651280b53"
+        },
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "d532df035ebacc931576600159edef752f1ea108fbc2a98f4911dd6dd737cd79"
+        },
+        {
+          "action": "run",
+          "log_sha256": "a47387c84086f3ce2188a5bebae3af77c56bd937c6212f291ee9a8fb2de3dc5c",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "68dbfa5d9a1d8d68c2a5ec4f34dac5a3fc155095e8848978d52752d24b918ec4"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "binary_sha256": "3f95fb71719d8d8fffeb6fb81d28336eae8c4881e32a606180d38b0b31ccc1b2",
+      "cases": 112,
+      "effects_digest": "82bcb24eba918bac",
+      "mode": "sanitize",
+      "qt": "6.11.1",
+      "qt_core_sha256": "ec33970adfed85e24ec60dd14c59f5b9b28daec2a9b466c564cef46cff423ef1",
+      "receipts": [
+        {
+          "action": "moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "0f48c8dcab27c91a981bf8ea891bf0ef672bfcfc5513e1a01b7196ebd01322a9"
+        },
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "10ba6da99896e394a5d229013231a11c07e35356d22a2df80adc6255a02491f7"
+        },
+        {
+          "action": "run",
+          "log_sha256": "a47387c84086f3ce2188a5bebae3af77c56bd937c6212f291ee9a8fb2de3dc5c",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "fb520219472ecd0dc84baf4ea2007f0bd6c0a455caf3609e2e93f72602df4473"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "binary_sha256": "2d26a33977f76c7b59e3791993f8f5b2420e38e09e4c4f5d921a3c7df5710386",
+      "cases": 112,
+      "effects_digest": "82bcb24eba918bac",
+      "mode": "baseline",
+      "qt": "6.11.1",
+      "qt_core_sha256": "ec33970adfed85e24ec60dd14c59f5b9b28daec2a9b466c564cef46cff423ef1",
+      "receipts": [
+        {
+          "action": "moc",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "c682d0e3c98497969f4f4ca74803a91c88b1d59811e6ae647aa85eddd6125960"
+        },
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "91faa9d676b05cecb70d7a0b6847dea47c4566c70d806aab59146d21889f4b84"
+        },
+        {
+          "action": "run",
+          "log_sha256": "a47387c84086f3ce2188a5bebae3af77c56bd937c6212f291ee9a8fb2de3dc5c",
+          "moc_sha256": "d4a675e2b896760b76e4326a0a62b957659240ea315567e5a614c0b68021199f",
+          "receipt_sha256": "f3f559a459b98b70769e45bdea6efbe186478f28cf7128c2da8577022a49f0a8"
+        }
+      ],
+      "result": "PASS"
+    }
+  ],
+  "helpers": [
+    "destroyVM",
+    "createBackgroundControllerPollTimer",
+    "destroyBackgroundControllerPollTimer",
+    "startBackgroundControllerPollTimer",
+    "stopBackgroundControllerPollTimer",
+    "updatePerformanceMetrics"
+  ],
+  "host_ctest_rerun": false,
+  "initial_failures": [
+    {
+      "cause": "indent_substring_match_before_any_private_mutation",
+      "script_sha256": "76172d258c71c57c46deaea8d842f861497921f5756e1b0c1215d135d0c0638f",
+      "stage": "prepare"
+    },
+    {
+      "cause": "Qt_slots_macro_collision_in_own_fixture",
+      "harness_sha256": "bc68323829f46a260e3cb3fb4ac598b3f67e8b699c8b9e1cb638769cb5059f3e",
+      "log_sha256": "6bcd42844dc917758413e8286a024a09311ffb70bd5d4ddc7d2fda9ca6596079",
+      "receipt_sha256": "6642a0530033eb04e825b55004910569ae10ef9de40b1b20a795f7a0cb276a23",
+      "stage": "harness_compile_v1"
+    }
+  ],
+  "instrumentation_before_original_statements": true,
+  "inventory_sources": {
+    "pcsx2-qt/MainWindow.cpp": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923",
+    "pcsx2-qt/QtHost.cpp": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd",
+    "pcsx2-qt/QtHost.h": "41a804c4d96cea9ba17626a39ee50fe950027417dc6ecf9b23bfa70962fe9aa9",
+    "pcsx2-qt/QtProgressCallback.cpp": "94954d56675bfd406e53a9a23aff8767b2a73b9cdb3dafc43f5e8252db56f165",
+    "pcsx2-qt/QtUtils.cpp": "2353163de0673fd5c0c4d711acd80ad3c35b325ce0a420fcc8553d1815cc552a",
+    "pcsx2-qt/Translations.cpp": "e6427696451b650f87c93d707a5c78bbce0320814761e8ddd80730497c2c86ed",
+    "pcsx2/GS/Renderers/Common/GSRenderer.cpp": "5774e19a40b68e0f5c661852ce76ce53181bdb6474fd33a579254e95c1cd0251",
+    "pcsx2/MTGS.cpp": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12",
+    "pcsx2/MTVU.cpp": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae",
+    "pcsx2/PerformanceMetrics.cpp": "a0a5b007df5d96082197b0687bee0fcb0ef5eef8341c9a43261db00f5c219ad6",
+    "pcsx2/VMManager.cpp": "a7ff4d96f6e4228506e1328f3e2c3a134c0c5bfb9b8726bd30f3227d200e8414"
+  },
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-qt-dispatch/audit.py": "b3018931ddf61ce6d7fef98024549d2388a3a4e735c24b42ea426966311242be",
+    "build/f02-07-qt-dispatch/compile_qt.py": "9b44f2cc27f72f31dab7a07f597ea9b27608e00e0af61ae429c56515f4f1067c",
+    "build/f02-07-qt-dispatch/make_harness.py": "8a5f35df2531d3a22ad35c0c2b3eb789d21218865c92f60e52a54ee24ceb3f45",
+    "build/f02-07-qt-dispatch/negative_controls.py": "e228bf14358119d67033b32872cfd21eeeb107038fc36b9657623d970d64f919",
+    "build/f02-07-qt-dispatch/prepare-initial.py": "76172d258c71c57c46deaea8d842f861497921f5756e1b0c1215d135d0c0638f",
+    "build/f02-07-qt-dispatch/prepare.py": "52a2fb5a2fb806ca1dcb9746418a09a55d935d303b39e4ce78d027331cb12e0b",
+    "build/f02-07-qt-dispatch/run_harness-v1.py": "39a46d967193eb6f5eaf7e757397557ea98695978670ae027a6c8677681adcbb",
+    "build/f02-07-qt-dispatch/run_harness.py": "ca5c04d2fd22504ee3a1da0d59347bc4b1702a5c8bb6947b7402dc018502b3c4"
+  },
+  "loop_dispatch_hooks": 3,
+  "loop_dispatch_hooks_compiled_only": 3,
+  "negative_controls": [
+    {
+      "binary_sha256": "babed019423f728acc4ff85576c60d3e67e3e3d1936c6bd940d99904d73081b6",
+      "changed_fragment": "fullscreen.inc",
+      "expected_failure": "check failed: !s_observer_pine_drain.active()",
+      "mutated_fragment_sha256": "f5724687af720f6e97c45c0502c3c9f3de303b6ebe24d9e20a5a58032d09fb0b",
+      "mutation": "unguarded-fullscreen",
+      "receipts": [
+        {
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "44997542cf615a019d6f56db86ebbaff87ca743f8f9b0f293f75ee1d78c17667"
+        },
+        {
+          "action": "run",
+          "exit_code": 1,
+          "log_sha256": "67d985a203a26c7b6c2ba34d8ebd2b589a889e78abb66c30f9c15c8852efb2c1",
+          "receipt_sha256": "1e04d241ff15be454455ab4bd3e65ae065332aa304e58d7d520f68fa89fe6cb4"
+        }
+      ]
+    },
+    {
+      "binary_sha256": "e123f5692a3f9a9a072dcc1835f9f37f0377e24488a452c2be267a95aa5fdbf3",
+      "changed_fragment": "pump.inc",
+      "expected_failure": "check failed: !s_observer_pine_drain.active()",
+      "mutated_fragment_sha256": "1c644c07227fabc5653c673f042ea4414c8cb72e1ce3b947c9dac4ef48430c34",
+      "mutation": "unguarded-pump",
+      "receipts": [
+        {
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "5f24d0c33c483f88c8c9d5d7b06a00b55de19912f481eec352602339ef3f851b"
+        },
+        {
+          "action": "run",
+          "exit_code": 1,
+          "log_sha256": "3e0ff19062255eb4693df61075e6197ec8f3e4120b644861b7fea8eb23d485de",
+          "receipt_sha256": "f86f220a8b141074f2bd7927e2cf2f16e333c08d10ccdb7a4c14261240f96003"
+        }
+      ]
+    }
+  ],
+  "new_entry_hooks": 45,
+  "pine_socket_lifecycle_executed": false,
+  "preceding_custody_audit_sha256": "df66bc9318880356d07b9529d410ed967d869976502717b3dab35da0d8219430",
+  "preceding_custody_identical": true,
+  "prior_evidence_sha256": "df66bc9318880356d07b9529d410ed967d869976502717b3dab35da0d8219430",
+  "prior_private_sources_unchanged": true,
+  "private_patch_sha256": "871a6f8b1dc5cb9b7545e9de3bdd905862d6c954088c66ba02df95686ab1c65c",
+  "private_source_manifest_sha256": "d976483d5c8a0d88a8d5ecbd83b3025520793658bc6c7c3660cfec9564ad85cd",
+  "producer_exclusion_complete": false,
+  "provider_added": [],
+  "provider_application_executed": false,
+  "provider_application_linked": false,
+  "provider_changed": [
+    "pcsx2-qt/QtHost.cpp"
+  ],
+  "provider_downstream_port_rejects": true,
+  "provider_emu_thread_with_real_qt_executed": false,
+  "provider_translation_units": [
+    {
+      "accepted": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "f6d259ee9bb258672a3f2189948b2076f3131ba92bbaa069a47e61284cb5b293",
+      "producer_symbols": 1,
+      "receipt_sha256": "fbc6f87cdff503def053580cca3973b3dedb335121bf1b6986902d8e94f9efbe",
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd",
+      "unit": "QtHost-v1-on"
+    },
+    {
+      "accepted": true,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "object_sha256": "20732b757c2f8ba36865dd498dc3eb09f01a1600d6108a21b787609eb413b66f",
+      "producer_symbols": 0,
+      "receipt_sha256": "8425f0dff2eae4e694a38004157319cfeb7532e81c83e4ac2b3fd8bcaa66163c",
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd",
+      "unit": "QtHost-v1-off"
+    }
+  ],
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-qt-dispatch.md": "6460c8d28f7efbefe5cc76f01eb1f6e28253046a919c88400857b451cb6d161f",
+    "schemas/qt-dispatch-v1.md": "a2cb4c26e601a62e06806712000b94e084fc4eda54b997043a6073facae63295",
+    "tests/fixtures/pcsx2-qt-dispatch/README.md": "a4b4d733b3bff8b409e50e7733eff9b040187ff164571fe066e4430d76d393db",
+    "tests/fixtures/pcsx2-qt-dispatch/harness.cpp": "29b2a3bfce6e6e05b245491122e6c6646b40ad95ec5466a3f21114ec56291bed"
+  },
+  "python_full_suite_rerun": false,
+  "read_events_produced": 0,
+  "regenerated_moc": [
+    {
+      "autogen_info_sha256": "cac22aee348e79f55406b8d4a316c79b79fa657ed1e8cdf484b702f90f154d8c",
+      "generated_sha256": "67f3f41c5d1e8d7e693862d48b9fd543867f1c698d3bcbf487410445320b8be4",
+      "header_sha256": "41a804c4d96cea9ba17626a39ee50fe950027417dc6ecf9b23bfa70962fe9aa9",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "moc_sha256": "bfbe85be41fb1834662299f69625ece561597f466bc504843ea110445ae65ca3",
+      "mode": "on",
+      "predefs_sha256": "a899ac9e172407730991cdf3096d7d5f99e1d9cb9cbea8492157b901a92d0c5f",
+      "receipt_sha256": "1abc7c004241513550c36f00c709fdbde5b3da965a7d7e7f183e975d000f9dd4"
+    },
+    {
+      "autogen_info_sha256": "cac22aee348e79f55406b8d4a316c79b79fa657ed1e8cdf484b702f90f154d8c",
+      "generated_sha256": "67f3f41c5d1e8d7e693862d48b9fd543867f1c698d3bcbf487410445320b8be4",
+      "header_sha256": "41a804c4d96cea9ba17626a39ee50fe950027417dc6ecf9b23bfa70962fe9aa9",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "moc_sha256": "bfbe85be41fb1834662299f69625ece561597f466bc504843ea110445ae65ca3",
+      "mode": "off",
+      "predefs_sha256": "a899ac9e172407730991cdf3096d7d5f99e1d9cb9cbea8492157b901a92d0c5f",
+      "receipt_sha256": "d4953ca88c37c13af82ac9def18ec20ed5317643fc1ac338b015fae51bc4a0ae"
+    }
+  ],
+  "remote_ci_executed": false,
+  "resource_links": [],
+  "schema_version": 1,
+  "slots": [
+    "loadSettings",
+    "checkForSettingChanges",
+    "startFullscreenUI",
+    "stopFullscreenUI",
+    "startVM",
+    "resetVM",
+    "setVMPaused",
+    "shutdownVM",
+    "loadState",
+    "loadStateFromSlot",
+    "saveState",
+    "saveStateToSlot",
+    "toggleFullscreen",
+    "setFullscreen",
+    "setSurfaceless",
+    "applySettings",
+    "reloadGameSettings",
+    "updateEmuFolders",
+    "toggleSoftwareRendering",
+    "changeDisc",
+    "setELFOverride",
+    "changeGSDump",
+    "reloadPatches",
+    "reloadInputSources",
+    "reloadInputBindings",
+    "reloadInputDevices",
+    "closeInputSources",
+    "requestDisplaySize",
+    "enumerateInputDevices",
+    "enumerateVibrationMotors",
+    "runOnCPUThread",
+    "queueSnapshot",
+    "beginCapture",
+    "endCapture",
+    "stopInThread",
+    "doBackgroundControllerPoll",
+    "onDisplayWindowResized",
+    "onApplicationStateChanged",
+    "redrawDisplayWindow"
+  ],
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_files_verified": {
+    "source-admission-v1": 2949,
+    "source-baseline": 2934,
+    "source-cpu-boundary-v1": 2953,
+    "source-dma-v2": 2945,
+    "source-host-v1": 2945,
+    "source-jit-cache-v2": 2945,
+    "source-lifecycle-v1": 2947,
+    "source-lifetime-v2": 2945,
+    "source-observer-v2": 2941,
+    "source-pine-coordinator-v1": 2955,
+    "source-pine-exclusion-v1": 2951,
+    "source-producer-entry-v1": 2957,
+    "source-qt-dispatch-v1": 2957,
+    "source-retained-drain-v1": 2957
+  },
+  "source_id": "SRC78",
+  "status": "qt_entries_guarded_arbitrary_pump_aborts_retention_control_channel_pending",
+  "synthetic_pending_held_port_executed": true,
+  "worker_control_channel_implemented": false
+}

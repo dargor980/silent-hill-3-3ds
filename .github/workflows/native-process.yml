@@ -1,0 +1,49 @@
+name: Native process identity
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-process-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-process:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-14]
+        sanitizers: ["OFF", "ON"]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Configure host identity tests
+        run: cmake -S tools/observer/native -B build/native-process -DCMAKE_BUILD_TYPE=Release -DSH3_NATIVE_SANITIZERS=${{ matrix.sanitizers }}
+      - name: Build
+        run: cmake --build build/native-process --parallel 2
+      - name: Test
+        env:
+          UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+          ASAN_OPTIONS: detect_leaks=0:halt_on_error=1
+        run: ctest --test-dir build/native-process --output-on-failure --output-junit tests.xml --no-tests=error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: native-process-${{ matrix.os }}-${{ matrix.sanitizers }}
+          path: build/native-process/tests.xml
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Verify Python native peer bridge
+        if: runner.os == 'macOS' && matrix.sanitizers == 'OFF'
+        run: python3 tests/native_peer_oracle.py build/native-process/libsh3_macos_peer.dylib
+      - name: Verify budgeted consumer with native peers
+        if: runner.os == 'macOS' && matrix.sanitizers == 'OFF'
+        run: python3 tests/native_budgeted_oracle.py build/native-process/libsh3_macos_peer.dylib

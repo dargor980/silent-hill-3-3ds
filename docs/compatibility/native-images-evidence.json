@@ -1,0 +1,1173 @@
+{
+  "admitted_execution_modes": [],
+  "arm64_executed": false,
+  "artifact_runtime_binding_verified": false,
+  "candidate_binaries_verified": 42,
+  "candidate_executable_sha256": "e76d1e79ff017914bbcbd8d6488eab373041df687deb314e4da02e12be98b254",
+  "capabilities": [],
+  "compatibility_tests": {
+    "junit_sha256": "19d27892871c7b3368d773e038c8d493497d04cf44fb83e715bde832d225b2b1",
+    "passed": 122
+  },
+  "complete_manifest_verified": false,
+  "completed_tasks": [
+    "IP-NATIVE2a",
+    "IP-NATIVE2b",
+    "NI-T1",
+    "NI-T2",
+    "NI-T3"
+  ],
+  "date": "2026-10-18",
+  "environment": {
+    "architecture": "x86_64",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.5.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+    "existing_ci_sha256": "c7ab4f201ebc3b95c38ffee60f434cbcf8747a5941c41bc898ecaf2c65f043f4",
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5\nBuildVersion:\t\t25F71\n",
+    "root_cmake_sha256": "1a85bc58f9716d433be0e795f8d648a11c330ddca5a1b80f614ac73ed692a1df",
+    "sdk_files_sha256": {
+      "usr/include/libproc.h": "246d87709fc6b9157ce5cf3c475656ac48e0e1ae8bbdc46cf45acd34294448cd",
+      "usr/include/mach-o/dyld.h": "7c8583f2b4edcfcde7da60ffe02c75974ec87f885fecc4e8d40761fe0b553a80",
+      "usr/include/sys/proc_info.h": "e427fa96b348537b21552b9de71e01039410bcad2cedee5584c5e5fddafd70fc",
+      "usr/include/sys/random.h": "a1b1258a25102266b667023d65fa76968a118009b2524647695b43e3520b17ef",
+      "usr/include/sys/stat.h": "31c8f252b05785343ca577c007657c0fbab45a182b60fc5b73994c621dc318d4",
+      "usr/lib/libSystem.tbd": "20cfce043f11a083e2eb6111efe3579919a8082fa4cc912a7bd839af2010ec57"
+    },
+    "sdk_name": "MacOSX26.5.sdk"
+  },
+  "environment_sha256": "8950ae338487c350168fbbaeec0a3d30c7ed6d216fcd7056de3cd31f65c1d9a0",
+  "existing_candidate_modified": false,
+  "final_test_executions": 192,
+  "header_region_file_binding_verified": true,
+  "initial_test_executions_preserved": 192,
+  "inspection_sha256": "c0da95a5e17a7f7df3708f07d1f7a24d0f5abd0ce98e72e8393464f37700729c",
+  "installed_application_modified": false,
+  "linux_executed": false,
+  "live_acquisition_performed": false,
+  "loader_concurrent_test": {
+    "cycles": 40,
+    "observed_events": 80
+  },
+  "loader_events_verified": true,
+  "local_scripts_sha256": {
+    "build/f02-07-native-images/audit-v1.py": "9a15b9743950243030d8604e06d835126ad1459995ecc263d19cd972c2a6d259",
+    "build/f02-07-native-images/coverage-v1.py": "7fa589d0939c71331e50b4df420fa15e517e15d4737d9993e6a066c1fb72c4d8",
+    "build/f02-07-native-images/coverage-v2.py": "604340f4834471ef0bd179d4ada53b185f8b932e424c4cd5154e50970f3b6f84",
+    "build/f02-07-native-images/inspect-v1.py": "bd8e63c42d2e94acc558f05c301992a12294e4e50d519f828547007a11ccbace",
+    "build/f02-07-native-images/mutants-v1.py": "50310d684e5b7b7fe22cbe6b2dcc3821fb70b6350184e32ab6ac8611f7aeaa0d",
+    "build/f02-07-native-images/probe-v1.py": "eaecbc3e25616005769ea00d4b2f6e19780e65516321ea3c4d470a06d6599ebf",
+    "build/f02-07-native-images/run-v1.py": "40727a79e1ac29e5f0d0370d4971cd27d455eae92b4429d83cbefd4fd36b71fc",
+    "build/f02-07-native-images/run-v2.py": "0f7f821b754440ae7c3a10cac0759a59f0e4c204c7cb9503b1b47df3932676e3"
+  },
+  "negative_controls": [
+    {
+      "binary_sha256": "6e8c45c81d6b3df73092b3689fbdba24193570b427abcf79bed3d2cf47d47bb7",
+      "detected": true,
+      "exit_code": 1,
+      "log_sha256": "a62823ec865ed4665b19e6d2494a6a7e59f1f452d0b9f857ecde9877a704e8a5",
+      "name": "replaced_mapping",
+      "scenario": "baseline",
+      "source_sha256": "fbfe49ca497a2081cafe4ce6a9a3c37325556035c9b064481693f632b2c33865"
+    },
+    {
+      "binary_sha256": "3bff0d520020924520064b3153df046f3738f839615cee4ba7d6103738632a6e",
+      "detected": true,
+      "exit_code": 1,
+      "log_sha256": "a62823ec865ed4665b19e6d2494a6a7e59f1f452d0b9f857ecde9877a704e8a5",
+      "name": "lost_terminal",
+      "scenario": "lose_empty",
+      "source_sha256": "992f7647df9290156b2b423497f3d5be61935c3e8ff7e23982e58b28698bc9fb"
+    },
+    {
+      "binary_sha256": "3a6d00df8cd7a785d674a7364abd35e8cd452ede21587e7479d0bb2e396ee98d",
+      "detected": true,
+      "exit_code": 1,
+      "log_sha256": "2a9b623a8896efc6fb1f6449a4a38128c6ca789599b0324495d453f85a792e2f",
+      "name": "lost_revision",
+      "scenario": "ledger_cycle",
+      "source_sha256": "f92f5b3fc1d19b2b900098c0eaf35b8082e5d96a24b9344825b4fc8e02a73688"
+    }
+  ],
+  "new_macos_scenarios": 11,
+  "new_portable_scenarios": 15,
+  "next_tasks": [
+    "IP-NATIVE2c",
+    "IP-NATIVE3",
+    "VIF/writers",
+    "frontend/VM",
+    "AD-3"
+  ],
+  "pcsx2_reference_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "pcsx2_source_files_verified": 2966,
+  "pcsx2_source_modified": false,
+  "peer_verified": false,
+  "pipeline_extended": true,
+  "preceding_evidence_sha256": "53b91f79caed6d2084f3ff963e6611a4c392ee2c9904f5ef859b935a9b20431f",
+  "previous_native_birth_private_files_verified": 2059,
+  "previous_public_input_transition": {
+    "current_sha256": "cd9dfa647671625899ec1b4e79d3c5060a2a806eb472380bac6ef664ec58feb7",
+    "file": "tools/observer/native/CMakeLists.txt",
+    "previous_private_snapshot_verified": true,
+    "previous_sha256": "188a95be006a2368a7b1e1d8d18a9965460b6d782cad01c3b37cf60079550dc3"
+  },
+  "previous_public_inputs_verified_except_declared_transition": true,
+  "previous_scenarios_retained": 22,
+  "probe": {
+    "binary_sha256": "430c06ff923f15865009e1ce69a8b1f33c822c91d9d7593731f58147527edc60",
+    "file_vnode_available": 1,
+    "images": 45,
+    "log_sha256": "4212d769f5108927e39ca9beca922c7adce5a77f8db9f91620b3eddeedb11139",
+    "source_sha256": "0f0ca76535c7df45416101ccbf30c5cb214967fd7cf53cb95bd841822cb9ee8c",
+    "system_cache_attested": false,
+    "system_cache_images_without_vnode": 44
+  },
+  "production_profile_changed": false,
+  "public_inputs_sha256": {
+    ".github/workflows/native-process.yml": "47ef32113c3e73dfc1ab4693f88a0dd74a9e2a97f5a0e7c690089fab9f56df3f",
+    "docs/execution/f02-07-native-images.md": "741dc4bcbb33bad8e1e386eeae66202a520ab0f003654ded45e271f50b1d0fb4",
+    "schemas/native-image-identity-v1.md": "df02d327915c1abc907c691745e50ff2be79051768d582f766dbaf6e26f78f0b",
+    "tests/cpp/check.hpp": "9c3fc980d7e994d3b5fe8726af3ba589d367e840b1bf81b2adf1cc516e5510d9",
+    "tests/cpp/native_image_fixture.cpp": "4abf90c68effe03af1d2151171aa994e9bd735b0e1d0221e57684ff6ef48e431",
+    "tests/cpp/test_image_identity.cpp": "cfc55c6b57218ad165102ecb65e8bbe8c7bc19379b2f2cfb6212f97f16448a4b",
+    "tests/cpp/test_macos_image_identity.cpp": "9c47a8140617d566fc7dd18f5abf8ecb8ca44a1c7111e508902677ee797a75e5",
+    "tests/cpp/test_macos_process_birth.cpp": "9eed0f3f9766f344ff4eb6e5f219fdfbb3ac71bcbda65b38eee59f807b3fdb0d",
+    "tests/cpp/test_process_birth.cpp": "6a1b747600d134add241fff7aab3e7dc575bea7bd02e231e843659d443929736",
+    "tools/observer/image_identity.cpp": "aa6edfdd61d08d598c846b68b52883a4a3a9e06fac7fe363ab4986393daccb40",
+    "tools/observer/include/sh3_observer/image_identity.hpp": "ebb4e08bcf0cdb053fb21591e1d1b2b3e7d44e5417f48dc7239c003c824b974b",
+    "tools/observer/include/sh3_observer/macos_image_identity.hpp": "ca5f8a04a01da846640956e25e8b59619499d4e6c5b36a0eea1bb7f62f4a9ecb",
+    "tools/observer/include/sh3_observer/macos_process_birth.hpp": "e39a45b217ff150f52ffbfeb9abdf6fb12dd28f50d9b9391031ed6d2e8b8fccd",
+    "tools/observer/include/sh3_observer/process_birth.hpp": "ee84c38ab576384ae6dfc93221f883289c9c1926fae319ea5529e0cdbd04a98a",
+    "tools/observer/native/CMakeLists.txt": "cd9dfa647671625899ec1b4e79d3c5060a2a806eb472380bac6ef664ec58feb7",
+    "tools/observer/native/macos_image_identity.cpp": "40d28cad8dc9dbf5c1332d94899ebe268cad02cab581ce3d9cbab4be0bd2c488",
+    "tools/observer/native/macos_process_birth.cpp": "9adbced25578c213aa100468da1b1b9aa2249e0bfcc6ac97d0fdf636f78d945f",
+    "tools/observer/process_birth.cpp": "bbd39e9ca0b5c47761c8cb12ca8a8d43724e9c0bb24ab5d39a224d72ee5e8af6"
+  },
+  "read_events_produced": 0,
+  "remote_ci_executed": false,
+  "resource_limits": {
+    "floor_gib": 10,
+    "initial_free_gib": 10,
+    "observed_maximum_stage_bytes": 17686528,
+    "observed_minimum_free_bytes": 21852811264,
+    "stage_maximum_mib": 512
+  },
+  "resource_links": [],
+  "schema_version": 1,
+  "source_id": "SRC92",
+  "stages": [
+    {
+      "binaries": [
+        {
+          "architecture": "x86_64",
+          "file": "debug/test_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "1cd1618cb912c960ed60603cbdc2566f04e501a7db6de8b3c7349fce87597e4f"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/test_macos_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "622ab5845b4a393a29831f836a961cdb0069895acd039990197175a6a7f0a05c"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/test_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "210cbf554c389f32c94e1c2796b3397b5650bc50e99cbcc91fcf0591dac63a86"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/test_macos_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "f5570378f0c51c2e5829613fd2d3d14bf34a0bb7880747a6dfb3d0d13a41c2c2"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/libimage_fixture.so",
+          "lipo_exit_code": 0,
+          "sha256": "d581eb7d2929468b252fb38c25a4c447356cc4925237a05b4f9a02c4e43f56c7"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/libimage_fixture_other.so",
+          "lipo_exit_code": 0,
+          "sha256": "a22c5067edc47f9d034d50574215090664cfe783cb69dba10e4f2dd66c3b3e14"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/test_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "4ac892083f05df54105c073831b9f11323aead9059e6ada9735cca50e502d31d"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/test_macos_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "b4c7508bda225c4d70762c3152b948fbab42791b9d655772b7bb2acfa16e8cfa"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/test_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "583d34f9b1e5db30e61e5142d3a826f9192900d691d3b3acbec82f0400b3fc4f"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/test_macos_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "13e4efeb3221271449664c4431dd363f7791dadad045c0d6c5b9fb202e387bb1"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/libimage_fixture.so",
+          "lipo_exit_code": 0,
+          "sha256": "73d0004ac736acc9bc310884d92d3451d289a4dcd527eee912034e5db4b2bebf"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/libimage_fixture_other.so",
+          "lipo_exit_code": 0,
+          "sha256": "324e063fccd9dadabbc473f223fb637cfae82257d172b78e3180cccde71d9fec"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/test_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "dfb556d1dede4f4cae8e85d05235a497c2d4cb58b4d0c300de4e86d1d41b3fa7"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/test_macos_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "a28bffa527b37e56aa2db49b58f03897680cd25bf9b8cf07006fced83e9a8831"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/test_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "1b07b332481cee7b63e2c6d44546d6a6a06246127df0afd496c53c1388352381"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/test_macos_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "15fe763a3dd9edd78fbf13d63c9a7251fb53f5e4e5ac3310ccd06bd67ef3cc23"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/libimage_fixture.so",
+          "lipo_exit_code": 0,
+          "sha256": "edf7989942626f1a54edaaa0da5fbaa026e9c4b4ff3b754a8cfa6919e3b40694"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/libimage_fixture_other.so",
+          "lipo_exit_code": 0,
+          "sha256": "ea49d583bb3c0c324c17cf61c1cb14377c3036718b18ec1195841f591f943b59"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/test_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "1f785be3e8c57af0dc7bd384fbdf84b7d7598f0ff93fdf21c8fc719bf8da3c31"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/test_macos_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "1b9413d57ae07f709524dded576134c8c69b6560150518c6b7145358307477cd"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/test_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "f7f2dc2f68b1f2eb0599886ac9da4d962fa94e792d6b37e9c796012d9e3a05c1"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/test_macos_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "4aad2c263ce816377b3e76fc2492ba0ef389b225614956f1843b5dab02b40c05"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/libimage_fixture.so",
+          "lipo_exit_code": 0,
+          "sha256": "d852a373e97934b2e8320d7c67bac1b5549d1eacb8944537875b88311cbbb112"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/libimage_fixture_other.so",
+          "lipo_exit_code": 0,
+          "sha256": "911e7dc7ea053442be3af2d6f738f44a2f679ae6d5140da2119d93f815d34c12"
+        }
+      ],
+      "coverage": {
+        "tools/observer/image_identity.cpp": {
+          "branches": {
+            "count": 110,
+            "covered": 104,
+            "notcovered": 6,
+            "percent": 94.54545454545455
+          },
+          "functions": {
+            "count": 12,
+            "covered": 12,
+            "percent": 100
+          },
+          "instantiations": {
+            "count": 12,
+            "covered": 12,
+            "percent": 100
+          },
+          "lines": {
+            "count": 75,
+            "covered": 75,
+            "percent": 100
+          },
+          "mcdc": {
+            "count": 0,
+            "covered": 0,
+            "notcovered": 0,
+            "percent": 0
+          },
+          "regions": {
+            "count": 127,
+            "covered": 127,
+            "notcovered": 0,
+            "percent": 100
+          }
+        },
+        "tools/observer/native/macos_image_identity.cpp": {
+          "branches": {
+            "count": 100,
+            "covered": 80,
+            "notcovered": 20,
+            "percent": 80
+          },
+          "functions": {
+            "count": 12,
+            "covered": 12,
+            "percent": 100
+          },
+          "instantiations": {
+            "count": 12,
+            "covered": 12,
+            "percent": 100
+          },
+          "lines": {
+            "count": 81,
+            "covered": 78,
+            "percent": 96.29629629629629
+          },
+          "mcdc": {
+            "count": 0,
+            "covered": 0,
+            "notcovered": 0,
+            "percent": 0
+          },
+          "regions": {
+            "count": 145,
+            "covered": 138,
+            "notcovered": 7,
+            "percent": 95.17241379310344
+          }
+        },
+        "tools/observer/native/macos_process_birth.cpp": {
+          "branches": {
+            "count": 20,
+            "covered": 20,
+            "notcovered": 0,
+            "percent": 100
+          },
+          "functions": {
+            "count": 4,
+            "covered": 4,
+            "percent": 100
+          },
+          "instantiations": {
+            "count": 4,
+            "covered": 4,
+            "percent": 100
+          },
+          "lines": {
+            "count": 23,
+            "covered": 23,
+            "percent": 100
+          },
+          "mcdc": {
+            "count": 0,
+            "covered": 0,
+            "notcovered": 0,
+            "percent": 0
+          },
+          "regions": {
+            "count": 31,
+            "covered": 31,
+            "notcovered": 0,
+            "percent": 100
+          }
+        },
+        "tools/observer/process_birth.cpp": {
+          "branches": {
+            "count": 50,
+            "covered": 50,
+            "notcovered": 0,
+            "percent": 100
+          },
+          "functions": {
+            "count": 6,
+            "covered": 6,
+            "percent": 100
+          },
+          "instantiations": {
+            "count": 6,
+            "covered": 6,
+            "percent": 100
+          },
+          "lines": {
+            "count": 41,
+            "covered": 41,
+            "percent": 100
+          },
+          "mcdc": {
+            "count": 0,
+            "covered": 0,
+            "notcovered": 0,
+            "percent": 0
+          },
+          "regions": {
+            "count": 64,
+            "covered": 64,
+            "notcovered": 0,
+            "percent": 100
+          }
+        }
+      },
+      "coverage_summary_sha256": "a9ecfc8b32f56201ea793c586f13c7dcd9e25349dbc404363e51015c64350953",
+      "private_files_verified": 1380,
+      "profile_files": 50,
+      "source_manifest_sha256": "d5fbed3810f569e461f1878e7955706780dda73bbd938e390a082fb61b336a8c",
+      "test_runs": [
+        {
+          "compile_commands_sha256": "61e01eba858c58be0601f11f4b5a7eb154f95c9639167d04387938586305fd17",
+          "junit_sha256": "aa3a05d6fc6286a37187f380c85f9866f26f1cf839b375c8f873b4fb2d256166",
+          "mode": "debug",
+          "passed": 48,
+          "tests": 48
+        },
+        {
+          "compile_commands_sha256": "d9dff9fe07fd5ea6445d6d1a75fcdde912fa041f93c6950d59ee96fa702a9b74",
+          "junit_sha256": "46085baafa4280c0f75e975f2c28b318278da223696c33d751297d6ecbe784d3",
+          "mode": "release",
+          "passed": 48,
+          "tests": 48
+        },
+        {
+          "compile_commands_sha256": "38bc9161001b4e874447f7f12286df1559cfc9f4f1d641d43bb621608c57eb5b",
+          "junit_sha256": "b1d3860ddd431981f0dd3bebdef70ddfe4d29465ed2bdf89fd4f97184577e616",
+          "mode": "sanitize",
+          "passed": 48,
+          "tests": 48
+        },
+        {
+          "compile_commands_sha256": "eed0846ecc7c9e7a767316dbf2c03707e9d67f7c5e151e33c2a6f26392cd3bb6",
+          "junit_sha256": "55328bc52a295e2b703f83d7f0173f1208f88f7e50767643bc569a4d98e611a8",
+          "mode": "coverage",
+          "passed": 48,
+          "tests": 48
+        }
+      ],
+      "version": 1
+    },
+    {
+      "binaries": [
+        {
+          "architecture": "x86_64",
+          "file": "debug/test_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "57ede14b38e1c9558b04caeecd2d7978cf0fc22d3f1078a961946e4c49563216"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/test_macos_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "fd64164baa6afa287e4d6dbe3b18f2a9ec6e67d09d6c6542383f305bf1685f08"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/test_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "712b397c6c66f8063072591f42d54af984a87a5839cb5911f2a6249cd6cdd671"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/test_macos_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "d7ba06dcdd3f2ab1cf31c1d8ed2c844457eda859ca472400cb6ae97931e2ee91"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/libimage_fixture.so",
+          "lipo_exit_code": 0,
+          "sha256": "4a9d0198141ebfe8a3a98c82b27052830b9cd14ceec9dc2c0124785781e0d23f"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "debug/libimage_fixture_other.so",
+          "lipo_exit_code": 0,
+          "sha256": "f5bb361c5340484038a3b60ac4a6db7d5d4803bcf7e333714f99eebe66356a94"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/test_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "e6fb29672c768e897a9f02d5c4452ca131741d3482a9e888e4d2ce04135ad334"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/test_macos_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "1752434bd622e766e08b9f8d65783547f5659ab64792ded17373684f6a09fa17"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/test_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "3c59b751b23dad09b7801a81eed760f1d9d586c545355e3b4564c89839f2eb79"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/test_macos_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "461a0f046b58e96b16740d030ce901496fe02bf87032442b8d2d85958d6a69e0"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/libimage_fixture.so",
+          "lipo_exit_code": 0,
+          "sha256": "73d0004ac736acc9bc310884d92d3451d289a4dcd527eee912034e5db4b2bebf"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "release/libimage_fixture_other.so",
+          "lipo_exit_code": 0,
+          "sha256": "324e063fccd9dadabbc473f223fb637cfae82257d172b78e3180cccde71d9fec"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/test_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "611269c5f6c012c204d79bc7fdc0ac980c112e1e460357d14326f1a29b889346"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/test_macos_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "df15ee8299e29c924736ce53084bc91be0eaaa228cd92a7d7340353d85596e41"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/test_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "78b0c6d6ff003f8ce1d559ac9b8b2e2d4de319aa010ca61f22662682ad1495da"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/test_macos_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "eec17b86edae3e4eeaefaca9cf25f1f522e7dc111b8f5654ccf193f7e5a1b65e"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/libimage_fixture.so",
+          "lipo_exit_code": 0,
+          "sha256": "be1a93e4df50c45f00efac1ba8c98c113f9da022fdbbc3e715f1ff3812fad2c3"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "sanitize/libimage_fixture_other.so",
+          "lipo_exit_code": 0,
+          "sha256": "b89284ba02b1f14b2efa201bf189fc8950b053ec18243ace2c909a11ec93c1b6"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/test_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "3abf6c66122a3477f8167e59e3ac56e892c49e2c26cd6591d2bb276de11543a8"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/test_macos_process_birth",
+          "lipo_exit_code": 0,
+          "sha256": "ac1335914378d82651f330c83c5838ca81fb7b61e53e473e884b6c928de91fdc"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/test_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "c49a97cae05d4a8a2b4ec90bba51a87cb5a52eed11bed2a50d5586a380b4874f"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/test_macos_image_identity",
+          "lipo_exit_code": 0,
+          "sha256": "963c1d388a757fa4fd86f1caafd08ad4ed9c71a77a12c61b859bddc1a2860e76"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/libimage_fixture.so",
+          "lipo_exit_code": 0,
+          "sha256": "e4a424e6ec54e01ac38459c145eaa5e64d442d06ace1846d7fbe7c480b820704"
+        },
+        {
+          "architecture": "x86_64",
+          "file": "coverage/libimage_fixture_other.so",
+          "lipo_exit_code": 0,
+          "sha256": "cac019a3732ed974e3dfb02e6701566004883da8cb7f86e293416db63cecacf9"
+        }
+      ],
+      "coverage": {
+        "tools/observer/image_identity.cpp": {
+          "branches": {
+            "count": 110,
+            "covered": 104,
+            "notcovered": 6,
+            "percent": 94.54545454545455
+          },
+          "functions": {
+            "count": 12,
+            "covered": 12,
+            "percent": 100
+          },
+          "instantiations": {
+            "count": 12,
+            "covered": 12,
+            "percent": 100
+          },
+          "lines": {
+            "count": 75,
+            "covered": 75,
+            "percent": 100
+          },
+          "mcdc": {
+            "count": 0,
+            "covered": 0,
+            "notcovered": 0,
+            "percent": 0
+          },
+          "regions": {
+            "count": 127,
+            "covered": 127,
+            "notcovered": 0,
+            "percent": 100
+          }
+        },
+        "tools/observer/native/macos_image_identity.cpp": {
+          "branches": {
+            "count": 100,
+            "covered": 80,
+            "notcovered": 20,
+            "percent": 80
+          },
+          "functions": {
+            "count": 12,
+            "covered": 12,
+            "percent": 100
+          },
+          "instantiations": {
+            "count": 12,
+            "covered": 12,
+            "percent": 100
+          },
+          "lines": {
+            "count": 81,
+            "covered": 78,
+            "percent": 96.29629629629629
+          },
+          "mcdc": {
+            "count": 0,
+            "covered": 0,
+            "notcovered": 0,
+            "percent": 0
+          },
+          "regions": {
+            "count": 145,
+            "covered": 138,
+            "notcovered": 7,
+            "percent": 95.17241379310344
+          }
+        },
+        "tools/observer/native/macos_process_birth.cpp": {
+          "branches": {
+            "count": 20,
+            "covered": 20,
+            "notcovered": 0,
+            "percent": 100
+          },
+          "functions": {
+            "count": 4,
+            "covered": 4,
+            "percent": 100
+          },
+          "instantiations": {
+            "count": 4,
+            "covered": 4,
+            "percent": 100
+          },
+          "lines": {
+            "count": 23,
+            "covered": 23,
+            "percent": 100
+          },
+          "mcdc": {
+            "count": 0,
+            "covered": 0,
+            "notcovered": 0,
+            "percent": 0
+          },
+          "regions": {
+            "count": 31,
+            "covered": 31,
+            "notcovered": 0,
+            "percent": 100
+          }
+        },
+        "tools/observer/process_birth.cpp": {
+          "branches": {
+            "count": 50,
+            "covered": 50,
+            "notcovered": 0,
+            "percent": 100
+          },
+          "functions": {
+            "count": 6,
+            "covered": 6,
+            "percent": 100
+          },
+          "instantiations": {
+            "count": 6,
+            "covered": 6,
+            "percent": 100
+          },
+          "lines": {
+            "count": 41,
+            "covered": 41,
+            "percent": 100
+          },
+          "mcdc": {
+            "count": 0,
+            "covered": 0,
+            "notcovered": 0,
+            "percent": 0
+          },
+          "regions": {
+            "count": 64,
+            "covered": 64,
+            "notcovered": 0,
+            "percent": 100
+          }
+        }
+      },
+      "coverage_summary_sha256": "69d8a898aeb02161b3e682a25c961261c1dc057b5c6fdb304daf23108b7a9d00",
+      "private_files_verified": 1401,
+      "profile_files": 50,
+      "source_manifest_sha256": "a4689187fff994ad9570d61df7e3b7aff8d7b468de745647a9a1e70f60d54ed5",
+      "test_runs": [
+        {
+          "compile_commands_sha256": "0787b5edb84cf2c353f386095d034a97d92a29bc1fe26f552fff655eb5e770c5",
+          "junit_sha256": "4007c115eaea6111fcc9b7895bab344c5d6e50246e5a0761a516c62db08d4d1a",
+          "mode": "debug",
+          "passed": 48,
+          "tests": 48
+        },
+        {
+          "compile_commands_sha256": "920b5bb7819736d6c412b4f58ee06634555face50c351b014f47871338feb5f6",
+          "junit_sha256": "32cc10a6e18c7df2a56d51a2d68d5de356bf9282c057525a3fac74ae0231ad2c",
+          "mode": "release",
+          "passed": 48,
+          "tests": 48
+        },
+        {
+          "compile_commands_sha256": "49b2c01fc2c4caf072766540946e8674e58232fc16837fb59f1d71cc0a6b819c",
+          "junit_sha256": "7a8fce105599f8b7d482387228c666290c6863bc69f79d42a9b15f777430530e",
+          "mode": "sanitize",
+          "passed": 48,
+          "tests": 48
+        },
+        {
+          "compile_commands_sha256": "3abcd7d974afab03e7a3ac8aa97269d8d25e88621df28a3edbd9ab9025b7efcc",
+          "junit_sha256": "fd83ec9e68d897524a7bbf809a7a28805db0e6028adde77eb5337d65b0b79de9",
+          "mode": "coverage",
+          "passed": 48,
+          "tests": 48
+        }
+      ],
+      "version": 2
+    }
+  ],
+  "status": "file_header_region_and_loader_events_verified_complete_artifact_and_system_cache_pending",
+  "supervised_commands": [
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "compile-probe-v1.json",
+      "samples_sha256": "6739a7944beb97532ca71f16b8b612073fa222e50c8df20c9b451cbdde309781",
+      "seconds": 0.54,
+      "sha256": "5088886586b1c3db21b4c08cfcda2cfa2cd166cb1468d595ae2f483cdce0d5d9"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "4212d769f5108927e39ca9beca922c7adce5a77f8db9f91620b3eddeedb11139",
+      "name": "run-probe-v1.json",
+      "samples_sha256": "1fff7edb8d7d4b8f66f062fedc3c63e83f248b01581a2bb46e479f60e4581455",
+      "seconds": 1.683,
+      "sha256": "8cb643780a7ecce81cb07daa6c9536e12cd3554f4e4868ef08516448716fc366"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "6e0599019674c951ba9f387002fab07274042e11fbe3de05fb244b3849320dae",
+      "name": "debug-configure.json",
+      "samples_sha256": "d012cd2fe262483784fff188086afc276b575bf6121a7c33c98fe23387b27962",
+      "seconds": 0.772,
+      "sha256": "e1e467f2d49385fc8906e71fa606ef1c84eaf4aee51e1ab1cd4bd8a2867ea79b"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "79e708c3dec609741a899edfb2eb72d6a16bbd971df5fdbe555e23dedfc5a7b0",
+      "name": "debug-build.json",
+      "samples_sha256": "dee80b347b1f81928410b7310ecb455d269d0bcf68fcf40e74ffcbe72f30a545",
+      "seconds": 2.187,
+      "sha256": "19165f891bc969a480ef37810c94485652fff7e9d38fd480819c1b0e013ed5d9"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "f146e5dbad43ea144e114582ff9437ff19c16bff299a152f5c2a8a455c5b14ff",
+      "name": "debug-tests.json",
+      "samples_sha256": "e53132e2740d99a30f9a93b05c6608b587fea3ff422561f7d5def781b6ff3bbd",
+      "seconds": 6.436,
+      "sha256": "9abb6fdb107e5dccff99961cdf328750d88896abe5fff96f449cfeb2420ff053"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "9f7cae043541caf390ae47f1eb621e64ffb9bf1fd07e7936f7d1d50396474650",
+      "name": "release-configure.json",
+      "samples_sha256": "22eb1ed8c1080ebe3cf9bcece1acf5106d098cdd67456e5d2a1523d1427f29a5",
+      "seconds": 0.955,
+      "sha256": "5c74d48973934f18da5ee86debcce4ed14abd10cf9327042587d949b890280f3"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "585d571e1f3a6a3176a4ed73f3fdab3366eed8cdd14877261aca95fcf37d6b58",
+      "name": "release-build.json",
+      "samples_sha256": "e02d9943cfdec356094332c80258cd773a9956c87f6b132478bf06aaa467842b",
+      "seconds": 2.106,
+      "sha256": "69c473c07697587a82708bf81582554af1cadc96565acfec937d9931d5e79663"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "073642d0ba610168589d10206236e8868ef3db7b62923bf04db3684d902780a0",
+      "name": "release-tests.json",
+      "samples_sha256": "1000a1ab8acbcaeb6ffd59534fdca1d702956031a4c4beb65bdea1a6e345f6e3",
+      "seconds": 5.191,
+      "sha256": "32e1daa4d5cd6a376db66ba43fb0ae7f87bd4962cb09cb7fc9b80a36026d6dd7"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "d59389bfbf26173606776153cdc22552fddac606900a919448b6d1f977c85f17",
+      "name": "sanitize-configure.json",
+      "samples_sha256": "e7dd2ae5b589524ee0d31e12208d160554fac031472242498fc11d6b8f9f7a70",
+      "seconds": 0.927,
+      "sha256": "47c2ad3b297ef77493082ac20cc2526af3a21c2000aed1b269287ab2a04ca6d8"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "7a827383bceeeeea5bb3f69ac04fbbff6bcf09ec15533938643098a11796e288",
+      "name": "sanitize-build.json",
+      "samples_sha256": "2f9215696436f39aa6113d88f1d92cd68f79b1d3c7b748755d9b30796be99d6e",
+      "seconds": 2.411,
+      "sha256": "b406813f2459be897e6be0b0534f16df92ae269ad87fbee940f780a07116e61c"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "8a863ee626b770e4bf703c70302f700b670e715fc2b48b8372a8b9163883e525",
+      "name": "sanitize-tests.json",
+      "samples_sha256": "b44c04d85cc1edd62edb51f12e55b9fe5a52cbf3d8da93bbd2f46a7b982ecbd9",
+      "seconds": 9.546,
+      "sha256": "b52b077a801b7fb6c9fc36750a0e9261c04a99329b49d85969fa365e7671a8cb"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "e5c1b68e8b13037f3b7591d544a1824c6ddaf856b4739280cacd5f606ed641ef",
+      "name": "coverage-configure.json",
+      "samples_sha256": "2b8affe7918718604b532b403530b697d898912d24808dbe3d887e5719ef36ca",
+      "seconds": 1.128,
+      "sha256": "9cbc00a0bbdeb1df4d10794ac126a335e8b75fa838ec6b355a6a1dbefca6c16a"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "68e2a5b6d399cd7c90cd4c846229c7e814a11184f640f89b6dd5241a1eed0e7d",
+      "name": "coverage-build.json",
+      "samples_sha256": "463ab6fa431f2ff9bf7f614ae40bd56959e0e1b4dacd43c81bd3ef9c207e3288",
+      "seconds": 1.893,
+      "sha256": "e1f31f9ff5197f62c2f57aa929a8492639f93c5eaf2b2df7df44a72593dcbbf2"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "79aacefe8a69071a8689f67efe7a820174566bdb789e1068ace1990048dee776",
+      "name": "coverage-tests.json",
+      "samples_sha256": "72069202653cae98d63649dbf01afe018ccbfe132b3e6975ac2e9e2caa5ce3b0",
+      "seconds": 5.37,
+      "sha256": "943f2ff1b784fe45482870e0d5210cd8ab1eb02dba8caf1bbe874542d2099bd4"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "coverage-merge.json",
+      "samples_sha256": "622dad16b9031fcb82ef4161879035b4cff56a3c705bf79237928f5758fd2e06",
+      "seconds": 0.277,
+      "sha256": "374a74cde76be7beee20c07383b0f29f2e80668a7793860a539369183c6b2784"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "b1285148fe846c471c104d1d0d03d7d33b7542c8d240ddcdfab5d29021fcb0a5",
+      "name": "coverage-export.json",
+      "samples_sha256": "c96be61880100b30f7ae7bddcdc9856978c214b8d1a58689ee0b6d0c64d38cb2",
+      "seconds": 0.612,
+      "sha256": "8d46a2ea5182633903e105f607c26fe68becd0bce57a1b2f8e849cbe1efaff2e"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "f24532c750fc5b229ec75a2e4389352bb262840fa2ba4f9444693bb3bfb6cfc4",
+      "name": "final-v2/debug-configure.json",
+      "samples_sha256": "b2d16edb961e65c38871e2970790bae35588b571e6045d74fd34220f690802e1",
+      "seconds": 0.77,
+      "sha256": "98de124debd26601564c2275ef1753488cdfcec00999e57726d81a98bfd3d215"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "9b6a9522e9b48ab445d96f75705983d8b90499f5c50128c14892ad875ee341c0",
+      "name": "final-v2/debug-build.json",
+      "samples_sha256": "b0a83f57eb3989231f9043e61495641d91fb208807dff7070af194d170489cf6",
+      "seconds": 1.966,
+      "sha256": "e31816bf802339b2af791ade4ce2485fc1c913167fe5ca2e7348ba176e278ad3"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "bbea5e2aa5c2bebb66814f67ad6975c53565dae0c909d7a471622ae41e99320c",
+      "name": "final-v2/debug-tests.json",
+      "samples_sha256": "97900d74fa72bfde86e1cf8dd615be0672d283f25852eb57428d3856e2f36b66",
+      "seconds": 6.081,
+      "sha256": "627ebb6646ba9e7a809b50435f1a5d8c971b479e853f16772ae7d9d05707cc29"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "02ca15233dad48667aa5fedb2e532702964dda564b874f783e00e165b7c0e9d6",
+      "name": "final-v2/release-configure.json",
+      "samples_sha256": "f910247058c642267b1f74da0cc313d13d960d55d4600bebfa81bba735dfe32b",
+      "seconds": 0.631,
+      "sha256": "5293ad5adb61ff4533396cf7e3b4573eaa19be6017b2ec961f2e62043708af8c"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "c5692fd5b9e77c3a2ff4a51290f8d658d30c0c8ae35dd2112c72040a219d7611",
+      "name": "final-v2/release-build.json",
+      "samples_sha256": "d8588aecbe92096cf31dc2a76e085ecec1c5d1dedad518230e1cb3da9c055151",
+      "seconds": 2.125,
+      "sha256": "caa8c66239cff81f3911ab6fcee665929a964d80445d74ca9af1dbf003e24752"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "3dc34c993860d859c2ab468ddb33abfae501db03dfcccb5c1fdd255d58abf013",
+      "name": "final-v2/release-tests.json",
+      "samples_sha256": "d61906bf8589602d31085b335f04f4ce441354f2b2a6bd6b6d626540adc52b4d",
+      "seconds": 5.319,
+      "sha256": "06e459a3809ec4cc1ebadf6f7d93a5969262c820234d43054dcf74fd1b25f70c"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "e0acfa7cf892de4e08ceca1309e59de901d5835c968239f3cedd74550472867e",
+      "name": "final-v2/sanitize-configure.json",
+      "samples_sha256": "9c0497aa42fe3580b81e1e4f8892751b08dadc81eab4a03ac88cedb8b99543ba",
+      "seconds": 0.696,
+      "sha256": "68e0b611662169ba9fe6c36c4d29ee59a08279041a76bfddbdc7952d7145a1fd"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "2fc8edcce4d345dbc9aad90e89b643f8bc3cb03005511eda912f3a172ad5136e",
+      "name": "final-v2/sanitize-build.json",
+      "samples_sha256": "874ef5803c1e3c59bfcb55405967575d61bbaa7326e869f9c51580a7dcdb5333",
+      "seconds": 1.795,
+      "sha256": "fcb5ce194797d23870c766ce55d99b98e1ee3a52d0fb58832c913a81cb7a67cf"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "97c8e3ea599816c46006c9024e8a04b7615fd1dca705d6efc1de1510b8a97581",
+      "name": "final-v2/sanitize-tests.json",
+      "samples_sha256": "5d4e04c985d57f0d789fda9a5906ce21ead0d2bdb5e488f558afbe2be20306a6",
+      "seconds": 9.837,
+      "sha256": "8bf510b9debae549118de1577b62154a80b6eb0067373369e407569b8e5769cd"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "6fe9591b7b1e3986c7f026db795d6c570a734efaf0e5b9a84294d4e77629433f",
+      "name": "final-v2/coverage-configure.json",
+      "samples_sha256": "5f2db3d7ba654168e4a4849407133370548d27d7a7a7d1c649a1b8cc6bb2bc42",
+      "seconds": 0.629,
+      "sha256": "f29ceb09b4abeee3587b92d9f90c832d7b5e974eba285e73cfd8ade006e0adee"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "db8da26a2f512a677c7229e9d1c06be445198194d9a17ec8b60fb3a31e101d8d",
+      "name": "final-v2/coverage-build.json",
+      "samples_sha256": "eecb06058025b286c5164053e16b0554050bbac4b3acfb450b0002333a504729",
+      "seconds": 1.929,
+      "sha256": "97071b44c461c557f93362b61ed950bb15339947782f043b056d63c68b33ab12"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "e2c3af5610e9feee5b19ba79d5fd403519dec5d5a8ab0995e7c0ef13c5fa948d",
+      "name": "final-v2/coverage-tests.json",
+      "samples_sha256": "e84cfddc3c921dc823a9f3f59d3a9700db5103844c6d261376343ccc5a435c03",
+      "seconds": 5.168,
+      "sha256": "684347511f77366de4b8fd461e11936b706602be8e9a2bb59c55f19edcdb0699"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "final-v2/coverage-merge.json",
+      "samples_sha256": "99c7171defdde62b3e59f8f5c86d580085ebe8f7de35896f174b8f1d3cc525f4",
+      "seconds": 0.291,
+      "sha256": "45c714828300f966b39c0611c36b498a1ebd1fd2370f3848c28f8a102bde7038"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "52ed116e3d799446634ba3190e07555c78be02a2082a58ba7c77f4d979f193e6",
+      "name": "final-v2/coverage-export.json",
+      "samples_sha256": "e4fe7237e4c2358071b6c7b377c18c87090a9bd78f9f525cd4cdccd0458619e3",
+      "seconds": 0.26,
+      "sha256": "dc6c8101b1cfc774560299fe201e7d8b57eaca80b8c175a05df72ea050e5d93d"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutant-replaced_mapping-build.json",
+      "samples_sha256": "55e2700b762efeff0f45cc92d2c1a37ef0405c28cf66fba69ac37047041ddf1a",
+      "seconds": 0.729,
+      "sha256": "82e896fe6841dc8fb4f0b3f4adc7c600a59154c1de7ff618b8bbe06a2084755f"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "expected_negative": true,
+      "log_sha256": "a62823ec865ed4665b19e6d2494a6a7e59f1f452d0b9f857ecde9877a704e8a5",
+      "name": "mutant-replaced_mapping-test.json",
+      "samples_sha256": "b56c4c5cb9adf438e4c45cf1ee865691eeb7377b34c65dc593edb472e8d5196e",
+      "seconds": 0.477,
+      "sha256": "501b09de0c043062242956c6cc14974f46466b428b128a6e215d8cb7a05a7aca"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutant-lost_terminal-build.json",
+      "samples_sha256": "3825ef85d9accdf37c386d177211f7543606f6dac0dcf900f484c30fa51715c6",
+      "seconds": 0.638,
+      "sha256": "ffc0265d47b494b84f08f6672030c08a22f0b5b64c89abb52e1fdcfdb1ce4378"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "expected_negative": true,
+      "log_sha256": "a62823ec865ed4665b19e6d2494a6a7e59f1f452d0b9f857ecde9877a704e8a5",
+      "name": "mutant-lost_terminal-test.json",
+      "samples_sha256": "249df8e5eb8261d45f581e721f632879ea25a9914fee2bd3504a399f792be067",
+      "seconds": 0.608,
+      "sha256": "8172898bada1d0e2e7400804e73733eb1118e4696f86a2393caf099b28a3eb80"
+    },
+    {
+      "accepted": true,
+      "exit_code": 0,
+      "expected_negative": false,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "mutant-lost_revision-build.json",
+      "samples_sha256": "f996bb29919f3a7ca3ea3e795035c0d7f0990e7ce252996784c43c23bdbdb660",
+      "seconds": 0.611,
+      "sha256": "dc776e4572e3e13684ca123624b09af62fb8ced43a60828b3c72dafb73cc0c7a"
+    },
+    {
+      "accepted": false,
+      "exit_code": 1,
+      "expected_negative": true,
+      "log_sha256": "2a9b623a8896efc6fb1f6449a4a38128c6ca789599b0324495d453f85a792e2f",
+      "name": "mutant-lost_revision-test.json",
+      "samples_sha256": "cdbcc6b679999edcf8fe9ebc1bbd164678471c0241fffd9fc404e2d556ff5f88",
+      "seconds": 0.482,
+      "sha256": "4ff749537ccea1344c4298219e0b197b39e359051278b86120d8f46e9556c5fd"
+    }
+  ],
+  "system_cache_attested": false,
+  "vm_executed": false
+}

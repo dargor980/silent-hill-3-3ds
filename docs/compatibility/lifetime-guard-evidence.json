@@ -1,0 +1,447 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "source_id": "SRC65",
+  "task": "F02.07/camera-resource-link-eu/origin/load-provenance/LP-C/lifetime-guard",
+  "stage": "lifetime_guard_core_complete_provider_integration_pending",
+  "contracts": [
+    "schemas/lifetime-guard-v1.md",
+    "schemas/joint-open-read-v1.md"
+  ],
+  "units": {
+    "LG_T1": "complete_static_gap_matrix",
+    "LG_T2": "complete",
+    "LG_T3": "complete",
+    "LG_T4": "complete",
+    "LG_I1": "pending",
+    "LG_I2": "pending",
+    "LG_I3": "pending",
+    "LG_I4": "pending",
+    "continuous_lifetime": "pending",
+    "early_worker_progress": "pending_extended_profile",
+    "guarded_discovery": "pending",
+    "LP_C": "partial",
+    "LP_D": "pending"
+  },
+  "static_analysis": {
+    "active_driver_rows": 0,
+    "capabilities": [],
+    "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+    "container_sha256": "8bbd7dd906c4ad7be57c35ae69ee4b46f1b58b6dfa814f4631c02a74a823c840",
+    "continuous_lifetime_verified": false,
+    "coverage_audit_exhaustive": false,
+    "detect_same_value_stores": true,
+    "disk_read_verified": false,
+    "elf_sha256": "cb6e538bed7de8317f5333f3a56d4cd125432643950988168f901d6ede09f789",
+    "image_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "live_acquisition_performed": false,
+    "opening_witness_pending": true,
+    "pinned_store_sites": 5,
+    "position_and_cache_mutable": true,
+    "prior_evidence_sha256": "4b1bf1386ce3a218f7f3146275386ccb93ad944910b3407fbd6b5cf9692f3cd3",
+    "prior_windows_reverified": 3,
+    "private_plan_sha256": "aee4239f134432831b6cbc1dc9688aae9dd491d81fcd91244d79c9818f5d3fe1",
+    "producer_integrated": false,
+    "protected_bytes": 80,
+    "provider_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+    "provider_copy_comparison": "six_equal_one_existing_observer_extension",
+    "provider_files": [
+      {
+        "baseline_sha256": "384f0c0dca7b4e2a2d904ef17e5684521ac750bdfca56d8164c94da744349f4c",
+        "copies_equal": false,
+        "file": "pcsx2/VMManager.cpp",
+        "lifetime_hook_installed": false,
+        "marker_lines": [
+          1896,
+          1764,
+          749
+        ],
+        "prior_source_manifest_verified": true,
+        "role": "vm_lifecycle",
+        "sha256": "ab60e27f91af5248f6b6e74a8360611038abbfd6fec5f5e37c8c024f5354f205",
+        "size": 116976
+      },
+      {
+        "baseline_sha256": "633b63e1179a1503044643b5011ef5b9f5fcb6d15faf860924857bcc96b22ae9",
+        "copies_equal": true,
+        "file": "pcsx2/vtlb.cpp",
+        "lifetime_hook_installed": false,
+        "marker_lines": [
+          247,
+          288,
+          425
+        ],
+        "prior_source_manifest_verified": true,
+        "role": "interpreter_and_bulk",
+        "sha256": "633b63e1179a1503044643b5011ef5b9f5fcb6d15faf860924857bcc96b22ae9",
+        "size": 50146
+      },
+      {
+        "baseline_sha256": "ad7ffcb6e89b35ad0e1badc93eff47a1e781d99f58473d314461a60c752a1376",
+        "copies_equal": true,
+        "file": "pcsx2/x86/ix86-32/iR5900LoadStore.cpp",
+        "lifetime_hook_installed": false,
+        "marker_lines": [
+          149,
+          177,
+          197
+        ],
+        "prior_source_manifest_verified": true,
+        "role": "jit_dispatch",
+        "sha256": "ad7ffcb6e89b35ad0e1badc93eff47a1e781d99f58473d314461a60c752a1376",
+        "size": 23624
+      },
+      {
+        "baseline_sha256": "c833f9be317bced1785224490b8c6c903ef8ee9e3a938dd634aad47684bbbf20",
+        "copies_equal": true,
+        "file": "pcsx2/x86/ix86-32/recVTLB.cpp",
+        "lifetime_hook_installed": false,
+        "marker_lines": [
+          628,
+          747
+        ],
+        "prior_source_manifest_verified": true,
+        "role": "jit_generated_store",
+        "sha256": "c833f9be317bced1785224490b8c6c903ef8ee9e3a938dd634aad47684bbbf20",
+        "size": 27318
+      },
+      {
+        "baseline_sha256": "722c702202ecaa62aaa8a1181429696821a9fe7e8e17d0d9d31abf5f03c421d3",
+        "copies_equal": true,
+        "file": "pcsx2/SPR.cpp",
+        "lifetime_hook_installed": false,
+        "marker_lines": [
+          87,
+          141
+        ],
+        "prior_source_manifest_verified": true,
+        "role": "dma_direct_copy",
+        "sha256": "722c702202ecaa62aaa8a1181429696821a9fe7e8e17d0d9d31abf5f03c421d3",
+        "size": 12536
+      },
+      {
+        "baseline_sha256": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589",
+        "copies_equal": true,
+        "file": "pcsx2/SaveState.cpp",
+        "lifetime_hook_installed": false,
+        "marker_lines": [
+          524,
+          336
+        ],
+        "prior_source_manifest_verified": true,
+        "role": "restore_memory",
+        "sha256": "868f923f2044e5a27c439f8b8528c9e509d1185d9fcbefd6eacb3e6240029589",
+        "size": 37125
+      },
+      {
+        "baseline_sha256": "160277fe2025ccf348359bb030e9157521e5cc5ffad21c3625d72bfadb7d9dcc",
+        "copies_equal": true,
+        "file": "pcsx2/DebugTools/Breakpoints.cpp",
+        "lifetime_hook_installed": false,
+        "marker_lines": [
+          52,
+          72,
+          379
+        ],
+        "prior_source_manifest_verified": true,
+        "role": "debug_memcheck",
+        "sha256": "160277fe2025ccf348359bb030e9157521e5cc5ffad21c3625d72bfadb7d9dcc",
+        "size": 12152
+      }
+    ],
+    "read_events_produced": 0,
+    "resource_links": [],
+    "resource_sha256": "2d2737c5cd1f2f1f7ebada1dd9e9e67617a39a6ac171842c9da6028619900bfb",
+    "resource_size": 1536,
+    "schema_version": 1,
+    "source_anchor_reverified": true,
+    "source_state_sha256": "0fe3b36ba64e7762ea56598d3b1e880ca90350f4358fef483f068e19ee803ba3",
+    "status": "lifetime_guard_core_provider_integration_pending",
+    "total_window_bytes": 548,
+    "windows": [
+      {
+        "role": "driver_allocate",
+        "sha256": "8d027496d055b930c01acc45f09f4f0b832527590e18e666dd11531d89fbb6f6",
+        "size": 388
+      },
+      {
+        "role": "driver_release",
+        "sha256": "6f8f9b6277db9bb0f32a268e4a92d8ae1ea956996bc189ac8970af532465ba9c",
+        "size": 160
+      }
+    ]
+  },
+  "reproducibility": {
+    "runs": 2,
+    "identical": true,
+    "report_size": 5103,
+    "report_sha256": "b475b5802a179b56106259f4302d90f9519dff014c8e0a861b079eb76b8c8063",
+    "private_directory_mode": "0700",
+    "private_plan_mode": "0600",
+    "private_plan_not_overwritten": true,
+    "readers_closed_before_publication": true,
+    "source_inputs_unchanged": true
+  },
+  "implementation": {
+    "modules": [
+      "tools/observer/lifetime.cpp",
+      "tools/observer/include/sh3_observer/lifetime.hpp"
+    ],
+    "kind": "host_cpp17_constant_storage_guard",
+    "io": false,
+    "dynamic_allocation": false,
+    "copy_or_move": false,
+    "physical_ram_bytes": 33554432,
+    "protected_bytes": 80,
+    "mutable_fields": [
+      "position",
+      "cache"
+    ],
+    "same_value_stores_invalidate": true,
+    "terminal_immutable": true,
+    "first_failure_preserved": true,
+    "max_notices": 1000000,
+    "max_cycles": 17694720000,
+    "serialized_before_effect_required": true,
+    "host_epoch_not_in_save_state_required": true,
+    "coverage_authenticated_by_core": false,
+    "sealed_means": "supplied_notices_only",
+    "historical_validators_unchanged": true,
+    "emulator_sources_unchanged": true,
+    "nintendo_engine_sources_unchanged": true,
+    "nintendo_build_identity_will_change_due_to_cmake": true
+  },
+  "validation": {
+    "new_ctest_scenarios": 11,
+    "byte_oracle_combinations": 5120,
+    "protected_byte_cases": 80,
+    "runs": [
+      {
+        "artifact": "host-debug.xml",
+        "tests": 60,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 4.0,
+        "sha256": "6d6fece03021b97cda97fd4f591ccb7cf80355ddce4eea91613f103b8c582a94"
+      },
+      {
+        "artifact": "host-release.xml",
+        "tests": 60,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 5.0,
+        "sha256": "962572de5ee53fecbfa1afa4723c855560b3ec34279361b7d1092b2477636c0c"
+      },
+      {
+        "artifact": "host-sanitize.xml",
+        "tests": 60,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 9.0,
+        "sha256": "9122efeac7cf993ec36d992ccaab97f1bcff3faffa3abae0a659c0ca2dd6b552"
+      },
+      {
+        "artifact": "host-debug-final.xml",
+        "tests": 60,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 1.0,
+        "sha256": "b572ed12393feaed945ff1d5dc171b79c52470a441729f4063f02511344351b0"
+      },
+      {
+        "artifact": "host-release-final.xml",
+        "tests": 60,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 0.0,
+        "sha256": "2ba38c5b914b8db6f0faaf733abc47686fe55781d89c444606b7ce6ff7418872"
+      },
+      {
+        "artifact": "host-sanitize-final.xml",
+        "tests": 60,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 4.0,
+        "sha256": "33ddda0bb5009a3a2d9e7b9f2bd5ca06d865b6c94931326cb62a04ed02272d50"
+      },
+      {
+        "artifact": "pytest.xml",
+        "tests": 3096,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_seconds": 124.848,
+        "sha256": "bf96102184658bc1ff65dc8b93252f7a05c096c37badd1c7d8dad4e19e867fa7"
+      }
+    ],
+    "final_tests_python": 3096,
+    "final_tests_host_per_configuration": 60,
+    "cpp_coverage": {
+      "tools/observer/include/sh3_observer/lifetime.hpp": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "functions": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "lines": {
+          "count": 2,
+          "covered": 2,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 2,
+          "covered": 2,
+          "notcovered": 0,
+          "percent": 100
+        }
+      },
+      "tools/observer/lifetime.cpp": {
+        "branches": {
+          "count": 92,
+          "covered": 92,
+          "notcovered": 0,
+          "percent": 100
+        },
+        "functions": {
+          "count": 8,
+          "covered": 8,
+          "percent": 100
+        },
+        "instantiations": {
+          "count": 8,
+          "covered": 8,
+          "percent": 100
+        },
+        "lines": {
+          "count": 77,
+          "covered": 77,
+          "percent": 100
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0
+        },
+        "regions": {
+          "count": 110,
+          "covered": 110,
+          "notcovered": 0,
+          "percent": 100
+        }
+      }
+    },
+    "cpp_coverage_tool": "LLVM_Apple_Clang_21_explicit_macos_sdk",
+    "cpp_global_gcc_coverage_run": false,
+    "total_python_coverage": {
+      "covered_lines": 5303,
+      "num_statements": 5348,
+      "covered_branches": 1449,
+      "num_branches": 1482
+    },
+    "line_branch_gate_minimum_percent": 80,
+    "cpp_module_line_branch_gate": "PASS",
+    "python_line_branch_gate": "PASS",
+    "ruff": "PASS",
+    "format": "PASS",
+    "formatted_files_in_ci_scope": 137,
+    "repository_checks": "PASS_zero_errors",
+    "diff_check": "PASS",
+    "artifact_hashes_custody_and_links": "PASS",
+    "prior_pinned_inputs_unchanged": {
+      "SRC55": 3,
+      "SRC56": 4,
+      "SRC57": 7,
+      "SRC58": 4,
+      "SRC59": 5,
+      "SRC60": 4,
+      "SRC61": 4,
+      "SRC62": 4,
+      "SRC63": 4,
+      "SRC64": 4
+    },
+    "operational_reports_completed_before_full_suite": true,
+    "ci_discovery": "existing_host_and_gcc_coverage_jobs_include_new_cmake_target",
+    "remote_ci_run": false,
+    "pcsx2_build_run": false,
+    "nintendo_build_run": false,
+    "new_pcsx2_session": false,
+    "sanitizer_log_error_scan": "PASS",
+    "local_artifact_sha256": {
+      "host-debug.xml": "6d6fece03021b97cda97fd4f591ccb7cf80355ddce4eea91613f103b8c582a94",
+      "host-release.xml": "962572de5ee53fecbfa1afa4723c855560b3ec34279361b7d1092b2477636c0c",
+      "host-sanitize.xml": "9122efeac7cf993ec36d992ccaab97f1bcff3faffa3abae0a659c0ca2dd6b552",
+      "host-debug-final.xml": "b572ed12393feaed945ff1d5dc171b79c52470a441729f4063f02511344351b0",
+      "host-release-final.xml": "2ba38c5b914b8db6f0faaf733abc47686fe55781d89c444606b7ce6ff7418872",
+      "host-sanitize-final.xml": "33ddda0bb5009a3a2d9e7b9f2bd5ca06d865b6c94931326cb62a04ed02272d50",
+      "pytest.xml": "bf96102184658bc1ff65dc8b93252f7a05c096c37badd1c7d8dad4e19e867fa7",
+      "cpp-coverage.json": "6be371da3cef2865b897fb2e95366292f024ab5733964eb78d64439ce5dd00ed",
+      "cpp-coverage-summary.json": "c6d9c44e411b66d7c28fb7831e274fd691ce416fabf319c8b8bd712270c66ee6",
+      "python-coverage.json": "ecc9e7b9d45e3b969f91022b35fb892c09c19b1d464102a4eb2399429866c8cd",
+      "python-coverage.xml": "fc8d42d5fe483d9cd88d64278ca04d15e10535246e1fac3a7fdbd794df37b4f7"
+    },
+    "preparatory_corrections": [
+      "explicit_macos_sdk_for_llvm",
+      "no_branch_header_denominator_not_applicable",
+      "verify_known_observer_vmmanager_extension_against_historical_hashes",
+      "canonical_SPR_filename_for_manifest",
+      "const_reference_range_loops_in_own_fixtures"
+    ]
+  },
+  "public_inputs_sha256": {
+    "CMakeLists.txt": "93fc4536e59c5952cf5a01ac9d3fa1694a0ebcabd33bdb9d6048d7332f3b6fcb",
+    "schemas/lifetime-guard-v1.md": "3c85dfb2c0618eeda70a089796143b5c6c0af9b90126479a5d86f7bc4cb80151",
+    "tools/observer/lifetime.cpp": "2633522bc0040646826ffe8fea8cf6f4f984345e6308c9c277945c0db7400ed8",
+    "tools/observer/include/sh3_observer/lifetime.hpp": "3aee9d6c84422a83c6f3d8c45a92ec84ad78c415a609f316d12527228a759c16",
+    "tests/cpp/test_lifetime.cpp": "d9b4c139defaaa85f169dfced4c05e55093278a6bdf1c614f687e4be097a341d",
+    "docs/execution/f02-07-lifetime-guard.md": "b123636f5a9b58308f2f7efd90e344904910c3afdae2d13c93313a7fcfc0ae6f"
+  },
+  "private_operational_script_sha256": {
+    "analyze.py": "c92233a1e0eb0d8a2e81ec1ae208b370d0b893be2bb7ea979480e1f8304f9aa3",
+    "analyze-initial.py": "2d6094366d625c5e343a6cb707ed80eee7167247e1b2fa1345117a58f69ccbca",
+    "coverage_cpp.py": "0ef5bf79144280747e786f16a87534fd6685bece1f256f2b6f9edf6a398e0fc0",
+    "coverage-initial.py": "d7ce91ad0af023b0d0ad26091a1ac9b84134337c5833886b35054b2a1cfc1376"
+  },
+  "limitations": {
+    "producer_integrated": false,
+    "coverage_audit_exhaustive": false,
+    "execution_authentication": "not_provided",
+    "continuous_lifetime_verified": false,
+    "opening_witness_binding": "pending",
+    "transport_and_joint_acceptance": "pending",
+    "live_acquisition_performed": false,
+    "disk_read_verified": false,
+    "read_events_produced": 0,
+    "load_provenance": "pending",
+    "resource_semantics": "pending",
+    "two_connected_rooms": "pending",
+    "f02_07": "pending",
+    "q05_g02": "pending",
+    "physical_console": "not_tested",
+    "resource_links": [],
+    "capabilities": []
+  }
+}

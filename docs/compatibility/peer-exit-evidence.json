@@ -1,0 +1,1345 @@
+{
+  "admitted_execution_modes": [],
+  "bios_used": true,
+  "candidate_and_consumer_preserved": true,
+  "candidate_rebuilt": false,
+  "capabilities": [],
+  "completed_tasks": [
+    "RX-T1",
+    "RX-T2",
+    "RX-T3",
+    "RT-T3c.1a"
+  ],
+  "date": "2026-10-19",
+  "dw_cancellation_during_inventory_verified": false,
+  "dw_t3_complete": false,
+  "executable_sha256": "45c78a01a374f24ee271e7c0736a42f0ac9d086639f123a8458fdb078cda8689",
+  "expected_rejections_verified": 8,
+  "inputs": {
+    "bios_sha256": "d6653f4e93be2f6f9e9d690a934f26cf0f6ad4e348b69f41ef736732c3a6685b",
+    "bootstrap_ini_sha256": "4285872179fd0954eeb18078e62a9a63fb6ebd27d2f5a4b268ece0c7aede1e9d",
+    "candidate_sha256": "45c78a01a374f24ee271e7c0736a42f0ac9d086639f123a8458fdb078cda8689",
+    "consumer_manifest_sha256": "9a9f561c96eb9a1e4870a8810ab23f125554627e9ea9c3abc2933c3ac317c7fa",
+    "iso_sha256": "9a94b95e777dae426043e40df1b70d77c8f6960dbd79af10df1cd592cf99ad91",
+    "launcher_sha256": "56463932c2e14452e0808219920d1c233789a6c068b01168724da639b08b8396",
+    "manifest_sha256": "221f513b642f4f8735b5ffe5bcb019b86785e89e9212b30f7289fb45fceb7256",
+    "peer_library_sha256": "aa4921185555cf2ede89972b0d63f7869de93ff2f4d0fbfd4ba1c8b045ca1de2",
+    "policy_sha256": "bb7b53fe659b517e14b110e479826dd19ab20439c927a99c962eadc08a535ffc",
+    "preceding_evidence_sha256": "0610b4789c249c8254308a7342af320cf3f24baff4b73cf77e4ba2c1f1a5a10d"
+  },
+  "inputs_sha256": "df2b144c9ca75c87cbf3b70eb4d73a1c809014e1753aab63bec7dcb7910d4ec9",
+  "iso_used": true,
+  "late_cpu_callback_with_real_host_verified": false,
+  "linux_executed": false,
+  "live": {
+    "connect-first": {
+      "accepted": 0,
+      "action_reached": true,
+      "admitted": false,
+      "authenticated_peer": {
+        "birth_ns": 1792457573819320000,
+        "pid": 88374,
+        "token_sha256": "bae33dc891319fd2f039079594d13feeff4f7b2f32452f0f851c78a8ae5407dd"
+      },
+      "case_passed": true,
+      "child_exit": 0,
+      "closed": true,
+      "elapsed_seconds": [],
+      "frames": [],
+      "inputs_sha256": "7dcfc2261f51d3accdb961d48dfb1484707271b52fb6231e5f73eddd0571d238",
+      "mode": "connect",
+      "producer": {
+        "admitted": "0",
+        "clean": "1",
+        "cpu_pending": "1",
+        "dw_pending": "0",
+        "inventory": "0",
+        "origins": "0",
+        "prepared": "0",
+        "reason": "4",
+        "release_waited": "0",
+        "replies": "0",
+        "sampled": "0"
+      },
+      "result_sha256": "4b979644c551fc7fc056e70a4d1d31e66ac38fee229ce93ebeddda17464fc6f3",
+      "terminal_transport": null,
+      "values": []
+    },
+    "connect-repeat": {
+      "accepted": 0,
+      "action_reached": true,
+      "admitted": false,
+      "authenticated_peer": {
+        "birth_ns": 1792457579510412000,
+        "pid": 88427,
+        "token_sha256": "06d48bf6dac486bafb5857b0333e3647b89e63d7d38713a38f1c793bef148f77"
+      },
+      "case_passed": true,
+      "child_exit": 0,
+      "closed": true,
+      "elapsed_seconds": [],
+      "frames": [],
+      "inputs_sha256": "039194e16253da3d4cf653de2384bf9a77a03dd276bf09d22ccf691533655aca",
+      "mode": "connect",
+      "producer": {
+        "admitted": "0",
+        "clean": "1",
+        "cpu_pending": "1",
+        "dw_pending": "0",
+        "inventory": "0",
+        "origins": "0",
+        "prepared": "0",
+        "reason": "4",
+        "release_waited": "0",
+        "replies": "0",
+        "sampled": "0"
+      },
+      "result_sha256": "b533852a55cbda91411a8a56f8f46df1c96a71929fe8398f590a8331f68398ca",
+      "terminal_transport": null,
+      "values": []
+    },
+    "extra-first": {
+      "accepted": 3,
+      "action_reached": true,
+      "admitted": false,
+      "authenticated_peer": {
+        "birth_ns": 1792457616844799000,
+        "pid": 88683,
+        "token_sha256": "7568513c261a1a746d5088bd89527783f66f17fe5a7bd49370339444aab52825"
+      },
+      "case_passed": true,
+      "child_exit": 0,
+      "closed": true,
+      "elapsed_seconds": [
+        1.6707202920006239,
+        1.453316041999642,
+        1.4374729160008428
+      ],
+      "frames": [
+        {
+          "request_sha256": "025bfb58830c52bc36b816ce3a9b52a8b213583a76761954b30cc3f5bc0da9db",
+          "sequence": 1,
+          "wire_sha256": "5de513ce5181987c6ef46977cd8477bee4117bdf4d53856ea63af8267f142722"
+        },
+        {
+          "request_sha256": "d7edb36e051c5f74963f747f109fabf5bc77cc45d9c14fee33cce1e10c5f0bc9",
+          "sequence": 2,
+          "wire_sha256": "9a7ddd40a2ba4598eb2f3f2da5c4aaa6886b4ca6e8053ed5cb77774d403e8cc6"
+        },
+        {
+          "request_sha256": "7a18bde56990e65630cccb23c352668660df35e792884b644dccc7c8bda801f5",
+          "sequence": 3,
+          "wire_sha256": "4c9961461100650b3538ba7af8e05a8a154d2b1775f59c6d7e63b02b9c4f61e1"
+        }
+      ],
+      "inputs_sha256": "41bb82d8d83a0fa6db173f28cf6a60037d2098788f7edec8cbbd9dc8637e6df3",
+      "mode": "extra",
+      "producer": {
+        "admitted": "0",
+        "clean": "1",
+        "cpu_pending": "1",
+        "dw_pending": "0",
+        "inventory": "0",
+        "origins": "0",
+        "prepared": "1",
+        "reason": "7",
+        "release_waited": "1",
+        "replies": "3",
+        "sampled": "1"
+      },
+      "result_sha256": "ddbc6a9f005cc21635c93a0de48a31f124d3012b9f570ee8ff0c8ecc20a6efb8",
+      "terminal_transport": "eof",
+      "values": [
+        {
+          "application": 30,
+          "birth_ns": 1792457616844799000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "1d41d1feb64ee332850b5dc7a4365e1e",
+          "pid": 88683,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 1
+        },
+        {
+          "application": 30,
+          "birth_ns": 1792457616844799000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "1d41d1feb64ee332850b5dc7a4365e1e",
+          "pid": 88683,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 2
+        },
+        {
+          "application": 30,
+          "birth_ns": 1792457616844799000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "1d41d1feb64ee332850b5dc7a4365e1e",
+          "pid": 88683,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 3
+        }
+      ]
+    },
+    "extra-repeat": {
+      "accepted": 3,
+      "action_reached": true,
+      "admitted": false,
+      "authenticated_peer": {
+        "birth_ns": 1792457626530103000,
+        "pid": 88744,
+        "token_sha256": "1e64bcc868fc846ab2025a0b263acf8ca15d5f3fd9160033bac8eba5b4f3006e"
+      },
+      "case_passed": true,
+      "child_exit": 0,
+      "closed": true,
+      "elapsed_seconds": [
+        1.6575595419999445,
+        1.4528044169983332,
+        1.4329621659999248
+      ],
+      "frames": [
+        {
+          "request_sha256": "4722db5b1e3f09954f23e5566b1a654a00e187cf3739ebdaf8ae457054b6d42d",
+          "sequence": 1,
+          "wire_sha256": "9762ffd3ac70517d19939558c987d4b4b3a454574cc2b3e1a0bf599322d1e8ea"
+        },
+        {
+          "request_sha256": "08e63035f0cf351083c4a0c0a7871151224e8a5d7d3290f553e6bcbf831f8913",
+          "sequence": 2,
+          "wire_sha256": "4b91810d531778f2f9bd8eb4835aad0993338029ed800b55b0afef3774fd13e6"
+        },
+        {
+          "request_sha256": "9be35b8bb8bcfee4f608234058c6a62b30bd2cd6285eed786dac3e46befd9e42",
+          "sequence": 3,
+          "wire_sha256": "715e3d7cfc868acab44618c3265d4c4a6ded2e1d1c5077f9f5862ea6eb142508"
+        }
+      ],
+      "inputs_sha256": "e1ca674545e648e2977caa888e1cefe53fde642f50d3804aa749a6a7784de93b",
+      "mode": "extra",
+      "producer": {
+        "admitted": "0",
+        "clean": "1",
+        "cpu_pending": "1",
+        "dw_pending": "0",
+        "inventory": "0",
+        "origins": "0",
+        "prepared": "1",
+        "reason": "7",
+        "release_waited": "1",
+        "replies": "3",
+        "sampled": "1"
+      },
+      "result_sha256": "be4b53ca0da3d29967e5ae57e1cdfabd01e4309e3b0b63b2defda144f8150bb2",
+      "terminal_transport": "eof",
+      "values": [
+        {
+          "application": 30,
+          "birth_ns": 1792457626530103000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "72be7350d197af2dcb6fbbc6404a4d7a",
+          "pid": 88744,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 1
+        },
+        {
+          "application": 30,
+          "birth_ns": 1792457626530103000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "72be7350d197af2dcb6fbbc6404a4d7a",
+          "pid": 88744,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 2
+        },
+        {
+          "application": 30,
+          "birth_ns": 1792457626530103000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "72be7350d197af2dcb6fbbc6404a4d7a",
+          "pid": 88744,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 3
+        }
+      ]
+    },
+    "first-first": {
+      "accepted": 1,
+      "action_reached": true,
+      "admitted": false,
+      "authenticated_peer": {
+        "birth_ns": 1792457584098589000,
+        "pid": 88460,
+        "token_sha256": "271b3e5ff54dadbd901811868c9545ef5b09f30444af6b11ee88ac7e98389e17"
+      },
+      "case_passed": true,
+      "child_exit": 0,
+      "closed": true,
+      "elapsed_seconds": [
+        1.6757274589999724
+      ],
+      "frames": [
+        {
+          "request_sha256": "dbe1a0b67dc233dd0115836e23c320dca33f7f0b2b6d38a49d7933f268964ef2",
+          "sequence": 1,
+          "wire_sha256": "4389c0ed91f70cf58b07a49e4e92bd1ddea78c574a1c64b2e0b2262499afd319"
+        }
+      ],
+      "inputs_sha256": "1b8e9b87b11b53050896f34467010ad6f630cf12de8f5391e6c6e58c556665d4",
+      "mode": "first",
+      "producer": {
+        "admitted": "0",
+        "clean": "1",
+        "cpu_pending": "1",
+        "dw_pending": "0",
+        "inventory": "0",
+        "origins": "0",
+        "prepared": "1",
+        "reason": "4",
+        "release_waited": "0",
+        "replies": "1",
+        "sampled": "1"
+      },
+      "result_sha256": "4d31c567c3dd39055444e9bee40e35a32f10775e09658b5fc564b89b52eb980c",
+      "terminal_transport": null,
+      "values": [
+        {
+          "application": 30,
+          "birth_ns": 1792457584098589000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "b291ea0ad4ec3d4b47f05790df6df8a6",
+          "pid": 88460,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 1
+        }
+      ]
+    },
+    "first-repeat": {
+      "accepted": 1,
+      "action_reached": true,
+      "admitted": false,
+      "authenticated_peer": {
+        "birth_ns": 1792457590770838000,
+        "pid": 88522,
+        "token_sha256": "456240f0b7582f8ef25d44665ff4d27018d634fd258ae64e760f89927b88c391"
+      },
+      "case_passed": true,
+      "child_exit": 0,
+      "closed": true,
+      "elapsed_seconds": [
+        1.6530660419994092
+      ],
+      "frames": [
+        {
+          "request_sha256": "dbba31121b3ed967f44b18512734050faa6d111e62e04e5ebe6128595fab654b",
+          "sequence": 1,
+          "wire_sha256": "f0b057d7ce2387294aa75903ecff895d2b2f04bc1bd48253da6fff9d158c0f63"
+        }
+      ],
+      "inputs_sha256": "a128eb4ce4f550660731502529b738ff986422016cef8d91a116766d7b023e2f",
+      "mode": "first",
+      "producer": {
+        "admitted": "0",
+        "clean": "1",
+        "cpu_pending": "1",
+        "dw_pending": "0",
+        "inventory": "0",
+        "origins": "0",
+        "prepared": "1",
+        "reason": "4",
+        "release_waited": "0",
+        "replies": "1",
+        "sampled": "1"
+      },
+      "result_sha256": "ef4176b84784aead1020c92870808e37ed4cfeb8e53cc785481ef5b83a1e9639",
+      "terminal_transport": null,
+      "values": [
+        {
+          "application": 30,
+          "birth_ns": 1792457590770838000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "95ac90ab605f81ceef585a0bbae1e37e",
+          "pid": 88522,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 1
+        }
+      ]
+    },
+    "third-first": {
+      "accepted": 3,
+      "action_reached": true,
+      "admitted": false,
+      "authenticated_peer": {
+        "birth_ns": 1792457597952045000,
+        "pid": 88549,
+        "token_sha256": "49593b3e67ab3ec2bcea42b07284dc43dd3268baf975d3330c469cec82a474e7"
+      },
+      "case_passed": true,
+      "child_exit": 0,
+      "closed": true,
+      "elapsed_seconds": [
+        1.703195374999268,
+        1.497121333000905,
+        1.4202473339992139
+      ],
+      "frames": [
+        {
+          "request_sha256": "c459bc72aba9dc2181c6354a20e4ce300ab9f8ce702a34e42ab3ada4da1eb376",
+          "sequence": 1,
+          "wire_sha256": "df4737f899c79af537b593b0551170ae59f9857b90ccec2bc75b7850fb3612cd"
+        },
+        {
+          "request_sha256": "bf25a6bbb1f5c29e898bf936e6992af78be56b0ae1881dad31076d6311f0b6e1",
+          "sequence": 2,
+          "wire_sha256": "1573e0eb99c87f087d20e660738917f27f8c53758c04a7491a795b53244ae252"
+        },
+        {
+          "request_sha256": "2a1ef562a0e28c32b871ee3be01436616b4a9e87063182419db43ee0118e73fd",
+          "sequence": 3,
+          "wire_sha256": "f03954ecb3f714134dac5eb0e13b290a8c7b5dfc224e7a69df205ac71ecad192"
+        }
+      ],
+      "inputs_sha256": "2f0a6b8d1cd377228342f50e3186cef4d712b2acf2cf07a5a40af360198a85b7",
+      "mode": "third",
+      "producer": {
+        "admitted": "0",
+        "clean": "1",
+        "cpu_pending": "1",
+        "dw_pending": "0",
+        "inventory": "0",
+        "origins": "0",
+        "prepared": "1",
+        "reason": "4",
+        "release_waited": "1",
+        "replies": "3",
+        "sampled": "1"
+      },
+      "result_sha256": "f718f42b42a9145e5c6e517a2c71c27840ce9e23cdc8969a78b47d30cd093810",
+      "terminal_transport": null,
+      "values": [
+        {
+          "application": 30,
+          "birth_ns": 1792457597952045000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "a45101a414f1bd63c0e3d040d8b7df9c",
+          "pid": 88549,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 1
+        },
+        {
+          "application": 30,
+          "birth_ns": 1792457597952045000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "a45101a414f1bd63c0e3d040d8b7df9c",
+          "pid": 88549,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 2
+        },
+        {
+          "application": 30,
+          "birth_ns": 1792457597952045000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "a45101a414f1bd63c0e3d040d8b7df9c",
+          "pid": 88549,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 3
+        }
+      ]
+    },
+    "third-repeat": {
+      "accepted": 3,
+      "action_reached": true,
+      "admitted": false,
+      "authenticated_peer": {
+        "birth_ns": 1792457607607086000,
+        "pid": 88625,
+        "token_sha256": "4660fb187ce84ccb2560706bba8bf918655ff3c745909e67f6efac307f9e0fc4"
+      },
+      "case_passed": true,
+      "child_exit": 0,
+      "closed": true,
+      "elapsed_seconds": [
+        1.7015489160003199,
+        1.4243089159990632,
+        1.400912207998772
+      ],
+      "frames": [
+        {
+          "request_sha256": "5a94d5112ff10bab9a788731c19c4c66901aa790b9e3ad88e2fe13ee093ce00c",
+          "sequence": 1,
+          "wire_sha256": "de781f9986ead06ab074c3206c243bd59020ad4411a0900c60803c8796593532"
+        },
+        {
+          "request_sha256": "e772c266074ef9286c15f54ca6b36fb3ace1d36e15daf8e0cd49c04caac932f4",
+          "sequence": 2,
+          "wire_sha256": "4d60d85ec635893f45b1d35822b8dfe423bb92c295ac09f5973b5648f146030c"
+        },
+        {
+          "request_sha256": "f2b8c8f76bdcff811c17fca62eff353fa8842d83cc364428a60c1b280e2afbb1",
+          "sequence": 3,
+          "wire_sha256": "e793d7f7fc63796e974f77a3329b1d511acc5ba27cdd3f409c6e868a11360b17"
+        }
+      ],
+      "inputs_sha256": "e9f62ba5232214dda6ccb7217b735e24cff273032cfd99849959d58c0f3e7b0f",
+      "mode": "third",
+      "producer": {
+        "admitted": "0",
+        "clean": "1",
+        "cpu_pending": "1",
+        "dw_pending": "0",
+        "inventory": "0",
+        "origins": "0",
+        "prepared": "1",
+        "reason": "4",
+        "release_waited": "1",
+        "replies": "3",
+        "sampled": "1"
+      },
+      "result_sha256": "0d6a317f9fb16446da28a9380bfeb3afbd1007a93e39f7d62c0dcd8e4feb0420",
+      "terminal_transport": null,
+      "values": [
+        {
+          "application": 30,
+          "birth_ns": 1792457607607086000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "a8baa644f30dc271ba904792f5f9c8f3",
+          "pid": 88625,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 1
+        },
+        {
+          "application": 30,
+          "birth_ns": 1792457607607086000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "a8baa644f30dc271ba904792f5f9c8f3",
+          "pid": 88625,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 2
+        },
+        {
+          "application": 30,
+          "birth_ns": 1792457607607086000,
+          "epochs": [
+            53,
+            3,
+            1,
+            1
+          ],
+          "facts": [
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "violated",
+            "violated",
+            "violated",
+            "satisfied",
+            "satisfied",
+            "unknown",
+            "satisfied",
+            "satisfied",
+            "unknown"
+          ],
+          "nonce": "a8baa644f30dc271ba904792f5f9c8f3",
+          "pid": 88625,
+          "platform": 1040,
+          "revision": 1071,
+          "sequence": 3
+        }
+      ]
+    }
+  },
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "audit.py": "8115b592c7b118e4a22db293979fa820808f4befef97ad72e100a8e833bcc95d",
+    "run.py": "645cea7e98f4dfdacee3ee5347c0982c7eaedee5757b1695a5d5c0a21ffcbcfe"
+  },
+  "maximum_stage_bytes": 303104,
+  "minimum_observed_free_bytes": 13139374080,
+  "native_suites_rerun": false,
+  "pending_tasks": [
+    "RT-T3c.1b",
+    "RT-T3c.1c",
+    "RT-T3c.2",
+    "RT-T3c.3",
+    "RS-T3",
+    "RB-T3",
+    "DW-T3"
+  ],
+  "performance_under_load_verified": false,
+  "preceding_evidence_sha256": "0610b4789c249c8254308a7342af320cf3f24baff4b73cf77e4ba2c1f1a5a10d",
+  "previous_public_inputs_unchanged": 236,
+  "prior_validation_source": "SRC122",
+  "private_stages": [
+    {
+      "files_sha256": {
+        "connect-first.log": "405f00adcc8a889bfe36ceb73eab8ca2b57df38f78c83dea3cc1f24c77e361e8",
+        "connect-repeat.log": "6214c3ddc1eebe22d2cb7dc1f3f8595037a951294eb2bd29d32b63f81dcdd7d4",
+        "extra-first.log": "8432666146eaad66d27e60b5b22a9693fa58af63c44dfd9dfc1b89b4e384e848",
+        "extra-repeat.log": "053c54994ca77ccc8589c0ed0d2fc2e5a09894b832f614f47af881a214a7a689",
+        "first-first.log": "6a3f03a0e207ec74bab48b45e6da2c9440112a00a5e653e6bc5e762618cf2e53",
+        "first-repeat.log": "d27faa9b3f11dd604ce51726cc7cf119fc5f9b72e15db9d62711b86910ab3115",
+        "peer_exit_launcher.py": "56463932c2e14452e0808219920d1c233789a6c068b01168724da639b08b8396",
+        "policy.md": "bb7b53fe659b517e14b110e479826dd19ab20439c927a99c962eadc08a535ffc",
+        "profile-connect-first/PCSX2/inis/PCSX2.ini": "69ccb87e6ca5feeb026615db008c46b260b25310857b7b0a7e6ea6ea7427de1e",
+        "profile-connect-first/PCSX2/inis/playtime.dat": "f613818599988de9f7e63599d2375fc00c0688f727763c8e5cf5ad7fdd80a80e",
+        "profile-connect-first/PCSX2/logs/emulog.txt": "0a62c3d16e679e99caea80dc08977d9283945114495f08cadccd1504f23629f6",
+        "profile-connect-repeat/PCSX2/inis/PCSX2.ini": "8b1dd0572b9002a30c48228d955ed31d292fd65b434c5ec734d96ae22b6804d5",
+        "profile-connect-repeat/PCSX2/inis/playtime.dat": "38ada4c62bcd45cdcaf0c3731db9ba70147e8b4d9c474867db69631f5a2ad5a0",
+        "profile-connect-repeat/PCSX2/logs/emulog.txt": "e074734e9eadd04c402d353ccc1b8af3bf2838683f63beddb165c9e4f8dd5e0b",
+        "profile-extra-first/PCSX2/inis/PCSX2.ini": "0beaaa5b6c85ef6e2ac39d21644a3e193290b34f638ebe581d22e788d735f07c",
+        "profile-extra-first/PCSX2/inis/playtime.dat": "c405cdc7a745e37b4757f7c212a5338bb52517c208e5da695db673fdb0cd8854",
+        "profile-extra-first/PCSX2/logs/emulog.txt": "d39b91e36c335ed782e009104d635d8e19751e1ac65641866b2db951f0e0455d",
+        "profile-extra-repeat/PCSX2/inis/PCSX2.ini": "8b1dd0572b9002a30c48228d955ed31d292fd65b434c5ec734d96ae22b6804d5",
+        "profile-extra-repeat/PCSX2/inis/playtime.dat": "5f3bdb0af07be7dddec0efcff80743c39c3d2d47093b5b2a5dd9afceeb2681a9",
+        "profile-extra-repeat/PCSX2/logs/emulog.txt": "46e4d90d2ffa61b2b0f604b51dc9abbc675189c32b2feabb95c8aca5083fe18a",
+        "profile-first-first/PCSX2/inis/PCSX2.ini": "69ccb87e6ca5feeb026615db008c46b260b25310857b7b0a7e6ea6ea7427de1e",
+        "profile-first-first/PCSX2/inis/playtime.dat": "60577a6ed6a44e1c4fb80e3bd9f237dc7c8842425f354b984d9361df6b47bfff",
+        "profile-first-first/PCSX2/logs/emulog.txt": "9b9a3280ac71325dee7c16f686f8043913d3f5ba30870caba4eafa4dccab1814",
+        "profile-first-repeat/PCSX2/inis/PCSX2.ini": "69ccb87e6ca5feeb026615db008c46b260b25310857b7b0a7e6ea6ea7427de1e",
+        "profile-first-repeat/PCSX2/inis/playtime.dat": "785d9266fe4a312d3c2c2637c4155e1caa953721face681adefe9bfb203884c7",
+        "profile-first-repeat/PCSX2/logs/emulog.txt": "a8c10df703dfdcdf91b4bc6c898a676edc3a76970cf1321d2eb2ac9ade685bb4",
+        "profile-third-first/PCSX2/inis/PCSX2.ini": "abe341c2945218f47f7542f1f2d87f3eb938f83b019f8b46c902c68f4f6945d5",
+        "profile-third-first/PCSX2/inis/playtime.dat": "f8e1649728819acad1d075f2899cdd43089d13d6c5e59c73e5eab3245d47f020",
+        "profile-third-first/PCSX2/logs/emulog.txt": "68e75a07c9015e5392125102ea603358a6741747eeebe2b298b49b3d68d02b4b",
+        "profile-third-repeat/PCSX2/inis/PCSX2.ini": "8b1dd0572b9002a30c48228d955ed31d292fd65b434c5ec734d96ae22b6804d5",
+        "profile-third-repeat/PCSX2/inis/playtime.dat": "9ed70bf26a995c80a618bf2364bca5e095b189059d79f94d65bd2c1dc3afc085",
+        "profile-third-repeat/PCSX2/logs/emulog.txt": "3ec42f65b2b7751253e212b8fc126cf05c0120d1eae211bab8c8e7fec277d1fb",
+        "run.py": "645cea7e98f4dfdacee3ee5347c0982c7eaedee5757b1695a5d5c0a21ffcbcfe",
+        "runtime-policy.md": "bb7532ff9ab7dae1e10c367b8888155c09b17cb29ab8491f554503b178797691",
+        "runtime.lm": "221f513b642f4f8735b5ffe5bcb019b86785e89e9212b30f7289fb45fceb7256",
+        "third-first.log": "be0f32f504497627d3958a5bc56cd89824af3950e5fe873d525ef8256e19162f",
+        "third-repeat.log": "9da70cfbe70707cf62097d957eb6fd7fd9383c36c66d1d70e88b6e7d3d5c6e39"
+      },
+      "name": "peer-exit-v1"
+    }
+  ],
+  "production_code_changed": false,
+  "public_input_transitions": {
+    "README.md": {
+      "after": "00ca0fac72829bd56dad8134b4948feb90cd2df800299e53ed196ca5ebbf4bf1",
+      "before": "09bb69a0a33e26dcf50797a212b0b9641c8290879b8d82ca23bb4ed3180d59ac"
+    },
+    "docs/compatibility/licenses.md": {
+      "after": "b02a756d659daca876c7197d6a59492e6db228e1e74f1a5bc6dc597ab7c7d457",
+      "before": "ff534e82997eef6149d22242f96198d8861120678550923f77aee7918df02bb7"
+    },
+    "docs/compatibility/sources.md": {
+      "after": "bbdbc441ab3ab5a6aea00fd76d30bd15b99fa8c70365b5518d165e2b118e4872",
+      "before": "40fa78352c6b49bdca70b5adfd0a0d19c7e2c510bdf16ac1f3d305533b020a00"
+    },
+    "docs/specs/sh3-3ds/tasks.md": {
+      "after": "ab930f17b22c959252b32955accfbcdec613d0bfcb851315ad0702d2dc43d4b6",
+      "before": "555208c6eedc4819a6987eafea079fc10b7e9c33733dc85bb20724a1ad2790e1"
+    },
+    "docs/specs/sh3-3ds/tasks/F02.md": {
+      "after": "d41544d886f2da5576b4c05098c26251dcd12384fa0d325cb32cf7a449f91baa",
+      "before": "7a892256be7af5fca6434ee6cfbe52a9f64376392e1fe9b838ad3cb404c3bd8b"
+    }
+  },
+  "public_inputs_sha256": {
+    ".github/workflows/native-process.yml": "4be319b9bdf1bd970089c9d2b3ee149e5f31e9638da42267042539f403f724bd",
+    "README.md": "00ca0fac72829bd56dad8134b4948feb90cd2df800299e53ed196ca5ebbf4bf1",
+    "docs/compatibility/licenses.md": "b02a756d659daca876c7197d6a59492e6db228e1e74f1a5bc6dc597ab7c7d457",
+    "docs/compatibility/sources.md": "bbdbc441ab3ab5a6aea00fd76d30bd15b99fa8c70365b5518d165e2b118e4872",
+    "docs/execution/f02-07-budgeted-consumer.md": "7815b52ee4cd6fb331d4d0d4f0cfa1dc2086d9c7cd22f42341cc109bedfb24d3",
+    "docs/execution/f02-07-capacity-candidate.md": "cabcc75c85042ad961a0fb4bfc26c707967d0f61fe9733f11101b68698e50d04",
+    "docs/execution/f02-07-diagnostic-composition.md": "3428979017954a5d5ec83171066104ef607f5bbc585e960ca395516922f6660e",
+    "docs/execution/f02-07-diagnostic-peer.md": "44564970b881c59100f54bf038de88572aebddb2a66d2eeec6a5e558815d09ac",
+    "docs/execution/f02-07-diagnostic-worker.md": "25a142bc2ecb4975b130cca22b8584f4ed65412898ee75c5e9727f29f18c4817",
+    "docs/execution/f02-07-image-capacity.md": "5e22134caece435be52a17caf16941281b6f655d3b8794635fc0018ddf9fe5e4",
+    "docs/execution/f02-07-launch-manifest.md": "2a25c4bab93bc077c58fd247e0dea9ab3c99764e2f4683bb2869bb2690988944",
+    "docs/execution/f02-07-macho-slices.md": "b569981f9b88eec52e2f606aaeecb5ee249de8a145d43c517bbe7285fafd4ef4",
+    "docs/execution/f02-07-native-census.md": "2cd8d9629caa1adc0caeaea0f71b2deb39b633f60d50bbbae75492d5c0868963",
+    "docs/execution/f02-07-native-diagnostic-work.md": "b3811ea575370987e22b8540096244723f2c1eea1a28cd12f9a8c8ef73dfaf24",
+    "docs/execution/f02-07-native-preflight.md": "5cbf73c1858b48cc348f87f88fcb9ad65b187bed3d899d9d6183e3d9b0297cbd",
+    "docs/execution/f02-07-native-runtime-composition.md": "645ec49e94b26c533074c5ab937dbd563c95b56df47b016f67aa6e6efd3956bc",
+    "docs/execution/f02-07-peer-exit.md": "9a2b77b9393a5d5728e01cc986846223c470e20007c489e48166af74529eccc2",
+    "docs/execution/f02-07-platform-diagnostic.md": "38ba5268115e3b5ae701776948e7df83e93ca42d41c791cc0df33ef0b0dece21",
+    "docs/execution/f02-07-runtime-coordinator.md": "6aab0e7dab228a1a7a13a0f2beb7961572492aa4d41c09d11d658b0bbb6b58ee",
+    "docs/execution/f02-07-runtime-diagnostic-binding.md": "c91427fe326bb31971350902e7b0408d5c591caf2a911cacaa43507c47628cb7",
+    "docs/execution/f02-07-runtime-handoff.md": "75d08a5334d9ab9ad80c2a1ab0a61fa6a8fdc17f48ae4f1297c370cd114fe673",
+    "docs/execution/f02-07-runtime-service.md": "8a6469c06bbc98122e41097301e4a4956de895c30b31661848a28472f7642fac",
+    "docs/execution/f02-07-runtime-session.md": "d0f668d6955003ff0ee4c66f8d8e4628fe65723fb8d41f38aee9e38ca2b968a1",
+    "docs/execution/f02-07-service-release.md": "9b80101e832e8104db9d91ea7831b19b00a53c4bdb2d20737905d7f6963eb8b8",
+    "docs/execution/f02-07-worker-delivery.md": "c6aeae2e83de120aff581a890647c36f6f20bc1824ef704e04750ac5f412017b",
+    "docs/specs/sh3-3ds/tasks.md": "ab930f17b22c959252b32955accfbcdec613d0bfcb851315ad0702d2dc43d4b6",
+    "docs/specs/sh3-3ds/tasks/F02.md": "d41544d886f2da5576b4c05098c26251dcd12384fa0d325cb32cf7a449f91baa",
+    "schemas/budgeted-diagnostic-consumer-v1.md": "cc6d84d8fdc83d2a1dd0c67097db9f7cb0082e7d722ed2f37f8e345b08db30fc",
+    "schemas/diagnostic-composition-v1.md": "728db6fd6d89d1b8950b98eb9816ecece91e2309f6d6b96727774a2cc0d34842",
+    "schemas/diagnostic-delivery-v1.md": "70d08f5b914d5d0cede63a0e0cb885975b0628e054eb5fa49fd087fa2c5171c3",
+    "schemas/diagnostic-peer-v1.md": "c71753ff8bec03cb522d87b096138af652354eb296692b06fee73f186e147db8",
+    "schemas/diagnostic-worker-v1.md": "7ad05c89eded043338b874f3545fa69d6e873592f41cc9fb469c90aea451eeab",
+    "schemas/image-capacity-candidate-v1.md": "e8239c219881022cd6e404fff3630764c47a31517d8c784dab21bf0d833e0104",
+    "schemas/image-capacity-v2.md": "8ce6818aba77f82b5b46380f6940b252fb2b1f6fbcf09856968561095a7c02d9",
+    "schemas/macho-slice-binding-v1.md": "0e4973c4e1dbf7bc38afac31dff923bcf963279192bc022b795e8e1eb243b3ad",
+    "schemas/native-diagnostic-work-v1.md": "0a726e8721807f46632770e7a069722fed49b79da184acb3d52b87b32e44f6a8",
+    "schemas/native-image-census-v1.md": "7e51d2d9b5eb23a522d486e61e570a34c8abe89de9e5d03f268a477fe9a5f816",
+    "schemas/native-inventory-v1.md": "cfeea91a33517f07b9d31dbb5fddb5b4c7bd7bfe7efd3ad00bf9792838969abe",
+    "schemas/native-platform-origin-v1.md": "cf3de3074a4269669847b7919ca98709bfc06b713c995489bf1f2ae29231727c",
+    "schemas/native-preflight-diagnostic-v1.md": "c7f3377b0e0e19665a20af9b0f43aef09a3f0b85a6d6651ebff90a16d5e65bfe",
+    "schemas/native-runtime-composition-v1.md": "13e67cf754f6b5353ec5adf393b3270366ef116808a23a77ca738bd436c15d04",
+    "schemas/platform-diagnostic-v1.md": "2e2fd7b07ca33c0e088c9ed4275466ef661d8ad5b9287efc49cb00cf21d8977b",
+    "schemas/platform-diagnostic-v2.md": "6198586bce28953029379d5f24c4f4cb07acf9334a2654aa1c84ad60f3f02a46",
+    "schemas/platform-inventory-v1.md": "824dd38e71fd65e70eecf766d84ec424ac282dca40ef2026eada7043c8f2b666",
+    "schemas/platform-launch-manifest-v1.md": "ee2b4b37cbbcdf74cf1c095589bacf734e703e680a2668c366fee957f4a92936",
+    "schemas/runtime-coordinator-v1.md": "b5934884da7d18dfbed878859a5b13558a52522ddff08c1c15cb504248214138",
+    "schemas/runtime-diagnostic-binding-v1.md": "764f7a155e4eabbc6047fb18634c1b5e3fc404c433059cd1c74cfc746383373f",
+    "schemas/runtime-handoff-v1.md": "e53b788a90191e3ab54226c2f09071060d320d11f81b991876d1f65f2aae24c1",
+    "schemas/runtime-peer-exit-v1.md": "2602ef2c0b2c961cb89195b675bb3af2db6a9a20a167dfc8e1f233bf8608f097",
+    "schemas/runtime-service-release-v1.md": "a4e139bdd1d42080be197332a16b78428994383d502c532bae1bd00d1d28d827",
+    "schemas/runtime-service-v1.md": "f9805c817f46ba1df23fd7cd05671775239184d462c0fdc7d71eb1c286713fe7",
+    "schemas/runtime-session-v1.md": "de9d3bc175e5eb39f1d2b0583ea6ee19a92c3eafdec1488b57d9c2a1c641e2f9",
+    "tests/cpp/check.hpp": "9c3fc980d7e994d3b5fe8726af3ba589d367e840b1bf81b2adf1cc516e5510d9",
+    "tests/cpp/delivery_fixture.hpp": "9fa4caf23d50f8d6c35bd523ed98e563b452e1c7a513485bc820accefa04bbc0",
+    "tests/cpp/image_layout_fixture.hpp": "38317e95ce1f164637eeca452111ca258037035ec0ea16614f403f2566be148d",
+    "tests/cpp/launch_manifest_fixture.hpp": "b632aa989a800fe40936ab8b3191aadcaeb9907c795f2c342d2c14716e794822",
+    "tests/cpp/macho_slice_fixture.hpp": "77a4789cc19a47f7463a0ffe9eec6d33f41cd369310ef0e0e67ae763aa5672a5",
+    "tests/cpp/native_image_fixture.cpp": "4abf90c68effe03af1d2151171aa994e9bd735b0e1d0221e57684ff6ef48e431",
+    "tests/cpp/platform_inventory_vector.hpp": "8c6e68a6ae4adb0d4821fd4f38be5b4fd0fad77a4d40d5f3a3745f884fa8d11d",
+    "tests/cpp/platform_slices_vector.hpp": "065c1cd03c437066383067b9ced0fe5d3be7630cd3dfb7650c5be36b79bd6cc2",
+    "tests/cpp/runtime_session_fixture.hpp": "a4aa14e61c47e92f711341b79bf32790bb0afe82f82811efec22b7081e81bbee",
+    "tests/cpp/test_artifact_manifest.cpp": "4e037e3a267071dd35f40964aa5f6892291e7e5836087cd624ab8418bcc22b93",
+    "tests/cpp/test_cache_integrity.cpp": "a0ce9e9e6965e39289c2802e9f7846d27868f70b1790b64bd6857b05ae27b53f",
+    "tests/cpp/test_diagnostic_delivery.cpp": "24ca4372ae30884c8cd1525cbaa43d05f544ea833580a3652fcc3dd5238eb297",
+    "tests/cpp/test_diagnostic_worker.cpp": "434293511a0b1e0cce07484a4eea8ee612d913c4b7f4983dc0dda420c33942b1",
+    "tests/cpp/test_diagnostic_worker_clock.cpp": "e30cc428cfb0c301be62ef124f8b8a237487eb1ef889354fb5ca7e36011d247e",
+    "tests/cpp/test_host_lifecycle.cpp": "66468b1e7f78e360c1c22c5907e887993fbe3f10a2d5015ed6db30a5ccab215e",
+    "tests/cpp/test_image_census.cpp": "ef977c6a9b815a8cea7934217025ecbb2569a26da2389b4fe2c1b939d826b192",
+    "tests/cpp/test_image_identity.cpp": "cfc55c6b57218ad165102ecb65e8bbe8c7bc19379b2f2cfb6212f97f16448a4b",
+    "tests/cpp/test_image_layout.cpp": "79179cc22dd72b9247e893a09325859784e15b844964beea6cf162bab18b5f07",
+    "tests/cpp/test_inventory.cpp": "7b28262f941c95c8aaf20d97bce5d110cc92d473c7012387bb96d7fe08caf83c",
+    "tests/cpp/test_inventory_storage.cpp": "794826e2fd3e857218b3e4b9d5126e4d918f4bf24962a254211d5f7b4d703700",
+    "tests/cpp/test_launch_manifest.cpp": "d20a5b0be6f671bb72ed3cea321773497292041631d995e0ba4e5932b7edfe63",
+    "tests/cpp/test_macho_slice.cpp": "cf2586030d3f2fc2a44e750ac9f16792829d5c6e30a1fd00c386911225edbf3b",
+    "tests/cpp/test_macos_artifact_manifest.cpp": "4f9ae3c8e7eeea8038c07a6af6378a00a6bd92d721e23ab334db3a7137431896",
+    "tests/cpp/test_macos_cache_integrity.cpp": "4e424283a70e3cdbc991f28b7b9a68967df74ace4cd955c711acbfc3054d949c",
+    "tests/cpp/test_macos_diagnostic_sink.cpp": "69fa3972368f8f595064a7fe2f47a9f7480ed1e4ccaa45a977fae15cf2ad8d20",
+    "tests/cpp/test_macos_image_identity.cpp": "9c47a8140617d566fc7dd18f5abf8ecb8ca44a1c7111e508902677ee797a75e5",
+    "tests/cpp/test_macos_image_layout.cpp": "ebc780850b94abacae43420db537e68574b2f123ee55418d639527a734aeed01",
+    "tests/cpp/test_macos_inspection_control.cpp": "ae7a82fbd51933efcb5f43ae55df2138c6b0eeca03a9bd29f3853743465e4cd9",
+    "tests/cpp/test_macos_inventory.cpp": "ed8af6fb0deb1b0bb044482e19b72c491d7f34501cd2a8967d9d13dc918fa59c",
+    "tests/cpp/test_macos_launch_files.cpp": "fa3a1a8e6601e57de03a0c5212ad5f2a5f67e35ff1f6919356b64e2235781b1a",
+    "tests/cpp/test_macos_page_binding.cpp": "d6085bb7ab512c1b1a9d981b04211f44b9d9f180c712816220f3dfb984e38ddf",
+    "tests/cpp/test_macos_peer.cpp": "0aff11218382f40c54b22422a74a776f0449cfd19e1005c08a91f881a445b95c",
+    "tests/cpp/test_macos_platform_origin.cpp": "6dfbd68367c5cfb374ff1b595ca5520b21885d8cf78b24190510441d16166684",
+    "tests/cpp/test_macos_process_birth.cpp": "9eed0f3f9766f344ff4eb6e5f219fdfbb3ac71bcbda65b38eee59f807b3fdb0d",
+    "tests/cpp/test_macos_region_map.cpp": "07cb7fa04d2149902d541705a70ff483a9703903afe098e956a651104713f104",
+    "tests/cpp/test_macos_region_vnode.cpp": "d30790330ea16b295f63b52f23320518c57ad1e1989ad9ac72dbad23fc7ccc99",
+    "tests/cpp/test_macos_runtime_session.cpp": "72e429c4e23137037c0e3c3583a778c23aabc3e7741378c305279d32f9598f75",
+    "tests/cpp/test_macos_slice_binding.cpp": "5bad0b32c51d2070eae708c94ef64ba6a888b60e2c3becece172e8800e7dedc3",
+    "tests/cpp/test_page_binding.cpp": "e80d50916306e1db1fba40d16fc0fa23560acb3dc98f37ae7365622390b7b191",
+    "tests/cpp/test_physical_writes.cpp": "478267ba5b6108cf42d99b404a71340057d0f07b481f1d144fb7e4ebc4fd35e0",
+    "tests/cpp/test_platform_diagnostic.cpp": "10bff5005dd2e3e9bd1adfdc26bb277a814640250e335a0af521ef77ec69c56b",
+    "tests/cpp/test_platform_inventory.cpp": "1d001980c4d93e4dbca8f8e526b29414b21d5a166413a04bef18e184aeada965",
+    "tests/cpp/test_platform_slices.cpp": "8ef6e4fc07d9676af99e8e6e8b464ce04831e23fc7244b3861bc683991d4ee50",
+    "tests/cpp/test_process_birth.cpp": "6a1b747600d134add241fff7aab3e7dc575bea7bd02e231e843659d443929736",
+    "tests/cpp/test_range_plan.cpp": "c2046c6ad5e6fd1ba58be84a355cdc6c5f146946b431db818ed7c4f916d828de",
+    "tests/cpp/test_range_plan_allocation.cpp": "8ff85b5d8bdb30610a2d7844917ad958990a980b6d382a0e85c1990cd5b142b4",
+    "tests/cpp/test_region_map.cpp": "1b655c236b4f9cbafc6bd3032e2da2d6e0c65a2d22f3a8fba1cfaa1e4105803b",
+    "tests/cpp/test_region_map_allocation.cpp": "ddef3a88ffd7d204fd6ded7942548db0c5a011c31b2cacc674d8bb5872bdcbc1",
+    "tests/cpp/test_runtime_diagnostic.cpp": "7cc0fcc912ae0a2cfabeb15e951ee22333726021f9bddf3a37eed21de80145da",
+    "tests/cpp/test_runtime_handoff.cpp": "b535c79661c3203d47c9f732a98ec15c610f65af67472c56358c9d9b59c3fe93",
+    "tests/cpp/test_runtime_service.cpp": "5edd990a0ed9b0d87696cb0029c68101fdfee3fd20dd779976589ba9b47a01fa",
+    "tests/cpp/test_runtime_session.cpp": "4af8ff06ce751a144f3ec8333c0c3d24af2a6c6612af48dfecfef3b80b38c6c7",
+    "tests/cpp/test_runtime_ticket.cpp": "9abf8d14003178a061e09542697fc755d8e1137b3cb2cd338c677a95df88f926",
+    "tests/fixtures/native-census/README.md": "fc944ecf0986d5f4c68e02018ddf0a3702c6751d259d96c4f3ea225bcf8c6489",
+    "tests/fixtures/native-census/census_report.hpp": "748c9ae3430e9791f907f7fa03df1edb8bfebec2f80d437d31e48d3c66dbe185",
+    "tests/fixtures/native-census/footprint.cpp": "1a2b19bbf5e2543126c8eca269eced6da0f69d9e8450038261796c657f480d7d",
+    "tests/fixtures/native-census/image_census.hpp": "733459eb468eabd5f8c242ac4a557fcc3308a813edfed56fe4c9a9e93d7410c4",
+    "tests/fixtures/native-census/instrument.py": "9690bc01e8120694723bcafcabcdf0cb60484996b2ab81ec56582a8cfb930ce1",
+    "tests/fixtures/native-preflight/README.md": "b9c95d2858d84d4a2f549882cc50f052c8e784bc0fd98e300e54375ae206fd0e",
+    "tests/fixtures/native-preflight/ledger.inc": "d359e6e7e168b49aaf06fe37e4765b4607548102d0182a668b4fa6b1c7c50ab5",
+    "tests/fixtures/native-preflight/preflight.inc": "4ee5aae7d8aa284c8d296b77e3911e4a3f9fb014f81ce75d01f33e8af6bd23c2",
+    "tests/fixtures/native-runtime-composition/README.md": "dde9fb9c02c84a4a05e90d7442f47ebb83743f6fac9e1427da9da1e8f9b154aa",
+    "tests/fixtures/native-runtime-composition/launcher.py": "0cad96289ddf90e338f873bb06f89905de6f54c2a74d005077487c1484803b48",
+    "tests/fixtures/native-runtime-composition/producer.cpp": "33b8878212d5dd8832c57db737bfb7ea0dc3b22ad2cc8e9ed144e74830d6c37f",
+    "tests/fixtures/pcsx2-runtime-coordinator/README.md": "6d4657460123238b43d3fe1f72ead00fdde1d566a5e20056a55bc66906757b3e",
+    "tests/fixtures/pcsx2-runtime-coordinator/harness.cpp": "f5c3baf4818c8a068fa2fe8ad1d26aa56fd97591cdc9254e18558fd0c4b39a9a",
+    "tests/fixtures/pcsx2-runtime-handoff/README.md": "03c468ae7a34f0ad83a960355211e4911aeecfb4f5430697473795bb462c523b",
+    "tests/fixtures/pcsx2-runtime-handoff/harness.cpp": "c62311031b7f7c8b41983cf80e1439c80061d74050f4955a43131020f20ca245",
+    "tests/fixtures/platform-diagnostic-v2/README.md": "d22f163ce1c3ff6ed6e44c36838eeb98fcbebc15a2fabea56e71cd859121cf82",
+    "tests/fixtures/platform-diagnostic-v2/counts-1-1024.hex": "3fd0e987b27028feb09e426a215f2d678e6789e45acf4229c8569d41ab73d1de",
+    "tests/fixtures/platform-diagnostic-v2/counts-1-2047.hex": "ccdfdf2419bb9e713f63cfcdd5ff249c7896aec33a4db8cbbae37f4505d384a1",
+    "tests/fixtures/platform-diagnostic-v2/counts-2048-0.hex": "23fdf8e6352ea3d4c81555aa4cb05e11c8c45a017d23e1a8ea794048cf544e8e",
+    "tests/fixtures/platform-diagnostic-v2/counts-43-1026.hex": "0f56a7ff0941b3b9777c3e0fdee6d9a7a2a8d9faad6fd7e5bf5a0bae74f3dbe8",
+    "tests/fixtures/platform-diagnostic-v2/observed.hex": "696722c118882f15d3a24cc1ad00d8e623e54512815aed6666deec96e24278f8",
+    "tests/fixtures/platform-diagnostic-v2/rejected.hex": "fddb7c853b43dd538893dbebfa92ce0ea186b08a3f7dd6f14f8ecb9f4f423d07",
+    "tests/fixtures/platform-diagnostic-v2/request.hex": "c9648035f9ce3ba7ff21dfd88c963904688c7594afa070d54ab192b52388ec77",
+    "tests/fixtures/platform-diagnostic/README.md": "f2b47dcd3a2259e161d9daa23fa89c822b40181cda2fc37dafd2da6e0394ab1d",
+    "tests/fixtures/platform-diagnostic/observed.hex": "6ff763b5dd0b50a992ed63ef5e6308d828f3e19f099c4e17bd260956edb3f2d9",
+    "tests/fixtures/platform-diagnostic/rejected.hex": "1b24e3225239d98830d69efea2515bba16ae498791ba56f6425cf4cb5b89e611",
+    "tests/fixtures/platform-diagnostic/request.hex": "502ab3243286d5eab734f09a67b818ab8e4adcfa8d25eff4ca2f6be1c1b5ac22",
+    "tests/fixtures/runtime-service/README.md": "7bff718aa993d769cc16909c5202a6a18132f4a4ac89b7ef4bc2401f6e1736fb",
+    "tests/fixtures/runtime-service/launcher.py": "2f0eed5abf601da3eb9b5ff1d0ec49779aa54c630ce6bab2647a2654ba485c07",
+    "tests/fixtures/runtime-service/peer_exit_launcher.py": "56463932c2e14452e0808219920d1c233789a6c068b01168724da639b08b8396",
+    "tests/native_budgeted_oracle.py": "65a10429e41e756ff406987e3dd98bfa8165377cf350fb313b683067cc1662fd",
+    "tests/native_peer_oracle.py": "1fda48b2189f2cbc2627449c1e408056dd5f3cc245bf92ad551da53fd6510c33",
+    "tests/python/test_budgeted_diagnostic.py": "e6209fb256efa12e487636b78a6a2196712f80470cc665e0202a57bce21721b0",
+    "tests/python/test_diagnostic_channel.py": "7252628be6d3bda8cc3798ece094b7e66c95d0891f3ffd125ef75afc166e3d6a",
+    "tests/python/test_diagnostic_session.py": "e1d640bff9329c201bfcbdf8133c3ce2fd96f18fb0adb5bc970f0a636ca2c39c",
+    "tests/python/test_platform_diagnostic.py": "ab002aaac4126c585f5180b53459d84c8ceb517dde7e0168423b0e091abd334d",
+    "tests/runtime_service_oracle.py": "09b9f7bf9dab3d3bfb043aab4483b666b50037e2816d21ebad9f96f8efaed7ba",
+    "tools/inspectors/diagnostic_budget.py": "df7645243395d2da71f474badadbe5c79ef54c742c7707e2d22dafda96271f1b",
+    "tools/inspectors/diagnostic_channel.py": "8b123fa3c2943a6cfd3834fd75274f1c8a39a861e1d51bc8f8fc73288de99348",
+    "tools/inspectors/diagnostic_session.py": "69e9ff2e6e93ac8090e1b5cedba118e58012fc6879168e3462f2016fd25e6d8f",
+    "tools/inspectors/platform_diagnostic.py": "4e5e8e0522541c00e006926f0a60c9835c647ec1eefed9a8850b9cf3d752c1c0",
+    "tools/observer/admission.cpp": "ad7c05139e01ea2491c0c5dc95e0a553c6e9f0d3604807e05e44569cc502ea90",
+    "tools/observer/artifact_manifest.cpp": "6eb78e91c567350b4c2da7c73b98ecbafd723f81f3ac7a8534c5c5274240da18",
+    "tools/observer/cache_range.cpp": "158b71b49aaeba00014febf73a40c4950a40dd658db51175ef741698ca5f709e",
+    "tools/observer/cooperative_gate.cpp": "71aa0d0d194f7a751b10ca3b4cd1049b8425e8074458b369c39372be2a34e35a",
+    "tools/observer/cpu_boundary.cpp": "a20997e9f3d7aacd2df004c9424436fa6cad7923c04218bc7a51f7ea62a74500",
+    "tools/observer/diagnostic_delivery.cpp": "3e24cbd34379c8c40eb8f228f35ace3c25678852ce69faafd08963d03f94e780",
+    "tools/observer/diagnostic_worker.cpp": "92e6d1bb1eb865c376b05a5bfea5560ea91c79764af7cd9392fb4a366a43d93d",
+    "tools/observer/host_epoch.cpp": "dab6223dab476403dedcd9c9303ba9cd60f24207fef4e3c1a8e761007ba461bf",
+    "tools/observer/image_identity.cpp": "aa6edfdd61d08d598c846b68b52883a4a3a9e06fac7fe363ab4986393daccb40",
+    "tools/observer/image_layout.cpp": "37eba42d0b3f727561489b26732816f14c8ecfa6e01b2f74b04994e585206514",
+    "tools/observer/include/sh3_observer/admission.hpp": "acb7783a5c45336038d555d7eca1b52f3032987de27f1e6abbb7b4c2c5673a9c",
+    "tools/observer/include/sh3_observer/artifact_manifest.hpp": "57ead680801c29dd8a51a25985c931fb6d0717296997115de9db81f6a8f065a9",
+    "tools/observer/include/sh3_observer/cache_range.hpp": "bfd2167d6c3eece077276698a7afbf226f490b8b7f73234d404ab17092e92c4f",
+    "tools/observer/include/sh3_observer/capture.hpp": "a8661c9a081a4eb7cfa9bd5c32e1e7dfe90e4c564c0ef19c531188f4043abfb9",
+    "tools/observer/include/sh3_observer/cooperative_gate.hpp": "2ab3af6e6cc7b893f20d70666554acac14df6ac680fbed17adb4a9c4d3b0634c",
+    "tools/observer/include/sh3_observer/cpu_boundary.hpp": "ad0f1edd34f82061200bdd3ebb8247b726c640d7834d50d49ed5f21a158d2660",
+    "tools/observer/include/sh3_observer/diagnostic_channel.hpp": "7dc07e4ea16597d98aca8d858b3d098cb7434708e98d00522194194335f08c03",
+    "tools/observer/include/sh3_observer/diagnostic_delivery.hpp": "1206e35e57c8c4bd8c091a690d7b999dd263a59b9cf9f9abf9b3f126c8513ec3",
+    "tools/observer/include/sh3_observer/diagnostic_worker.hpp": "9b0fd9ae61e721cbe24861122a935d6f3bd586c97d8445143e175b1330865c54",
+    "tools/observer/include/sh3_observer/host_epoch.hpp": "2de8b1a76304538805a48dfa31ebcd1b5d2bf7b2bf9ceb4416281019161fd062",
+    "tools/observer/include/sh3_observer/image_identity.hpp": "1121f6a5a1706874f296784159546711171aeda025d2e220017e7d0878d3e1da",
+    "tools/observer/include/sh3_observer/image_layout.hpp": "f779902d5ae259bbd10070a0ca747947f2fc61f11dc7fa6cf15e4f7fe39d120b",
+    "tools/observer/include/sh3_observer/inspection_control.hpp": "186e2a2687209abc55b71d69f26b35dd32d1c89ec3d47269fd98bae22e0e8bb8",
+    "tools/observer/include/sh3_observer/inventory.hpp": "46b5d533ead1a548e27d840ffe4e974733a91eef8061d86c98cc3972b64661ba",
+    "tools/observer/include/sh3_observer/launch_manifest.hpp": "2f208bd1e1b13e7a081f08c85a7c2af82d50931f9f61ff81204c4e8c97d3fd08",
+    "tools/observer/include/sh3_observer/lifetime.hpp": "3aee9d6c84422a83c6f3d8c45a92ec84ad78c415a609f316d12527228a759c16",
+    "tools/observer/include/sh3_observer/macho_slice.hpp": "09df4f88d1863c4c6ccb9159325871e2b7331318b54975dfb50b186a62f8b485",
+    "tools/observer/include/sh3_observer/macos_artifact_manifest.hpp": "754010cd8ded92dc55f2fa36e3eb65f34ea4f39b9f882d3dbc125a929dfb353c",
+    "tools/observer/include/sh3_observer/macos_diagnostic_sink.hpp": "f8b0ddb7d13462c80b12506f9d904377a9a4fdabfc0f133569b0105fc63a3a5a",
+    "tools/observer/include/sh3_observer/macos_diagnostic_work.hpp": "bd783e634111f34d2d58d3df17f0a167b5bae4d72e4537b63770f15e14434b79",
+    "tools/observer/include/sh3_observer/macos_image_identity.hpp": "ca5f8a04a01da846640956e25e8b59619499d4e6c5b36a0eea1bb7f62f4a9ecb",
+    "tools/observer/include/sh3_observer/macos_image_layout.hpp": "6401beeb65e2cd4cd9b2365054fe48140eaf7763acda7df113e1bd1960f8dd9e",
+    "tools/observer/include/sh3_observer/macos_launch_files.hpp": "439fcbaba7108e9244ee61e46826e4e34ab064387b42ce196729b1554f13bb77",
+    "tools/observer/include/sh3_observer/macos_page_binding.hpp": "e29abb3f9f8b8910b56bc4a08ebe1bfb34b7613105c268bb9e99ead3c2716a40",
+    "tools/observer/include/sh3_observer/macos_peer.hpp": "7810db5c009e0e46a50b1c14608f30a023f1861c80ed1463d4dae38dec49b9bf",
+    "tools/observer/include/sh3_observer/macos_platform_origin.hpp": "9ecab16ab95939163107b0f08997be2c58ddfb5feb7d524ea81929d88ca28f8f",
+    "tools/observer/include/sh3_observer/macos_process_birth.hpp": "e39a45b217ff150f52ffbfeb9abdf6fb12dd28f50d9b9391031ed6d2e8b8fccd",
+    "tools/observer/include/sh3_observer/macos_region_map.hpp": "9e7515febe0eec0ac3519730f6cff36439df741a62fd95b55861f7247066ec0c",
+    "tools/observer/include/sh3_observer/macos_region_vnode.hpp": "10fa0074b2a324011d4486db83a1175f27ed230e7b0df7cf2da72bf36e45b2d1",
+    "tools/observer/include/sh3_observer/macos_slice_binding.hpp": "8f23558b02e93869aa7db5e677358ef8911f6c0519f175d09efb1b52048c7bca",
+    "tools/observer/include/sh3_observer/page_binding.hpp": "6d082d5a19b445f4bc2635023e74efdce15945af50120cdee781de83211fbca0",
+    "tools/observer/include/sh3_observer/physical_writes.hpp": "0f935bb9ccb0a322ab65c18e223d1ca6509f2fb5e2c0e80e3a235b7fc8d83137",
+    "tools/observer/include/sh3_observer/pine_drain.hpp": "968aa2ef04b1ce3364c936fd831482813a56a257cc7b44afd9475e014e50e254",
+    "tools/observer/include/sh3_observer/platform_diagnostic.hpp": "11a8a2389f9a9bcb1faded1ce84d74850c97c2bc48880be5a13f1fe7022e596f",
+    "tools/observer/include/sh3_observer/platform_inventory.hpp": "5b3e0222b4229ef1f39657da282602c256658dc2eadde0b24d34f24e3a31e2dc",
+    "tools/observer/include/sh3_observer/process_birth.hpp": "ee84c38ab576384ae6dfc93221f883289c9c1926fae319ea5529e0cdbd04a98a",
+    "tools/observer/include/sh3_observer/range_plan.hpp": "4798c13cb60697c895af131e10a760ca45dfa074cc7302df8c0c0f0f5c477caf",
+    "tools/observer/include/sh3_observer/region_map.hpp": "8bd99e072532a964fff924456b2c9cdb8df76fc6ce17a05cdf4c025c0b36878b",
+    "tools/observer/include/sh3_observer/retained_drain.hpp": "d9f45cd7430082cd4b874a79ba80148ea6fc5ea13d09bf3999ea116df161f1f7",
+    "tools/observer/include/sh3_observer/runtime_diagnostic.hpp": "8ed875bd90f570e3918ddeb30042194c6dfa74d9a62b791f89c6407f73c9f721",
+    "tools/observer/include/sh3_observer/runtime_diagnostic_handoff.hpp": "9b4e91e716170449ef331803a4494c78467ab099085c33fdfd69f2ba159ccb22",
+    "tools/observer/include/sh3_observer/runtime_diagnostic_session.hpp": "9fe4b3aa53c1d68c9ed8f12bac898ac024fb35bd515ec502b0ddc239f02325fa",
+    "tools/observer/include/sh3_observer/runtime_diagnostic_ticket.hpp": "60064e68a9bcbba11175ce85809da1070718e685fb8dfb15b87b5ea6987b2903",
+    "tools/observer/include/sh3_observer/runtime_revocation.hpp": "7d98f16842fc8865e5561eaf5d9ab9e1e745a30497f784a465dbaca8467d5750",
+    "tools/observer/include/sh3_observer/worker_control.hpp": "66317ff431180756e8401c5cb0839dcbb4fc44c4f99d5d010076941531bbf292",
+    "tools/observer/include/sh3_observer/worker_drain.hpp": "ca80604826cd64a0cbea65b2a9e9463fca4b44cbcf18b429883b3b211ac90808",
+    "tools/observer/inventory.cpp": "1ccd76d992939520ca4615b02460cb75e7cba5ae0b5cd469f9907c7abab92f82",
+    "tools/observer/launch_manifest.cpp": "4badd0161c5dc4c9ebd499439f62f7b4f22bc0e4318c7922d85121042b91cdeb",
+    "tools/observer/lifetime.cpp": "2633522bc0040646826ffe8fea8cf6f4f984345e6308c9c277945c0db7400ed8",
+    "tools/observer/macho_slice.cpp": "71a7fce075e201f16518d0dd84350274d59efdadab16b628009322b4ad64bbe4",
+    "tools/observer/native/CMakeLists.txt": "188006ac0868dbb4d0d6eb652e6ecfbe7bd6a192c8e6262afc5cbb56ad06b00d",
+    "tools/observer/native/macos_artifact_manifest.cpp": "6eebd55ff849dc783fbaf195f62ee3702b100ac5d999e8698ecabf016d1bdfbb",
+    "tools/observer/native/macos_diagnostic_sink.cpp": "664c39a92d0fb8d318c8cdc6c4f1bfddb846fe5cf7ac126bb764d3358bc4381a",
+    "tools/observer/native/macos_diagnostic_work.cpp": "e73f0c8d8be1cc1515cb385b3a951142530e8d6979a1ddbe3973529955acf59f",
+    "tools/observer/native/macos_image_identity.cpp": "40d28cad8dc9dbf5c1332d94899ebe268cad02cab581ce3d9cbab4be0bd2c488",
+    "tools/observer/native/macos_image_layout.cpp": "43dff89abf2c0191d67852bbbf5cebb3112f10284047cce24c2728af87f49c3e",
+    "tools/observer/native/macos_launch_files.cpp": "dbef94049f64b77cd8815f579f0ee2d04ef8088830d01928d4c102b51b56d209",
+    "tools/observer/native/macos_page_binding.cpp": "a42e43dbcda090be4f3ec2937eabf1059f1111d4d5c909b41a09308f4ba92502",
+    "tools/observer/native/macos_peer.cpp": "e1c8dfe5373cf959f7f1047f719d24a641828abd39524265b98187ae01b6d6be",
+    "tools/observer/native/macos_platform_origin.cpp": "6419848daef96aee501219fe60881ed89fae60ed6371cabac31cdb5ca46d9758",
+    "tools/observer/native/macos_process_birth.cpp": "9adbced25578c213aa100468da1b1b9aa2249e0bfcc6ac97d0fdf636f78d945f",
+    "tools/observer/native/macos_region_map.cpp": "6cd59913eeea33b03e0d0c3510083f285e02e77cda52f712af617e402a5dd156",
+    "tools/observer/native/macos_region_vnode.cpp": "e0d18f59ad4d6a0acce87d45547573cf50029b3b764823a395e4d51faa91b922",
+    "tools/observer/native/macos_slice_binding.cpp": "5946eb132047ae0c0f7c07b5a388ea5a611b569f7a8df7aeafba28716bc1302f",
+    "tools/observer/page_binding.cpp": "a34a8745d21f15eaab3ae7ad3e7b994fce635d5652141c43ee673879cc5bc3f0",
+    "tools/observer/pcsx2/gs_control.inc": "0fd3f1b54d107d91e6fefebbbd21c90a2e70fbf132c1fba74335b4bf27ece0ff",
+    "tools/observer/pcsx2/runtime_coordinator.inc": "ad502aed3a2f09aec026fc947ca58471b1bd7c1d5272342fd15ee60204f4a1f2",
+    "tools/observer/pcsx2/runtime_frontend.cpp": "b9c89044f0098336d77ba3e5e97ef5f587ce5f9f9cfb137ba86c184d83fb8182",
+    "tools/observer/pcsx2/runtime_frontend.hpp": "ea70dbb8615ec462cf81ff949b073f65b9bd582f94370c7b2c53cb07cfe83d47",
+    "tools/observer/pcsx2/runtime_frontend.inc": "ffcd5d276bc7882859f6aa1cf15006bc494c7d46179250c25a642a565f733c61",
+    "tools/observer/pcsx2/runtime_owner.inc": "93c20543904781450d5196cc1e4d9a835e5daaa54587a0b8e77eaf74b5a8f125",
+    "tools/observer/pcsx2/runtime_service.cpp": "7d02eacc106810c7ad3b5b3e0a9c132626dfbdc07a42f2fba21b40265afc5e03",
+    "tools/observer/pcsx2/runtime_service.hpp": "c6ea9fb86af7b58bca374834e80550ab9dc747f1dd0c284e2923f78f42675d4d",
+    "tools/observer/pcsx2/vu_control.inc": "2dd242f5f1ba686b5f1b40d9501d4c3eb366e037f9c4f96141ab55d0542e086e",
+    "tools/observer/physical_writes.cpp": "4f1d7b175e1a542a476b5665226a75c7d5bd6adc1883f4c38e0112c03667776a",
+    "tools/observer/pine_drain.cpp": "f2d1b4622552b45599c0b96933cff3c42336fefaa1c26be2c9a69c383e785da3",
+    "tools/observer/platform_diagnostic.cpp": "7b6631168d294bf77e2ec70f47e41ecd83978e011ab6b16f31d90d5d8cba0414",
+    "tools/observer/platform_inventory.cpp": "d6dd902ae07082f8a3e89ca0b5d1e6873c286184c64ed0c499b9979b98b8f106",
+    "tools/observer/process_birth.cpp": "bbd39e9ca0b5c47761c8cb12ca8a8d43724e9c0bb24ab5d39a224d72ee5e8af6",
+    "tools/observer/range_plan.cpp": "545e399098002af2991804635cb2201e199a34af4a1b99e48488138f67bf70eb",
+    "tools/observer/region_map.cpp": "53ea662192b6cd80802479aa2e1da6ffe14f3bcb417025d83a505f5815aeb5bc",
+    "tools/observer/retained_drain.cpp": "ef133f62e8d68874c72f7e18a0d2286ea9e638656e1b1e38aac9b3936a04dded",
+    "tools/observer/runtime_diagnostic.cpp": "4af8115fd80544b7e3f42cb808604f61e81f28ef8f27f73a1772c3b2ba5b5330",
+    "tools/observer/runtime_diagnostic_handoff.cpp": "1f4c207e65840adfb39690aa8586f1e3c3a8c3643fd57090d32785e379c0d21d",
+    "tools/observer/runtime_diagnostic_session.cpp": "52f91666e74d37b3f2339267fd59fde6763a3aa12b8a7e3ab32955b6b6220713",
+    "tools/observer/runtime_diagnostic_ticket.cpp": "a43805a2f695b028fb3b945f9ebc63dfd081eecbba72bb6d2a16bc79f654bea4",
+    "tools/observer/worker_control.cpp": "69b3a1ef53e4aeae3aa1ef48507376f003bfd95581e2c85edcc60371f86189fc",
+    "tools/observer/worker_drain.cpp": "c9e6f626ee5e81ddc813592e6ce5c5f26b6114c903123df12255c224312ebc04"
+  },
+  "python_core_suites_rerun": false,
+  "rb_t3_complete": false,
+  "remote_ci_executed": false,
+  "repository_validation": {
+    "junit_sha256": "7b5b915beabbe14ff41e26c99b41ffa73b716d571eaf00969660b64d73ac58c8",
+    "passed": 58
+  },
+  "resource_links": [],
+  "resource_policy": {
+    "cases": [
+      [
+        "connect",
+        "first"
+      ],
+      [
+        "connect",
+        "repeat"
+      ],
+      [
+        "first",
+        "first"
+      ],
+      [
+        "first",
+        "repeat"
+      ],
+      [
+        "third",
+        "first"
+      ],
+      [
+        "third",
+        "repeat"
+      ],
+      [
+        "extra",
+        "first"
+      ],
+      [
+        "extra",
+        "repeat"
+      ]
+    ],
+    "floor_free_bytes": 10737418240,
+    "initial_free_bytes": 10737418240,
+    "maximum_process_seconds": 100,
+    "maximum_sequence_seconds": 600,
+    "stage_limit_bytes": 67108864,
+    "supervision_interval_seconds": 0.5
+  },
+  "rs_t3_complete": false,
+  "runtime_gate_integration_complete": false,
+  "schema_version": 1,
+  "sequence_seconds": 66.43028299999969,
+  "source_id": "SRC123",
+  "status": "peer_abandonment_and_terminal_extra_validated",
+  "supervised_commands": [
+    {
+      "case": "connect-first",
+      "journal_sha256": "10419bc6512876024efd6467f559ebc4bbdd466172d74d52ee57ede4789aa1d4",
+      "log_sha256": "405f00adcc8a889bfe36ceb73eab8ca2b57df38f78c83dea3cc1f24c77e361e8",
+      "seconds": 5.636,
+      "sha256": "2d3ca6e9d9c29d723aa57651467a631ea79515f729418400ccc90764d3de4f79"
+    },
+    {
+      "case": "connect-repeat",
+      "journal_sha256": "10638561dc5b279a05795aa17cfda75efa0d8c5e0ff32c7aab9988f53695451c",
+      "log_sha256": "6214c3ddc1eebe22d2cb7dc1f3f8595037a951294eb2bd29d32b63f81dcdd7d4",
+      "seconds": 4.604,
+      "sha256": "e99411027f67990c0846f30ebf4b2658e1b3df884e612f9efa723095f383e821"
+    },
+    {
+      "case": "first-first",
+      "journal_sha256": "4d96dd8ed925270953c0d4837082e5b6d00b27dc12fa6b111effc8e1528e98d3",
+      "log_sha256": "6a3f03a0e207ec74bab48b45e6da2c9440112a00a5e653e6bc5e762618cf2e53",
+      "seconds": 6.639,
+      "sha256": "5dd36c9c0350186b6bf910268fa0467197447e1aabc79c0b3a0c43a1999b471c"
+    },
+    {
+      "case": "first-repeat",
+      "journal_sha256": "06d308d9a7418989bf5d138908f786ed62549089b6111079f6780bac6806ef66",
+      "log_sha256": "d27faa9b3f11dd604ce51726cc7cf119fc5f9b72e15db9d62711b86910ab3115",
+      "seconds": 7.171,
+      "sha256": "f7ad97344f1be85f6472c49d567a8c1c2ca3ec7af09f2e48b024ff0b01fa014c"
+    },
+    {
+      "case": "third-first",
+      "journal_sha256": "abffc2e991e1eb9c63e101adc07b688da093cd4a56bc4d79e73abe6a5989d3ca",
+      "log_sha256": "be0f32f504497627d3958a5bc56cd89824af3950e5fe873d525ef8256e19162f",
+      "seconds": 9.684,
+      "sha256": "ad43e755003fabbbffafa4d763802b4b15d5af70d061dfb9013014438f7d6585"
+    },
+    {
+      "case": "third-repeat",
+      "journal_sha256": "065e1881669392d3b1aa4dd856303e9f043f007a2082c12de2bd457d677dff9b",
+      "log_sha256": "9da70cfbe70707cf62097d957eb6fd7fd9383c36c66d1d70e88b6e7d3d5c6e39",
+      "seconds": 9.191,
+      "sha256": "b07eb55bfd5f07c76f891a5e07d3369d3e851a906b865156b8144a3d2cd6d8a3"
+    },
+    {
+      "case": "extra-first",
+      "journal_sha256": "baf2264ccdf95a831bfbc63de2ba51f8bbd0c4982e2ac80e3440fe62d3d2df9d",
+      "log_sha256": "8432666146eaad66d27e60b5b22a9693fa58af63c44dfd9dfc1b89b4e384e848",
+      "seconds": 9.691,
+      "sha256": "6eb22cdbbb06d3edca58df9ba5d352dd184bb8b49af7fe9d79122b970345c21c"
+    },
+    {
+      "case": "extra-repeat",
+      "journal_sha256": "b7a9d0ef1b91b4c7ec0f1e3a324cb0c3ebb1616e9750eb63ddb47e9714f23e19",
+      "log_sha256": "053c54994ca77ccc8589c0ed0d2fc2e5a09894b832f614f47af881a214a7a689",
+      "seconds": 9.223,
+      "sha256": "451ab7f0ffa5b86ce2336d229db83d32d64cf74617508eb40a5f6cc70ca10601"
+    }
+  ],
+  "three_ds_build_executed": false,
+  "ui_cancellation_verified": false,
+  "vm_executed": true,
+  "vm_profiles": 8,
+  "wire_frames_accepted_from_pcsx2": 14
+}

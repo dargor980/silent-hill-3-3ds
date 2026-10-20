@@ -1,0 +1,926 @@
+{
+  "abrupt_thread_termination_verified": false,
+  "admitted_execution_modes": [],
+  "capabilities": [],
+  "completed_tasks": [
+    "B3-B3a",
+    "B3-B3b",
+    "WB-T1",
+    "WB-T2",
+    "WB-T3"
+  ],
+  "core_inputs_sha256": {
+    "tools/observer/include/sh3_observer/worker_control.hpp": "66317ff431180756e8401c5cb0839dcbb4fc44c4f99d5d010076941531bbf292",
+    "tools/observer/worker_control.cpp": "69b3a1ef53e4aeae3aa1ef48507376f003bfd95581e2c85edcc60371f86189fc"
+  },
+  "date": "2026-10-18",
+  "deterministic_sleep_transition_in_double_only": true,
+  "fragments": [
+    {
+      "first_line": 129,
+      "fragment_sha256": "7bb27f5127a3b62957a3fbddb0bb4b3c7d2f94b13d41cbd07c4285289aff57b0",
+      "last_line": 144,
+      "name": "kernel_class",
+      "source_file": "common/Threading.h",
+      "source_sha256": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb"
+    },
+    {
+      "first_line": 110,
+      "fragment_sha256": "b57999385dffba5afe4937e2be69208076a39f84e2b43db487009cabf0643340",
+      "last_line": 148,
+      "name": "kernel_darwin",
+      "source_file": "common/Darwin/DarwinThreads.cpp",
+      "source_sha256": "7a683e8f282425b5c43cfa7529c5c04607ecf0662af09fc758cbe8a34701235a"
+    },
+    {
+      "first_line": 151,
+      "fragment_sha256": "e1cd4d83b8c9e56b3623d91ffcca56d675496f9af31a6ef5fd3938ccd369e4f2",
+      "last_line": 222,
+      "name": "work_sema_class",
+      "source_file": "common/Threading.h",
+      "source_sha256": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb"
+    },
+    {
+      "first_line": 18,
+      "fragment_sha256": "63266793a33be4be7494c9b55bfa4616f624b02f1af199469b9dfc7e06e1182a",
+      "last_line": 42,
+      "name": "check_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 43,
+      "fragment_sha256": "15b7ff24294e4bbd0701ffec65a2591da2fb7ff37515f5dc142d3ee7c2bacb26",
+      "last_line": 62,
+      "name": "wait_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 94,
+      "fragment_sha256": "f292f8f45cd67b70585c95a37f1b7af647acd2831a638d96e25d8c44abb2ec3a",
+      "last_line": 109,
+      "name": "wait_for_empty",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 128,
+      "fragment_sha256": "85d7b0c3204758cd382be2de1d9d0c371c8318959b6d971a9a1a1afaacdd40d0",
+      "last_line": 134,
+      "name": "kill",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 135,
+      "fragment_sha256": "921e3130219aa2c653319270fe3c04a8091d10ad34fb7c59ffa0e5b4c67cd5a4",
+      "last_line": 139,
+      "name": "reset",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    }
+  ],
+  "gs_boundary": "after_batch_and_waiter_signals_before_next_idle_with_busy_mutex_unlocked",
+  "gs_generation_scope": "successful_open_session_not_native_thread_lifetime",
+  "gs_vu_retention_implemented": false,
+  "held_wait": "control_wakeup_without_provider_mutex_or_qt",
+  "host_ctest_rerun": false,
+  "landmarks": [
+    {
+      "id": "VU-entry",
+      "line": 137,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+    },
+    {
+      "id": "VU-open",
+      "line": 92,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+    },
+    {
+      "id": "VU-close",
+      "line": 107,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+    },
+    {
+      "id": "VU-reset",
+      "line": 120,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+    },
+    {
+      "id": "VU-commit",
+      "line": 295,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+    },
+    {
+      "id": "VU-kick",
+      "line": 437,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+    },
+    {
+      "id": "VU-completion",
+      "line": 164,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+    },
+    {
+      "id": "VU-epilogue",
+      "line": 216,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae"
+    },
+    {
+      "id": "GS-thread",
+      "line": 150,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-main",
+      "line": 329,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-start",
+      "line": 118,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-shutdown",
+      "line": 132,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-open",
+      "line": 894,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-close",
+      "line": 919,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-event",
+      "line": 681,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-idle-flag",
+      "line": 1105,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-wait",
+      "line": 628,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-busy-lock",
+      "line": 338,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-idle",
+      "line": 344,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-vu-wait",
+      "line": 482,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "GS-close-tail",
+      "line": 619,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12"
+    },
+    {
+      "id": "renderer-idle",
+      "line": 958,
+      "source_file": "pcsx2/GS/Renderers/Common/GSRenderer.cpp",
+      "source_sha256": "5774e19a40b68e0f5c661852ce76ce53181bdb6474fd33a579254e95c1cd0251"
+    },
+    {
+      "id": "metrics-host",
+      "line": 236,
+      "source_file": "pcsx2/PerformanceMetrics.cpp",
+      "source_sha256": "a0a5b007df5d96082197b0687bee0fcb0ef5eef8341c9a43261db00f5c219ad6"
+    },
+    {
+      "id": "metrics-qt",
+      "line": 1283,
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+    },
+    {
+      "id": "window-acquire",
+      "line": 1082,
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+    },
+    {
+      "id": "window-release",
+      "line": 1087,
+      "source_file": "pcsx2-qt/QtHost.cpp",
+      "source_sha256": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd"
+    },
+    {
+      "id": "window-blocking",
+      "line": 627,
+      "source_file": "pcsx2-qt/MainWindow.cpp",
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "id": "release-blocking",
+      "line": 628,
+      "source_file": "pcsx2-qt/MainWindow.cpp",
+      "source_sha256": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923"
+    },
+    {
+      "id": "gif-finish",
+      "line": 488,
+      "source_file": "pcsx2/Gif_Unit.h",
+      "source_sha256": "7ef080a9d889e9b015bd4e8f233473a748006b894af7ac40544eddda1b513032"
+    },
+    {
+      "id": "device-window",
+      "line": 394,
+      "source_file": "pcsx2/GS/Renderers/Common/GSDevice.cpp",
+      "source_sha256": "eb61b3aca3c68cff238397fe83a58bb8a8c6141a92b4a76a50da4e9d4c8fa51e"
+    }
+  ],
+  "landmarks_are_not_call_graph": true,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-worker-boundary/audit.py": "f99dd7bdf15bd7485f28a9391bb285c50d17eb9527a78ad60e6168af80eacff1",
+    "build/f02-07-worker-boundary/negative_controls.py": "8e5bad64fb7e2cc7eb8f0cf52d251ddee0db7f47b765278f76727628f6d871a2",
+    "build/f02-07-worker-boundary/prepare.py": "c9b96c6b1ca12b0c2daa25cd58f42a38b9ce6912b73ea700edfe087cf57b8bdf",
+    "build/f02-07-worker-boundary/run_probe.py": "899f6b016f9fdaffef9a3c6fe3a275bee3dc1d8e12e12e0ee2e77fe956b34af4"
+  },
+  "mach_kernel_semaphore_executed": true,
+  "negative_controls": [
+    {
+      "binary_sha256": "a805a2c3e6ead84bd7855b6f9d6f15f65911c6b75d1ac71bd15d4103163cd8b2",
+      "expected_failure": "busy.try_lock()",
+      "mutated_harness_sha256": "0b2fcf59ca9dde64a7c0c2ce5639679690c24a1b099a862d2f176f91662ff057",
+      "mutation": "hold_busy_lock",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "5f10a5cccb6754b829c10435efc11721b3a583a69e778a9d568f6f43b7759dc3",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "action": "run",
+          "exit_code": 1,
+          "log_sha256": "15db5315a3a97961613921c40b920c4ddc614266a91b2ed57d7ab80268a955ee",
+          "receipt_sha256": "f569f601d8c747327024d52c753d9333d94b77071f9b921d9112fdc0011fea54",
+          "shutdown_verified": true
+        }
+      ],
+      "scenario": "busy_lock"
+    },
+    {
+      "binary_sha256": "8525d3afe471a9df816a090020aed8f2ada1ca85f3914e77cc188f4b7a2ebec5",
+      "expected_failure": "idle_effects.load() == 0",
+      "mutated_harness_sha256": "c0a425b34fa26e5e80dfc56c2690b1607bb661ec7ce8dd7f80570ac82afdc89d",
+      "mutation": "idle_before_release",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "9f255212bafce1d293ed605e051811d1360a2a1211b1f72eb28896cb37264b88",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "action": "run",
+          "exit_code": 1,
+          "log_sha256": "51b4d7238b3522a26917f17708e95810fa896303ce4473a1a0b81a854f7ee00d",
+          "receipt_sha256": "291aa03b65f6eab0ec94e5cc1248c62efc83e662f292936d274981699658c21f",
+          "shutdown_verified": true
+        }
+      ],
+      "scenario": "idle_boundary"
+    },
+    {
+      "binary_sha256": "984a987c8d6a7b376effcd3f09a26e75070cffb00163e87fdff3e1508b747b24",
+      "expected_failure": "deadline",
+      "mutated_harness_sha256": "8d0feb508789d6802caf4e541023cbb76e367d98600f141526a6d194a5e32008",
+      "mutation": "omit_work_kick",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "c20cf047d2d03efd6c520960b25b0872c2ca71b938dc39e8a2b99fa68ed2b902",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": "deadline",
+          "action": "run",
+          "exit_code": -15,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "6923cd5e0b66c76de689328c5dd4662d872ee44d51e86e50bdb47887ca8a9065",
+          "shutdown_verified": true
+        }
+      ],
+      "scenario": "before_wait"
+    }
+  ],
+  "next_tasks": [
+    "IW-VU1",
+    "IW-VU2",
+    "IW-VU3",
+    "IW-GS",
+    "IW-COORD"
+  ],
+  "nintendo_build_rerun": false,
+  "preceding_custody_audit_sha256": "76738bc2c60d63c3aa71fffcc60bee44f5b37a0dd31b512ea985699489235cde",
+  "preceding_custody_identical": true,
+  "preparation_sha256": "5ba64e25c1f85275833a0f6dbbb246ef71b0b116cc24bb456f536701916b2dfb",
+  "prior_evidence_sha256": "76738bc2c60d63c3aa71fffcc60bee44f5b37a0dd31b512ea985699489235cde",
+  "prior_private_sources_unchanged": true,
+  "probe_runs": [
+    {
+      "binary_sha256": "410a83eb8c595f366cf1f1e4e2ed6bbd53445770c509ab5235e1ce01c3b4d7dd",
+      "cases": [
+        "before_wait",
+        "cancelled_wake",
+        "stop_held",
+        "idle_boundary",
+        "busy_lock",
+        "full_queue_dependency",
+        "restart",
+        "close_pending",
+        "timeout_pending",
+        "sleeping_wait"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "normal-double",
+      "passed": 10,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "368a348a2a7eae28e6c59b5a8d78f6f68cfb010dd31bf00952d6abaa19fdaa3e",
+          "shutdown_verified": true
+        },
+        {
+          "action": "before_wait",
+          "log_sha256": "f473d19afcb90e19d08c9e8241dbc3e6897b7df805703aa72d00453120b78bda",
+          "receipt_sha256": "630e76e49f98b67b3daa25c767be85887559347cbf298fdc360334fbca79353a",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancelled_wake",
+          "log_sha256": "aaf2d4f55db322e288e45dd81c6d15a3f5afb271cda6c6ec89b1351ec7c827d4",
+          "receipt_sha256": "a25e25de7c30b13588aa4394adf4844f467fd3b62a85f81e822050beaae55493",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stop_held",
+          "log_sha256": "5b38226045a69343fd041d8868f7472e48481b5780484201ad41363c9640d034",
+          "receipt_sha256": "89d2fa770da9e82d2be4871d9a6b4376308db48a5004c83ce9e16560d4948d91",
+          "shutdown_verified": true
+        },
+        {
+          "action": "idle_boundary",
+          "log_sha256": "c213600235bfd1107fc21bec91714838cbb7cb240e680eae3452900d0b123f63",
+          "receipt_sha256": "bc577be90d6ad729933505a98ab9b8f3b3fe1afb63ad88be2c09ad1ba070eefe",
+          "shutdown_verified": true
+        },
+        {
+          "action": "busy_lock",
+          "log_sha256": "3e8af69b070ac58ce8879b558d95710da7dd56fccaaec450bcbc19c6525410f9",
+          "receipt_sha256": "a3480484672d135d0260f5c72a292eed6516d3bb6a0f8008686c6b9a84fd73eb",
+          "shutdown_verified": true
+        },
+        {
+          "action": "full_queue_dependency",
+          "log_sha256": "731862f7fcb6111d75d0a6a47fd9676b59c85729ce949f672ab2b23e97300901",
+          "receipt_sha256": "08e31ac73edb980b371730afbc5ab971366b2dd6a9ace0da7b3d13ac2d693346",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "a595e660c9d4c51fab589d5e8885c6a29654378bef3431536012920bc021491e",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "364a77013b81fc0bfdd77f4629046fa4dddf879bf06d7b83dc76d1d7e56a0071",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "f9982758647ea8f0b848bdf044154c4f66cb75d71663cd5de72ef25d79ed5b6b",
+          "shutdown_verified": true
+        },
+        {
+          "action": "sleeping_wait",
+          "log_sha256": "a1cc3114493abb505a502e47b9d8822dfeaed76385552ad4a85d112d8e7505d2",
+          "receipt_sha256": "08ad3a3c9d6c07cf5eb4edb2a35c0c06ea3f7ff5e4a965440e376617c5ba6b38",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "5bbfc0317191b1e83e53c869390b9b1dda5323691a62780b01a906c42705cc59",
+      "cases": [
+        "before_wait",
+        "cancelled_wake",
+        "stop_held",
+        "idle_boundary",
+        "busy_lock",
+        "full_queue_dependency",
+        "restart",
+        "close_pending",
+        "timeout_pending"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "normal-native",
+      "passed": 9,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "67ce8bc0b48743fe4d320daf21d4ef6125e7ffff1f2cc37e92d46d48ffc5a91d",
+          "shutdown_verified": true
+        },
+        {
+          "action": "before_wait",
+          "log_sha256": "f473d19afcb90e19d08c9e8241dbc3e6897b7df805703aa72d00453120b78bda",
+          "receipt_sha256": "c15a38179b93b83d2f6b56ad5c1a93fdcdee24ce976e6de4f3776f7d78926dae",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancelled_wake",
+          "log_sha256": "aaf2d4f55db322e288e45dd81c6d15a3f5afb271cda6c6ec89b1351ec7c827d4",
+          "receipt_sha256": "9c7f04ef63d2d91d38bf67cf1416452abb75fc6271d89405509168d2d16f68d0",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stop_held",
+          "log_sha256": "5b38226045a69343fd041d8868f7472e48481b5780484201ad41363c9640d034",
+          "receipt_sha256": "d89c0dea05b968967c1c2d68a2d613d3c3c4c165c4ab8efd1efd1ab6eef52b05",
+          "shutdown_verified": true
+        },
+        {
+          "action": "idle_boundary",
+          "log_sha256": "c213600235bfd1107fc21bec91714838cbb7cb240e680eae3452900d0b123f63",
+          "receipt_sha256": "96d1034540bd3362030e4ebc7956eb6dcabf752dece1fa36182a4605621d1bf2",
+          "shutdown_verified": true
+        },
+        {
+          "action": "busy_lock",
+          "log_sha256": "3e8af69b070ac58ce8879b558d95710da7dd56fccaaec450bcbc19c6525410f9",
+          "receipt_sha256": "0bb6ec438ec43c1020c74c6dae7c441843f169fe1718cd70717689103d1eb124",
+          "shutdown_verified": true
+        },
+        {
+          "action": "full_queue_dependency",
+          "log_sha256": "731862f7fcb6111d75d0a6a47fd9676b59c85729ce949f672ab2b23e97300901",
+          "receipt_sha256": "e8fa6b8a2c7ba239ba29ae425d57701534568fde11660709143c09b552b10f46",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "70cb9ab53f7567aad4d393b0ccfb61057a62e61767aac8970abef9e7b6fc999a",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "0ed2c97d82541c4b090bb13b588a68de346e4b205627a463bf8ba0502bb4d69b",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "8bbf27700c36521186d6e216250b99b28485c600bc81357595354dca0f2eeef8",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "ecd5d789094fca3992ddc0836e1e37e4770144c7f30983f1b6991aa9179ce935",
+      "cases": [
+        "before_wait",
+        "cancelled_wake",
+        "stop_held",
+        "idle_boundary",
+        "busy_lock",
+        "full_queue_dependency",
+        "restart",
+        "close_pending",
+        "timeout_pending",
+        "sleeping_wait"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "sanitize-double",
+      "passed": 10,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "3abc6293c3a137231de998389b8016e87ee703419498f2105c48ef0b316f262e",
+          "shutdown_verified": true
+        },
+        {
+          "action": "before_wait",
+          "log_sha256": "f473d19afcb90e19d08c9e8241dbc3e6897b7df805703aa72d00453120b78bda",
+          "receipt_sha256": "de044bdd692d4233d5846946abe4ac5a797435adb552347d43d758a53bb47820",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancelled_wake",
+          "log_sha256": "aaf2d4f55db322e288e45dd81c6d15a3f5afb271cda6c6ec89b1351ec7c827d4",
+          "receipt_sha256": "e443d56baebd5236175725c0207b2ea4b67c4909bfb09b7699c333903df3b5e3",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stop_held",
+          "log_sha256": "5b38226045a69343fd041d8868f7472e48481b5780484201ad41363c9640d034",
+          "receipt_sha256": "1a83cb02940194b120303ad0b2f82ea56570bfc6b9b24e0049dcec9f4a3e58d0",
+          "shutdown_verified": true
+        },
+        {
+          "action": "idle_boundary",
+          "log_sha256": "c213600235bfd1107fc21bec91714838cbb7cb240e680eae3452900d0b123f63",
+          "receipt_sha256": "72825ecd72b0293d6f6e8817ba71394fa4df80b55afd1080f3006d69e4369b27",
+          "shutdown_verified": true
+        },
+        {
+          "action": "busy_lock",
+          "log_sha256": "3e8af69b070ac58ce8879b558d95710da7dd56fccaaec450bcbc19c6525410f9",
+          "receipt_sha256": "2e0f674fad8d7940ef6c5d30199bb6a59bb920913111b8385dc3bfcb5e7c5f60",
+          "shutdown_verified": true
+        },
+        {
+          "action": "full_queue_dependency",
+          "log_sha256": "731862f7fcb6111d75d0a6a47fd9676b59c85729ce949f672ab2b23e97300901",
+          "receipt_sha256": "32373f1e244cbbd9b78fe880b311cb5743c9969633ce12477c9a42e28ac94c0f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "80e35f11d4e416c2152a234480ebcd4e6def6dfc9a43a097e2bbb687db599a43",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "895718d9bf93b4406ccf803f3e29147dc3f7565422915297f75a920a941ed523",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "836c4f04613cdfa0a97062b283041d4ac14f3a46c4d81d6be05cfdba2ae3b8ee",
+          "shutdown_verified": true
+        },
+        {
+          "action": "sleeping_wait",
+          "log_sha256": "a1cc3114493abb505a502e47b9d8822dfeaed76385552ad4a85d112d8e7505d2",
+          "receipt_sha256": "1ebe01531972a55facf51c63608b72d56dbc1988a683ffbfc68b9d40336cd516",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "7b294da1030088939a943633ac0b47cae2e0a6759d2d1aa77f8af1700ba03b01",
+      "cases": [
+        "before_wait",
+        "cancelled_wake",
+        "stop_held",
+        "idle_boundary",
+        "busy_lock",
+        "full_queue_dependency",
+        "restart",
+        "close_pending",
+        "timeout_pending"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "sanitize-native",
+      "passed": 9,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "afa09e4af24bc97ebaea9c4ee8d96b2508aadda4e9be264dad79b3e826167695",
+          "shutdown_verified": true
+        },
+        {
+          "action": "before_wait",
+          "log_sha256": "f473d19afcb90e19d08c9e8241dbc3e6897b7df805703aa72d00453120b78bda",
+          "receipt_sha256": "6306bfa359aa8f9addca345a3bdb3a3ff2f566262ae6447a722c6875f6894d74",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancelled_wake",
+          "log_sha256": "aaf2d4f55db322e288e45dd81c6d15a3f5afb271cda6c6ec89b1351ec7c827d4",
+          "receipt_sha256": "da432fb5e55c82341c3d8551a0ad63c1c95c95c78910daf90a8d9b4dfa87610e",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stop_held",
+          "log_sha256": "5b38226045a69343fd041d8868f7472e48481b5780484201ad41363c9640d034",
+          "receipt_sha256": "b5a638726181535f30e0e433dd7eb7f8bc220bb919754d4c3ac79c52c3d795d5",
+          "shutdown_verified": true
+        },
+        {
+          "action": "idle_boundary",
+          "log_sha256": "c213600235bfd1107fc21bec91714838cbb7cb240e680eae3452900d0b123f63",
+          "receipt_sha256": "059b55f874f3a9f03437166c3b81970790aeb18b6de445f33f400672ab7d7e81",
+          "shutdown_verified": true
+        },
+        {
+          "action": "busy_lock",
+          "log_sha256": "3e8af69b070ac58ce8879b558d95710da7dd56fccaaec450bcbc19c6525410f9",
+          "receipt_sha256": "8aab40332685490495728fe663caf746400fa82d8b0467fd7ac252d86ff04624",
+          "shutdown_verified": true
+        },
+        {
+          "action": "full_queue_dependency",
+          "log_sha256": "731862f7fcb6111d75d0a6a47fd9676b59c85729ce949f672ab2b23e97300901",
+          "receipt_sha256": "228c61f6b5e9f7004c1987f49efb63e47625ebffcb6bb9fab682994cd29b7297",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "e4d3160612b8133b99bd4a79e4841bbc54278470d96b30b1239a947180510e0a",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "964d6070acff3140617ec9ce22859e83687564244984c32a301611feb6873044",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "f72a2e95f36e2942ef9044b7ac1042ef9540efb0e1a5e2de98322aa00e4c938a",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "eea1765e9cf5d0e19c9d1b3b8e269951dd9bedf65559659c840cf05c6160a9c9",
+      "cases": [
+        "before_wait",
+        "cancelled_wake",
+        "stop_held",
+        "idle_boundary",
+        "busy_lock",
+        "full_queue_dependency",
+        "restart",
+        "close_pending",
+        "timeout_pending",
+        "sleeping_wait"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "tsan-double",
+      "passed": 10,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "96649fc1ca0e26f2b751f6ce00a377474470a36211ac05f72f7e9e0b1e863201",
+          "shutdown_verified": true
+        },
+        {
+          "action": "before_wait",
+          "log_sha256": "f473d19afcb90e19d08c9e8241dbc3e6897b7df805703aa72d00453120b78bda",
+          "receipt_sha256": "f60e512d9e4aa458ddb6f977a15a15369cac75fcdec99008016b06ba888377c6",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancelled_wake",
+          "log_sha256": "aaf2d4f55db322e288e45dd81c6d15a3f5afb271cda6c6ec89b1351ec7c827d4",
+          "receipt_sha256": "32789cbd4899049fa5ecf5d4c81efe6985980bab022229e2fdd2aa6ebbd5d45b",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stop_held",
+          "log_sha256": "5b38226045a69343fd041d8868f7472e48481b5780484201ad41363c9640d034",
+          "receipt_sha256": "6330b1b26fef6778b0696cc743cd58cb057c2000f3fcccc9f8c7066ac00ee243",
+          "shutdown_verified": true
+        },
+        {
+          "action": "idle_boundary",
+          "log_sha256": "c213600235bfd1107fc21bec91714838cbb7cb240e680eae3452900d0b123f63",
+          "receipt_sha256": "9db023ad04a4b3c072da793b9ae336d6cf99421e7f5fa16b2999d0f0296590eb",
+          "shutdown_verified": true
+        },
+        {
+          "action": "busy_lock",
+          "log_sha256": "3e8af69b070ac58ce8879b558d95710da7dd56fccaaec450bcbc19c6525410f9",
+          "receipt_sha256": "cd0b9cf0fe05a61944da9a2cd4982697677dfc25f0033a5acba51e85eacbbe73",
+          "shutdown_verified": true
+        },
+        {
+          "action": "full_queue_dependency",
+          "log_sha256": "731862f7fcb6111d75d0a6a47fd9676b59c85729ce949f672ab2b23e97300901",
+          "receipt_sha256": "d48bb70c4b39c86cae2234a88dc0fb3ec32bd0c5abc8114d2d50c836ae8e66da",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "0cc420afd8675742ee96f7467de50979f60ae95a2853d0fcadb4fa621c541e1f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "dcd85bf7e9d81d88635b551653cb6459ad2a1a0b08882ad99855475558597242",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "bd4a10ad9785276680900f2cd1306290d3efe38bd7344e567caa7130a1d5fbe6",
+          "shutdown_verified": true
+        },
+        {
+          "action": "sleeping_wait",
+          "log_sha256": "a1cc3114493abb505a502e47b9d8822dfeaed76385552ad4a85d112d8e7505d2",
+          "receipt_sha256": "78b56f1e860fc2da541dbb1c4f02c020d14bbf3353135afa1d0858d31ed72c71",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "6c87aa3578ef269f428a22e78aa10eae393f6e4509376cd57acebec2ac16fc32",
+      "cases": [
+        "before_wait",
+        "cancelled_wake",
+        "stop_held",
+        "idle_boundary",
+        "busy_lock",
+        "full_queue_dependency",
+        "restart",
+        "close_pending",
+        "timeout_pending"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "tsan-native",
+      "passed": 9,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "024387c6cb026f7a38ed0446b5798d5cce6c884a98cb720c6adf8aa7a68a3721",
+          "shutdown_verified": true
+        },
+        {
+          "action": "before_wait",
+          "log_sha256": "f473d19afcb90e19d08c9e8241dbc3e6897b7df805703aa72d00453120b78bda",
+          "receipt_sha256": "d80170a91d0ee4f0ddae4d32397333e1a84f4cc0de2f6b9d449900b682005cf2",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancelled_wake",
+          "log_sha256": "aaf2d4f55db322e288e45dd81c6d15a3f5afb271cda6c6ec89b1351ec7c827d4",
+          "receipt_sha256": "32e36e9ab1206632fc54039425172bfa4cad562eedc027042fa3a1839f0adb03",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stop_held",
+          "log_sha256": "5b38226045a69343fd041d8868f7472e48481b5780484201ad41363c9640d034",
+          "receipt_sha256": "b53d5c66c0a16bf7be6d931247fb923c6bcdb6825f08b35cff88aad876750d89",
+          "shutdown_verified": true
+        },
+        {
+          "action": "idle_boundary",
+          "log_sha256": "c213600235bfd1107fc21bec91714838cbb7cb240e680eae3452900d0b123f63",
+          "receipt_sha256": "3505cd2eb259611c16b9cadb2e07661bcac391fca01d14a859827e0e3ffa36ea",
+          "shutdown_verified": true
+        },
+        {
+          "action": "busy_lock",
+          "log_sha256": "3e8af69b070ac58ce8879b558d95710da7dd56fccaaec450bcbc19c6525410f9",
+          "receipt_sha256": "0135ad892097a6aa96df65a39992c19fb97a6d0f86f12a0d92e9d4ba82617d84",
+          "shutdown_verified": true
+        },
+        {
+          "action": "full_queue_dependency",
+          "log_sha256": "731862f7fcb6111d75d0a6a47fd9676b59c85729ce949f672ab2b23e97300901",
+          "receipt_sha256": "6695339cc4e1e6e6824275a9d22c47b00957d2bef942a1b7702db72fd0673bf1",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "05c5f1ac2856773a56aafc7faa498586449d234fca6f0bab0351a8d691acd2ef",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "5547b49018631540a79cf90749cdeb6aea84a81a687c559018278c6f9763e2b2",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "575dd8b59b19c09045874579ead82fd6a54e540c0507734fdf55b1c28af662aa",
+          "shutdown_verified": true
+        }
+      ]
+    }
+  ],
+  "proposed_adapter": "publish_control_request_then_direct_work_sema_notify_once_per_accepted_request",
+  "provider_added": [],
+  "provider_application_executed": false,
+  "provider_application_linked": false,
+  "provider_changed": [],
+  "provider_darwin_kernel_semaphore_executed": true,
+  "provider_downstream_port_rejects": true,
+  "provider_translation_units_compiled": false,
+  "provider_work_sema_executed": true,
+  "provider_worker_loops_executed": false,
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-worker-boundary.md": "3dda7aa42fd87635a644bfe853a7d536f299f16bd122bced2b49ccd2da966202",
+    "schemas/worker-boundary-v1.md": "331a4624b7c699ce2ce3b84198a53980a45656f6e87dc9459a210f53c7e561ae",
+    "tests/fixtures/pcsx2-worker-boundary/README.md": "a76c9ac569ac10e126b49107149c62c4c45d1051dc7bd8a038815f3f8a1d0210",
+    "tests/fixtures/pcsx2-worker-boundary/probe.cpp": "cafd83d8fca5ef10280b258280c0ed75eaac7db0b9623a80140bfe2142559f3a"
+  },
+  "python_full_suite_rerun": false,
+  "qt_event_loop_executed": false,
+  "read_events_produced": 0,
+  "real_ringbuffer_executed": false,
+  "remote_ci_executed": false,
+  "resource_links": [],
+  "reviewed_sources": {
+    "common/Darwin/DarwinThreads.cpp": "7a683e8f282425b5c43cfa7529c5c04607ecf0662af09fc758cbe8a34701235a",
+    "common/Semaphore.cpp": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04",
+    "common/Threading.h": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb",
+    "pcsx2-qt/MainWindow.cpp": "566e47a57130b5c49836f64aeb5b8a3750a9a58d1df3eebc264736a00bd8f923",
+    "pcsx2-qt/QtHost.cpp": "c36828c613e2a26b4e080f24613498edae29fb267cac9158afa53568b92794fd",
+    "pcsx2/GS/Renderers/Common/GSDevice.cpp": "eb61b3aca3c68cff238397fe83a58bb8a8c6141a92b4a76a50da4e9d4c8fa51e",
+    "pcsx2/GS/Renderers/Common/GSRenderer.cpp": "5774e19a40b68e0f5c661852ce76ce53181bdb6474fd33a579254e95c1cd0251",
+    "pcsx2/Gif_Unit.h": "7ef080a9d889e9b015bd4e8f233473a748006b894af7ac40544eddda1b513032",
+    "pcsx2/MTGS.cpp": "80c63796becd0b9578716ce0d3a8a44f6a0f90f7b9e69281548a211f31986d12",
+    "pcsx2/MTVU.cpp": "59dba7f983900c90816870b83fde022bdcc2e6a349f9d28c514d616fde743dae",
+    "pcsx2/PerformanceMetrics.cpp": "a0a5b007df5d96082197b0687bee0fcb0ef5eef8341c9a43261db00f5c219ad6"
+  },
+  "schema_version": 1,
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_files_verified": {
+    "source-admission-v1": 2949,
+    "source-baseline": 2934,
+    "source-cpu-boundary-v1": 2953,
+    "source-dma-v2": 2945,
+    "source-host-v1": 2945,
+    "source-jit-cache-v2": 2945,
+    "source-lifecycle-v1": 2947,
+    "source-lifetime-v2": 2945,
+    "source-observer-v2": 2941,
+    "source-pine-coordinator-v1": 2955,
+    "source-pine-exclusion-v1": 2951,
+    "source-producer-entry-v1": 2957,
+    "source-qt-dispatch-v1": 2957,
+    "source-retained-drain-v1": 2957
+  },
+  "source_id": "SRC80",
+  "status": "worker_boundaries_defined_native_wake_bridge_probed_provider_integration_pending",
+  "total_passing_scenarios": 57,
+  "vu_boundary": "after_prior_commands_completion_publication_and_commit_read_pos",
+  "worker_control_provider_connected": false,
+  "worker_loops_are_own_models": true
+}

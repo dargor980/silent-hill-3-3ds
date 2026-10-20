@@ -60,10 +60,11 @@ public:
   }
 };
 } // namespace
-Result dispatch(const Request& request) {
+Result dispatch(const Request& request, CooperativeGate::Work work) {
   if (!valid_request(request)) return failure(request, Status::request);
   const auto completion = std::make_shared<Completion>(request);
-  Host::RunOnCPUThread([completion] {
+  Host::RunOnCPUThread([completion, work = std::move(work)] {
+    (void)work; // Retain the PINE reservation through timeout and callback disposal.
     EmulatorReader reader;
     completion->run(reader);
   }, false);

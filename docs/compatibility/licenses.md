@@ -503,3 +503,568 @@ Reutiliza los validadores existentes sin incorporar código original ni dependen
 El contraste de posicionamiento publica solo hashes, tamaños y alcance; direcciones,
 ventanas y estructuras originales quedan privadas. No cambia PCSX2/runtime Nintendo
 ni amplía derechos de redistribución. LIC08 permanece abierto.
+
+
+Actualización F02.07/lifetime-guard (2026-10-18):
+[SRC65](lifetime-guard-evidence.json) añade un núcleo C++17 y fixtures propios,
+sin dependencias nuevas. Consulta siete archivos del proveedor PCSX2 fijado,
+con hashes históricos verificados y sin incorporar su implementación. Las
+ventanas y escrituras originales permanecen privadas; se publican contratos,
+conteos y hashes. PCSX2 conserva sus avisos GPL-3.0+ y no se modifica ni distribuye
+en esta unidad. La guardia no se enlaza al runtime Nintendo. LIC08 sigue abierto.
+
+
+Actualización F02.07/physical-write-probe (2026-10-18):
+[SRC66](physical-write-probe-evidence.json) incorpora puente, conexión y fixtures
+propios, sin dependencias nuevas. El parche y los cuerpos VTLB GPL-3.0+ consultados
+se conservan en otra copia privada del proveedor fijado; el harness que los incluye
+también permanece privado. Las fuentes anteriores y sus avisos se preservan.
+No se publica código del proveedor ni contenido original del juego en el port,
+no se reemplaza el bundle y no se enlaza el puente al runtime Nintendo. Una
+posible distribución del derivado requiere su revisión correspondiente; LIC08
+permanece abierto.
+
+Actualización F02.07/dma-write-probe (2026-10-18):
+[SRC67](dma-write-probe-evidence.json) conserva en etapas privadas nuevas el
+parche DMA y ocho cuerpos GPL-3.0+ del proveedor fijado, con sus fuentes previas
+intactas. El fixture público es propio y solo referencia los includes privados;
+no incorpora implementación PCSX2 ni bytes originales del juego. El ejecutable
+compuesto del harness permanece privado. No se cambia el bundle instalado ni
+se incorpora el observador al runtime Nintendo. LIC08 sigue abierto.
+
+Actualización F02.07/jit-cache-probe (2026-10-18):
+[SRC68](jit-cache-probe-evidence.json) conserva el parche, los cuerpos de caché,
+VTLB y entrada JIT GPL-3.0+ en una copia privada nueva del proveedor. El fixture
+público contiene dobles y datos propios, sin cuerpos PCSX2 ni contenido original
+del juego. Los ejecutables compuestos permanecen privados; no se reemplaza el
+bundle instalado ni se enlaza el observador al runtime Nintendo. LIC08 sigue abierto.
+
+Actualización F02.07/host-write-probe (2026-10-18):
+[SRC69](host-write-probe-evidence.json) conserva el parche y los catorce fragmentos
+GPL-3.0+ en la etapa privada. El harness público contiene datos, dobles y oráculos
+propios; las funciones y el layout de tabla del proveedor se incluyen únicamente
+desde archivos privados. No se incorpora contenido de Silent Hill 3 ni se cambia
+el bundle instalado. La prueba aislada del callback RAIntegration no adopta ni
+redistribuye sus dependencias Windows. LIC08 permanece abierto.
+
+Actualización F02.07/lifecycle-probe (2026-10-18):
+[SRC70](lifecycle-probe-evidence.json) conserva los 21 cuerpos GPL-3.0+ y el parche
+del proveedor en una nueva copia privada. HostEpoch, evolución del puente y tests
+públicos son propios; el harness contiene dobles y oráculos sin cuerpos PCSX2 ni
+originales del juego. Se preservan las copias previas y snapshots del puente.
+No se sustituye el bundle ni se enlaza el observador al runtime Nintendo.
+LIC08 y revisión de la aplicación compuesta permanecen pendientes.
+
+Actualización F02.07/admission-profile (2026-10-18):
+[SRC71](admission-profile-evidence.json) añade evaluador y fixtures propios. Los
+cuerpos y ScopedGuard GPL-3.0+ se conservan exclusivamente en la etapa privada,
+junto con el parche del sampler. Los metadatos públicos contienen hashes y
+resultados, sin cuerpos del proveedor ni originales del juego. No se adopta otra
+dependencia ni se sustituye el bundle. LIC08 continúa pendiente.
+
+Actualización F02.07/pine-exclusion (2026-10-18):
+[SRC72](pine-exclusion-evidence.json) incorpora CooperativeGate y evolución del
+adaptador propios. Parser, formato, comprobación de límites y parche PCSX2
+GPL-3.0+ permanecen privados. El harness público solo aporta dobles, datos y
+oráculos propios. Se conservan fuentes anteriores y snapshots del adaptador;
+no hay originales del juego ni redistribución del proveedor. LIC08 sigue abierto.
+
+Actualización F02.07/cpu-boundary (2026-10-18):
+[SRC73](cpu-boundary-evidence.json) añade ámbitos y fixtures propios. Los nueve
+fragmentos PCSX2 GPL-3.0+, el parche y el código moc regenerado se conservan en
+la etapa privada. La prueba pública solo contiene dobles y oráculos. No se
+incorporan datos del juego ni se sustituye el bundle instalado; la nueva frontera
+solo pertenece al tooling host. LIC08 permanece pendiente.
+
+Actualización F02.07/pine-coordinator (2026-10-18):
+[SRC74](pine-coordinator-evidence.json) añade controlador, contrato y fixtures
+propios. Los trece fragmentos y el parche PCSX2 GPL-3.0+ permanecen privados;
+el probe propio usa QtCore ya instalado y sus binarios se conservan en esa etapa.
+No se publica código del proveedor ni datos del juego. No se añade Qt al runtime
+Nintendo ni se sustituye el bundle. LIC08 y revisión del compuesto siguen abiertos.
+
+Actualización F02.07/worker-producers (2026-10-18):
+[SRC75](worker-producers-evidence.json) añade contrato, inventario y un harness
+propios. Siete fragmentos WorkSema/WaitVU GPL-3.0+ y los ejecutables compuestos
+permanecen en una nueva etapa privada. No se cambia el proveedor ni se publica
+código PCSX2 o contenido del juego. El reemplazo de semáforo del harness usa
+C++20; no se incorpora una dependencia al runtime Nintendo. LIC08 sigue abierto.
+
+Actualización F02.07/retained-drain (2026-10-18):
+[SRC76](retained-drain-evidence.json) añade controlador, contrato y tests propios.
+El parche, trece fragmentos PCSX2 GPL-3.0+, moc y ejecutables compuestos se
+conservan en una nueva copia/etapa privada. El harness público contiene dobles y
+oráculos, sin implementación del proveedor ni originales del juego. No se cambia
+el bundle instalado ni el runtime Nintendo. LIC08 continúa pendiente.
+
+Actualización F02.07/producer-entry (2026-10-18):
+[SRC77](producer-entry-evidence.json) añade contrato, orquestación y dobles propios.
+Parche, 22 fragmentos por copia PCSX2 GPL-3.0+ y binarios compuestos permanecen
+privados, incluidos los controles negativos. No se publica código del proveedor
+ni contenido del juego ni se añade una dependencia al runtime Nintendo. LIC08
+permanece abierto; la copia instalada no se sustituye.
+
+Actualización F02.07/qt-dispatch (2026-10-18):
+[SRC78](qt-dispatch-evidence.json) añade contrato e infraestructura de pruebas
+propios; usa QtCore ya instalado. Parche, catorce cuerpos PCSX2 GPL-3.0+ por copia,
+moc, ejecutables y controles negativos quedan privados. No hay código del
+proveedor ni originales del juego publicados, ni dependencia nueva en Nintendo.
+LIC08 continúa pendiente; no se reemplaza la aplicación instalada.
+
+Actualización F02.07/worker-control (2026-10-18):
+[SRC79](worker-control-evidence.json) añade buzón, mecanismo de aviso, contrato y
+tests propios usando la biblioteca estándar C++20 del host. No incorpora fuentes
+del proveedor ni datos del juego; las catorce copias privadas se mantienen intactas.
+El target está separado del runtime Nintendo y no reemplaza la aplicación PCSX2.
+LIC08 y la integración del compuesto permanecen pendientes.
+
+Actualización F02.07/worker-boundary (2026-10-18):
+[SRC80](worker-boundary-evidence.json) añade contrato, referencias y probe propios.
+Ocho fragmentos PCSX2 GPL-3.0+ y ejecutables compuestos se conservan en una etapa
+privada nueva; las fuentes anteriores permanecen intactas. El modo Darwin usa
+semáforos Mach del sistema. No se publica código del proveedor ni datos del juego,
+ni se modifica el bundle instalado ni se añade una dependencia al runtime Nintendo.
+LIC08 continúa pendiente.
+
+Actualización F02.07/vu-control (2026-10-18):
+[SRC81](vu-control-evidence.json) añade contrato, métodos de integración y probe
+propios. Las copias privadas v1/v2 y 37 fragmentos exactos PCSX2 GPL-3.0+ permanecen
+fuera del repositorio, junto con parches, objetos y binarios compuestos. Las
+catorce copias anteriores se conservan. El probe utiliza Mach del sistema y
+dobles propios sin originales del juego. No se modifica la aplicación instalada
+ni el runtime Nintendo; LIC08 y la validación del compuesto completo siguen pendientes.
+
+Actualización F02.07/gs-control (2026-10-18):
+[SRC82](gs-control-evidence.json) añade contrato, adaptador y probe propios. La
+copia privada GS conserva las dieciséis anteriores. Treinta fragmentos GS y
+treinta y siete de regresión VU proceden del proveedor PCSX2 GPL-3.0+ y permanecen
+privados, con parches/objetos/ejecutables compuestos y resultados históricos.
+Mach procede del sistema; los efectos del probe son propios y no contienen
+originales del juego. No cambia la aplicación instalada ni el runtime Nintendo;
+LIC08 y la validación del compuesto completo siguen pendientes.
+
+Actualización F02.07/worker-coordinator (2026-10-18):
+[SRC83](worker-coordinator-evidence.json) añade núcleo, puertos, contrato y tests
+propios. La copia privada conserva las diecisiete anteriores. Los 64 fragmentos
+PCSX2 GPL-3.0+, parches, objetos y probes compuestos permanecen privados. QtCore
+procede de las dependencias ya fijadas y Mach del sistema. No incorpora originales
+del juego, no modifica el runtime Nintendo ni la aplicación instalada; LIC08
+continúa pendiente para el compuesto completo.
+
+Actualización F02.07/worker-frontend (2026-10-18):
+[SRC84](worker-frontend-evidence.json) mantiene privados los 68 fragmentos PCSX2,
+parche CMake, diecinueve copias, builds y candidato ad hoc. QtCore 6.11.1 se
+recompila desde la fuente y parches previamente fijados, sin instalar sobre el
+prefijo existente. Solo se publican fixture, contrato, metadata y hashes propios.
+La aplicación instalada y los originales del juego se conservan; LIC08 y la
+validación de VM completa continúan pendientes.
+
+
+[SRC85](external-waits-evidence.json) añade núcleo ExternalWaits, tests y
+contrato propios. Conserva privados los 71 fragmentos, parches, fuente compuesta
+y candidato PCSX2. Reutiliza el QtCore instrumentado SRC84 sin distribuirlo;
+firma ad hoc y testconfig no modifican la evaluación de licencias ni LIC07.
+
+[SRC86](blocking-callers-evidence.json) publica inventario/rangos/hashes y
+fixture propios; los cuerpos examinados permanecen en la etapa privada. No
+modifica ni redistribuye PCSX2, Qt, rcheevos o backends de dispositivos.
+
+[SRC87](pine-joint-evidence.json) conserva privados los parches de transporte,
+las veintidós copias, 73 fragmentos y binarios compuestos PCSX2 GPL-3.0+. Las
+fixtures y contratos publicados son propios; QtCore instrumentado conserva su
+procedencia SRC84. No incorpora BIOS, ISO ni memoria del juego. El nuevo enlace
+queda pendiente de capacidad; no se modifica LIC08 ni la aplicación instalada.
+
+[SRC88](pine-link-evidence.json) conserva privados el build, bundle original
+y candidato firmado ad hoc; no cambia licencias de PCSX2/Qt/dependencias ni
+redistribuye el compuesto. LIC08 y la evaluación previa a distribución continúan.
+
+[SRC89](rdebug-artifact-evidence.json) publica exclusivamente nombres, hashes,
+conteos y resultados de auditoría. Fuentes RDebug, objetos y salidas completas
+de símbolos permanecen privados. No añade código de terceros al repositorio.
+
+[SRC90](process-diagnostic-evidence.json) añade contrato, consumidor y tests
+propios, más metadatos de identidad y testigos por rango/hash. No publica cuerpos
+del proveedor ni modifica el candidato; la inspección privada conserva SRC88/89.
+
+[SRC91](native-birth-evidence.json) publica núcleo, adaptadores y tests
+propios. Headers/definiciones del SDK se referencian mediante nombres y hashes;
+no se incorporan sus cuerpos. Etapas y ejecutables de prueba permanecen privados,
+sin modificar ni redistribuir el candidato compuesto de PCSX2.
+
+### SRC92 — Mappings y eventos del cargador
+
+[Evidencia](native-images-evidence.json), [informe](../execution/f02-07-native-images.md) y
+[NI01–NI11](../../schemas/native-image-identity-v1.md): código y fixtures propios,
+con uso de APIs declaradas por el SDK local. Se publican metadatos y hashes;
+headers del SDK, binarios, logs y perfiles permanecen privados. No contiene
+material del juego ni modifica el candidato PCSX2 existente.
+
+### SRC93 — Manifiesto desde descriptores
+
+[Evidencia](native-manifest-evidence.json), [informe](../execution/f02-07-native-manifest.md) y
+[NM01–NM10](../../schemas/native-artifact-manifest-v1.md): código y fixtures propios.
+Usa CommonCrypto y APIs de filesystem/Mach declaradas en el SDK local. La
+documentación de Apple se cita como referencia, sin copiar su código. Binarios,
+sondas, perfiles, manifiesto privado y logs permanecen fuera del repositorio;
+solo se publican metadatos, hashes y resultados.
+
+### SRC94 — Composición del inventario y sondas de caché
+
+[Evidencia](native-inventory-evidence.json), [informe](../execution/f02-07-native-inventory.md) y
+[NC01–NC10](../../schemas/native-inventory-v1.md): núcleo, interfaces, pruebas y
+sondas propios. Las declaraciones y documentación de Apple se consultan como
+referencia; no se redistribuyen sus headers ni implementaciones. Las sondas que
+usan SPI permanecen privadas y no se integran al proveedor. Binarios, logs y
+perfiles quedan en etapas privadas; se publican resultados, metadata y hashes.
+
+### SRC95 — Vínculo de páginas de caché con archivos
+
+[Evidencia](native-pages-evidence.json), [informe](../execution/f02-07-native-pages.md) y
+[NP01–NP10](../../schemas/native-page-binding-v1.md): núcleo, adaptador y pruebas
+propios. Usan APIs del SDK local; XNU se cita como referencia sin copiar su código
+ni headers. Los archivos de caché del sistema no se copian ni redistribuyen.
+Binarios, logs, perfiles y sondas permanecen privados; el informe público contiene
+metadatos y hashes de las pruebas propias, sin bytes de páginas del sistema.
+
+### SRC96 — Integridad y rangos declarados de caché
+
+[Evidencia](native-cache-integrity-evidence.json),
+[informe](../execution/f02-07-native-cache-integrity.md) y
+[CI01–CI10](../../schemas/native-cache-integrity-v1.md): núcleo, adaptador y pruebas
+propios. Se usan las APIs del SDK local y CommonCrypto. Los archivos de caché se
+leen sin copiarlos ni redistribuirlos; el manifiesto publicado contiene nombres,
+tamaños y SHA-256 de una adquisición local. No es una firma del fabricante.
+Drivers, binarios, perfiles y logs quedan en la etapa privada; sin bytes del juego.
+
+### SRC97 — Inventario estructural de segmentos
+
+[Evidencia](native-layout-evidence.json), [informe](../execution/f02-07-native-layout.md)
+y [NL01–NL10](../../schemas/native-image-layout-v1.md): lector, puertos, fixtures y
+sondas propios. El formato se consulta en loader.h del SDK local sin redistribuir
+headers. Las opciones de instrumentación se documentan mediante la
+[referencia oficial de Apple](https://developer.apple.com/documentation/BundleResources/Entitlements/com.apple.security.cs.allow-dyld-environment-variables).
+La copia de diagnóstico de PCSX2, binarios, fuentes externas, perfiles y logs
+permanecen privados. Se publican únicamente código propio, resultados y metadatos;
+los bytes de libobjc-trampolines.dylib y de la caché del sistema no se redistribuyen.
+
+
+### SRC98 — Unión de intervalos virtuales
+
+[Evidencia](native-range-plan-evidence.json), [informe](../execution/f02-07-native-range-plan.md)
+y [contrato NR](../../schemas/native-range-plan-v1.md). Planificador y pruebas
+originales del proyecto; referencias de XNU mediante enlaces a la revisión
+f6217f891ac0bb64f3d375211650a4c1ff8ca1ea, sin copiar su código al repositorio.
+Se reproduce el log privado de SRC97; no se ejecuta PCSX2 ni se redistribuyen
+archivos de caché, bibliotecas, ejecutables ni memoria del juego. Los snapshots,
+binarios de prueba, perfiles y logs permanecen en la carpeta privada autorizada.
+Los identificadores/agrupaciones del kernel publicados son metadatos diagnósticos,
+no una acreditación de su origen ni del kernel instalado.
+
+
+### SRC99 — Enumeración del mapa virtual y AOT
+
+[Evidencia](native-region-map-evidence.json), [informe](../execution/f02-07-native-region-map.md)
+y [contrato NV](../../schemas/native-region-map-v1.md). Núcleo, adaptador y pruebas
+originales del proyecto. Se consultan las interfaces del SDK local y la revisión
+f6217f891ac0bb64f3d375211650a4c1ff8ca1ea de XNU mediante enlaces; no se copian sus
+fuentes al repositorio. Las sondas solo ejecutan testconfig en la copia privada
+ya conservada, con perfiles nuevos. Binarios, snapshots, logs y perfiles de
+cobertura permanecen privados. La publicación contiene hashes, rangos y resultados,
+sin bibliotecas, cachés ni contenido de SH3. Claves AOT, IDs y tags del kernel son
+metadatos diagnósticos, no acreditación de archivos ni licencia para redistribuirlos.
+
+### SRC100 — Asociación puntual de región y vnode
+
+[Evidencia](native-region-vnode-evidence.json), [informe](../execution/f02-07-native-region-vnode.md)
+y [contrato VN](../../schemas/native-region-vnode-v1.md). Adaptador, pruebas y
+sondas propios; no se copia código externo. Se consultan las APIs del SDK local,
+XNU en el commit `f6217f891ac0bb64f3d375211650a4c1ff8ca1ea` (APSL-2.0 según sus
+cabeceras) y la guía pública de seguridad de Apple sobre Rosetta, enlazados en
+el informe. Los logs, rutas observadas y binarios permanecen privados. No se
+leen ni redistribuyen los archivos AOT del almacén protegido; se publican metadatos,
+hashes de custodia y límites. No se habilita admisión ni cambia la confianza.
+
+### SRC101 — Perfil de aplicación con plataforma asumida
+
+[Evidencia](platform-inventory-evidence.json), [informe](../execution/f02-07-platform-inventory.md)
+y [contrato PT](../../schemas/platform-inventory-v1.md). Núcleo, fixtures, vector
+y sonda originales del proyecto. Se consultan las interfaces del SDK local y
+las declaraciones/implementación de dyld en el commit
+`fd8d0c4d52320ebf64db34f3cb280310d905c5ae`, enlazadas en el informe, sin copiar sus
+fuentes al repositorio. La fixture imita solo un install name; su contenido es
+una función propia. Binarios, snapshots, perfiles y logs permanecen privados;
+se publican hashes y resultados agregados. No se distribuyen archivos de macOS,
+PCSX2, BIOS ni SH3 y no se ejecuta el juego. El nuevo perfil se prueba aislado;
+la configuración productiva aún no lo activa.
+
+### SRC102 — Origen nativo del perfil PT
+
+[Evidencia](platform-origin-evidence.json), [informe](../execution/f02-07-platform-origin.md)
+y [contrato PO](../../schemas/native-platform-origin-v1.md). Adaptador, fixture,
+preflight y tests propios; se consultan SDK y dyld en el commit
+`fd8d0c4d52320ebf64db34f3cb280310d905c5ae`, sin copiar implementaciones de Apple.
+Se prueba nombre/flag imitado solo en una biblioteca propia. Las copias del
+candidato, binarios, perfiles, snapshots y logs permanecen en la carpeta privada
+autorizada. De `libobjc-trampolines.dylib` solo se publican hash y metadata de
+slices; no se redistribuyen bibliotecas o bytes de memoria. Testconfig no carga
+ISO, BIOS ni VM; la garantía productiva y la captura no cambian.
+
+
+### SRC103 — Slices Mach-O y perfil PT v2
+
+[Evidencia](macho-slice-evidence.json), [informe](../execution/f02-07-macho-slices.md)
+y [contrato MS](../../schemas/macho-slice-binding-v1.md). Parser, binder, adaptador,
+fixtures, vectores y pruebas son propios. Se consultan declaraciones FAT de XNU y
+cctools de Apple (APSL), sin copiar implementaciones. El SDK se referencia por hash.
+
+La fixture universal empaqueta código propio. El candidato PCSX2 y las bibliotecas
+del sistema se usan únicamente en etapas privadas y se conservan por hash. No se
+publican sus bytes, ISO, BIOS ni contenido del juego. La evidencia declara el
+sistema operativo y dyld/Rosetta como plataforma asumida; no acredita sus páginas.
+
+
+### SRC104 — Manifiesto previo y composición PT v2
+
+[Evidencia](launch-manifest-evidence.json), [informe](../execution/f02-07-launch-manifest.md)
+y [contrato LM](../../schemas/platform-launch-manifest-v1.md). Parser, formato,
+proveedor, fixtures, harness y vectores son propios. Se reutilizan los adaptadores
+ya documentados y CommonCrypto del SDK; no se copia código de Apple ni PCSX2.
+
+El manifiesto publica solo nombres relativos, tamaños y hashes; los archivos de
+PCSX2 y del sistema permanecen en la carpeta privada. La propia biblioteca de
+instrumentación está incluida en las expectativas anteriores al lanzamiento.
+No se ejecutan ni publican ISO, BIOS o assets. Caché, dyld y Rosetta siguen asumidos.
+
+### SRC105 — Diagnóstico tipado PT v2
+
+[Evidencia](platform-diagnostic-evidence.json), [informe](../execution/f02-07-platform-diagnostic.md)
+y [contrato PD](../../schemas/platform-diagnostic-v1.md). Codec, consumidor, formato,
+vectores y pruebas son propios; no incorporan código externo. La sonda reutiliza
+los adaptadores nativos ya atribuidos y solo publica metadatos/hashes de resultados.
+
+La nueva copia PCSX2 y su observador/manifiesto quedan privados. No se ejecutan
+ni publican ISO, BIOS o assets. Los mensajes declaran cabeceras de aplicación y
+plataforma asumida; no autentican el peer ni acreditan bytes de la plataforma.
+
+### SRC106 — Peer y sesión de diagnóstico
+
+[Evidencia](diagnostic-peer-evidence.json), [informe](../execution/f02-07-diagnostic-peer.md)
+y [contrato PS](../../schemas/diagnostic-peer-v1.md). Lector, bridge, consumidor,
+sesión, sonda y pruebas son propios. Se consultan APIs del SDK y la semántica
+publicada de XNU/libproc, enlazadas en el contrato; no se copia su implementación.
+El helper enlaza libbsm del sistema para interpretar tokens opacos.
+
+PCSX2, perfiles, logs y manifiestos completos quedan privados. Se publican solo
+metadatos y hashes, sin ISO, BIOS ni assets. Identidad de peer y cabeceras no
+acreditan contenido completo de memoria ni permisos de captura.
+
+### SRC107 — Ejecutor de diagnóstico
+
+[Evidencia](diagnostic-worker-evidence.json), [informe](../execution/f02-07-diagnostic-worker.md)
+y [contrato DW](../../schemas/diagnostic-worker-v1.md). Núcleo, puertos, fixtures,
+mutantes y pruebas son propios; solo usan C++ estándar y los tipos locales ya
+registrados. No se incorporan implementaciones ni dependencias externas nuevas.
+
+Los builds y perfiles de sanitizadores/cobertura permanecen en la carpeta privada.
+No se ejecutan ni publican PCSX2, ISO, BIOS o assets en esta etapa. La evidencia
+pública contiene metadatos y hashes de pruebas con proveedores sintéticos.
+
+### SRC108 — Trabajo nativo con presupuesto
+
+[Evidencia](native-diagnostic-work-evidence.json),
+[informe](../execution/f02-07-native-diagnostic-work.md) y
+[contrato NW](../../schemas/native-diagnostic-work-v1.md). Puertos, composición,
+adaptadores, fixtures y pruebas propios. No se incorporan dependencias externas
+nuevas ni contenido del juego. Los binarios PCSX2, manifiestos de rutas privadas,
+clones, sonda compilada y perfiles permanecen fuera del repositorio. Se conservan
+las condiciones de las dependencias documentadas previamente. La prueba usa
+`testconfig` sin ISO, BIOS ni VM y no habilita captura.
+
+### SRC109 — Consumidor de diagnóstico con presupuesto total
+
+[Evidencia](budgeted-consumer-evidence.json), [informe](../execution/f02-07-budgeted-consumer.md)
+y [contrato BC](../../schemas/budgeted-diagnostic-consumer-v1.md). Código Python,
+contratos, pruebas y payloads sintéticos propios. Se reutiliza el bridge local
+arm64 verificado en SRC106, sin dependencias nuevas. No se incorpora contenido
+del juego ni se ejecuta ISO, BIOS, VM o PCSX2. Los mutantes son copias aisladas
+de código propio; no se cambia el candidato ni se habilita captura.
+
+### SRC110 — Entrega del productor bajo presupuesto
+
+Código, fixtures y contratos propios. Las pruebas usan observaciones sintéticas
+y sockets locales con peer nativo macOS. Compiladores/SDK y dependencias privadas
+conservan las licencias y custodia anteriores. Los binarios y registros quedan
+en el directorio privado; se publican metadatos y hashes. No se incorporan
+assets, ISO o BIOS. No se ejecuta PCSX2 en esta subetapa.
+
+Véanse [evidencia](worker-delivery-evidence.json) e
+[informe](../execution/f02-07-worker-delivery.md).
+
+### SRC111 — Composición privada del diagnóstico
+
+Sonda, launcher, contratos y metadatos propios; bibliotecas propias verificadas
+en SRC110. PCSX2 conserva las licencias y custodia anteriores en copia privada
+sin modificaciones. Se usa libbsm del SDK/sistema según el enlace del bridge
+nativo existente. No se distribuyen binarios de PCSX2, assets, ISO ni BIOS.
+Los payloads PD contienen identidad/inventario y hechos desconocidos, sin bytes
+del juego. Véanse [evidencia](diagnostic-composition-evidence.json) e
+[informe](../execution/f02-07-diagnostic-composition.md).
+
+
+### SRC112 — Vinculación runtime revocable
+
+Núcleo, puerto de validez, composición y pruebas propios. Reutiliza sin cambios
+los núcleos propios CPU/PINE/VU/GS y consulta tres fuentes privadas PCSX2 ya
+atribuidas para planificar la integración; no incorpora sus cuerpos ni los
+modifica. Los snapshots e inventarios de pruebas son locales. No usa recursos
+del juego, ISO ni BIOS, ni ejecuta PCSX2 o una VM. Mantiene las licencias previas
+de herramientas externas. Véanse [evidencia](runtime-binding-evidence.json) e
+[informe](../execution/f02-07-runtime-diagnostic-binding.md).
+
+### SRC113 — Coordinador runtime privado
+
+Código propio: ticket, generación, hooks de integración y pruebas. La nueva copia
+privada de PCSX2 conserva su procedencia/licencia anterior; el parche, cuerpos
+extraídos y binarios permanecen fuera del repositorio. Se publica metadata/hash
+en [runtime-coordinator-evidence.json](runtime-coordinator-evidence.json), contratos
+y el [informe](../execution/f02-07-runtime-coordinator.md). No se incorporan ISO,
+BIOS, assets del juego ni fuentes de terceros extraídas. Las pruebas usan dobles
+de VM/Qt; no se acredita ejecución del juego ni una licencia para sus contenidos.
+
+### SRC114 — Entrega asíncrona IO–CPU
+
+Código propio: solicitud compartida, puerto CPU, confirmación de retirada,
+adaptador frontend y pruebas. El proveedor PCSX2 conserva su procedencia/licencia;
+parche, cuerpos privados y binarios quedan fuera del repositorio. Solo se publican
+metadata/hash en [runtime-handoff-evidence.json](runtime-handoff-evidence.json),
+contratos e [informe](../execution/f02-07-runtime-handoff.md). No se añaden ISO,
+BIOS, assets del juego ni fuentes de terceros extraídas. La sonda usa inventario
+y entrega sintéticos, sin acreditar una VM o captura real.
+
+### SRC115 — Sesión runtime y socket
+
+Código propio de sesión, puerto IO, recepción macOS y pruebas. Solo se publican
+fuentes propias, contratos y metadata/hash en
+[runtime-session-evidence.json](runtime-session-evidence.json); ejecutables y
+copias de prueba permanecen en etapas privadas. No se añaden contenido del juego,
+BIOS ni fuentes de terceros. La composición exitosa usa inventario de prueba;
+el [informe](../execution/f02-07-runtime-session.md) distingue ese alcance de VM.
+
+### SRC116 — Composición nativa con runtime
+
+Fixture y launcher propios, con componentes propios anteriores sin modificar.
+La app privada de PCSX2 conserva su procedencia/licencia y sus archivos de
+referencia; los binarios, perfiles, manifiestos y frames permanecen fuera del
+repositorio. Se publican metadata/hash y el
+[informe](../execution/f02-07-native-runtime-composition.md), sin ISO, BIOS,
+assets del juego ni fuentes de terceros extraídas. Los hechos CPU son de prueba.
+
+### SRC117 — Servicio del candidato enlazado
+
+Servicio, contratos, tests y launcher propios. Las dos copias de PCSX2 mantienen
+su procedencia/licencia; parches, objetos, paquetes, perfiles, logs e informes de
+fallo permanecen privados. Solo se publican metadata/hash en
+[runtime-service-evidence.json](runtime-service-evidence.json) y el
+[informe](../execution/f02-07-runtime-service.md). La ISO/BIOS autorizadas se usan
+localmente para inicializar una VM pausada; no se incorporan originales, memoria
+del juego ni contenido de terceros al repositorio o a CI.
+
+### SRC118 — Diagnóstico de preflight y registro
+
+Fixtures propios de trazas locales; las bibliotecas públicas conservan sus
+fuentes de SRC117. Las copias, parches, objetos, paquetes y logs de PCSX2 quedan
+privados con su procedencia/licencia original. Se publican únicamente fixtures
+propios, contratos, [informe](../execution/f02-07-native-preflight.md) y
+[metadata/hash](native-preflight-evidence.json), sin ISO, BIOS ni memoria del juego.
+
+### SRC119 — Censo independiente de módulos
+
+Máquina de estados, instrumentador reversible, prueba de tamaños y tests propios.
+La copia privada mantiene PCSX2 y dependencias en los commits/licencias anteriores;
+las fuentes, objetos, bundles, perfiles y logs permanecen fuera del repositorio.
+Solo se publican código propio, contrato, [informe](../execution/f02-07-native-census.md)
+y [metadata/hash](native-census-evidence.json). No se distribuyen ISO, BIOS,
+contenidos del juego ni direcciones observadas en los logs privados.
+
+### SRC120 — Capacidad y almacenamiento del inventario
+
+Modifica código propio de inventarios, interfaces, codecs, canal y pruebas.
+Los vectores son sintéticos; se preservan los de PD v1. La matriz de dependencias
+contiene rutas/hash del build privado previo, sin fuentes de terceros ni bytes
+de objetos. No se modifica ni redistribuye PCSX2, ISO, BIOS o contenido del juego.
+Se publican [informe](../execution/f02-07-image-capacity.md) y
+[evidencia](image-capacity-evidence.json); las etapas y sus logs quedan privados.
+
+### SRC121 — Candidato y manifiesto de componentes del host
+
+Se publican contrato, [informe](../execution/f02-07-capacity-candidate.md) y
+[metadata/hash](capacity-candidate-evidence.json). Los candidatos PCSX2 y la
+sonda terminal permanecen privados. IOHIDLib, AGXMetalG14G y CoreAudio se leen
+y verifican en sus rutas del sistema; no se copian ni redistribuyen. ISO, BIOS,
+logs con direcciones y perfiles permanecen privados; no se captura RAM del juego.
+
+### SRC122 — Liberación de la última respuesta
+
+Se publica código propio del canal/peer/servicio, pruebas sintéticas, contrato,
+[informe](../execution/f02-07-service-release.md) y
+[metadata/hash](service-release-evidence.json). Los cambios conservan la ABI
+Python y los verificadores ordinarios. Candidato, perfiles, logs, ISO y BIOS
+permanecen privados. No se redistribuyen fuentes o binarios de terceros ni
+se captura RAM del juego.
+
+### SRC123 — Abandono del consumidor
+
+Se publican fixture propia, contrato, [informe](../execution/f02-07-peer-exit.md)
+y [metadata/hash](peer-exit-evidence.json). Reutiliza el candidato privado de
+SRC122 sin modificarlo. Perfiles, logs, ISO y BIOS permanecen privados; no se
+redistribuyen binarios o fuentes de terceros ni se captura RAM del juego.
+
+### SRC124 — Cancelación desde la interfaz
+
+Se publican puerto, insertor de hooks y fixtures propios, contrato,
+[informe](../execution/f02-07-ui-cancel.md) y [metadata/hash](ui-cancel-evidence.json).
+Las copias completas de PCSX2, parches con contexto de terceros, bundles, logs,
+perfiles, ISO y BIOS permanecen privados. La sonda solo se incluye en variantes
+de validación; se conserva un candidato corregido sin sonda. No se redistribuyen
+componentes de terceros ni se captura RAM del juego.
+
+### SRC125 — Cancelación durante entrega parcial
+
+Se publican cambios de cancelación, fixtures, contrato, [informe](../execution/f02-07-partial-cancel.md)
+y [metadata/hash](partial-cancel-evidence.json) propios. La sonda limita un envío
+real y simula contrapresión; se declara su efecto y se excluye del candidato
+final. Se preservan SRC124 y sus etapas privadas. Los perfiles, fuentes completas,
+binarios de PCSX2, ISO y BIOS permanecen privados. No se redistribuyen bytes del
+juego ni se captura su RAM. No se añade ninguna dependencia o licencia externa.
+
+### SRC126 — Apagar VM y confirmación
+
+Se publican política UI, integración y fixtures propios, contrato,
+[informe](../execution/f02-07-vm-shutdown.md) y [metadata/hash](vm-shutdown-evidence.json).
+Se conservan base y fallos preparatorios. Las acciones Qt instrumentadas y CUA
+se distinguen; el candidato final excluye la sonda. Fuentes completas de PCSX2,
+parches con contexto de terceros, bundles, perfiles, logs, ISO y BIOS permanecen
+privados. No se captura RAM ni se publican imágenes del juego. No se incorpora
+una dependencia o licencia externa nueva.
+
+### SRC127 — Callbacks tardíos y duplicados
+
+Se publican fixtures y regresiones propias, [contrato](../../schemas/runtime-host-callback-v1.md),
+[informe](../execution/f02-07-host-callback.md) y [metadata/hash](host-callback-evidence.json).
+Producción y candidato limpio de SRC126 se conservan sin cambios. La sonda y sus
+fallos se distinguen de ese candidato; fuentes completas, parches con contexto
+de terceros, bundles, perfiles, ISO y BIOS permanecen privados. No se captura
+RAM ni se redistribuyen bytes del juego. No se añade una dependencia externa.
+
+
+### SRC128 — Margen temporal del inventario
+
+Sonda, integrador, parser, wrapper de carga y regresiones propios. Instrumentan
+seis copias privadas del observador; no cambian producción ni incorporan datos
+del juego, BIOS o código de terceros al repositorio. Reutilizan el PCSX2 limpio
+SRC126 y el consumidor fijado. La prueba de carga usa un búfer propio de 4 MiB;
+los perfiles, logs y bundles permanecen privados. El informe público conserva
+métricas, hashes y resultados de 36 frames diagnósticos, sin captura ni admisión.
+La arquitectura del ejecutable es x86_64 en host arm64; no se deriva una causa de
+rendimiento arquitectónica ni una nueva licencia de uso de esa observación.

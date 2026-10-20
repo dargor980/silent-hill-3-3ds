@@ -1,0 +1,1775 @@
+{
+  "abrupt_thread_termination_verified": false,
+  "admitted_execution_modes": [],
+  "alternate_gif_branches_executed": false,
+  "capabilities": [],
+  "completed_tasks": [
+    "IW-GS1",
+    "IW-GS2",
+    "IW-GS3"
+  ],
+  "copy_gs_packet_to_mtgs": 0,
+  "core_inputs_sha256": {
+    "tools/observer/cpu_boundary.cpp": "a20997e9f3d7aacd2df004c9424436fa6cad7923c04218bc7a51f7ea62a74500",
+    "tools/observer/include/sh3_observer/cpu_boundary.hpp": "ad0f1edd34f82061200bdd3ebb8247b726c640d7834d50d49ed5f21a158d2660",
+    "tools/observer/include/sh3_observer/worker_control.hpp": "66317ff431180756e8401c5cb0839dcbb4fc44c4f99d5d010076941531bbf292",
+    "tools/observer/pcsx2/gs_control.inc": "9ebc2a0ff1420276c5a0084913c9e87b47cec98938c6f4395f7175e82dfdb54c",
+    "tools/observer/pcsx2/vu_control.inc": "eea9038b58db8acd9211b74f7449b89a8e87744c92ac5f287a73dbffb7312c51",
+    "tools/observer/worker_control.cpp": "69b3a1ef53e4aeae3aa1ef48507376f003bfd95581e2c85edcc60371f86189fc"
+  },
+  "cpu_boundary_real": true,
+  "date": "2026-10-18",
+  "debug_stack_executed": false,
+  "deterministic_sleep_state_observed": true,
+  "devbuild_executed": false,
+  "global_worker_coordinator_integrated": false,
+  "gs_close_open_effects_are_doubles": true,
+  "gs_control_provider_connected": true,
+  "gs_fragments": [
+    {
+      "first_line": 129,
+      "fragment_sha256": "7bb27f5127a3b62957a3fbddb0bb4b3c7d2f94b13d41cbd07c4285289aff57b0",
+      "last_line": 144,
+      "name": "kernel_class",
+      "source_file": "common/Threading.h",
+      "source_sha256": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb"
+    },
+    {
+      "first_line": 110,
+      "fragment_sha256": "b57999385dffba5afe4937e2be69208076a39f84e2b43db487009cabf0643340",
+      "last_line": 148,
+      "name": "kernel_darwin",
+      "source_file": "common/Darwin/DarwinThreads.cpp",
+      "source_sha256": "7a683e8f282425b5c43cfa7529c5c04607ecf0662af09fc758cbe8a34701235a"
+    },
+    {
+      "first_line": 151,
+      "fragment_sha256": "e1cd4d83b8c9e56b3623d91ffcca56d675496f9af31a6ef5fd3938ccd369e4f2",
+      "last_line": 222,
+      "name": "work_sema_class",
+      "source_file": "common/Threading.h",
+      "source_sha256": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb"
+    },
+    {
+      "first_line": 18,
+      "fragment_sha256": "63266793a33be4be7494c9b55bfa4616f624b02f1af199469b9dfc7e06e1182a",
+      "last_line": 42,
+      "name": "check_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 43,
+      "fragment_sha256": "15b7ff24294e4bbd0701ffec65a2591da2fb7ff37515f5dc142d3ee7c2bacb26",
+      "last_line": 62,
+      "name": "wait_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 94,
+      "fragment_sha256": "f292f8f45cd67b70585c95a37f1b7af647acd2831a638d96e25d8c44abb2ec3a",
+      "last_line": 109,
+      "name": "wait_for_empty",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 128,
+      "fragment_sha256": "85d7b0c3204758cd382be2de1d9d0c371c8318959b6d971a9a1a1afaacdd40d0",
+      "last_line": 134,
+      "name": "kill",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 135,
+      "fragment_sha256": "921e3130219aa2c653319270fe3c04a8091d10ad34fb7c59ffa0e5b4c67cd5a4",
+      "last_line": 139,
+      "name": "reset",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 22,
+      "fragment_sha256": "3115f7471ed7d5a506200935dfd7f3d31af7c7f570432e20f5f5704dc176bc8d",
+      "last_line": 104,
+      "name": "gs_header",
+      "source_file": "pcsx2/MTGS.h",
+      "source_sha256": "260645fa709bd3175688f9815e1582f51a460a684bf63ba43efe8ef040cb1733"
+    },
+    {
+      "first_line": 36,
+      "fragment_sha256": "c82d8a8e592e9f776ff2dafc6fd536d7a3e3e2271187384769690cd4ea582907",
+      "last_line": 106,
+      "name": "gs_state",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 324,
+      "fragment_sha256": "fbef2c3c2349baaff42d046682121c99513c081fdd2090761dfb75b4cb8b0623",
+      "last_line": 338,
+      "name": "packet_tag",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 120,
+      "fragment_sha256": "5ba1080f704e1d73cfd82a1ee59216db0dad33bb44e85cb122df3d101d368440",
+      "last_line": 123,
+      "name": "gs_open_query",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 125,
+      "fragment_sha256": "b52ebc9ebebc9cfb012aa513e84eeff1d0e15e401b01edb1e3546252696daeee",
+      "last_line": 137,
+      "name": "gs_start",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 139,
+      "fragment_sha256": "6deced2bfc7cda660cb190eb04996ef7a452b2d8e9870f3f3d85054dbfb83511",
+      "last_line": 155,
+      "name": "gs_shutdown",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 157,
+      "fragment_sha256": "c7d7d646beed903e647fd88cfc2355025843fe0c3bf85ea1a0c86f8d044c560a",
+      "last_line": 215,
+      "name": "gs_entry",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 339,
+      "fragment_sha256": "36d488e3ef9448363efe28b0f36b0dda1cd421f7f5b12b2da3b18511ed0dbb8f",
+      "last_line": 648,
+      "name": "gs_main",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 920,
+      "fragment_sha256": "25af557123b0e9f3738375bae66f0f32c588a55fd4c19fec98af007d925c8f24",
+      "last_line": 943,
+      "name": "gs_open",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 945,
+      "fragment_sha256": "ffd36c9793bc1e5660c83dbe92f21eade8e64151ebb02506a4e8bff86ec4759e",
+      "last_line": 961,
+      "name": "gs_close",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 654,
+      "fragment_sha256": "bb696ca9a8f3ed5369ac032c583e90f0d27bb74d3104c7b4e753a4f216b41a31",
+      "last_line": 703,
+      "name": "gs_wait",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 707,
+      "fragment_sha256": "8cfc128cbe4503db02fe6ff7feb1ec52465b07c51ecfcffe05a11d15272debf5",
+      "last_line": 711,
+      "name": "gs_event",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 749,
+      "fragment_sha256": "bc827b92073d98b58eb3e8f716abadfe2c304b6c09537992685e15e507be653a",
+      "last_line": 836,
+      "name": "gs_stall",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 867,
+      "fragment_sha256": "e10c690f0314baa3f1172e36a3fa118a56b1525761b4b692474ec4c5243a1036",
+      "last_line": 877,
+      "name": "gs_finish",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 879,
+      "fragment_sha256": "04d169c5d9413e1411ae723a7e765ec909fae71721c38d5e89c863d095954df0",
+      "last_line": 892,
+      "name": "gs_simple",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 906,
+      "fragment_sha256": "a152395eaf03ab202f9fde27b7dd66bfa104473b7c93886745cb143981cd5c4f",
+      "last_line": 918,
+      "name": "gs_pointer",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 978,
+      "fragment_sha256": "842800d0252361a59334affc0aa2feeb17e4f3157ac1a897909a5fc1abf2cfae",
+      "last_line": 987,
+      "name": "gs_async",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 1131,
+      "fragment_sha256": "fac3ed23d538142aed8d58b8d79dab67ee0a896fa466a65c9847c520735a6c07",
+      "last_line": 1135,
+      "name": "gs_idle",
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "first_line": 189,
+      "fragment_sha256": "3efdc850c3ad6ece99ee1bb47b6a96237e6c8a27b7b19f258476c166f3ab749f",
+      "last_line": 198,
+      "name": "stop_owner",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    },
+    {
+      "first_line": 2905,
+      "fragment_sha256": "929b92c071c95ca4ea27a7ca8d0ba968df0b3b52a3ed2509361d4a062d2705e8",
+      "last_line": 2908,
+      "name": "cpu_actor",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    },
+    {
+      "first_line": 2910,
+      "fragment_sha256": "4446640e79ec18e6f9695231a1b9ee807250126a650fc2513c35d1c2b6fad257",
+      "last_line": 2913,
+      "name": "cpu_guard",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    },
+    {
+      "first_line": 2915,
+      "fragment_sha256": "36287fc2518d3990fe64f029a3ae6bfde9ea5cbffce892e304bb5979188c55f7",
+      "last_line": 2924,
+      "name": "before_producer",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    }
+  ],
+  "gs_generation_scope": "successful_open_session",
+  "gs_in_vu_regression_is_double": true,
+  "gs_main_loop_body_executed": true,
+  "gs_main_loop_scenarios": 57,
+  "gs_passing_scenarios": 63,
+  "gs_probe_runs": [
+    {
+      "binary_sha256": "cc45ac6a2433ea4d857c3cd3207b09bc61e4dfd3d4b74513b66ece0669f0acd1",
+      "cases": [
+        "empty_wake",
+        "batch",
+        "idle_boundary",
+        "stable_held",
+        "cancel_pending",
+        "timeout_pending",
+        "producer_release",
+        "owner_release",
+        "close_held",
+        "close_pending",
+        "shutdown_held",
+        "reopen",
+        "restart_thread",
+        "failed_open",
+        "opening",
+        "reject_actor",
+        "mtvu_dependency",
+        "signals_before_ack",
+        "exhaustion",
+        "publication_gap",
+        "signals_gap"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "normal-native",
+      "passed": 21,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "d40aafca99bcdebbace6746f777952168b583a4e86782d924b40940e6b9e9023",
+          "shutdown_verified": true
+        },
+        {
+          "action": "empty_wake",
+          "log_sha256": "14e708aa616df3f318edd464e60cb46ec26a9f22c58a1f4b31622826b31ce30e",
+          "receipt_sha256": "9c0950a0f9e1dea7d8eb71931aa32133e62fa03b7aedfda01a3ea891c399d1ba",
+          "shutdown_verified": true
+        },
+        {
+          "action": "batch",
+          "log_sha256": "51868fb52d678fcb989690614f7441b5a2470cc56b79a20d0f9d1dfb74c668b2",
+          "receipt_sha256": "2f2f39b998e6f5a1c280b80637fa050d0ed5a544ef11bda2d487fcd1b5ee8951",
+          "shutdown_verified": true
+        },
+        {
+          "action": "idle_boundary",
+          "log_sha256": "c213600235bfd1107fc21bec91714838cbb7cb240e680eae3452900d0b123f63",
+          "receipt_sha256": "7452283b3ca6a816193a074773f3c3ee6363f2409877311140b246247dce46a0",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stable_held",
+          "log_sha256": "82006df8f797c68f52965509245ad5a622ba98282bbd661b2ff28abd34d99c6a",
+          "receipt_sha256": "d133839378b4802fe2fa0a8016ff553937cc7cc36d621c3bb1b7462efcd70bc8",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancel_pending",
+          "log_sha256": "cf8dd11d2854909e6368c4117ca475e5a137546af7b99800aa34aa6c388605f3",
+          "receipt_sha256": "989ee6ab2e08ef21b4ef088de2072895ccf983a9455c36a1edabe377f70ac62f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "30ef34f3f485a084d2eb9f9ab63a4525901fd525168e62c3ef22df7531f849e4",
+          "shutdown_verified": true
+        },
+        {
+          "action": "producer_release",
+          "log_sha256": "9e04fe16b6748b8a36f38850786f2c72f9e7642fb5194e3457e4f08e91570ed4",
+          "receipt_sha256": "524d91ff12e80aa8d3fb830fd999efcd1cf3a308245fd188f6911c0e700da9b0",
+          "shutdown_verified": true
+        },
+        {
+          "action": "owner_release",
+          "log_sha256": "eb2014416e1c6df69f594f24ea49f7953ecbebb68f1c23f4a4ca03829ead0947",
+          "receipt_sha256": "6a00a5d314a0872a98018f74a7683d5726ae1cf263442cd310ea5fa7cfa81b62",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_held",
+          "log_sha256": "14e0e15f839f6ae8286d654e39500fe4cc4d623b282d3e96fb7aa997c226335a",
+          "receipt_sha256": "9b1b09de536e05df8741e57dd922ab1b38bf9fc0a746727629cf791b0b12af36",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "47a706214a0ab0e335636fe361bd49596117000816b713ac30bf624251627dc2",
+          "shutdown_verified": true
+        },
+        {
+          "action": "shutdown_held",
+          "log_sha256": "e16b0a93455bd8ebeaffb774f678261bcf9f10f7a0f2cf83502e2b098c17c7db",
+          "receipt_sha256": "030c8e996e0d28a1d48fe1ce12cf4e13b7824ce29e8b80410d1e63eb3bf2a880",
+          "shutdown_verified": true
+        },
+        {
+          "action": "reopen",
+          "log_sha256": "c986f8128c5465f77d93b057b07b55b125f35f00ca160d460fc42c4b1fe35f42",
+          "receipt_sha256": "f8260dc5d75550dbddbe9ed550d4776f205f88a64c99df5e250c3612217eac01",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart_thread",
+          "log_sha256": "c883890a21af10cd4ce78018212036a9064c732d5355d76ed2d55eb6f46a734a",
+          "receipt_sha256": "d3a8568bbe207d238795a24c0b16668e80c3bfd6711a82d9d1ddeb293127ca54",
+          "shutdown_verified": true
+        },
+        {
+          "action": "failed_open",
+          "log_sha256": "38a372854371a61be1476a7eae56252633d99b250037a9f0f1966288bcf8d803",
+          "receipt_sha256": "93329e9f7f67839c8f0486254d112b303adbcb5d7ff37e36183564502cda7428",
+          "shutdown_verified": true
+        },
+        {
+          "action": "opening",
+          "log_sha256": "54dac681de40b5505224fa38849a23104c570b59530ee1133a0c281013584b48",
+          "receipt_sha256": "d35666bce8717ae745018e88bb47f4836048e87377c986546fca4eb1ba696edd",
+          "shutdown_verified": true
+        },
+        {
+          "action": "reject_actor",
+          "log_sha256": "fb34b6a77fa2f1c77f38604397cc3dbd0f3cee956f4790cc3bac9bd83ac354d1",
+          "receipt_sha256": "e22f0d1f1ee62f027fd3baa5fb34809226cf15d62631981e8d9beebd12f7e237",
+          "shutdown_verified": true
+        },
+        {
+          "action": "mtvu_dependency",
+          "log_sha256": "e48864ef48a991dbfa851bc37d83a6b156283aa2a5d89308a1750954fdebe862",
+          "receipt_sha256": "6b6b343730f6bdd2f22b86dde69a0c4568f5b1bcbef9916a215a6fa3537c6897",
+          "shutdown_verified": true
+        },
+        {
+          "action": "signals_before_ack",
+          "log_sha256": "661a52031c43ea5e1ab2fa5e7bef67128a75c4a1fad1a48221b6ea0dcb94876a",
+          "receipt_sha256": "350fdbaf3cddc95df8c2ff3a1fc49a49172e756756775be7fb48838e9e372219",
+          "shutdown_verified": true
+        },
+        {
+          "action": "exhaustion",
+          "log_sha256": "a159ca073d6058ceb45904b847dea8d930b206f01f9a541157b962ff8bf69061",
+          "receipt_sha256": "7bda28f928d3b3f126b8cb1bab0b883e82d81660d422c52aa192071d58cb014d",
+          "shutdown_verified": true
+        },
+        {
+          "action": "publication_gap",
+          "log_sha256": "1f32ce0a4cd0849b2379584fd003d76ec94c4837e5c9a9804947233917d705fa",
+          "receipt_sha256": "6fc558c8d51e70dca98a193f4175190a39567c7a7dbc3eb6b2831902498f65c6",
+          "shutdown_verified": true
+        },
+        {
+          "action": "signals_gap",
+          "log_sha256": "fa19edd22dbf96fba3b4c7ce8d8420484fe7971846e80d39c22ff6aabf3f3ec2",
+          "receipt_sha256": "c66d292e5a119f916d553feadff039bc1d7786bb10ec4e99a6dff3a14d61ec15",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "ad461b9e85f0e19315b1fe46532806d039771af0f243a6af5e9810430957acac",
+      "cases": [
+        "empty_wake",
+        "batch",
+        "idle_boundary",
+        "stable_held",
+        "cancel_pending",
+        "timeout_pending",
+        "producer_release",
+        "owner_release",
+        "close_held",
+        "close_pending",
+        "shutdown_held",
+        "reopen",
+        "restart_thread",
+        "failed_open",
+        "opening",
+        "reject_actor",
+        "mtvu_dependency",
+        "signals_before_ack",
+        "exhaustion",
+        "publication_gap",
+        "signals_gap"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "sanitize-native",
+      "passed": 21,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "baecd81a0370a6be34cd47ebe4a35608a0f3b573d57523b48956b5c64a48a858",
+          "shutdown_verified": true
+        },
+        {
+          "action": "empty_wake",
+          "log_sha256": "14e708aa616df3f318edd464e60cb46ec26a9f22c58a1f4b31622826b31ce30e",
+          "receipt_sha256": "f1fd3df366431123cf6080ff56695d1f8cb0551e39dace4185c818b0460674d2",
+          "shutdown_verified": true
+        },
+        {
+          "action": "batch",
+          "log_sha256": "51868fb52d678fcb989690614f7441b5a2470cc56b79a20d0f9d1dfb74c668b2",
+          "receipt_sha256": "34eec27adeb82f4ceb67a9f074918c47cdbc4ec7effa32bf2f9a47fa31b72e17",
+          "shutdown_verified": true
+        },
+        {
+          "action": "idle_boundary",
+          "log_sha256": "c213600235bfd1107fc21bec91714838cbb7cb240e680eae3452900d0b123f63",
+          "receipt_sha256": "2fd31db38531cc5fce55937c7a14114c7b0cdcd25427f5b56f5bcef32f98dbc0",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stable_held",
+          "log_sha256": "82006df8f797c68f52965509245ad5a622ba98282bbd661b2ff28abd34d99c6a",
+          "receipt_sha256": "97efc398397c7586d88936975d141148303149520da765077eb2509ed8c35079",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancel_pending",
+          "log_sha256": "cf8dd11d2854909e6368c4117ca475e5a137546af7b99800aa34aa6c388605f3",
+          "receipt_sha256": "feb330a55181e23d47480c41538394d9deb89a9b4aca0c3cd461cfded22570b7",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "437353b184ddc9c6996377598de19709e8e570af623ca28698e64219f0f74ac3",
+          "shutdown_verified": true
+        },
+        {
+          "action": "producer_release",
+          "log_sha256": "9e04fe16b6748b8a36f38850786f2c72f9e7642fb5194e3457e4f08e91570ed4",
+          "receipt_sha256": "1969cec85d6a94c46ce723c1655619ef57b109992c058fa21081513e3f841c2f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "owner_release",
+          "log_sha256": "eb2014416e1c6df69f594f24ea49f7953ecbebb68f1c23f4a4ca03829ead0947",
+          "receipt_sha256": "4245d76125f9043b32414df93b8b0cd46b8e1d4bc6a7e7956466a79d8a0a19e4",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_held",
+          "log_sha256": "14e0e15f839f6ae8286d654e39500fe4cc4d623b282d3e96fb7aa997c226335a",
+          "receipt_sha256": "fa76f80380331762b327418cdfee4ca1086c69fa7d53a5af231e3032b11c9205",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "4a2b74aadaa198e8287755bfbbe1878a9e5eb53f6e714f4ebb496e1401173d20",
+          "shutdown_verified": true
+        },
+        {
+          "action": "shutdown_held",
+          "log_sha256": "e16b0a93455bd8ebeaffb774f678261bcf9f10f7a0f2cf83502e2b098c17c7db",
+          "receipt_sha256": "386eff9b37688e8afecb2ad4aa1c0603d827784a65e4102a693d6dcc2c7d1e60",
+          "shutdown_verified": true
+        },
+        {
+          "action": "reopen",
+          "log_sha256": "c986f8128c5465f77d93b057b07b55b125f35f00ca160d460fc42c4b1fe35f42",
+          "receipt_sha256": "25d37990ea2324dabf00637725af851b902b7a10684a188ade1c6471cfcc1874",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart_thread",
+          "log_sha256": "c883890a21af10cd4ce78018212036a9064c732d5355d76ed2d55eb6f46a734a",
+          "receipt_sha256": "31635f4334682c192705405442a29e863951b3461bafa98d202658764a23a561",
+          "shutdown_verified": true
+        },
+        {
+          "action": "failed_open",
+          "log_sha256": "38a372854371a61be1476a7eae56252633d99b250037a9f0f1966288bcf8d803",
+          "receipt_sha256": "432e75ccfc26c74f2c541afb05174249df4ad67abb4647e555e69ecbb5e412cc",
+          "shutdown_verified": true
+        },
+        {
+          "action": "opening",
+          "log_sha256": "54dac681de40b5505224fa38849a23104c570b59530ee1133a0c281013584b48",
+          "receipt_sha256": "e843550f75cdc20a8b0e5857594fb2c1c05584169944e07c6558568314031b2c",
+          "shutdown_verified": true
+        },
+        {
+          "action": "reject_actor",
+          "log_sha256": "fb34b6a77fa2f1c77f38604397cc3dbd0f3cee956f4790cc3bac9bd83ac354d1",
+          "receipt_sha256": "75a4bcff476946eb473bc2e289ed26887be01a792049fc63486ede269bae359c",
+          "shutdown_verified": true
+        },
+        {
+          "action": "mtvu_dependency",
+          "log_sha256": "e48864ef48a991dbfa851bc37d83a6b156283aa2a5d89308a1750954fdebe862",
+          "receipt_sha256": "3469555ffd81f5b4a33f8471564b3d593a96b43ee17a15089375790c4d6a4d5f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "signals_before_ack",
+          "log_sha256": "661a52031c43ea5e1ab2fa5e7bef67128a75c4a1fad1a48221b6ea0dcb94876a",
+          "receipt_sha256": "c5ed97706df25d1f1f1476f6fe6662829ef6b40825ef321f05aa1a7284cebd64",
+          "shutdown_verified": true
+        },
+        {
+          "action": "exhaustion",
+          "log_sha256": "a159ca073d6058ceb45904b847dea8d930b206f01f9a541157b962ff8bf69061",
+          "receipt_sha256": "f9d3ff39fa0ebcd7be615b6af3433a5ec6bc7efd0c70cb854316e5525226866f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "publication_gap",
+          "log_sha256": "1f32ce0a4cd0849b2379584fd003d76ec94c4837e5c9a9804947233917d705fa",
+          "receipt_sha256": "23b875852f98a7b317f7ea971f9bc9ecbbd93c0b0e242e34d5c2bf71e35b5485",
+          "shutdown_verified": true
+        },
+        {
+          "action": "signals_gap",
+          "log_sha256": "fa19edd22dbf96fba3b4c7ce8d8420484fe7971846e80d39c22ff6aabf3f3ec2",
+          "receipt_sha256": "29f90ebf8f6265b6e56ae2edb2c0f435ebf331973b372520d6817815407f3f25",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "8d4af2eeb13167b0c7227a1b303572531b2a3cb475c83de950848262a0745fde",
+      "cases": [
+        "empty_wake",
+        "batch",
+        "idle_boundary",
+        "stable_held",
+        "cancel_pending",
+        "timeout_pending",
+        "producer_release",
+        "owner_release",
+        "close_held",
+        "close_pending",
+        "shutdown_held",
+        "reopen",
+        "restart_thread",
+        "failed_open",
+        "opening",
+        "reject_actor",
+        "mtvu_dependency",
+        "signals_before_ack",
+        "exhaustion",
+        "publication_gap",
+        "signals_gap"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "tsan-native",
+      "passed": 21,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "26368af493263ee0637cdffffd7dfce4a137e2734abbdba93bcc748bed2be6e4",
+          "shutdown_verified": true
+        },
+        {
+          "action": "empty_wake",
+          "log_sha256": "14e708aa616df3f318edd464e60cb46ec26a9f22c58a1f4b31622826b31ce30e",
+          "receipt_sha256": "6b93cdf72ed1017f71600e2ef3a7cbea0eab3481d6cfef69351841e2f13404c2",
+          "shutdown_verified": true
+        },
+        {
+          "action": "batch",
+          "log_sha256": "51868fb52d678fcb989690614f7441b5a2470cc56b79a20d0f9d1dfb74c668b2",
+          "receipt_sha256": "463f14da6cb4c0bbccbe3738da1a8807862226c787d6ebe80ee36b02925be847",
+          "shutdown_verified": true
+        },
+        {
+          "action": "idle_boundary",
+          "log_sha256": "c213600235bfd1107fc21bec91714838cbb7cb240e680eae3452900d0b123f63",
+          "receipt_sha256": "6f4e7ffa66ed1caa58cbee825455eda3c5edaf196ad71ed5c6b64eebb854dc37",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stable_held",
+          "log_sha256": "82006df8f797c68f52965509245ad5a622ba98282bbd661b2ff28abd34d99c6a",
+          "receipt_sha256": "2b3aa01ba2dc8b39c6493ab4c100ef321aaa39ba21e8d3af1b44445778690c0b",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancel_pending",
+          "log_sha256": "cf8dd11d2854909e6368c4117ca475e5a137546af7b99800aa34aa6c388605f3",
+          "receipt_sha256": "4fc5402fc8f485cd4247a3e93454ce54c8ea1ee0f120403ff1ff5640b6c0e02b",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "743cea2612af9a096c382d41a6ef65c51c30dc23a032efb6c63d9fcb5702d16e",
+          "shutdown_verified": true
+        },
+        {
+          "action": "producer_release",
+          "log_sha256": "9e04fe16b6748b8a36f38850786f2c72f9e7642fb5194e3457e4f08e91570ed4",
+          "receipt_sha256": "75391610e9737b31c189591f825e31416f983f46dce2225b253ad439fee4ace4",
+          "shutdown_verified": true
+        },
+        {
+          "action": "owner_release",
+          "log_sha256": "eb2014416e1c6df69f594f24ea49f7953ecbebb68f1c23f4a4ca03829ead0947",
+          "receipt_sha256": "97974586bd5b3d8a70baaa74cacb294ee23cec26b873a7f0924dc5e7a2ea4f08",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_held",
+          "log_sha256": "14e0e15f839f6ae8286d654e39500fe4cc4d623b282d3e96fb7aa997c226335a",
+          "receipt_sha256": "a9ea27cf39256061d53974c7b036f4c5944073ced93e185107a9dbf92ee6be67",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "02dfda80706aae5ef77dc842de3cd0ca25044c2a4b1448d9c0708ccef86c5b90",
+          "shutdown_verified": true
+        },
+        {
+          "action": "shutdown_held",
+          "log_sha256": "e16b0a93455bd8ebeaffb774f678261bcf9f10f7a0f2cf83502e2b098c17c7db",
+          "receipt_sha256": "e538ff1df9182fe0ae3e4fd2a27895347dd72dedaf9364e7f70f2db18cc49bd5",
+          "shutdown_verified": true
+        },
+        {
+          "action": "reopen",
+          "log_sha256": "c986f8128c5465f77d93b057b07b55b125f35f00ca160d460fc42c4b1fe35f42",
+          "receipt_sha256": "b7e04eb5d845e8a25410d3f63ebd790d7703667045bcdc3fc9786ed2e7f7e8f7",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart_thread",
+          "log_sha256": "c883890a21af10cd4ce78018212036a9064c732d5355d76ed2d55eb6f46a734a",
+          "receipt_sha256": "0368083abb0623dc5dbb6c7a1097ff1e0199d306bee1b482a176cf90d821de1b",
+          "shutdown_verified": true
+        },
+        {
+          "action": "failed_open",
+          "log_sha256": "38a372854371a61be1476a7eae56252633d99b250037a9f0f1966288bcf8d803",
+          "receipt_sha256": "e3e3d37838e762e6b8c92fc725e11ba6a8b041d679978db59969977a85103023",
+          "shutdown_verified": true
+        },
+        {
+          "action": "opening",
+          "log_sha256": "54dac681de40b5505224fa38849a23104c570b59530ee1133a0c281013584b48",
+          "receipt_sha256": "966df19e413ed846bf0c7e6fc032753fbc9888a827176849c820819d61aac223",
+          "shutdown_verified": true
+        },
+        {
+          "action": "reject_actor",
+          "log_sha256": "fb34b6a77fa2f1c77f38604397cc3dbd0f3cee956f4790cc3bac9bd83ac354d1",
+          "receipt_sha256": "72283f9d515e3223d5f90d87edf1b52a1ee6c493fee958d5b067f7ce29909b56",
+          "shutdown_verified": true
+        },
+        {
+          "action": "mtvu_dependency",
+          "log_sha256": "e48864ef48a991dbfa851bc37d83a6b156283aa2a5d89308a1750954fdebe862",
+          "receipt_sha256": "5d0b92f14e2f6a4de949b1b1edf7a24e763f7501121c9daa10c7b4e3e7b80a30",
+          "shutdown_verified": true
+        },
+        {
+          "action": "signals_before_ack",
+          "log_sha256": "661a52031c43ea5e1ab2fa5e7bef67128a75c4a1fad1a48221b6ea0dcb94876a",
+          "receipt_sha256": "f86a7bb364f35102aca0c9089a2db853f84da87adafac5451ac9e69f7982fe68",
+          "shutdown_verified": true
+        },
+        {
+          "action": "exhaustion",
+          "log_sha256": "a159ca073d6058ceb45904b847dea8d930b206f01f9a541157b962ff8bf69061",
+          "receipt_sha256": "d97d378b36ead513941a0aa1b30d9e1ae110571133105e9005ee3270cf594e6f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "publication_gap",
+          "log_sha256": "1f32ce0a4cd0849b2379584fd003d76ec94c4837e5c9a9804947233917d705fa",
+          "receipt_sha256": "80abf8d249816390e57d647ce648389de313a5e5efc923f848ee85a7f8bc9792",
+          "shutdown_verified": true
+        },
+        {
+          "action": "signals_gap",
+          "log_sha256": "fa19edd22dbf96fba3b4c7ce8d8420484fe7971846e80d39c22ff6aabf3f3ec2",
+          "receipt_sha256": "967620821892b3054ebea02e4db8769f7378ca30a047b70d7ca8af0b87a8c024",
+          "shutdown_verified": true
+        }
+      ]
+    }
+  ],
+  "gs_ringbuffer_executed": true,
+  "gs_service_boundary_scenarios": 6,
+  "gs_thread_entry_body_executed": true,
+  "gs_vu_joint_vm_executed": false,
+  "historic_attempts": [
+    {
+      "id": "fragments-v1",
+      "outcome": "ambiguous_namespace_anchor",
+      "partial_files_preserved": true
+    },
+    {
+      "id": "probe-v1",
+      "outcome": "60_passes_before_deterministic_wake_and_signal_gap_improvement",
+      "superseded_by": "probe-v2"
+    },
+    {
+      "id": "negative-keep_mutex-v1",
+      "outcome": "expected_assertion_followed_by_active_thread_destructor_abort",
+      "superseded_by": "negative-controls-v2",
+      "verifier_expected_exit_one": true
+    }
+  ],
+  "historic_files_verified": 89,
+  "historic_manifest_sha256": "dc8d2950aae6dee1b42f68f5a3da97869da57714a1b52967c51675a2574b04f0",
+  "historic_receipts_verified": 65,
+  "host_ctest_rerun": false,
+  "live_acquisition_performed": false,
+  "local_scripts_sha256": {
+    "build/f02-07-gs-control/audit.py": "37a09d67411d30bf33d1c390c9bc06b72fc01814c9f48a55d9bb764dc14b17be",
+    "build/f02-07-gs-control/compile_private.py": "7565ba1647a26f4e8222a6a81f9f00cb62d682f7c3d99457837b4370d3d4cb3e",
+    "build/f02-07-gs-control/fragments-v2.py": "8fda1a01d42e0a4ef577b114d2376e9004e1b9ee797d52eb6fe6fda3362cdb7e",
+    "build/f02-07-gs-control/fragments.py": "8b73d0c255f22cccfd734dbfc7244f212a0dc24025d4481e2f7177b28d0689c5",
+    "build/f02-07-gs-control/negative_controls-v2.py": "1136b2be8d73063c970f00e66bd230aedb4b877acdfdfc545805429d93ed374f",
+    "build/f02-07-gs-control/negative_controls.py": "4cd37e6c0e33803f41bffe812ee8eef6d418b17c33e4e52e73aa8089788fdd39",
+    "build/f02-07-gs-control/prepare.py": "82bd76d0d0f1281faebcb9c9be724a60b0f45d0fd234cfdf982e78b689744258",
+    "build/f02-07-gs-control/prepare_vu_regression.py": "9d4c75ab4263d2184cf24a3130942ffb503e8855b1925e78d7efff09eacd63de",
+    "build/f02-07-gs-control/run_probe-v2.py": "69758a97a9e788d73b92fd9c5c14bf69f766ec08743efb16ca75d324499a4243",
+    "build/f02-07-gs-control/run_probe.py": "863ddd7bd744cbf3ce0b3c10e8d60554ca946b4aae23956787425a02e80b896b",
+    "build/f02-07-gs-control/run_vu_regression.py": "ca7ae4a03869e65ace7d3d14355561e41a538d668cc9314af419d810f1c33f33"
+  },
+  "mach_kernel_semaphore_executed": true,
+  "negative_controls": [
+    {
+      "binary_sha256": "96019e17a60e4e03db8ad86f677c126835d27712e440463fb6df5fa02056a61c",
+      "expected_failure": "s_mtx_RingBufferBusy2.try_lock()",
+      "fragment": "gs_control.inc",
+      "harness_sha256": "4a364d70998c70d0643566cd21a5f3af71e85708bfbf845d0bc6e4735691beef",
+      "mutated_fragment_sha256": "468be6381ebb64746a5e75012b53efaf08b1fa82eadf4a756b3f06d7bac2f824",
+      "mutation": "keep_mutex",
+      "original_fragment_sha256": "9ebc2a0ff1420276c5a0084913c9e87b47cec98938c6f4395f7175e82dfdb54c",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "09c830ad32c2b340ac4debe49828aa930d20239ed25520e91f02ab496bdce690",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "action": "run",
+          "exit_code": -6,
+          "log_sha256": "dff49251561c7ef62d22aebe1a9fd5793d33a453849aa383bdc2ec3f6d31b4ec",
+          "receipt_sha256": "c5f125e27afd53cdb9cd2df3af0fefb63b2fe8fd29779ebe2c1ad94eaa759c4b",
+          "shutdown_verified": true
+        }
+      ],
+      "scenario": "empty_wake"
+    },
+    {
+      "binary_sha256": "7eb96459ebd784772af915013079892137827dd4c1316ce73d229361e440bd15",
+      "expected_failure": "callbacks.load() == 0",
+      "fragment": "gs_control.inc",
+      "harness_sha256": "4a364d70998c70d0643566cd21a5f3af71e85708bfbf845d0bc6e4735691beef",
+      "mutated_fragment_sha256": "e1d54b589633086cab29b7ca4b788e510a43e99fb45d192fe7ec8ce2e4dc316c",
+      "mutation": "skip_hold",
+      "original_fragment_sha256": "9ebc2a0ff1420276c5a0084913c9e87b47cec98938c6f4395f7175e82dfdb54c",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "459cf5a69d6b467f4e2cf414efba33438aa167789a3b47064d35f7ed19c7d180",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": null,
+          "action": "run",
+          "exit_code": -6,
+          "log_sha256": "ca13c5706b7deb471bdc3a33bad10b4ca402410ad0fe8b6ade90e37451b6cb85",
+          "receipt_sha256": "0246e805a04797500cf4b20dcf5209549a98c3ff6c7d275f1a63e2f26e766ee0",
+          "shutdown_verified": true
+        }
+      ],
+      "scenario": "stable_held"
+    },
+    {
+      "binary_sha256": "e340c9e8d19091eaa1e716fe834cbd71968e913185f02725ed9df32f13bf429e",
+      "expected_failure": "deadline",
+      "fragment": "gs_control.inc",
+      "harness_sha256": "4a364d70998c70d0643566cd21a5f3af71e85708bfbf845d0bc6e4735691beef",
+      "mutated_fragment_sha256": "3f99b482fadad5424c613e7c98cc499d0ea9dfd8d14899c42bbfc995c32ecf1f",
+      "mutation": "omit_queue_recheck",
+      "original_fragment_sha256": "9ebc2a0ff1420276c5a0084913c9e87b47cec98938c6f4395f7175e82dfdb54c",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "3ff41f2c013b348e84eb5cbaf485d8a13da99422d4914ad0cf3d8c7e00d6b4ef",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": "deadline",
+          "action": "run",
+          "exit_code": -15,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "e2c633c3e1747c83c8432cd161a357b1bf9e80429e8581b5bb9f8f807e23f291",
+          "shutdown_verified": true
+        }
+      ],
+      "scenario": "publication_gap"
+    },
+    {
+      "binary_sha256": "3fa7a0a341b54aba07b28b6fb787e1c189bfcc1a6a15aeef5fa5438e4a27cc47",
+      "expected_failure": "deadline",
+      "fragment": "gs_control.inc",
+      "harness_sha256": "4a364d70998c70d0643566cd21a5f3af71e85708bfbf845d0bc6e4735691beef",
+      "mutated_fragment_sha256": "ce8044c592edd7e061d23f7b33125b0bed7569cb8fab56368d53c34725eaf735",
+      "mutation": "omit_signals",
+      "original_fragment_sha256": "9ebc2a0ff1420276c5a0084913c9e87b47cec98938c6f4395f7175e82dfdb54c",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "f8bea23c55d7ac4628bf602ac567a277c1f292ed2a18d2ab4a4bb588581a764b",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": "deadline",
+          "action": "run",
+          "exit_code": -15,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "d4123f0ecee3563fb17095fea5dfa3e828f06d78aa78e62d2530a34fc6711a95",
+          "shutdown_verified": true
+        }
+      ],
+      "scenario": "signals_gap"
+    },
+    {
+      "binary_sha256": "3de560e063a17ee48da4b196bfe865e46da5f2083e782ce1a6df4a6a4eaca347",
+      "expected_failure": "deadline",
+      "fragment": "gs_control.inc",
+      "harness_sha256": "4a364d70998c70d0643566cd21a5f3af71e85708bfbf845d0bc6e4735691beef",
+      "mutated_fragment_sha256": "2c89b6ebd059d3ee3605bb7d9dccc1c52df5a661d7e4ec006be53e86669262eb",
+      "mutation": "omit_notify",
+      "original_fragment_sha256": "9ebc2a0ff1420276c5a0084913c9e87b47cec98938c6f4395f7175e82dfdb54c",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "b8f20e6091839caf4d76a34d55a04dbd4d352a0c350c002a552eb9204cda2c4e",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": "deadline",
+          "action": "run",
+          "exit_code": -15,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "b18ee811c6fb1e2326a5fc6be4dc6fbdede96de38ad3dc5bc4fafb834148cab4",
+          "shutdown_verified": true
+        }
+      ],
+      "scenario": "empty_wake"
+    },
+    {
+      "binary_sha256": "9f65790db4a5b126b3b25306badd9c5508940082e8697e8f69fe70e4cfea0fd4",
+      "expected_failure": "deadline",
+      "fragment": "before_producer.inc",
+      "harness_sha256": "4a364d70998c70d0643566cd21a5f3af71e85708bfbf845d0bc6e4735691beef",
+      "mutated_fragment_sha256": "45683d0d37d680ab46d6738a0d184fa0be373bcf06c36783656e3da12cf0ed40",
+      "mutation": "omit_cpu_cancel",
+      "original_fragment_sha256": "36287fc2518d3990fe64f029a3ae6bfde9ea5cbffce892e304bb5979188c55f7",
+      "receipts": [
+        {
+          "abort_reason": null,
+          "action": "compile",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "8aa87c1105ce57f569b7a966db5d2a31a049b7ee91b69fb5c77fe84084dbf1c7",
+          "shutdown_verified": true
+        },
+        {
+          "abort_reason": "deadline",
+          "action": "run",
+          "exit_code": -15,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "6027d15cd0c5aba8a66c7852fbea1e986d93f1f85e519f6846fbfdacbbd113c6",
+          "shutdown_verified": true
+        }
+      ],
+      "scenario": "close_held"
+    }
+  ],
+  "next_tasks": [
+    "IW-COORD",
+    "B3-B3c",
+    "CQ3-C"
+  ],
+  "nintendo_build_rerun": false,
+  "object_builds": [
+    {
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "on",
+      "object_sha256": "5e45650cfb282f7ee5b141338d38f119a24500bc644a33437d29c376d239158c",
+      "receipt_sha256": "62a771a0f31a08e125b95212b693cfa1b9180b4dac6059780809da81f2800384",
+      "shutdown_verified": true,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "off",
+      "object_sha256": "b4fc774d07a60d651b0ff4aae5a9f0b1b0321021325b735c0e40e16f748456af",
+      "receipt_sha256": "d042f82da2d220c83594c157e28303fa147f4a20041297e0e39bb6057c51915f",
+      "shutdown_verified": true,
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "on",
+      "object_sha256": "2521ed763f626154ceba92e5250e51d852a95f625f99127975815c815bbc6a99",
+      "receipt_sha256": "11c17db80c67832476c76d4c7b0018eec8d7e316e36cebb439056f73644cf8a7",
+      "shutdown_verified": true,
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    },
+    {
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "off",
+      "object_sha256": "af3ef22c6651554ef87783403791520d887ce59de1a671fc17abf61b1cdb14c2",
+      "receipt_sha256": "e9f6f214f2dafcbe03c23b7ac34fe81052f2a88d0ea838e7c5f504313e24d522",
+      "shutdown_verified": true,
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    },
+    {
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "on",
+      "object_sha256": "5dd9cae852d325792f48b05b470f29f7066f523b1e5b146675a5d393c09ae918",
+      "receipt_sha256": "55cce3461bf0e611db77a96084de3ae91d53c7e3e6a70fdcfc50112a5f950dba",
+      "shutdown_verified": true,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    },
+    {
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "off",
+      "object_sha256": "3dc5dfdc858f1859ce4fdcfbaf89d28909334edab0c0697a27ddd2778d2147e3",
+      "receipt_sha256": "900e07717e0cf74fbca627348caa917c66b153868268ec8dad1976e3065031e5",
+      "shutdown_verified": true,
+      "source_file": "pcsx2/MTGS.cpp",
+      "source_sha256": "53e8642237ebfe4f9953c0e359e463471a3407e28af43991a723d3ef3e822422"
+    }
+  ],
+  "pine_owner_is_double": true,
+  "preceding_custody_audit_sha256": "b79d2d9240afbff849d19d934a2829def17378dad2d698f717115f0d627b5a61",
+  "preceding_custody_identical": true,
+  "preparation_sha256": "c8757ad722fc37acf18e2ef1d0902b1ed200a3249430181148b786640e92a257",
+  "prior_private_sources_unchanged": true,
+  "private_patch_sha256": "3ba16493f2ecbea002ba23a3e64daf81761e6adb28587ea136a08969c783b8c2",
+  "provider_added": [
+    "pcsx2/sh3-observer/pcsx2/gs_control.inc"
+  ],
+  "provider_application_executed": false,
+  "provider_application_linked": false,
+  "provider_changed": [
+    "pcsx2/MTGS.cpp",
+    "pcsx2/MTGS.h",
+    "pcsx2/VMManager.cpp"
+  ],
+  "provider_configuration_sources_sha256": {
+    "pcsx2/Gif.h": "0765491e119a3de2f142e97a3f33163a5b15772c0607aa39fa1ec5570954e60d"
+  },
+  "provider_downstream_port_rejects": true,
+  "provider_native_thread_wrapper_executed": false,
+  "provider_work_sema_executed": true,
+  "public_inputs_sha256": {
+    "docs/execution/f02-07-gs-control.md": "4d0428afc2c2aeaf88e9d285f0a0f21a3b5cf751340b2dfd8002dbc54a02ec7f",
+    "schemas/gs-control-v1.md": "6b33fc696712645ea77a65097d536b7d59babc6e6e2c87f4d2dd0f8a0c058519",
+    "tests/fixtures/pcsx2-gs-control/README.md": "39e72cb8e88a8506ce465da6a8d329468e4bd5e88de17bce0e8a69a95e4a01f3",
+    "tests/fixtures/pcsx2-gs-control/probe.cpp": "4a364d70998c70d0643566cd21a5f3af71e85708bfbf845d0bc6e4735691beef",
+    "tools/observer/pcsx2/gs_control.inc": "9ebc2a0ff1420276c5a0084913c9e87b47cec98938c6f4395f7175e82dfdb54c"
+  },
+  "python_full_suite_rerun": false,
+  "qt_event_loop_executed": false,
+  "read_events_produced": 0,
+  "remote_ci_executed": false,
+  "renderer_gif_abi_and_frontend_are_doubles": true,
+  "resource_links": [],
+  "schema_version": 1,
+  "source_commit": "fd9d310ccbb6b8b62c976da8886a3c8fd3a10ff3",
+  "source_files_verified": {
+    "source-admission-v1": 2949,
+    "source-baseline": 2934,
+    "source-cpu-boundary-v1": 2953,
+    "source-dma-v2": 2945,
+    "source-gs-control-v1": 2961,
+    "source-host-v1": 2945,
+    "source-jit-cache-v2": 2945,
+    "source-lifecycle-v1": 2947,
+    "source-lifetime-v2": 2945,
+    "source-observer-v2": 2941,
+    "source-pine-coordinator-v1": 2955,
+    "source-pine-exclusion-v1": 2951,
+    "source-producer-entry-v1": 2957,
+    "source-qt-dispatch-v1": 2957,
+    "source-retained-drain-v1": 2957,
+    "source-vu-control-v1": 2960,
+    "source-vu-control-v2": 2960
+  },
+  "source_id": "SRC82",
+  "status": "gs_control_integrated_private_isolated_provider_bodies_verified_vu_regression_passed_global_coordinator_pending",
+  "stop_retry_forced": false,
+  "total_passing_scenarios": 108,
+  "userspace_semaphores_are_doubles": true,
+  "vu_execute_ring_buffer_scenarios": 42,
+  "vu_in_gs_probe_is_double": true,
+  "vu_regression_fragments": [
+    {
+      "first_line": 129,
+      "fragment_sha256": "7bb27f5127a3b62957a3fbddb0bb4b3c7d2f94b13d41cbd07c4285289aff57b0",
+      "last_line": 144,
+      "name": "kernel_class",
+      "source_file": "common/Threading.h",
+      "source_sha256": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb"
+    },
+    {
+      "first_line": 110,
+      "fragment_sha256": "b57999385dffba5afe4937e2be69208076a39f84e2b43db487009cabf0643340",
+      "last_line": 148,
+      "name": "kernel_darwin",
+      "source_file": "common/Darwin/DarwinThreads.cpp",
+      "source_sha256": "7a683e8f282425b5c43cfa7529c5c04607ecf0662af09fc758cbe8a34701235a"
+    },
+    {
+      "first_line": 151,
+      "fragment_sha256": "e1cd4d83b8c9e56b3623d91ffcca56d675496f9af31a6ef5fd3938ccd369e4f2",
+      "last_line": 222,
+      "name": "work_sema_class",
+      "source_file": "common/Threading.h",
+      "source_sha256": "106550a823ff04a3c00ebc48bdc333d964c6a47e8e88e931b6bf6529066e1dbb"
+    },
+    {
+      "first_line": 18,
+      "fragment_sha256": "63266793a33be4be7494c9b55bfa4616f624b02f1af199469b9dfc7e06e1182a",
+      "last_line": 42,
+      "name": "check_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 43,
+      "fragment_sha256": "15b7ff24294e4bbd0701ffec65a2591da2fb7ff37515f5dc142d3ee7c2bacb26",
+      "last_line": 62,
+      "name": "wait_for_work",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 94,
+      "fragment_sha256": "f292f8f45cd67b70585c95a37f1b7af647acd2831a638d96e25d8c44abb2ec3a",
+      "last_line": 109,
+      "name": "wait_for_empty",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 128,
+      "fragment_sha256": "85d7b0c3204758cd382be2de1d9d0c371c8318959b6d971a9a1a1afaacdd40d0",
+      "last_line": 134,
+      "name": "kill",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 135,
+      "fragment_sha256": "921e3130219aa2c653319270fe3c04a8091d10ad34fb7c59ffa0e5b4c67cd5a4",
+      "last_line": 139,
+      "name": "reset",
+      "source_file": "common/Semaphore.cpp",
+      "source_sha256": "dc9bd3f205327ffc2aeae64b24a81d5b2ce5028fbf14ed2fa83f26225f6dcc04"
+    },
+    {
+      "first_line": 22,
+      "fragment_sha256": "bfd34abafac5528eaeffc998b3a08044f00bdb31a697dcff117d6a4ff95b67c9",
+      "last_line": 142,
+      "name": "vu_class",
+      "source_file": "pcsx2/MTVU.h",
+      "source_sha256": "4e4e96cccbe3deca4ac004e89e899ce06207b3f85fa9beccd15bd31a46426d47"
+    },
+    {
+      "first_line": 24,
+      "fragment_sha256": "9d2ad4ea1607ab8551e1e59bf9f416d7cd3a9c442a36fe78781bd6451c578f3b",
+      "last_line": 37,
+      "name": "commands",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 86,
+      "fragment_sha256": "04d6d11ef298f4e3aa8a968d98eff015957e30dc9d001dc88d68f91825d2c2a8",
+      "last_line": 89,
+      "name": "constructor",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 91,
+      "fragment_sha256": "28aa16b8ef51a33d1ffb86934e97e897121d3c349c5a4527bdb6289d92356753",
+      "last_line": 94,
+      "name": "destructor",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 96,
+      "fragment_sha256": "a181c08980b67a94e6ec15235854af148831fe9d26ec06f2f11112d99280f840",
+      "last_line": 109,
+      "name": "open",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 111,
+      "fragment_sha256": "8b4a488d85d2212eb3e01a59394606c439d7a23748107ba9844aaf674f2e5fd3",
+      "last_line": 122,
+      "name": "close",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 124,
+      "fragment_sha256": "72e4bd92fbf4d9a3d0a9e1634416201808ffac16274b0aa965adb3d2ddb8bd08",
+      "last_line": 139,
+      "name": "vu_reset",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 141,
+      "fragment_sha256": "7838dba2712ef731b44b77dcda46f64f1f736a45a6da621a9cdc08ca612aeb81",
+      "last_line": 232,
+      "name": "execute",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 236,
+      "fragment_sha256": "a986771bf0560072fcb2d5032aedd287c74b226d8a0c09435a7f9ffd6b986fd8",
+      "last_line": 259,
+      "name": "wait_size",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 263,
+      "fragment_sha256": "3d5569dcab39396f555014e4bb0a5abfd7631e145d7511c7ae6cdd87d3e09709",
+      "last_line": 279,
+      "name": "reserve",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 282,
+      "fragment_sha256": "fc0a2c9c4dca08e5f219ce401ad3d2f5d3aef01a2221a741aa91cc06d974f007",
+      "last_line": 285,
+      "name": "read_pos",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 288,
+      "fragment_sha256": "abbfe15c6123052e786ea01c06f56fb2bb8ac9367d31f4cb23d7537a9c586be6",
+      "last_line": 291,
+      "name": "write_pos",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 294,
+      "fragment_sha256": "b2f4fa2b53714e78cd967a72ae1d3979254ffbe9258e6de0f46e5414e757518d",
+      "last_line": 298,
+      "name": "write_ptr",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 300,
+      "fragment_sha256": "d288dade83aa915c65928ea8bf9629c5acb4f226cac9282227ada4704116e81f",
+      "last_line": 308,
+      "name": "commit_write",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 310,
+      "fragment_sha256": "8a5b435bd1e56346a601aad47f0d85b07e21367877b906645c339dcb9d9c6f1a",
+      "last_line": 313,
+      "name": "commit_read",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 315,
+      "fragment_sha256": "11750d68866842d21e114537d09dbcd343fa30173db65b1bfdf5d16d1e235e5e",
+      "last_line": 320,
+      "name": "read_word",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 322,
+      "fragment_sha256": "56f2bf40e8e648d947d71a53d5f9ce44ee758715ae2bfeac518a9862c91673b0",
+      "last_line": 326,
+      "name": "read_bytes",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 328,
+      "fragment_sha256": "8388e03ecda12c61009be258824de1f23818c69f6bfe7e3c4025419d312d92db",
+      "last_line": 338,
+      "name": "read_regs",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 340,
+      "fragment_sha256": "d00f5f16cc54125f87b3f1cb9861cd17a44c6824aec18476c92c08ed1a0addbe",
+      "last_line": 344,
+      "name": "write_word",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 346,
+      "fragment_sha256": "f72f947f45c5b8d2b5882e53cec74ceaa8ae638f6f9f1a2a9c71f232fd11d1ba",
+      "last_line": 350,
+      "name": "write_bytes",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 352,
+      "fragment_sha256": "ea5f333bb8a30f2cf25db2439132a3cdda90ee5202cdd6ea5fe1100463011e45",
+      "last_line": 362,
+      "name": "write_regs",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 452,
+      "fragment_sha256": "b3ce030690698d20add1ea26b68ae1c41b3be716cc33deb498c821aef459c521",
+      "last_line": 458,
+      "name": "kick",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 460,
+      "fragment_sha256": "de5af54212b0e97dc35dda5864abd8383655e7b9d15167a204157a6baef48df0",
+      "last_line": 463,
+      "name": "done",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 465,
+      "fragment_sha256": "038850205529a4b70a8b9a18651d07be13a1954ce1071afd84aa6ec43a309576",
+      "last_line": 472,
+      "name": "wait_vu",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 535,
+      "fragment_sha256": "af3fabdb926cf91422621393e3a32ab3087e8168ce628c9babe51df209687c67",
+      "last_line": 548,
+      "name": "write_data",
+      "source_file": "pcsx2/MTVU.cpp",
+      "source_sha256": "3bfd46e6a01cbe6a52b223ef064b530a3ae588f97f2f53b714d6ac695a92f6da"
+    },
+    {
+      "first_line": 189,
+      "fragment_sha256": "3efdc850c3ad6ece99ee1bb47b6a96237e6c8a27b7b19f258476c166f3ab749f",
+      "last_line": 198,
+      "name": "stop_owner",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    },
+    {
+      "first_line": 2905,
+      "fragment_sha256": "929b92c071c95ca4ea27a7ca8d0ba968df0b3b52a3ed2509361d4a062d2705e8",
+      "last_line": 2908,
+      "name": "cpu_actor",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    },
+    {
+      "first_line": 2910,
+      "fragment_sha256": "4446640e79ec18e6f9695231a1b9ee807250126a650fc2513c35d1c2b6fad257",
+      "last_line": 2913,
+      "name": "cpu_guard",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    },
+    {
+      "first_line": 2915,
+      "fragment_sha256": "36287fc2518d3990fe64f029a3ae6bfde9ea5cbffce892e304bb5979188c55f7",
+      "last_line": 2924,
+      "name": "before_producer",
+      "source_file": "pcsx2/VMManager.cpp",
+      "source_sha256": "a4158e5008da62180bdefc134bc42d499f219f0ee38d05cfc0958dbfdf5d3bb7"
+    }
+  ],
+  "vu_regression_passing_scenarios": 45,
+  "vu_regression_preparation_sha256": "6f4305253d6f7cb0dae6f599f7185ad3d0300ff1f242eebd43732bcb2d6603fd",
+  "vu_regression_runs": [
+    {
+      "binary_sha256": "6bb9279da51842ff882a9fbd51b3812bca78f7b38838ed81b237510560270a65",
+      "cases": [
+        "empty_wake",
+        "command_batch",
+        "cancel_pending",
+        "timeout_pending",
+        "stable_held",
+        "producer_release",
+        "close_held",
+        "shutdown_held",
+        "close_pending",
+        "restart",
+        "reject_actor",
+        "full_gs_dependency",
+        "wrap",
+        "exhaustion",
+        "publication_gap"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "normal-native",
+      "passed": 15,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "cc4c2181aec8d331b249901ed484cfe060abcd0c73c65778591db330b8f226d8",
+          "shutdown_verified": true
+        },
+        {
+          "action": "empty_wake",
+          "log_sha256": "14e708aa616df3f318edd464e60cb46ec26a9f22c58a1f4b31622826b31ce30e",
+          "receipt_sha256": "f35303fe395c32786ce9a39f493e87c19721a340db796bf6f3ce81656a8a7a5d",
+          "shutdown_verified": true
+        },
+        {
+          "action": "command_batch",
+          "log_sha256": "891abc4ab356c4819fcc693434105f496621dc6c6c285c8264219e968d96d892",
+          "receipt_sha256": "79e2be8838371d03d382043515cfb2dd7c88ebcce64fa4bd7b3abb247b352f51",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancel_pending",
+          "log_sha256": "cf8dd11d2854909e6368c4117ca475e5a137546af7b99800aa34aa6c388605f3",
+          "receipt_sha256": "a303cfe0ab17195a001a1a18814f67823c54debf46c3fd166d7e12f1500e592f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "4e660f6601e974e8bc4c13adf63120ff40edd13441371ebf23d86e106d53282c",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stable_held",
+          "log_sha256": "82006df8f797c68f52965509245ad5a622ba98282bbd661b2ff28abd34d99c6a",
+          "receipt_sha256": "15c538568b487be28a2d528ad9c39ddde2e69ff0868bfa18b3c0f7f48f844bf7",
+          "shutdown_verified": true
+        },
+        {
+          "action": "producer_release",
+          "log_sha256": "9e04fe16b6748b8a36f38850786f2c72f9e7642fb5194e3457e4f08e91570ed4",
+          "receipt_sha256": "9a8d8e0571ba2fd56e98ba68dfcf27b01ffeca8237b3c7702932af8412279325",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_held",
+          "log_sha256": "14e0e15f839f6ae8286d654e39500fe4cc4d623b282d3e96fb7aa997c226335a",
+          "receipt_sha256": "f238f81cc0dfc4ea02cd1fdfa5cab5308a188c94e1f4bd03fa259eeaf2fa1144",
+          "shutdown_verified": true
+        },
+        {
+          "action": "shutdown_held",
+          "log_sha256": "e16b0a93455bd8ebeaffb774f678261bcf9f10f7a0f2cf83502e2b098c17c7db",
+          "receipt_sha256": "c4fe6ae017d473e1edb83a98daf6a7128c8bc02a273dd093a3ef9a3870d0c249",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "27ebc81619e1fc9faf007372c7d067293f9fcefbf23fc6be24dc9a5840e5a571",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "26940675ded457e5b12375d73171f9c6d762e399298dd1a530adb5dec0322e5d",
+          "shutdown_verified": true
+        },
+        {
+          "action": "reject_actor",
+          "log_sha256": "fb34b6a77fa2f1c77f38604397cc3dbd0f3cee956f4790cc3bac9bd83ac354d1",
+          "receipt_sha256": "e0fdddbae3cfd754996c5540e9983c4617c3bb283d10bebc96e6b1d79cf855f3",
+          "shutdown_verified": true
+        },
+        {
+          "action": "full_gs_dependency",
+          "log_sha256": "08a657c9c62c8c4cf2029e556837b59081b5509189b825b3b64a581eaf8d189a",
+          "receipt_sha256": "715b0216706cffea368115892a708e70c6c98c7916c0b2962bbaff582a4fce66",
+          "shutdown_verified": true
+        },
+        {
+          "action": "wrap",
+          "log_sha256": "2f71bb11728105403382f38a1425d03403a6d970b491ddc3dd74b092880fb1f0",
+          "receipt_sha256": "23852795f7b6ad8d5c520ba5c5545321b35d86b64788e8cc174f5a1f26d716e8",
+          "shutdown_verified": true
+        },
+        {
+          "action": "exhaustion",
+          "log_sha256": "a159ca073d6058ceb45904b847dea8d930b206f01f9a541157b962ff8bf69061",
+          "receipt_sha256": "f691fbf8c7c2c3e15005a350344f37ec3e23de16bc8cebee5e436607f98affa6",
+          "shutdown_verified": true
+        },
+        {
+          "action": "publication_gap",
+          "log_sha256": "1f32ce0a4cd0849b2379584fd003d76ec94c4837e5c9a9804947233917d705fa",
+          "receipt_sha256": "05888e4bf35dd4a9c83d7b53fd69ec2fc3386c4ec9ad376600601fc8a68bc891",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "cae566156489da4aec79104bc447c44e82eff3537f1b220b5d87cb1614d0ec3e",
+      "cases": [
+        "empty_wake",
+        "command_batch",
+        "cancel_pending",
+        "timeout_pending",
+        "stable_held",
+        "producer_release",
+        "close_held",
+        "shutdown_held",
+        "close_pending",
+        "restart",
+        "reject_actor",
+        "full_gs_dependency",
+        "wrap",
+        "exhaustion",
+        "publication_gap"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "sanitize-native",
+      "passed": 15,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "fa49ab4de770ac347f98aaedd9ac9724e6d6f56983a3908a3f09e3dd426bf39b",
+          "shutdown_verified": true
+        },
+        {
+          "action": "empty_wake",
+          "log_sha256": "14e708aa616df3f318edd464e60cb46ec26a9f22c58a1f4b31622826b31ce30e",
+          "receipt_sha256": "c920f18ca6b00beb28d11294abe61d7835a6078eefb5bd34a6c5c2318051865f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "command_batch",
+          "log_sha256": "891abc4ab356c4819fcc693434105f496621dc6c6c285c8264219e968d96d892",
+          "receipt_sha256": "de821a911afc91c6b8952aadcc4462137789867d5e7143d0597c7a47cec1d19d",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancel_pending",
+          "log_sha256": "cf8dd11d2854909e6368c4117ca475e5a137546af7b99800aa34aa6c388605f3",
+          "receipt_sha256": "360a18dd21fc886229e668033379767ff2905216c402c12ad74e691601cc1c18",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "f67347ece014d4f242fa0f9c19aff48eccb6d2829a8ec24d0138377e2643862f",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stable_held",
+          "log_sha256": "82006df8f797c68f52965509245ad5a622ba98282bbd661b2ff28abd34d99c6a",
+          "receipt_sha256": "df838c4a5d8a5ed302eb9916cd7b7434ec395ee1d19b66aeada6240d1c753cef",
+          "shutdown_verified": true
+        },
+        {
+          "action": "producer_release",
+          "log_sha256": "9e04fe16b6748b8a36f38850786f2c72f9e7642fb5194e3457e4f08e91570ed4",
+          "receipt_sha256": "2325f3c97d4a03420351cdd8ee536639d8fe32e9dc8fd45cf688c730d48c8757",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_held",
+          "log_sha256": "14e0e15f839f6ae8286d654e39500fe4cc4d623b282d3e96fb7aa997c226335a",
+          "receipt_sha256": "0bc2c1f8ea4e1a72cf910d25c5f83a6ff92156237f57a1009451a51e7cabf4a2",
+          "shutdown_verified": true
+        },
+        {
+          "action": "shutdown_held",
+          "log_sha256": "e16b0a93455bd8ebeaffb774f678261bcf9f10f7a0f2cf83502e2b098c17c7db",
+          "receipt_sha256": "fc511cb1806df557749f62b720ae696a560094807bd6499fbc597663e997a081",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "a2abb694606402af66e4eba9efabf992ed8dd40b9b0ffaf293e6252380b2af35",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "9d64b17cc77c0fbef6540d8d30522f28581dc747794a2afe4606b9ee1824d14b",
+          "shutdown_verified": true
+        },
+        {
+          "action": "reject_actor",
+          "log_sha256": "fb34b6a77fa2f1c77f38604397cc3dbd0f3cee956f4790cc3bac9bd83ac354d1",
+          "receipt_sha256": "dd7c1631f07a3cbd981c21bf15c02a564ffd8cdb161cea2ff234f2f8e1321f78",
+          "shutdown_verified": true
+        },
+        {
+          "action": "full_gs_dependency",
+          "log_sha256": "08a657c9c62c8c4cf2029e556837b59081b5509189b825b3b64a581eaf8d189a",
+          "receipt_sha256": "136beb01145fe07f8a1268dcf71ae609e0876225b0292befbc0e8f4f2cd65283",
+          "shutdown_verified": true
+        },
+        {
+          "action": "wrap",
+          "log_sha256": "2f71bb11728105403382f38a1425d03403a6d970b491ddc3dd74b092880fb1f0",
+          "receipt_sha256": "d40f1469c62c03707373311581c30262a156c6aadb424541cc912441c23f2bb1",
+          "shutdown_verified": true
+        },
+        {
+          "action": "exhaustion",
+          "log_sha256": "a159ca073d6058ceb45904b847dea8d930b206f01f9a541157b962ff8bf69061",
+          "receipt_sha256": "3d7c339208cd66875a5f370840bf5ddc456799ac12696b733f35d2e0c53cf8a2",
+          "shutdown_verified": true
+        },
+        {
+          "action": "publication_gap",
+          "log_sha256": "1f32ce0a4cd0849b2379584fd003d76ec94c4837e5c9a9804947233917d705fa",
+          "receipt_sha256": "bd6c9948f49bba006998b950e5ae9566149bd24dfd31c7c5c75a0d578e7d493a",
+          "shutdown_verified": true
+        }
+      ]
+    },
+    {
+      "binary_sha256": "ed5e917d51631a8a113263ed3dbef567a4dbcfd093061a3ee22489b5fbda54a6",
+      "cases": [
+        "empty_wake",
+        "command_batch",
+        "cancel_pending",
+        "timeout_pending",
+        "stable_held",
+        "producer_release",
+        "close_held",
+        "shutdown_held",
+        "close_pending",
+        "restart",
+        "reject_actor",
+        "full_gs_dependency",
+        "wrap",
+        "exhaustion",
+        "publication_gap"
+      ],
+      "compiler_sha256": "7def90dd8829726686213a747fc5bff1583df933dae5edc55d755479e0bfe00a",
+      "mode": "tsan-native",
+      "passed": 15,
+      "receipts": [
+        {
+          "action": "compile",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "receipt_sha256": "6ffb5438e656c5b3cc48520d33676c53a2928d322eb59a804fc29ecebcffbb23",
+          "shutdown_verified": true
+        },
+        {
+          "action": "empty_wake",
+          "log_sha256": "14e708aa616df3f318edd464e60cb46ec26a9f22c58a1f4b31622826b31ce30e",
+          "receipt_sha256": "7ecc6847d748bdbc4cfb27fc7b647c873faa5b7501a834c99f456f4c824e2c1c",
+          "shutdown_verified": true
+        },
+        {
+          "action": "command_batch",
+          "log_sha256": "891abc4ab356c4819fcc693434105f496621dc6c6c285c8264219e968d96d892",
+          "receipt_sha256": "c18199d99d59fbfb15bc48480e7a5094bb6d593ad3961012554c249b29c5d181",
+          "shutdown_verified": true
+        },
+        {
+          "action": "cancel_pending",
+          "log_sha256": "cf8dd11d2854909e6368c4117ca475e5a137546af7b99800aa34aa6c388605f3",
+          "receipt_sha256": "2c6137afcc314287979ea5243d99d097d836e3449c013c75a38aef93ce1a22db",
+          "shutdown_verified": true
+        },
+        {
+          "action": "timeout_pending",
+          "log_sha256": "8d22a3d47e0471f4fb9758ce52588a56483b2bbadd81c0713756a5379fa9d208",
+          "receipt_sha256": "585b06953cfaf682d9b6129f931c2eba0151db21b027db124547040d22f2ae08",
+          "shutdown_verified": true
+        },
+        {
+          "action": "stable_held",
+          "log_sha256": "82006df8f797c68f52965509245ad5a622ba98282bbd661b2ff28abd34d99c6a",
+          "receipt_sha256": "66e690bd2a29e1eec45d993174c3d096ca02bffe097d18362ceb91877e950d44",
+          "shutdown_verified": true
+        },
+        {
+          "action": "producer_release",
+          "log_sha256": "9e04fe16b6748b8a36f38850786f2c72f9e7642fb5194e3457e4f08e91570ed4",
+          "receipt_sha256": "faa5dd3e9492a2c952853294ad5f2b4bb6671fa88e675c28954871a60abb8698",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_held",
+          "log_sha256": "14e0e15f839f6ae8286d654e39500fe4cc4d623b282d3e96fb7aa997c226335a",
+          "receipt_sha256": "3d15ba8b4829b1936ff7f110f08f3e2d9ff42f5decd277b199750b310e4bc427",
+          "shutdown_verified": true
+        },
+        {
+          "action": "shutdown_held",
+          "log_sha256": "e16b0a93455bd8ebeaffb774f678261bcf9f10f7a0f2cf83502e2b098c17c7db",
+          "receipt_sha256": "40e5d2c36cedfe4fbaff0ddf8203f6f79f0fa09ee3fc1e8d39bd1ac5dbd7ca41",
+          "shutdown_verified": true
+        },
+        {
+          "action": "close_pending",
+          "log_sha256": "ef5774f4a528e1343c3f7babb87ac51780918927a5c539a1bf018f843e4c4ade",
+          "receipt_sha256": "0bf54b24c82f24dd4802cd6b172945ee7f8e63d715a07374efa61c2a260f32ce",
+          "shutdown_verified": true
+        },
+        {
+          "action": "restart",
+          "log_sha256": "57adc430fb7b82267cd0b173be404b48c1bb5fa214557c47dc696cfed838adc5",
+          "receipt_sha256": "db8b1c120ed973b7c3b328f6e49889b1a487ad25758f876d09c5ed56d91e0132",
+          "shutdown_verified": true
+        },
+        {
+          "action": "reject_actor",
+          "log_sha256": "fb34b6a77fa2f1c77f38604397cc3dbd0f3cee956f4790cc3bac9bd83ac354d1",
+          "receipt_sha256": "3b06c7511752ad05dabfd783f26a3c2750aeefba82e728595bcd6c89ad4ad118",
+          "shutdown_verified": true
+        },
+        {
+          "action": "full_gs_dependency",
+          "log_sha256": "08a657c9c62c8c4cf2029e556837b59081b5509189b825b3b64a581eaf8d189a",
+          "receipt_sha256": "a8cf17a016efda686892d095adf6c74f3092cc31be1e4973b7c1bb928032e717",
+          "shutdown_verified": true
+        },
+        {
+          "action": "wrap",
+          "log_sha256": "2f71bb11728105403382f38a1425d03403a6d970b491ddc3dd74b092880fb1f0",
+          "receipt_sha256": "0512f2c56b7ef7011d7b011ea30ba3ee8672fd476513e47d6081ef50edd83684",
+          "shutdown_verified": true
+        },
+        {
+          "action": "exhaustion",
+          "log_sha256": "a159ca073d6058ceb45904b847dea8d930b206f01f9a541157b962ff8bf69061",
+          "receipt_sha256": "34232702df62c1dffc33b8944df58f5b927804c5985d63f4a20cc0dfb6232aeb",
+          "shutdown_verified": true
+        },
+        {
+          "action": "publication_gap",
+          "log_sha256": "1f32ce0a4cd0849b2379584fd003d76ec94c4837e5c9a9804947233917d705fa",
+          "receipt_sha256": "973097476089a082d2020773dd7aab5d54e530b2222ac61bcd25c78ca98c7e68",
+          "shutdown_verified": true
+        }
+      ]
+    }
+  ],
+  "vu_service_boundary_scenarios": 3,
+  "work_sema_test_access_exposed": true
+}
