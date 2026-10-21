@@ -267,16 +267,89 @@ Fuente: PDF p. 17. **Entrada:** G02; puede solaparse con investigación F04.
 
 - [ ] **F03.01 — Verificar cobertura de un plugin/formato.**
   - Ticket detallado: [F03.01](tasks/F03.md#f0301).
+  - Instancia de estructura PS2 completada: [119 recursos/321 bloques, dos informes
+    idénticos](../../execution/f03-01-texture-structure.md). [Contrato TEX01–TEX07](../../../schemas/ps2-texture-probe-v1.md).
+    Decodificación visual, resto de formatos y G02 siguen pendientes.
   - Resultado y aceptación: Matriz por formato y revisión con salida inspeccionada; no atribuir soporte no probado.
   - Requisitos: RF02.02, RNF05.01. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 
 - [ ] **F03.02 — Decodificar un tipo de recurso del slice.**
   - Ticket detallado: [F03.02](tasks/F03.md#f0302).
+  - Instancia independiente: [primera textura de 8 bits, 256×256](../../execution/f03-02-indexed-texture.md),
+    RGBA/PNG privados repetibles y 318 pruebas aprobadas. [PX01–PX07](../../../schemas/ps2-texture-decode-v1.md).
+    [Visor privado SD](../../execution/f03-02-texture-inspection.md): TI-T1–TI-T5
+    completadas, ARM/Azahar comprobados y ZIP preparado. Usuario confirma textura,
+    controles, START, tapa y HOME en New 2DS XL. Comparación con el material
+    original, integración de escena y demás formatos pendientes.
+    [Sondeo MAP](../../execution/f03-02-map-material-candidate.md): MP-T1–MP-T3
+    completadas, dos copias coincidentes, grupo candidato de 56 vértices.
+    MP-T4 mantiene sin verificar la asignación del material en PS2.
+    [Geometría local](../../execution/f03-02-map-geometry.md): MG-T1–MG-T3
+    completadas; 56 vértices/32 triángulos, JSON/OBJ privados repetibles e
+    inspección host. [Visor de geometría](../../execution/f03-02-geometry-inspection.md):
+    GI-T1–GI-T5 completadas; 32 triángulos con material propio, build
+    `a039c31cb262`, controles y tapa/HOME confirmados en New 2DS XL.
+    MG-T4 conserva pendientes matriz y material originales contra PS2.
+    [Metadatos de render](../../execution/f03-02-map-render-metadata.md):
+    MR-T1–MR-T3 completadas; contadores delimitan las rutas, matriz base
+    localizada y palabra de modo diferenciada de índice. 398 pruebas e informes
+    idénticos. [Carga y asociación en PCSX2](../../execution/f03-02-map-runtime-binding.md):
+    MR-T4b/c completadas; cargadores del juego reciben MAP/textura con hashes
+    completos coincidentes y ambas formas seleccionan CLUT 0/TEX0.
+    [MR-T4d completada](../../execution/f03-02-map-draw-state.md): transformación
+    VU0/XYZ/STQ de 56 vértices y consumo GS de 32 triángulos por cuadro
+    contrastados bajo cámara de inspección. La reproducción software verifica
+    16.380 píxeles interiores: alpha exacto y error RGB máximo de 1/255.
+    [MI-T1–MI-T4 completadas](../../execution/f03-02-material-inspection.md):
+    material/modelo integrados en `764be66e7762`, build ARM y prueba Azahar.
+    El usuario confirma ambos paneles con transparencia, controles, START,
+    tapa y HOME en New 2DS XL. MP-T4/MR-T4/MG-T4 cerradas para estas dos
+    formas; las menciones previas de pendientes corresponden a etapas anteriores.
+    Sin comparación cuantitativa PICA/GS ni cierre global de F03.02.
+    [SA-T1–SA-T4 completadas](../../execution/f03-02-skeleton-animation.md):
+    pareja MDL/ANM identificada por hashes e ID `0x0209`, tres huesos/dos raíces,
+    76 muestras/228 registros, dos salidas idénticas y 836 pruebas.
+    [SA-T5a/b/c completadas](../../execution/f03-02-skeleton-runtime.md):
+    selección inicial en PCSX2, tres clips, conversión PAL y reloj Q12;
+    diez controles de pose modelo con NLERP y jerarquía. 108 pruebas,
+    31 nuevas. SA-T5d verifica posteriormente selección inicial y vuelta continua
+    de `0x1449`; conserva pendientes las transiciones de daño y muerte.
+    [AI-T1–AI-T5 completadas](../../execution/f03-02-animation-inspection.md):
+    visor de tres huesos con pausa/paso/reinicio, build `a1629eeace22`,
+    comprobado en Azahar. **AI-T5 física aprobada por el usuario**: ejes, A/R/L,
+    cámara, START, tapa y HOME.
+    [CM-T1–CM-T3 completadas](../../execution/f03-02-character-mesh.md):
+    malla MDL con 15 submallas, 1.455 vértices y 1.113 triángulos candidatos,
+    pesos/vínculos conservados, dos salidas idénticas y 87 pruebas nuevas.
+    [CM-T4 completada para la muestra representativa](../../execution/f03-02-character-runtime.md):
+    500 muestras en cuatro poses, 125 vértices de dos submallas y todas las
+    rutas de 1/2/3 influencias; matrices/helpers, pesos sin normalizar, W y
+    normales contrastados con VU, orden de 38 paquetes GS. 229 pruebas,
+    incluidas 34 nuevas. [CM-T5a–d completadas](../../execution/f03-02-character-inspection.md):
+    malla animada con sombreado propio, build `757b48fd1746`, 486 pruebas
+    Python, 270 C++ por preset y 77.115 comparaciones numéricas; ARM y Azahar
+    comprobados. **CM-T5e.1 funcional confirmada por el usuario en New 2DS XL**,
+    con [lecturas físicas y límites](../../compatibility/character-inspection.md);
+    CM-T5e.2 conserva pendiente duración y detalles complementarios.
+    [CT-T1–T3](../../execution/f03-02-character-materials.md) recuperan tres
+    texturas de 512×512 y enlaces de 15 submallas, con 363 pruebas y 786.432
+    píxeles contrastados. **Siguiente CT-T4: estado efectivo de material en PCSX2**.
+    Base definitiva, materiales MDL y transiciones de daño/muerte pendientes.
   - Resultado y aceptación: Fixture y datos de malla/material/textura/esqueleto/animación/colisión/cámara; eventos desconocidos separados.
   - Requisitos: RF02.04, RF02.05, RF02.08. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 
 - [ ] **F03.03 — Fijar convenciones geométricas y temporales.**
   - Ticket detallado: [F03.03](tasks/F03.md#f0303).
+  - [GC-T1–GC-T3 completadas](../../execution/f03-03-static-geometry.md):
+    operaciones puras y fixture asimétrico sobre evidencia MG/MR/MI, 519
+    pruebas y entrega A/B idéntica al build físico.
+    [SA-T5a/b/c](../../execution/f03-02-skeleton-runtime.md) verifican pose
+    modelo, raíces independientes, NLERP y reloj Q12. GC-T4 mantiene
+    pendientes transiciones de daño/muerte de SA-T5d, mundo, base definitiva
+    3DS; CM-T4 verifica una muestra de deformación en PCSX2 y CM-T5a–d
+    integra skinning en el visor con prueba física funcional confirmada. La continuidad
+    de `0x1449` está verificada; los visores conservan un encuadre de inspección
+    explícito y la malla añade una rotación de presentación de 180° sobre X.
   - Resultado y aceptación: Documento de ejes/unidades/matrices/winding/UV/pose/interpolación y fixture que detecta inversiones.
   - Requisitos: RF02.05, RF03.01, RF04.04. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 
@@ -364,6 +437,11 @@ Fuente: PDF p. 19. **Entrada:** G01 y G03 para corpus visual.
 
 - [ ] **F05.01 — Implementar un corte del backend gráfico.**
   - Ticket detallado: [F05.01](tasks/F05.md#f0501).
+  - Instancia preparatoria: [corte sintético SR01–SR07](synthetic-render.md), con
+    escena 3D propia, cámara y profundidad. [Ejecución local](../../execution/f05-01-synthetic-render.md).
+    Arranque, cámara y controles confirmados por el usuario en New 2DS XL.
+    El cierre completo sigue condicionado a completar el recorrido físico y al
+    paquete visual G03.
   - Resultado y aceptación: Buffers, matrices, cámara, material/textura y profundidad con propiedad RAII y errores.
   - Requisitos: RF03.01, RF03.02, RNF11.04. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 

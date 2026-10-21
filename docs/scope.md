@@ -12,7 +12,7 @@ Versión **1.0** · 2026-10-16 · Línea base de F00.04/Q03. Este documento fija
 | Ruta inicial | Nueva partida, progreso ordinario de campaña hasta su final, créditos y resultados | Concreción de desarrollo del recorrido de principio a fin exigido por RF13.03; contrato detallado abajo |
 | Objetivo final | Todo el contenido jugable de esa edición, incluidos los cinco idiomas catalogados, dificultades, ramas, finales y extras presentes | Alcance conservado del proyecto; la prioridad de la alpha no elimina obligaciones del candidato completo |
 | Audio e historia | Conservar las voces y contenido narrativo presentes en la edición | Sin doblaje, traducción ni historia nuevos; idiomas de texto y pistas de voz se registrarán en inventarios separados |
-| Madurez actual | Fundación sintética, identificación del disco y alcance documental | No hay lógica de SH3 portada ni validación física del diagnóstico |
+| Madurez actual | Fundación y escena 3D sintéticas, identificación del disco e investigación del original | Arranque, cámara y controles del [corte gráfico](execution/f05-01-synthetic-render.md) confirmados por el usuario en New 2DS XL; sin lógica de SH3 portada y con validación física completa pendiente |
 
 La selección de español y Normal/Normal está confirmada. La descomposición en hitos y los criterios de selección del corpus son decisiones de desarrollo basadas en el PDF, no afirmaciones de una prueba del juego. La lista `en/fr/de/es/it` tiene evidencia de catálogo; su disponibilidad y corrección durante ejecución deben comprobarse en F10/F11/F13. Los nombres, cantidades e IDs de variantes aún no investigadas no se inventan.
 

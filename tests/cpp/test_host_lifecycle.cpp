@@ -69,7 +69,8 @@ void concurrent_notices() {
   LifetimeGuard g;CHECK(g.arm(plan()));PhysicalWrites p(g,base);WriteBinding binding(p);
   const auto initial=host_epoch();std::vector<std::thread> threads;
   for(unsigned i=0;i<8;++i)threads.emplace_back([]{for(unsigned j=0;j<100;++j){before_host_write(base+0x5000,4,1001);before_lifecycle(LifetimeKind::restore,1001);}});
-  for(auto& t:threads)t.join();CHECK(host_epoch()==initial+800);CHECK(g.report().reason==LifetimeReason::restore);
+  for(auto& t:threads){t.join();}
+  CHECK(host_epoch()==initial+800);CHECK(g.report().reason==LifetimeReason::restore);
   // No guest memory is written here; this proves callback serialization only.
 }
 int main(int argc,char** argv){

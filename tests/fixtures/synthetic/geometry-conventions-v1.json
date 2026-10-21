@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "provenance": "Own asymmetric fixture; no game data",
+  "model_columns": [0, 2, 0, 0, -3, 0, 0, 0, 1, 1, 4, 0, 11, -7, 13, 1],
+  "local_positions": [[1, 2, 3], [5, 2, 3], [1, 7, 3], [1, 2, 9]],
+  "uv_words": [[1, -8192], [16385, 4096], [16384, 24576], [-8192, -16384]],
+  "expected_triangles": [[0, 1, 2], [3, 2, 1]],
+  "expected_world": [[8, -2, 25], [8, 6, 25], [-7, -2, 25], [14, 4, 49]],
+  "expected_basis": [[8, 2, -25], [8, -6, -25], [-7, 2, -25], [14, -4, -49]],
+  "expected_uv": [[0.000030517578125, -0.25], [0.500030517578125, 0.125], [0.5, 0.75], [-0.25, -0.5]],
+  "expected_local_volume6": 120,
+  "expected_world_volume6": 2880,
+  "expected_first_world_normal": [0, 0, 120],
+  "expected_first_basis_normal": [0, 0, -120]
+}

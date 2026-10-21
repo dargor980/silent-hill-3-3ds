@@ -82,7 +82,8 @@ void identity() {
   for(unsigned i=0;i<5;++i) {
     Fixture f; CHECK(f.drain.submit(f.request())); CHECK(f.step()==State::held);
     auto next=f.identity; if(i==0)next.vm=0; if(i==1)next.server=0;
-    if(i==2)++next.vm; if(i==3)++next.server;
+    if(i==2){++next.vm;}
+    if(i==3){++next.server;}
     auto b=f.cpu.enter(); CHECK(!f.drain.complete(i!=4,next));
     CHECK(f.drain.status().state==State::invalidated); CHECK(!f.source.gate.enter());
     CHECK(f.drain.retire().state==State::invalidated); CHECK(f.source.gate.enter());

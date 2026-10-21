@@ -1,0 +1,14 @@
+; Inspection mesh: retain all four position components, including deficient-weight W.
+.fvec transform[4]
+.constf constants(0.0, 1.0, 0.0, 0.0)
+.out out_position position
+.out out_color color
+.proc main
+    dp4 out_position.x, transform[0], v0
+    dp4 out_position.y, transform[1], v0
+    dp4 out_position.z, transform[2], v0
+    dp4 out_position.w, transform[3], v0
+    mov out_color.xyz, v1
+    mov out_color.w, constants.yyyy
+    end
+.end

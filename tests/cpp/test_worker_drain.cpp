@@ -119,7 +119,8 @@ void lost_token() {
 void epochs() {
   for(int p=1;p<4;++p)for(int which=0;which<4;++which){Fixture f;f.phase(p);
     {auto b=f.cpu.enter();auto id=f.identity;
-      if(which==0)++id.vm;if(which==1)++id.server;
+      if(which==0){++id.vm;}
+      if(which==1){++id.server;}
       if(which==3){auto a=f.cpu.activity();}
       CHECK(f.drain.step(which!=2,id)==State::invalidated);}
     f.retired(State::invalidated,p);}
@@ -170,7 +171,8 @@ void acknowledgement_race() {
     auto& port=which?f.gs:f.vu;const auto token=port.owned;
     std::atomic_bool ready=false,go=false;
     std::thread worker([&]{ready=true;while(!go.load())std::this_thread::yield();port.control.acknowledge(token);});
-    while(!ready.load())std::this_thread::yield();go=true;
+    while(!ready.load()){std::this_thread::yield();}
+    go=true;
     CHECK(f.drain.cancel(1));f.drain.retire();worker.join();
     CHECK(port.control.status(token)==Status::released);CHECK(f.source.gate.enter());}
 }
@@ -205,7 +207,9 @@ void dependency() {
 }
 void invalid_request() {
   for(int kind=0;kind<3;++kind){Fixture f;auto r=f.request();
-    if(kind==0)r.identity.vm=0;if(kind==1)r.identity.server=0;if(kind==2)r.deadline=Clock::now();
+    if(kind==0){r.identity.vm=0;}
+    if(kind==1){r.identity.server=0;}
+    if(kind==2){r.deadline=Clock::now();}
     f.workers.begin(r);CHECK(f.workers.poll(r.id)==Progress::rejected);CHECK(!f.vu.requests);
     f.workers.release(r.id);}
 }

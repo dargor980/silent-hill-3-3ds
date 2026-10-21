@@ -37,18 +37,24 @@ void concurrent() {
       while(!(n==0?release_first.load():release_rest.load()))std::this_thread::yield();}
     done.fetch_add(1);
   });
-  while(entered.load()!=8)std::this_thread::yield();CHECK(waits.pending());release_first=true;
-  while(done.load()!=1)std::this_thread::yield();CHECK(waits.pending());release_rest=true;
-  for(auto& t:threads)t.join();CHECK(!waits.pending());
+  while(entered.load()!=8){std::this_thread::yield();}
+  CHECK(waits.pending());release_first=true;
+  while(done.load()!=1){std::this_thread::yield();}
+  CHECK(waits.pending());release_rest=true;
+  for(auto& t:threads){t.join();}
+  CHECK(!waits.pending());
 }
 void publication() {
   ExternalWaits waits;std::atomic_bool entered=false,release=false;int effect=0;
   std::thread caller([&]{
     {auto a=waits.wait();CHECK(a.tracked());entered=true;
-      while(!release.load())std::this_thread::yield();effect=71;}
+      while(!release.load()){std::this_thread::yield();}
+      effect=71;}
   });
-  while(!entered.load())std::this_thread::yield();CHECK(waits.pending());release=true;
-  while(waits.pending())std::this_thread::yield();CHECK(effect==71);caller.join();
+  while(!entered.load()){std::this_thread::yield();}
+  CHECK(waits.pending());release=true;
+  while(waits.pending()){std::this_thread::yield();}
+  CHECK(effect==71);caller.join();
 }
 void unwind() {
   ExternalWaits waits;

@@ -1,0 +1,18 @@
+; Synthetic scene: perspective/view transform, UV and opaque vertex tint.
+.fvec transform[4]
+.constf constants(0.0, 1.0, 0.0, 0.0)
+.out out_position position
+.out out_uv texcoord0
+.out out_color color
+.proc main
+    mov r0.xyz, v0
+    mov r0.w, constants.yyyy
+    dp4 out_position.x, transform[0], r0
+    dp4 out_position.y, transform[1], r0
+    dp4 out_position.z, transform[2], r0
+    dp4 out_position.w, transform[3], r0
+    mov out_uv, v1
+    mov out_color.xyz, v2
+    mov out_color.w, constants.yyyy
+    end
+.end

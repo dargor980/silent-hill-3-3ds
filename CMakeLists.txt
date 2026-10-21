@@ -24,11 +24,13 @@ if(SH3_COVERAGE)
   if(NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     message(FATAL_ERROR "Coverage preset requires GCC; use sanitizer preset with Clang")
   endif()
-  target_compile_options(sh3_options INTERFACE --coverage -O0 -g)
+  # Observer tests exercise real threads; non-atomic counters can corrupt gcov data.
+  target_compile_options(sh3_options INTERFACE --coverage -fprofile-update=atomic -O0 -g)
   target_link_options(sh3_options INTERFACE --coverage)
 endif()
 
-add_library(sh3_domain engine/domain/lifecycle.cpp engine/domain/diagnostic_options.cpp)
+add_library(sh3_domain engine/domain/lifecycle.cpp engine/domain/diagnostic_options.cpp
+  engine/domain/render_scene.cpp engine/domain/animation_pose.cpp engine/domain/character_skinning.cpp)
 target_include_directories(sh3_domain PUBLIC engine/domain/include)
 target_link_libraries(sh3_domain PRIVATE sh3_options)
 
@@ -36,17 +38,22 @@ add_library(sh3_ports INTERFACE)
 target_include_directories(sh3_ports INTERFACE engine/ports/include)
 target_link_libraries(sh3_ports INTERFACE sh3_domain)
 
-add_library(sh3_application engine/application/diagnostic_app.cpp engine/application/options_store.cpp)
+add_library(sh3_application engine/application/diagnostic_app.cpp engine/application/options_store.cpp
+  engine/application/render_probe.cpp engine/application/animation_probe.cpp)
 target_include_directories(sh3_application PUBLIC engine/application/include)
 target_link_libraries(sh3_application PUBLIC sh3_ports PRIVATE sh3_options)
 
 add_library(sh3_diagnostics engine/platform/common/bounded_log.cpp engine/platform/common/stdio_files.cpp
-  engine/platform/common/timing_window.cpp)
+  engine/platform/common/timing_window.cpp engine/platform/common/checker_texture.cpp
+  engine/platform/common/inspection_texture.cpp engine/platform/common/inspection_geometry.cpp
+  engine/platform/common/inspection_crc32.cpp engine/platform/common/inspection_animation.cpp
+  engine/platform/common/inspection_character.cpp)
 target_include_directories(sh3_diagnostics PUBLIC engine/platform/common/include)
 target_link_libraries(sh3_diagnostics PUBLIC sh3_ports PRIVATE sh3_options)
 
 if(NINTENDO_3DS)
-  file(GLOB_RECURSE identity_inputs CONFIGURE_DEPENDS "engine/*.cpp" "engine/*.hpp")
+  enable_language(ASM)
+  file(GLOB_RECURSE identity_inputs CONFIGURE_DEPENDS "engine/*.cpp" "engine/*.hpp" "engine/*.pica")
   list(APPEND identity_inputs "${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt")
   set(identity "")
   foreach(source IN LISTS identity_inputs)
@@ -64,6 +71,61 @@ if(NINTENDO_3DS)
   ctr_generate_smdh(OUTPUT "sh3_diagnostic.smdh" NAME "SH3 diagnostic"
     DESCRIPTION "Synthetic foundation - no game data" AUTHOR "SH3 3DS contributors")
   ctr_create_3dsx(sh3_diagnostic SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_diagnostic.smdh")
+  ctr_add_shader_library(scene_shader engine/platform/3ds/render/scene.v.pica)
+  dkp_add_embedded_binary_library(scene_shader_data scene_shader)
+  add_executable(sh3_render_probe engine/platform/3ds/render/main.cpp
+    engine/platform/3ds/render/renderer.cpp engine/platform/3ds/render/material_state.cpp)
+  target_compile_definitions(sh3_render_probe PRIVATE SH3_BUILD_ID="${identity}")
+  target_link_libraries(sh3_render_probe PRIVATE sh3_application sh3_diagnostics
+    sh3_options scene_shader_data citro3d)
+  ctr_generate_smdh(OUTPUT "sh3_render_probe.smdh" NAME "SH3 synthetic 3D"
+    DESCRIPTION "Synthetic room - no game data" AUTHOR "SH3 3DS contributors")
+  ctr_create_3dsx(sh3_render_probe SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_render_probe.smdh")
+  add_executable(sh3_texture_probe engine/platform/3ds/render/main.cpp
+    engine/platform/3ds/render/renderer.cpp engine/platform/3ds/render/material_state.cpp)
+  target_compile_definitions(sh3_texture_probe PRIVATE
+    SH3_BUILD_ID="${identity}" SH3_TEXTURE_INSPECTION=1)
+  target_link_libraries(sh3_texture_probe PRIVATE sh3_application sh3_diagnostics
+    sh3_options scene_shader_data citro3d)
+  ctr_generate_smdh(OUTPUT "sh3_texture_probe.smdh" NAME "SH3 texture inspection"
+    DESCRIPTION "Private SD texture - own panel" AUTHOR "SH3 3DS contributors")
+  ctr_create_3dsx(sh3_texture_probe SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_texture_probe.smdh")
+  add_executable(sh3_geometry_probe engine/platform/3ds/render/main.cpp
+    engine/platform/3ds/render/renderer.cpp engine/platform/3ds/render/material_state.cpp)
+  target_compile_definitions(sh3_geometry_probe PRIVATE
+    SH3_BUILD_ID="${identity}" SH3_GEOMETRY_INSPECTION=1)
+  target_link_libraries(sh3_geometry_probe PRIVATE sh3_application sh3_diagnostics
+    sh3_options scene_shader_data citro3d)
+  ctr_generate_smdh(OUTPUT "sh3_geometry_probe.smdh" NAME "SH3 geometry inspection"
+    DESCRIPTION "Private SD mesh - diagnostic material" AUTHOR "SH3 3DS contributors")
+  ctr_create_3dsx(sh3_geometry_probe SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_geometry_probe.smdh")
+  add_executable(sh3_material_probe engine/platform/3ds/render/main.cpp
+    engine/platform/3ds/render/renderer.cpp engine/platform/3ds/render/material_state.cpp)
+  target_compile_definitions(sh3_material_probe PRIVATE
+    SH3_BUILD_ID="${identity}" SH3_MATERIAL_INSPECTION=1)
+  target_link_libraries(sh3_material_probe PRIVATE sh3_application sh3_diagnostics
+    sh3_options scene_shader_data citro3d)
+  ctr_generate_smdh(OUTPUT "sh3_material_probe.smdh" NAME "SH3 material inspection"
+    DESCRIPTION "Private glass material - inspection view" AUTHOR "SH3 3DS contributors")
+  ctr_create_3dsx(sh3_material_probe SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_material_probe.smdh")
+  add_executable(sh3_animation_probe engine/platform/3ds/render/animation_main.cpp
+    engine/platform/3ds/render/renderer.cpp engine/platform/3ds/render/material_state.cpp)
+  target_compile_definitions(sh3_animation_probe PRIVATE SH3_BUILD_ID="${identity}")
+  target_link_libraries(sh3_animation_probe PRIVATE sh3_application sh3_diagnostics
+    sh3_options scene_shader_data citro3d)
+  ctr_generate_smdh(OUTPUT "sh3_animation_probe.smdh" NAME "SH3 animation inspection"
+    DESCRIPTION "Private clip 0x1449 - skeleton axes" AUTHOR "SH3 3DS contributors")
+  ctr_create_3dsx(sh3_animation_probe SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_animation_probe.smdh")
+  ctr_add_shader_library(character_shader engine/platform/3ds/render/character.v.pica)
+  dkp_add_embedded_binary_library(character_shader_data character_shader)
+  add_executable(sh3_character_probe engine/platform/3ds/render/character_main.cpp
+    engine/platform/3ds/render/character_renderer.cpp engine/platform/3ds/render/material_state.cpp)
+  target_compile_definitions(sh3_character_probe PRIVATE SH3_BUILD_ID="${identity}")
+  target_link_libraries(sh3_character_probe PRIVATE sh3_application sh3_diagnostics
+    sh3_options character_shader_data citro3d)
+  ctr_generate_smdh(OUTPUT "sh3_character_probe.smdh" NAME "SH3 character inspection"
+    DESCRIPTION "Private animated mesh - inspection shading" AUTHOR "SH3 3DS contributors")
+  ctr_create_3dsx(sh3_character_probe SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_character_probe.smdh")
 else()
   add_executable(sh3_host engine/platform/host/main.cpp)
   target_link_libraries(sh3_host PRIVATE sh3_application sh3_diagnostics sh3_options)
@@ -71,9 +133,99 @@ endif()
 
 include(CTest)
 if(BUILD_TESTING AND NOT NINTENDO_3DS)
+  add_executable(test_character_skinning tests/cpp/test_character_skinning.cpp)
+  target_include_directories(test_character_skinning PRIVATE tests/cpp)
+  target_link_libraries(test_character_skinning PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME character_skinning COMMAND test_character_skinning)
+  set_tests_properties(character_skinning PROPERTIES LABELS "unit;contract;render" TIMEOUT 10)
+  add_executable(test_ctr_character tests/cpp/test_ctr_character.cpp tests/cpp/render_doubles/sdk.cpp
+    engine/platform/3ds/render/character_renderer.cpp engine/platform/3ds/render/material_state.cpp)
+  target_include_directories(test_ctr_character PRIVATE tests/cpp/render_doubles tests/cpp engine/platform/3ds/render)
+  target_link_libraries(test_ctr_character PRIVATE sh3_application sh3_diagnostics sh3_options)
+  foreach(scenario IN ITEMS normal invalid busy flush draw init_CITRO3D init_TARGET init_SHADER
+      init_EMPTY_SHADER init_PROGRAM init_VERTEX_SHADER init_UNIFORM init_VERTICES
+      init_ATTRIBUTES_0 init_ATTRIBUTES_1 init_BUFFER)
+    add_test(NAME character_gpu_${scenario} COMMAND test_ctr_character ${scenario})
+    set_tests_properties(character_gpu_${scenario} PROPERTIES LABELS "integration;contract;sdk-double;render" TIMEOUT 10)
+  endforeach()
+  add_executable(test_animation_probe tests/cpp/test_animation_probe.cpp)
+  target_include_directories(test_animation_probe PRIVATE tests/cpp)
+  target_link_libraries(test_animation_probe PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME animation_probe COMMAND test_animation_probe)
+  set_tests_properties(animation_probe PROPERTIES LABELS "unit;contract;render" TIMEOUT 10)
+  add_executable(test_ctr_animation tests/cpp/test_ctr_animation.cpp tests/cpp/render_doubles/sdk.cpp
+    engine/platform/3ds/render/renderer.cpp engine/platform/3ds/render/material_state.cpp)
+  target_include_directories(test_ctr_animation PRIVATE tests/cpp/render_doubles
+    tests/cpp engine/platform/3ds/render)
+  target_link_libraries(test_ctr_animation PRIVATE sh3_application sh3_diagnostics sh3_options)
+  foreach(scenario IN ITEMS normal invalid busy flush draw)
+    add_test(NAME animation_gpu_${scenario} COMMAND test_ctr_animation ${scenario})
+    set_tests_properties(animation_gpu_${scenario} PROPERTIES
+      LABELS "integration;contract;sdk-double;render" TIMEOUT 10)
+  endforeach()
+  add_executable(test_inspection_texture tests/cpp/test_inspection_texture.cpp)
+  target_include_directories(test_inspection_texture PRIVATE tests/cpp)
+  target_link_libraries(test_inspection_texture PRIVATE sh3_diagnostics sh3_options)
+  add_test(NAME inspection_texture COMMAND test_inspection_texture)
+  set_tests_properties(inspection_texture PROPERTIES LABELS "unit;contract;render" TIMEOUT 10)
+  add_executable(test_render_probe tests/cpp/test_render_probe.cpp)
+  target_include_directories(test_render_probe PRIVATE tests/cpp)
+  target_link_libraries(test_render_probe PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME render_probe COMMAND test_render_probe)
+  set_tests_properties(render_probe PROPERTIES LABELS "unit;contract;render" TIMEOUT 10)
+  add_executable(test_ctr_render tests/cpp/test_ctr_render.cpp tests/cpp/render_doubles/sdk.cpp
+    engine/platform/3ds/render/renderer.cpp engine/platform/3ds/render/material_state.cpp)
+  target_include_directories(test_ctr_render PRIVATE tests/cpp/render_doubles
+    tests/cpp engine/platform/3ds/render)
+  target_link_libraries(test_ctr_render PRIVATE sh3_application sh3_diagnostics sh3_options)
+  foreach(scenario IN ITEMS normal CITRO3D TARGET SHADER EMPTY_SHADER PROGRAM VERTEX_SHADER
+      UNIFORM VERTICES VERTEX_FLUSH TEXTURE TEXTURE_FLUSH ATTRIBUTES ATTRIBUTES_1 ATTRIBUTES_2
+      BUFFER FRAME_BEGIN DRAW_ON invalid_camera)
+    add_test(NAME render_${scenario} COMMAND test_ctr_render ${scenario})
+    set_tests_properties(render_${scenario} PROPERTIES
+      LABELS "integration;contract;sdk-double;render" TIMEOUT 10)
+  endforeach()
+  foreach(scenario IN ITEMS normal CITRO3D TARGET SHADER EMPTY_SHADER PROGRAM VERTEX_SHADER
+      UNIFORM VERTICES VERTEX_FLUSH TEXTURE TEXTURE_FLUSH ATTRIBUTES ATTRIBUTES_1 ATTRIBUTES_2
+      BUFFER FRAME_BEGIN DRAW_ON invalid_camera invalid_pixels)
+    add_test(NAME texture_render_${scenario} COMMAND test_ctr_render ${scenario} texture)
+    set_tests_properties(texture_render_${scenario} PROPERTIES
+      LABELS "integration;contract;sdk-double;render" TIMEOUT 10)
+  endforeach()
+  foreach(scenario IN ITEMS normal CITRO3D TARGET SHADER EMPTY_SHADER PROGRAM VERTEX_SHADER
+      UNIFORM VERTICES VERTEX_FLUSH TEXTURE TEXTURE_FLUSH ATTRIBUTES ATTRIBUTES_1 ATTRIBUTES_2
+      BUFFER FRAME_BEGIN DRAW_ON invalid_camera invalid_mesh)
+    add_test(NAME geometry_render_${scenario} COMMAND test_ctr_render ${scenario} geometry)
+    set_tests_properties(geometry_render_${scenario} PROPERTIES
+      LABELS "integration;contract;sdk-double;render" TIMEOUT 10)
+  endforeach()
+  foreach(scenario IN ITEMS normal CITRO3D TARGET SHADER EMPTY_SHADER PROGRAM VERTEX_SHADER
+      UNIFORM VERTICES VERTEX_FLUSH TEXTURE TEXTURE_FLUSH ATTRIBUTES ATTRIBUTES_1 ATTRIBUTES_2
+      BUFFER FRAME_BEGIN DRAW_ON invalid_camera invalid_mesh invalid_pixels)
+    add_test(NAME material_render_${scenario} COMMAND test_ctr_render ${scenario} material)
+    set_tests_properties(material_render_${scenario} PROPERTIES
+      LABELS "integration;contract;sdk-double;render" TIMEOUT 10)
+  endforeach()
+  add_executable(test_inspection_geometry tests/cpp/test_inspection_geometry.cpp)
+  target_include_directories(test_inspection_geometry PRIVATE tests/cpp)
+  target_link_libraries(test_inspection_geometry PRIVATE sh3_diagnostics sh3_options)
+  add_test(NAME inspection_geometry COMMAND test_inspection_geometry)
+  set_tests_properties(inspection_geometry PROPERTIES LABELS "unit;contract;render" TIMEOUT 10)
   # Host-only observer domain. Nintendo targets never depend on the PCSX2 tooling.
   find_package(Threads REQUIRED)
   find_package(Python3 REQUIRED COMPONENTS Interpreter)
+  add_test(NAME character_wire_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/character_wire_oracle.py $<TARGET_FILE:test_character_skinning>)
+  set_tests_properties(character_wire_oracle PROPERTIES LABELS "integration;contract;render" TIMEOUT 30)
+  add_test(NAME animation_wire_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/animation_wire_oracle.py $<TARGET_FILE:test_animation_probe>)
+  set_tests_properties(animation_wire_oracle PROPERTIES LABELS "integration;contract;render" TIMEOUT 30)
+  add_test(NAME inspection_texture_wire COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/texture_wire_oracle.py $<TARGET_FILE:test_inspection_texture>)
+  set_tests_properties(inspection_texture_wire PROPERTIES LABELS "integration;contract;render" TIMEOUT 10)
+  add_test(NAME inspection_geometry_wire COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/geometry_wire_oracle.py $<TARGET_FILE:test_inspection_geometry>)
+  set_tests_properties(inspection_geometry_wire PROPERTIES LABELS "integration;contract;render" TIMEOUT 10)
   add_library(sh3_observer tools/observer/capture.cpp tools/observer/wire.cpp)
   target_include_directories(sh3_observer PUBLIC tools/observer/include)
   target_link_libraries(sh3_observer PRIVATE sh3_options)

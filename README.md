@@ -2,6 +2,100 @@
 
 Proyecto de adaptación nativa con origen PS2 y destino confirmado **New Nintendo 2DS XL**. Estado: F00 completada y G00 aprobada para identificación, alcance y custodia; F01/diagnóstico sintético en curso. Todavía no hay juego portado. La ISO europea del usuario permanece como entrada local ignorada en `binaries`.
 
+**Nuevo corte gráfico:** `sh3_render_probe` muestra una habitación sintética
+texturizada con cámara orbital y profundidad. Compilado para ARM y observado en
+Azahar; el usuario confirma arranque, cámara y controles en New 2DS XL.
+El recorrido físico completo sigue pendiente. [Resultados y build](docs/execution/f05-01-synthetic-render.md),
+[spec EARS](docs/specs/sh3-3ds/synthetic-render.md) y
+[guía de consola](docs/compatibility/synthetic-render-probe.md).
+
+**Texturas originales:** el [sondeo F03.01](docs/execution/f03-01-texture-structure.md)
+verifica la estructura de 119 recursos PS2 (321 bloques de 4/8 bits), con resultados
+idénticos en ambas copias privadas. La [primera muestra de 8 bits y 256×256](docs/execution/f03-02-indexed-texture.md)
+ya produce RGBA y PNG privados idénticos desde ambas copias; el direccionamiento
+se contrastó con tablas GS y se inspeccionó la imagen. Su comparación con el
+material original sigue pendiente. El [visor nativo de textura privada](docs/execution/f03-02-texture-inspection.md)
+ya carga esa muestra desde SD y la presenta en Azahar; incluye ZIP privado para
+Homebrew Launcher. El usuario confirma la [prueba de este visor en 2DS XL](docs/compatibility/texture-inspection.md):
+textura visible, cruceta, controles de cámara, START y regreso tras tapa/HOME.
+TI-T5 completada; identificación del material e integración de escena pendientes.
+El [sondeo del mapa candidato](docs/execution/f03-02-map-material-candidate.md)
+ya verifica la jerarquía y localiza dos formas con 56 vértices para investigar
+su material. Su [geometría local](docs/execution/f03-02-map-geometry.md) ya
+produce 32 triángulos en JSON/OBJ privados. El [visor de geometría](docs/execution/f03-02-geometry-inspection.md)
+los presenta desde SD con checker propio; el usuario confirma formas
+rectangulares, controles, START y tapa/HOME en New 2DS XL, build `a039c31cb262`.
+El [visor de material](docs/execution/f03-02-material-inspection.md) ya integra
+modelo, textura y transparencia en el build `764be66e7762`, comprobado en Azahar.
+El usuario confirma ambos paneles con transparencia, controles, START, tapa
+y HOME en New 2DS XL. Las [convenciones estáticas](docs/execution/f03-03-static-geometry.md)
+quedan separadas en un módulo puro con fixture asimétrico, 519 pruebas y
+regresión exacta de la entrega.
+La [primera pareja de esqueleto/animación](docs/execution/f03-02-skeleton-animation.md)
+ya produce tres huesos y 76 muestras con reconstrucción exacta y dos salidas
+privadas idénticas, con 836 pruebas.
+La [verificación en PCSX2](docs/execution/f03-02-skeleton-runtime.md) confirma
+su selección inicial, tres clips, reloj Q12 y composición de pose modelo
+con NLERP en diez evaluaciones controladas. Pasan 108 pruebas, incluidas
+31 nuevas; el contraste posterior de matrices de dibujo y skinning se
+registra en CM-T4, más abajo.
+La [investigación de activación](docs/execution/f03-02-animation-activation.md)
+localiza la ruta de `0x0209` en el carrusel (`amusement_02`, sala `0xEB`).
+El arranque sin restauraciones confirma que la instancia de carga desaparece
+antes de jugar.
+Ya se importó y cargó una [partida europea en Fortuneteller](docs/execution/f03-02-carousel-save.md),
+Normal/Normal. En `0xEB` se verificaron la selección inicial por IA y
+[una vuelta continua de `0x0209`](docs/execution/f03-02-animation-continuity.md):
+28 retornos, 27 avances y poses coincidentes, con 140 pruebas aprobadas.
+Faltan las transiciones de daño y muerte. La restauración posterior del
+combate solicitada por el usuario se investiga como reproducción separada.
+La [auditoría de colisión](docs/execution/f03-02-carousel-collision.md) encuentra
+geometría de escenario para los tres actores, pero ninguna colisión de
+personaje asociada a ellos en las muestras; esa ruta no permite dirigirles
+el daño investigado con la configuración observada.
+La [revisión de alternativas](docs/execution/f03-02-carousel-alternative-routes.md)
+tampoco identifica una acción normal admisible entre las rutas examinadas;
+las transiciones de daño y muerte conservan su estado pendiente.
+El [visor de animación 0x1449](docs/execution/f03-02-animation-inspection.md)
+ya reproduce tres huesos mediante ejes propios, con pausa, avance y reinicio.
+Build `a1629eeace22`: 252 pruebas C++ en Release y sanitizadores, 172 Python
+y 383 poses privadas contrastadas; controles y dibujo comprobados en Azahar.
+La [prueba física](docs/compatibility/animation-inspection.md) fue confirmada por el usuario
+en New 2DS XL: ejes animados, A/R/L, cámara, START, tapa y HOME;
+no incluye todavía malla/skinning ni transiciones de daño o muerte.
+La [malla MDL de ese actor](docs/execution/f03-02-character-mesh.md) ya se
+decodificó en dos salidas privadas idénticas: 15 submallas, 1.455 vértices y
+1.113 triángulos candidatos, con pesos y vínculos de huesos conservados.
+Se añadieron 87 pruebas sintéticas. La [verificación CM-T4 en PCSX2](docs/execution/f03-02-character-runtime.md)
+contrasta 500 muestras en cuatro poses de dos submallas: matrices/helpers,
+pesos sin normalizar, componente homogénea y normales coinciden con VU dentro
+de tolerancias cuantificadas. También se verifica el orden de 38 paquetes GS.
+Pasan 229 pruebas, incluidas 34 nuevas. La [integración CM-T5a–d](docs/execution/f03-02-character-inspection.md)
+ya dibuja la malla animada con sombreado propio, build `757b48fd1746`:
+486 pruebas Python, 270 C++ por preset y 77.115 comparaciones numéricas.
+ARM y Azahar comprobados; el usuario confirma **caballo animado y controles
+en New 2DS XL**. [Registro físico](docs/compatibility/character-inspection.md):
+Skin CPU ≈14 ms, Submit+wait ≈12 ms y GPU anterior 1,1 ms; duración sin confirmar.
+[CT-T1–T3](docs/execution/f03-02-character-materials.md) recuperan tres texturas
+512×512 y los vínculos de las 15 submallas: dos entregas idénticas, 363 pruebas
+y 786.432 píxeles contrastados. Siguiente: **CT-T4, material efectivo en PCSX2**;
+la integración de texturas al visor sigue pendiente.
+El [sondeo de rutas de dibujo](docs/execution/f03-02-map-render-metadata.md)
+ya separa los grupos por contador, localiza la matriz base y distingue palabras
+de modo de índices de matriz, con evidencia estática europea y 398 pruebas.
+El [primer control en PCSX2](docs/execution/f03-02-map-runtime-bank.md) alcanzó
+esa ruta y verificó su salida con banco vacío; el MAP cargado es distinto
+del objetivo. La [carga controlada posterior](docs/execution/f03-02-map-runtime-binding.md)
+ya recibió el MAP y su textura externa por los cargadores del juego, con hashes
+completos coincidentes, y verificó CLUT 0/TEX0 para ambas formas.
+MR-T4b/c y [MR-T4d completadas](docs/execution/f03-02-map-draw-state.md):
+transformación VU0 y STQ de 56 vértices contrastados; consumo GS de los
+32 triángulos por cuadro bajo cámara de inspección. La reproducción software
+verifica transparencia, niebla y orientación de textura en 16.380 píxeles
+interiores: alpha exacto y error RGB máximo de 1/255. Esa tolerancia corresponde
+a PCSX2; la integración en PICA usa cámara de inspección, luz/niebla capturadas
+y su propia precisión de filtrado/mezcla.
+
 - [Especificaciones EARS y backlog](docs/SPEC.md).
 - [Alcance M0-M5: primera alpha en español y Normal/Normal](docs/scope.md).
 - [Normas SOLID, testing y CI](docs/engineering.md).
@@ -38,7 +132,7 @@ cmake --build --preset host-debug --parallel 2
 ctest --preset host-debug
 ```
 
-Todos los presets fallan si no encuentran pruebas y limitan cada caso a 120 segundos, salvo límites específicos menores. Las pruebas Python de automatización requieren CMake/CTest en PATH. Presets adicionales: `host-release`, `host-sanitize` (ASan/UBSan) y `host-coverage` (GCC). Ejecutar `ctest` también en Release: los checks no desaparecen con `NDEBUG`. CTest incluye 67 casos: ocho suites de núcleo/archivos/métricas/smoke, treinta y tres contratos de composición 3DS, cinco del adaptador de audio, uno de recursos, dos del observador host, once de la guardia de continuidad y siete del puente de escrituras físicas. Compila composición y `tone.cpp` reales en targets host separados con dobles del SDK; esos casos no acreditan hardware ni escucha. La cobertura C++ se obtiene con `.venv/bin/python -m gcovr --config gcovr.cfg` tras construir y probar `host-coverage`.
+Todos los presets fallan si no encuentran pruebas y limitan cada caso a 120 segundos, salvo límites específicos menores. Las pruebas Python de automatización requieren CMake/CTest en PATH. Presets adicionales: `host-release`, `host-sanitize` (ASan/UBSan) y `host-coverage` (GCC). Ejecutar `ctest` también en Release: los checks no desaparecen con `NDEBUG`. CTest incluye 224 casos: núcleo, archivos, métricas, adaptadores y observador; 64 llevan la etiqueta render, incluidos los tres visores y sus contratos. Los contratos SDK compilan código real de plataforma contra dobles controlados y no acreditan hardware ni escucha. Los tests del observador requieren C++20. La cobertura C++ usa contadores atómicos para los tests concurrentes y se obtiene con `.venv/bin/python -m gcovr --config gcovr.cfg` tras construir y probar `host-coverage`.
 
 Para identificar el fixture propio, sin ejecutar extracción:
 
@@ -53,6 +147,12 @@ Para identificar el fixture propio, sin ejecutar extracción:
 El [procedimiento de inspección](docs/execution/europe-iso.md) genera un manifiesto con tamaños y SHA-256 de todos los archivos sin exportarlos. La copia disponible es `SLES-51434`, PAL; `VER=1.02` es el valor de arranque observado. La imagen completa coincide con Redump 1064: versión 1.02 y lista de idiomas en/fr/de/es/it. [F00.02 completada](docs/execution/f00-02-edition-identification.md). El usuario seleccionó español y Normal/Normal para la primera alpha; [F00.04 completada](docs/execution/f00-04-scope.md). Las pruebas de ejecución siguen pendientes.
 
 ## Build 3DS aislado
+
+Para generar la escena 3D con el mismo SDK fijado, ejecutar
+`bash scripts/build_render_probe.sh` dentro del contenedor. Produce
+`build/render-probe/sh3_render_probe.3dsx`, ELF, SMDH, identidad e inventario con
+checksums. Se exige un directorio nuevo; puede pasarse otro como primer argumento.
+La CI construye y conserva ambos ejecutables de forma independiente.
 
 El [chequeo F01.01](docs/execution/f01-01-toolchain.md) construye el ejemplo oficial en dos directorios limpios y verifica C++17 antes del build de CI. Incluye instrucciones para repetirlo montando solo scripts y fixtures propios. F01.02 ya tiene validación local y build identificados; su [prueba física](docs/compatibility/diagnostic-startup.md) sigue pendiente. F01.03 ya incorpora lectura, opciones persistentes y errores de I/O con pruebas locales; F01.04 añade validación de NDSP, PCM, contadores y liberación. F01.05 ya alcanzó breakpoints en Azahar y rechaza símbolos mezclados; conserva pendiente la consola y una anomalía gráfica tras reconectar GDB. F01.06 añade consultas de recursos, SELECT para métricas y protocolo inicial; B_app y entorno físicos siguen pendientes. F01.07 evita entrada durante suspensión, conserva pausa/mute y exige liberar botones al volver. F01.08 verifica el conjunto completo de artefactos, rechaza presets sin tests y conserva reportes/logs. El ensayo físico de treinta minutos y G01 siguen pendientes; F02.01 completó el catálogo ISO con dos informes idénticos y desconocidos explícitos. F02.02 evaluó el candidato MFA y añadió un sondeo propio: dos informes idénticos, B0/MV0 estructuralmente válidos y 60 desconocidos; [evidencia](docs/execution/f02-02-mfa-candidate.md). F02.03 añadió B8 y diagnóstico de nombres: [61 contenedores/1740 entradas estructurales](docs/execution/f02-03-container-variants.md), 493 pruebas; XBG0 conserva codificación pendiente. F02.04 completó [dos catálogos idénticos](docs/execution/f02-04-asset-catalog.md) con IDs, offsets y SHA-256 para 1740 recursos, y 582 pruebas Python aprobadas. Tipos y dependencias semánticas siguen sin inspeccionar. [F02.05](docs/execution/f02-05-repeatable-extraction.md) extrajo dos copias privadas de esos 1740 recursos, verificadas contra el catálogo; 686 pruebas Python aprobadas. [F02.06](docs/execution/f02-06-extraction-hardening.md) añadió 142 casos adversos y corrigió propiedad/cierre de descriptores y estado posterior a confirmación: 828 pruebas aprobadas. [F02.07](docs/execution/f02-07-slice-corpus.md) completó el inventario inicial: 1740 candidatos releídos en ambas copias, dos informes idénticos y 919 pruebas aprobadas. [El sondeo de cámara](docs/execution/f02-07-camera-probe.md) examinó esos 285 candidatos y registró discrepancias con SH2 en 154 archivos; dos informes idénticos y 985 pruebas aprobadas. [La búsqueda estática del ejecutable europeo](docs/execution/f02-07-camera-consumer.md) encontró dos sitios candidatos, con dos informes idénticos y 1101 pruebas aprobadas. [El seguimiento del puntero](docs/execution/f02-07-camera-pointer.md) alcanzó una referencia externa y dos fronteras de llamada, sin vínculo de recurso probado; dos informes idénticos y 1240 pruebas aprobadas. [El análisis de fronteras](docs/execution/f02-07-camera-boundary.md) distingue el argumento de A después del slot y mantiene sin demostrar los efectos de las dos llamadas de B; dos informes idénticos y 1307 pruebas aprobadas. [El plan y validador de observación](docs/execution/f02-07-camera-observation.md) añaden 128 casos propios (1435 pruebas aprobadas) y dos planes idénticos de tres fronteras/25 puntos. [PCSX2 y BIOS europea configurados](docs/execution/f02-07-ps2-boot.md), con carga del ejecutable europeo comprobada por logs. [Primera tentativa en ejecución](docs/execution/f02-07-camera-runtime-attempt.md): nueve breakpoints cargados, seis rangos de memoria coincidentes y aviso de tarjeta verificado visualmente; dos recibos sin observaciones y 128 pruebas del validador aprobadas. [Captura posterior completada](docs/execution/f02-07-camera-runtime-capture.md): nueve eventos en tres invocaciones, seis rangos coincidentes y dos recibos idénticos `validated_observations`; lector privado de estados con contrato EARS, 82 casos nuevos y 1.517 pruebas Python aprobadas. [Búsqueda exacta de recursos completada](docs/execution/f02-07-camera-resource-link.md): diez muestras, seis hits sobre un candidato de 1.536 bytes, dos informes idénticos y 1.583 pruebas Python aprobadas. [Comparación completa del candidato](docs/execution/f02-07-camera-origin.md): los 1.536 bytes coinciden en entrada A; 40 bytes ya difieren al retornar y permanecen iguales en seis estados posteriores. Dos informes idénticos y 1.649 pruebas aprobadas. [Primera escritura observada](docs/execution/f02-07-camera-writer.md): par BEQ+SW coherente con tres bytes modificados, siete estados nuevos, dos recibos idénticos y 1.720 pruebas aprobadas. La [repetición con retorno](docs/execution/f02-07-camera-return.md) añade otra sesión: mismo par BEQ+SW y retorno completo idéntico al histórico; dos recibos iguales y 1.758 pruebas aprobadas. [El contrato de mapa efectivo y su validador](docs/execution/f02-07-effective-mapping.md) pasan 91 casos nuevos (1.849 pruebas totales). macOS denegó el puerto de lectura de PCSX2 con EPERM; la captura real requiere un build instrumentado separado. [Preparación del build](docs/execution/f02-07-pcsx2-build.md): checkout fijado y fixture C++20/x86_64 aprobado; libpng/APNG x86_64 compilada con 37 pruebas aprobadas; Xcode 26.6 y Metal instalados, con compilación/ejecución C++20 y generación/enlace Metal aprobados; CMake con Apple Clang 21 avanzó hasta JPEG en esa etapa. [Primer lote de dependencias completado](docs/execution/f02-07-pcsx2-dependencies.md): NASM (301 pruebas aprobadas, una omitida), JPEG (332/332), Zstd, LZ4 y WebP x86_64 probados e instalados; la cuarta configuración alcanzó SDL3. [SDL3 3.4.12 completada](docs/execution/f02-07-pcsx2-sdl3.md): 19 controles aplicables del proveedor, un no-op identificado y cuatro casos propios aprobados antes/después de instalar; la quinta configuración supera SDL3 y alcanza FreeType. [FreeType 2.14.3 y HarfBuzz 14.2.0 completados](docs/execution/f02-07-pcsx2-fonts.md): siete casos propios pasan contra la instalación final x86_64, con fuente geométrica original y enlace privado comprobado; la sexta configuración alcanzó PlutoVG. [PlutoVG 1.3.2 y PlutoSVG 0.0.7 completados](docs/execution/f02-07-pcsx2-pluto.md): ocho casos propios pasan contra la instalación final, incluido un glifo SVG mediante FreeType; la séptima configuración supera ambos paquetes y alcanza ryml. [RapidYAML 0.12.1 completado](docs/execution/f02-07-pcsx2-rapidyaml.md): cinco casos propios y dos programas del proveedor pasan antes/después de instalar; biblioteca x86_64 y carga privada comprobadas. La octava configuración alcanza Shaderc. [Preparación de Shaderc completada](docs/execution/f02-07-pcsx2-shaderc.md): cuatro archivos verificados, parche corregido y sintaxis C/C++ comprobada; el build quedó pendiente en esa etapa. [Shaderc 2026.2 compilado y validado](docs/execution/f02-07-pcsx2-shaderc-build.md): intento acotado documentado, catorce ejecuciones CTest aprobadas y dylib privada x86_64 instalada; CMake v9 alcanza Qt 6 y también avisa de FFmpeg ausente. [Preparación de Qt Base 6.11.1](docs/execution/f02-07-pcsx2-qtbase.md): archivo y tres parches verificados, configuración x86_64 aprobada, headers generados con syncqt y fixtures preparados; build Qt pendiente de reserva IB02. [Qt Base compilado y validado](docs/execution/f02-07-pcsx2-qtbase-build.md): intento específico vigilado, ocho casos antes/después de instalar, herramientas y plugins x86_64 verificados; CMake v10 resuelve Core/Gui/Widgets y se detiene en LinguistTools. [Qt SVG compilado y validado](docs/execution/f02-07-pcsx2-qt-svg.md): seis casos antes/después de instalar, renderer y plugins de imágenes/iconos comprobados; cuatro binarios x86_64 y prefijo anterior intacto. CMake v11 sigue en LinguistTools. [Qt imageformats compilado y validado](docs/execution/f02-07-pcsx2-qt-imageformats.md): 16 ejecuciones CTest aprobadas, WebP/TGA/WBMP/TIFF y carga privada comprobados; siete plugins x86_64 instalados, tres solo verificados estructuralmente. CMake v12 sigue en LinguistTools. [Qt Tools/LinguistTools compilado y validado](docs/execution/f02-07-pcsx2-qt-tools.md): 16 ejecuciones CTest aprobadas, traducciones/UiTools y herramientas privadas verificadas; ocho ejecutables, tres dylibs y un objeto instalados. CMake v13 supera LinguistTools y alcanza KDDockWidgets. [Qt translations generado e instalado](docs/execution/f02-07-pcsx2-qt-translations.md): 304 QM repetibles, 4.502 mensajes españoles contrastados y diez ejecuciones CTest aprobadas; prefijo preservado. CMake v14 sigue en KDDockWidgets. [QtApng corregido, compilado e instalado](docs/execution/f02-07-pcsx2-qt-apng.md): 18 ejecuciones CTest finales y ocho trazas aprobadas; composición, QMovie y errores verificados, fallos históricos conservados. Plugin privado x86_64 y prefijo intactos. CMake v15 sigue en KDDockWidgets. [KDDockWidgets 2.4.1 completado](docs/execution/f02-07-pcsx2-kddockwidgets.md): 16 ejecuciones CTest finales y seis trazas aprobadas; paneles y persistencia verificados. Se corrigió una cabecera omitida por la instalación sin cambiar C++ ni tests originales. Prefijo conservado; CMake v16 resuelve KDDockWidgets y alcanza FFmpeg. [FFmpeg 8.1 compilado e instalado](docs/execution/f02-07-pcsx2-ffmpeg.md): cinco bibliotecas x86_64, 22 ejecuciones CTest finales, diez trazas y cuatro negativos de configuración aprobados; originales y prefijo conservados. CMake v17 configura y genera PCSX2 con FFmpeg resuelto; persiste el aviso de MoltenVK ausente. [MoltenVK 1.4.1 compilado e instalado](docs/execution/f02-07-pcsx2-moltenvk.md): 25 archivos de receta y siete revisiones transitivas verificados, 16 ejecuciones CTest finales, diez trazas y siete pruebas de capacidad aprobadas; transferencia/cómputo/lectura de imagen GPU contrastados en Apple M2. CMake v18 encuentra MoltenVK y el gate queda listo con 21,47 GiB al cierre. [Baseline PCSX2 compilado y validado](docs/execution/f02-07-pcsx2-baseline.md): 113 tests originales aprobados, paquete local con 42 binarios auditados, depurador observado y cierre limpio; 1.920 pruebas Python. Firma/ID/RPATH corregidos en copias conservando originales. Se verificó la reserva inicial tras liberar espacio; debe reevaluarse antes de builds grandes. 1.920 pruebas Python en el cierre del baseline. Otros escritores, cargador, tipo y salas permanecen pendientes. XBG0, AFS, semántica/corpus y G02 siguen pendientes.
 

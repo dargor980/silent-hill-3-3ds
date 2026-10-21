@@ -34,8 +34,8 @@ jobs:
           ctest --version
       - name: Lint and formatting
         run: |
-          python -m ruff check tools tests/python tests/observer_wire_oracle.py
-          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py
+          python -m ruff check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py
+          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py
       - name: Dependency, custody and spec contracts
         run: python -m tools.qa.check_repository
       - name: Python tests and coverage gate
@@ -147,8 +147,47 @@ jobs:
           docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
             --user "$(id -u):$(id -g)" -e HOME=/tmp \
             --mount "type=bind,src=$PWD,dst=/work" -w /work "$image" bash -c \
-            'bash scripts/check_3ds_toolchain.sh && bash scripts/build_3ds.sh' \
+            'bash scripts/check_3ds_toolchain.sh && bash scripts/build_3ds.sh && bash scripts/build_render_probe.sh && bash scripts/build_texture_probe.sh && bash scripts/build_geometry_probe.sh && bash scripts/build_material_probe.sh && bash scripts/build_animation_probe.sh && bash scripts/build_character_probe.sh' \
             2>&1 | tee build/logs/3ds.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: private-character-viewer-code-only
+          path: |
+            build/character-probe/sh3_character_probe.3dsx
+            build/character-probe/sh3_character_probe.elf
+            build/character-probe/sh3_character_probe.smdh
+            build/character-probe/build-id.txt
+            build/character-probe/SHA256SUMS
+            build/character-probe/sdk-image.txt
+            build/character-probe/toolchain-packages.txt
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: private-animation-viewer-code-only
+          path: |
+            build/animation-probe/sh3_animation_probe.3dsx
+            build/animation-probe/sh3_animation_probe.elf
+            build/animation-probe/sh3_animation_probe.smdh
+            build/animation-probe/build-id.txt
+            build/animation-probe/SHA256SUMS
+            build/animation-probe/sdk-image.txt
+            build/animation-probe/toolchain-packages.txt
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: private-material-viewer-code-only
+          path: |
+            build/material-probe/sh3_material_probe.3dsx
+            build/material-probe/sh3_material_probe.elf
+            build/material-probe/sh3_material_probe.smdh
+            build/material-probe/build-id.txt
+            build/material-probe/SHA256SUMS
+            build/material-probe/sdk-image.txt
+            build/material-probe/toolchain-packages.txt
+          if-no-files-found: error
+          retention-days: 14
       - name: Retain SDK check reports
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
@@ -165,6 +204,45 @@ jobs:
             build/toolchain-check/*.log
             build/logs/3ds.log
           if-no-files-found: warn
+          retention-days: 14
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: private-geometry-viewer-code-only
+          path: |
+            build/geometry-probe/sh3_geometry_probe.3dsx
+            build/geometry-probe/sh3_geometry_probe.elf
+            build/geometry-probe/sh3_geometry_probe.smdh
+            build/geometry-probe/build-id.txt
+            build/geometry-probe/SHA256SUMS
+            build/geometry-probe/sdk-image.txt
+            build/geometry-probe/toolchain-packages.txt
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: private-texture-viewer-code-only
+          path: |
+            build/texture-probe/sh3_texture_probe.3dsx
+            build/texture-probe/sh3_texture_probe.elf
+            build/texture-probe/sh3_texture_probe.smdh
+            build/texture-probe/build-id.txt
+            build/texture-probe/SHA256SUMS
+            build/texture-probe/sdk-image.txt
+            build/texture-probe/toolchain-packages.txt
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: synthetic-3d-render-probe
+          path: |
+            build/render-probe/sh3_render_probe.3dsx
+            build/render-probe/sh3_render_probe.elf
+            build/render-probe/sh3_render_probe.smdh
+            build/render-probe/build-id.txt
+            build/render-probe/SHA256SUMS
+            build/render-probe/sdk-image.txt
+            build/render-probe/toolchain-packages.txt
+          if-no-files-found: error
           retention-days: 14
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:

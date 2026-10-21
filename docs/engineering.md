@@ -2,6 +2,19 @@
 
 La instrucción del usuario del 16-10-2026 hace SOLID obligatorio para toda la solución. Se aplica a C++, herramientas Python, integración y diseño de pruebas. Se añaden RNF11.05-RNF11.09 y RNF07.06-RNF07.09 a la especificación.
 
+Actualización del inspector MAP: [MR-T1–MR-T3](execution/f03-02-map-render-metadata.md)
+añaden partición por contadores y metadatos de transformación base. Parser puro,
+opción aditiva del CLI, 398 pruebas seleccionadas aprobadas y cobertura del
+parser nuevo al 100 %. Evidencia estática europea separada de la comprobación
+pendiente del material en ejecución.
+
+Actualización de geometría nativa: [GI-T1–GI-T5](execution/f03-02-geometry-inspection.md)
+completadas con 276 pruebas Python seleccionadas y 224 CTest en Release,
+ASan/UBSan y Linux GCC. Cobertura portable C++: 99,3 % de líneas y 96,9 %
+de ramas. CI añade build y artefactos de código del visor, sin originales.
+El usuario confirma formas, controles, START, tapa y HOME en New 2DS XL.
+Matriz/material PS2 y métricas físicas permanecen pendientes.
+
 ## SOLID verificable
 
 | Principio | Regla aplicada | Comprobación |
@@ -15,6 +28,48 @@ La instrucción del usuario del 16-10-2026 hace SOLID obligatorio para toda la s
 Las comprobaciones automáticas detectan dependencias prohibidas; no demuestran SOLID por sí solas. La revisión humana evalúa responsabilidades, contratos y coste. Se prefieren valores, composición y funciones puras antes que jerarquías de herencia innecesarias. Ninguna abstracción se invoca por vértice o muestra solo para cumplir una forma.
 
 ## Batería por nivel
+
+Actualización F05.01: [corte gráfico sintético](execution/f05-01-synthetic-render.md),
+20 casos nuevos y 180 CTest totales. Se comprueban cámara, malla, textura,
+presentador sustituible y propiedad del adaptador Citro3D; no se amplía la
+cobertura a dobles ni a hardware. El pipeline GCC usa `-fprofile-update=atomic`
+para que los tests con hilos no corrompan los contadores. La CI añade el script
+`build_render_probe.sh` y un artefacto independiente; la validación remota sigue
+pendiente. La [prueba física](compatibility/synthetic-render-probe.md) cuenta con
+confirmación del usuario de arranque, cámara y controles en New Nintendo 2DS XL;
+su recorrido completo permanece abierto.
+
+Actualización F03.01: [sondeo de texturas](execution/f03-01-texture-structure.md),
+69 tests nuevos y 261 casos seleccionados aprobados. Los dos módulos nuevos
+alcanzan 99,1 % de líneas y 95 % de ramas; la CI Python existente los descubre.
+La repetición sobre datos privados acredita estructura, sin declarar píxeles
+decodificados ni soporte visual.
+
+Actualización F03.02: [primer decoder PS2 de 8 bits](execution/f03-02-indexed-texture.md),
+57 casos nuevos y 318 pruebas seleccionadas aprobadas. Cuatro módulos de
+producción: 99,47 % de líneas y 98,21 % de ramas. Ensayos locales adicionales:
+20 tamaños de direccionamiento contra tablas GS, dos conversiones privadas
+idénticas y PNG contrastados mediante un lector independiente. CI solo utiliza
+fixtures propios; las pruebas con originales no forman parte de sus artefactos.
+
+Continuidad F03.02: [visor privado desde SD](execution/f03-02-texture-inspection.md),
+202 CTest, 217 Python seleccionados y build ARM aprobados. Lector/transferencia
+STX: 100 % de líneas/ramas; cobertura C++ global 99,2 %/96,9 %. El patrón
+asimétrico detectó y permitió corregir una inversión vertical en ejecución.
+La CI añade `build_texture_probe.sh` y conserva el ejecutable sin la textura.
+El ZIP privado y su prueba en emulador permanecen fuera de sus artefactos.
+
+Investigación MAP: [estructura y candidato de material](execution/f03-02-map-material-candidate.md),
+72 casos nuevos y 233 seleccionados aprobados. Parser puro: 100 % de líneas y
+ramas; dos módulos nuevos: 99,2 %/96,4 %. La CI Python existente descubre los
+fixtures propios. Dos copias privadas coinciden; no se declara material PS2
+verificado a partir de esa coincidencia ni se modifica el runtime ARM.
+
+Geometría MAP: [decoder y exportación privada](execution/f03-02-map-geometry.md),
+45 casos nuevos y 253 seleccionados aprobados. Decoder puro, OBJ y writer
+compartido con 100 % de cobertura; conjunto medido 99,48 % de líneas y 98,33 %
+de ramas. Lectura OBJ separada y dos extracciones idénticas; el resultado es
+geometría local de inspección, sin acreditar material ni transformación PS2.
 
 | Nivel | Suite actual / extensión prevista | Regla de aceptación |
 |---|---|---|

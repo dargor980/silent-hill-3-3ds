@@ -20,7 +20,7 @@ class MfaEntry:
     block_offset: int
     entry_index: int
     entry_ordinal: int
-    name: str
+    name: str | bytes
     name_offset: int
     offset: int
     size: int
@@ -64,17 +64,24 @@ def _plausible_header(sector: bytes, toc: int, size: int) -> bool:
     )
 
 
-def _name(sector: bytes, offset: int, table_end: int) -> str:
+def _raw_name(sector: bytes, offset: int, table_end: int) -> bytes:
     if not table_end <= offset < SECTOR_SIZE:
         raise MfaError("MFA_NAME", "Name is outside the string area", {"reason": "name_range"})
     end = sector.find(b"\0", offset, min(SECTOR_SIZE, offset + 1025))
     if end < 0:
         raise MfaError("MFA_NAME", "Name terminator exceeds limit", {"reason": "name_termination"})
     raw = sector[offset:end]
+    if not raw:
+        raise MfaError("MFA_PATH", "Empty resource name")
+    return raw
+
+
+def _name(sector: bytes, offset: int, table_end: int) -> str:
+    raw = _raw_name(sector, offset, table_end)
     if any(c < 32 or c > 126 for c in raw):
         raise MfaError("MFA_NAME", "Unsupported name bytes", name_diagnostics(raw))
     try:
-        return safe_relative_path(sector[offset:end].decode("ascii"))
+        return safe_relative_path(raw.decode("ascii"))
     except ProfileError as error:
         raise MfaError("MFA_PATH", "Name is not a safe relative path") from error
 
@@ -98,9 +105,13 @@ def inspect_layout(reader: RangeReader, size: int, layout: str) -> dict:
     return parse_layout(reader, size, layout).summary
 
 
-def parse_layout(reader: RangeReader, size: int, layout: str) -> MfaIndex:
+def parse_layout(
+    reader: RangeReader, size: int, layout: str, *, name_policy: str = "ascii_paths"
+) -> MfaIndex:
     """Check the requested layout only; no retries under a different hypothesis."""
     initial_toc, layout_id = layout_descriptor(layout)
+    if name_policy not in ("ascii_paths", "opaque_bytes"):
+        raise MfaError("MFA_NAME_POLICY", "Unknown name policy")
     if type(size) is not int or not 0 < size <= (1 << 63) - 1 or size % SECTOR_SIZE:
         raise MfaError("MFA_SIZE", "Unsupported container size")
     blocks = []
@@ -137,8 +148,11 @@ def parse_layout(reader: RangeReader, size: int, layout: str) -> MfaIndex:
                 "<IIII", sector, toc + 8 + index * 16
             )
             try:
-                name = _name(sector, name_offset, table_end)
-                _reserve_path(name, files, directories)
+                if name_policy == "opaque_bytes":
+                    name = _raw_name(sector, name_offset, table_end)
+                else:
+                    name = _name(sector, name_offset, table_end)
+                    _reserve_path(name, files, directories)
                 if offset + length > data_size:
                     raise MfaError("MFA_PAYLOAD_RANGE", "Resource range exceeds its block")
             except MfaError as error:
@@ -191,4 +205,6 @@ def parse_layout(reader: RangeReader, size: int, layout: str) -> MfaIndex:
         "payload_bytes": total_payload,
         "metadata_bytes_read": len(blocks) * SECTOR_SIZE,
     }
+    if name_policy == "opaque_bytes":
+        summary["name_policy"] = name_policy
     return MfaIndex(summary, tuple(entries))
