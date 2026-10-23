@@ -3,6 +3,7 @@
 .constf constants(0.0, 1.0, 0.0, 0.0)
 .out out_position position
 .out out_color color
+.out out_texcoord texcoord0
 .proc main
     dp4 out_position.x, transform[0], v0
     dp4 out_position.y, transform[1], v0
@@ -10,5 +11,8 @@
     dp4 out_position.w, transform[3], v0
     mov out_color.xyz, v1
     mov out_color.w, constants.yyyy
+    ; Write the complete declared output, including the unused Z/W lanes.
+    ; A partial output can stall PICA200 even when an emulator renders it.
+    mov out_texcoord, v2
     end
 .end

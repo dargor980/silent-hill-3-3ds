@@ -34,6 +34,7 @@ def decode_draw_state(registers: Mapping[int, int]) -> dict:
             ("aa1", 7, 1),
             ("fst", 8, 1),
             ("context", 9, 1),
+            ("fix", 10, 1),
         ],
     )
     c = prim["context"]
@@ -98,6 +99,7 @@ def decode_draw_state(registers: Mapping[int, int]) -> dict:
         frame=fields(0x4C + c, [("fbp", 0, 9), ("fbw", 16, 6), ("psm", 24, 6), ("mask", 32, 32)]),
         depth=fields(0x4E + c, [("zbp", 0, 9), ("psm", 24, 4), ("mask", 32, 1)]),
         fba=word(0x4A + c),
+        scan_mask=word(0x22),
         pabe=word(0x49),
         dither=word(0x45),
         color_clamp=word(0x46),
@@ -110,7 +112,7 @@ def require_character_profile(registers: Mapping[int, int]) -> dict:
     """Reject state changes instead of silently applying the CT-T4 recipe."""
     state = decode_draw_state(registers)
     expected = {
-        "primitive": dict(type=4, iip=1, tme=1, fge=1, abe=0, aa1=0, fst=0),
+        "primitive": dict(type=4, iip=1, tme=1, fge=1, abe=0, aa1=0, fst=0, fix=0),
         "texture": dict(tbw=8, psm=19, tw=9, th=9, tcc=1, tfx=0, cpsm=0, csm=0, csa=0, cld=1),
         "filter": dict(lcm=1, mxl=0, mmag=1, mmin=1, mtba=0, l=0, k=0),
         "clamp": dict(wms=2, wmt=2, minu=0, maxu=511, minv=0, maxv=511),
@@ -123,7 +125,7 @@ def require_character_profile(registers: Mapping[int, int]) -> dict:
         if any(state[section][name] != value for name, value in values.items()):
             raise ValueError(f"Unsupported character material: {section}")
     for name, value in dict(
-        fba=0, pabe=0, dither=0, color_clamp=1, fog_color=0, texa=0x8000000080
+        fba=0, pabe=0, dither=0, color_clamp=1, fog_color=0, texa=0x8000000080, scan_mask=0
     ).items():
         if state[name] != value:
             raise ValueError(f"Unsupported character material: {name}")

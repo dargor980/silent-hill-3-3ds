@@ -10,6 +10,8 @@ inline bool pending = false, open_frame = false;
 inline bool inspection = false, geometry = false;
 inline bool material = false;
 inline bool dynamic = false;
-inline bool character = false;
+inline bool character = false, character_material = false;
+inline unsigned character_instances = 1;
+inline int texture_attempts = 0, texture_flushes = 0;
 inline std::vector<unsigned char> expected_vertices;
 } // namespace render_sdk

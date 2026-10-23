@@ -5,7 +5,14 @@ de la [malla animada en New 2DS XL](../compatibility/character-inspection.md).
 Se recuperaron tres imágenes de 512×512, sus cuatro unidades CLUT y las
 referencias de las 15 submallas. [Contrato EARS CT01–CT05](../../schemas/ps2-character-materials-v1.md).
 
-**CT-T4, material en PCSX2, y CT-T5, visor texturado, siguen pendientes.**
+Al cerrar CT-T1–T3, CT-T4 y CT-T5 quedaban pendientes. **CT-T4 se completó
+posteriormente para la pasada capturada** en el
+[informe de material en PCSX2](f03-02-character-material-runtime.md).
+[CT-T5a–d, visor texturado](f03-02-character-material-inspection.md), completadas
+el 2026-10-22. Tras corregir el shader, **CT-T5e.1 funcional aprobada** con
+`ced27c955e41`: usuario confirma 60 segundos, texturas, Q12 y controles.
+Tiempos CT-T5e.2 pendientes; [iluminación LI-T1–T3](f03-02-character-lighting.md)
+contrastada posteriormente, aún sin integrar al visor.
 Esta ejecución no cambia el build `757b48fd1746` de la consola. La apariencia
 de los PNG y la partición opaca del MDL no demuestran cómo aplica el juego
 alpha, filtrado, clamp, iluminación o descarte de fragmentos.
@@ -116,7 +123,9 @@ Los derivados originales y PNG no se incluyen en el repositorio ni en CI.
 Índice de fuentes, resultados y confirmación física previa:
 `reports/local/f03-02-character-material-execution-v1.json`.
 
-Siguiente tarea: **CT-T4**, verificar las referencias y estados efectivos de
-material en PCSX2 antes de integrar las texturas en el visor de malla.
+La verificación posterior de **CT-T4** enlaza las 15 submallas, tres texturas,
+428 paquetes GS y 15.112 píxeles interiores: mezcla y prueba alfa desactivadas,
+modulación, bilineal, clamp y escritura de profundidad. CT-T5a–d integran
+el material al visor respetando esos límites; siguiente: **CT-T5e física**.
 CM-T5e.2 mantiene pendiente la duración y detalles complementarios físicos;
 sí se registran las lecturas comunicadas por el usuario de ≈14/≈12/1,1 ms.

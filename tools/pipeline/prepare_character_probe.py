@@ -85,7 +85,7 @@ def prepare_files(
         "clip": "0x1449",
         "vertex_count": vertices,
         "triangles": indices // 3,
-        "gpu_vertex_bytes_per_frame": indices * 28,
+        "gpu_vertex_bytes_per_frame": indices * 36,
         "draw_calls": 1,
         "preview_evaluations_per_second": 25,
         "material": "own_two_sided_inspection",

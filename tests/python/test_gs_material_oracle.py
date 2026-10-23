@@ -29,6 +29,7 @@ def registers(context=0):
         0x46: 1,
         0x3D: 0,
         0x3B: 128 | 128 << 32,
+        0x22: 0,
     }
 
 
@@ -47,6 +48,8 @@ def test_context_selection_and_enabled_states(context):
     "reg,bit",
     [
         (0, 6),
+        (0, 10),
+        (0x22, 0),
         (0, 8),
         (6, 35),
         (6, 55),

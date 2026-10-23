@@ -4,6 +4,8 @@ import hashlib
 import os
 import re
 import stat
+import struct
+import zlib
 from pathlib import Path
 
 
@@ -48,3 +50,15 @@ def read_build(build: Path, stem: str) -> tuple[dict[str, bytes], str]:
     if not artifacts[f"{stem}.smdh"].startswith(b"SMDH"):
         raise ValueError("Invalid SMDH")
     return artifacts, build_id
+
+
+def payload_crc(raw, magic):
+    if (
+        type(raw) is not bytes
+        or len(raw) < 32
+        or raw[:8] != magic
+        or struct.unpack_from("<I", raw, 24)[0] != len(raw) - 32
+        or struct.unpack_from("<I", raw, 28)[0] != zlib.crc32(raw[32:])
+    ):
+        raise ValueError("Invalid inspection dependency")
+    return zlib.crc32(raw[32:])

@@ -27,7 +27,13 @@ struct DeformedVertex {
 struct CharacterDrawVertex {
     std::array<float, 4> position{};
     Vec3 color{};
+    std::array<float, 2> uv{};
 };
+struct CharacterMaterialRange {
+    std::uint32_t first{}, count{}, texture{};
+};
+using CharacterMaterials = std::array<CharacterMaterialRange, 3>;
+[[nodiscard]] bool valid_character_materials(const CharacterMaterials &, std::size_t) noexcept;
 using CharacterPalette = std::array<PoseMatrix, 6>;
 [[nodiscard]] bool valid_character(const CharacterModel &) noexcept;
 // Immutable model is validated at load. Output storage is caller-owned, with no allocation.
@@ -36,6 +42,7 @@ using CharacterPalette = std::array<PoseMatrix, 6>;
 [[nodiscard]] DeformedVertex deform_character_vertex(const CharacterVertex &,
                                                      const CharacterPalette &) noexcept;
 [[nodiscard]] bool character_draw(const CharacterModel &, const SkeletonPose &, DeformedVertex *,
-                                  std::size_t, CharacterDrawVertex *, std::size_t) noexcept;
+                                  std::size_t, CharacterDrawVertex *, std::size_t,
+                                  bool neutral_light = false) noexcept;
 [[nodiscard]] bool valid_character_draw(const CharacterDrawVertex *, std::size_t) noexcept;
 } // namespace sh3::domain

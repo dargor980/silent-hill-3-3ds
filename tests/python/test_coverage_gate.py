@@ -1,5 +1,7 @@
 import json
 
+import pytest
+
 from tools.qa.coverage_gate import check_totals, main
 
 
@@ -62,3 +64,32 @@ def test_cli_valid_missing_and_malformed_report(tmp_path):
         )
     )
     assert main([str(report)]) == 0
+
+
+@pytest.mark.parametrize(
+    "variant", ["pass", "low_line", "low_branch", "empty", "missing", "invalid"]
+)
+def test_each_selected_module_must_pass_even_if_global_totals_are_high(tmp_path, capsys, variant):
+    passing = dict(covered_lines=100, num_statements=100, covered_branches=100, num_branches=100)
+    selected = passing.copy()
+    if variant == "low_line":
+        selected["covered_lines"] = 79
+    elif variant == "low_branch":
+        selected["covered_branches"] = 79
+    elif variant == "empty":
+        selected.update(covered_branches=0, num_branches=0)
+    elif variant == "invalid":
+        selected = None
+    report = dict(
+        totals=passing,
+        files={"first.py": dict(summary=passing), "second.py": dict(summary=selected)},
+    )
+    if variant == "missing":
+        del report["files"]["second.py"]
+    path = tmp_path / "coverage.json"
+    path.write_text(json.dumps(report))
+    assert main([str(path)]) == 0
+    assert main([str(path), "--files", "first.py", "second.py"]) == (0 if variant == "pass" else 1)
+    output = capsys.readouterr().out
+    if variant in ("low_line", "low_branch", "empty"):
+        assert "second.py:" in output

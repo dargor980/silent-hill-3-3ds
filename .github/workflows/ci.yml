@@ -34,14 +34,15 @@ jobs:
           ctest --version
       - name: Lint and formatting
         run: |
-          python -m ruff check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py
-          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py
+          python -m ruff check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py
+          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py
       - name: Dependency, custody and spec contracts
         run: python -m tools.qa.check_repository
       - name: Python tests and coverage gate
         run: |
           python -m pytest --cov=tools --cov-report=xml:build/python-coverage.xml --cov-report=json:build/python-coverage.json --cov-report=term-missing --junitxml=build/pytest.xml
           python -m tools.qa.coverage_gate build/python-coverage.json
+          python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/collision_registry.py tools/pipeline/collision_evidence.py tools/pipeline/collision_intermediate.py tools/pipeline/prepare_collision_intermediate.py
           test -s build/python-coverage.xml
           test -s build/pytest.xml
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -147,19 +148,40 @@ jobs:
           docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
             --user "$(id -u):$(id -g)" -e HOME=/tmp \
             --mount "type=bind,src=$PWD,dst=/work" -w /work "$image" bash -c \
-            'bash scripts/check_3ds_toolchain.sh && bash scripts/build_3ds.sh && bash scripts/build_render_probe.sh && bash scripts/build_texture_probe.sh && bash scripts/build_geometry_probe.sh && bash scripts/build_material_probe.sh && bash scripts/build_animation_probe.sh && bash scripts/build_character_probe.sh' \
+            'bash scripts/check_3ds_toolchain.sh && bash scripts/build_3ds.sh && bash scripts/build_render_probe.sh && bash scripts/build_texture_probe.sh && bash scripts/build_geometry_probe.sh && bash scripts/build_material_probe.sh && bash scripts/build_animation_probe.sh && bash scripts/build_character_probe.sh && bash scripts/build_character_material_probe.sh && bash scripts/build_character_lighting_probe.sh && bash scripts/build_character_world_probe.sh' \
             2>&1 | tee build/logs/3ds.log
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: private-character-viewer-code-only
           path: |
             build/character-probe/sh3_character_probe.3dsx
+            build/character-material-probe/sh3_character_material_probe.3dsx
+            build/character-lighting-probe/sh3_character_lighting_probe.3dsx
+            build/character-world-probe/sh3_character_world_probe.3dsx
             build/character-probe/sh3_character_probe.elf
+            build/character-material-probe/sh3_character_material_probe.elf
+            build/character-lighting-probe/sh3_character_lighting_probe.elf
+            build/character-world-probe/sh3_character_world_probe.elf
             build/character-probe/sh3_character_probe.smdh
+            build/character-material-probe/sh3_character_material_probe.smdh
+            build/character-lighting-probe/sh3_character_lighting_probe.smdh
+            build/character-world-probe/sh3_character_world_probe.smdh
             build/character-probe/build-id.txt
+            build/character-material-probe/build-id.txt
+            build/character-lighting-probe/build-id.txt
+            build/character-world-probe/build-id.txt
             build/character-probe/SHA256SUMS
+            build/character-material-probe/SHA256SUMS
+            build/character-lighting-probe/SHA256SUMS
+            build/character-world-probe/SHA256SUMS
             build/character-probe/sdk-image.txt
+            build/character-material-probe/sdk-image.txt
+            build/character-lighting-probe/sdk-image.txt
+            build/character-world-probe/sdk-image.txt
             build/character-probe/toolchain-packages.txt
+            build/character-material-probe/toolchain-packages.txt
+            build/character-lighting-probe/toolchain-packages.txt
+            build/character-world-probe/toolchain-packages.txt
           if-no-files-found: error
           retention-days: 14
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

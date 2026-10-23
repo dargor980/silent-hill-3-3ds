@@ -3,5 +3,6 @@
 #include <cstdint>
 
 namespace sh3::platform {
-std::uint32_t inspection_crc32(const std::uint8_t *data, std::size_t size) noexcept;
+std::uint32_t inspection_crc32(const std::uint8_t *data, std::size_t size,
+                               std::uint32_t previous = 0) noexcept;
 } // namespace sh3::platform

@@ -333,8 +333,27 @@ Fuente: PDF p. 17. **Entrada:** G02; puede solaparse con investigación F04.
     CM-T5e.2 conserva pendiente duración y detalles complementarios.
     [CT-T1–T3](../../execution/f03-02-character-materials.md) recuperan tres
     texturas de 512×512 y enlaces de 15 submallas, con 363 pruebas y 786.432
-    píxeles contrastados. **Siguiente CT-T4: estado efectivo de material en PCSX2**.
-    Base definitiva, materiales MDL y transiciones de daño/muerte pendientes.
+    píxeles contrastados.
+    [CT-T4 completada para la pasada capturada](../../execution/f03-02-character-material-runtime.md):
+    15 submallas, tres texturas/CLUT 0, 428 paquetes y 519 triángulos SW;
+    15.112 píxeles interiores, RGB/alfa ≤1/255, ABE=ATE=0, bilineal y clamp.
+    427 pruebas relacionadas, 64 GS y cobertura nueva 100 %.
+    [CT-T5a–d completadas](../../execution/f03-02-character-material-inspection.md):
+    tres texturas sobre la malla animada, build `3fde5682ed11`, 298 pruebas C++
+    por preset, ARM y Azahar verificados, paquete privado preparado.
+    La prueba física de v1 falló con bloqueo inicial.
+    [CT-T5f](../../execution/f03-02-character-material-gpu-fix.md) corrige la
+    salida del shader y bloquea SHBIN incompletos en CMake; build `ced27c955e41`.
+    **CT-T5e.1 aprobada** por el usuario: texturas, Q12, controles, START,
+    tapa/HOME y 60 segundos sin bloqueo. CT-T5e.2 mantiene tiempos pendientes.
+    [LI-T1–T3](../../execution/f03-02-character-lighting.md): iluminación de la
+    pasada capturada contrastada en cuatro poses/500 vértices y 1.712 colores
+    GS exactos; 210 pruebas relacionadas.
+    [LI-T4](../../execution/f03-02-character-lighting-inspection.md): preset fijo
+    recalculado por pose, SELECT capturada/neutra, métricas separadas y build
+    `b27d16a1671e`. **LI-T4f.1 aceptada**: 60 s por modo, iluminación,
+    SELECT, controles y START/tapa/HOME; **LI-T4f.2 sin medir**. Selección
+    de luces entre escenas, base definitiva y daño/muerte siguen pendientes.
   - Resultado y aceptación: Fixture y datos de malla/material/textura/esqueleto/animación/colisión/cámara; eventos desconocidos separados.
   - Requisitos: RF02.04, RF02.05, RF02.08. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 
@@ -344,17 +363,70 @@ Fuente: PDF p. 17. **Entrada:** G02; puede solaparse con investigación F04.
     operaciones puras y fixture asimétrico sobre evidencia MG/MR/MI, 519
     pruebas y entrega A/B idéntica al build físico.
     [SA-T5a/b/c](../../execution/f03-02-skeleton-runtime.md) verifican pose
-    modelo, raíces independientes, NLERP y reloj Q12. GC-T4 mantiene
-    pendientes transiciones de daño/muerte de SA-T5d, mundo, base definitiva
-    3DS; CM-T4 verifica una muestra de deformación en PCSX2 y CM-T5a–d
-    integra skinning en el visor con prueba física funcional confirmada. La continuidad
-    de `0x1449` está verificada; los visores conservan un encuadre de inspección
-    explícito y la malla añade una rotación de presentación de 180° sobre X.
+    modelo, raíces independientes, NLERP y reloj Q12. CM-T4 verifica
+    deformación y CM-T5 integra skinning con aceptación física funcional.
+    La continuidad `0x1449` está verificada.
+    [GC-T4a–c completadas para ese perfil](../../execution/f03-03-character-world.md):
+    84 observaciones de instancia y contrato mundo/base; 246 pruebas y
+    56 subtests. El cálculo separado en mundo difiere de VU hasta 0,009027917;
+    no satisface el umbral CM de 0,001 ni declara emulación numérica.
+    [GC-T5a–e completadas](../../execution/f03-03-character-world-inspection.md):
+    origen común, tres colocaciones fijas, texturas compartidas y build
+    `abe9a7a35464`; ARM y Azahar verificados. Error de colocación relativa
+    ≤0,000331778 contra doble sobre los mismos vértices f32, sin atribuir
+    equivalencia VU. **GC-T5f.1 aceptada**: 60 s en 2DS XL, tres caballos texturados y
+    animados, controles y START/tapa/HOME. **GC-T5f.2 completada**: Skin 14,25,
+    Place 26,9, Submit+wait 35,50 y GPU 2,39 ms aproximados; no se infiere FPS.
+    Daño/muerte, mezclas, movimiento de raíz y base global siguen pendientes.
   - Resultado y aceptación: Documento de ejes/unidades/matrices/winding/UV/pose/interpolación y fixture que detecta inversiones.
   - Requisitos: RF02.05, RF03.01, RF04.04. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 
 - [ ] **F03.04 — Estabilizar intermedio y exportación de inspección.**
   - Ticket detallado: [F03.04](tasks/F03.md#f0304).
+  - [IR-T1–IR-T4 completadas para el caballo 0x0209](../../execution/f03-04-character-intermediate.md):
+    codec acotado, metadatos completos y 76 muestras conservadas, reconstrucción
+    SAN/SCM idéntica al visor físico, dos conversiones privadas idénticas;
+    167 tests y cobertura 97,07 %.
+  - [IR-T5 completada](../../execution/f03-04-character-render-intermediate.md):
+    materiales, 21 blobs de textura, iluminación y colocaciones conservados;
+    cinco formatos idénticos a entregas físicas, 27 salidas A/B iguales,
+    231 tests y cobertura 98,46 %.
+  - [IR-T6 completada](../../execution/f03-04-map-intermediate.md):
+    dos paneles de `hp34.map`, material/transformación/UV y 14 adjuntos
+    conservados; SGM/STX idénticos al visor `764be66e7762`, 17 archivos A/B
+    iguales, 504 tests y cobertura 98,15 %. Después colisión, cámara y audio.
+    F03.04 global sigue abierto; sin nueva prueba física ni build.
+  - [IR-T7a/b completadas](../../execution/f03-04-collision-inventory.md):
+    30 capturas y 43 ventanas de código/datos revalidadas; contrato
+    `ps2-collision-registry-v1` para conservar bancos, propietarios y rangos
+    opacos; implementación posterior registrada debajo.
+    Los 285 indicios `.cld` no se consideran geometría de colisión decodificada.
+  - [IR-T7c completada](../../execution/f03-04-collision-registry.md):
+    decoder puro con errores tipados, lista de actores y ambos bancos;
+    100 pruebas sintéticas, 100 % de líneas/ramas, validación bajo `-O`.
+  - [IR-T7d completada](../../execution/f03-04-collision-intermediate.md):
+    adaptador puro, preparador y writer exclusivo; 242 archivos, 30 capturas
+    cotejadas en memoria, 206 tests del perfil y 462 de regresión aprobados.
+    Líneas 99,71 %, ramas 98,94 %.
+  - [IR-T7e completada](../../execution/f03-04-collision-verification.md):
+    oráculo independiente de bytes/CPU/metadatos, 257 tests del perfil,
+    fallos de publicación y exclusión concurrente; gate por módulo en CI.
+    Cotejo de las 30 capturas en memoria.
+  - [IR-T7f completada](../../execution/f03-04-collision-publication.md):
+    publicación privada A/B, 242 archivos y manifiestos idénticos byte por byte;
+    cotejo con fuentes y reconstrucción sin acceso externo desde ambos paquetes.
+    Cierra IR-T7 para registros observados; formas físicas, cámara/audio y
+    F03.04 global siguen pendientes. No hubo una nueva ejecución del juego.
+  - [CF-T1–T3 completadas](../../execution/f03-04-collision-shapes-research.md):
+    dos CLD identificados por bytes y tablas de escenario; sondeo estructural
+    de 285 recursos A/B, 30 capturas, 13 controles negativos y 1.740 vértices
+    contrastados. Se documentan terminadores y solapamientos de listas dinámicas.
+    Variante de 48 bytes y respuesta física todavía sin cerrar.
+  - [CF-T4 completada](../../execution/f03-04-collision-polygons-contract.md):
+    contrato CP01–CP15 con límites/API/errores y dos fixtures propios;
+    50 vectores sintéticos contrastados con un verificador local independiente.
+    [CF-T5a–c pendientes](collision-shapes-research.md): decoder puro,
+    batería completa, oráculo público y gate individual en CI.
   - Resultado y aceptación: Esquema lógico y round-trip de fixture sin pérdida de metadatos; representación conservada.
   - Requisitos: RF02.04, RF02.05. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 

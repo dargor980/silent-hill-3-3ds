@@ -9,9 +9,9 @@ int main(int argc, char **argv) {
     using R = sh3::ports::RenderResult;
     character = dynamic = true;
     const std::string scenario = argv[1];
-    std::array<sh3::domain::CharacterDrawVertex, 3> mesh{{{{-1, -1, -2, 1}, {1, 0, 0}},
-                                                          {{1, -1, -2, 4095.0F / 4096}, {0, 1, 0}},
-                                                          {{0, 1, -2, 1}, {0, 0, 1}}}};
+    std::array<sh3::domain::CharacterDrawVertex, 3> mesh{{{{-1, -1, -2, 1}, {1, 0, 0}, {0, 0}},
+                                                          {{1, -1, -2, 4095.0F / 4096}, {0, 1, 0}, {1, 0}},
+                                                          {{0, 1, -2, 1}, {0, 0, 1}, {0, 1}}}};
     auto expect = [&] {
         const auto *p = reinterpret_cast<const unsigned char *>(mesh.data());
         expected_vertices.assign(p, p + sizeof(mesh));

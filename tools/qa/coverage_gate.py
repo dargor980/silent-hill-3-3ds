@@ -23,9 +23,18 @@ def check_totals(totals: dict, minimum: float = 80.0) -> list[str]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("report", type=Path)
+    parser.add_argument("--files", nargs="+", help="Require the gate for each exact report file")
     args = parser.parse_args(argv)
     try:
-        errors = check_totals(json.loads(args.report.read_text())["totals"])
+        report = json.loads(args.report.read_text())
+        if args.files:
+            errors = [
+                f"{name}: {error}"
+                for name in args.files
+                for error in check_totals(report["files"][name]["summary"])
+            ]
+        else:
+            errors = check_totals(report["totals"])
     except (OSError, ValueError, KeyError, TypeError):
         errors = ["Missing or invalid coverage report"]
     for error in errors:

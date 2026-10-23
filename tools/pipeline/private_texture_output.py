@@ -86,6 +86,94 @@ def write_character_inspection_bundle(root, repository, run_id, files, report):
     )
 
 
+def write_character_material_inspection_bundle(root, repository, run_id, files, report):
+    return _write_bundle(
+        root,
+        repository,
+        run_id,
+        files,
+        report,
+        {
+            "animation.san",
+            "character.scm",
+            "character.sct",
+            "sh3_character_material_probe.3dsx",
+            "sh3_character_material_probe.smdh",
+            "LEEME.txt",
+            "sd-card.zip",
+        },
+    )
+
+
+def write_character_lighting_inspection_bundle(root, repository, run_id, files, report):
+    return _write_bundle(
+        root,
+        repository,
+        run_id,
+        files,
+        report,
+        {
+            "animation.san",
+            "character.scm",
+            "character.sct",
+            "character.scl",
+            "sh3_character_lighting_probe.3dsx",
+            "sh3_character_lighting_probe.smdh",
+            "LEEME.txt",
+            "sd-card.zip",
+        },
+    )
+
+
+def write_character_intermediate_bundle(root, repository, run_id, files, report):
+    return _write_bundle(
+        root,
+        repository,
+        run_id,
+        files,
+        report,
+        {"intermediate.json", "animation.san", "character.scm"},
+    )
+
+
+def write_character_render_intermediate_bundle(root, repository, run_id, files, report):
+    from tools.pipeline.character_render_intermediate import OUTPUT_NAMES
+
+    return _write_bundle(root, repository, run_id, files, report, OUTPUT_NAMES)
+
+
+def write_map_intermediate_bundle(root, repository, run_id, files, report):
+    from tools.pipeline.map_intermediate import OUTPUT_NAMES
+
+    return _write_bundle(root, repository, run_id, files, report, OUTPUT_NAMES)
+
+
+def write_collision_intermediate_bundle(root, repository, run_id, files, report):
+    from tools.pipeline.collision_intermediate import OUTPUT_NAMES
+
+    return _write_bundle(root, repository, run_id, files, report, OUTPUT_NAMES)
+
+
+def write_character_world_inspection_bundle(root, repository, run_id, files, report):
+    return _write_bundle(
+        root,
+        repository,
+        run_id,
+        files,
+        report,
+        {
+            "animation.san",
+            "character.scm",
+            "character.sct",
+            "character.scw",
+            "sh3_character_world_probe.3dsx",
+            "sh3_character_world_probe.smdh",
+            "LEEME.txt",
+            "sd-card.zip",
+        },
+    )
+
+
 def write_geometry_bundle(
     root: Path, repository: Path, run_id: str, files: dict[str, bytes], report: dict
 ) -> dict:

@@ -19,7 +19,7 @@ float number(const std::uint8_t *p) noexcept {
 }
 } // namespace
 ports::FileError read_inspection_animation(const char *path, domain::InspectionClip &out,
-                                           StdioApi api) noexcept {
+                                           StdioApi api, std::uint32_t *payload_crc) noexcept {
     using E = ports::FileError;
     static_assert(sizeof(float) == 4 && std::numeric_limits<float>::is_iec559);
     if (!path || !*path)
@@ -67,8 +67,11 @@ ports::FileError read_inspection_animation(const char *path, domain::InspectionC
     }
     if (api.close(file) != 0 && result == E::ok)
         result = E::close_failed;
-    if (result == E::ok)
+    if (result == E::ok) {
         out = clip;
+        if (payload_crc)
+            *payload_crc = word(raw.data() + 28);
+    }
     return result;
 }
 } // namespace sh3::platform

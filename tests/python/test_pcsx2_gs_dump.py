@@ -41,10 +41,8 @@ def test_reglist_padding_and_image(flag, payload):
 def test_zero_nreg_means_sixteen_and_packed_primitive_is_preserved():
     low = 1 | (1 << 46) | (60 << 47)
     data = transfer(3, struct.pack("<QQ", low, 0xEEEEEEEEEEEEEEEE) + bytes(256))
-    packet, = Dump(fixture(data)).packets()
-    assert packet.fields == dict(
-        nloop=1, pre=1, prim=60, flag=0, nreg=16, regs=0xEEEEEEEEEEEEEEEE
-    )
+    (packet,) = Dump(fixture(data)).packets()
+    assert packet.fields == dict(nloop=1, pre=1, prim=60, flag=0, nreg=16, regs=0xEEEEEEEEEEEEEEEE)
     assert len(packet.payload) == 256
 
 

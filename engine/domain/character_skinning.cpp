@@ -92,12 +92,28 @@ bool valid_character_draw(const CharacterDrawVertex *v, std::size_t count) noexc
         for (float c : {v[i].color.x, v[i].color.y, v[i].color.z})
             if (!bounded(c, 1) || c < 0)
                 return false;
+        for (float uv : v[i].uv)
+            if (!bounded(uv, 8))
+                return false;
     }
     return true;
 }
+bool valid_character_materials(const CharacterMaterials &ranges, std::size_t count) noexcept {
+    if (count < 9 || count > character_index_limit || count % 3)
+        return false;
+    std::size_t next = 0;
+    for (std::size_t i = 0; i < ranges.size(); ++i) {
+        const auto &r = ranges[i];
+        if (r.first != next || r.count < 3 || r.count % 3 || r.count > count - next ||
+            r.texture != i)
+            return false;
+        next += r.count;
+    }
+    return next == count;
+}
 bool character_draw(const CharacterModel &m, const SkeletonPose &pose, DeformedVertex *scratch,
-                    std::size_t capacity, CharacterDrawVertex *out,
-                    std::size_t out_capacity) noexcept {
+                    std::size_t capacity, CharacterDrawVertex *out, std::size_t out_capacity,
+                    bool neutral_light) noexcept {
     if (!scratch || !out || capacity < m.vertex_count || out_capacity < m.index_count)
         return false;
     const auto palette = character_palette(m, pose);
@@ -105,12 +121,18 @@ bool character_draw(const CharacterModel &m, const SkeletonPose &pose, DeformedV
         scratch[i] = deform_character_vertex(m.vertices[i], palette);
     for (std::size_t i = 0; i < m.index_count; ++i) {
         const auto &v = scratch[m.indices[i]];
+        const auto &source = m.vertices[m.indices[i]];
+        out[i].uv = {float(source.uv[0]) / 4096, float(source.uv[1]) / 4096};
         const auto w = v.position[3];
         // Inspection-only rotation pi around X: Y up, determinant +1; retain W.
         out[i].position = {(v.position[0] - m.center.x * w) * m.scale + camera_target.x * w,
                            -(v.position[1] - m.center.y * w) * m.scale + camera_target.y * w,
                            -(v.position[2] - m.center.z * w) * m.scale + camera_target.z * w, w};
         const auto &n = v.normal;
+        if (neutral_light) {
+            out[i].color = {1, 1, 1};
+            continue;
+        }
         const auto length = std::sqrt(n[0] * n[0] + n[1] * n[1] + n[2] * n[2]);
         if (!std::isfinite(length))
             return false;

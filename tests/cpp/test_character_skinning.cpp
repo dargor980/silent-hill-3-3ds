@@ -98,6 +98,13 @@ int main(int argc, char **argv) {
     CHECK(near(draw[0].position[1],
                -(v.position[1] - 3 * v.position[3]) * .01F + .75F * v.position[3]));
     CHECK(draw[0].position[3] == v.position[3]);
+    vertex.uv = {-4096, 2048};
+    CHECK(domain::character_draw(m, pose, scratch.data(), 3, draw.data(), 3, true));
+    CHECK(draw[0].uv[0] == -1 && draw[0].uv[1] == .5F);
+    CHECK(draw[0].color.x == 1 && draw[0].color.y == 1 && draw[0].color.z == 1);
+    draw[0].uv[0] = std::numeric_limits<float>::infinity();
+    CHECK(!domain::valid_character_draw(draw.data(), 3));
+    draw[0].uv[0] = -1;
     CHECK(!domain::character_draw(m, pose, nullptr, 3, draw.data(), 3));
     CHECK(!domain::character_draw(m, pose, scratch.data(), 2, draw.data(), 3));
     CHECK(!domain::character_draw(m, pose, scratch.data(), 3, draw.data(), 2));

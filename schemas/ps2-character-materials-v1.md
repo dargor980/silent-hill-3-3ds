@@ -77,28 +77,62 @@ Se reutiliza el direccionamiento ya contrastado del decoder PSMT8 del proyecto.
 - [x] **CT-T3 — adquisición privada** (CT01/CT05): dos lecturas de ISO,
   entregas idénticas, hashes, inspección visual privada, informe de resultados
   y límites; ninguna imagen original en fixtures, repositorio o CI.
-- [ ] **CT-T4 — material en PCSX2** (CT04/CT05): enlazar actor/submalla con
+- [x] **CT-T4 — material en PCSX2** (CT04/CT05): enlazar actor/submalla con
   TEX0/CLUT y UV/STQ; comprobar TEST/ALPHA/TEX1/CLAMP y semántica de color
   antes de fijar una receta de material 3DS. Usar capturas existentes cuando
   cubran la pregunta y adquirir otras sin reemplazar datos originales.
-  - [ ] **CT-T4a — atribución** (CT06): verificar hashes de estado/MDL/dump;
+  - [x] **CT-T4a — atribución** (CT06): verificar hashes de estado/MDL/dump;
     proyectar las 15 submallas y exigir correspondencia STQ única y ordenada.
-  - [ ] **CT-T4b — estados y selección** (CT07): recorrer los registros GIF,
+  - [x] **CT-T4b — estados y selección** (CT07): recorrer los registros GIF,
     identificar contexto, TEX0/CLUT, filtros, clamp, TEST, ALPHA, profundidad,
     máscara de escritura, FBA/PABE, TEXA y niebla; confirmar en replay SW.
-  - [ ] **CT-T4c — color y transparencia** (CT08): comparar las tres texturas
+  - [x] **CT-T4c — color y transparencia** (CT08): comparar las tres texturas
     efectivas byte a byte, correlacionar los triángulos y comprobar píxeles
     interiores con error RGB máximo 2/255 y alfa máximo 1/255; controles de
     mezcla añadida, inversión V, textura errónea y omisión de modulación.
     No cambiar tolerancias para convertir un fallo en aprobación.
-  - [ ] **CT-T4d — cierre reproducible** (CT05–CT08): auditor, pruebas
+  - [x] **CT-T4d — cierre reproducible** (CT05–CT08): auditor, pruebas
     sintéticas host y receta acotada para CT-T5, con límites explícitos sobre
     iluminación, otras instancias/animaciones y fidelidad física.
 - [ ] **CT-T5 — integración y consola** (CT05): conservar particiones por
   material, texturas y UV en un formato versionado; añadir renderer, pruebas,
   build ARM, Azahar y entrega física independiente con costes medidos.
+  - [x] **CT-T5a — contrato y paquete**: fijar una nueva versión compatible
+    con el visor anterior; conservar UV, tres grupos y selector cero, validar
+    índices/rangos/CRC y presupuestos antes de reservar memoria; documentar
+    conversión de alfa PS2 al formato GPU sin habilitar mezcla implícita.
+  - [x] **CT-T5b — renderer**: aplicar textura por grupo, bilineal y clamp;
+    comprobar sentido de profundidad y escritura, mantener mezcla/prueba
+    alfa apagadas y declarar iluminación neutra/diagnóstica si aún no existe
+    equivalencia de iluminación dinámica del juego.
+  - [x] **CT-T5c — regresión y build**: fixtures sintéticos con tres imágenes
+    distintas, UV asimétricas, alfa cero y referencias inválidas; pruebas de
+    carga, rechazo y ciclo de vida, build ARM reproducible y manifiesto nuevo.
+  - [x] **CT-T5d — emulador y entrega**: inspeccionar orientación, vínculos,
+    profundidad, cámara y animación en Azahar; preparar un paquete privado y
+    comprobar la SD virtual. La copia física se realizará cuando el usuario
+    conecte la SD para CT-T5e, con comprobación posterior de hashes.
+  - [x] **CT-T5e.1 — consola funcional**: usuario confirma caballo con texturas,
+    avance Q12, controles, START, tapa/HOME y 60 segundos sin bloqueo con
+    `ced27c955e41`. Evidencia comunicada el 2026-10-22, sin instrumentación.
+  - [ ] **CT-T5e.2 — costes físicos**: recoger lecturas Skin CPU, Submit+wait
+    y GPU anterior del build corregido durante al menos 60 segundos;
+    separar aproximaciones de medidas instrumentadas y registrar build.
 
 CM-T5e.2 conserva la duración y los detalles físicos que falten; no bloquea
 CT-T1–T3. Daño/muerte, base mundial definitiva y F03.02 global siguen abiertos.
 
-Evidencia: [ejecución CT-T1–T3](../docs/execution/f03-02-character-materials.md).
+Evidencia: [ejecución CT-T1–T3](../docs/execution/f03-02-character-materials.md)
+y [CT-T4](../docs/execution/f03-02-character-material-runtime.md).
+CT-T4 cubre las 15 submallas de una instancia/pose del clip 0x1449: 428 paquetes,
+519 triángulos SW y 15.112 píxeles interiores. Confirma ABE=ATE=DATE=0,
+MODULATE, bilineal, clamp y profundidad; iluminación dinámica y otras variantes
+siguen pendientes. CT-T5 debe preservar ese alcance al presentar el material.
+
+**CT-T5a–d completadas**: [EARS y diseño](../docs/specs/sh3-3ds/character-material-inspection.md),
+[informe de integración](../docs/execution/f03-02-character-material-inspection.md).
+Build `3fde5682ed11`: **CT-T5e física fallida**, caballo ausente y bloqueo.
+[CT-T5f](../docs/execution/f03-02-character-material-gpu-fix.md) completa la
+salida del shader y añade un gate del SHBIN; build `ced27c955e41` preparado.
+**Repetición funcional CT-T5e.1 aprobada; tiempos CT-T5e.2 pendientes**.
+La siguiente investigación es [iluminación LI](ps2-character-lighting-v1.md).

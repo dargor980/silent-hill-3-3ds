@@ -12,16 +12,40 @@ def inspection_archive(files: dict[str, bytes], stem: str) -> bytes:
         "sh3_material_probe",
         "sh3_animation_probe",
         "sh3_character_probe",
+        "sh3_character_material_probe",
+        "sh3_character_lighting_probe",
+        "sh3_character_world_probe",
     }:
         raise ValueError("Unexpected inspection viewer")
     payload = "geometry.sgm" if stem == "sh3_geometry_probe" else "texture.stx"
-    if stem in {"sh3_animation_probe", "sh3_character_probe"}:
+    if stem in {
+        "sh3_animation_probe",
+        "sh3_character_probe",
+        "sh3_character_material_probe",
+        "sh3_character_lighting_probe",
+        "sh3_character_world_probe",
+    }:
         payload = "animation.san"
     expected = {payload, f"{stem}.3dsx", f"{stem}.smdh", "LEEME.txt"}
     if stem == "sh3_material_probe":
         expected.add("geometry.sgm")
-    if stem == "sh3_character_probe":
+    if stem in {
+        "sh3_character_probe",
+        "sh3_character_material_probe",
+        "sh3_character_lighting_probe",
+        "sh3_character_world_probe",
+    }:
         expected.add("character.scm")
+    if stem in {
+        "sh3_character_material_probe",
+        "sh3_character_lighting_probe",
+        "sh3_character_world_probe",
+    }:
+        expected.add("character.sct")
+    if stem == "sh3_character_lighting_probe":
+        expected.add("character.scl")
+    if stem == "sh3_character_world_probe":
+        expected.add("character.scw")
     if set(files) != expected:
         raise ValueError("Unexpected inspection archive files")
     contents = {f"3ds/{stem}/{name}": data for name, data in files.items()}

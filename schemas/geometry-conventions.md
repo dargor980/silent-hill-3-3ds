@@ -1,7 +1,8 @@
 # GC01–GC06 — Convenciones de geometría estática MAP
 
-F03.03, instancia estática posterior a MG/MR/MI. Requisitos RF02.05 y RF03.01;
-RF04.04 permanece pendiente hasta investigar pose y animación.
+F03.03, instancia estática posterior a MG/MR/MI. Requisitos RF02.05 y RF03.01.
+RF04.04 se amplía para el perfil animado en
+[GC07–GC11](../docs/specs/sh3-3ds/character-world-conventions.md); no se cierra globalmente.
 La [captura MR-T4d](../docs/execution/f03-02-map-draw-state.md) demuestra el
 recorrido de dos formas. La [prueba MI-T4](../docs/compatibility/material-inspection.md)
 confirma su presentación funcional en New 2DS XL.
@@ -70,14 +71,22 @@ No es un formato de escena ni una receta para convertir todos los MAP.
 - [x] **GC-T3:** regresiones, lint/contratos y cobertura; reproducir en memoria
   la entrega privada y cotejar sus hashes con el build físico. Registrar la
   inclusión automática en el job Python existente. GC05/GC06.
-- [ ] **GC-T4:** definir pose, huesos, raíz, tiempos e interpolación con un
+- [x] **GC-T4, perfil `0x0209` / `0x1449`:** definir pose, huesos, raíz, tiempos e interpolación con un
   recurso animado identificado y una captura propia. Depende de la instancia
   de esqueleto/animación de F03.02; no bloquea GC-T1–GC-T3. GC06/RF04.04.
   [SA-T1–SA-T4](../docs/execution/f03-02-skeleton-animation.md) ya decodifican
   una pareja MDL/ANM. [SA-T5a/b/c](../docs/execution/f03-02-skeleton-runtime.md)
   verifican su selección inicial, reloj Q12 y pose en espacio modelo con
-  NLERP y producto padre/hijo. Pendientes: continuidad SA-T5d, paso a mundo,
-  base 3DS y skinning; no generalizar a mezclas o traslaciones no ejercitadas.
+  NLERP y producto padre/hijo. SA-T5d verifica continuidad y CM-T4 skinning.
+  [GC-T4a–c](../docs/execution/f03-03-character-world.md) añaden 84 observaciones
+  de instancia, posición4/normal3 y base conjugada, con límites numéricos
+  separados del contraste VU. No generalizar a mezclas, movimiento de raíz,
+  daño/muerte, giros o escalas no ejercitados.
+- [x] **GC-T5:** [a–f completadas](../docs/execution/f03-03-character-world-inspection.md),
+  contrato SCW1 y visor `abe9a7a35464`, ARM/Azahar y prueba física funcional
+  f.1 aprobados; métricas f.2 aproximadas reportadas por el usuario.
+  El cálculo separado en mundo no satisface todavía
+  la tolerancia CM de 0,001 frente a VU; no declarar equivalencia del renderer.
 
 [Ejecución](../docs/execution/f03-03-static-geometry.md): 519 pruebas,
 100 % de líneas/ramas del módulo nuevo y entrega privada A/B idéntica

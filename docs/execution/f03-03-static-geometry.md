@@ -5,6 +5,10 @@
 siguen pendientes: pose, huesos, raíz animada, tiempos e interpolación no
 se deducen de las dos formas estáticas.
 
+Actualización 2026-10-23: [GC-T4](f03-03-character-world.md) añade el perfil
+del personaje `0x0209` / `0x1449` con evidencia SA/CM y convenciones de mundo.
+La situación descrita arriba corresponde al cierre estático del 2026-10-20.
+
 ## Resultado
 
 `geometry_transform.py` separa modelo afín por columnas, cambio de base del
