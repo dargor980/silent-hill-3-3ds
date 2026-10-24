@@ -115,9 +115,9 @@ void SceneRenderer::initialize(const InspectionPixels *pixels,
         return;
     }
     C3D_TexSetFilter(&texture_, material_ ? GPU_LINEAR : GPU_NEAREST,
-                    material_ ? GPU_LINEAR : GPU_NEAREST);
+                     material_ ? GPU_LINEAR : GPU_NEAREST);
     C3D_TexSetWrap(&texture_, material_ ? GPU_CLAMP_TO_EDGE : GPU_REPEAT,
-                  material_ ? GPU_CLAMP_TO_EDGE : GPU_REPEAT);
+                   material_ ? GPU_CLAMP_TO_EDGE : GPU_REPEAT);
     stage_ = "ATTRIBUTES";
     auto *attributes = C3D_GetAttrInfo();
     AttrInfo_Init(attributes);
@@ -173,14 +173,16 @@ ports::RenderResult SceneRenderer::present(const domain::OrbitCamera &camera) no
     return present_frame(camera, nullptr);
 }
 ports::RenderResult SceneRenderer::present_mesh(const domain::OrbitCamera &camera,
-    const domain::SceneVertex *vertices, std::size_t count) noexcept {
+                                                const domain::SceneVertex *vertices,
+                                                std::size_t count) noexcept {
     const InspectionMesh mesh{vertices, count};
     if (!mesh_mode_ || count != static_cast<std::size_t>(vertex_count_) ||
-        !valid_inspection_mesh(mesh)) return ports::RenderResult::unavailable;
+        !valid_inspection_mesh(mesh))
+        return ports::RenderResult::unavailable;
     return present_frame(camera, &mesh);
 }
 ports::RenderResult SceneRenderer::present_frame(const domain::OrbitCamera &camera,
-    const InspectionMesh *mesh) noexcept {
+                                                 const InspectionMesh *mesh) noexcept {
     if (!ready_) {
         return ports::RenderResult::unavailable;
     }
@@ -205,7 +207,7 @@ ports::RenderResult SceneRenderer::present_frame(const domain::OrbitCamera &came
         return ports::RenderResult::unavailable;
     }
     const auto eye = domain::camera_eye(camera);
-    const auto target = domain::camera_target;
+    const auto target = camera.target;
     C3D_Mtx view, transform;
     Mtx_LookAt(&view, FVec3_New(eye.x, eye.y, eye.z), FVec3_New(target.x, target.y, target.z),
                FVec3_New(0, 1, 0), false);
@@ -217,7 +219,8 @@ ports::RenderResult SceneRenderer::present_frame(const domain::OrbitCamera &came
         bind_captured_glass();
         C3D_DrawArrays(GPU_TRIANGLES, 96, vertex_count_);
     } else {
-        if (mesh) bind_material_backdrop(); // Solid vertex colors for diagnostic bones.
+        if (mesh)
+            bind_material_backdrop(); // Solid vertex colors for diagnostic bones.
         C3D_DrawArrays(GPU_TRIANGLES, 0, vertex_count_);
     }
     C3D_FrameEnd(0);

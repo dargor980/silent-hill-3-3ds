@@ -1,4 +1,4 @@
-"""Lossless ANM samples for one explicit PS2 recipe; no clip timing or interpolation."""
+"""Lossless ANM samples for explicit PS2 recipes; no clip timing or interpolation."""
 
 import math
 import struct
@@ -11,6 +11,9 @@ MODEL_ID = 0x209
 FRAME_BYTES = 46
 MAX_FRAMES = 4096
 MAX_ANIMATION_BYTES = 512 * 1024
+HEATHER_MODEL_ID = 0x100
+HEATHER_FRAME_BYTES = 264
+HEATHER_RECIPE = "sh3-ps2-anm-0100-264-v1"
 
 
 class AnimationDecodeError(ValueError):
@@ -62,19 +65,24 @@ def encode_animation(animation: Animation) -> bytes:
 
 def decode_animation(data: bytes, model_id: int, parents: tuple[int, ...]) -> Animation:
     validate_parents(parents)
-    if type(model_id) is not int or model_id != MODEL_ID:
+    if type(model_id) is not int or model_id not in (MODEL_ID, HEATHER_MODEL_ID):
         raise AnimationDecodeError("SA_ANIMATION_RECIPE")
+    frame_bytes, recipe = FRAME_BYTES, RECIPE
+    if model_id == HEATHER_MODEL_ID:
+        if len(parents) != 73:
+            raise AnimationDecodeError("SA_ANIMATION_SKELETON")
+        frame_bytes, recipe = HEATHER_FRAME_BYTES, HEATHER_RECIPE
     if type(data) is not bytes or not 4 < len(data) <= MAX_ANIMATION_BYTES:
         raise AnimationDecodeError("SA_ANIMATION_SIZE")
     if struct.unpack_from("<I", data)[0] != model_id:
         raise AnimationDecodeError("SA_MODEL_ID_MISMATCH")
-    count, remainder = divmod(len(data) - 4, FRAME_BYTES)
+    count, remainder = divmod(len(data) - 4, frame_bytes)
     if remainder or not 1 <= count <= MAX_FRAMES:
         raise AnimationDecodeError("SA_FRAME_COUNT")
     frames = []
     for frame_index in range(count):
-        cursor = 4 + frame_index * FRAME_BYTES
-        end = cursor + FRAME_BYTES
+        cursor = 4 + frame_index * frame_bytes
+        end = cursor + frame_bytes
 
         def take(code, limit=end):
             nonlocal cursor
@@ -125,7 +133,7 @@ def decode_animation(data: bytes, model_id: int, parents: tuple[int, ...]) -> An
                     BoneSample(bone, flag, pos, pos_words, pos_format, rotation, (*xyz, w))
                 )
         frames.append(AnimationFrame(tuple(groups), tuple(tracks)))
-    result = Animation(model_id, RECIPE, FRAME_BYTES, tuple(frames))
+    result = Animation(model_id, recipe, frame_bytes, tuple(frames))
     if encode_animation(result) != data:
         raise AnimationDecodeError("SA_ANIMATION_ROUNDTRIP")
     return result

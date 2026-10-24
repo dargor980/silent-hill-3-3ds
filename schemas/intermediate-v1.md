@@ -101,6 +101,20 @@ existente. Los bytes SAN/SCM se comparan con el visor aceptado.
   242 archivos y manifiestos privados A/B idénticos, cotejo con fuentes y
   reconstrucción independiente desde ambos paquetes sin acceso externo.
   Perfil de registros cerrado; formas/respuesta física y cámara/audio pendientes.
+- [x] **CF-T7 — [formas poligonales](collision-polygons-intermediate-v1.md)**:
+  CF-T7a completada: contrato CPI01–CPI14, fuente íntegra más vista por recurso,
+  procedencia y clasificación completa; 24 ejemplos propios reconstruidos o
+  rechazados según contrato, también con `-O`. CF-T7b completada: adaptador
+  puro con tres APIs, 139 pruebas, cobertura 100 % de líneas/ramas y 3.416
+  regresiones aprobadas. CF-T7c completada: preparador/writer exclusivo,
+  custodia y 104 pruebas propias; A/B preparado en memoria con 519 archivos
+  y manifiestos iguales. CF-T7d completada: oráculo independiente, fidelidad
+  externa, 279 pruebas nuevas y gates permanentes CPI; calidad local con
+  8.829 pruebas aprobadas. [CF-T7e completada](../docs/execution/f03-04-collision-polygons-publication.md):
+  519 archivos y manifiestos A/B publicados e idénticos; ocho reconstrucciones
+  sin fuentes, cotejo externo y 575 entradas intactas. 233/52/0 y 30 referencias
+  históricas reproducidos. Perfil estructural cerrado, IR-T7 intacto;
+  formas dinámicas, variante de 48 bytes y respuesta física pendientes.
 
 [Ejecución, comprobantes y límites](../docs/execution/f03-04-character-intermediate.md):
 167 tests aprobados, cobertura combinada 97,07 %, A/B idénticos y SAN/SCM

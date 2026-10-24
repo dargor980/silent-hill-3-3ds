@@ -514,6 +514,7 @@ def test_ci_gates_all_collision_modules_and_lints_independent_oracle():
         line
         for line in lines
         if "tools.qa.coverage_gate build/python-coverage.json --files" in line
+        and "tools/pipeline/collision_registry.py" in line
     ]
     assert len(gates) == 1
     assert set(gates[0].split("--files", 1)[1].split()) == {
@@ -521,6 +522,20 @@ def test_ci_gates_all_collision_modules_and_lints_independent_oracle():
         "tools/pipeline/collision_evidence.py",
         "tools/pipeline/collision_intermediate.py",
         "tools/pipeline/prepare_collision_intermediate.py",
+        "tools/pipeline/decoders/ps2_cld_polygons.py",
+        "tools/pipeline/collision_polygon_intermediate.py",
+        "tools/pipeline/collision_polygon_inputs.py",
+        "tools/pipeline/collision_polygon_recipe.py",
+        "tools/pipeline/collision_polygon_output.py",
+        "tools/pipeline/prepare_collision_polygon_intermediate.py",
     }
     for command in ("ruff check", "ruff format --check"):
-        assert any(command in line and "tests/collision_wire_oracle.py" in line for line in lines)
+        for helper in (
+            "tests/collision_wire_oracle.py",
+            "tests/cld_polygon_wire_oracle.py",
+            "tests/cld_polygon_fixtures.py",
+            "tests/collision_polygon_recipe_fixtures.py",
+            "tests/collision_polygon_package_fixtures.py",
+            "tests/collision_polygon_package_oracle.py",
+        ):
+            assert any(command in line and helper in line for line in lines)

@@ -20,7 +20,47 @@ class Renderer final : public ports::IRenderScene {
     ports::RenderResult response{ports::RenderResult::presented};
 };
 bool same(const domain::OrbitCamera &a, const domain::OrbitCamera &b) {
-    return a.yaw == b.yaw && a.elevation == b.elevation && a.distance == b.distance;
+    return a.yaw == b.yaw && a.elevation == b.elevation && a.distance == b.distance &&
+           a.target.x == b.target.x && a.target.y == b.target.y && a.target.z == b.target.z;
+}
+void close_camera() {
+    Renderer renderer;
+    const domain::OrbitCamera face{0, .1F, .65F, {0, 1.32F, -1.98F}};
+    CHECK(domain::valid_camera(face));
+    const auto eye = domain::camera_eye(face);
+    CHECK(eye.x == 0 && std::abs(eye.y - face.target.y - .65F * std::sin(.1F)) < 1e-6F);
+    CHECK(std::abs(eye.z - face.target.z - .65F * std::cos(.1F)) < 1e-6F);
+    for (auto member : {&domain::Vec3::x, &domain::Vec3::y, &domain::Vec3::z}) {
+        for (float bad : {11.0F, -11.0F, std::numeric_limits<float>::quiet_NaN(),
+                          std::numeric_limits<float>::infinity()}) {
+            auto camera = face;
+            camera.target.*member = bad;
+            CHECK(!domain::valid_camera(camera));
+        }
+    }
+    application::RenderProbe legacy(renderer);
+    CHECK(!legacy.set_camera(face));
+    CHECK(same(legacy.camera(), domain::OrbitCamera{}));
+    for (float bad : {0.0F, 4.0F, std::numeric_limits<float>::quiet_NaN()}) {
+        application::RenderProbe invalid_limit(renderer, face, bad);
+        CHECK(same(invalid_limit.camera(), domain::OrbitCamera{}));
+        CHECK(!invalid_limit.set_camera(face));
+    }
+    application::RenderProbe close(renderer, face, .45F);
+    close.step({0, 0, -1}, .1F);
+    CHECK(std::abs(close.camera().distance - .585F) < 1e-6F);
+    CHECK(close.camera().target.y == face.target.y);
+    for (int i = 0; i < 100; ++i)
+        close.step({0, 0, -1}, .1F);
+    CHECK(close.camera().distance == .45F);
+    auto invalid = face;
+    invalid.distance = .449F;
+    CHECK(!close.set_camera(invalid) && close.camera().distance == .45F);
+    for (int i = 0; i < 200; ++i)
+        close.step({0, 0, 1}, .1F);
+    CHECK(close.camera().distance == 9);
+    close.step({0, 0, 0, true}, .1F);
+    CHECK(same(close.camera(), face));
 }
 void camera() {
     const domain::OrbitCamera initial;
@@ -212,6 +252,7 @@ void texture() {
 } // namespace
 int main() {
     camera();
+    close_camera();
     lifecycle();
     mesh();
     texture();

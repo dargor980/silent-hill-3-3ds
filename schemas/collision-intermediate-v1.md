@@ -9,6 +9,12 @@ La [investigación posterior CF-T1–T3](../docs/execution/f03-04-collision-shap
 identifica formas y listas en fuentes privadas; no cambia este contrato ni
 añade sus payloads a los paquetes IR-T7. El decoder de formas requiere un
 perfil posterior, separado de estos registros observados.
+Ese contrato separado se define en [CPI01–CPI14](collision-polygons-intermediate-v1.md),
+CF-T7a; CF-T7b implementa su adaptador puro y CF-T7c su preparador/writer
+exclusivo. CF-T7d añade oráculo independiente y gates permanentes;
+[CF-T7e](../docs/execution/f03-04-collision-polygons-publication.md) completa
+publicación A/B, reconstrucción sin fuentes y cotejo externo. No incorpora formas a los
+paquetes de registros existentes.
 Requisitos: RF02.04/RF02.05; preparación para RF05.01, sin satisfacerlo todavía.
 
 **Historia:** Como implementador del port, quiero conservar y reconstruir los

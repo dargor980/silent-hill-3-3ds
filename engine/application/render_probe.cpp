@@ -3,6 +3,23 @@
 #include <cmath>
 
 namespace sh3::application {
+RenderProbe::RenderProbe(ports::IRenderScene &renderer, domain::OrbitCamera initial,
+                         float minimum_distance) noexcept
+    : renderer_(renderer),
+      minimum_distance_(std::isfinite(minimum_distance) && minimum_distance >= 0.45F &&
+                                minimum_distance <= 3
+                            ? minimum_distance
+                            : 3.0F) {
+    if (!set_camera(initial))
+        camera_ = domain::OrbitCamera{};
+    initial_camera_ = camera_;
+}
+bool RenderProbe::set_camera(const domain::OrbitCamera &camera) noexcept {
+    if (!domain::valid_camera(camera) || camera.distance < minimum_distance_)
+        return false;
+    camera_ = camera;
+    return true;
+}
 void RenderProbe::dispatch(domain::LifecycleEvent event) noexcept {
     const auto before = state();
     lifecycle_.apply(event);
@@ -31,8 +48,10 @@ void RenderProbe::step(const CameraInput &input, float seconds) noexcept {
             std::clamp(camera_.yaw + std::clamp(input.orbit, -1.0F, 1.0F) * dt, -0.55F, 0.55F);
         camera_.elevation =
             std::clamp(camera_.elevation + std::clamp(input.elevate, -1.0F, 1.0F) * dt, 0.1F, 0.8F);
+        const float zoom_speed = std::min(3.0F, camera_.distance);
         camera_.distance =
-            std::clamp(camera_.distance + std::clamp(input.zoom, -1.0F, 1.0F) * dt * 3, 3.0F, 9.0F);
+            std::clamp(camera_.distance + std::clamp(input.zoom, -1.0F, 1.0F) * dt * zoom_speed,
+                       minimum_distance_, 9.0F);
     }
     result_ = renderer_.present(camera_);
     if (result_ == ports::RenderResult::unavailable ||

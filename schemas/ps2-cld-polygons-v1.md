@@ -1,6 +1,8 @@
 # CP01–CP15 — Decoder de polígonos CLD indexados
 
-2026-10-23. **Contrato CF-T4 definido; implementación CF-T5 pendiente.**
+2026-10-23. **CF-T4, CF-T5a–c y CF-T6 completados: contrato, decoder, batería, CI y cotejo privado.**
+La verificación de CI es local. [CF-T6](../docs/execution/f03-04-collision-polygons-private.md)
+registra 233 recursos aceptados, 52 no soportados y cero otros rechazos por copia A/B.
 Perfil `ps2-cld-polygons-v1`. RF02.04/RF02.05, RNF06.01–RNF06.03,
 RNF07.06–RNF07.09 y RNF08.01. Continúa
 [CF-T1–T3](../docs/execution/f03-04-collision-shapes-research.md) y
@@ -170,7 +172,7 @@ resultado aceptado; no se intenta otra interpretación automáticamente.
 
 ## API y diseño SOLID
 
-Módulo previsto: `tools/pipeline/decoders/ps2_cld_polygons.py`.
+Módulo: [ps2_cld_polygons.py](../tools/pipeline/decoders/ps2_cld_polygons.py).
 
 ```python
 class CollisionPolygonError(ValueError):
@@ -221,8 +223,13 @@ contiene bytes en hex de dos fixtures base, expectativas explícitas y casos
 materializados con tamaño/hash. Son datos inventados; no contienen bytes
 de la ISO, capturas, coordenadas del juego ni código desensamblado.
 Los casos de fallo conservan el código esperado y la mutación que lo provoca.
-Las pruebas del decoder se escribirán en CF-T5 contra estos vectores; no hay
-tests omitidos ni una implementación ficticia para declarar aprobación ahora.
+CF-T5a ejecutó estos vectores contra el decoder, sin modificar las expectativas
+fijadas en CF-T4. Sus [69 pruebas iniciales](../tests/python/test_cld_polygons.py) incluyen
+tipos, límites de polígonos, aislamiento inicial y ejecución de los vectores
+con `-O`. CF-T5b incorpora el [oráculo independiente](../tests/cld_polygon_wire_oracle.py),
+el [constructor propio](../tests/cld_polygon_fixtures.py) y los
+[barridos y controles](../tests/python/test_cld_polygon_conformance.py) de la tabla
+siguiente. El conjunto suma 3.159 pruebas; las expectativas originales siguen intactas.
 
 Fixture principal: tres formas en grupo 0, de las cuales una degenerada queda
 sin referencias. Celdas 0/1 comparten `[1,0,1]`; celda 2 comparte su cola `[1]`;
@@ -257,28 +264,31 @@ geométrica: el decoder solo lee, no transforma.
 
 ## Pipeline y secuencia de implementación
 
-CF-T5 creará `tests/python/test_cld_polygons.py` y
-`tests/cld_polygon_wire_oracle.py`, con constructor de fixtures independiente.
-El job `quality` existente descubre los tests; se añadirá el oráculo a Ruff
-y formato, y el módulo a `coverage_gate --files` sin retirar el gate global
+CF-T5a incorporó `tests/python/test_cld_polygons.py`. CF-T5b añadió
+`tests/python/test_cld_polygon_conformance.py`, `tests/cld_polygon_wire_oracle.py`
+y el constructor independiente `tests/cld_polygon_fixtures.py`.
+El job `quality` descubre los tests; CF-T5c incorporó los dos helpers
+a Ruff y formato, y el módulo a `coverage_gate --files` sin retirar el gate global
 ni el de IR-T7. CI usa únicamente los fixtures propios. La ejecución privada
 queda separada y no es requisito de acceso para un colaborador o CI.
 
-Comandos previstos, **todavía no ejecutables por falta de implementación**:
+Comandos locales para el perfil. El job de CI ejecuta además la suite completa
+y conserva XML/JSON de cobertura y JUnit; su reproducción local y los controles
+de rechazo se documentan en [CF-T5c](../docs/execution/f03-04-collision-polygons-ci.md).
 
 ```sh
-rtk proxy .venv/bin/python -m pytest tests/python/test_cld_polygons.py --cov=tools.pipeline.decoders.ps2_cld_polygons --cov-branch --cov-report=json:build/cld-polygons/coverage.json --junitxml=build/cld-polygons/pytest.xml
+rtk proxy .venv/bin/python -m pytest tests/python/test_cld_polygons.py tests/python/test_cld_polygon_conformance.py --cov=tools.pipeline.decoders.ps2_cld_polygons --cov-branch --cov-report=json:build/cld-polygons/coverage.json --junitxml=build/cld-polygons/pytest.xml
 rtk proxy .venv/bin/python -m tools.qa.coverage_gate build/cld-polygons/coverage.json --files tools/pipeline/decoders/ps2_cld_polygons.py
 ```
 
 | Tarea | Entrega y criterio de cierre |
 |---|---|
-| **CF-T4 — completada** | Este contrato, vectores sintéticos con expectativas, diseño SOLID, errores, presupuestos, oráculo y batería/pipeline definidos. No se atribuyen pruebas al decoder ausente. |
-| **CF-T5a — pendiente** | Decoder puro con API exacta y errores tipados. Casos de layout/valores/terminación/finitud y subconjunto poligonal, sin I/O. CP01–CP09/CP12/CP13. |
-| **CF-T5b — pendiente** | Oráculo independiente, barridos/fronteras/metamórficas/aislamiento y `-O`; controles de sensibilidad. CP10–CP14; todos los casos de la tabla pasan, no solo las semillas JSON. |
-| **CF-T5c — pendiente** | Integrar gate por módulo y oráculo en CI; pruebas del perfil, regresión relevante, Ruff, custodia y trazabilidad. ≥80 % líneas y ramas por módulo. |
-| **CF-T6 — pendiente** | Cotejo privado A/B con pins y registro de aceptados/no soportados/errores; comparar los dos recursos ligados a RAM, sin relajar el perfil para obtener 285 aceptados. CP15. |
-| **CF-T7 — pendiente** | Definir y después implementar extensión del intermedio que conserve fuente completa y vista, publicación exclusiva y reconstrucción A/B con oráculo. IR-T7 sigue inalterado. |
+| **CF-T4 — completada** | Este contrato, vectores sintéticos con expectativas, diseño SOLID, errores, presupuestos, oráculo y batería/pipeline definidos antes de implementar el decoder. |
+| **CF-T5a — completada** | Decoder puro con API exacta y errores tipados; 69 pruebas, incluidos los 50 vectores originales. Casos de layout/valores/terminación/finitud y subconjunto poligonal, sin I/O. CP01–CP09/CP12/CP13; comprobaciones iniciales CP10/CP11. |
+| **CF-T5b — completada** | Oráculo stdlib independiente con lectura f32 por bits, constructor propio y 3.159 pruebas del perfil; barridos/fronteras/metamórficas/aislamiento, 11 fallos semánticos controlados y comparación normal/`-O` de 2.742 buffers más nueve tipos inválidos por lector/modo. Tabla de aceptación cubierta, sin cambios al decoder ni a las semillas JSON. CP01–CP14. |
+| **CF-T5c — completada** | Oráculo/constructor en Ruff/formato y decoder en gate individual de CI; preservados los gates anteriores. Job `quality` reproducido localmente: 8.307 pruebas principales aprobadas, 100 % líneas/ramas del decoder y siete controles del gate. Artefactos y subcasos JUnit reconciliados; CI remoto no ejecutado. |
+| **CF-T6 — completada** | 285 recursos A/B: 233 aceptados, 52 no soportados y cero otros rechazos por copia. Vistas/errores cotejados con oráculo; dos CLD y tablas coinciden en 30 capturas conservadas. 643 fuentes reverificadas, 16 controles y repetición idéntica normal/`-O`. Contrato intacto, sin respuesta física. CP15. |
+| **CF-T7 — completada** | [CPI01–CPI14](collision-polygons-intermediate-v1.md), CF-T7a–e: contrato, adaptador, preparador/writer, oráculo y gates permanentes. Calidad local CF-T7d: 8.829 pruebas. CF-T7e publica A/B: 519 archivos y manifiestos idénticos; ocho reconstrucciones sin fuentes y cotejo externo íntegro, 233/52/0 y 30 enlaces históricos. IR-T7 sigue inalterado; sin respuesta física. |
 
 La variante de 48 bytes, las listas dinámicas superpuestas, inicialización/
 sobrescritura, alta/baja desde el cargador y respuesta física requieren sus

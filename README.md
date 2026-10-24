@@ -2,6 +2,17 @@
 
 Proyecto de adaptación nativa con origen PS2 y destino confirmado **New Nintendo 2DS XL**. Estado: F00 completada y G00 aprobada para identificación, alcance y custodia; F01/diagnóstico sintético en curso. Todavía no hay juego portado. La ISO europea del usuario permanece como entrada local ignorada en `binaries`.
 
+**Heather original:** [HI-T1–T5a](docs/execution/f03-02-heather-inspection.md)
+identifican y convierten `chhaa.mdl`, esqueleto, materiales y animaciones.
+El build **`f25a2d9bb316`** presenta a Heather texturada y animada: 36 huesos
+activos, 6.943 vértices, 5.522 triángulos y 13 texturas. Añade
+[primer plano con SELECT](docs/execution/f03-02-heather-camera.md) y corrige
+la orientación vertical de las texturas en PICA. ARM y 88 segundos
+continuos en Azahar comprobados; paquete privado v2 listo. **Pendiente HI-T5b/HI-T6c:**
+[prueba en New 2DS XL](docs/compatibility/heather-inspection.md).
+Reloj de inspección y luz neutra; movimiento jugable, expresiones y habitación
+todavía pendientes. [Spec EARS](docs/specs/sh3-3ds/heather-inspection.md).
+
 **Nuevo corte gráfico:** `sh3_render_probe` muestra una habitación sintética
 texturizada con cámara orbital y profundidad. Compilado para ARM y observado en
 Azahar; el usuario confirma arranque, cámara y controles en New 2DS XL.
@@ -138,8 +149,64 @@ sondeados y 30 capturas cotejadas. Listas de índices, formas de 80/48 bytes y
 solapamientos dinámicos documentados; traslación de 1.740 vértices contrastada.
 [CF-T4 completada](docs/execution/f03-04-collision-polygons-contract.md):
 contrato poligonal CP01–CP15, dos fixtures propios y 50 vectores sintéticos
-con expectativas comprobadas. Sigue CF-T5: implementar el decoder y su
-batería completa; la respuesta física permanece pendiente.
+con expectativas comprobadas.
+[CF-T5a completada](docs/execution/f03-04-collision-polygons-decoder.md):
+decoder poligonal puro; 69 pruebas aprobadas y 100 % de líneas/ramas del módulo,
+con los 50 vectores originales también comprobados bajo `-O`.
+[CF-T5b completada](docs/execution/f03-04-collision-polygons-verification.md):
+oráculo independiente y batería ampliada de 3.159 pruebas; barridos, límites,
+alias, aislamiento, precedencia, metamórficas y fallos controlados verificados.
+[CF-T5c completada](docs/execution/f03-04-collision-polygons-ci.md): helpers y
+gate individual integrados; job de calidad verificado localmente con 8.307
+pruebas principales aprobadas, controles negativos del gate y artefactos cotejados.
+[CF-T6 completada](docs/execution/f03-04-collision-polygons-private.md):
+285 recursos por copia A/B, con 233 aceptados, 52 no soportados y cero otros
+rechazos; oráculo concordante y ambos CLD del carrusel cotejados con 30 capturas
+conservadas. Dieciséis controles detectados y repetición idéntica normal/`-O`.
+[CF-T7a completada](docs/execution/f03-04-collision-polygons-intermediate-contract.md):
+contrato CPI01–CPI14 con buffer íntegro y vista por recurso; 24 ejemplos propios
+comprobados normal/`-O`, con reconstrucción sin abrir fuentes y controles de
+fidelidad externa.
+[CF-T7b completada](docs/execution/f03-04-collision-polygons-intermediate.md):
+tres APIs puras con fuente íntegra y vistas regeneradas; 139 pruebas,
+100 % de líneas/ramas y 3.416 regresiones aprobadas.
+[CF-T7c completada](docs/execution/f03-04-collision-polygons-preparation.md):
+preparador con pins fijos, custodia y writer exclusivo; 104 pruebas propias.
+Preparación A/B en memoria: 519 archivos lógicos y manifiestos iguales,
+233/52/0.
+[CF-T7d completada](docs/execution/f03-04-collision-polygons-intermediate-verification.md):
+oráculo independiente de paquete/fidelidad y 279 pruebas nuevas; gates
+permanentes para los cinco módulos CPI. Calidad local: 8.829 pruebas y gates
+aprobados.
+[CF-T7e completada](docs/execution/f03-04-collision-polygons-publication.md):
+dos paquetes privados con 519 archivos y manifiestos idénticos; ocho
+reconstrucciones sin fuentes y cotejo externo íntegro. 233 aceptados,
+52 no soportados y cero rechazados; 30 enlaces históricos conservados y
+575 entradas de conversión intactas. Cierra CF-T7 para el perfil estructural CPI.
+[CF-T8 completada](docs/execution/f03-04-collision-extended-research.md):
+consumidor de cilindro vertical de 48 bytes contrastado con 293 registros A/B;
+modelo de listas dinámicas con 20 registros procedentes de la fase anterior.
+Cabecera/X/Z/W coinciden en 29 capturas; 12 controles negativos y repetición
+idéntica, con 647 entradas reverificadas.
+[CF-T9 parcial](docs/execution/f03-04-collision-runtime.md): consultas de
+cilindro rechazadas y aceptadas; el llamador conserva el resultado más cercano.
+57 capturas sin restauraciones: traslación Y no nula, transición de fase,
+12 listas registradas en ambos bancos y avance que vacía el contador de uno.
+Una consulta procesa una forma residual y la rechaza sin alterar el resultado;
+se conservan las discrepancias de 1 ULP frente al host.
+La vuelta por «Continue» captura la limpieza de 17.664 bytes del overlay.
+Un diagnóstico separado con copia del estado 55 y cambio exclusivo del PC
+verifica el reset 12/0→0/0 en 86 ciclos, conservando punteros y formas;
+sus dos capturas no se cuentan como juego normal.
+[Escritores Y de CF-T9c](docs/execution/f03-04-collision-y-writer.md): 23 capturas
+de una repetición sin modificar el estado identifican cuatro instrucciones
+SQC2 y dos colas de fase 5; las cuatro colas finales coinciden con las originales.
+Otras 13 capturas desde estado 24 intacto verifican la llamada anterior de
+fila 1/buffer 0, con Y = −25 y cola idéntica a los estados originales 25/29/54.
+467 pruebas auxiliares y 5.079 entradas auditadas. Quedan pendientes la
+unicidad del último escritor entre extremos y la equivalencia numérica;
+el reset ocupado natural sigue sin observar.
+La respuesta física permanece pendiente.
 La selección de luces entre escenas sigue pendiente.
 El [sondeo de rutas de dibujo](docs/execution/f03-02-map-render-metadata.md)
 ya separa los grupos por contador, localiza la matriz base y distingue palabras

@@ -210,7 +210,7 @@ def write_character_material_bundle(root, repository, run_id, files, report):
     return _write_bundle(root, repository, run_id, files, report, expected)
 
 
-def _write_bundle(root, repository, run_id, files, report, expected):
+def _write_bundle(root, repository, run_id, files, report, expected, *, before_publish=None):
     resolved, checkout = root.resolve(), repository.resolve()
     if resolved.is_relative_to(checkout) or checkout.is_relative_to(resolved):
         raise ProfileError("PRIVATE_DATA_IN_REPO", "Texture output must be external")
@@ -266,6 +266,10 @@ def _write_bundle(root, repository, run_id, files, report, expected):
         if set(os.listdir(session_fd)) != expected:
             raise ProfileError("OUTPUT_SET_MISMATCH", "Texture output set changed")
         write(".manifest.pending.json", raw)
+        if before_publish is not None:
+            # Profile-specific validation of the completed directory, before commit.
+            before_publish(session_fd, raw)
+            attached()
         os.link(
             ".manifest.pending.json",
             "manifest.json",

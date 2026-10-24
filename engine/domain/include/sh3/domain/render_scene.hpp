@@ -19,12 +19,13 @@ using TexturePanel = std::array<SceneVertex, 6>;
 using MaterialBackdrop = std::array<SceneVertex, 96>;
 [[nodiscard]] MaterialBackdrop material_backdrop() noexcept;
 
+inline constexpr Vec3 camera_target{0.0F, 0.75F, -2.0F};
 struct OrbitCamera {
     float yaw{0.35F};
     float elevation{0.35F};
     float distance{7.0F};
+    Vec3 target{camera_target};
 };
 [[nodiscard]] bool valid_camera(const OrbitCamera &camera) noexcept;
 [[nodiscard]] Vec3 camera_eye(const OrbitCamera &camera) noexcept;
-inline constexpr Vec3 camera_target{0.0F, 0.75F, -2.0F};
 } // namespace sh3::domain

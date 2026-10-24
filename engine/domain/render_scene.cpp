@@ -9,8 +9,7 @@ MaterialBackdrop material_backdrop() noexcept {
     for (int y = 0; y < 4; ++y) {
         for (int x = 0; x < 4; ++x) {
             const float left = -2.2F + x * 1.1F, bottom = -1.45F + y * 1.1F;
-            const Vec3 color = (x + y) % 2 ? Vec3{0.85F, 0.85F, 0.85F}
-                                           : Vec3{0.12F, 0.22F, 0.32F};
+            const Vec3 color = (x + y) % 2 ? Vec3{0.85F, 0.85F, 0.85F} : Vec3{0.12F, 0.22F, 0.32F};
             const SceneVertex a{{left, bottom, -2.3F}, 0, 0, color};
             const SceneVertex b{{left + 1.1F, bottom, -2.3F}, 0, 0, color};
             const SceneVertex c{{left + 1.1F, bottom + 1.1F, -2.3F}, 0, 0, color};
@@ -61,13 +60,16 @@ SceneMesh synthetic_room() noexcept {
 bool valid_camera(const OrbitCamera &camera) noexcept {
     return std::isfinite(camera.yaw) && std::isfinite(camera.elevation) &&
            std::isfinite(camera.distance) && camera.yaw >= -0.55F && camera.yaw <= 0.55F &&
-           camera.elevation >= 0.1F && camera.elevation <= 0.8F && camera.distance >= 3.0F &&
-           camera.distance <= 9.0F;
+           camera.elevation >= 0.1F && camera.elevation <= 0.8F && camera.distance >= 0.45F &&
+           camera.distance <= 9.0F && std::isfinite(camera.target.x) &&
+           std::isfinite(camera.target.y) && std::isfinite(camera.target.z) &&
+           std::abs(camera.target.x) <= 10 && std::abs(camera.target.y) <= 10 &&
+           std::abs(camera.target.z) <= 10;
 }
 Vec3 camera_eye(const OrbitCamera &camera) noexcept {
     const float horizontal = camera.distance * std::cos(camera.elevation);
-    return {camera_target.x + horizontal * std::sin(camera.yaw),
-            camera_target.y + camera.distance * std::sin(camera.elevation),
-            camera_target.z + horizontal * std::cos(camera.yaw)};
+    return {camera.target.x + horizontal * std::sin(camera.yaw),
+            camera.target.y + camera.distance * std::sin(camera.elevation),
+            camera.target.z + horizontal * std::cos(camera.yaw)};
 }
 } // namespace sh3::domain

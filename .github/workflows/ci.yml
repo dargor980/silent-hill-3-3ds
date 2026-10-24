@@ -34,15 +34,16 @@ jobs:
           ctest --version
       - name: Lint and formatting
         run: |
-          python -m ruff check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py
-          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py
+          python -m ruff check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py
+          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py
       - name: Dependency, custody and spec contracts
         run: python -m tools.qa.check_repository
       - name: Python tests and coverage gate
         run: |
           python -m pytest --cov=tools --cov-report=xml:build/python-coverage.xml --cov-report=json:build/python-coverage.json --cov-report=term-missing --junitxml=build/pytest.xml
           python -m tools.qa.coverage_gate build/python-coverage.json
-          python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/collision_registry.py tools/pipeline/collision_evidence.py tools/pipeline/collision_intermediate.py tools/pipeline/prepare_collision_intermediate.py
+          python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/collision_registry.py tools/pipeline/collision_evidence.py tools/pipeline/collision_intermediate.py tools/pipeline/prepare_collision_intermediate.py tools/pipeline/decoders/ps2_cld_polygons.py tools/pipeline/collision_polygon_intermediate.py tools/pipeline/collision_polygon_inputs.py tools/pipeline/collision_polygon_recipe.py tools/pipeline/collision_polygon_output.py tools/pipeline/prepare_collision_polygon_intermediate.py
+          python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/decoders/ps2_animation.py tools/pipeline/decoders/ps2_character_mesh.py tools/pipeline/decoders/ps2_character_morphs.py tools/pipeline/decoders/ps2_indexed.py tools/pipeline/decoders/ps2_morph_materials.py tools/pipeline/decode_morph_character.py tools/pipeline/rig_inspection.py
           test -s build/python-coverage.xml
           test -s build/pytest.xml
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -148,8 +149,21 @@ jobs:
           docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
             --user "$(id -u):$(id -g)" -e HOME=/tmp \
             --mount "type=bind,src=$PWD,dst=/work" -w /work "$image" bash -c \
-            'bash scripts/check_3ds_toolchain.sh && bash scripts/build_3ds.sh && bash scripts/build_render_probe.sh && bash scripts/build_texture_probe.sh && bash scripts/build_geometry_probe.sh && bash scripts/build_material_probe.sh && bash scripts/build_animation_probe.sh && bash scripts/build_character_probe.sh && bash scripts/build_character_material_probe.sh && bash scripts/build_character_lighting_probe.sh && bash scripts/build_character_world_probe.sh' \
+            'bash scripts/check_3ds_toolchain.sh && bash scripts/build_3ds.sh && bash scripts/build_render_probe.sh && bash scripts/build_texture_probe.sh && bash scripts/build_geometry_probe.sh && bash scripts/build_material_probe.sh && bash scripts/build_animation_probe.sh && bash scripts/build_character_probe.sh && bash scripts/build_character_material_probe.sh && bash scripts/build_character_lighting_probe.sh && bash scripts/build_character_world_probe.sh && bash scripts/build_heather_probe.sh' \
             2>&1 | tee build/logs/3ds.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: private-heather-viewer-code-only
+          path: |
+            build/heather-probe/sh3_heather_probe.3dsx
+            build/heather-probe/sh3_heather_probe.elf
+            build/heather-probe/sh3_heather_probe.smdh
+            build/heather-probe/build-id.txt
+            build/heather-probe/SHA256SUMS
+            build/heather-probe/sdk-image.txt
+            build/heather-probe/toolchain-packages.txt
+          if-no-files-found: error
+          retention-days: 14
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: private-character-viewer-code-only

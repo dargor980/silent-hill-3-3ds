@@ -130,7 +130,7 @@ ports::RenderResult CharacterRenderer::present(const domain::OrbitCamera &camera
         C3D_FrameEnd(0);
         return R::unavailable;
     }
-    const auto eye = domain::camera_eye(camera), target = domain::camera_target;
+    const auto eye = domain::camera_eye(camera), target = camera.target;
     C3D_Mtx view, transform;
     Mtx_LookAt(&view, FVec3_New(eye.x, eye.y, eye.z), FVec3_New(target.x, target.y, target.z),
                FVec3_New(0, 1, 0), false);

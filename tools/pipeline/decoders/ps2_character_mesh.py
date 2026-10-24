@@ -88,8 +88,13 @@ def _palette(data, start, count, maximum, low, high):
 
 def decode_character_mesh(data: bytes) -> CharacterMesh:
     skeleton = decode_skeleton(data)
+    return _decode_character_mesh(data, skeleton)
+
+
+def _decode_character_mesh(data, skeleton, *, morph_spans=(), read_morph_refs=None):
+    """Shared bounded mesh reader; morph validation belongs to its own decoder."""
     header, base = skeleton.model_header_words, skeleton.model_offset
-    if header[17] or header[19]:
+    if (header[17] or header[19]) and read_morph_refs is None:
         raise CharacterMeshError("CM_MORPH_UNSUPPORTED")
     helper_count = header[5]
     if not 0 <= helper_count <= MAX_HELPERS:
@@ -126,6 +131,7 @@ def decode_character_mesh(data: bytes) -> CharacterMesh:
     if any(not 0 <= image < header[12] or palette < 0 for image, palette in textures):
         raise CharacterMeshError("CM_TEXTURE_REFERENCE")
     spans = [
+        *morph_spans,
         (skeleton.matrices_offset, skeleton.matrices_offset + len(skeleton.parents) * 64),
         (skeleton.parents_offset, skeleton.parents_offset + len(skeleton.parents)),
         (helpers_at, helpers_at + helper_count * 2),
@@ -144,8 +150,9 @@ def decode_character_mesh(data: bytes) -> CharacterMesh:
                 raise CharacterMeshError("CM_SUBMESH_LENGTH")
             end = offset + words[0]
             _range(offset, words[0], low, len(data), 16)
-            if words[5]:
+            if words[5] and read_morph_refs is None:
                 raise CharacterMeshError("CM_MORPH_UNSUPPORTED")
+            ref_spans = read_morph_refs(offset, words) if read_morph_refs else ()
             bones = _palette(
                 data, offset + words[8], words[7], len(skeleton.parents), offset + 144, end
             )
@@ -161,6 +168,7 @@ def decode_character_mesh(data: bytes) -> CharacterMesh:
             _range(vif_at, vif_size, offset + 144, end, 16)
             _disjoint(
                 [
+                    *ref_spans,
                     (offset + words[8], offset + words[8] + 2 * len(bones)),
                     (offset + words[10], offset + words[10] + 2 * len(palette)),
                     (texture_at, texture_at + 2),

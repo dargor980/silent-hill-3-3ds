@@ -9,10 +9,9 @@ struct CameraInput {
 };
 class RenderProbe final {
   public:
-    explicit RenderProbe(ports::IRenderScene &renderer, domain::OrbitCamera initial = {}) noexcept
-        : renderer_(renderer),
-          camera_(domain::valid_camera(initial) ? initial : domain::OrbitCamera{}),
-          initial_camera_(camera_) {}
+    explicit RenderProbe(ports::IRenderScene &renderer, domain::OrbitCamera initial = {},
+                         float minimum_distance = 3.0F) noexcept;
+    [[nodiscard]] bool set_camera(const domain::OrbitCamera &) noexcept;
     void dispatch(domain::LifecycleEvent event) noexcept;
     void step(const CameraInput &input, float seconds) noexcept;
     [[nodiscard]] const domain::OrbitCamera &camera() const noexcept { return camera_; }
@@ -25,6 +24,7 @@ class RenderProbe final {
     domain::Lifecycle lifecycle_;
     domain::OrbitCamera camera_;
     domain::OrbitCamera initial_camera_;
+    float minimum_distance_;
     ports::RenderResult result_{ports::RenderResult::busy};
     bool awaiting_release_{false};
 };

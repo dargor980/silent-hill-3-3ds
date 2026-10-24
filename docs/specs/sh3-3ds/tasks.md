@@ -275,6 +275,17 @@ Fuente: PDF p. 17. **Entrada:** G02; puede solaparse con investigación F04.
 
 - [ ] **F03.02 — Decodificar un tipo de recurso del slice.**
   - Ticket detallado: [F03.02](tasks/F03.md#f0302).
+  - [HI-T1–T5a, Heather original](../../execution/f03-02-heather-inspection.md):
+    `chhaa.mdl` y once ANM decodificados; selección original, pose y materiales
+    contrastados en PCSX2, salidas A/B idénticas y perfil SRI1 nativo.
+    Build `9719469ff6bb`, 36 huesos activos, 6.943 vértices, 5.522 triángulos,
+    13 texturas. ARM y 64 s en Azahar aprobados. **HI-T5b pendiente:**
+    [prueba física](../../compatibility/heather-inspection.md), controles,
+    START/tapa/HOME y métricas. No cierra reloj nativo, expresiones ni locomoción.
+  - [HI-T6a/b, cámara cercana](../../execution/f03-02-heather-camera.md):
+    build `f25a2d9bb316` reemplaza al anterior; SELECT cuerpo/cara, zoom mínimo
+    0,45, B recupera cuerpo. Corrige inversión vertical del upload PICA,
+    con 88 s en Azahar y paquete v2. **HI-T6c física pendiente.**
   - Instancia independiente: [primera textura de 8 bits, 256×256](../../execution/f03-02-indexed-texture.md),
     RGBA/PNG privados repetibles y 318 pruebas aprobadas. [PX01–PX07](../../../schemas/ps2-texture-decode-v1.md).
     [Visor privado SD](../../execution/f03-02-texture-inspection.md): TI-T1–TI-T5
@@ -425,8 +436,71 @@ Fuente: PDF p. 17. **Entrada:** G02; puede solaparse con investigación F04.
   - [CF-T4 completada](../../execution/f03-04-collision-polygons-contract.md):
     contrato CP01–CP15 con límites/API/errores y dos fixtures propios;
     50 vectores sintéticos contrastados con un verificador local independiente.
-    [CF-T5a–c pendientes](collision-shapes-research.md): decoder puro,
-    batería completa, oráculo público y gate individual en CI.
+  - [CF-T5a completada](../../execution/f03-04-collision-polygons-decoder.md):
+    decoder puro con 69 pruebas aprobadas, los 50 vectores originales sin
+    cambios y ejecución bajo `-O`; 100 % de líneas/ramas del módulo.
+  - [CF-T5b completada](../../execution/f03-04-collision-polygons-verification.md):
+    oráculo independiente y batería ampliada; 3.159 pruebas del perfil,
+    11 fallos semánticos controlados y comparación normal/`-O` por dos lectores.
+    Sin cambios al decoder o los vectores CF-T4.
+  - [CF-T5c completada](../../execution/f03-04-collision-polygons-ci.md):
+    helpers y gate individual en CI; 8.307 pruebas principales aprobadas
+    al reproducir localmente el job de calidad, siete controles del gate y
+    reportes cotejados. CI remoto no ejecutado.
+  - [CF-T6 completada](../../execution/f03-04-collision-polygons-private.md):
+    285 recursos por copia A/B: 233 aceptados, 52 no soportados y cero otros
+    rechazos; oráculo concordante, dos CLD ligados a RAM en 30 capturas,
+    643 fuentes reverificadas y 16 controles detectados. Repetición idéntica
+    normal/`-O`; sin cambios al perfil ni respuesta física.
+  - [CF-T7a completada](../../execution/f03-04-collision-polygons-intermediate-contract.md):
+    contrato CPI01–CPI14, inventario íntegro y vista por recurso; 24 ejemplos
+    comprobados normal/`-O`, con reconstrucción sin aperturas y controles de
+    fidelidad externa.
+  - [CF-T7b completada](../../execution/f03-04-collision-polygons-intermediate.md):
+    tres APIs puras, 139 pruebas y cobertura 100 % de líneas/ramas;
+    3.416 regresiones aprobadas y ejemplos intactos. Reconstrucción sin I/O
+    normal/`-O`.
+  - [CF-T7c completada](../../execution/f03-04-collision-polygons-preparation.md):
+    preparador, custodia de pins y writer exclusivo; 104 pruebas propias,
+    I/O/concurrencia y reconstrucción normal/`-O` sin fuentes. A/B preparado
+    solo en memoria: 519 archivos y manifiestos iguales, 233/52/0.
+  - [CF-T7d completada](../../execution/f03-04-collision-polygons-intermediate-verification.md):
+    oráculo independiente de paquete y fidelidad externa; 279 pruebas nuevas,
+    aislamiento normal/`-O` y gates permanentes de los cinco módulos CPI.
+    Job de calidad local: 8.829 pruebas y gates aprobados.
+  - [CF-T7e completada](../../execution/f03-04-collision-polygons-publication.md):
+    paquetes A/B publicados, 519 archivos y manifiestos idénticos; ocho
+    reconstrucciones sin fuentes y cotejo externo íntegro. 233/52/0 y 30
+    enlaces históricos reproducidos; 575 entradas intactas. CF-T7 cerrado
+    para CPI estructural; formas dinámicas, variante de 48 bytes y física pendientes.
+  - [CF-T8 completada](../../execution/f03-04-collision-extended-research.md):
+    investigación del cilindro vertical de 48 bytes con 293 registros A/B;
+    colas de 20 registros de la fase anterior y modelo de cabecera/X/Z/W
+    exacto en 29 capturas. Doce controles, repetición idéntica y 647 entradas
+    reverificadas. CP/CPI y capacidades físicas sin cambios.
+  - [CF-T9 parcial](../../execution/f03-04-collision-runtime.md): CF-T9a–b
+    completadas para consultas básicas, incluidos rechazo, aceptación y
+    conservación del resultado más cercano. 57 capturas sin restauraciones: Y no nula,
+    transición continua, 12 listas por banco y avance con contador ocupado.
+    Consulta de una forma residual verificada: pasa filtros, llega a la rutina
+    poligonal y devuelve rechazo. Discrepancias de 1 ULP documentadas.
+    «Continue» añade un segmento de reinicialización real: 17.664 bytes del
+    overlay puestos en cero. Dos capturas de diagnóstico separado (copia del
+    estado 55, solo PC cambiado) verifican reset 12/0→0/0 en 86 ciclos,
+    conservando punteros y formas. No prueban una llamada natural al reset
+    ocupado. 362 pruebas sintéticas, 3.288 entradas auditadas. CF-T9c–d siguen
+    abiertas por escritor de Y residual y equivalencia numérica, con invocación
+    natural del reset ocupado sin observar; no se acredita contacto poligonal
+    aceptado ni respuesta física.
+  - [CF-T9c, escritores de Y](../../execution/f03-04-collision-y-writer.md):
+    23 capturas restauradas sin modificar el estado; ocho pares de stores
+    verifican las cuatro SQC2, VF4 y toda la RAM restante. Dos colas de fase 5
+    reproducidas; las cuatro colas finales coinciden con originales 29/54.
+    Otra repetición desde estado 24 intacto añade 13 capturas: llamada previa
+    de fila 1/buffer 0 con Y = −25, cuatro stores, copia, registro y selector;
+    cola idéntica a 25/29/54. 467 pruebas auxiliares y 5.079 entradas auditadas.
+    La llamada queda identificada. No se excluyen reescrituras idénticas entre
+    extremos ni se cierra CF-T9c por igualdad de valores.
   - Resultado y aceptación: Esquema lógico y round-trip de fixture sin pérdida de metadatos; representación conservada.
   - Requisitos: RF02.04, RF02.05. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 

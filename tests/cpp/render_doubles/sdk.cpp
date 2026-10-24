@@ -32,6 +32,7 @@ std::vector<C3D_Tex *> texture_order;
 C3D_Tex *bound_texture = nullptr;
 int depth_mask = 0, culling = GPU_CULL_NONE, source_rgb = 0, source_alpha = 0;
 int alpha_factor = 0, rgb_operation = 0;
+int rig_alpha_reference = -1;
 u32 constant_color = 0;
 } // namespace
 bool C3D_Init(std::size_t size) {
@@ -89,7 +90,7 @@ int shaderInstanceGetUniformLocation(shaderInstance_s *p, const char *name) {
     return fails("UNIFORM") ? -1 : 3;
 }
 void *linearAlloc(std::size_t size) {
-    CHECK(size == (character ? (character_material ? 324U : 108U)*character_instances : (material ? 99U : geometry ? 3U : inspection ? 6U : 60U) * 32));
+    CHECK(size == (rig ? expected_vertices.size() : character ? (character_material ? 324U : 108U)*character_instances : (material ? 99U : geometry ? 3U : inspection ? 6U : 60U) * 32));
     if (fails("VERTICES"))
         return nullptr;
     acquire();
@@ -105,7 +106,7 @@ Result GSPGPU_FlushDataCache(const void *p, std::size_t size) {
     CHECK(p);
     const bool vertex_flush = p == vertex_buffer;
     if (dynamic && vertex_flush && frames) CHECK(open_frame && !pending);
-    CHECK(size == (vertex_flush ? (character ? (character_material ? 324U : 108U)*character_instances : material     ? 3168U
+    CHECK(size == (rig ? (vertex_flush ? expected_vertices.size() : rig_dimensions[texture_flushes].first*rig_dimensions[texture_flushes].second*4) : vertex_flush ? (character ? (character_material ? 324U : 108U)*character_instances : material     ? 3168U
                                    : geometry     ? 96U
                                    : inspection ? 192U
                                                 : 1920U)
@@ -119,11 +120,12 @@ Result GSPGPU_FlushDataCache(const void *p, std::size_t size) {
         }
         CHECK(std::memcmp(bytes, expected_vertices.data(), expected_vertices.size()) == 0);
     }
-    if (!vertex_flush && character_material && failure == "TEXTURE_FLUSH_" + std::to_string(texture_flushes++)) return -1;
+    if (!vertex_flush && (character_material || rig) && failure == "TEXTURE_FLUSH_" + std::to_string(texture_flushes++)) return -1;
     return fails(vertex_flush ? "VERTEX_FLUSH" : "TEXTURE_FLUSH") ? -1 : 0;
 }
 bool C3D_TexInit(C3D_Tex *p, unsigned w, unsigned h, int format) {
-    CHECK(w == (character_material ? 512U : inspection ? 256U : 64U) && h == w && format == GPU_RGBA8);
+    if (rig) CHECK(w == rig_dimensions[texture_attempts].first && h == rig_dimensions[texture_attempts].second && format == GPU_RGBA8);
+    else CHECK(w == (character_material ? 512U : inspection ? 256U : 64U) && h == w && format == GPU_RGBA8);
     if (failure == "TEXTURE_" + std::to_string(texture_attempts++) || fails("TEXTURE"))
         return false;
     acquire();
@@ -137,10 +139,10 @@ void C3D_TexDelete(C3D_Tex *p) {
     std::free(p->data);
 }
 void C3D_TexSetFilter(C3D_Tex *, int min, int mag) {
-    CHECK(min == ((material || character_material) ? GPU_LINEAR : GPU_NEAREST) && mag == min);
+    CHECK(min == ((material || character_material || rig) ? GPU_LINEAR : GPU_NEAREST) && mag == min);
 }
 void C3D_TexSetWrap(C3D_Tex *, int s, int t) {
-    CHECK(s == ((material || character_material) ? GPU_CLAMP_TO_EDGE : GPU_REPEAT) && t == s);
+    CHECK(s == ((material || character_material || rig) ? GPU_CLAMP_TO_EDGE : GPU_REPEAT) && t == s);
 }
 void C3D_TexBind(int unit, C3D_Tex *p) { CHECK(unit == 0 && p->data); bound_texture = p; }
 C3D_AttrInfo *C3D_GetAttrInfo() { return &attributes; }
@@ -165,7 +167,8 @@ void Mtx_PerspTilt(C3D_Mtx *, float fov, float aspect, float near, float far, bo
 }
 void Mtx_LookAt(C3D_Mtx *, C3D_FVec eye, C3D_FVec target_position, C3D_FVec up, bool left) {
     CHECK(std::isfinite(eye.x) && std::isfinite(eye.y) && std::isfinite(eye.z));
-    CHECK(target_position.x == 0 && target_position.y == 0.75F && target_position.z == -2);
+    CHECK(target_position.x == expected_focus[0] && target_position.y == expected_focus[1] &&
+          target_position.z == expected_focus[2]);
     CHECK(up.x == 0 && up.y == 1 && up.z == 0 && !left);
 }
 void Mtx_Multiply(C3D_Mtx *, const C3D_Mtx *, const C3D_Mtx *) {}
@@ -189,7 +192,10 @@ void C3D_TexEnvFunc(C3D_TexEnv *, int mode, int operation) {
     rgb_operation = operation;
 }
 void C3D_TexEnvColor(C3D_TexEnv *, u32 color) { constant_color = color; }
-void C3D_AlphaTest(bool enabled, int op, int reference) { CHECK(!enabled && op == GPU_ALWAYS && reference == 0); }
+void C3D_AlphaTest(bool enabled, int op, int reference) {
+    if (rig && enabled) { CHECK(op == GPU_GREATER && (reference == 0 || reference == 100)); rig_alpha_reference=reference; }
+    else CHECK(!enabled && op == GPU_ALWAYS && reference == 0);
+}
 void C3D_DepthTest(bool enable, int operation, int mask) {
     CHECK(enable && (operation == GPU_GREATER || ((material || dynamic) && operation == GPU_GEQUAL)));
     CHECK(mask == GPU_WRITE_ALL || (material && mask == GPU_WRITE_COLOR));
@@ -200,7 +206,7 @@ void C3D_AlphaBlend(GPU_BLENDEQUATION color, GPU_BLENDEQUATION alpha, GPU_BLENDF
     CHECK(color == GPU_BLEND_ADD && alpha == GPU_BLEND_ADD);
     CHECK(src_a == GPU_ONE && dst_a == GPU_ZERO);
     CHECK((src == GPU_ONE && dst == GPU_ZERO) ||
-          (material && src == GPU_SRC_ALPHA && dst == GPU_ONE_MINUS_SRC_ALPHA));
+          ((material || rig) && src == GPU_SRC_ALPHA && dst == GPU_ONE_MINUS_SRC_ALPHA));
     alpha_factor = src;
 }
 void C3D_CullFace(int mode) {
@@ -224,7 +230,14 @@ bool C3D_FrameDrawOn(C3D_RenderTarget *p) {
 }
 void C3D_DrawArrays(int mode, int first, int count) {
     CHECK(open_frame && mode == GPU_TRIANGLES);
-    if (character_material) {
+    if (rig) {
+        const auto index=draws%rig_dimensions.size();const bool blend=index+1==rig_dimensions.size();
+        CHECK(texture_order.size()==rig_dimensions.size() && bound_texture==texture_order[index]);
+        CHECK(first==static_cast<int>(index)*3 && count==3);
+        CHECK(depth_mask==GPU_WRITE_ALL && alpha_factor==(blend?GPU_SRC_ALPHA:GPU_ONE) && culling==GPU_CULL_NONE);
+        CHECK(rig_alpha_reference==(blend?100:0));
+        CHECK(source_rgb==GPU_TEXTURE0 && source_alpha==GPU_PRIMARY_COLOR && rgb_operation==GPU_MODULATE);
+    } else if (character_material) {
         CHECK(texture_order.size() == 3 && bound_texture == texture_order[draws % 3]);
         CHECK(first == (draws % (3*static_cast<int>(character_instances))) * 3 && count == 3);
         CHECK(depth_mask == GPU_WRITE_ALL && alpha_factor == GPU_ONE && culling == GPU_CULL_NONE);

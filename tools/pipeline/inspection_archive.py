@@ -15,6 +15,7 @@ def inspection_archive(files: dict[str, bytes], stem: str) -> bytes:
         "sh3_character_material_probe",
         "sh3_character_lighting_probe",
         "sh3_character_world_probe",
+        "sh3_heather_probe",
     }:
         raise ValueError("Unexpected inspection viewer")
     payload = "geometry.sgm" if stem == "sh3_geometry_probe" else "texture.stx"
@@ -46,6 +47,13 @@ def inspection_archive(files: dict[str, bytes], stem: str) -> bytes:
         expected.add("character.scl")
     if stem == "sh3_character_world_probe":
         expected.add("character.scw")
+    if stem == "sh3_heather_probe":
+        expected = {
+            "heather.sri",
+            f"{stem}.3dsx",
+            f"{stem}.smdh",
+            "LEEME.txt",
+        } | {f"texture-{i:02}.rgba" for i in range(13)}
     if set(files) != expected:
         raise ValueError("Unexpected inspection archive files")
     contents = {f"3ds/{stem}/{name}": data for name, data in files.items()}
