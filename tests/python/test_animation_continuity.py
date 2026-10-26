@@ -42,6 +42,15 @@ def test_ticks_can_vary_and_wall_pause_is_not_a_clock_reset():
     assert result.steps[-1].fraction == 0.75
 
 
+def test_repeated_draw_with_stale_ticks_is_not_a_consumer_return():
+    # A later EE cycle and a new recorder ordinal do not prove another clock
+    # evaluation. Rendering can reuse a pose while retaining the prior ticks.
+    first = ClockReturn(8, 100, "same", 1024, 2, 0, 1024, 1, 0, 1)
+    redraw = replace(first, ordinal=9, cycle=10000)
+    with pytest.raises(ValueError, match="Clock or sample discontinuity"):
+        reconcile_loop([first, redraw], start=0, end=2, speed=512)
+
+
 @pytest.mark.parametrize(
     "changes",
     [

@@ -63,3 +63,19 @@ Entrega exclusiva: `/Users/germancontreras/sh3-private-data/heather-3ds-v2/sd-ca
 Los ZIP de A/B coinciden; entradas y manifiesto se releen tras escribir.
 Recibo: `reports/local/heather-delivery-v2.json`. La entrega anterior se
 conserva como evidencia y queda reemplazada para las siguientes pruebas.
+
+El 2026-10-24 se copiaron los 17 archivos del build `f25a2d9bb316` a
+`NO NAME/3ds/sh3_heather_probe/`, con 18.949.569 bytes de contenido.
+La relectura confirmó todos los tamaños y SHA-256; la SD se expulsó de
+forma segura sin modificar otras aplicaciones. Recibo local:
+`reports/local/heather-sd-delivery-f25a2d9bb316.json`. La entrega no cierra
+la validación física HI-T5b/HI-T6c.
+
+## Confirmación física posterior
+
+El 2026-10-24 el usuario confirma 60 segundos en New 2DS XL, rostro correcto,
+SELECT, zoom, controles, START y regreso tras tapa/HOME. Cierra HI-T6c y
+la aceptación funcional HI-T5b; reapertura no detallada. Reporta además
+Skin+sort CPU ≈60,7 ms, Submit+wait ≈49 ms y GPU previous ≈4,36 ms, con
+baja fluidez. Son lecturas manuales, sin FPS ni distribución. La siguiente
+unidad priorizada es [HP: rendimiento](../specs/sh3-3ds/heather-performance.md).

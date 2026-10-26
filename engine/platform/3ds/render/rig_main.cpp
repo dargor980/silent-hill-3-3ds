@@ -1,5 +1,6 @@
 #include "rig_renderer.hpp"
 #include "sh3/application/rig_probe.hpp"
+#include "sh3/platform/frame_cadence.hpp"
 #include <cstdio>
 
 namespace {
@@ -39,7 +40,7 @@ class Presenter final : public sh3::ports::IRigScene {
     const sh3::domain::InspectionRig &model_;
     sh3::domain::RigPalette palette_{};
     sh3::domain::RigSortOrder order_{};
-    std::array<sh3::domain::DeformedVertex, sh3::domain::rig_vertices> scratch_{};
+    std::array<sh3::domain::RigVertexScratch, sh3::domain::rig_vertices> scratch_{};
     std::array<sh3::domain::CharacterDrawVertex, sh3::domain::rig_indices> draw_{};
 };
 class Screens final {
@@ -47,12 +48,25 @@ class Screens final {
     Screens() {
         gfxInitDefault();
         consoleInit(GFX_BOTTOM, nullptr);
+        bool is_new = false;
+        fast_ = R_SUCCEEDED(APT_CheckNew3DS(&is_new)) && is_new;
+        if (fast_)
+            osSetSpeedupEnable(true);
     }
-    ~Screens() { gfxExit(); }
+    ~Screens() {
+        if (fast_)
+            osSetSpeedupEnable(false);
+        gfxExit();
+    }
+    bool fast_requested() const noexcept { return fast_; }
+
+  private:
+    bool fast_{};
 };
 class Hook final {
   public:
-    explicit Hook(sh3::application::RigProbe &app) : app_(app) {
+    Hook(sh3::application::RigProbe &app, sh3::platform::FrameCadence &cadence, bool fast)
+        : app_(app), cadence_(cadence), fast_(fast) {
         aptHook(&cookie_, callback, this);
     }
     ~Hook() { aptUnhook(&cookie_); }
@@ -61,16 +75,23 @@ class Hook final {
 
   private:
     static void callback(APT_HookType type, void *context) {
-        auto &app = static_cast<Hook *>(context)->app_;
+        auto &self = *static_cast<Hook *>(context);
+        auto &app = self.app_;
         using E = sh3::domain::LifecycleEvent;
-        if (type == APTHOOK_ONSUSPEND || type == APTHOOK_ONSLEEP)
+        if (type == APTHOOK_ONSUSPEND || type == APTHOOK_ONSLEEP) {
+            self.cadence_.reset();
             app.dispatch(E::suspend);
-        else if (type == APTHOOK_ONRESTORE || type == APTHOOK_ONWAKEUP)
+        } else if (type == APTHOOK_ONRESTORE || type == APTHOOK_ONWAKEUP) {
+            self.cadence_.reset();
+            if (self.fast_)
+                osSetSpeedupEnable(true);
             app.dispatch(E::resume);
-        else if (type == APTHOOK_ONEXIT)
+        } else if (type == APTHOOK_ONEXIT)
             app.dispatch(E::quit);
     }
     sh3::application::RigProbe &app_;
+    sh3::platform::FrameCadence &cadence_;
+    bool fast_{};
     aptHookCookie cookie_{};
 };
 void error(const char *stage) {
@@ -104,8 +125,10 @@ int main() {
         else {
             static Presenter presenter(renderer, model);
             sh3::application::RigProbe app(presenter, model);
-            Hook hook(app);
+            sh3::platform::FrameCadence cadence(SYSCLOCK_ARM11);
+            Hook hook(app, cadence, screens.fast_requested());
             auto previous = svcGetSystemTick();
+            std::uint64_t last_hud = 0;
             while (aptMainLoop() && app.view().state() != sh3::domain::SessionState::stopped) {
                 const auto now = svcGetSystemTick();
                 const auto seconds = static_cast<float>(now - previous) / SYSCLOCK_ARM11;
@@ -131,6 +154,17 @@ int main() {
                 }
                 if (view.result() != sh3::ports::RenderResult::presented)
                     gspWaitForVBlank();
+                const auto completed = svcGetSystemTick();
+                cadence.record(completed, view.result() == sh3::ports::RenderResult::presented);
+                // Text is diagnostic; avoid rewriting the entire bottom framebuffer each draw.
+                if (last_hud && completed - last_hud < SYSCLOCK_ARM11 / 4 && !down)
+                    continue;
+                last_hud = completed;
+                char fps[20];
+                if (cadence.fps())
+                    std::snprintf(fps, sizeof(fps), "%5.1f", *cadence.fps());
+                else
+                    std::snprintf(fps, sizeof(fps), " --.-");
                 std::printf("\x1b[1;1HSH3 - Heather original\nBuild: %s\n"
                             "Clip 0x%lx / %lu bones / %lu samples\n"
                             "%lu vertices / %lu triangles\n%lu textures / neutral light\n"
@@ -138,10 +172,10 @@ int main() {
                             "camera  B: reset  "
                             "START: exit\n\n"
                             "%-8s Q12: %-6lu Sample: %2lu\n%-36s\n"
-                            "View: %-4s Distance: %.2f\nPreview: 25 evaluations/s\nSkin+sort CPU: "
+                            "View: %-4s Distance: %.2f\nFPS submit: %s  CPU: %-8s\nSkin+sort CPU: "
                             "%6.2f ms\n"
                             "Submit+wait: %6.2f ms\nGPU previous: %6.2f ms\n"
-                            "Native timing / expressions pending\n",
+                            "Preview 25 Hz; native timing pending\n",
                             SH3_BUILD_ID, static_cast<unsigned long>(model.clip_id),
                             static_cast<unsigned long>(model.bone_count),
                             static_cast<unsigned long>(model.sample_count),
@@ -153,6 +187,7 @@ int main() {
                             static_cast<unsigned long>(app.counter() / 4096),
                             view.awaiting_release() ? "Release all controls" : "Animation ready",
                             app.face_view() ? "FACE" : "BODY", double(view.camera().distance),
+                            fps, screens.fast_requested() ? "New fast" : "default",
                             presenter.skin_ms, presenter.submit_ms, double(C3D_GetDrawingTime()));
             }
         }

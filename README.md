@@ -8,10 +8,39 @@ El build **`f25a2d9bb316`** presenta a Heather texturada y animada: 36 huesos
 activos, 6.943 vértices, 5.522 triángulos y 13 texturas. Añade
 [primer plano con SELECT](docs/execution/f03-02-heather-camera.md) y corrige
 la orientación vertical de las texturas en PICA. ARM y 88 segundos
-continuos en Azahar comprobados; paquete privado v2 listo. **Pendiente HI-T5b/HI-T6c:**
-[prueba en New 2DS XL](docs/compatibility/heather-inspection.md).
+continuos en Azahar comprobados. **HI-T5b/HI-T6c funcionales confirmadas:**
+60 s, rostro/SELECT/zoom/controles, START y tapa/HOME en
+[New 2DS XL](docs/compatibility/heather-inspection.md). Baja fluidez reportada
+con CPU/submit/GPU ≈60,7/49/4,36 ms; se prioriza
+[HP: rendimiento](docs/specs/sh3-3ds/heather-performance.md).
+El build **`8f778b6e4960`** prepara vértices compartidos una vez, solicita
+CPU rápida en New y añade FPS submit. [HP-T1–T4](docs/execution/f03-02-heather-performance.md):
+353 CTest por preset, ARM y 90 s en Azahar. **HP-T4 física confirmada:**
+60 s en cuerpo y 60 s en cara, mayor fluidez y controles/START/tapa/HOME.
+Lecturas conjuntas aproximadas: 29,9 FPS submit, New fast, CPU/submit/GPU
+10,27/23,1/6,34 ms; sin métricas separadas por encuadre.
 Reloj de inspección y luz neutra; movimiento jugable, expresiones y habitación
 todavía pendientes. [Spec EARS](docs/specs/sh3-3ds/heather-inspection.md).
+[HL-T1/T2](docs/execution/f03-02-heather-locomotion.md) inventarían 49
+descriptores y acreditan una vuelta del clip `0x65` en PCSX2: 67 avances,
+ambos canales, un reinicio y 67 poses dentro de tolerancia. Se conserva el
+modelo original. HL-T3 enlaza controles normales con caminar `0x6D` y correr
+`0x71` y verifica poses estables, retorno a espera, interrupción de mezcla y
+un punto en cada sentido caminar↔correr. Dos intervalos de controles normales
+grabados acreditan vueltas completas de caminar/correr y 54 poses, con máximo
+0,000389 < 0,001. Ambos sentidos de caminar↔correr tienen transiciones completas
+contrastadas en series separadas: 14 y 15 poses, máximo 0,000369. Otra serie
+verifica el wrap dentro de la mezcla y su salida: 15 poses, máximo 0,000369;
+HL-T3c.3 cerrada. HL-T3c.6 acredita espera↔caminar completa: 49 capturas,
+47 poses y máximo 0,000416 < 0,001, con origen interpolado conservado.
+La parada directa correr→espera añade 25 capturas y 24 poses, máximo 0,000413.
+HL-T3 queda cerrada para el banco 525 y las cinco transiciones observadas,
+con restauraciones y límites documentados.
+[HL-T4a](schemas/heather-locomotion-v1.md) fija el contrato multiclips,
+cinco transiciones y formato SRI2, con 30 comprobaciones sintéticas.
+Sigue HL-T4b.1: planificador puro de reloj/selección; conversión A/B,
+integración al visor y nueva prueba física permanecen pendientes.
+
 
 **Nuevo corte gráfico:** `sh3_render_probe` muestra una habitación sintética
 texturizada con cámara orbital y profundidad. Compilado para ARM y observado en

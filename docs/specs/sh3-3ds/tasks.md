@@ -279,13 +279,39 @@ Fuente: PDF p. 17. **Entrada:** G02; puede solaparse con investigación F04.
     `chhaa.mdl` y once ANM decodificados; selección original, pose y materiales
     contrastados en PCSX2, salidas A/B idénticas y perfil SRI1 nativo.
     Build `9719469ff6bb`, 36 huesos activos, 6.943 vértices, 5.522 triángulos,
-    13 texturas. ARM y 64 s en Azahar aprobados. **HI-T5b pendiente:**
+    13 texturas. ARM y 64 s en Azahar aprobados. **HI-T5b funcional confirmada:**
     [prueba física](../../compatibility/heather-inspection.md), controles,
     START/tapa/HOME y métricas. No cierra reloj nativo, expresiones ni locomoción.
   - [HI-T6a/b, cámara cercana](../../execution/f03-02-heather-camera.md):
     build `f25a2d9bb316` reemplaza al anterior; SELECT cuerpo/cara, zoom mínimo
     0,45, B recupera cuerpo. Corrige inversión vertical del upload PICA,
-    con 88 s en Azahar y paquete v2. **HI-T6c física pendiente.**
+    con 88 s en Azahar y paquete v2. **HI-T6c física confirmada:** el usuario
+    reporta 60 s, rostro, SELECT/zoom/controles, START y tapa/HOME en 2DS XL.
+    Baja fluidez con ≈60,7/49/4,36 ms (CPU/submit/GPU); se prioriza
+    [HP: rendimiento](heather-performance.md) antes del reloj nativo y locomoción.
+  - [HP-T4 física aceptada](../../execution/f03-02-heather-performance.md):
+    build `8f778b6e4960`, 60 s en cuerpo y 60 s en cara; 29,9 FPS submit,
+    New fast, CPU/submit/GPU ≈10,27/23,1/6,34 ms. Controles/START/tapa/HOME.
+  - [HL-T1/T2 completadas](../../execution/f03-02-heather-locomotion.md):
+    49 descriptores básicos; vuelta diagnóstica de `0x65`, 67 avances en ambos
+    canales y 67 poses aprobadas, sin elevar tolerancias. Precisión f32 fijada,
+    pruebas y gates individuales completos; fallos anteriores preservados.
+    HL-T3 identifica caminar/correr con mando normal y coteja poses estables,
+    retorno completo a espera, inicio/interrupción de mezcla y un punto en ambos
+    sentidos caminar↔correr. La reproducción de controles normales acredita
+    una vuelta por clip/canal y 54 poses (máximo 0,000389); HL-T3c.5 cerrada.
+    Caminar→correr y correr→caminar sostenidas pasan en series separadas,
+    con 14 y 15 poses (máximo 0,000369), incluida la salida recursiva en ambos
+    sentidos. Otra serie acredita wrap dentro de la mezcla y salida, con
+    15 poses (máximo 0,000369); HL-T3c.3 cerrada. HL-T3c.6 cierra espera↔caminar:
+    49 capturas, 47 poses, máximo 0,000416 y 261 controles negativos rechazados.
+    La parada directa correr→espera pasa con 25 capturas, 24 poses, máximo
+    0,000413 y 136 negativos rechazados. HL-T3 cerrada en el perfil observado
+    del banco 525, con informe de 16 evidencias y cinco transiciones.
+    HL-T4a cerrada: [contrato HLC01–HLC16](../../../schemas/heather-locomotion-v1.md),
+    SRI2 con 58 muestras, cinco arcos y 30 comprobaciones sintéticas.
+    Sigue HL-T4b.1 (planificador puro), antes de conversión A/B e integración.
+    [Tareas detalladas](heather-locomotion.md).
   - Instancia independiente: [primera textura de 8 bits, 256×256](../../execution/f03-02-indexed-texture.md),
     RGBA/PNG privados repetibles y 318 pruebas aprobadas. [PX01–PX07](../../../schemas/ps2-texture-decode-v1.md).
     [Visor privado SD](../../execution/f03-02-texture-inspection.md): TI-T1–TI-T5

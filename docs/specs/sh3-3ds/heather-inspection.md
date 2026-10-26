@@ -59,7 +59,7 @@ de skinning del caballo como acreditación de Heather.
   pruebas host/lectores/renderizador, build ARM y revisión en emulador.
   Preparar entrega privada y protocolo físico de 60 segundos. Mostrar modelo,
   segmento y límites reales en el visor; no anunciar movimiento jugable.
-- [ ] **HI-T5b — Validación física.** Copiar y releer hashes del paquete en
+- [x] **HI-T5b — Validación física funcional.** Copiar y releer hashes del paquete en
   SD, comprobar 60 segundos en New 2DS XL, atuendo/texturas/animación,
   A/R/L, cámara, START y tapa/HOME. Registrar métricas y prueba funcional
   por separado; corregir y repetir cualquier fallo antes de aceptar el perfil.
@@ -87,11 +87,22 @@ es fijo para este clip de espera; no equivale a seguimiento facial general.
   entradas inválidas, reset, pausa y regreso con SELECT retenido.
 - [x] **HI-T6b:** compilar ARM, observar cara/cabello a distancia mínima y
   verificar alternancia, controles y salida en Azahar; publicar nuevo ZIP.
-- [ ] **HI-T6c:** confirmar encuadre cercano y controles en la 2DS XL.
+- [x] **HI-T6c:** confirmar encuadre cercano y controles en la 2DS XL.
 
 El primer plano reveló texturas verticalmente invertidas en PICA. La corrección
 se aplica al upload del visor SRI, con anclas sintéticas asimétricas; los
 recursos RGBA, UV y paquetes SRI originales se conservan byte a byte.
 [Resultado HI-T6](../../execution/f03-02-heather-camera.md): build
 `f25a2d9bb316`, 88 segundos en Azahar a distancia mínima y paquete privado
-v2; HI-T6c e HI-T5b permanecen pendientes de la consola física.
+v2; HI-T6c e HI-T5b funcional confirmadas por el usuario el 2026-10-24:
+60 s, rostro, SELECT/zoom/controles, START y tapa/HOME. Se conserva como
+no detallada la reapertura y no se atribuyen dos intervalos de 60 s.
+Métricas aproximadas: Skin+sort 60,7 ms, Submit+wait 49 ms, GPU previous
+4,36 ms; baja fluidez reportada. [HP](heather-performance.md) aborda el
+rendimiento antes de verificar reloj nativo y selección de locomoción.
+
+**Actualización HP-T4, 2026-10-24:** build `8f778b6e4960` confirmado en New
+2DS XL durante 60 s en cuerpo y 60 s en cara, mayor fluidez, controles,
+START y tapa/HOME. Lectura conjunta: 29,9 FPS submit, New fast y
+10,27/23,1/6,34 ms (Skin+sort/Submit+wait/GPU previous). Se retoma el
+reloj nativo y la selección de locomoción; reapertura no detallada.

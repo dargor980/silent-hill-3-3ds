@@ -31,12 +31,16 @@ struct RigTriangle {
     std::uint32_t ordinal;
 };
 using RigSortOrder = std::array<RigTriangle, rig_indices / 3>;
+struct RigVertexScratch {
+    std::array<float, 4> position{}; // Original model space, including deficient Q12 W.
+    CharacterDrawVertex draw{};     // Inspection space, prepared once per unique vertex.
+};
 [[nodiscard]] bool valid_rig(const InspectionRig &) noexcept;
 // Validate immutable input once. Storage and scratch space belong to the caller.
 void evaluate_rig(const InspectionRig &, std::uint32_t counter, RigPose &) noexcept;
 void rig_palette(const InspectionRig &, const RigPose &, RigPalette &) noexcept;
 [[nodiscard]] bool rig_draw(const InspectionRig &, const RigPose &, const OrbitCamera &,
-                            RigPalette &, RigSortOrder &, DeformedVertex *, std::size_t,
+                            RigPalette &, RigSortOrder &, RigVertexScratch *, std::size_t,
                             CharacterDrawVertex *, std::size_t) noexcept;
 [[nodiscard]] bool valid_rig_draw(const CharacterDrawVertex *, std::size_t) noexcept;
 } // namespace sh3::domain

@@ -179,7 +179,7 @@ Los ZIP producidos desde A/B son idénticos; se releen y verifican entradas,
 sumas y manifiesto tras publicación exclusiva. Contiene la carpeta
 `3ds/sh3_heather_probe/` y guía de uso. No se ha copiado a una SD física.
 
-Próxima tarea **HI-T5b**: [protocolo en New 2DS XL](../compatibility/heather-inspection.md),
+Protocolo original **HI-T5b**: [protocolo en New 2DS XL](../compatibility/heather-inspection.md),
 60 segundos, atuendo/texturas/animación, controles, START/tapa/HOME y tiempos.
 Después: verificar el reloj nativo y seleccionar animaciones de locomoción
 antes de integrar a Heather en una habitación con movimiento y colisión.
@@ -196,3 +196,9 @@ En `reports/local/`: `heather-selection-v1.json`,
 logs y las fuentes que vuelven a producir el identificador del build final.
 En `build/heather/`: helpers reproducibles, logs y capturas `azahar-*.png`.
 El dump, estados y recibos de captura están en `heather-runtime-v1` privado.
+
+**Actualización 2026-10-24:** el usuario confirma la prueba funcional de la
+entrega corregida `f25a2d9bb316`; véase el [registro físico](../compatibility/heather-inspection.md).
+La baja fluidez reportada abre [HP](../specs/sh3-3ds/heather-performance.md)
+antes del reloj nativo y la locomoción. Las menciones de prueba pendiente
+anteriores describen la entrega inicial, reemplazada por ese build.

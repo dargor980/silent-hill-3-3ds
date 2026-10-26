@@ -1,6 +1,7 @@
 # Heather original: prueba en New Nintendo 2DS XL
 
-**Estado: pendiente de prueba física.** Build actual `f25a2d9bb316`.
+**Estado: build `8f778b6e4960` confirmado funcional, con mayor fluidez reportada.**
+Baseline histórico probado `f25a2d9bb316`.
 Añade primer plano y corrige la orientación vertical de las texturas en PICA.
 [Resultados previos](../execution/f03-02-heather-inspection.md): ARM compilado,
 64 segundos continuos y controles comprobados en Azahar. Esa evidencia no
@@ -12,6 +13,12 @@ Paquete privado: `/Users/germancontreras/sh3-private-data/heather-3ds-v2/sd-card
 Extraer en la raíz de la SD, conservando `3ds/sh3_heather_probe/`, y abrir
 **SH3 Heather original** desde Homebrew Launcher. No requiere instalar CIA.
 La carpeta incluye SRI y 13 texturas; copiar solo el `.3dsx` es insuficiente.
+
+Entrega a SD del 2026-10-24: build `f25a2d9bb316` copiado en
+`NO NAME/3ds/sh3_heather_probe/`. Los 17 archivos (18.949.569 bytes)
+coinciden por tamaño y SHA-256 tras releer la SD, que se expulsó de forma
+segura. Recibo local: `reports/local/heather-sd-delivery-f25a2d9bb316.json`.
+El usuario confirmó la prueba funcional de esta entrega el 2026-10-24.
 
 Debe verse Heather con chaleco blanco, falda oscura y botas, texturada y con
 movimiento de espera. Pantalla inferior: build correcto, clip `0x65`, 36
@@ -36,18 +43,23 @@ La luz es neutra; no hay habitación ni control jugable de Heather.
 
 | Dato | Resultado |
 |---|---|
-| Fecha y duración | Pendiente |
-| Atuendo original/texturas/animación | Pendiente |
-| A/R/L | Pendiente |
-| Cruceta/X/Y/B | Pendiente |
-| SELECT cuerpo/cara y primer plano 60 s | Pendiente |
-| START/reapertura | Pendiente |
-| Tapa/HOME | Pendiente |
-| Skin+sort CPU / Submit+wait / GPU previous | Pendiente |
+| Fecha y duración | 2026-10-24; 60 segundos reportados |
+| Modelo y rostro texturado | Cara de Heather visible correctamente; informe del usuario |
+| A/R/L | Controles confirmados de forma conjunta por el usuario |
+| Cruceta/X/Y/B | Zoom y controles confirmados |
+| SELECT cuerpo/cara y primer plano 60 s | Confirmados; no se atribuyen dos intervalos separados de 60 s |
+| START/reapertura | START confirmado; reapertura no detallada |
+| Tapa/HOME | Confirmados |
+| Skin+sort CPU / Submit+wait / GPU previous | ≈60,7 / 49 / 4,36 ms; lecturas manuales |
 
 Ante una pantalla de error, registrar el texto y usar START. Un fallo de
 hardware mantiene HI-T5b abierta. La aceptación de los visores del caballo
 no se traslada automáticamente a este perfil de mayor tamaño.
+
+El usuario también informa baja fluidez. No se midieron FPS ni percentiles;
+estas cifras aproximadas no se suman para obtener FPS. La aceptación
+funcional HI-T5b/HI-T6c se registra separada de la mejora de rendimiento
+[HP](../specs/sh3-3ds/heather-performance.md), ahora prioritaria.
 
 ## Límites conocidos
 
@@ -55,3 +67,27 @@ El clip usa un reloj de inspección de 25 evaluaciones/s, no una frecuencia
 nativa completa acreditada. No se aplican morphs/expresiones, luces/fog PS2,
 colisión ni desplazamiento de jugador. La transparencia se ordena para la
 cámara del visor; no se ha medido equivalencia de raster PICA/GS.
+
+## HP: resultado de rendimiento
+
+Build `8f778b6e4960`, paquete privado
+`/Users/germancontreras/sh3-private-data/heather-3ds-v3/sd-card.zip`.
+Entrega a SD del 2026-10-24: los 17 archivos (18.950.897 bytes) se
+verificaron por tamaño y SHA-256 en `NO NAME/3ds/sh3_heather_probe/`.
+Se respaldaron los dos archivos sustituidos y se expulsó la SD de forma
+segura. Recibo local: `reports/local/heather-sd-delivery-8f778b6e4960.json`.
+
+Conserva el SRI y las 13 texturas del build funcional confirmado.
+Solicita CPU rápida en la familia New y reduce trabajo por vértice compartido.
+`CPU: New fast` significa solicitud al SDK; no es una medición de MHz.
+`FPS submit` cuenta presentaciones de la aplicación por segundo transcurrido;
+no son barridos físicos de pantalla ni muestras de animación.
+
+**HP-T4 confirmada por el usuario el 2026-10-24:** 60 s en cuerpo y 60 s en
+cara; Heather se ve más fluida; controles, START, tapa y HOME funcionan.
+Lectura conjunta aproximada: **29,9 FPS submit**, CPU **New fast**, Skin+sort
+**10,27 ms**, Submit+wait **23,1 ms**, GPU previous **6,34 ms**. No se dieron
+lecturas separadas por encuadre ni se detalló reapertura. No son percentiles
+ni una traza por cuadro; no se suman etapas ni se infieren FPS previos.
+Tras suspensión, los FPS esperan una ventana nueva.
+Recibo local: `reports/local/heather-hardware-v2.json`.

@@ -16,7 +16,7 @@ static domain::InspectionRig m, base;
 static domain::RigPose pose;
 static domain::RigPalette palette;
 static domain::RigSortOrder order;
-static std::array<domain::DeformedVertex, domain::rig_vertices> scratch;
+static std::array<domain::RigVertexScratch, domain::rig_vertices> scratch;
 static std::array<domain::CharacterDrawVertex, domain::rig_indices> draw;
 static std::vector<std::uint8_t> texture_source;
 static int texture_fault{};

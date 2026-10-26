@@ -46,6 +46,20 @@ PoseMatrix interpolate(const RigSample &a, const RigSample &b, float f) noexcept
             1};
 }
 bool dimension(std::uint32_t v) noexcept { return v == 128 || v == 256 || v == 512 || v == 1024; }
+bool draw_vertex_ok(const CharacterDrawVertex &v) noexcept {
+    for (auto p : v.position)
+        if (!bounded(p, 4))
+            return false;
+    if (v.position[3] < 4094.0F / 4096 || v.position[3] > 1.00001F)
+        return false;
+    for (auto c : {v.color.x, v.color.y, v.color.z})
+        if (!bounded(c, 1) || c < 0)
+            return false;
+    for (auto uv : v.uv)
+        if (!bounded(uv, 8))
+            return false;
+    return true;
+}
 } // namespace
 bool valid_rig(const InspectionRig &m) noexcept {
     if (m.bone_count < 1 || m.bone_count > rig_bones || m.sample_count < 2 ||
@@ -135,23 +149,13 @@ void rig_palette(const InspectionRig &m, const RigPose &pose, RigPalette &out) n
 bool valid_rig_draw(const CharacterDrawVertex *v, std::size_t count) noexcept {
     if (!v || count < 3 || count > rig_indices || count % 3)
         return false;
-    for (std::size_t i = 0; i < count; ++i) {
-        for (auto p : v[i].position)
-            if (!bounded(p, 4))
-                return false;
-        if (v[i].position[3] < 4094.0F / 4096 || v[i].position[3] > 1.00001F)
+    for (std::size_t i = 0; i < count; ++i)
+        if (!draw_vertex_ok(v[i]))
             return false;
-        for (auto c : {v[i].color.x, v[i].color.y, v[i].color.z})
-            if (!bounded(c, 1) || c < 0)
-                return false;
-        for (auto uv : v[i].uv)
-            if (!bounded(uv, 8))
-                return false;
-    }
     return true;
 }
 bool rig_draw(const InspectionRig &m, const RigPose &pose, const OrbitCamera &camera,
-              RigPalette &palette, RigSortOrder &order, DeformedVertex *scratch,
+              RigPalette &palette, RigSortOrder &order, RigVertexScratch *scratch,
               std::size_t capacity, CharacterDrawVertex *out, std::size_t out_capacity) noexcept {
     if (!scratch || !out || capacity < m.vertex_count || out_capacity < m.index_count ||
         !valid_camera(camera))
@@ -160,46 +164,49 @@ bool rig_draw(const InspectionRig &m, const RigPose &pose, const OrbitCamera &ca
     for (std::size_t i = 0; i < m.vertex_count; ++i) {
         const auto &v = m.vertices[i];
         auto &d = scratch[i];
-        d = {};
+        d.position = {};
+        const std::array<float, 3> local{float(v.position[0]) / 16,
+                                        float(v.position[1]) / 16,
+                                        float(v.position[2]) / 16};
         for (unsigned j = 0; j < v.count; ++j) {
             const auto &mat = palette[j == 0 ? v.primary : rig_bones + v.helpers[j - 1]];
             const float weight = float(v.weights[j]) / 4096;
             for (unsigned r = 0; r < 4; ++r) {
                 float p = mat[12 + r];
                 for (unsigned k = 0; k < 3; ++k)
-                    p += mat[4 * k + r] * (float(v.position[k]) / 16);
+                    p += mat[4 * k + r] * local[k];
                 d.position[r] += weight * p;
             }
         }
+        const auto w = d.position[3];
+        // Inspection rotation pi about Z: Y up, original outfit facing the camera.
+        d.draw = {
+            {-(d.position[0] - m.center.x * w) * m.scale + camera_target.x * w,
+             -(d.position[1] - m.center.y * w) * m.scale + camera_target.y * w,
+             (d.position[2] - m.center.z * w) * m.scale + camera_target.z * w, w},
+            {1, 1, 1},
+            {float(v.uv[0]) / 4096, float(v.uv[1]) / 4096}};
+        if (!draw_vertex_ok(d.draw))
+            return false;
     }
     const auto emit = [&](std::size_t dest, std::size_t source) {
-        const auto index = m.indices[source];
-        const auto &v = scratch[index];
-        const auto w = v.position[3];
-        // Inspection rotation pi about Z: Y up, original outfit facing the camera.
-        out[dest] = {
-            {-(v.position[0] - m.center.x * w) * m.scale + camera_target.x * w,
-             -(v.position[1] - m.center.y * w) * m.scale + camera_target.y * w,
-             (v.position[2] - m.center.z * w) * m.scale + camera_target.z * w, w},
-            {1, 1, 1},
-            {float(m.vertices[index].uv[0]) / 4096, float(m.vertices[index].uv[1]) / 4096}};
+        out[dest] = scratch[m.indices[source]].draw;
     };
-    for (std::size_t i = 0; i < m.index_count; ++i)
-        emit(i, i);
-    if (!valid_rig_draw(out, m.index_count))
-        return false;
     // Transparent ranges are sorted individually in inspection camera depth, far to near.
     // The initial Heather profile has exactly one such range (all hair triangles).
     const auto eye = camera_eye(camera);
     const Vec3 forward{camera.target.x - eye.x, camera.target.y - eye.y, camera.target.z - eye.z};
     for (std::size_t r = 0; r < m.material_count; ++r) {
         const auto &range = m.materials[r];
-        if (!range.blend)
+        if (!range.blend) {
+            for (std::size_t i = range.first; i < range.first + range.count; ++i)
+                emit(i, i);
             continue;
+        }
         for (std::size_t t = 0; t < range.count / 3; ++t) {
             float depth = 0;
             for (unsigned j = 0; j < 3; ++j) {
-                const auto &p = out[range.first + t * 3 + j].position;
+                const auto &p = scratch[m.indices[range.first + t * 3 + j]].draw.position;
                 depth += (p[0] * forward.x + p[1] * forward.y + p[2] * forward.z) / p[3];
             }
             order[t] = {depth, static_cast<std::uint32_t>(t)};
