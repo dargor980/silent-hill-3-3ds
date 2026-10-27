@@ -34,8 +34,8 @@ jobs:
           ctest --version
       - name: Lint and formatting
         run: |
-          python -m ruff check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py
-          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py
+          python -m ruff check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/locomotion_clock_oracle.py tests/locomotion_pose_oracle.py tests/locomotion_update_oracle.py tests/locomotion_rig_fixtures.py tests/locomotion_rig_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py
+          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/locomotion_clock_oracle.py tests/locomotion_pose_oracle.py tests/locomotion_update_oracle.py tests/locomotion_rig_fixtures.py tests/locomotion_rig_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py
       - name: Dependency, custody and spec contracts
         run: python -m tools.qa.check_repository
       - name: Python tests and coverage gate
@@ -45,6 +45,9 @@ jobs:
           python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/collision_registry.py tools/pipeline/collision_evidence.py tools/pipeline/collision_intermediate.py tools/pipeline/prepare_collision_intermediate.py tools/pipeline/decoders/ps2_cld_polygons.py tools/pipeline/collision_polygon_intermediate.py tools/pipeline/collision_polygon_inputs.py tools/pipeline/collision_polygon_recipe.py tools/pipeline/collision_polygon_output.py tools/pipeline/prepare_collision_polygon_intermediate.py
           python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/decoders/ps2_animation.py tools/pipeline/decoders/ps2_character_mesh.py tools/pipeline/decoders/ps2_character_morphs.py tools/pipeline/decoders/ps2_indexed.py tools/pipeline/decoders/ps2_morph_materials.py tools/pipeline/decode_morph_character.py tools/pipeline/rig_inspection.py
           python -m tools.qa.coverage_gate build/python-coverage.json --files tools/inspectors/animation_descriptors.py tools/qa/animation_precision.py
+          python -m tools.qa.coverage_gate build/python-coverage.json --files tools/inspectors/actor_spatial.py
+          python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/locomotion_inspection.py tools/pipeline/produce_heather_locomotion.py
+          python -m tools.qa.coverage_gate build/python-coverage.json --files tools/qa/locomotion_rig_oracle.py tools/qa/locomotion_source_audit.py tools/pipeline/publish_heather_locomotion.py
           test -s build/python-coverage.xml
           test -s build/pytest.xml
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -122,12 +125,30 @@ jobs:
         run: |
           python -m gcovr --config gcovr.cfg 2>&1 | tee build/logs/coverage.log
           test -s build/cpp-coverage.xml
+          python -m gcovr --config gcovr-locomotion-clock.cfg 2>&1 | tee build/logs/locomotion-clock-coverage.log
+          test -s build/locomotion-clock-coverage.xml
+          python -m gcovr --config gcovr-locomotion-pose.cfg 2>&1 | tee build/logs/locomotion-pose-coverage.log
+          test -s build/locomotion-pose-coverage.xml
+          python -m gcovr --config gcovr-locomotion-update.cfg 2>&1 | tee build/logs/locomotion-update-coverage.log
+          test -s build/locomotion-update-coverage.xml
+          python -m gcovr --config gcovr-locomotion-probe.cfg 2>&1 | tee build/logs/locomotion-probe-coverage.log
+          test -s build/locomotion-probe-coverage.xml
+          python -m gcovr --config gcovr-inspection-locomotion-domain.cfg 2>&1 | tee build/logs/inspection-locomotion-domain-coverage.log
+          test -s build/inspection-locomotion-domain-coverage.xml
+          python -m gcovr --config gcovr-inspection-locomotion-reader.cfg 2>&1 | tee build/logs/inspection-locomotion-reader-coverage.log
+          test -s build/inspection-locomotion-reader-coverage.xml
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
           name: cpp-coverage
           path: |
             build/cpp-coverage.xml
+            build/locomotion-clock-coverage.xml
+            build/locomotion-pose-coverage.xml
+            build/locomotion-update-coverage.xml
+            build/locomotion-probe-coverage.xml
+            build/inspection-locomotion-domain-coverage.xml
+            build/inspection-locomotion-reader-coverage.xml
             build/host-coverage/test-results.xml
             build/logs/*.log
           if-no-files-found: warn

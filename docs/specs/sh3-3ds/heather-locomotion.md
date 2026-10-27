@@ -2,8 +2,9 @@
 
 Instancia HL de F03.02/F06, posterior a la prueba física HP-T4. El objetivo
 es identificar espera, caminar y correr del atuendo original y su reloj,
-antes de integrar desplazamiento en una habitación. La inspección actual
-conserva clip `0x65`, reloj de 25 evaluaciones/s y build `8f778b6e4960`.
+antes de integrar desplazamiento en una habitación. La inspección multiclips
+`7250f427ffb9` está aceptada funcionalmente en 2DS XL; conserva el reloj de
+25 evaluaciones/s y los clips `0x65/0x6D/0x71`. Sigue [HM](heather-movement.md).
 
 ## Requisitos EARS
 
@@ -239,7 +240,7 @@ su integración acotada y los casos rechazados. No acredita respuesta física.
     límites explícitos. El desplazamiento mundial se registra aparte de la
     pose local; no acredita ley de movimiento, colisiones ni habitación.
     Las restauraciones y huecos de cada serie permanecen declarados.
-- [ ] **HL-T4 — Conversión y reproducción.** Definir contrato multiclips y
+- [x] **HL-T4 — Conversión y reproducción.** Definir contrato multiclips y
   de transición con las observaciones anteriores; producir conversiones A/B,
   oráculo de pose, pruebas de reloj/lifecycle y build ARM/emulador. HL01–05.
   - [x] **HL-T4a — Contrato multiclips y de transición.** Fijar perfil
@@ -254,59 +255,133 @@ su integración acotada y los casos rechazados. No acredita respuesta física.
     Treinta comprobaciones de vectores propios mediante racionales/Decimal;
     incluyen controles negativos de fase, wrap, recursión, mezcla y caché.
     Las interrupciones siguen rechazadas en runtime: la observación parcial
-    se conserva como vector diagnóstico. Núcleo, lector SRI2 y build pendientes.
-  - [ ] **HL-T4b — Núcleo puro de reloj y selección.** Separar avance de fase,
+    se conserva como vector diagnóstico. Lector SRI2 y build pendientes.
+  - [x] **HL-T4b — Núcleo puro de reloj y selección.** Separar avance de fase,
     selección permitida, caché de pose y evaluación; inyectar lector de clips,
     sin I/O, GPU ni dependencias de PCSX2. Memoria acotada, sin asignación por
     fotograma; probar wrap, ticks inválidos, saturación, doble avance de modo 5
     y errores explícitos para combinaciones no soportadas.
-    - [ ] **HL-T4b.1 — Planificador escalar.** Crear tipos de perfil, estado,
+    - [x] **HL-T4b.1 — Planificador escalar.** Crear tipos de perfil, estado,
       solicitud, error y plan de evaluación; validar los invariantes HLC03–07
       antes de leer poses. Probar las cinco entradas, no-op, ambas salidas,
       cada beta, wrap, ticks y overflow con vectores comunes al contrato;
       rechazar combinaciones no acreditadas sin mutación. Sin SDK ni I/O.
-    - [ ] **HL-T4b.2 — Evaluador local.** Inyectar acceso inmutable a muestras,
+      Completado: núcleo C++ puro, cinco arcos y selección repetida sin
+      reinicio; fase evaluada separada del contador de salida, señales de
+      caché y errores con precedencia fija. 173 updates coinciden con el
+      fixture anterior; CTest Release y ASan/UBSan pasan. Cobertura local
+      LLVM 100 % de líneas/ramas; gate individual GCC configurado al 80 %,
+      sin afirmar ejecución remota. El estado+plan mide 132 bytes en host;
+      no evalúa poses ni valida todavía el contenido de la caché.
+    - [x] **HL-T4b.2 — Evaluador local.** Inyectar acceso inmutable a muestras,
       aplicar orden de NLERP/LERP, preservar la última pose y congelar el
       origen; ensamblar las máscaras antes de componer padres. Probar los
       vectores inventados y la diferencia frente al orden incorrecto. HLC08–09.
-    - [ ] **HL-T4b.3 — Transacción y límites.** Publicar estado/caché/matrices
+      Completado: interfaz inmutable por clip/frame/hueso, inicialización sin
+      avance, NLERP/LERP en el orden fijado, caché de origen congelada y
+      composición topológica tras los dos canales. El candidato se escribe
+      en scratch descartable; no publica reloj ni salida runtime. Oráculo de
+      26 poses/nueve escenarios, Release y ASan/UBSan aprobados; cobertura
+      local LLVM 96,35 % líneas y 87,91 % ramas. Gate individual CI al 80 %.
+      Caché 4096 bytes y scratch 8768 en host, sin `new/new[]` en la batería.
+      La transacción y su presupuesto completo se verifican en HL-T4b.3.
+    - [x] **HL-T4b.3 — Transacción y límites.** Publicar estado/caché/matrices
       solo al completar ambos canales. Inyectar fallos del segundo canal,
       datos inválidos y capacidad insuficiente; comprobar salida intacta,
       sizeof del estado/scratch ≤32 KiB y cero asignaciones por update.
       Ejecutar host y sanitizers, conservando regresiones SRI1. HLC07–09/14.
-  - [ ] **HL-T4c — Conversión y oráculo A/B.** Empaquetar los tres clips y sus
+      Completado: inicialización y actualización con publicación conjunta,
+      topología propia, precedencia de errores y estado intacto byte por byte
+      ante fallos. 3013 rechazos y 3111 actualizaciones/reintentos verificados;
+      410 snapshots del oráculo independiente coinciden. Estado+workspace:
+      18040/32768 bytes, `static_assert` y cero asignaciones en la batería.
+      Release/ASan/UBSan: 31/31 pruebas por preset, incluidas 25 regresiones
+      SRI1. Cobertura local LLVM del módulo nuevo: 100 % líneas/ramas;
+      gate individual CI al 80 %. HL-T4b cerrada; continúa HL-T4c.1.
+  - [x] **HL-T4c — Conversión y oráculo A/B.** Empaquetar los tres clips y sus
     descriptores, validar rangos/reconstrucción y repetir conversiones privadas
     A/B. Comparar contra el oráculo independiente con tolerancias existentes;
     rechazar cambios de banco/modelo, referencias fuera de rango y datos truncados.
-    - [ ] **HL-T4c.1 — Productor SRI2.** Cotejar fuentes y descriptores PAL,
+    - [x] **HL-T4c.1 — Productor SRI2.** Cotejar fuentes y descriptores PAL,
       compactar 0–9/80–103/176–199 y conservar mapa/canales. Codificar el
       layout exacto con centro/escala comunes, materiales compartidos y recibo
       de correspondencias; pruebas sintéticas sin originales. HLC01–02/13.
-    - [ ] **HL-T4c.2 — Lector y reconstrucción.** Implementar lector limitado
+      Completado: entrada con SHA256 recalculados y decodificación de fuentes,
+      reductor puro, layout de 290156 bytes y recibo completo de correspondencias.
+      435 pruebas relacionadas aprobadas; cobertura de líneas/ramas 100 % en
+      ambos módulos nuevos y preparación compartida, con gates CI separados.
+      SRI1 conserva bytes y regresiones. Evidencia sintética local; no implica
+      publicación A/B, lector SRI2 ni nuevo build. Sigue HL-T4c.2.
+    - [x] **HL-T4c.2 — Lector y reconstrucción.** Implementar lector limitado
       y oráculo independiente del productor; probar secciones truncadas,
       reservados, CRC, rangos, máscaras, tipos y cierre exacto. No publicar
       modelo parcial ni tratar SRI1 como multiclips. HLC13–14.
-    - [ ] **HL-T4c.3 — Cotejo privado A/B.** Publicar en destinos exclusivos,
+      Completado: lector de SRI2 y paquete con texturas, candidato privado,
+      diagnóstico y cierre antes de publicar; vista inmutable por clip y
+      reconstrucción Python sin importar productor/runtime. 59.212 cortes y
+      329 variantes corruptas; 650 rechazos nativos conservan la salida y
+      500 updates usan la vista. 542 pruebas Python; 33/33 Release y ASan/UBSan,
+      con regresiones SRI1. Gates individuales integrados; sigue HL-T4c.3.
+    - [x] **HL-T4c.3 — Cotejo privado A/B.** Publicar en destinos exclusivos,
       comparar bytes y selección reconstruida, ejecutar referencias de pose
       con umbrales fijados y registrar datos no representados por SRI2.
       Conservar activos los paquetes físicos previos. HLC01/15–16.
-  - [ ] **HL-T4d — Integración y gates permanentes.** Conectar el núcleo con
+      Completado: dos paquetes privados de 14 archivos/18.378.092 bytes
+      idénticos, con lectura y reconstrucción antes de publicar el manifiesto.
+      Cotejo independiente de todos los campos seleccionados y lector C++;
+      245 poses/8.820 matrices contra estados fijados, máximo 0,000514985
+      (límite 0,001); 13.968 extremos crudos, máximo 5,96e-8 (límite 1e-7).
+      Se corrigió únicamente el cálculo f32 de extremos del productor SRI2;
+      SRI1 y el build físico anterior siguen vigentes. 560 pruebas Python,
+      cobertura completa de módulos medidos y 33/33 Release/ASan/UBSan por
+      preset. Sigue HL-T4d.1: presentador y lifecycle; no cierra HL-T5.
+  - [x] **HL-T4d — Integración y gates permanentes.** Conectar el núcleo con
     controles de inspección y renderer conservando cámara, cuerpo/cara, pausa,
     START/tapa/HOME y modo New fast. Integrar pruebas sintéticas y cobertura
     individual en CI sin assets privados; ejecutar host y build ARM, preparar
     paquete con hashes y criterios físicos de HL-T5.
-    - [ ] **HL-T4d.1 — Presentador y lifecycle.** Conectar selección explícita,
+    - [x] **HL-T4d.1 — Presentador y lifecycle.** Conectar selección explícita,
       prioridad de controles, 25 Hz y cada update completo; cubrir pausa/paso,
       reinicio, solicitudes simultáneas y recuperación sin tiempo dormido.
       No añadir desplazamiento mundial. HLC10–12.
-    - [ ] **HL-T4d.2 — Gates y entrega.** Añadir cobertura individual de los
+      Completado: `LocomotionProbe` publica cada update antes de presentar;
+      ZL/ZR seleccionan clips, A pausa, R avanza y L reinicia el destino sin
+      tick. Prioridad y cola de una petición, fallos sin pose parcial,
+      suspensión sin tiempo acumulado y liberación obligatoria de botones.
+      Entry point SRI2 conectado, cámara/cara y New fast conservados.
+      37/37 pruebas Release y ASan/UBSan por preset; 356 Python de
+      reconstrucción. Hooks/HID probados con SDK simulado; ARM y físico
+      pendientes. Sigue HL-T4d.2.
+    - [x] **HL-T4d.2 — Gates y entrega.** Añadir cobertura individual de los
       módulos nuevos, ejecutar pipeline local pertinente y compilación ARM;
       empaquetar SRI2/texturas/build coherentes y protocolo de 60 s por clip y
       transición, con métricas y controles. La ejecución de CI remoto y la
       validación 2DS XL se registran por separado. HLC15–16.
+      Completado: gate GCC del presentador 84,2 % líneas / 86,6 % ramas,
+      umbral 80/80 y XML retenido en CI; 364/364 Release y ASan/UBSan por
+      preset, 608 pruebas Python. Build ARM `4707dacec7d1` verificado con
+      SDK fijado y shader aprobado. Paquete privado de 18.378.092 bytes
+      de recursos más ejecutable/guía; ZIP A/B idéntico de 19.016.374 bytes,
+      reconstruido antes de publicar el manifiesto. Azahar muestra los tres
+      clips, cinco cambios, pausa/paso/reinicio, cámara y salida START.
+      [Protocolo HL-T5](../../compatibility/heather-locomotion.md) preparado;
+      CI remoto, tiempos físicos y aceptación 2DS XL pendientes.
 - [ ] **HL-T5 — Prueba física.** Entregar paquete, verificar hashes y medir
   espera/caminar/correr y controles en New 2DS XL; documentar los límites de
   desplazamiento antes de integrar una habitación. HL05.
+  Primer intento con `4707dacec7d1`: fallo `Heather failed: open` comunicado
+  por el usuario; 17 archivos de SD intactos. Corregida y probada la unión
+  de rutas (barra duplicada). Build `7250f427ffb9`, paquete privado v2:
+  - [x] **HL-T5a — Aceptación funcional.** Usuario confirma carga, espera,
+    caminar, correr, controles, START, tapa y HOME con `7250f427ffb9`.
+    La corrección del fallo `open` queda confirmada en consola.
+  - [x] **HL-T5b — Métricas comunicadas.** FPS submit 29,9; Skin+sort CPU
+    10,08 ms; Submit+wait 23,3 ms; GPU previous 4,32 ms. Aproximadas,
+    sin clip/encuadre especificados; no equivalen a una curva de coste.
+  - [ ] **HL-T5c — Duración y cobertura detallada.** Confirmar los intervalos
+    de 60 s por clip/transición y cuerpo/cara del protocolo y los cinco arcos.
+    El usuario no precisó esos datos; no se infieren de las métricas globales.
+  La aceptación funcional permite avanzar con [HM-T1](heather-movement.md).
 
 HL-T1 no necesita un build ARM ni una modificación del paquete físico.
 Las pruebas sintéticas se descubren en el job Python de CI; el inspector

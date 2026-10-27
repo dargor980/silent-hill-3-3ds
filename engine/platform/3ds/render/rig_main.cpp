@@ -1,10 +1,19 @@
 #include "rig_renderer.hpp"
-#include "sh3/application/rig_probe.hpp"
+#include "sh3/application/locomotion_probe.hpp"
 #include "sh3/platform/frame_cadence.hpp"
+#include "sh3/platform/inspection_locomotion.hpp"
 #include <cstdio>
 
 namespace {
 constexpr const char *folder = "sdmc:/3ds/sh3_heather_probe/";
+void step_controls(sh3::application::LocomotionProbe &app, u32 held, u32 down, float seconds) {
+    app.step({float(bool(held & KEY_DRIGHT)) - float(bool(held & KEY_DLEFT)),
+              float(bool(held & KEY_DUP)) - float(bool(held & KEY_DDOWN)),
+              float(bool(held & KEY_Y)) - float(bool(held & KEY_X)), bool(down & KEY_B),
+              bool(down & KEY_START), bool(held | down)},
+             {bool(down & KEY_A), bool(down & KEY_R), bool(down & KEY_L),
+              bool(down & KEY_ZL), bool(down & KEY_ZR)}, seconds, bool(down & KEY_SELECT));
+}
 class Textures final : public sh3::ports::IRigTextures {
   public:
     bool read(const sh3::domain::RigMaterial &m, std::uint8_t *out,
@@ -65,7 +74,7 @@ class Screens final {
 };
 class Hook final {
   public:
-    Hook(sh3::application::RigProbe &app, sh3::platform::FrameCadence &cadence, bool fast)
+    Hook(sh3::application::LocomotionProbe &app, sh3::platform::FrameCadence &cadence, bool fast)
         : app_(app), cadence_(cadence), fast_(fast) {
         aptHook(&cookie_, callback, this);
     }
@@ -89,7 +98,7 @@ class Hook final {
         } else if (type == APTHOOK_ONEXIT)
             app.dispatch(E::quit);
     }
-    sh3::application::RigProbe &app_;
+    sh3::application::LocomotionProbe &app_;
     sh3::platform::FrameCadence &cadence_;
     bool fast_{};
     aptHookCookie cookie_{};
@@ -109,13 +118,13 @@ void error(const char *stage) {
 } // namespace
 int main() {
     Screens screens;
-    static sh3::domain::InspectionRig model;
-    const auto loaded =
-        sh3::platform::read_inspection_rig("sdmc:/3ds/sh3_heather_probe/heather.sri", model);
-    if (loaded != sh3::ports::FileError::ok) {
-        error(sh3::platform::file_error_name(loaded));
+    static sh3::domain::InspectionLocomotion bundle;
+    const auto loaded = sh3::platform::read_locomotion_bundle(folder, bundle);
+    if (loaded.error != sh3::ports::FileError::ok) {
+        error(loaded.field);
         return 1;
     }
+    const auto &model = bundle.shared;
     const char *failure = nullptr;
     {
         Textures textures;
@@ -124,14 +133,16 @@ int main() {
             failure = renderer.stage();
         else {
             static Presenter presenter(renderer, model);
-            sh3::application::RigProbe app(presenter, model);
+            static const sh3::domain::InspectionLocomotionReader reader(bundle);
+            static sh3::application::LocomotionProbe app(
+                presenter, bundle.profile, sh3::domain::locomotion_rig_skeleton(bundle), reader);
             sh3::platform::FrameCadence cadence(SYSCLOCK_ARM11);
             Hook hook(app, cadence, screens.fast_requested());
             auto previous = svcGetSystemTick();
             std::uint64_t last_hud = 0;
             while (aptMainLoop() && app.view().state() != sh3::domain::SessionState::stopped) {
                 const auto now = svcGetSystemTick();
-                const auto seconds = static_cast<float>(now - previous) / SYSCLOCK_ARM11;
+                const auto seconds = static_cast<float>(double(now - previous) / SYSCLOCK_ARM11);
                 previous = now;
                 if (app.view().state() == sh3::domain::SessionState::suspended) {
                     gspWaitForVBlank();
@@ -139,17 +150,12 @@ int main() {
                 }
                 hidScanInput();
                 const auto held = hidKeysHeld(), down = hidKeysDown();
-                app.step({float(bool(held & KEY_DRIGHT)) - float(bool(held & KEY_DLEFT)),
-                          float(bool(held & KEY_DUP)) - float(bool(held & KEY_DDOWN)),
-                          float(bool(held & KEY_Y)) - float(bool(held & KEY_X)), bool(down & KEY_B),
-                          bool(down & KEY_START), bool(held | down)},
-                         {bool(down & KEY_A), bool(down & KEY_R), bool(down & KEY_L)}, seconds,
-                         bool(down & KEY_SELECT));
+                step_controls(app, held, down, seconds);
                 const auto &view = app.view();
                 if (view.state() == sh3::domain::SessionState::stopped) {
                     if (view.result() == sh3::ports::RenderResult::unavailable ||
                         view.result() == sh3::ports::RenderResult::invalid_camera)
-                        failure = "PRESENT";
+                        failure = app.ready() ? "PRESENT" : app.notice_text();
                     break;
                 }
                 if (view.result() != sh3::ports::RenderResult::presented)
@@ -165,27 +171,32 @@ int main() {
                     std::snprintf(fps, sizeof(fps), "%5.1f", *cadence.fps());
                 else
                     std::snprintf(fps, sizeof(fps), " --.-");
-                std::printf("\x1b[1;1HSH3 - Heather original\nBuild: %s\n"
-                            "Clip 0x%lx / %lu bones / %lu samples\n"
+                const auto &clock = app.snapshot().clock;
+                std::printf("\x1b[1;1HSH3 - Heather locomotion\nBuild: %s\n"
+                            "Clips 101/109/113 / %lu bones\n"
                             "%lu vertices / %lu triangles\n%lu textures / neutral light\n"
-                            "\nA: pause  R: step  L: restart\nSELECT: body/face  X/Y: zoom\nD-pad: "
+                            "\nZL/ZR: previous/next clip\n"
+                            "A: pause  R: step  L: restart\nSELECT: body/face  X/Y: zoom\nD-pad: "
                             "camera  B: reset  "
                             "START: exit\n\n"
-                            "%-8s Q12: %-6lu Sample: %2lu\n%-36s\n"
+                            "%-8s Q12: %-6lu\n"
+                            "%3lu -> %3lu Mode: %lu Blend: %4lu\n%-39s\n"
                             "View: %-4s Distance: %.2f\nFPS submit: %s  CPU: %-8s\nSkin+sort CPU: "
                             "%6.2f ms\n"
                             "Submit+wait: %6.2f ms\nGPU previous: %6.2f ms\n"
-                            "Preview 25 Hz; native timing pending\n",
-                            SH3_BUILD_ID, static_cast<unsigned long>(model.clip_id),
+                            "25 updates/s; ticks=2; in place\n",
+                            SH3_BUILD_ID,
                             static_cast<unsigned long>(model.bone_count),
-                            static_cast<unsigned long>(model.sample_count),
                             static_cast<unsigned long>(model.vertex_count),
                             static_cast<unsigned long>(model.index_count / 3),
                             static_cast<unsigned long>(model.material_count),
                             app.paused() ? "PAUSED" : "PLAYING",
-                            static_cast<unsigned long>(app.counter()),
-                            static_cast<unsigned long>(app.counter() / 4096),
-                            view.awaiting_release() ? "Release all controls" : "Animation ready",
+                            static_cast<unsigned long>(clock.counter),
+                            static_cast<unsigned long>(clock.source_id),
+                            static_cast<unsigned long>(clock.target_id),
+                            static_cast<unsigned long>(clock.mode),
+                            static_cast<unsigned long>(clock.blend),
+                            view.awaiting_release() ? "Release all controls" : app.notice_text(),
                             app.face_view() ? "FACE" : "BODY", double(view.camera().distance),
                             fps, screens.fast_requested() ? "New fast" : "default",
                             presenter.skin_ms, presenter.submit_ms, double(C3D_GetDrawingTime()));

@@ -1,17 +1,24 @@
 # HL: inventario y reloj de Heather original
 
-Fecha: 2026-10-25. [Spec EARS HL01–HL06](../specs/sh3-3ds/heather-locomotion.md).
-**HL-T1 y HL-T2 completadas.** El inventario conserva 49
+Inicio: 2026-10-25. Actualizado: 2026-10-26. [Spec EARS HL01–HL06](../specs/sh3-3ds/heather-locomotion.md).
+**Estado actual: HL-T1–T4 y aceptación funcional HL-T5a/b completadas.**
+El usuario confirma espera/caminar/correr y lifecycle en **`7250f427ffb9`**,
+tras corregir `open` de `4707dacec7d1`. Métricas aproximadas registradas;
+HL-T5c conserva duración y cobertura por encuadre/arco pendientes.
+Continúa [HM-T1, inventario espacial](../specs/sh3-3ds/heather-movement.md). El cotejo
+privado SRI2 previo conserva 245 poses con error máximo 0,000515 ≤0,001.
+
+Resumen histórico de la investigación inicial: El inventario conserva 49
 descriptores básicos y distingue los dos canales del jugador. La primera
 serie de dibujo no acredita una vuelta completa: al final repite contador
 y matrices y cambia la máscara. Nueve poses excedían el límite con la
 referencia matemática; HL-T2c identifica la precisión de los extremos como
 causa y acredita una referencia f32 separada, sin elevar la tolerancia.
 Una serie posterior acredita una vuelta completa de `0x65`, con 67 avances
-y poses verificadas. **HL-T3 en curso:** el mando normal selecciona caminar
+y poses verificadas. En ese corte inicial de HL-T3, el mando normal selecciona caminar
 `0x6D` y correr `0x71`; se cotejan poses estables, retorno completo a espera,
 inicio/interrupción, vueltas completas de ambos movimientos y la transición
-caminar→correr sostenida, incluida su salida recursiva. Faltan la transición
+caminar→correr sostenida, incluida su salida recursiva. Quedaban pendientes la transición
 inversa sostenida, wrap durante modo 5 y la integración al visor; la aprobación
 se limita a los tramos y perfil diagnóstico fijados.
 
@@ -1229,3 +1236,1009 @@ por esta comprobación matemática.
 **HL-T4a cerrada; siguiente: HL-T4b.1, planificador escalar puro.** No se
 operó PCSX2 ni se tomaron nuevas capturas. El código productivo y el último
 build físico 8f778b6e4960 permanecen sin cambios en esta entrega.
+
+### HL-T4b.1 — Planificador escalar puro implementado
+
+2026-10-26. Se implementan
+[los tipos de perfil/estado/plan](../../engine/domain/include/sh3/domain/locomotion_clock.hpp)
+y [el planificador](../../engine/domain/locomotion_clock.cpp), conforme a
+HLC03–07 y la separación de responsabilidades de HLC14.
+
+El módulo valida la tabla PAL fijada antes de hacer aritmética; recibe estado,
+solicitud opcional y ticks. Rechaza un perfil alterado, estados inconsistentes,
+ticks distintos de 2, IDs desconocidos, nuevas selecciones durante mezcla y
+espera→correr directa, en ese orden. La solicitud vacía continúa y repetir el
+destino no reinicia. Usa intermedios uint64 y publica el plan solo al completar;
+un error conserva byte por byte la salida anterior.
+
+La salida distingue contador siguiente de fase evaluada, las tres clases de
+evaluación y las acciones de caché. Las cinco transiciones usan sus secuencias
+de beta fijadas. Modo 5 conserva fase relativa, aplica incremento del destino
+y en su salida evalúa entre los dos avances. Modo 3 pide congelar la última
+pose al entrar, no vuelve a congelarla al continuar y descarta la caché al
+salir, con contador avanzado una sola vez. Sus ventanas separan índices
+relativos, originales ANM y compactados, incluido wrap dentro del clip.
+
+Este módulo no lee muestras ni evalúa rotaciones. La bandera de caché es una
+precondición escalar; HL-T4b.2–3 deben validar su contenido y publicar el reloj
+solo después de completar la pose de ambos canales. No se conecta aún al
+presentador ni se interpreta SRI2 como un SRI1 de 58 frames.
+
+Pruebas nuevas:
+
+- [Batería C++](../../tests/cpp/test_locomotion_clock.cpp): todas las entradas
+  y betas, no-op, salida de modos 3/5, límites de fase, enteros extremos,
+  estados/perfiles inválidos, precedencia de errores, salida intacta y entrada
+  que comparte almacenamiento con el próximo estado. Se prohíben `new/new[]`
+  durante la batería escalar. Estado 28 bytes y plan 104 bytes en host;
+  el presupuesto de poses/scratch completo sigue pendiente.
+- [Oráculo nativo](../../tests/locomotion_clock_oracle.py): **173 updates**
+  cotejados contra el fixture ya fijado: 12 casos puntuales, 22 retornos de
+  modo 5, 24 de modo 3 y 115 avances de ciclos completos. Compara todos los
+  campos de salida, sin importar módulos productivos o recursos privados.
+- Las 30 comprobaciones matemáticas del fixture siguen aprobadas. Su SHA
+  permanece `2a1e3044555e9c3e46c7e3cbdd32657dfa98efa15d4b18f7befa3671b5c3f004`.
+
+Validación local ejecutada:
+
+```text
+rtk proxy cmake --preset host-release
+rtk proxy cmake --build --preset host-release --target test_locomotion_clock --parallel 2
+rtk proxy ctest --preset host-release -R '^locomotion_clock' --output-on-failure
+2/2 aprobadas
+rtk proxy cmake --preset host-sanitize
+rtk proxy cmake --build --preset host-sanitize --target test_locomotion_clock --parallel 2
+rtk proxy env UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ctest --preset host-sanitize -R '^locomotion_clock' --output-on-failure
+2/2 aprobadas, ASan/UBSan sin hallazgos
+rtk proxy .venv/bin/pytest -q tests/python/test_heather_locomotion_contract.py
+30 passed in 0.05s
+rtk proxy .venv/bin/ruff check tests/locomotion_clock_oracle.py tests/python/test_heather_locomotion_contract.py
+All checks passed!
+rtk proxy .venv/bin/ruff format --check tests/locomotion_clock_oracle.py tests/python/test_heather_locomotion_contract.py
+2 files already formatted
+```
+
+Cobertura local separada con LLVM: compilación de las dos unidades C++ con
+`-fprofile-instr-generate -fcoverage-mapping`, SDK retornado por
+`xcrun --show-sdk-path`, ejecución de batería/oráculo, merge de ambos perfiles
+y `llvm-cov report` limitado a `engine/domain/locomotion_clock.cpp`.
+**123/123 líneas, 136/136 ramas y 10/10 funciones (100 %)**. Binario y perfiles
+quedan en `build/heather-locomotion/clock-coverage/`, fuera de Git.
+El intento inicial de compilación directa refería un SDK eliminado; se corrigió
+pasando el sysroot de Xcode sin cambiar flags de advertencias ni el módulo.
+
+CTest incorpora las dos pruebas a las matrices existentes. CI añade lint del
+adaptador y el gate individual [gcovr-locomotion-clock.cfg](../../gcovr-locomotion-clock.cfg)
+con mínimos de 80 % de líneas/ramas, además del gate agregado. La medición
+local es LLVM; no se afirma haber ejecutado GCC/gcovr o CI remoto en esta entrega.
+No se repite aquí toda la batería histórica ni el build ARM, pues aún no hay
+consumidor del planificador en el visor.
+
+**HL-T4b.1 cerrada. Sigue HL-T4b.2: evaluar y conservar poses locales usando
+el plan.** HL-T4b completa, conversión A/B, integración y validación física
+siguen pendientes. No se opera PCSX2 ni se genera un paquete nuevo para SD.
+
+## 2026-10-26 — HL-T4b.2: poses locales y origen congelado
+
+Implementados [los tipos y el lector inmutable](../../engine/domain/include/sh3/domain/locomotion_pose.hpp)
+y [el evaluador puro](../../engine/domain/locomotion_pose.cpp), conforme a
+HLC05–06/08–09 y a la separación de HLC14. Se reutiliza el planificador
+escalar y se mantienen sin cambios el lector y la evaluación SRI1.
+
+El lector recibe clip, índice relativo y hueso compacto, y devuelve TR o
+`sample_unavailable`. El esqueleto aporta padres topológicos y un único
+canal propietario por hueso. Valida estructura y capacidad hasta 73 huesos;
+el mapa original de 36 y su identidad privada se verificarán en HL-T4c.
+Los rigs inventados pequeños permiten comprobar la matemática sin recursos
+del juego. No hay acceso a archivos, reloj de pared, SDK ni PCSX2.
+
+La inicialización produce espera[0] sin avance de reloj. Durante una
+actualización, NLERP normaliza cada mezcla y elige el hemisferio con dot<0;
+dot=0 conserva el signo. Traslaciones usan LERP. Modo 5 mezcla primero los
+extremos entre clips y después el tiempo. Modo 3 captura la última pose local
+ya interpolada, lee solo destino[0] y conserva el origen congelado en cada
+actualización. Al salir invalida la caché; no reutiliza sus bytes inactivos.
+
+Los dos canales se evalúan completos en orden 2/1 antes de componer matrices
+`parent * local`, sin interpolarlas ni añadir desplazamiento mundial. Las
+lecturas y la caché se validan por finitud, límites y norma; los valores
+inválidos no se reemplazan por identidad.
+
+**Límite de esta entrega:** `stage_locomotion_pose` produce un candidato en
+scratch, nunca publica reloj/salida runtime. Conserva el estado de entrada,
+pero un error puede dejar scratch parcial: debe descartarse. La entrada no
+puede compartir almacenamiento con `scratch.next`. HL-T4b.3 implementará la
+transacción que valida la relación reloj/caché, evalúa y publica todos sus
+resultados solo al completar. El visor todavía no consume esta API.
+
+Verificación sintética:
+
+- [Batería nativa](../../tests/cpp/test_locomotion_pose.cpp): inicialización,
+  primer frame sin avance, wrap por clip, cinco transiciones, lectura de un
+  solo frame en modo 3, cacheado interpolado y congelación byte por byte,
+  hemisferios opuestos/dot cero, padre del canal 1 con hijo del 2 y cambio de
+  padre visible en la misma actualización. También capacidades/jerarquías,
+  canales y planes inválidos, NaN/Inf/cero, caché corrupta, falta de muestras,
+  alias rechazado y entrada intacta. `new/new[]` abortan durante la batería.
+- [Oráculo independiente](../../tests/locomotion_pose_oracle.py): **26 poses
+  en nueve escenarios**, mediante los literales del fixture previo y Decimal
+  a 60 dígitos. Comprueba modo 5 frente al orden incorrecto, parada con caché,
+  hemisferio, matriz del hijo, wrap de tres clips y ambas salidas de modo 5.
+  Tolerancia local TR/cuaterniones 1e-6; matriz sintética del hijo 4e-6.
+  No modifica el límite de fidelidad privada de matrices (0,001).
+- Las **30 pruebas** matemáticas del contrato siguen aprobadas. No se habilita
+  la interrupción de mezcla observada solo parcialmente ni espera→correr.
+- Caché **4096 bytes**, scratch **8768 bytes** en host. El presupuesto del
+  futuro estado transaccional completo y la batería exhaustiva de errores
+  siguen en HL-T4b.3.
+
+Validación local:
+
+```text
+rtk proxy cmake --preset host-release
+rtk proxy cmake --build --preset host-release --target test_locomotion_pose test_locomotion_clock --parallel 2
+rtk proxy ctest --preset host-release -R '^locomotion_' --output-on-failure
+4/4 aprobadas (baterías y oráculos de reloj/pose)
+rtk proxy cmake --preset host-sanitize
+rtk proxy cmake --build --preset host-sanitize --target test_locomotion_pose test_locomotion_clock --parallel 2
+rtk proxy env UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ctest --preset host-sanitize -R '^locomotion_' --output-on-failure
+4/4 aprobadas, ASan/UBSan sin hallazgos
+rtk proxy .venv/bin/pytest -q tests/python/test_heather_locomotion_contract.py
+30 aprobadas
+```
+
+Cobertura separada LLVM con instrumentación nativa y las dos pruebas de pose:
+**185/192 líneas (96,35 %), 160/182 ramas (87,91 %), 14/14 funciones**.
+Binario/perfiles locales: `build/heather-locomotion/pose-coverage/`, ignorados.
+CTest añade batería y oráculo a los presets existentes; CI añade lint/formato
+del oráculo y el [gate individual GCC](../../gcovr-locomotion-pose.cfg), con
+80 % mínimo de líneas y ramas. Ruff y comprobaciones del repositorio pasan.
+No se afirma ejecución remota de CI/GCC ni se compila ARM en este paso puro.
+
+**HL-T4b.2 cerrada. Siguiente: HL-T4b.3, publicación conjunta, fallos y límites
+del núcleo completo.** Conversión privada A/B, lector SRI2, integración al
+visor y ensayo físico multiclips siguen pendientes. No se modifica la sesión
+PCSX2 ni se crea un build nuevo para la SD.
+
+## 2026-10-26 — HL-T4b.3: publicación conjunta, fallos y límites
+
+Implementados [LocomotionState y LocomotionWorkspace](../../engine/domain/include/sh3/domain/locomotion_update.hpp)
+y [las operaciones completas](../../engine/domain/locomotion_update.cpp) de
+inicialización y actualización. HLC07–09/14: el estado publicado agrupa reloj,
+topología propia, caché de poses locales y matrices modelo. Usa el planificador
+y el evaluador existentes; no duplica la máquina de transiciones ni el lector.
+
+La inicialización prepara espera[0] sin avanzar y solo reemplaza un estado
+anterior si termina correctamente. La actualización valida perfil, topología,
+cantidades/banderas y relación entre reloj y caché; planifica y evalúa en el
+workspace. Las matrices vigentes deben ser finitas y afines. Todas las
+operaciones que pueden fallar y todos los callbacks de lectura terminan
+antes de copiar reloj, caché y matrices al estado. Las posiciones de matrices
+inactivas se limpian para no publicar residuos de un workspace reutilizado.
+
+Un error conserva **todos los bytes del estado**. El candidato parcial queda
+solo en workspace y puede descartarse; un reintento con datos disponibles
+produce el mismo resultado que una actualización sin interrupción. Esta
+publicación conjunta es síncrona, en el hilo propietario; no añade exclusión
+mutua ni permite observar copias intermedias desde otros hilos.
+
+La batería ampliada hizo explícita una prioridad ya fijada por el contrato:
+`sample_unavailable` debe prevalecer sobre `invalid_pose`, incluso si el valor
+inválido aparece primero. Se ajustó el evaluador para continuar las lecturas
+requeridas después de detectar una pose/caché inválida y rechazar la falta
+posterior, sin interpolar datos rechazados. No se añaden buffers grandes ni
+se vuelven a leer las muestras; los errores escalares siguen precediendo a
+toda lectura. La validación escalar del perfil se comparte con la inicialización.
+
+Pruebas nuevas y ampliadas:
+
+- [Batería transaccional](../../tests/cpp/test_locomotion_update.cpp): **3013
+  casos rechazados**, **3111 actualizaciones válidas/reintentos**. Recorre
+  los cinco arcos, todas sus betas y salidas y vueltas de los tres clips.
+  Inyecta ausencia o quaternion cero en cada lectura de cada paso, incluidos
+  ambos canales. Cada callback comprueba que sigue visible el estado anterior;
+  cada error compara todos sus bytes, y cada recuperación se coteja con una
+  actualización sin fallo.
+- Casos adicionales: NaN/Inf en TR y matrices, norma/componentes fuera de
+  contrato, caché congelada corrupta, matriz no afín, máscaras/cantidades y
+  padres inválidos, estado sin inicializar, ticks/IDs/modos y prioridades
+  entre errores. Inicialización con fallos en las 73 lecturas; capacidad 0,
+  74 y uint32 máximo rechazadas; actualización con 73 huesos y reinicialización
+  a uno. La topología de entrada puede cambiar después de inicializar sin
+  alterar la copia del estado. Scratch con matrices inactivas inválidas no
+  contamina la publicación.
+- [Oráculo de transacción](../../tests/locomotion_update_oracle.py): **410
+  snapshots completos**, incluidos errores de selección/ticks y continuación.
+  Usa las tablas PAL/beta del fixture, muestras inventadas, NLERP Decimal
+  independiente y productos de cuaterniones sobre ejes para las matrices.
+  Compara reloj, poses locales, origen congelado y matrices en cada retorno.
+  Máximo local **7,48212291e-8**, máximo modelo **5,89661063e-7**, frente a
+  tolerancias 1e-6/4e-6. El umbral privado 0,001 sigue sin cambiar.
+
+Presupuesto medido en host:
+
+| Almacenamiento | Bytes |
+|---|---:|
+| Estado: reloj + topología + caché + matrices | 9168 |
+| Workspace: plan + candidato de pose | 8872 |
+| Total | **18040** |
+| Límite comprobado por `static_assert` | **32768** |
+
+No se duplican muestras/malla/texturas dentro de esos objetos. El código de
+dominio no asigna memoria dinámica; la batería aborta ante `new/new[]`,
+incluidas sus versiones alineadas. Los objetos serán persistentes en el
+presentador; las operaciones no crean copias automáticas del estado completo.
+
+Validación local ejecutada:
+
+```text
+rtk proxy cmake --preset host-release
+rtk proxy cmake --build --preset host-release --target test_locomotion_update test_locomotion_pose test_locomotion_clock --parallel 2
+rtk proxy cmake --build --preset host-release --target test_inspection_rig test_rig_draw_equivalence test_ctr_rig --parallel 2
+rtk proxy ctest --preset host-release -R '^(locomotion_|inspection_rig$|rig_)' --output-on-failure
+31/31 aprobadas
+rtk proxy cmake --preset host-sanitize
+rtk proxy cmake --build --preset host-sanitize --target test_locomotion_update test_locomotion_pose test_locomotion_clock --parallel 2
+rtk proxy cmake --build --preset host-sanitize --target test_inspection_rig test_rig_draw_equivalence test_ctr_rig --parallel 2
+rtk proxy env UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ctest --preset host-sanitize -R '^(locomotion_|inspection_rig$|rig_)' --output-on-failure
+31/31 aprobadas, ASan/UBSan sin hallazgos
+rtk proxy .venv/bin/pytest -q tests/python/test_heather_locomotion_contract.py
+30 aprobadas
+```
+
+Las 31 incluyen seis pruebas de locomoción y 25 regresiones SRI1: lector,
+presentador, equivalencia de skinning/ordenación y contratos GPU contra dobles
+del SDK. No acreditan uso físico del nuevo núcleo. Se mantienen los oráculos
+anteriores de 173 planes y 26 poses y el fixture sintético sin modificar.
+
+Cobertura local LLVM combinando las seis pruebas de locomoción:
+
+| Módulo | Líneas | Ramas |
+|---|---:|---:|
+| `locomotion_clock.cpp` | 123/123, 100 % | 136/136, 100 % |
+| `locomotion_pose.cpp` | 199/203, 98,03 % | 176/196, 89,80 % |
+| `locomotion_update.cpp` | 48/48, 100 % | 36/36, 100 % |
+
+Binarios, perfiles y `coverage.txt` en
+`build/heather-locomotion/update-coverage/`, ignorados. CTest incorpora
+batería/oráculo, CI añade lint/formato del adaptador y el
+[gate individual transaccional](../../gcovr-locomotion-update.cfg) al 80 %,
+además de los gates separados de reloj y pose. Ruff, formato, revisión de
+whitespace y comprobaciones del repositorio pasan. No se afirma ejecución
+remota de CI/GCC ni compilación ARM en este paso.
+
+**HL-T4b.3 y HL-T4b cerradas. Siguiente: HL-T4c.1, productor SRI2**, para
+empaquetar los tres clips y conservar mapa/canales/descriptores. Lector,
+cotejo privado A/B, integración al visor y nueva prueba en 2DS XL siguen
+pendientes. No se opera PCSX2 ni se entrega un nuevo build de consola aquí.
+
+## 2026-10-26 — HL-T4c.1: productor SRI2 y correspondencias
+
+Implementado el productor en memoria para los clips 101/109/113 del perfil
+original PAL. Cumple la parte de producción de HLC01–02/13: extrae 0–9,
+80–103 y 176–199 en 58 posiciones consecutivas; conserva los doce bytes de
+cada descriptor PAL, sin convertir otra vez sus velocidades. El mapa ordenado
+de 36 huesos y los canales 1/2 deben coincidir exactamente con el contrato.
+Los padres y los destinos de los 49 helpers se remapean sin cambiar jerarquía.
+
+Responsabilidades:
+
+- [Entrada de fuentes](../../tools/pipeline/produce_heather_locomotion.py):
+  `produce_heather_locomotion` limita tipo/tamaño, calcula hashes de los bytes
+  MDL522/ANM525 y exige los pines existentes. Verifica descriptores antes de
+  decodificar. Deriva de nuevo geometría, muestras y texturas con los decoders
+  completos, conservando RGBA PS2 sin normalizar alfa. Los hashes declarados
+  por un llamador no sirven para autenticar documentos alterados.
+- [Reductor y encoder](../../tools/pipeline/locomotion_inspection.py): separa
+  la reducción de intermedios y el layout binario. La entrada de intermedios
+  sirve también para pruebas propias y declara `source_verified=false`;
+  solamente la entrada autenticada añade `sources` y confirma su cotejo.
+- [Preparación común](../../tools/pipeline/rig_inspection.py): recibe índices
+  explícitos de muestra, calcula un único centro desde espera[0] y un radio
+  conservador sobre todas las muestras elegidas. Comparte geometría, texturas
+  y validación de secciones SRI con la versión anterior. No se genera ni se
+  reinterpreta un SRI1 de 58 muestras.
+
+El resultado contiene `heather.sri`, trece texturas numeradas y un recibo
+serializable a JSON. El recibo conserva cada muestra fuente/empaquetada,
+hueso/padre/canal, helper/destino, submalla/rangos de vértices e índices y
+textura/material; incluye descriptores crudos en hexadecimal, centro/escala,
+radio, tamaños y SHA256 de todos los archivos. La entrada autenticada añade
+hashes/tamaños de ambas fuentes. No introduce rutas ni timestamps. Registra
+como excluidos los datos no seleccionados, morphs, movimiento mundial, arma
+visible e iluminación PS2. Las fuentes completas siguen siendo responsabilidad
+del intermedio privado conservado; SRI2 no permite reconstruir todo MDL/ANM.
+
+La cabecera de 96 bytes, el mapa `<HBB>` y los tres registros
+`<HHhHHBBII>` se escriben en el orden fijado, con reservados cero y CRC32
+del payload. El ejemplo sintético con B36/F58/H49/V6943/I16566/M13 ocupa
+**290156 bytes**, frente a los 241536 del ejemplo SRI1. La malla y sus
+materiales se escriben una sola vez; las texturas se comparten entre clips.
+Ninguna función escribe en disco o publica un resultado parcial.
+
+Validación local:
+
+- [Pruebas SRI2](../../tests/python/test_locomotion_inspection.py): lectura
+  directa de cabecera/secciones con `struct`, literales independientes de
+  las tablas productivas, 2088 transformaciones locales (58×36), todos los
+  vértices/índices y las correspondencias de helpers/materiales. Los extremos
+  sintéticos se cotejan con error absoluto ≤1e-7. Comprueba determinismo,
+  entradas intactas, centro común y radio que incluye correr. Pistas fuera
+  de selección y una submalla oculta no contaminan el resultado.
+- Cada uno de los 36 bytes PAL alterado se rechaza; también orden/tamaño/tipo
+  de descriptores, mapas duplicados/reordenados, canales incorrectos, booleanos
+  usados como índices, padre ausente/adelantado, pistas desordenadas en los
+  seis extremos, NaN/Inf, quaternion inválido, pesos, helpers, materiales,
+  texturas ausentes/truncadas/mutables y documentos incompatibles. Se aceptan
+  límites estructurales: cero/128 helpers, 3/8192 vértices, 3/18000 índices,
+  1/16 materiales, un/tres pesos y el presupuesto exacto de 8 Mpíxeles.
+- [Pruebas de fuentes](../../tests/python/test_produce_heather_locomotion.py):
+  tamaño/tipo/SHA y descriptores se rechazan antes de llamar al decoder. El
+  adaptador real procesa una pareja MDL/ANM inventada, conserva su RGBA y su
+  representación JSON; el perfil Heather rechaza ese otro modelo. La prueba
+  de coordinación exitosa sustituye pines y decodificación con `monkeypatch`
+  exclusivamente dentro del test, sin opción productiva para omitir hashes.
+  No se presenta esa simulación como autenticación privada real.
+- Regresión SRI1: los dos ejemplos anteriores mantienen exactamente sus
+  SHA256 (`1d14965d…b5c9fd` y `43f1f854…c6d68a`); pasan lector nativo,
+  rechazos sin publicación, poses y empaquetado existentes.
+
+Batería ejecutada: **435 pruebas aprobadas** en 12 archivos, incluidos
+contrato de locomoción, SRI1/SRI2, animación Heather, MDL/ANM, morphs,
+texturas indexadas, descriptores y precisión. Ruff, formato, whitespace y
+comprobaciones del repositorio pasan.
+
+```text
+rtk proxy .venv/bin/pytest -q tests/python/test_locomotion_inspection.py tests/python/test_produce_heather_locomotion.py tests/python/test_rig_inspection.py tests/python/test_heather_locomotion_contract.py tests/python/test_heather_animation.py tests/python/test_skeleton_animation.py tests/python/test_morph_character_conversion.py tests/python/test_character_morphs.py tests/python/test_morph_materials.py tests/python/test_indexed_selectors.py tests/python/test_animation_descriptors.py tests/python/test_animation_precision.py --cov=tools.pipeline.locomotion_inspection --cov=tools.pipeline.produce_heather_locomotion --cov=tools.pipeline.rig_inspection --cov-report=json:build/heather-locomotion/sri2-coverage.json --cov-report=term-missing --junitxml=build/heather-locomotion/sri2-pytest.xml
+435 passed
+rtk proxy .venv/bin/python -m tools.qa.coverage_gate build/heather-locomotion/sri2-coverage.json --files tools/pipeline/locomotion_inspection.py tools/pipeline/produce_heather_locomotion.py tools/pipeline/rig_inspection.py
+Line/branch coverage gate: PASS
+```
+
+| Módulo | Líneas | Ramas |
+|---|---:|---:|
+| `locomotion_inspection.py` | 57/57, 100 % | 12/12, 100 % |
+| `produce_heather_locomotion.py` | 32/32, 100 % | 8/8, 100 % |
+| `rig_inspection.py` | 150/150, 100 % | 80/80, 100 % |
+
+CI incorpora gates individuales al 80 % para los dos módulos nuevos,
+comprobados por un test de configuración. Informes locales ignorados en
+`build/heather-locomotion/sri2-coverage.json` y `sri2-pytest.xml`.
+No se afirma ejecución remota de CI ni nueva compilación ARM.
+
+**HL-T4c.1 cerrada. Siguiente: HL-T4c.2, lector SRI2 y reconstrucción
+independiente**, con truncamientos, CRC, reservados y publicación atómica.
+El cotejo/publicación privada A/B (HL-T4c.3), la integración y la prueba
+física multiclips siguen pendientes. No se modifican capturas PCSX2 ni el
+paquete instalado en la SD.
+
+## 2026-10-26 — HL-T4c.2: lector SRI2, reconstrucción y publicación atómica
+
+Implementados el [modelo y la vista inmutable](../../engine/domain/include/sh3/domain/inspection_locomotion.hpp),
+el [lector de plataforma](../../engine/platform/common/inspection_locomotion.cpp)
+y el [reconstructor independiente](../../tools/qa/locomotion_rig_oracle.py).
+Cubren HLC13–14 y preparan el cotejo privado de HLC15, que sigue pendiente.
+
+`InspectionLocomotion` conserva el perfil PAL, frecuencia, mapa de huesos,
+canales y secciones compartidas de capacidad fija. Reutiliza almacenamiento
+`InspectionRig` con sus campos de reloj legacy en cero; no es un SRI1 válido
+ni se evalúa mediante `evaluate_rig`. `InspectionLocomotionReader` entrega TR
+por ID de clip, frame relativo y hueso compacto. Un índice posterior al último
+frame se rechaza aunque exista físicamente el siguiente bloque: el wrap sigue
+siendo responsabilidad del núcleo y permanece dentro del mismo clip.
+
+`read_locomotion_rig` comprueba cabecera, cantidades, identidad y longitud
+esperada antes de asignar el payload. Exige lectura completa, ausencia de
+bytes sobrantes y CRC correcto; después valida reservados, descriptores PAL,
+mapa/canales, padres, TR, helpers, vértices, pesos, índices, rangos de materiales
+y presupuesto de texturas. La validación numérica y de geometría se comparte
+con SRI1 mediante `rig_payload_error`; su validación de reloj se conserva aparte.
+
+`read_locomotion_bundle` carga `heather.sri` y verifica todas las texturas
+referidas con un buffer reutilizado de **64 KiB** y CRC incremental. Exige
+tamaño exacto, incluida lectura de EOF, y cierre correcto de cada archivo.
+No conserva ni sube los píxeles; la carga GPU posterior deberá comprobar los
+bytes que use. El directorio puede contener archivos auxiliares que el lector
+no abre. El auditor de paquetes en memoria exige el conjunto exacto SRI/RGBA.
+
+Ambas APIs preparan un candidato privado y copian a la salida solo después
+de terminar todas las comprobaciones y cierres. En error conservan **todos
+los bytes del modelo vigente**. Los diagnósticos incluyen `FileError`, nombre
+estático del campo y ordinal para texturas. Se conserva el primer error ante
+un cierre posterior fallido. Es una transacción síncrona en el hilo propietario;
+no constituye publicación concurrente ni cambia la sesión de PCSX2.
+
+El modelo ocupa **389640 bytes en host**. El mayor payload admitido ocupa
+333356 bytes; el staging propio máximo durante la carga SRI es, por tanto,
+722996 bytes dinámicos, además del modelo vigente y los buffers internos de
+stdio. Una vez leído/cerrado SRI, el payload se libera antes de comprobar RGBA.
+La vista no asigna memoria por lectura. El presupuesto de 18040 bytes del
+estado/workspace de HL-T4b permanece separado y sin cambios.
+
+El oráculo Python importa solo `math`, `struct` y `zlib`; no importa productor
+ni runtime. Reconstruye perfil, encuadre, topología, máscaras, registros PAL,
+los 58 índices fuente, TR, helpers, enteros de vértices/UV/pesos, índices y
+materiales. Compara todos los campos con un volcado nativo, incluyendo el
+patrón float32 de cada número y el signo de cero. También reconstruye el
+paquete generado por HL-T4c.1 con cantidades completas de Heather sintética.
+CRC y metadatos no autentican MDL522/ANM525 ni reconstruyen las partes omitidas.
+
+Las pruebas de frontera descubrieron una discrepancia del productor: para
+normas al cuadrado 0,999/0,99900001/0,99900002, un quaternion válido en doble
+precisión podía quedar en **0,998999964993974** al guardarse en f32. El lector
+lo rechazaba correctamente. El encoder común ahora comprueba la norma del
+valor serializado y devuelve `RI_ROTATION_F32` si cruza el límite. Se añadieron
+tres casos rechazados y tres fronteras representables aceptadas por productor,
+oráculo y C++. **No se amplió la tolerancia 0,001**, ni se alteraron los hashes
+de los ejemplos válidos SRI1.
+
+Pruebas ejecutadas:
+
+- [Batería nativa](../../tests/cpp/test_inspection_locomotion.cpp): **650
+  rechazos** conservan la salida byte por byte. Incluye cabeceras y límites
+  uint32, reservados, mapa/canales/descriptores, datos numéricos, geometría,
+  truncamientos de cabecera/secciones/frames, CRC y sobrantes; errores de
+  apertura, lectura, EOF y cierre; fallos de las tres asignaciones; errores
+  en la última textura y recuperación posterior. Los callbacks de I/O
+  comprueban que todavía ven el modelo anterior. La cabecera inválida se
+  rechaza antes de asignar. SRI1 rechaza SRI2 sin modificar su salida.
+- La misma batería prueba acceso a extremos de los tres clips, rangos
+  inválidos sin mutación, padding inactivo limpio y **500 actualizaciones**
+  del núcleo con la vista nueva. No hay llamadas al evaluador SRI1 para estas
+  muestras. El fallo de asignación se intercepta explícitamente en las formas
+  normales y `nothrow` de `new`, también bajo ASan.
+- [Reconstrucción y cotejo](../../tests/python/test_locomotion_rig_reconstruction.py):
+  rechazo de los **59212 puntos de truncamiento** de un archivo sintético,
+  tipos de entrada, texturas ausentes/mutables/corruptas, conjunto de archivos,
+  presupuesto de píxeles, influencias ausentes y producción→reconstrucción→C++.
+- [Oráculo de wire nativo](../../tests/locomotion_rig_wire_oracle.py) con
+  [bytes inventados independientes](../../tests/locomotion_rig_fixtures.py):
+  todos los campos coinciden; **329 variantes corruptas** son rechazadas por
+  ambos lectores, incluida cada posición de los 60 bytes de descriptores.
+  Comprueba también la ausencia de la última textura mediante archivos reales.
+- **542 pruebas Python aprobadas** en las cinco baterías relacionadas de
+  reconstrucción, productor, fuentes, SRI1 y contrato multiclips.
+- **33/33 CTest en Release y 33/33 en ASan/UBSan**, sin hallazgos. Incluyen
+  las ocho pruebas/oráculos de locomoción y 25 regresiones SRI1 de lector,
+  presentador, skinning, ordenación y contratos GPU con dobles del SDK.
+
+Comandos principales:
+
+```text
+rtk proxy cmake --preset host-release
+rtk proxy cmake --build --preset host-release --target test_inspection_locomotion test_inspection_rig test_rig_draw_equivalence test_ctr_rig test_locomotion_clock test_locomotion_pose test_locomotion_update --parallel 2
+rtk proxy ctest --preset host-release -R '^(locomotion_|inspection_locomotion$|inspection_rig$|rig_)' --output-on-failure
+rtk proxy cmake --preset host-sanitize
+rtk proxy cmake --build --preset host-sanitize --target test_inspection_locomotion test_inspection_rig test_rig_draw_equivalence test_ctr_rig test_locomotion_clock test_locomotion_pose test_locomotion_update --parallel 2
+rtk proxy env UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ctest --preset host-sanitize -R '^(locomotion_|inspection_locomotion$|inspection_rig$|rig_)' --output-on-failure
+rtk proxy .venv/bin/pytest -q tests/python/test_locomotion_rig_reconstruction.py tests/python/test_locomotion_inspection.py tests/python/test_produce_heather_locomotion.py tests/python/test_rig_inspection.py tests/python/test_heather_locomotion_contract.py --cov=tools.qa.locomotion_rig_oracle --cov=tools.pipeline.locomotion_inspection --cov=tools.pipeline.produce_heather_locomotion --cov=tools.pipeline.rig_inspection --cov-report=json:build/heather-locomotion/sri2-reader-python-coverage.json --cov-report=term-missing --junitxml=build/heather-locomotion/sri2-reader-pytest.xml
+```
+
+Cobertura local, Python y LLVM:
+
+| Módulo | Líneas | Ramas |
+|---|---:|---:|
+| `engine/domain/inspection_locomotion.cpp` | 36/36, 100 % | 34/34, 100 % |
+| `engine/platform/common/inspection_locomotion.cpp` | 212/212, 100 % | 155/158, 98,10 % |
+| `tools/qa/locomotion_rig_oracle.py` | 86/86, 100 % | 18/18, 100 % |
+| `tools/pipeline/rig_inspection.py` | 153/153, 100 % | 82/82, 100 % |
+
+Los dos módulos del productor conservan 100 % de líneas/ramas. CI incorpora
+CTest/oráculo, lint de los helpers y gates individuales al 80 % para
+[modelo](../../gcovr-inspection-locomotion-domain.cfg),
+[lector](../../gcovr-inspection-locomotion-reader.cfg) y reconstrucción Python.
+Ruff, formato, whitespace y comprobaciones del repositorio pasan. Informes
+ignorados en `build/heather-locomotion/sri2-reader-coverage/`,
+`sri2-reader-python-coverage.json` y `sri2-reader-pytest.xml`.
+No se afirma ejecución remota de CI/GCC, nuevo build ARM ni prueba física.
+
+**HL-T4c.2 cerrada. Siguiente: HL-T4c.3, publicación/cotejo privado A/B**,
+comparando reconstrucción con las fuentes fijadas y referencias de pose sin
+relajar umbrales. HL-T4c no queda cerrada todavía. La integración del visor y
+la nueva prueba de espera/caminar/correr en 2DS XL permanecen pendientes.
+
+## 2026-10-26 — HL-T4c.3: publicación privada A/B y fidelidad
+
+**HL-T4c.3 y HL-T4c cerradas en el perfil declarado.** Los paquetes A/B
+son idénticos, se reconstruyen con el lector independiente y el lector C++,
+y el núcleo reproduce 245 poses contra las referencias fijadas de HL-T3.
+Se mantienen las tolerancias HLC15. No se generó un build de consola ni se
+cambió el paquete físico `8f778b6e4960`.
+
+### Fuentes, publicación y correspondencias
+
+La conversión A parte de los recursos conservados en `heather-source-v1`;
+B vuelve a abrir la ISO europea, verifica su hash/tamaño, verifica `XBG0.MFA`,
+recorre sus entradas D8 y adquiere de nuevo los ordinales 522 y 525. Los
+bytes de ambas adquisiciones coinciden antes de las conversiones separadas:
+
+| Entrada | Bytes | SHA-256 |
+|---|---:|---|
+| MDL522 original | 1.639.344 | `1aa81b56c0a079c8d98e57f17537e91b2ce20f1e46a1cc6d9816561cad03d2e9` |
+| ANM525 | 465.436 | `a0ad870863df5c495c453acdc2230dc8bb762394687599329f5a97a975d75181` |
+| Descriptores PAL 101/109/113 | 36 | `8288f40a25c744293312fad7e868619a431ce6e5155003dedb883285051fe867` |
+
+Los descriptores proceden de RAM del primer estado de la ventana
+`idle-transitions-replay-v1`, contrastado con el manifiesto HL-T3 fijado.
+No se vuelve a aplicar la conversión PAL. El manifiesto consolidado de
+referencias mantiene SHA
+`403a586353d64cde11d79b38235032cdb157c7defdbd718a2a267c09fa3ce8e9`;
+se verifican de nuevo los hashes de sus 16 informes antes de usar referencias.
+
+Destinos exclusivos bajo `/Users/germancontreras/sh3-private-data/`:
+
+- `heather-locomotion-a-v1/`
+- `heather-locomotion-b-v1/`
+- `heather-locomotion-audit-v1/`, informe agregado y copia del helper.
+
+Cada paquete contiene `heather.sri` de **290.156 bytes**, 13 RGBA de
+**18.087.936 bytes** en conjunto y un manifiesto. Total de datos:
+**18.378.092 bytes** por conversión. Los 14 archivos y ambos manifiestos
+son idénticos. Se conserva `.manifest.pending.json` conforme al protocolo
+del escritor compartido; el enlace final solo se publica después del cotejo.
+
+| Artefacto | SHA-256 |
+|---|---|
+| `heather.sri` A y B | `2bc96e9f7fec9e52b21186d033ee02694b67808098bf101d304fd944c928fc0b` |
+| `manifest.json` A y B | `0f8251b66f737b00525bb092799eff9ace799aa6fd6fbc2c96b8b590a32e7af1` |
+| `heather-locomotion-audit-v1/audit.json` | `e61ad4580c74770b4c30e376ada40e5b8eced617ad8beeda3c5e8c6c9da65af7` |
+| Helper de publicación/auditoría | `fbeec9d1130256ab69d63b3e0708b76fa2bf6cb753ffb6ce2c9c2c1fc342bb99` |
+| Lector/harness nativo Release | `323912ff25568fa59edb908070bbe6e6e4b950025836432c903e9985f722ae34` |
+
+El nuevo [publicador](../../tools/pipeline/publish_heather_locomotion.py)
+recibe fuentes crudas y reutiliza autenticación y escritor exclusivo:
+no acepta un `source_verified` indicado por el llamador. Antes de publicar
+el manifiesto relee cada archivo, compara bytes y reconstruye el conjunto.
+Los fallos conservan el directorio parcial sin manifiesto final y no
+sobrescriben un destino anterior. La auditoría de poses se registra aparte.
+
+El [auditor de selección](../../tools/qa/locomotion_source_audit.py) no
+importa productor ni runtime. Recalcula desde documentos decodificados:
+58×36 TR, padres/vínculos, 49 helpers, 6.943 vértices, 16.566 índices,
+13 materiales/píxeles, descriptores y encuadre común. Compara todos los
+campos seleccionados, incluidos enteros originales y representaciones f32.
+El lector C++ reconstruye los mismos campos desde ambos paquetes y produce
+trazas idénticas. No se reconstruyen todos los bytes MDL/ANM: cabeceras,
+padding, flags/palabras ANM originales, muestras y elementos inactivos,
+morphs, arma, desplazamiento mundial e iluminación PS2 quedan fuera.
+Los recursos completos permanecen conservados en su ubicación privada.
+
+### Hallazgo de precisión y corrección
+
+El primer candidato, evaluado solo en memoria, tenía SHA SRI2
+`3d5e0345f5447c3ed57c69f45b7003eccb9c33ea676119fede49aa9a760a503b`.
+**414 de 2.088 quaternions** superaban 1e-7 frente al oráculo HL06;
+máximo **0,00010834046406671405**. No se publicó ese candidato ni se
+elevó la tolerancia. El productor usaba el quaternion matemático del decoder,
+distinto del extremo f32 ya acreditado en las capturas.
+
+El productor SRI2 reconstruye ahora W con la política acotada
+`pcsx2-hl06-f32-v1`: productos/sumas truncados a f32, radicando limitado a
+cero, SQRT al f32 más cercano y signo original de W. No normaliza los
+extremos. Una implementación separada en QA compara 4.008 casos sintéticos;
+los 2.088 extremos empaquetados coinciden exactamente con ese oráculo.
+El decoder ANM sin pérdidas y la producción SRI1 permanecen sin cambios.
+Esta política representa el perfil fijado de PCSX2, no toda la FPU PS2.
+
+### Cotejo de poses con los estados preservados
+
+Se releen **245 estados** y sus hashes fijados; se comprueban PC, S0,
+ciclos EE, ticks, ambos canales, descriptores, padres, código del consumidor
+y los bytes completos MDL522/ANM525 en RAM. No se controla PCSX2, no se
+restaura ningún estado en el emulador y no se produce una nueva captura.
+
+El modo `trace` del harness nativo es solo una herramienta de pruebas:
+establece un ancla escalar de clip/fase estable y evalúa desde SRI2; después
+solo usa `update_locomotion`. No inyecta matrices, TR ni caché de RAM.
+Las ventanas con saltos de ordinal quedan como anclas separadas: **nueve**
+en total. Los 245 relojes publicados coinciden exactamente en fuente,
+destino, modo, contador, beta y validez de caché. Se comparan las matrices
+modelo, antes de cualquier colocación mundial o cámara.
+
+| Ventana | Poses | Matrices | Máximo absoluto |
+|---|---:|---:|---:|
+| Vuelta de espera | 68 | 2.448 | 0,000514984131 |
+| Vueltas de correr y caminar, dos anclas | 56 | 2.016 | 0,000427246094 |
+| Caminar → correr | 15 | 540 | 0,000427246094 |
+| Correr → caminar | 16 | 576 | 0,000427246094 |
+| Wrap durante modo 5 | 16 | 576 | 0,000427246094 |
+| Espera → caminar y caminar → espera, dos anclas | 49 | 1.764 | 0,000488281250 |
+| Correr → espera | 25 | 900 | 0,000427246094 |
+| **Total** | **245** | **8.820** | **0,000514984131 ≤0,001** |
+
+Se cotejan además **13.968 extremos crudos de quaternion** en retornos
+estables: máximo **5,960464477539063e-8 ≤1e-7**. No se aplica ese umbral
+a quaternions interpolados ni a offsets locales derivados del esqueleto;
+estos últimos se comparan en f32 canónico y sus matrices resultantes con
+la tolerancia 0,001. Se rechazan **236 controles** que desplazan la referencia
+una actualización. A y B producen exactamente las mismas trazas nativas.
+
+### Pruebas y límites de entrega
+
+- **560 pruebas Python relacionadas aprobadas**, incluidas 12 alteraciones
+  de fuente/selección, publicación exclusiva, fallos antes del manifiesto,
+  política f32, lector y anclas/trazas nativas con caché; regresiones SRI1.
+- Cobertura local **100 % líneas y ramas** de los seis módulos medidos:
+  reductor SRI2, productor autenticado, publicador, payload compartido,
+  reconstrucción y auditor de selección. Gates individuales ≥80 % en CI;
+  las pruebas públicas usan únicamente recursos inventados.
+- **33/33 CTest Release y 33/33 ASan/UBSan** aprobadas, con ocho pruebas
+  de locomoción y regresiones de lector/render/lifecycle SRI1.
+- Ruff/formato sobre el conjunto de CI y contratos del repositorio aprobados.
+  Informes locales en `build/heather-locomotion/sri2-publication-coverage.json`
+  y `sri2-publication-pytest.xml`. No se ejecutó CI remoto.
+
+El helper queda en `build/heather-locomotion/publish_and_audit_sri2.py` y
+como copia de custodia en la carpeta privada de auditoría. El modo `publish`
+rechaza carpetas existentes; `audit` solo lee paquetes/capturas y crea un
+informe nuevo al terminar. No debe reutilizarse un destino ya publicado.
+El presupuesto de esta ejecución fue dos paquetes más 64 MiB de margen;
+no se aplicó la reserva de 20 GiB propia del build PCSX2. Al finalizar la
+auditoría quedaban unos 257 MiB: revisar espacio antes del próximo build.
+
+El manifiesto del paquete físico anterior `heather-3ds-v3` sigue asociado
+a `8f778b6e4960`, SHA
+`e39433cdffefb27a2ceb3a772af7e9812df906b89e55f2786607415852e3a483`.
+No se sustituyó ese directorio ni se escribió en la SD. Estos son paquetes
+de datos para la siguiente integración; no acreditan todavía controles
+multiclips, cadencia, ARM, 2DS XL ni movimiento por una habitación.
+
+**Siguiente: HL-T4d.1, presentador y lifecycle**, conectando selección de
+clips, pausa/paso, reinicio y suspensión con el núcleo ya cotejado.
+
+## 2026-10-26 — HL-T4d.1: presentador, controles y ciclo de vida
+
+**HL-T4d.1 cerrada en host.** `LocomotionProbe` conecta selección y tiempo de
+inspección con el núcleo completo, y entrega al renderer únicamente matrices
+publicadas. HLC10–12 quedan cubiertos por pruebas sintéticas; la aceptación
+física multiclips continúa pendiente.
+
+### Cambios y límites
+
+- Aplicación separada del lector SRI2 y del renderer mediante
+  `LocomotionSampleReader`/`IRigScene`. Perfil, reloj, caché y workspace tienen
+  capacidad fija; no hay asignaciones en el bucle. Un `static_assert` limita
+  el presentador al presupuesto de 32 KiB. El visor SRI1 conserva su lector
+  y pruebas; Heather usa ahora la entrada SRI2 validada como paquete completo.
+- Cadencia de inspección de 25 Hz con ticks 2, tiempo finito limitado a 0,1 s
+  y máximo tres updates completos por llamada. Se ejecuta la evaluación de
+  cada uno, incluso si solo se dibuja el último. No se multiplican incrementos
+  para saltarse estados de mezcla o caché, ni se añade movimiento mundial.
+- ZL/ZR solicitan anterior/siguiente en `101/109/113`. El selector rechaza
+  espera→correr directa, cambios de destino durante mezcla, selección pausada
+  y botones opuestos simultáneos. Conserva una sola petición hasta el próximo
+  update y nunca reemplaza la primera por una segunda.
+- Prioridad START/suspensión → A → L → R → selección → tiempo. A limpia
+  resto temporal/petición. R pausado hace un update completo. L reinicia el
+  destino actual en su primer fotograma estable sin consumir ticks y conserva
+  la pausa. La extensión de inicialización al clip explícito mantiene el
+  default 101 y la garantía de no publicar nada si falla un canal.
+- Tapa/HOME conservan pose y pausa, descartan resto y petición, y exigen soltar
+  todos los botones. El frame que libera los controles también descarta el
+  tiempo dormido. START sigue funcionando durante esa espera. Cámara,
+  SELECT cuerpo/cara, zoom, B y petición de CPU New fast se conservan.
+- Fallos de muestra/pose pausan sobre el último snapshot válido; si un update
+  falla dentro de una tanda, no se ejecutan los restantes. Los rechazos de
+  selección muestran diagnóstico y permiten continuar luego sin solicitud.
+  Cámara/HUD/GPU ocupada no vuelven a evaluar la pose al presentarla.
+- El renderer valida el payload compartido, sin exigir el reloj legacy SRI1;
+  los lectores siguen verificando su formato específico. El HUD muestra
+  origen/destino, modo, mezcla y Q12, y separa 25 updates/s de FPS submit.
+
+Archivos principales:
+`engine/application/{include/sh3/application/locomotion_probe.hpp,locomotion_probe.cpp}`,
+`engine/domain/{locomotion_pose.cpp,locomotion_update.cpp}` y
+`engine/platform/3ds/render/{rig_main.cpp,rig_renderer.cpp}`.
+El [contrato](../../schemas/heather-locomotion-v1.md#integración-de-aplicación-hl-t4d1)
+detalla el mapeo y los descartes de eventos.
+
+### Verificación local
+
+| Comprobación | Resultado |
+| --- | --- |
+| Preset Release, selección de locomoción/SRI/render/cadencia | 37/37 |
+| Misma selección con ASan/UBSan y `halt_on_error=1` | 37/37 |
+| `test_locomotion_rig_reconstruction.py` | 356 aprobadas; productor/lector/oráculo y corrupciones |
+| Ruff del módulo Python modificado | Lint y formato aprobados |
+| Contratos de repositorio/especificaciones | PASS, 0 errores |
+| `git diff --check` | Aprobado |
+
+`test_locomotion_probe` comprueba pausa en modos 3/5, cien redibujos sin
+avance, paso/reinicio, precedencia simultánea, cola de selección, tiempos
+negativos/no finitos/largos, equivalencia de updates agrupados y separados,
+reinicio fallido, fallo en el segundo update, suspensión durante ambas
+mezclas, botones retenidos, cámara en pausa, START y frame ocupado.
+Las asignaciones globales están prohibidas durante sus escenarios.
+
+`test_ctr_locomotion_controls` compila el **entry point real** con dobles SDK
+y prueba su mapeo HID, hooks de tapa/HOME/salida, restauración New fast y
+liberación del hook/CPU. Esta comprobación descubrió una conversión implícita
+de la frecuencia de ticks a float bajo Clang; ahora el cociente usa double
+antes de convertir el intervalo a float. No es una compilación ARM ni una
+prueba de hardware.
+
+`test_inspection_locomotion` añade 500 iteraciones desde el SRI2 sintético
+reconstruido, pasando por lector concreto → presentador → skin/sort, sin
+asignaciones. `rig_gpu_locomotion` valida el payload sin reloj SRI1 durante
+1.001 presentaciones, conservando las pruebas de fallos, espera y liberación
+de recursos. Los oráculos previos de reloj, pose y publicación conjunta
+siguen aprobados, al igual que las regresiones del visor SRI1.
+
+Comandos de reproducción de esta selección:
+
+```sh
+rtk proxy cmake --preset host-release
+rtk proxy cmake --build --preset host-release --target test_locomotion_probe test_ctr_locomotion_controls test_locomotion_clock test_locomotion_pose test_locomotion_update test_inspection_locomotion test_inspection_rig test_ctr_rig test_rig_draw_equivalence test_frame_cadence --parallel 2
+rtk proxy ctest --preset host-release -R '^(locomotion_|inspection_locomotion$|inspection_rig$|rig_|frame_cadence$)' --output-on-failure
+rtk proxy cmake --preset host-sanitize
+rtk proxy cmake --build --preset host-sanitize --target test_locomotion_probe test_ctr_locomotion_controls test_locomotion_clock test_locomotion_pose test_locomotion_update test_inspection_locomotion test_inspection_rig test_ctr_rig test_rig_draw_equivalence test_frame_cadence --parallel 2
+rtk proxy env UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ctest --preset host-sanitize -R '^(locomotion_|inspection_locomotion$|inspection_rig$|rig_|frame_cadence$)' --output-on-failure
+rtk proxy .venv/bin/python -m pytest tests/python/test_locomotion_rig_reconstruction.py -q --no-cov
+```
+
+CMake registra las pruebas nuevas para los jobs host existentes; no se
+ejecutó CI remoto ni se midió aún el gate individual del presentador.
+No se generó build ARM ni se modificaron los paquetes privados A/B, el
+build físico `8f778b6e4960`, PCSX2 o la SD. Al verificar quedaban unos
+212 MiB libres: se hicieron builds incrementales host y pruebas acotadas;
+revisar margen antes de la entrega ARM.
+
+**Siguiente: HL-T4d.2**, gate individual del presentador, pipeline pertinente,
+compilación ARM y paquete SRI2/texturas/build con hashes y protocolo HL-T5.
+
+## 2026-10-26 — HL-T4d.2: cobertura individual, ARM y entrega multiclips
+
+**Completada. Build `4707dacec7d1` preparado; HL-T5 sigue pendiente.**
+Se añade [el gate individual](../../gcovr-locomotion-probe.cfg) del
+presentador a `cpp-coverage`, con umbrales de 80 % de líneas y ramas y XML
+incluido en los artefactos de CI. Los gates previos de reloj, pose,
+transacción y lectores permanecen separados. Los jobs usan datos sintéticos;
+la entrega con recursos originales se publica exclusivamente fuera del repositorio.
+
+### Pipeline y portabilidad
+
+| Comprobación local | Resultado |
+| --- | --- |
+| CTest completo macOS Release | 364/364 |
+| CTest completo macOS ASan/UBSan | 364/364; `halt_on_error=1` |
+| Python: publicación, reconstrucción, productor, contrato, SRI1 y scripts ARM | 608 aprobadas |
+| Gate aislado del presentador, GCC 12.2/gcovr | 123/146 líneas (84,2 %), 103/119 ramas (86,6 %), 10/10 funciones |
+| Medición adicional LLVM, mismo módulo | 86,31 % líneas / 87,12 % ramas |
+| ARM y shader PICA | Compilación Release aprobada; 12 componentes de salida únicos |
+| Ruff del test Python modificado | Lint/formato aprobados |
+| Contratos del repositorio y trazabilidad | PASS, 0 errores |
+| `git diff --check` | Aprobado |
+
+La batería del script incluye ahora `build_heather_probe.sh`: SDK ausente,
+destino ocupado por directorio/archivo/enlace, fallo de CMake y conservación
+de la salida existente. Son 48 casos en esa batería, incluidos dentro de
+las 608 pruebas anteriores.
+
+Al ejecutar también las regresiones SRI1/SRI2 en Linux, GCC detectó que
+los tres callbacks de error de archivo no conservaban `noexcept`. En glibc,
+el tipo de `ferror` incluye esa especificación; en macOS no causaba el error.
+Se corrigieron solo los dobles de `test_inspection_locomotion.cpp` y
+`test_inspection_rig.cpp`, sin relajar flags ni cambiar el lector real.
+El build ID y los bytes ARM permanecen iguales porque estos cambios son
+exclusivos de pruebas.
+
+Tras esa corrección pasan las **37/37 pruebas seleccionadas con GCC 12.2**
+en Linux, incluidos los cuatro oráculos y las regresiones del renderer.
+Los seis gates, usando sus configuraciones exactas de CI, quedan así:
+
+| Módulo C++ | Líneas | Ramas |
+| --- | ---: | ---: |
+| Reloj | 104/104 (100 %) | 140/140 (100 %) |
+| Pose | 178/181 (98,3 %) | 191/214 (89,3 %) |
+| Publicación conjunta | 45/45 (100 %) | 42/42 (100 %) |
+| Presentador | 123/146 (84,2 %) | 103/119 (86,6 %) |
+| Modelo SRI2 | 28/28 (100 %) | 38/38 (100 %) |
+| Lector SRI2 | 186/186 (100 %) | 162/164 (98,8 %) |
+
+Todos superan 80/80; los XML y resúmenes están en `delivery-v1/gates/` y
+CTest en `gcc-tests.xml`. La prueba SRI2 y su oráculo se repitieron después
+del ajuste en Release y ASan/UBSan (2/2 por preset); la regresión SRI1
+también se reconstruyó y comprobó por separado en ambos presets.
+
+### Compilación ARM
+
+Se ejecutó `scripts/build_heather_probe.sh` desde un contenedor de la imagen
+fijada `devkitpro/devkitarm@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5`,
+con fuentes de solo lectura, sin red ni recursos privados. Los objetos se
+construyeron en tmpfs; los artefactos se conservaron bajo
+`build/heather-locomotion/delivery-v1/arm/`. GCC ARM informa 16.1.0.
+
+El ELF es ARM de 32 bits, little endian, EABI5 hard-float. `size` informa
+200.608 bytes de texto, 397.280 de datos y 1.172.976 de BSS; estas cifras
+no son una medición del heap, de memoria GPU ni del consumo total en consola.
+Se verificaron los seis hashes de `SHA256SUMS`, magic 3DSX/SMDH y el ID
+recalculado desde todas las fuentes de `engine` y `CMakeLists.txt`.
+
+El primer intento compiló y verificó el build, pero su recolector no encontró
+`arm-none-eabi-readelf` en PATH. La repetición usa la ruta explícita de
+`DEVKITARM` y recoge todos los artefactos. El primer ensayo de cobertura
+también quedó registrado como fallido por tmpfs `noexec`; se corrigió el
+montaje de esa carpeta temporal. Ninguno requirió cambiar el código de producto.
+
+### Entrega privada y reconstrucción
+
+Destino nuevo y exclusivo:
+`/Users/germancontreras/sh3-private-data/heather-locomotion-3ds-v1/`.
+
+| Archivo | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `sd-card.zip` | 19.016.374 | `c152678c3d5f13458af985f74f16e5ef20c0589c1a833387bb003044ddde8946` |
+| `sh3_heather_probe.3dsx` | 614.444 | `1bf372f3cc5eaedc78ad9a57d767e4144ce2a26a8d65d0c116cae360afa71021` |
+| `sh3_heather_probe.smdh` | 14.016 | `8e6b2829e0656345043d0cb4fedc1a270e1f4ac287e22c6e2f726541b8d1efdc` |
+| `heather.sri` SRI2 | 290.156 | `2bc96e9f7fec9e52b21186d033ee02694b67808098bf101d304fd944c928fc0b` |
+| `LEEME.txt` | 5.374 | `e87c2dd6355069bbc0f061e90ca91ea9743604264f1322e2c7eb689797a6a03a` |
+
+El manifiesto de entrega tiene SHA-256
+`8384baf0387454d7b5d422452768b08d836b0d94ab1f36841a0bc2aa3494005a`.
+Recibo local: `reports/local/heather-locomotion-delivery-v1.json`.
+
+Las entradas son los paquetes A/B de HL-T4c.3: se recalcularon los hashes
+del manifiesto, sus catorce archivos y la auditoría de 245 poses antes de
+empaquetar. Cada lado pasó el oráculo Python y el lector C++ completo;
+sus reconstrucciones y dumps nativos coinciden. Ambos ZIP producidos en
+memoria son idénticos. Se verificó el contenido de las 18 entradas del ZIP,
+CRC y SHA-256, y se reconstruyó nuevamente SRI2 desde él.
+
+El helper compartido `inspection_archive` conserva rutas y fechas fijas.
+`_write_bundle` escribe exclusivamente, relee los archivos y ejecuta una
+reconstrucción adicional antes de publicar `manifest.json`. El paquete
+incluye 17 archivos de aplicación bajo `3ds/sh3_heather_probe/` más la lista
+de hashes en la raíz del ZIP. Los archivos sueltos y el ZIP ocupan
+38.028.300 bytes, sin contar el manifiesto. Se conservaron las entregas
+anteriores y no se escribió en la SD física.
+
+### Prueba breve en Azahar
+
+Azahar 2126.2 ARM64/Vulkan ejecutó el mismo ZIP en una copia portátil privada
+con configuración nueva derivada del perfil anterior. El atuendo original,
+las trece texturas y los clips 101/109/113 aparecen correctamente. Se
+seleccionaron los cinco arcos y se observó su llegada a modo estable; el
+salto directo espera→correr mostró el rechazo esperado sin bloquear el visor.
+
+A conserva la pose; R pasó Q12 de 31.056 a 31.670 (614), manteniendo pausa;
+L volvió a cero sin reanudar. SELECT mostró el rostro, X acercó hasta 0,45,
+la cruceta giró la cámara y B restauró el cuerpo. A reanudó el reloj y START
+regresó a la lista de aplicaciones. El proceso usado para la prueba terminó.
+Se conservaron trece capturas, `smoke.json`, `launch.log` y
+`user/log/azahar_log.old.txt` en `heather-locomotion-emulator-v1/`, fuera
+del repositorio. Recibo: `reports/local/heather-locomotion-emulator-v1.json`.
+
+Es una comprobación breve de arranque y controles, sin una medición de
+60 segundos por arco. El log conserva `ConfigureNew3DSCPU` no implementado:
+`New fast` no acredita frecuencia física. Los FPS del emulador tampoco se
+presentan como rendimiento de la 2DS XL. No se probó tapa/HOME en hardware.
+
+### Reproducción y siguiente paso
+
+Los scripts locales `run_host.py`, `run_container.py`, `run-arm.sh`,
+`run-coverage.sh`, `run-coverage-all.sh`, `package.py` y
+`launch_emulator.py`, junto con logs/XML/JSON, están en
+`build/heather-locomotion/delivery-v1/`. El empaquetador rechaza el destino
+si ya existe; no debe ejecutarse para sobrescribir esta entrega.
+
+El [protocolo HL-T5](../compatibility/heather-locomotion.md), incluido en
+`LEEME.txt`, pide 60 s por clip y transición, cuerpo/cara, A/R/L, cámara,
+START, tapa/HOME y métricas por encuadre. La selección usa ZL/ZR y sigue
+siendo una animación en el mismo lugar: no añade habitación, movimiento
+mundial, respuesta física ni combate. **Siguiente: copiar el paquete completo
+a la SD y ejecutar HL-T5 en New Nintendo 2DS XL.** CI remoto no ejecutado.
+
+## 2026-10-26 — Entrega de `4707dacec7d1` a la SD
+
+Por solicitud del usuario, se instalaron los 17 archivos completos del
+paquete (19.011.926 bytes) en `NO NAME/3ds/sh3_heather_probe/`, comprobando
+tamaños y SHA-256 contra el manifiesto fijado antes y después de instalarlos.
+Los archivos auxiliares AppleDouble de macOS se identificaron por nombre y
+cabecera; no se confundieron con recursos del visor. Se conservó el directorio
+anterior completo en
+`NO NAME/sh3-heather-backup-before-4707dacec7d1-20261026T205329Z/previous/`.
+Después de sincronizar y verificar también el respaldo, `diskutil` confirmó
+la expulsión segura de la tarjeta. Recibo local:
+`reports/local/heather-locomotion-sd-delivery-4707dacec7d1.json`.
+**HL-T5 sigue pendiente:** esta copia no acredita funcionamiento físico.
+
+
+## 2026-10-26 — HL-T5: fallo de apertura y corrección de ruta
+
+**Primer intento físico fallido; repetición pendiente con `7250f427ffb9`.**
+El usuario comunicó `Heather failed: open`, build `4707dacec7d1`, antes de
+mostrar Heather. Al reconectar la SD, los 17 archivos coincidían con el recibo
+anterior en tamaño y SHA-256; `heather.sri` conservaba su cabecera SRI2.
+No se observó un archivo faltante ni una copia distinta del paquete entregado.
+
+El entry point pasa `sdmc:/3ds/sh3_heather_probe/`, pero el lector concatenaba
+siempre `"%s/%s"`. La primera apertura recibía
+`sdmc:/3ds/sh3_heather_probe//heather.sri`, con una barra adicional. La nueva
+regresión, que coteja cada ruta literal antes de simular la apertura, falló
+contra ese código y pasó después de corregir el separador en
+[el lector](../../engine/platform/common/inspection_locomotion.cpp).
+El resto del núcleo, renderer, SRI2 y recursos privados queda intacto.
+La relación causal final con el fallo físico sigue pendiente de confirmar
+en la consola; la reproducción host comprueba la construcción defectuosa.
+
+[La batería del lector](../../tests/cpp/test_inspection_locomotion.cpp) cubre
+el directorio `sdmc:` con/sin barra final, directorios relativos con/sin barra
+y la raíz `/`; verifica SRI2 y ambas texturas sintéticas, con tres aperturas,
+tres cierres y nueve lecturas. Conserva las pruebas de truncamiento, CRC,
+reservados, límites y publicación atómica. Resultados de esta corrección:
+
+- 37/37 CTest Release y 37/37 ASan/UBSan; cero fallos.
+- 356 pruebas Python de reconstrucción SRI2; cero fallos.
+- 37/37 CTest GCC y los seis gates individuales aprobados con el SDK fijado.
+- ARM ELF32/3DSX/SMDH compilados, hashes verificados y gate del shader aprobado.
+- Reconstrucción independiente de los ZIP A/B idéntica; lector nativo acepta
+  ambos paquetes y produce el mismo resultado. Recursos cotejados con el
+  manifiesto y la auditoría de 245 poses fijados en HL-T4c.3.
+
+| Gate GCC | Líneas | Ramas |
+| --- | ---: | ---: |
+| Reloj | 104/104 | 140/140 |
+| Pose | 178/181 | 191/214 |
+| Publicación | 45/45 | 42/42 |
+| Presentador | 123/146 | 103/119 |
+| Dominio SRI2 | 28/28 | 38/38 |
+| Lector SRI2 | 187/187 | 164/166 |
+
+Logs, XML de pruebas/cobertura, build y scripts de entrega se conservan en
+`build/heather-locomotion/path-fix-v1/`. El log
+`red-path-regression.log` conserva el fallo previo a la corrección.
+No se reejecutó CI remoto ni Azahar para este cambio. Las cifras de la batería
+completa y la prueba emulada de HL-T4d.2 pertenecen al build anterior.
+
+### Paquete corregido y nueva entrega a SD
+
+Nuevo destino privado exclusivo:
+`/Users/germancontreras/sh3-private-data/heather-locomotion-3ds-v2/`.
+Se conservó intacto el paquete v1. El ZIP contiene los 17 archivos de la
+aplicación más `SHA256SUMS`; los recursos SRI2/texturas no se modificaron.
+
+| Artefacto | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `sh3_heather_probe.3dsx` | 614488 | `9160bba42baa256af18dfde44a85d5e8ce2278be5f92e590b356894836b43d4d` |
+| `sh3_heather_probe.elf` | 2510688 | `b7883d009aadcdfd8f4006862cd330487e33c423216ba719ad9683d576d1c484` |
+| `sd-card.zip` | 19016718 | `68688a6f775f1aa1e78a877ba732d9eec6682d1d27d065f3777edfab1d80d6e2` |
+
+Manifiesto v2: `0671ab59b1556cf14d56c5d0e79aa5e1c96b5e15b959e8de91c3251d1a8e1447`.
+
+Se instalaron y releyeron los 17 archivos (19,012,270 bytes) en
+`NO NAME/3ds/sh3_heather_probe/`, identificando la tarjeta por UUID
+`2B1167A8-45D2-3BF1-A4FF-4E0B1F149945`. Antes de reemplazar la aplicación se verificó el
+inventario anterior y se conservó completo, incluidos auxiliares de macOS, en
+`/Volumes/NO NAME/sh3-heather-backup-before-7250f427ffb9-20261026T210546Z/previous`.
+También se verificó el respaldo. `diskutil` confirmó `Disk disk4 ejected`;
+la tarjeta quedó expulsada de forma segura. Recibos locales:
+`reports/local/heather-locomotion-delivery-v2.json` y
+`reports/local/heather-locomotion-sd-delivery-7250f427ffb9.json`.
+
+**Siguiente:** repetir el arranque y la [prueba física HL-T5](../compatibility/heather-locomotion.md)
+con `7250f427ffb9`. No se acepta el visor multiclips hasta observar clips,
+transiciones, controles, START, tapa y HOME en New Nintendo 2DS XL.
+
+
+## 2026-10-26 — HL-T5a/b: aceptación funcional y métricas físicas
+
+El usuario confirma que `7250f427ffb9` carga Heather y que funcionan espera,
+caminar, correr, los controles, START, tapa y HOME en la New Nintendo 2DS XL.
+Se registra aceptación funcional y corrección de `Heather failed: open`.
+El resultado proviene del reporte del usuario, no de una captura del agente.
+
+Métricas aproximadas: **29,9 FPS submit; 10,08 ms Skin+sort CPU; 23,3 ms
+Submit+wait; 4,32 ms GPU previous**. No se indicaron clip, encuadre, intervalo
+ni duración por transición; se conserva esa incertidumbre. Las cifras no se
+suman ni se presentan como promedio de los seis casos. El evaluador de
+locomoción tampoco queda medido de forma separada por Skin+sort.
+
+Se desglosa HL-T5: **a funcional y b registro de métricas completadas**;
+**c pendiente** de confirmar 60 s por clip/transición, cuerpo/cara y los cinco
+arcos. El paquete privado v2 y su LEEME permanecen inmutables. No se fabrica
+un nuevo build por registrar este resultado.
+
+**Siguiente instancia: HM-T1**, inventario y contrato de datos espaciales de
+Heather original, preparatorio de F06.01/F06.02 y de la primera escena compartida.
+Se reutilizan capturas ya verificadas; no se confunde pose local con ley de
+movimiento, colisión ni cámara del juego. [Spec y tareas](../specs/sh3-3ds/heather-movement.md).

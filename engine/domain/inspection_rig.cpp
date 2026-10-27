@@ -62,61 +62,64 @@ bool draw_vertex_ok(const CharacterDrawVertex &v) noexcept {
 }
 } // namespace
 bool valid_rig(const InspectionRig &m) noexcept {
+    return !rig_payload_error(m) && m.clip_id && m.clip_id <= 65535 && m.increment &&
+           m.increment <= 65535 && m.increment < m.sample_count * 4096;
+}
+const char *rig_payload_error(const InspectionRig &m) noexcept {
     if (m.bone_count < 1 || m.bone_count > rig_bones || m.sample_count < 2 ||
         m.sample_count > rig_samples || m.helper_count > rig_helpers || m.vertex_count < 3 ||
         m.vertex_count > rig_vertices || m.index_count < 3 || m.index_count > rig_indices ||
-        m.index_count % 3 || m.material_count < 1 || m.material_count > rig_materials ||
-        !m.clip_id || m.clip_id > 65535 || !m.increment || m.increment > 65535 ||
-        m.increment >= m.sample_count * 4096 || !vector_ok(m.center) || !bounded(m.scale, 1) ||
-        m.scale <= 0)
-        return false;
+        m.index_count % 3 || m.material_count < 1 || m.material_count > rig_materials)
+        return "counts";
+    if (!vector_ok(m.center) || !bounded(m.scale, 1) || m.scale <= 0)
+        return "framing";
     for (std::size_t i = 0; i < m.bone_count; ++i) {
         if (m.parents[i] < -1 || m.parents[i] >= static_cast<int>(i))
-            return false;
+            return "parents";
         for (std::size_t f = 0; f < m.sample_count; ++f) {
             const auto &s = m.samples[f][i];
             if (!vector_ok(s.translation))
-                return false;
+                return "samples";
             float norm = 0;
             for (auto v : s.rotation) {
                 if (!bounded(v, 1.001F))
-                    return false;
+                    return "samples";
                 norm += v * v;
             }
             if (std::abs(norm - 1) > 0.001F)
-                return false;
+                return "samples";
         }
     }
     for (std::size_t i = 0; i < m.helper_count; ++i) {
         if (m.targets[i] >= m.bone_count)
-            return false;
+            return "helpers";
         const auto &h = m.helpers[i];
         for (auto v : h)
             if (!bounded(v))
-                return false;
+                return "helpers";
         if (h[3] != 0 || h[7] != 0 || h[11] != 0 || h[15] != 1)
-            return false;
+            return "helpers";
     }
     for (std::size_t i = 0; i < m.vertex_count; ++i) {
         const auto &v = m.vertices[i];
         if (v.primary >= m.bone_count || v.count < 1 || v.count > 3)
-            return false;
+            return "vertices";
         unsigned sum = 0;
         for (unsigned j = 0; j < 3; ++j) {
             if (v.weights[j] > 4096 || (j >= v.count && v.weights[j]))
-                return false;
+                return "vertices";
             sum += v.weights[j];
         }
         if (sum > 4096 || sum < 4097U - v.count)
-            return false;
+            return "vertices";
         for (unsigned j = 0; j < 2; ++j)
             if ((j + 1 < v.count && v.helpers[j] >= m.helper_count) ||
                 (j + 1 >= v.count && v.helpers[j] != 255))
-                return false;
+                return "vertices";
     }
     for (std::size_t i = 0; i < m.index_count; ++i)
         if (m.indices[i] >= m.vertex_count)
-            return false;
+            return "indices";
     std::uint32_t next = 0, pixels = 0;
     bool blended = false;
     for (std::size_t i = 0; i < m.material_count; ++i) {
@@ -124,12 +127,12 @@ bool valid_rig(const InspectionRig &m) noexcept {
         if (r.first != next || r.count < 3 || r.count % 3 || r.count > m.index_count - next ||
             r.texture != i || !dimension(r.width) || !dimension(r.height) || r.blend > 1 ||
             (blended && !r.blend))
-            return false;
+            return "materials";
         next += r.count;
         pixels += r.width * r.height;
         blended = bool(r.blend);
     }
-    return next == m.index_count && pixels <= 8 * 1024 * 1024;
+    return next == m.index_count && pixels <= 8 * 1024 * 1024 ? nullptr : "materials";
 }
 void evaluate_rig(const InspectionRig &m, std::uint32_t counter, RigPose &out) noexcept {
     counter %= m.sample_count * 4096;

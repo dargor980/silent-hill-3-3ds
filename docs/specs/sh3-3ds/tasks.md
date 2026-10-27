@@ -310,7 +310,31 @@ Fuente: PDF p. 17. **Entrada:** G02; puede solaparse con investigación F04.
     del banco 525, con informe de 16 evidencias y cinco transiciones.
     HL-T4a cerrada: [contrato HLC01–HLC16](../../../schemas/heather-locomotion-v1.md),
     SRI2 con 58 muestras, cinco arcos y 30 comprobaciones sintéticas.
-    Sigue HL-T4b.1 (planificador puro), antes de conversión A/B e integración.
+    HL-T4b.1 implementada: planificador puro, 173 updates cotejados, pruebas
+    Release/sanitizers y 100 % de líneas/ramas en medición local LLVM.
+    HL-T4b.2 implementada: evaluador local, caché congelada y composición de
+    ambos canales; 26 poses sintéticas cotejadas y Release/sanitizers aprobados.
+    HL-T4b.3 cierra el núcleo: publicación conjunta, 3013 rechazos sin mutación,
+    410 snapshots cotejados y 18040 bytes de estado/workspace. Release y
+    sanitizers: 31/31 por preset, con regresiones SRI1. HL-T4c.1 implementa
+    productor SRI2, mapa/canales/descriptores, cotejo de hashes de fuentes
+    y recibo determinista; 435 pruebas relacionadas y cobertura completa de
+    módulos nuevos. HL-T4c.2 añade lector/reconstrucción independiente y
+    publicación atómica del paquete: 650 rechazos sin mutación, 542 pruebas
+    Python y 33/33 Release/sanitizers por preset. HL-T4c.3 completa A/B
+    idénticos y coteja 245 poses/8.820 matrices (máximo 0,000515 ≤0,001);
+    560 pruebas Python y cobertura completa de módulos medidos. HL-T4d.1
+    conecta presentador SRI2, controles y lifecycle: 37/37 Release/ASan/UBSan
+    por preset y 356 pruebas Python de reconstrucción. HL-T4d.2 integra el
+    gate individual (84,2 % líneas / 86,6 % ramas), completa 364/364 CTest
+    por preset y 608 Python, y prepara ARM `4707dacec7d1` con paquete A/B
+    idéntico. Cinco cambios y controles observados en Azahar. Falló `open`
+    en consola; se corrigió la barra duplicada en la ruta en `7250f427ffb9`,
+    con 37 CTest por preset, 356 Python y seis gates GCC aprobados. HL-T5a/b
+    funcional y métricas confirmadas por el usuario: tres clips, controles,
+    START/tapa/HOME; 29,9 FPS y 10,08/23,3/4,32 ms CPU/submit/GPU.
+    Duración y cobertura detallada siguen en HL-T5c del
+    [protocolo físico](../../compatibility/heather-locomotion.md).
     [Tareas detalladas](heather-locomotion.md).
   - Instancia independiente: [primera textura de 8 bits, 256×256](../../execution/f03-02-indexed-texture.md),
     RGBA/PNG privados repetibles y 318 pruebas aprobadas. [PX01–PX07](../../../schemas/ps2-texture-decode-v1.md).
@@ -660,6 +684,22 @@ Fuente: PDF p. 20. **Entrada:** G04 y G05.
 
 - [ ] **F06.01 — Implementar intención y movimiento resuelto.**
   - Ticket detallado: [F06.01](tasks/F06.md#f0601).
+  - Instancia preparatoria [HM-T1 completada](../../execution/f06-01-heather-spatial.md):
+    inspector espacial puro, 81 capturas / 78 pares y ocho ventanas de código;
+    322 pruebas relacionadas y cobertura individual completa.
+    [HM-T2a completada](../../execution/f06-01-heather-movement-capture.md):
+    primera cadena de carrera, corrección Y y matriz; 16 estados y 52 pruebas
+    sintéticas. Diferencia de +87 ciclos EE respecto a HL registrada, sin
+    equivalencia temporal. [HM-T2b.1–4 verificadas en alcance acotado](../../execution/f06-01-heather-movement-profiles.md):
+    187 estados nuevos, caminar/parada, giro derecho, reloj PAL, suelo/registro
+    y un contacto poligonal hasta posición/matriz; misma suma/operandos entre
+    continuación y paso; plano y conversiones a punto fijo en cuatro llamadas;
+    dos sumas no nulas aisladas y origen del microajuste X hasta posición/matriz;
+    258 pruebas sintéticas; seis paredes y sus aristas compartidas inventariadas
+    como preparación, sin observación de esquina ni giros nuevos.
+    Siguen HM-T2b.5–7: ciclos, contactos/giros restantes y
+    autoridad del movimiento. No cierra movimiento resuelto ni las gates F04/F05.
+    [Spec y tareas HM](heather-movement.md).
   - Resultado y aceptación: Controlador con contrato temporal F04; entrada grabada llega al estado previsto.
   - Requisitos: RF04.01, RF04.02. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 

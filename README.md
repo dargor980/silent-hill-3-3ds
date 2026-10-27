@@ -38,8 +38,52 @@ HL-T3 queda cerrada para el banco 525 y las cinco transiciones observadas,
 con restauraciones y límites documentados.
 [HL-T4a](schemas/heather-locomotion-v1.md) fija el contrato multiclips,
 cinco transiciones y formato SRI2, con 30 comprobaciones sintéticas.
-Sigue HL-T4b.1: planificador puro de reloj/selección; conversión A/B,
-integración al visor y nueva prueba física permanecen pendientes.
+HL-T4b.1 implementa el planificador puro de reloj/selección: 173 actualizaciones
+cotejadas, pruebas Release/ASan/UBSan y cobertura local completa del módulo.
+HL-T4b.2 añade el evaluador local y la caché congelada, con 26 poses sintéticas
+cotejadas y pruebas Release/ASan/UBSan. HL-T4b.3 completa la publicación conjunta
+sin cambios parciales ante errores: 410 snapshots cotejados, 18.040 bytes de
+estado/workspace y 31 pruebas por preset con regresiones SRI1. HL-T4c.1 añade
+el productor SRI2 de 58 muestras, con mapa/canales/descriptores, verificación
+de fuentes y recibo de correspondencias; 435 pruebas relacionadas aprobadas.
+HL-T4c.2 añade lector SRI2 y reconstrucción independiente, con publicación
+atómica tras comprobar archivo/texturas: 650 rechazos sin mutación, 542
+pruebas Python y 33/33 pruebas Release y ASan/UBSan por preset. HL-T4c.3
+publica A/B idénticos y coteja 245 poses/8.820 matrices con las referencias
+fijadas: máximo 0,000515, dentro de 0,001. 560 pruebas Python y gates
+aprobados. HL-T4d.1 conecta el presentador SRI2, selección ZL/ZR, pausa/paso,
+reinicio y suspensión con el núcleo; 37/37 pruebas Release y ASan/UBSan por
+preset y 356 pruebas Python de reconstrucción. HL-T4d.2 integra el gate
+individual del presentador (84,2 % líneas / 86,6 % ramas), verifica 364/364
+CTest por preset y 608 pruebas Python, y prepara el build ARM `4707dacec7d1`.
+Paquete privado SRI2/texturas A/B idéntico; arranque, cinco cambios y controles
+comprobados en Azahar. La prueba física de `4707dacec7d1` falló al abrir
+SRI2; el build corregido **`7250f427ffb9`** evita la barra duplicada en la ruta.
+Pasan 37 pruebas C++ por preset, 356 Python y los seis gates GCC. El usuario
+confirma carga, espera/caminar/correr, controles, START, tapa y HOME en
+`7250f427ffb9`: **HL-T5a/b aceptadas**, 29,9 FPS, Skin+sort 10,08 ms,
+Submit+wait 23,3 ms y GPU 4,32 ms aproximados. Duración y cobertura por
+encuadre/arco pendientes en [HL-T5c](docs/compatibility/heather-locomotion.md).
+[HM-T1 completada](docs/execution/f06-01-heather-spatial.md): inspector
+espacial, 81 capturas y ocho ventanas de código verificadas; 322 pruebas
+relacionadas y cobertura completa. [HM-T2a completada](docs/execution/f06-01-heather-movement-capture.md):
+primera cadena de carrera, escritura X, corrección Y y matriz verificadas en
+PCSX2; 16 estados y 52 pruebas sintéticas. El resultado espacial coincide con
+HL; hay +87 ciclos EE de diferencia, sin equivalencia temporal acreditada.
+[HM-T2b en curso](docs/execution/f06-01-heather-movement-profiles.md): 187 estados
+nuevos, caminar/parada, giro derecho, reloj PAL de 2 ticks y suelo/registro
+de formas verificados en su alcance acotado; 258 pruebas sintéticas. La suma
+de altura coincide con los mismos operandos por continuación y paso.
+Un contacto de `tpf1.cld` enlaza candidato, corrector, posición y matriz;
+el recurso completo coincide con A/B. Cuatro llamadas verifican el plano sin
+normalizar y la conversión de su corrección a punto fijo. Dos sumas no nulas
+al centro están aisladas; una actualización completa atribuye el microajuste
+X al redondeo de dos mitades del movimiento, con cuatro retornos de corrección
+cero y publicación exacta en posición/matriz. Seis paredes y sus aristas
+compartidas quedan inventariadas como referencias para la captura de esquinas.
+Pendientes contactos y giros
+restantes, ciclos y autoridad del movimiento antes del controlador y la habitación.
+[Spec HM](docs/specs/sh3-3ds/heather-movement.md).
 
 
 **Nuevo corte gráfico:** `sh3_render_probe` muestra una habitación sintética

@@ -25,6 +25,39 @@ def encode_rig(
     clip_id,
     increment,
 ):
+    payload = encode_rig_payload(
+        parents, frames, targets, helpers, vertices, indices, materials, center, scale
+    )
+    clip_id, increment = integers([clip_id, increment], 2, 1, 65535)
+    if increment >= len(frames) * 4096:
+        raise ValueError("RI_INCREMENT")
+    return (
+        struct.pack(
+            "<8s14I",
+            MAGIC,
+            *map(len, (parents, frames, targets, vertices, indices, materials)),
+            clip_id,
+            increment,
+            len(payload),
+            zlib.crc32(payload),
+            0,
+            0,
+            0,
+            0,
+        )
+        + payload
+    )
+
+
+def encode_rig_payload(
+    parents, frames, targets, helpers, vertices, indices, materials, center, scale
+):
+    """Shared SRI sections; version-specific metadata belongs to the caller.
+
+    The first 16+4B bytes are framing/parents, followed by samples and mesh.
+    SRI2 inserts its bindings/descriptors at that boundary, without making a
+    single-clip SRI1 file or changing SRI1's interpretation.
+    """
     nb, nf, nh, nv, ni, nm = map(len, (parents, frames, targets, vertices, indices, materials))
     if not (
         1 <= nb <= MAX_BONES
@@ -44,9 +77,6 @@ def encode_rig(
     scale = vector([scale], 1, 1)[0]
     if scale <= 0:
         raise ValueError("RI_SCALE")
-    clip_id, increment = integers([clip_id, increment], 2, 1, 65535)
-    if increment >= nf * 4096:
-        raise ValueError("RI_INCREMENT")
     payload = bytearray(struct.pack(f"<4f{nb}i", *center, scale, *parents))
     for frame in frames:
         if len(frame) != nb:
@@ -55,7 +85,12 @@ def encode_rig(
             t, q = vector(translation, 3), vector(rotation, 4, 1.001)
             if abs(sum(x * x for x in q) - 1) > 0.001:
                 raise ValueError("RI_ROTATION")
-            payload.extend(struct.pack("<7f", *t, *q))
+            stored = struct.pack("<7f", *t, *q)
+            # Validate the transported values too: f32 rounding can cross the
+            # norm boundary even when the caller's double values are inside it.
+            if abs(sum(v * v for v in struct.unpack_from("<4f", stored, 12)) - 1) > 0.001:
+                raise ValueError("RI_ROTATION_F32")
+            payload.extend(stored)
     for target, matrix in zip(integers(targets, nh, 0, nb - 1), helpers, strict=True):
         h = vector(matrix, 16)
         if tuple(h[i] for i in (3, 7, 11, 15)) != (0, 0, 0, 1):
@@ -105,31 +140,21 @@ def encode_rig(
         payload.extend(struct.pack("<7I", *material))
     if cursor != ni or total_pixels > 8 * 1024 * 1024:
         raise ValueError("RI_MATERIAL_COVERAGE")
-    return (
-        struct.pack(
-            "<8s14I",
-            MAGIC,
-            nb,
-            nf,
-            nh,
-            nv,
-            ni,
-            nm,
-            clip_id,
-            increment,
-            len(payload),
-            zlib.crc32(payload),
-            0,
-            0,
-            0,
-            0,
-        )
-        + payload
-    )
+    return bytes(payload)
 
 
 def heather_rig(geometry, animation, textures):
     """Explicit original-outfit mask; preserve complete inputs in their own package."""
+    rig, files, report = prepare_heather_rig(geometry, animation, textures, range(10))
+    files["heather.sri"] = encode_rig(**rig, clip_id=0x65, increment=614)
+    return files, report
+
+
+def prepare_heather_rig(geometry, animation, textures, sample_indices):
+    """Compact shared original-outfit geometry and the requested source samples."""
+    sample_indices = integers(tuple(sample_indices), len(sample_indices), 0, 1762)
+    if not 2 <= len(sample_indices) <= MAX_SAMPLES:
+        raise ValueError("HI_SAMPLE_SELECTION")
     mesh = geometry["mesh"]
     skeleton = mesh["skeleton"]
     if (
@@ -158,7 +183,8 @@ def heather_rig(geometry, animation, textures):
     ]
     rest = [vector(m, 16) for m in skeleton["matrices_columns"]]
     frames = []
-    for sample in animation["frames"][:10]:
+    for source_frame in sample_indices:
+        sample = animation["frames"][source_frame]
         tracks = sample["tracks"]
         if [t["bone_index"] for t in tracks] != bones:
             raise ValueError("HI_TRACKS")
@@ -241,29 +267,31 @@ def heather_rig(geometry, animation, textures):
         files[f"texture-{ti:02}.rgba"] = raw
     if len(vertices) != 6943 or len(indices) != 16566 or not math.isfinite(radius) or radius <= 0:
         raise ValueError("HI_GEOMETRY_COUNTS")
-    files["heather.sri"] = encode_rig(
-        parents,
-        frames,
-        targets,
-        helpers,
-        vertices,
-        indices,
-        materials,
-        center,
-        min(1.0, 1.4 / radius),
-        0x65,
-        614,
+    rig = dict(
+        parents=parents,
+        frames=frames,
+        targets=targets,
+        helpers=helpers,
+        vertices=vertices,
+        indices=indices,
+        materials=materials,
+        center=center,
+        scale=min(1.0, 1.4 / radius),
     )
-    return files, dict(
-        bones=bones,
-        helpers=hs,
-        textures=source_textures,
-        submeshes=[i for i, _ in selected],
-        framing_radius=radius,
-        pose="local_quaternion_nlerp_and_translation",
-        clock="inspection_25Hz",
-        native_timing_verified=False,
-        morphs_applied=False,
-        lighting="neutral",
-        appearance="original_normal_game",
+    return (
+        rig,
+        files,
+        dict(
+            bones=bones,
+            helpers=hs,
+            textures=source_textures,
+            submeshes=[i for i, _ in selected],
+            framing_radius=radius,
+            pose="local_quaternion_nlerp_and_translation",
+            clock="inspection_25Hz",
+            native_timing_verified=False,
+            morphs_applied=False,
+            lighting="neutral",
+            appearance="original_normal_game",
+        ),
     )

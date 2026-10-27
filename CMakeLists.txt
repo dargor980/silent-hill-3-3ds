@@ -31,7 +31,9 @@ endif()
 
 add_library(sh3_domain engine/domain/lifecycle.cpp engine/domain/diagnostic_options.cpp
   engine/domain/render_scene.cpp engine/domain/animation_pose.cpp engine/domain/character_skinning.cpp
-  engine/domain/character_lighting.cpp engine/domain/character_world.cpp engine/domain/inspection_rig.cpp)
+  engine/domain/character_lighting.cpp engine/domain/character_world.cpp engine/domain/inspection_rig.cpp
+  engine/domain/locomotion_clock.cpp engine/domain/locomotion_pose.cpp
+  engine/domain/locomotion_update.cpp engine/domain/inspection_locomotion.cpp)
 target_include_directories(sh3_domain PUBLIC engine/domain/include)
 target_link_libraries(sh3_domain PRIVATE sh3_options)
 
@@ -40,7 +42,8 @@ target_include_directories(sh3_ports INTERFACE engine/ports/include)
 target_link_libraries(sh3_ports INTERFACE sh3_domain)
 
 add_library(sh3_application engine/application/diagnostic_app.cpp engine/application/options_store.cpp
-  engine/application/render_probe.cpp engine/application/animation_probe.cpp engine/application/rig_probe.cpp)
+  engine/application/render_probe.cpp engine/application/animation_probe.cpp engine/application/rig_probe.cpp
+  engine/application/locomotion_probe.cpp)
 target_include_directories(sh3_application PUBLIC engine/application/include)
 target_link_libraries(sh3_application PUBLIC sh3_ports PRIVATE sh3_options)
 
@@ -50,7 +53,7 @@ add_library(sh3_diagnostics engine/platform/common/bounded_log.cpp engine/platfo
   engine/platform/common/inspection_crc32.cpp engine/platform/common/inspection_animation.cpp
   engine/platform/common/inspection_character.cpp engine/platform/common/inspection_character_material.cpp
   engine/platform/common/inspection_character_lighting.cpp engine/platform/common/inspection_character_world.cpp
-  engine/platform/common/inspection_rig.cpp)
+  engine/platform/common/inspection_rig.cpp engine/platform/common/inspection_locomotion.cpp)
 target_include_directories(sh3_diagnostics PUBLIC engine/platform/common/include)
 target_link_libraries(sh3_diagnostics PUBLIC sh3_ports PRIVATE sh3_options)
 
@@ -178,7 +181,32 @@ endif()
 
 include(CTest)
 if(BUILD_TESTING AND NOT NINTENDO_3DS)
+  add_executable(test_locomotion_probe tests/cpp/test_locomotion_probe.cpp)
+  target_include_directories(test_locomotion_probe PRIVATE tests/cpp)
+  target_link_libraries(test_locomotion_probe PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME locomotion_probe COMMAND test_locomotion_probe)
+  set_tests_properties(locomotion_probe PROPERTIES LABELS "unit;integration;contract;animation;lifecycle" TIMEOUT 15)
+  add_executable(test_locomotion_clock tests/cpp/test_locomotion_clock.cpp)
+  target_include_directories(test_locomotion_clock PRIVATE tests/cpp)
+  target_link_libraries(test_locomotion_clock PRIVATE sh3_domain sh3_options)
+  add_test(NAME locomotion_clock COMMAND test_locomotion_clock)
+  set_tests_properties(locomotion_clock PROPERTIES LABELS "unit;contract;animation" TIMEOUT 10)
+  add_executable(test_locomotion_pose tests/cpp/test_locomotion_pose.cpp)
+  target_include_directories(test_locomotion_pose PRIVATE tests/cpp)
+  target_link_libraries(test_locomotion_pose PRIVATE sh3_domain sh3_options)
+  add_test(NAME locomotion_pose COMMAND test_locomotion_pose)
+  set_tests_properties(locomotion_pose PROPERTIES LABELS "unit;contract;animation" TIMEOUT 10)
+  add_executable(test_locomotion_update tests/cpp/test_locomotion_update.cpp)
+  target_include_directories(test_locomotion_update PRIVATE tests/cpp)
+  target_link_libraries(test_locomotion_update PRIVATE sh3_domain sh3_options)
+  add_test(NAME locomotion_update COMMAND test_locomotion_update)
+  set_tests_properties(locomotion_update PROPERTIES LABELS "unit;contract;animation" TIMEOUT 30)
   add_executable(test_inspection_rig tests/cpp/test_inspection_rig.cpp)
+  add_executable(test_inspection_locomotion tests/cpp/test_inspection_locomotion.cpp)
+  target_include_directories(test_inspection_locomotion PRIVATE tests/cpp)
+  target_link_libraries(test_inspection_locomotion PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME inspection_locomotion COMMAND test_inspection_locomotion)
+  set_tests_properties(inspection_locomotion PROPERTIES LABELS "unit;contract;animation" TIMEOUT 60)
   target_include_directories(test_inspection_rig PRIVATE tests/cpp)
   target_link_libraries(test_inspection_rig PRIVATE sh3_application sh3_diagnostics sh3_options)
   add_test(NAME inspection_rig COMMAND test_inspection_rig)
@@ -195,7 +223,15 @@ if(BUILD_TESTING AND NOT NINTENDO_3DS)
     engine/platform/3ds/render/rig_renderer.cpp engine/platform/3ds/render/material_state.cpp)
   target_include_directories(test_ctr_rig PRIVATE tests/cpp/render_doubles tests/cpp engine/platform/3ds/render)
   target_link_libraries(test_ctr_rig PRIVATE sh3_application sh3_diagnostics sh3_options)
-  foreach(scenario IN ITEMS normal invalid busy flush draw init_CITRO3D init_TARGET init_SHADER
+  add_executable(test_ctr_locomotion_controls tests/cpp/test_ctr_locomotion_controls.cpp
+    tests/cpp/render_doubles/sdk.cpp engine/platform/3ds/render/rig_renderer.cpp
+    engine/platform/3ds/render/material_state.cpp)
+  target_include_directories(test_ctr_locomotion_controls PRIVATE tests/cpp/render_doubles tests/cpp)
+  target_compile_definitions(test_ctr_locomotion_controls PRIVATE SH3_BUILD_ID="host-sdk-double")
+  target_link_libraries(test_ctr_locomotion_controls PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME locomotion_ctr_controls COMMAND test_ctr_locomotion_controls)
+  set_tests_properties(locomotion_ctr_controls PROPERTIES LABELS "integration;contract;sdk-double;lifecycle" TIMEOUT 15)
+  foreach(scenario IN ITEMS normal locomotion invalid busy flush draw init_CITRO3D init_TARGET init_SHADER
       init_EMPTY_SHADER init_PROGRAM init_VERTEX_SHADER init_UNIFORM init_VERTICES
       init_ATTRIBUTES_0 init_ATTRIBUTES_1 init_ATTRIBUTES_2 init_BUFFER
       init_TEXTURE_READ_0 init_TEXTURE_READ_12 init_TEXTURE_0 init_TEXTURE_12
@@ -311,6 +347,18 @@ if(BUILD_TESTING AND NOT NINTENDO_3DS)
   # Host-only observer domain. Nintendo targets never depend on the PCSX2 tooling.
   find_package(Threads REQUIRED)
   find_package(Python3 REQUIRED COMPONENTS Interpreter)
+  add_test(NAME locomotion_clock_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/locomotion_clock_oracle.py $<TARGET_FILE:test_locomotion_clock>)
+  set_tests_properties(locomotion_clock_oracle PROPERTIES LABELS "integration;contract;animation" TIMEOUT 30)
+  add_test(NAME locomotion_pose_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/locomotion_pose_oracle.py $<TARGET_FILE:test_locomotion_pose>)
+  set_tests_properties(locomotion_pose_oracle PROPERTIES LABELS "integration;contract;animation" TIMEOUT 30)
+  add_test(NAME locomotion_update_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/locomotion_update_oracle.py $<TARGET_FILE:test_locomotion_update>)
+  set_tests_properties(locomotion_update_oracle PROPERTIES LABELS "integration;contract;animation" TIMEOUT 30)
+  add_test(NAME locomotion_rig_wire_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/locomotion_rig_wire_oracle.py $<TARGET_FILE:test_inspection_locomotion>)
+  set_tests_properties(locomotion_rig_wire_oracle PROPERTIES LABELS "integration;contract;animation" TIMEOUT 120)
   add_test(NAME character_material_wire COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/tests/character_material_wire_oracle.py $<TARGET_FILE:test_character_material>)
   add_test(NAME character_lighting_wire COMMAND ${Python3_EXECUTABLE}

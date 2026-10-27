@@ -16,6 +16,7 @@ import pytest
         "build_animation_probe.sh",
         "build_character_probe.sh",
         "build_character_world_probe.sh",
+        "build_heather_probe.sh",
     ]
 )
 def script(request):

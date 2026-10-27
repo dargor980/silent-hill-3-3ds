@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
                 return -1;
             };
         if (argc > 2 && std::strcmp(argv[2], "read-failure") == 0)
-            api.error = +[](FILE *) { return 1; };
+            api.error = +[](FILE *) noexcept { return 1; };
         if (argc > 2 && std::strcmp(argv[2], "short-read") == 0)
             api.read = +[](void *p, std::size_t s, std::size_t n, FILE *f) {
                 return std::fread(p, s, n > 1 ? n - 1 : n, f);
@@ -192,7 +192,7 @@ int main(int argc, char **argv) {
           ports::FileError::verify_failed);
     tm.crc ^= 1;
     auto io = api;
-    io.error = +[](FILE *) { return 1; };
+    io.error = +[](FILE *) noexcept { return 1; };
     CHECK(platform::read_rig_texture("own", tm, tex.data(), tex.size(), io) ==
           ports::FileError::read_failed);
     io = api;

@@ -36,6 +36,9 @@ struct RigVertexScratch {
     CharacterDrawVertex draw{};     // Inspection space, prepared once per unique vertex.
 };
 [[nodiscard]] bool valid_rig(const InspectionRig &) noexcept;
+// Shared geometry/sample validation, excluding SRI1's single-clip timing.
+// nullptr means valid; otherwise a static field name, with no allocation.
+[[nodiscard]] const char *rig_payload_error(const InspectionRig &) noexcept;
 // Validate immutable input once. Storage and scratch space belong to the caller.
 void evaluate_rig(const InspectionRig &, std::uint32_t counter, RigPose &) noexcept;
 void rig_palette(const InspectionRig &, const RigPose &, RigPalette &) noexcept;

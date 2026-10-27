@@ -32,3 +32,27 @@ int shaderInstanceGetUniformLocation(shaderInstance_s *, const char *);
 void *linearAlloc(std::size_t);
 void linearFree(void *);
 Result GSPGPU_FlushDataCache(const void *, std::size_t);
+
+// Entry-point doubles; renderer tests do not call these services.
+inline constexpr u32 KEY_A = 1, KEY_B = 2, KEY_SELECT = 4, KEY_START = 8,
+    KEY_DRIGHT = 16, KEY_DLEFT = 32, KEY_DUP = 64, KEY_DDOWN = 128,
+    KEY_R = 256, KEY_L = 512, KEY_X = 1024, KEY_Y = 2048, KEY_ZL = 16384, KEY_ZR = 32768;
+inline constexpr int GFX_BOTTOM = 1;
+inline constexpr std::uint64_t SYSCLOCK_ARM11 = 268123480;
+enum APT_HookType { APTHOOK_ONSUSPEND, APTHOOK_ONSLEEP, APTHOOK_ONRESTORE, APTHOOK_ONWAKEUP, APTHOOK_ONEXIT };
+struct aptHookCookie {};
+void aptHook(aptHookCookie *, void (*)(APT_HookType, void *), void *);
+void aptUnhook(aptHookCookie *);
+bool aptMainLoop();
+Result APT_CheckNew3DS(bool *);
+void osSetSpeedupEnable(bool);
+void gfxInitDefault();
+void gfxExit();
+void consoleInit(int, void *);
+void gfxFlushBuffers();
+void gfxSwapBuffers();
+void gspWaitForVBlank();
+void hidScanInput();
+u32 hidKeysHeld();
+u32 hidKeysDown();
+std::uint64_t svcGetSystemTick();

@@ -12,7 +12,8 @@ RigRenderer::RigRenderer(const domain::InspectionRig &model, ports::IRigTextures
     : model_(model), count_(model.index_count) {
     static_assert(sizeof(domain::CharacterDrawVertex) == 36);
     static_assert(std::is_standard_layout_v<domain::CharacterDrawVertex>);
-    if (!domain::valid_rig(model))
+    // Rendering consumes a published pose; SRI1/SRI2 timing belongs to their readers/evaluators.
+    if (domain::rig_payload_error(model))
         return;
     stage_ = "CITRO3D";
     citro_ = C3D_Init(C3D_DEFAULT_CMDBUF_SIZE);

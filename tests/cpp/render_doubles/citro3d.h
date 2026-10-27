@@ -1,4 +1,5 @@
 #pragma once
+float C3D_GetDrawingTime();
 #include "3ds.h"
 
 inline constexpr int C3D_DEFAULT_CMDBUF_SIZE = 0x40000, C3D_FRAME_SYNCDRAW = 1;

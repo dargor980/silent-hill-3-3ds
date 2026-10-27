@@ -24,6 +24,10 @@ int main(int argc, char **argv) {
     const std::string scenario = argv[1];
     static sh3::domain::InspectionRig m;
     make_rig(m);
+    if (scenario == "locomotion") {
+        m.clip_id = m.increment = 0; // SRI2 does not use the legacy SRI1 clock.
+        CHECK(!sh3::domain::valid_rig(m) && !sh3::domain::rig_payload_error(m));
+    }
     m.index_count = 39;
     m.material_count = 13;
     for (unsigned i = 0; i < 13; ++i) {
@@ -67,7 +71,7 @@ int main(int argc, char **argv) {
                 CHECK(renderer.present({}, mesh.data(), 39) == R::unavailable);
                 CHECK(!open_frame);
             } else {
-                CHECK(scenario == "normal");
+                CHECK(scenario == "normal" || scenario == "locomotion");
                 for (unsigned i = 0; i < 1000; ++i) {
                     mesh[0].position[0] = i % 2 ? .1F : 0;
                     expect();
