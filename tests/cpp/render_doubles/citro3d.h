@@ -48,6 +48,7 @@ C3D_AttrInfo *C3D_GetAttrInfo();
 void AttrInfo_Init(C3D_AttrInfo *);
 int AttrInfo_AddLoader(C3D_AttrInfo *, int, int, int);
 C3D_BufInfo *C3D_GetBufInfo();
+void C3D_SetBufInfo(C3D_BufInfo *);
 void BufInfo_Init(C3D_BufInfo *);
 int BufInfo_Add(C3D_BufInfo *, const void *, std::ptrdiff_t, int, std::uint64_t);
 void Mtx_PerspTilt(C3D_Mtx *, float, float, float, float, bool);

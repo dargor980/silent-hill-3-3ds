@@ -73,6 +73,22 @@ int main(int argc, char **argv) {
     const auto *text = reinterpret_cast<const std::uint8_t *>("123456789");
     CHECK(inspection_crc32(text, 9) == 0xCBF43926);
     CHECK(inspection_crc32(text, 0) == 0);
+    std::array<std::uint8_t, 4096> crc_input{};
+    for (unsigned i = 0; i < crc_input.size(); ++i)
+        crc_input[i] = static_cast<std::uint8_t>(i);
+    std::uint32_t reference = 0xFFFFFFFFU;
+    for (auto byte : crc_input) {
+        reference ^= byte;
+        for (unsigned bit = 0; bit < 8; ++bit)
+            reference = (reference >> 1) ^ ((reference & 1) ? 0xEDB88320U : 0U);
+    }
+    reference = ~reference;
+    CHECK(inspection_crc32(crc_input.data(), crc_input.size()) == reference);
+    for (std::size_t split : {0U, 1U, 255U, 256U, 1023U, 4096U}) {
+        const auto prefix = inspection_crc32(crc_input.data(), split);
+        CHECK(inspection_crc32(crc_input.data() + split, crc_input.size() - split, prefix) ==
+              reference);
+    }
     CHECK(
         upload_inspection_pixels({rgba.data(), rgba.size()}, output.data() + 1, inspection_bytes));
     CHECK(output.front() == 0xA5 && output.back() == 0xA5);

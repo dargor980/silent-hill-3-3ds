@@ -70,9 +70,9 @@ relacionadas y cobertura completa. [HM-T2a completada](docs/execution/f06-01-hea
 primera cadena de carrera, escritura X, corrección Y y matriz verificadas en
 PCSX2; 16 estados y 52 pruebas sintéticas. El resultado espacial coincide con
 HL; hay +87 ciclos EE de diferencia, sin equivalencia temporal acreditada.
-[HM-T2b en curso](docs/execution/f06-01-heather-movement-profiles.md): 187 estados
-nuevos, caminar/parada, giro derecho, reloj PAL de 2 ticks y suelo/registro
-de formas verificados en su alcance acotado; 258 pruebas sintéticas. La suma
+[HM-T2b en curso](docs/execution/f06-01-heather-movement-profiles.md): 387 estados
+nuevos, caminar/parada, giros derecho/izquierdo y en marcha, reloj PAL de 2 ticks y suelo/registro
+de formas verificados en su alcance acotado; 496 pruebas sintéticas. La suma
 de altura coincide con los mismos operandos por continuación y paso.
 Un contacto de `tpf1.cld` enlaza candidato, corrector, posición y matriz;
 el recurso completo coincide con A/B. Cuatro llamadas verifican el plano sin
@@ -81,8 +81,143 @@ al centro están aisladas; una actualización completa atribuye el microajuste
 X al redondeo de dos mitades del movimiento, con cuatro retornos de corrección
 cero y publicación exacta en posición/matriz. Seis paredes y sus aristas
 compartidas quedan inventariadas como referencias para la captura de esquinas.
-Pendientes contactos y giros
-restantes, ciclos y autoridad del movimiento antes del controlador y la habitación.
+La reproducción de izquierda y giro en marcha aporta tres ventanas con
+escrituras de posición/orientación y matrices verificadas, con restauraciones
+declaradas. El recorrido de pared verifica dos candidatos 134/138 y su filtrado,
+con publicación X/Z y matriz; el segundo se descarta en las llamadas auditadas.
+Otra consulta conserva ambos con vector idéntico; sus escrituras X/Z y la
+matriz final están verificadas. Dos llamadas al combinador ya están capturadas
+y auditadas: copia inicial y vectores iguales sin duplicar XYZ. Una escritura
+de descarte angular y su retorno verifican el tipo 2→−1 y la publicación de
+una sola corrección. La búsqueda restante llega a la parada final sin operandos
+distintos bajo el filtro acotado. Otro recorrido de 1.704 fotogramas y su final
+C11 están auditados. Esa reproducción verifica una combinación de vectores
+distintos de las paredes 25/26, en 65 ciclos, y la publicación X/Z y matriz
+de la misma actualización. C21–C68 verifican sus dos iteraciones, cuatro
+correcciones cuantizadas y el balance exacto del desplazamiento; las llamadas
+con residuo XYZ cero conservan contactos. La diferencia temporal de la
+reproducción permanece explícita. C71–C73 verifican otra rama: el tipo 2 de
+la forma 54 se descarta frente al tipo 1 de la forma 55, con una sola
+corrección publicada en el banco 0. Los umbrales pendientes tienen pruebas
+de frontera; C74 y C76 cierran dos búsquedas acotadas sin hits restantes,
+incluidas las condiciones previas vigiladas. Las diferencias de RAM/ciclos
+quedan registradas. El nuevo recorrido desde C76 queda auditado y preservado en C77.
+C79–C90 verifican una combinación oblicua de formas 77/78 con eje X compartido,
+su límite X y cuantización; la suma intermedia inexacta no determina el modo
+general de redondeo. C91–C94 alcanzan la comparación de paralelismo y conservan
+ambos candidatos 136/137 porque el ángulo queda fuera del umbral. El descarte
+de paralelos, opuestos y otras combinaciones siguen abiertos.
+C95 alcanza el final sin descartes nuevos; su estado espacial coincide con
+C77, aunque están en fases de ejecución distintas. Seis escrituras globales
+de flags se cotejaron estáticamente, sin demostrar inaccesibilidad de opuestos.
+El recorrido desde C95 está auditado en C96 (4411 fotogramas); C97 declara
+la décima restauración y C98 llega al final sin los descartes vigilados.
+El inventario geométrico de 139 paredes identifica el par colineal 14/60
+como nuevo objetivo, sin acreditar contacto. Su recorrido está auditado
+en C99 (26446 fotogramas). C101 no detecta el par; C102 alcanza el final
+nativo con RAM/CPU decodificada/ciclo iguales a C99 y cinco bytes EE
+distintos sin atribuir. C103 registra la duodécima restauración; C104
+confirma entrada en la zona y C105–C106 verifican la aceptación e incorporación
+de la pared 14. C107–C108 cierran el recorrido sin aceptar la 60 ni activar
+los descartes vigilados. C109 restaura una copia de C104 con autorización:
+RAM/registros coinciden y el margen del planificador cambia 1727→16.
+Las paredes perpendiculares 12/13 están inventariadas; su efecto en el acceso
+sigue pendiente. `wall60-gap-v1` quedó preservada en C110 y auditada: 10294 fotogramas,
+267 tramos y 16 solapamientos izquierda/derecha conservados literalmente.
+C111 verifica la decimocuarta restauración contra su semilla, incluido el
+prefijo EE completo. C112–C113 terminan sin aceptar 60/12/13; el final
+coincide con C110 en RAM/CPU/FPR/VF/prefijo EE y ciclo. C114 inicia la
+decimoquinta restauración y C115–C120 prueban que la pared 60 sí se consulta:
+el helper devuelve 0 y se omite la incorporación, sin cambiar contador ni
+posición. C121–C132 (sin C127, copia de carga) aíslan el rechazo por límites
+separados en X/Z y la lectura de flags VU que devuelve 0. C133–C135
+verifican otra consulta con ↑: la separación baja a 499,9375 en X y 98,5
+en Z, todavía sin solapamiento. C136–C137 cierran la región más estrecha
+sin nuevas coincidencias ni pasos de límites observados. El final coincide
+con C110 en RAM/CPU/FPR/VF y ciclo; ocho bytes EE distintos quedan sin
+atribuir. No hubo restauración después de C114.
+El [análisis de acceso a la pared 60](docs/execution/f06-01-heather-wall60-access.md)
+define un punto de espera exterior y distingue el extremo 24/60 del hueco
+14/60. **El usuario pospone esa búsqueda el 2026-10-29**, con C148 preservada.
+Se avanza con [HMN v1](schemas/heather-movement-native-v1.md): un planificador
+nativo de inspección que separa movimiento, pose y contactos.
+[HM-T3a/b completadas](docs/execution/f06-01-heather-native-movement.md):
+9/9 CTest seleccionadas en Release y sanitizadores, cobertura individual
+100 % de líneas/ramas y dominio compilado para ARM.
+[HM-T3c completada](docs/execution/f06-01-heather-contact-animation.md):
+contactos por puerto, corrección XYZ y pose HL publicados conjuntamente;
+12/12 CTest en Release/sanitizadores/GCC, cobertura individual 100/100 y
+aplicación ARM compilada.
+[HM-T3d completada](docs/execution/f06-01-heather-movement-controls.md):
+controles, tiempo fijo de 40 ms, solicitudes pendientes y suspensión;
+14/14 CTest en Release/sanitizadores/GCC y adaptador ARM compilado.
+[HM-T4a completada](docs/execution/f06-01-heather-room-profile.md): hp34,
+entrada propia validada geométricamente y perfil plano de 32 barreras;
+340 regresiones y fuentes A/B verificadas. La primera composición prevé
+material neutro en 29 formas, además de Heather y vidrio texturados.
+[HM-T4b.1 completada](docs/execution/f06-01-heather-room-contacts-contract.md):
+contrato numérico exacto y 126 vectores sintéticos con oráculo independiente.
+[HM-T4b.2 completada](docs/execution/f06-01-heather-room-contacts.md):
+núcleo y puerto exactos, 894 casos con atomicidad, gates de cobertura/memoria
+y compilación ARM.
+[HM-T4b.3 completada](docs/execution/f06-01-heather-room-preparation.md):
+paquetes privados A/B idénticos con las 32 cajas y suelo, recorrido cotejado
+con oráculo y C++, 4023 regresiones Python, cobertura y ARM verificados.
+[HM-T4c.1 completada](docs/execution/f06-01-heather-room-scene.md): 31 formas,
+SRI2 original y materiales diagnósticos preparados A/B; 472 cotejos nativos,
+encuadre de 232 poses y presupuesto de 38.33 MiB, gates y ARM verificados.
+[HM-T4c.2 completada](docs/execution/f06-01-heather-room-runtime.md): bucle con
+render, controles, tiempo fijo y contactos; pausa/reinicio, HOME+tapa y errores
+validados en host. Replays privados A/B a 25/60/143 Hz, 76/75 CTest en
+Release/sanitizadores, presupuesto 40.33 MiB y ejecutable ARM compilado.
+[HM-T4d completada](docs/execution/f06-01-heather-room-delivery.md): build
+`ad84b65cd58d`, ZIP privados A/B idénticos, ruta SD corregida y replay del
+paquete extraído aprobado. [Protocolo HM-T5](docs/compatibility/heather-room.md)
+incluido. Instalado y releído en SD (20 archivos); tarjeta expulsada de forma
+segura. **HM-T5 no aceptada**: inmovilidad percibida y carga de unos 20 s.
+[Corrección instalada en SD](docs/execution/f06-01-heather-room-fault.md), build
+`217e1ace6571`; 20 archivos verificados y tarjeta expulsada. La repetición física
+mejora carga y movimiento, pero el usuario informa avance de Step en PAUSED; HM-T5 no aceptada.
+[Filtro de R instalado en SD](docs/execution/f06-01-heather-room-pause.md), build
+`de58ea2bb966`: rechaza pulsos breves y acepta un paso por pulsación estable.
+Regresiones, ARM, paquetes A/B y prueba de pausa en Azahar verificados;
+20 archivos releídos y verificados, build anterior respaldado y SD expulsada.
+La repetición física comunicada conserva Step/Q12 durante dos esperas de
+10 s y avanza un paso por R, incluso al mantenerlo 2 s. L confirma en una
+repetición aislada Step=0, Clip=101, Q12=0 y Error=none. Tapa y HOME, cada
+uno durante 10 s en pausa, conservan estado/contadores y recuperan la imagen
+sin error. Tapa y HOME en marcha recuperan RUNNING sin error, con imagen
+normal y Step en aumento; las observaciones no validan el ritmo temporal. El resto de
+HM-T5 y el origen de la señal siguen pendientes.
+[Color y luz de diagnóstico instalados en SD](docs/execution/f06-01-heather-room-diagnostic.md), build
+`161090bc9fd5`: habitación y muebles distinguibles en Azahar; controles,
+ARM y paquetes A/B verificados. Los 20 archivos SD fueron releídos, el build
+anterior respaldado y la tarjeta expulsada. El usuario confirma «funciona bien»
+en consola; sin nuevas métricas ni detalle por caso, HM-T5 sigue parcial.
+HM-T5 aplazada por el usuario. [HM-T4c.3.1 completada](docs/execution/f06-01-heather-room-material-candidates.md):
+inventario candidato de materiales, 44 variantes por copia y 21 495 808
+píxeles cotejados con oráculo GS; nueve combinaciones internas más vidrio,
+26.5 MiB con Heather. HM-T4c.3.2 completada: 29 asignaciones originales,
+26 formas enviadas al GS y tres omitidas por estado; 31 780 registros
+cotejados en dos cuadros. [HM-T4c.3.3 completada](docs/execution/f06-01-heather-room-materials.md):
+materiales originales integrados, 26 formas visibles en orden y tres omitidas,
+luz fija de captura; presupuesto 49.33 MiB, host/ARM y A/B verificados.
+Build `c3aae59d1a70` observado en Azahar e instalado en SD: 29 archivos
+releídos y verificados, respaldo anterior conservado y expulsión segura confirmada.
+El usuario confirma «prueba realizada, funciona correctamente» en consola.
+Sin nuevas métricas ni resultados por caso, HM-T5 sigue parcial;
+la fidelidad completa PS2 permanece pendiente.
+Por petición del usuario, mediciones y pruebas adicionales de HM-T5 quedan
+aplazadas. Continúa [F06.02/heather-turns](docs/specs/sh3-3ds/heather-turns.md):
+[HG-T1](docs/execution/f06-02-heather-turns-inventory.md) y
+[HG-T2 completadas](docs/execution/f06-02-heather-turns-cycles.md): ciclos originales
+107/108 y cuatro transiciones espera↔giro, 70 actualizaciones/2520 matrices,
+máximo 0,000468465 frente a 0,001; 214 pruebas y cobertura nueva 100/100.
+Sigue HG-T3, contrato y vectores nativos; el build de consola se conserva.
+La regla general de colisión sigue pendiente.
+Contador corregido y discrepancia de planificador tras restaurar
+registrados. Pendientes variantes de contacto, respuesta de esquina, cruce exacto de ±pi,
+ciclos y autoridad general del movimiento; no bloquean este perfil acotado.
 [Spec HM](docs/specs/sh3-3ds/heather-movement.md).
 
 

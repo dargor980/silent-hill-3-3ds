@@ -1,0 +1,99 @@
+{
+  "profile": "heather-hp34-inspection-v1",
+  "schema_version": 1,
+  "status": "specified_not_integrated",
+  "catalog_sha256": "39fff8337f51b21d520c8f35a1b9ba2fd8718d80fd40ff0b735d929832230d9d",
+  "extraction_receipt_sha256": "74720589caadefaf2f88a5ea0642ed080cc0d81ffab036cacf0bc5f051f3a943",
+  "resources": {
+    "map": {
+      "id": "asset:464325b2533b0e0a0702d4ad52f7050d41e9a02ba308dea7bce2a3268e83d4ae",
+      "size": 2134960,
+      "sha256": "fe6661eeb4d7df7e3baf6cd015452e1c9d3548416a862e503e1f2370a1f289c9"
+    },
+    "collision": {
+      "id": "asset:76399152c0b910b5cf778ce66b270753bbd725bc09e67fd99fbd8d562ce53cc4",
+      "size": 3920,
+      "sha256": "e49f5c97048fe95dd9109413bc37c854078fd0defeead3d4dbdbf8acdbfbaff0"
+    },
+    "external_texture": {
+      "id": "asset:0af58e26e1e91e71293f018ef07da3daed14ad44fd94d4ecea6b7d4eb4d72c3b",
+      "size": 69808,
+      "sha256": "65173379ae86c13512b0c546edf68ae3a82b79b7267f5b011a39d8d44ccf35e4"
+    }
+  },
+  "heather": {
+    "appearance": "original_normal_game",
+    "model_resource": 522,
+    "animation_resource": 525,
+    "package_manifest_sha256": "0f8251b66f737b00525bb092799eff9ace799aa6fd6fbc2c96b8b590a32e7af1",
+    "sri_sha256": "2bc96e9f7fec9e52b21186d033ee02694b67808098bf101d304fd944c928fc0b",
+    "clips": [101, 109, 113]
+  },
+  "coordinates": {
+    "units": "original_not_meters",
+    "map_model": "identity_basis_plus_origin",
+    "origin": [100000, 0, 140000],
+    "render_basis_diagonal": [1, -1, -1],
+    "render_scale": 0.002,
+    "separate_asset_normalization": false
+  },
+  "spawn": {
+    "provenance": "authored_native_inspection_not_original_door",
+    "world": [100275, 0, 140000],
+    "yaw": 0,
+    "clip": 101,
+    "ordinal": 0
+  },
+  "contacts": {
+    "profile": "static-xz-aabb-stop-v1",
+    "cell": 0,
+    "expected_group_counts": [1, 4, 26, 3, 0],
+    "floor": {"group": 0, "index": 0},
+    "ceiling_without_vertical_motion": {"group": 2, "index": 4},
+    "other_referenced_records": "blocking_xz_aabb_regardless_of_filter_word",
+    "expected_blockers": 32,
+    "footprint_half_extent": 175,
+    "guard": 1,
+    "contact_boundary": "closed",
+    "response": "reject_whole_translation_keep_from",
+    "sweep": "continuous_segment_against_expanded_boxes",
+    "vertical_motion": false,
+    "sliding": false,
+    "dynamic_actors": false
+  },
+  "inspection_route": {
+    "provenance": "authored_geometric_clearance_not_recorded_gameplay",
+    "local_xz": [[230, -150], [320, -150], [320, 400], [230, 400], [230, -150]],
+    "include_spawn_to_first": true
+  },
+  "camera": {
+    "profile": "fixed_native_inspection_not_ps2_camera",
+    "eye_local": [275, -1000, -700],
+    "target_local": [275, -550, 100],
+    "vertical_fov_degrees": 70,
+    "near_render_units": 0.02,
+    "far_render_units": 12,
+    "framing_validation": "pending_HM-T4c"
+  },
+  "render": {
+    "expected_shapes": 31,
+    "expected_vertices": 15882,
+    "expected_triangles": 9300,
+    "verified_glass_shape_offsets": [448, 928],
+    "other_shapes_initial_material": "explicit_neutral_diagnostic",
+    "full_original_material_binding": "pending",
+    "ceiling_culling": "no_implicit_removal"
+  },
+  "budgets": {
+    "accounted_runtime_bytes": 67108864,
+    "resident_texture_bytes": 33554432,
+    "texture_staging_bytes": 2097152,
+    "map_geometry_bytes": 2097152,
+    "contact_working_bytes": 4096,
+    "controller_and_controls_bytes": 32768,
+    "allocation_per_step": false,
+    "simulation_step_us": 40000,
+    "max_updates_per_sample": 3,
+    "performance_target": "30_presentations_per_second_subject_to_measurement"
+  }
+}

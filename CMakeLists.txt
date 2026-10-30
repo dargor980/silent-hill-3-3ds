@@ -33,7 +33,20 @@ add_library(sh3_domain engine/domain/lifecycle.cpp engine/domain/diagnostic_opti
   engine/domain/render_scene.cpp engine/domain/animation_pose.cpp engine/domain/character_skinning.cpp
   engine/domain/character_lighting.cpp engine/domain/character_world.cpp engine/domain/inspection_rig.cpp
   engine/domain/locomotion_clock.cpp engine/domain/locomotion_pose.cpp
-  engine/domain/locomotion_update.cpp engine/domain/inspection_locomotion.cpp)
+  engine/domain/locomotion_update.cpp engine/domain/inspection_locomotion.cpp
+  engine/domain/inspection_movement.cpp engine/domain/room_contacts.cpp engine/domain/room_scene.cpp)
+# Native movement profile fixes expression evaluation; it does not emulate EE/VU rounding.
+set_source_files_properties(engine/domain/inspection_movement.cpp PROPERTIES
+  COMPILE_OPTIONS "-fno-fast-math;-ffp-contract=off")
+set_source_files_properties(engine/domain/room_scene.cpp PROPERTIES
+  COMPILE_OPTIONS "-fno-fast-math;-ffp-contract=off")
+# Compiler metadata for the complete HRC stack bound (no runtime instrumentation).
+set_source_files_properties(engine/domain/room_contacts.cpp
+  engine/platform/common/room_movement_contacts.cpp PROPERTIES COMPILE_OPTIONS "-fstack-usage")
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  set_property(SOURCE engine/domain/room_contacts.cpp engine/platform/common/room_movement_contacts.cpp
+    APPEND PROPERTY COMPILE_OPTIONS "-fcallgraph-info=su")
+endif()
 target_include_directories(sh3_domain PUBLIC engine/domain/include)
 target_link_libraries(sh3_domain PRIVATE sh3_options)
 
@@ -43,7 +56,8 @@ target_link_libraries(sh3_ports INTERFACE sh3_domain)
 
 add_library(sh3_application engine/application/diagnostic_app.cpp engine/application/options_store.cpp
   engine/application/render_probe.cpp engine/application/animation_probe.cpp engine/application/rig_probe.cpp
-  engine/application/locomotion_probe.cpp)
+  engine/application/locomotion_probe.cpp engine/application/inspection_actor.cpp
+  engine/application/movement_controller.cpp engine/application/room_loop.cpp)
 target_include_directories(sh3_application PUBLIC engine/application/include)
 target_link_libraries(sh3_application PUBLIC sh3_ports PRIVATE sh3_options)
 
@@ -53,11 +67,20 @@ add_library(sh3_diagnostics engine/platform/common/bounded_log.cpp engine/platfo
   engine/platform/common/inspection_crc32.cpp engine/platform/common/inspection_animation.cpp
   engine/platform/common/inspection_character.cpp engine/platform/common/inspection_character_material.cpp
   engine/platform/common/inspection_character_lighting.cpp engine/platform/common/inspection_character_world.cpp
-  engine/platform/common/inspection_rig.cpp engine/platform/common/inspection_locomotion.cpp)
+  engine/platform/common/inspection_rig.cpp engine/platform/common/inspection_locomotion.cpp
+  engine/platform/common/room_movement_contacts.cpp engine/platform/common/room_scene.cpp
+  engine/platform/common/room_runtime.cpp)
 target_include_directories(sh3_diagnostics PUBLIC engine/platform/common/include)
 target_link_libraries(sh3_diagnostics PUBLIC sh3_ports PRIVATE sh3_options)
 
 if(NINTENDO_3DS)
+  add_library(sh3_room_material engine/platform/3ds/render/room_material_state.cpp
+    engine/platform/3ds/render/material_state.cpp)
+  target_include_directories(sh3_room_material PUBLIC engine/platform/3ds/render)
+  target_link_libraries(sh3_room_material PUBLIC sh3_domain PRIVATE sh3_options citro3d)
+  add_library(sh3_movement_controls engine/platform/3ds/movement_controls.cpp)
+  target_include_directories(sh3_movement_controls PUBLIC engine/platform/3ds)
+  target_link_libraries(sh3_movement_controls PUBLIC sh3_application PRIVATE sh3_options)
   enable_language(ASM)
   find_package(Python3 REQUIRED COMPONENTS Interpreter)
   function(sh3_add_inspection_shader target source)
@@ -134,6 +157,14 @@ if(NINTENDO_3DS)
     DESCRIPTION "Private clip 0x1449 - skeleton axes" AUTHOR "SH3 3DS contributors")
   ctr_create_3dsx(sh3_animation_probe SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_animation_probe.smdh")
   sh3_add_inspection_shader(character_shader engine/platform/3ds/render/character.v.pica)
+  add_executable(sh3_heather_room engine/platform/3ds/render/room_entry.cpp
+    engine/platform/3ds/render/room_main.cpp engine/platform/3ds/render/room_renderer.cpp)
+  target_compile_definitions(sh3_heather_room PRIVATE SH3_BUILD_ID="${identity}")
+  target_link_libraries(sh3_heather_room PRIVATE sh3_application sh3_diagnostics sh3_movement_controls
+    sh3_room_material sh3_options character_shader_data citro3d)
+  ctr_generate_smdh(OUTPUT "sh3_heather_room.smdh" NAME "SH3 Heather room"
+    DESCRIPTION "Private hp34 - diagnostic color and light" AUTHOR "SH3 3DS contributors")
+  ctr_create_3dsx(sh3_heather_room SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_heather_room.smdh")
   add_executable(sh3_heather_probe engine/platform/3ds/render/rig_main.cpp
     engine/platform/3ds/render/rig_renderer.cpp engine/platform/3ds/render/material_state.cpp)
   target_compile_definitions(sh3_heather_probe PRIVATE SH3_BUILD_ID="${identity}")
@@ -181,11 +212,61 @@ endif()
 
 include(CTest)
 if(BUILD_TESTING AND NOT NINTENDO_3DS)
+  add_executable(test_room_runtime tests/cpp/test_room_runtime.cpp tests/cpp/room_sdk.cpp
+    engine/platform/3ds/render/room_renderer.cpp engine/platform/3ds/render/room_main.cpp
+    engine/platform/3ds/render/room_material_state.cpp engine/platform/3ds/render/material_state.cpp
+    engine/platform/3ds/movement_controls.cpp)
+  target_include_directories(test_room_runtime PRIVATE tests/cpp tests/cpp/render_doubles
+    engine/platform/3ds engine/platform/3ds/render)
+  target_compile_definitions(test_room_runtime PRIVATE SH3_BUILD_ID="synthetic-room")
+  target_link_libraries(test_room_runtime PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_executable(test_room_loop tests/cpp/test_room_loop.cpp)
+  target_include_directories(test_room_loop PRIVATE tests/cpp)
+  target_link_libraries(test_room_loop PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME room_loop COMMAND test_room_loop)
+  set_tests_properties(room_loop PROPERTIES LABELS "integration;contract;render;lifecycle" TIMEOUT 30)
+  add_executable(test_room_material tests/cpp/test_room_material.cpp
+    engine/platform/3ds/render/room_material_state.cpp engine/platform/3ds/render/material_state.cpp)
+  target_include_directories(test_room_material PRIVATE tests/cpp tests/cpp/render_doubles engine/platform/3ds/render)
+  target_link_libraries(test_room_material PRIVATE sh3_domain sh3_options)
+  add_test(NAME room_material COMMAND test_room_material)
+  set_tests_properties(room_material PROPERTIES LABELS "unit;integration;render;sdk-double" TIMEOUT 15)
+  add_executable(test_room_scene tests/cpp/test_room_scene.cpp)
+  target_include_directories(test_room_scene PRIVATE tests/cpp)
+  target_link_libraries(test_room_scene PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME room_scene COMMAND test_room_scene)
+  set_tests_properties(room_scene PROPERTIES LABELS "unit;integration;contract;render" TIMEOUT 30)
+  add_executable(test_room_contacts tests/cpp/test_room_contacts.cpp)
+  target_include_directories(test_room_contacts PRIVATE tests/cpp)
+  target_link_libraries(test_room_contacts PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME room_contacts COMMAND test_room_contacts)
+  set_tests_properties(room_contacts PROPERTIES LABELS "unit;integration;contract;movement" TIMEOUT 30)
   add_executable(test_locomotion_probe tests/cpp/test_locomotion_probe.cpp)
   target_include_directories(test_locomotion_probe PRIVATE tests/cpp)
   target_link_libraries(test_locomotion_probe PRIVATE sh3_application sh3_diagnostics sh3_options)
   add_test(NAME locomotion_probe COMMAND test_locomotion_probe)
   set_tests_properties(locomotion_probe PROPERTIES LABELS "unit;integration;contract;animation;lifecycle" TIMEOUT 15)
+  add_executable(test_movement_controller tests/cpp/test_movement_controller.cpp)
+  target_include_directories(test_movement_controller PRIVATE tests/cpp)
+  target_link_libraries(test_movement_controller PRIVATE sh3_application sh3_options)
+  add_test(NAME movement_controller COMMAND test_movement_controller)
+  set_tests_properties(movement_controller PROPERTIES LABELS "unit;integration;contract;movement;lifecycle" TIMEOUT 30)
+  add_executable(test_ctr_movement_controls tests/cpp/test_ctr_movement_controls.cpp
+    engine/platform/3ds/movement_controls.cpp)
+  target_include_directories(test_ctr_movement_controls PRIVATE tests/cpp tests/cpp/render_doubles)
+  target_link_libraries(test_ctr_movement_controls PRIVATE sh3_application sh3_options)
+  add_test(NAME movement_ctr_controls COMMAND test_ctr_movement_controls)
+  set_tests_properties(movement_ctr_controls PROPERTIES LABELS "integration;contract;movement;lifecycle;sdk-double" TIMEOUT 15)
+  add_executable(test_inspection_actor tests/cpp/test_inspection_actor.cpp)
+  target_include_directories(test_inspection_actor PRIVATE tests/cpp)
+  target_link_libraries(test_inspection_actor PRIVATE sh3_application sh3_options)
+  add_test(NAME inspection_actor COMMAND test_inspection_actor)
+  set_tests_properties(inspection_actor PROPERTIES LABELS "unit;integration;contract;movement;animation" TIMEOUT 30)
+  add_executable(test_inspection_movement tests/cpp/test_inspection_movement.cpp)
+  target_include_directories(test_inspection_movement PRIVATE tests/cpp)
+  target_link_libraries(test_inspection_movement PRIVATE sh3_domain sh3_options)
+  add_test(NAME inspection_movement COMMAND test_inspection_movement)
+  set_tests_properties(inspection_movement PROPERTIES LABELS "unit;contract;movement" TIMEOUT 10)
   add_executable(test_locomotion_clock tests/cpp/test_locomotion_clock.cpp)
   target_include_directories(test_locomotion_clock PRIVATE tests/cpp)
   target_link_libraries(test_locomotion_clock PRIVATE sh3_domain sh3_options)
@@ -347,6 +428,23 @@ if(BUILD_TESTING AND NOT NINTENDO_3DS)
   # Host-only observer domain. Nintendo targets never depend on the PCSX2 tooling.
   find_package(Threads REQUIRED)
   find_package(Python3 REQUIRED COMPONENTS Interpreter)
+  add_test(NAME room_contacts_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/room_contacts_oracle.py $<TARGET_FILE:test_room_contacts>)
+  set_tests_properties(room_contacts_oracle PROPERTIES LABELS "integration;contract;movement" TIMEOUT 60)
+  add_test(NAME room_runtime COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/room_runtime_conformance.py $<TARGET_FILE:test_room_runtime>)
+  set_tests_properties(room_runtime PROPERTIES LABELS "integration;contract;render;lifecycle;sdk-double" TIMEOUT 300)
+  add_test(NAME room_scene_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/room_scene_conformance.py $<TARGET_FILE:test_room_scene>)
+  set_tests_properties(room_scene_oracle PROPERTIES LABELS "integration;contract;render" TIMEOUT 90)
+  add_test(NAME room_contacts_preparation COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/heather_room_preparation_conformance.py $<TARGET_FILE:test_room_contacts>)
+  set_tests_properties(room_contacts_preparation PROPERTIES LABELS "integration;contract;movement" TIMEOUT 60)
+  if(CMAKE_BUILD_TYPE STREQUAL "Release" AND NOT SH3_SANITIZERS AND NOT SH3_COVERAGE)
+    add_test(NAME room_contacts_stack COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_CURRENT_SOURCE_DIR}/tests/room_contacts_stack.py ${CMAKE_CURRENT_BINARY_DIR})
+    set_tests_properties(room_contacts_stack PROPERTIES LABELS "contract;movement;memory" TIMEOUT 15)
+  endif()
   add_test(NAME locomotion_clock_oracle COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/tests/locomotion_clock_oracle.py $<TARGET_FILE:test_locomotion_clock>)
   set_tests_properties(locomotion_clock_oracle PROPERTIES LABELS "integration;contract;animation" TIMEOUT 30)

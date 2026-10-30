@@ -210,16 +210,27 @@ def write_character_material_bundle(root, repository, run_id, files, report):
     return _write_bundle(root, repository, run_id, files, report, expected)
 
 
-def _write_bundle(root, repository, run_id, files, report, expected, *, before_publish=None):
+def _write_bundle(
+    root,
+    repository,
+    run_id,
+    files,
+    report,
+    expected,
+    *,
+    before_publish=None,
+    max_bytes=40 * 1024 * 1024,
+):
     resolved, checkout = root.resolve(), repository.resolve()
     if resolved.is_relative_to(checkout) or checkout.is_relative_to(resolved):
         raise ProfileError("PRIVATE_DATA_IN_REPO", "Texture output must be external")
     if not re.fullmatch(r"[a-z0-9][a-z0-9_-]{0,63}", run_id):
         raise ProfileError("INVALID_DESTINATION", "Invalid texture session")
     if (
-        set(files) != expected
+        not 0 < max_bytes <= 80 * 1024 * 1024
+        or set(files) != expected
         or any(type(data) is not bytes or not data for data in files.values())
-        or sum(map(len, files.values())) > 40 * 1024 * 1024
+        or sum(map(len, files.values())) > max_bytes
     ):
         raise ProfileError("PX_OUTPUT_SET", "Invalid texture output set or budget")
     inventory = [

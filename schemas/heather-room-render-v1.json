@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "profile": "heather-hp34-render-v1",
+  "room_profile_sha256": "5838c4b445a0da3f4a2636ac9c9e61edfe754dc89b33d25db33284581212e531",
+  "basis": [
+    1,
+    -1,
+    -1
+  ],
+  "scale": 0.002,
+  "viewport": [
+    400,
+    240
+  ],
+  "camera": {
+    "eye_local": [
+      275,
+      -1000,
+      -700
+    ],
+    "target_local": [
+      275,
+      -300,
+      100
+    ],
+    "vertical_fov_degrees": 80,
+    "near_render_units": 0.02,
+    "far_render_units": 12
+  },
+  "camera_provenance": "authored_framing_refinement_HM_T4c_1_not_PS2",
+  "opaque_order": "neutral_map_then_textured_actor",
+  "transparent_order": "global_triangle_centroid_far_to_near_glass_and_hair",
+  "transparent_depth_write": false,
+  "glass_vertex_alpha_unorm8": 253,
+  "hair_alpha_test_greater_unorm8": 100,
+  "neutral_two_sided": true,
+  "label": "CAMARA FIJA PROPIA / 29 FORMAS CON MATERIAL NEUTRO"
+}

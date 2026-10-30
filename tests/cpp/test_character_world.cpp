@@ -68,7 +68,7 @@ int main(int argc, char **argv) {
     if (argc >= 2) {
         auto api = platform::system_stdio;
         if (argc == 3 && std::strcmp(argv[2], "read") == 0)
-            api.error = +[](FILE *) { return 1; };
+            api.error = +[](FILE *) noexcept { return 1; };
         if (argc == 3 && std::strcmp(argv[2], "short") == 0)
             api.read = +[](void *p, std::size_t s, std::size_t n, FILE *f) {
                 return std::fread(p, s, n > 1 ? n - 1 : n, f);
