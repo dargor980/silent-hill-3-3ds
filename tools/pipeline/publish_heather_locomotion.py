@@ -9,14 +9,16 @@ from tools.qa.locomotion_rig_oracle import reconstruct_sri2_bundle
 OUTPUT_NAMES = {"heather.sri"} | {f"texture-{i:02}.rgba" for i in range(13)}
 
 
-def publish_heather_locomotion(root, repository, run_id, model, animation, descriptors):
+def publish_heather_locomotion(
+    root, repository, run_id, model, animation, descriptors, *, profile=1
+):
     """Never overwrite a destination; publish the manifest only after readback.
 
     Raw source pins and structural reconstruction are checked here. Fidelity
     against captured poses is a separate audit; publication alone does not
     certify that audit or a console build.
     """
-    files, report = produce_heather_locomotion(model, animation, descriptors)
+    files, report = produce_heather_locomotion(model, animation, descriptors, profile=profile)
     expected = reconstruct_sri2_bundle(files)
 
     def verify(directory_fd, _manifest):

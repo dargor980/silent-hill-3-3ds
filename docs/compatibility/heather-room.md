@@ -10,6 +10,12 @@ adicionales de HM-T5 quedan aplazadas. Se continúa con
 [F06.02/heather-turns](../specs/sh3-3ds/heather-turns.md), conservando esta
 confirmación funcional y los casos pendientes sin ejecutarlos ahora.
 
+HG-T5 prepara el build `0188790baedd` con cinco acciones y su
+[protocolo específico de giros](heather-turns.md). Su copia a SD quedó verificada,
+con respaldo de `c3aae59d1a70` y expulsión segura. La
+[prueba funcional física HG](heather-turns-results.md) fue confirmada por
+el usuario; conserva sus límites y no reabre los casos HM-T5 de esta guía.
+
 Historial: el usuario reportó
 carga de unos 20 s y Heather aparentemente inmóvil en `ad84b65cd58d`.
 A alternaba pausa; el aviso de liberación desaparecía y `Error: none`.

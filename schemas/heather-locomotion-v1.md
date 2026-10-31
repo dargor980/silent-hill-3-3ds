@@ -72,6 +72,15 @@ arma visible, expresiones, iluminación PS2 ni una habitación.
   fidelidad privada, build y ejecución física; CI DEBERÁ funcionar sin ISO,
   BIOS, estados ni recursos originales, con gates de los módulos nuevos.
 
+## Ampliación HG
+
+[HG-T3](heather-turns-native-v1.md) define un perfil **2** con los clips de
+giro 107/108 y 78 muestras. [HG-T4.1](../docs/execution/f06-02-heather-turns-core.md)
+implementa su núcleo y [HG-T4.2](../docs/execution/f06-02-heather-turns-sri2.md)
+su transporte verificado; la coordinación con la escena permanece pendiente. El perfil 1
+descrito aquí mantiene exactamente sus descriptores, cinco arcos, 58 muestras
+y bytes SRI2. Sus reglas no deben ampliarse implícitamente al integrar HG.
+
 ## Perfil fijado y dos canales
 
 Modelo original `0x100`, recurso MDL522, máscara de submallas `0x3021`,

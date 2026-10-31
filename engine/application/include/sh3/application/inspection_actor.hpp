@@ -1,17 +1,26 @@
 #pragma once
+#include "sh3/application/inspection_action.hpp"
 #include "sh3/domain/inspection_movement.hpp"
 #include "sh3/domain/locomotion_update.hpp"
+#include "sh3/domain/work_trace.hpp"
 #include "sh3/ports/movement_contacts.hpp"
 
 namespace sh3::application {
 struct InspectionActorSnapshot {
     domain::InspectionMovementState movement{};
     domain::LocomotionState animation{}; // Model space; no world translation here.
-    domain::PoseMatrix instance{}; // Apply once, after the local pose.
+    domain::PoseMatrix instance{};       // Apply once, after the local pose.
 };
 enum class InspectionActorError {
-    ok, busy, not_initialized, invalid_placement, movement_rejected,
-    contacts_unavailable, contacts_unsupported, invalid_contact, animation_rejected
+    ok,
+    busy,
+    not_initialized,
+    invalid_placement,
+    movement_rejected,
+    contacts_unavailable,
+    contacts_unsupported,
+    invalid_contact,
+    animation_rejected
 };
 struct InspectionActorResult {
     InspectionActorError error{InspectionActorError::ok};
@@ -24,7 +33,8 @@ struct InspectionActorResult {
 class InspectionActor final {
   public:
     InspectionActor(const domain::LocomotionProfile &, const domain::LocomotionSkeleton &,
-                    const domain::LocomotionSampleReader &, const ports::IMovementContacts &) noexcept;
+                    const domain::LocomotionSampleReader &,
+                    const ports::IMovementContacts &) noexcept;
     InspectionActor(const InspectionActor &) = delete;
     InspectionActor &operator=(const InspectionActor &) = delete;
 
@@ -32,11 +42,16 @@ class InspectionActor final {
     [[nodiscard]] InspectionActorResult reset(domain::Vec3 position, float yaw) noexcept;
     [[nodiscard]] InspectionActorResult step(domain::InspectionMovementIntent,
                                              std::uint32_t ticks) noexcept;
+    [[nodiscard]] InspectionActorResult step_action(InspectionActionIntent,
+                                                    std::uint32_t ticks) noexcept;
     [[nodiscard]] bool ready() const noexcept { return ready_; }
+    void trace(domain::WorkTrace *value) noexcept { trace_ = value; }
     // Renderable only when ready(); otherwise the initial zero snapshot is diagnostic data.
     [[nodiscard]] const InspectionActorSnapshot &snapshot() const noexcept { return state_; }
 
   private:
+    InspectionActorResult step_with_clip(domain::InspectionMovementIntent, std::uint32_t clip,
+                                         std::uint32_t ticks) noexcept;
     const domain::LocomotionProfile profile_;
     const domain::LocomotionSkeleton skeleton_;
     const domain::LocomotionSampleReader &reader_;
@@ -44,6 +59,7 @@ class InspectionActor final {
     InspectionActorSnapshot state_{}, staged_{};
     domain::LocomotionWorkspace workspace_{};
     bool ready_{}, busy_{};
+    domain::WorkTrace *trace_{};
 };
 static_assert(std::is_nothrow_copy_assignable_v<InspectionActorSnapshot>);
 static_assert(sizeof(InspectionActor) <= 32 * 1024, "Inspection actor exceeds 32 KiB");

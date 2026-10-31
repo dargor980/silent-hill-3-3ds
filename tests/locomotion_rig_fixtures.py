@@ -4,7 +4,7 @@ import struct
 import zlib
 
 
-def own_sri2():
+def own_sri2(*, turns=False):
     bones = (
         0,
         1,
@@ -47,13 +47,19 @@ def own_sri2():
     payload = bytearray(struct.pack("<4f36i", 1, -2, 3, 0.01, -1, -1, *([1] * 34)))
     for b in bones:
         payload.extend(struct.pack("<HBB", b, 2 if b in upper else 1, 0))
-    for c in (
+    clips = (
         (101, 10, 307, 0, 9, 1, 0, 0, 0),
         (109, 24, 1996, 80, 103, 1, 0, 10, 0),
         (113, 24, 2227, 176, 199, 1, 0, 34, 0),
-    ):
+    )
+    if turns:
+        clips += (
+            (107, 10, 1152, 60, 69, 1, 0, 58, 0),
+            (108, 10, 1152, 70, 79, 1, 0, 68, 0),
+        )
+    for c in clips:
         payload.extend(struct.pack("<HHhHHBBII", *c))
-    for source in (*range(10), *range(80, 104), *range(176, 200)):
+    for source in (i for c in clips for i in range(c[3], c[4] + 1)):
         for b in bones:
             payload.extend(struct.pack("<7f", (source + b) / 16, -b / 32, -0.0, 0, 0, 0.6, 0.8))
     for b in (1, 35):
@@ -91,15 +97,15 @@ def own_sri2():
             "<8s22I",
             b"S3RIv2\0\0",
             36,
-            58,
+            78 if turns else 58,
             2,
             3,
             6,
             2,
-            3,
+            5 if turns else 3,
             2,
             25,
-            1,
+            2 if turns else 1,
             522,
             525,
             len(payload),

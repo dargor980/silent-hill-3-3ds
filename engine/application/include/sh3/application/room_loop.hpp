@@ -18,6 +18,10 @@ class RoomLoop final : public IMovementSession {
     RoomFault fault() const noexcept { return fault_; }
     ports::RenderResult render_result() const noexcept { return render_result_; }
     bool ready() const noexcept { return published_ && controller_.ready(); }
+    void trace(domain::WorkTrace *value) noexcept {
+        trace_ = value;
+        controller_.trace(value);
+    }
 
   private:
     bool valid_spawn() const noexcept;
@@ -29,6 +33,7 @@ class RoomLoop final : public IMovementSession {
     RoomFault fault_{RoomFault::none};
     ports::RenderResult render_result_{ports::RenderResult::busy};
     bool published_{}, busy_{};
+    domain::WorkTrace *trace_{};
 };
 static_assert(sizeof(RoomLoop) + 256 <= 32 * 1024, "Room loop and HID exceed controller budget");
 } // namespace sh3::application

@@ -46,6 +46,17 @@ unsigned RoomLoop::step(MovementInput input, std::uint64_t elapsed) noexcept {
     const Guard guard(busy_);
     render_result_ = R::busy;
     unsigned committed = 0;
+    struct Sample {
+        domain::WorkTrace *trace;
+        unsigned &steps;
+        R &result;
+        ~Sample() {
+            if (trace)
+                trace->end(steps, unsigned(result));
+        }
+    } sample{trace_, committed, render_result_};
+    if (trace_)
+        trace_->begin();
     if (input.quit || state() == S::stopped || state() == S::suspended) {
         controller_.step(input, 0);
         return 0;

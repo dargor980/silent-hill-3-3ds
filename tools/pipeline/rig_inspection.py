@@ -50,7 +50,17 @@ def encode_rig(
 
 
 def encode_rig_payload(
-    parents, frames, targets, helpers, vertices, indices, materials, center, scale
+    parents,
+    frames,
+    targets,
+    helpers,
+    vertices,
+    indices,
+    materials,
+    center,
+    scale,
+    *,
+    max_samples=MAX_SAMPLES,
 ):
     """Shared SRI sections; version-specific metadata belongs to the caller.
 
@@ -61,7 +71,8 @@ def encode_rig_payload(
     nb, nf, nh, nv, ni, nm = map(len, (parents, frames, targets, vertices, indices, materials))
     if not (
         1 <= nb <= MAX_BONES
-        and 2 <= nf <= MAX_SAMPLES
+        and max_samples in (64, 80)
+        and 2 <= nf <= max_samples
         and 0 <= nh <= MAX_HELPERS
         and 3 <= nv <= MAX_VERTICES
         and 3 <= ni <= MAX_INDICES
@@ -150,10 +161,10 @@ def heather_rig(geometry, animation, textures):
     return files, report
 
 
-def prepare_heather_rig(geometry, animation, textures, sample_indices):
+def prepare_heather_rig(geometry, animation, textures, sample_indices, *, max_samples=MAX_SAMPLES):
     """Compact shared original-outfit geometry and the requested source samples."""
     sample_indices = integers(tuple(sample_indices), len(sample_indices), 0, 1762)
-    if not 2 <= len(sample_indices) <= MAX_SAMPLES:
+    if max_samples not in (64, 80) or not 2 <= len(sample_indices) <= max_samples:
         raise ValueError("HI_SAMPLE_SELECTION")
     mesh = geometry["mesh"]
     skeleton = mesh["skeleton"]

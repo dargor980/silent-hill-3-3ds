@@ -4,18 +4,20 @@
 #include "sh3/platform/inspection_crc32.hpp"
 #include "sh3/platform/inspection_rig.hpp"
 #include "sh3/platform/inspection_texture.hpp"
+#include "skinning_gpu.hpp"
 #include <cstring>
 #include <new>
 
 namespace sh3::platform::ctr {
 RoomRenderer::RoomRenderer(const domain::RoomMap &map, const domain::InspectionRig &model,
-                           ports::IRigTextures &source) noexcept
+                           ports::IRigTextures &source, SkinningMode mode,
+                           std::size_t diagnostic_bytes) noexcept
     : scene_(map, model) {
     const auto &memory = scene_.memory();
-    if (!scene_.ready() || model.material_count != 13 ||
-        memory.total + room_runtime_extra > 64 * 1024 * 1024)
+    if (!scene_.ready() || model.material_count != 13 || diagnostic_bytes > 64 * 1024 ||
+        memory.total + room_runtime_extra + diagnostic_bytes > 64 * 1024 * 1024)
         return;
-    bytes_ = memory.total + room_runtime_extra;
+    bytes_ = memory.total + room_runtime_extra + diagnostic_bytes;
     stage_ = "CPU_BUFFERS";
     frame_.reset(new (std::nothrow) domain::RoomFrame{});
     workspace_.reset(new (std::nothrow) domain::RoomWorkspace{});
@@ -73,6 +75,7 @@ RoomRenderer::RoomRenderer(const domain::RoomMap &map, const domain::InspectionR
         AttrInfo_AddLoader(attr, 1, GPU_FLOAT, 3) < 0 ||
         AttrInfo_AddLoader(attr, 2, GPU_FLOAT, 2) < 0)
         return;
+    cpu_attributes_ = *attr;
     stage_ = "BUFFER_INFO";
     BufInfo_Init(&static_buffer_);
     BufInfo_Init(&dynamic_buffer_);
@@ -123,6 +126,23 @@ RoomRenderer::RoomRenderer(const domain::RoomMap &map, const domain::InspectionR
     const auto camera = domain::room_camera();
     Mtx_PerspTilt(&projection_, C3D_AngleFromDegrees(camera.fov), C3D_AspectRatioTop,
                   camera.near_plane, camera.far_plane, false);
+    pixels.reset(); // Do not overlap texture staging with GPU plan construction.
+    if (mode == SkinningMode::hybrid) {
+        skinning_status_ = "HS_ALLOCATION";
+        constexpr auto limit = (64U * 1024 * 1024) * 4 / 5;
+        std::unique_ptr<SkinningGpu> candidate;
+        if (bytes_ <= limit - sizeof(SkinningGpu) - sizeof(domain::SkinPlanWorkspace))
+            candidate.reset(new (std::nothrow) SkinningGpu(model, limit - bytes_));
+        else
+            skinning_status_ = "HS_BUDGET";
+        if (candidate) {
+            skinning_status_ = candidate->stage();
+            bytes_ += candidate->bytes(); // Also account failed preparation's peak.
+            if (candidate->ready()) {
+                gpu_ = std::move(candidate);
+            }
+        }
+    }
     stage_ = "READY";
     ready_ = true;
 }
@@ -130,6 +150,7 @@ RoomRenderer::~RoomRenderer() {
     // Synchronize target ownership before freeing any memory a pending draw may reference.
     if (target_)
         C3D_RenderTargetDelete(target_);
+    gpu_.reset();
     for (std::size_t i = 0; i < texture_count_; ++i)
         C3D_TexDelete(&textures_[i]);
     if (static_vertices_)
@@ -147,18 +168,34 @@ ports::RenderResult RoomRenderer::present(const domain::RigPose &pose,
                                           const domain::PoseMatrix &instance) noexcept {
     using R = ports::RenderResult;
     const auto start = svcGetSystemTick();
-    if (!ready_ || !scene_.frame(pose, instance, *workspace_, *frame_))
+    if (!ready_ || !scene_.frame(pose, instance, *workspace_, *frame_, trace_))
         return R::unavailable;
+    if (gpu_) {
+        domain::WorkInterval rows(trace_, domain::WorkPhase::palette_rows);
+        if (!gpu_->prepare(workspace_->palette, instance))
+            return R::unavailable;
+    }
     const auto submitted = svcGetSystemTick();
     prepare_ms_ = double(submitted - start) * 1000 / SYSCLOCK_ARM11;
+    domain::WorkInterval interval(trace_, domain::WorkPhase::ownership_wait);
     if (!C3D_FrameBegin(C3D_FRAME_SYNCDRAW))
         return R::busy;
+    // SYNCDRAW completed the previous queue. Read before FrameEnd restarts its timer.
+    if (trace_ && pending_sample_) {
+        trace_->sample.gpu_frame = pending_frame_;
+        trace_->sample.gpu_ms = C3D_GetDrawingTime();
+        trace_->sample.gpu_valid = true;
+    }
+    pending_sample_ = false; // Failure queues must never masquerade as complete scenes.
+    interval.next(domain::WorkPhase::copy_flush);
     const auto bytes = frame_->vertex_count * sizeof(domain::CharacterDrawVertex);
     std::memcpy(dynamic_vertices_, frame_->vertices.data(), bytes);
     if (R_FAILED(GSPGPU_FlushDataCache(dynamic_vertices_, bytes))) {
+        interval.next(domain::WorkPhase::submit);
         C3D_FrameEnd(0);
         return R::unavailable;
     }
+    interval.next(domain::WorkPhase::submit);
     C3D_RenderTargetClear(target_, C3D_CLEAR_ALL, 0x152333FF, 0);
     if (!C3D_FrameDrawOn(target_)) {
         C3D_FrameEnd(0);
@@ -170,9 +207,22 @@ ports::RenderResult RoomRenderer::present(const domain::RigPose &pose,
                FVec3_New(c.target.x, c.target.y, c.target.z), FVec3_New(0, 1, 0), false);
     Mtx_Multiply(&transform, &projection_, &view);
     C3D_BindProgram(&program_);
+    C3D_SetAttrInfo(&cpu_attributes_);
     C3D_FVUnifMtx4x4(GPU_VERTEX_SHADER, uniform_, &transform);
+    bool opaque_drawn = false;
     for (unsigned i = 0; i < frame_->range_count; ++i) {
         const auto &r = frame_->ranges[i];
+        if (gpu_ && r.pass == domain::RoomPass::opaque) {
+            if (!opaque_drawn) {
+                gpu_->draw(transform, textures_.data());
+                opaque_drawn = true;
+                C3D_BindProgram(&program_);
+                C3D_SetAttrInfo(&cpu_attributes_);
+                // Palette uploads overwrite c0..c3 shared with the CPU camera.
+                C3D_FVUnifMtx4x4(GPU_VERTEX_SHADER, uniform_, &transform);
+            }
+            continue;
+        }
         (void)bind_room_material(r.pass); // Plan was validated/built in the pure core.
         const bool neutral = r.pass == domain::RoomPass::neutral;
         C3D_SetBufInfo(neutral || domain::room_map_pass(r.pass) ? &static_buffer_
@@ -182,6 +232,10 @@ ports::RenderResult RoomRenderer::present(const domain::RigPose &pose,
         C3D_DrawArrays(GPU_TRIANGLES, int(r.first), int(r.count));
     }
     C3D_FrameEnd(0);
+    if (trace_) {
+        pending_frame_ = trace_->sample.frame;
+        pending_sample_ = true;
+    }
     submit_ms_ = double(svcGetSystemTick() - submitted) * 1000 / SYSCLOCK_ARM11;
     return R::presented;
 }

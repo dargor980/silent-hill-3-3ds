@@ -25,7 +25,7 @@ def reconstruct_sri2(data):
     b, f, helpers, vertices, indices, materials = h[:6]
     _require(
         b == 36
-        and f == 58
+        and f <= 80
         and helpers <= 128
         and 3 <= vertices <= 8192
         and 3 <= indices <= 18000
@@ -33,9 +33,17 @@ def reconstruct_sri2(data):
         and 1 <= materials <= 16,
         "counts",
     )
-    _require(h[6:12] == [3, 2, 25, 1, 522, 525], "profile")
+    _require((h[9], h[6], f) in ((1, 3, 58), (2, 5, 78)), "profile")
+    _require(h[7:9] == [2, 25] and h[10:12] == [522, 525], "profile")
     size = (
-        16 + 8 * b + 60 + 28 * b * f + 68 * helpers + 28 * vertices + 2 * indices + 28 * materials
+        16
+        + 8 * b
+        + 20 * h[6]
+        + 28 * b * f
+        + 68 * helpers
+        + 28 * vertices
+        + 2 * indices
+        + 28 * materials
     )
     _require(h[12] == size and len(data) == 96 + size, "length")
     _require(h[14:] == [0] * 8, "reserved")
@@ -104,6 +112,11 @@ def reconstruct_sri2(data):
         (109, 24, 1996, 80, 103, 1, 0, 10, 0),
         (113, 24, 2227, 176, 199, 1, 0, 34, 0),
     )
+    if h[9] == 2:
+        expected_clips += (
+            (107, 10, 1152, 60, 69, 1, 0, 58, 0),
+            (108, 10, 1152, 70, 79, 1, 0, 68, 0),
+        )
     clips = []
     for expected in expected_clips:
         record = take("HHhHHBBII")
@@ -180,7 +193,7 @@ def reconstruct_sri2(data):
         framing=framing,
         bones=bones,
         clips=clips,
-        sample_sources=[*range(10), *range(80, 104), *range(176, 200)],
+        sample_sources=[i for c in expected_clips for i in range(c[3], c[4] + 1)],
         samples=samples,
         helpers=hs,
         vertices=vs,

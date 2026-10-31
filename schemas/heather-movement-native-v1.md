@@ -243,6 +243,24 @@ distintos pasos del lote; pausa/paso/reinicio, HOME/tapa/START, botones
 retenidos, hooks duplicados y reentrada. El adaptador se compila contra
 dobles SDK y devkitARM; cobertura individual ≥80/80 de ambos módulos.
 
+## Ampliación HG
+
+[HG-T3](heather-turns-native-v1.md) define la selección nativa de cinco
+acciones y sus puentes para el perfil 2. [HG-T4.3](../docs/execution/f06-02-heather-turns-integration.md)
+implementa esa coordinación: sustituye la intención pendiente basada solo
+en movimiento por una acción que distingue ambos giros.
+Conserva las garantías de HM, raíz única y contactos, y precisa la política
+de intervalos ya corregida en el runtime: recorte a 120 ms hasta un segundo;
+por encima, descarte completo. Integración verificada en host con dobles SDK.
+[HG-T4.4](../docs/execution/f06-02-heather-turns-resources.md) cierra presupuesto
+49,42/64 MiB, inventarios ABI/pila con reserva y compilación ARM `0188790baedd`.
+[HG-T5](../docs/execution/f06-02-heather-turns-delivery.md) prepara la entrega
+A/B y protocolo; copia a SD verificada y expulsada con respaldo anterior.
+La [prueba funcional física de giros](../docs/compatibility/heather-turns-results.md)
+queda aceptada según las observaciones del usuario, con límites de lecturas
+y sin nuevas medidas de rendimiento/memoria.
+Las pruebas adicionales de HM-T5 permanecen aplazadas.
+
 ## Secuencia de entrega (actualizada)
 
 - HM-T2b.7a: fijar este alcance, autoridad nativa y exclusiones.

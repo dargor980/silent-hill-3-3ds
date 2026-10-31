@@ -42,7 +42,9 @@ def test_pins_match_contract_without_caller_override():
 
 
 @pytest.mark.parametrize(
-    "bad", [None, "string", bytearray(b"12345"), b"", b"1234", bytes(16 * 1024 * 1024 + 1)]
+    "bad",
+    [None, "string", bytearray(b"12345"), b"", b"1234", bytes(16 * 1024 * 1024 + 1)],
+    ids=["none", "text", "mutable", "empty", "short", "oversize"],
 )
 def test_bad_source_type_size_precedes_decoders(monkeypatch, bad):
     monkeypatch.setattr(producer, "_decode_sources", lambda *_: pytest.fail("decoder called"))

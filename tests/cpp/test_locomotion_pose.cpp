@@ -33,7 +33,7 @@ struct Reader final : LocomotionSampleReader {
     unsigned fail_at = 1024;
     Reader() { for (auto &frame : samples) frame.fill(identity); }
     static unsigned packed(std::uint32_t clip, std::uint32_t frame) {
-        for (const auto &c : profile.clips)
+        for (const auto &c : profile.active_clips())
             if (c.id == clip) {
                 CHECK(frame < c.count);
                 return c.packed_first + frame;
@@ -101,7 +101,7 @@ void initialization_and_wrap() {
     near(scratch.model[1][12], 12.56F);
     near(scratch.model[1][13], 23.92F, 0.000004F);
     near(scratch.model[1][14], 32);
-    for (const auto &clip : profile.clips) {
+    for (const auto &clip : profile.active_clips()) {
         reader.at(clip.id, clip.count - 1).translation = {6, 4, 2};
         reader.at(clip.id, 0).translation = {2, 0, -2};
         reader.at(clip.id, clip.count - 1).rotation = {0, 0, 0, 1};
@@ -220,7 +220,7 @@ void invalid_inputs() {
     cache.bone_count = 2;
     unchanged(rig, reader, p, scratch.next, scratch, Error::invalid_state);
     auto bad = p;
-    bad.next.profile_id = 2;
+    bad.next.profile_id = 99; // ID 2 is now the supported HG profile.
     unchanged(rig, reader, bad, cache, scratch, Error::invalid_state);
     for (auto member : {&LocomotionPlan::pose_phase, &LocomotionPlan::fraction_q12,
                         &LocomotionPlan::blend_q12}) {

@@ -829,12 +829,45 @@ Fuente: PDF p. 20. **Entrada:** G04 y G05.
     cobertura nueva 100/100. [HG-T2 completada](../../execution/f06-02-heather-turns-cycles.md):
     dos ciclos completos, cuatro transiciones, 70 actualizaciones/2520 matrices,
     máximo 0,000468465 < 0,001; 214 pruebas y cobertura nueva 100/100.
-    Sigue HG-T3: contrato y vectores nativos. No cambia el runtime ni cierra F06.01/G04/G05 o esta tarea global.
+    [HG-T3 completada](../../execution/f06-02-heather-turns-contract.md): perfil 2,
+    cinco clips/78 muestras, contrato de arcos, controles, errores, SRI2 y
+    memoria; 248 pruebas nuevas y 492 relacionadas.
+    [HG-T4.1 completada](../../execution/f06-02-heather-turns-core.md): núcleo C++
+    de cinco clips, 405 resultados nativos, regresiones HL y seis gates ≥80/80.
+    [HG-T4.2 completada](../../execution/f06-02-heather-turns-sri2.md): transporte
+    de 78 muestras y A/B, 70 retornos/2520 matrices dentro de 0,001, 5745 rechazos
+    atómicos y regresiones SRI1/HL/HM.
+    [HG-T4.3 completada](../../execution/f06-02-heather-turns-integration.md):
+    cinco acciones con contactos/controles HM; 32 combinaciones/25 rutas/36
+    pasos, 156 fallos atómicos y reintentos. Pausa/R/reinicio/HOME/tapa con
+    dobles SDK; 27 CTest Clang/ASan/GCC, 633 Python y 16 gates ≥80/80.
+    [HG-T4.4 completada](../../execution/f06-02-heather-turns-resources.md):
+    presupuesto 49,42/64 MiB, 2048 pasos privados sin asignaciones, inventarios
+    de pila host/ARM con reserva, 17 gates ≥80/80 y ARM `0188790baedd` compilado.
+    [HG-T5 preparada](../../execution/f06-02-heather-turns-delivery.md): A/B
+    idénticos, 29 archivos de instalación y protocolo de giros; 22 pruebas de
+    empaquetado, ocho ejecuciones host desde ZIP y tablas cotejadas en C++.
+    Copia a SD verificada y expulsada, con respaldo anterior conservado;
+    [prueba funcional HG aceptada según el usuario](../../compatibility/heather-turns-results.md),
+    con R steps acumulado 129 y límites de lecturas registrados. HM-T5 adicional aplazada.
+    No cambia el build de consola
+    ni cierra F06.01/G04/G05 o esta tarea global.
   - Resultado y aceptación: Instancias idle/caminar/correr/girar con raíz aplicada una vez; T04.
   - Requisitos: RF04.03, RF04.04. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 
 - [ ] **F06.03 — Medir alternativa de skinning.**
   - Ticket detallado: [F06.03](tasks/F06.md#f0603).
+  - [Instancia HS](heather-skinning.md): **HS-T1 completada**, inventario A/B
+    cotejado con C++, 6943 vértices/83 matrices usadas y particiones opacas
+    conservando orden. [Resultados y contrato](../../benchmarks/skinning.md).
+    [HS-T2 completada](../../execution/f06-03-heather-skinning-contract.md):
+    contrato de 30 matrices, 54 casos numéricos, SDK fijado/ABI ARM y orden
+    transparente conservado. [HS-T3 completada en host](../../execution/f06-03-heather-skinning-prototype.md):
+    candidato híbrido/fallback, vectores, orden, recursos e intervalos validados.
+    [HS-T4 completada](../../execution/f06-03-heather-skinning-delivery.md):
+    selector CPU/híbrida, ARM `f64760613473`, 49,94 MiB y paquetes A/B verificados.
+    Sigue HS-T5, medición física; SD sin modificar.
+    Comparación GPU y límites físicos pendientes; HM-T5 adicional y pared 60 aplazadas.
   - Resultado y aceptación: Comparación CPU/GPU y límite de huesos/influencias sustentado; elección registrada.
   - Requisitos: RNF02.07, RNF01.05. Evidencia: caso V/T correspondiente, build/commit o informe de investigación.
 

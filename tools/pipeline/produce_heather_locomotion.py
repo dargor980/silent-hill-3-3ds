@@ -15,10 +15,10 @@ MODEL_SHA256 = "1aa81b56c0a079c8d98e57f17537e91b2ce20f1e46a1cc6d9816561cad03d2e9
 ANIMATION_SHA256 = "a0ad870863df5c495c453acdc2230dc8bb762394687599329f5a97a975d75181"
 
 
-def produce_heather_locomotion(model, animation, pal_descriptors):
+def produce_heather_locomotion(model, animation, pal_descriptors, *, profile=1):
     """Never trust reported hashes or caller-edited decoded fields as provenance.
 
-    Descriptors are exactly three twelve-byte PAL records in 101/109/113 order.
+    Descriptors follow the selected frozen profile: 101/109/113, then 107/108 for profile 2.
     The caller retains their acquisition evidence; bytes must match the pinned
     contract. This function has no paths, ISO/emulator access or output writes.
     """
@@ -30,9 +30,11 @@ def produce_heather_locomotion(model, animation, pal_descriptors):
             raise ValueError("HL_SOURCE_SIZE")
         if hashlib.sha256(data).hexdigest() != expected:
             raise ValueError("HL_SOURCE_SHA256")
-    validate_descriptors(pal_descriptors)
+    validate_descriptors(pal_descriptors, profile=profile)
     geometry, samples, textures = _decode_sources(model, animation)
-    files, report = heather_locomotion_rig(geometry, samples, textures, pal_descriptors)
+    files, report = heather_locomotion_rig(
+        geometry, samples, textures, pal_descriptors, profile=profile
+    )
     report["source_verified"] = True
     report["endpoint_profile"] = "pcsx2-hl06-f32-v1"
     report["sources"] = {

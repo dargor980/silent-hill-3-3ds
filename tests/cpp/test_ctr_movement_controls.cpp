@@ -261,8 +261,88 @@ void cadence(unsigned rate) {
     CHECK(steps == 50 && c.snapshot().movement.ordinal == 50 && c.remainder_us() == 0);
     CHECK(c.snapshot().movement.position.z == spawn.z + 50 * 28);
 }
+void turn_cache_lifecycle() {
+    for (bool left : {false, true}) {
+        for (unsigned phase : {1U, 7U, 8U}) { // Entry cache, stable turn, return cache.
+            Reader reader;
+            Contacts contacts;
+            Controller c(domain::heather_turns_profile, rig(), reader, contacts, spawn, 0);
+            application::MovementInput turn;
+            turn.left = left;
+            turn.right = !left;
+            c.step({}, 0);
+            for (unsigned i = 0; i < phase; ++i)
+                CHECK(c.step(i == 7 ? application::MovementInput{} : turn, 40000) == 1);
+            CHECK(c.snapshot().animation.clock.profile_id == 2);
+            CHECK(c.snapshot().animation.clock.saved_local_valid == (phase != 7));
+            const auto original = bytes(c);
+            Controls controls(c, true);
+            std::uint64_t now = 0;
+            const auto sample = [&](u32 held, u32 down, unsigned dt = 20000) {
+                now += ticks(dt);
+                return controls.frame(held, down, now);
+            };
+            CHECK(sample(0, 0) == 0);
+            // HOME/tapa while RUNNING and PAUSED, including overlapping reasons.
+            for (bool paused : {false, true}) {
+                if (paused) {
+                    sample(KEY_A, KEY_A);
+                    sample(0, 0);
+                }
+                CHECK(c.state() == (paused ? Session::paused : Session::running));
+                for (auto sleep : {APTHOOK_ONSUSPEND, APTHOOK_ONSLEEP}) {
+                    fake::event(sleep);
+                    CHECK(c.state() == Session::suspended && !c.pending_action() &&
+                          !c.remainder_us());
+                    sample(KEY_R | KEY_L | KEY_DUP, KEY_R | KEY_L, 10000000);
+                    fake::event(sleep == APTHOOK_ONSLEEP ? APTHOOK_ONWAKEUP : APTHOOK_ONRESTORE);
+                    CHECK(c.awaiting_release());
+                    sample(KEY_R, KEY_R);
+                    CHECK(sample(0, 0, 10000000) == 0 && !c.awaiting_release());
+                    CHECK(bytes(c) == original);
+                }
+                fake::event(APTHOOK_ONSUSPEND);
+                fake::event(APTHOOK_ONSLEEP);
+                fake::event(APTHOOK_ONRESTORE);
+                CHECK(c.state() == Session::suspended);
+                sample(0, 0, 10000000);
+                fake::event(APTHOOK_ONWAKEUP);
+                CHECK(sample(0, 0) == 0 && bytes(c) == original);
+            }
+            CHECK(sample(0, 0, 10000000) == 0 && bytes(c) == original);
+            for (unsigned i = 0; i < 10; ++i)
+                sample(0, 0);
+            const auto held = KEY_R | (left ? KEY_DLEFT : KEY_DRIGHT);
+            CHECK(sample(held, KEY_R) == 0);
+            unsigned steps = 0;
+            for (unsigned i = 0; i < 100; ++i)
+                steps += sample(held, KEY_R);
+            CHECK(steps == 1 && c.snapshot().movement.ordinal == phase + 1);
+            const auto advanced = bytes(c);
+            for (unsigned i = 0; i < 100; ++i)
+                CHECK(sample(held, 0) == 0 && bytes(c) == advanced);
+            sample(0, 0);
+            CHECK(sample(0, 0, 10000000) == 0 && bytes(c) == advanced);
+            sample(KEY_L, KEY_L);
+            CHECK(c.state() == Session::paused && c.awaiting_release());
+            CHECK(c.snapshot().movement.ordinal == 0 && c.snapshot().animation.clock.counter == 0);
+            CHECK(c.snapshot().animation.clock.profile_id == 2 &&
+                  c.snapshot().animation.clock.target_id == 101);
+            CHECK(!c.snapshot().animation.clock.saved_local_valid && !c.pending_action());
+            sample(0, 0);
+            sample(KEY_A, KEY_A);
+            sample(0, 0);
+            CHECK(sample(left ? KEY_DLEFT : KEY_DRIGHT, 0, 40000) == 1);
+            CHECK(c.snapshot().movement.ordinal == 1 &&
+                  c.snapshot().animation.clock.target_id == (left ? 108U : 107U));
+            sample(KEY_START | KEY_A | KEY_L | KEY_R, KEY_START | KEY_A | KEY_L | KEY_R);
+            CHECK(c.state() == Session::stopped && c.snapshot().movement.ordinal == 1);
+        }
+    }
+}
 } // namespace
 int main() {
+    turn_cache_lifecycle();
     noisy_single_step();
     single_step_boundary();
     mapping();

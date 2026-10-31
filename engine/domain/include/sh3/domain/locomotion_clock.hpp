@@ -11,14 +11,35 @@ struct LocomotionClip {
 };
 struct LocomotionProfile {
     std::uint32_t id{}, model_resource{}, animation_resource{}, sample_count{}, ticks{};
-    std::array<LocomotionClip, 3> clips{};
+    std::uint32_t clip_count{};
+    std::array<LocomotionClip, 5> clips{};
+    struct ClipsView {
+        const LocomotionClip *data;
+        std::size_t count;
+        constexpr const LocomotionClip *begin() const noexcept { return data; }
+        constexpr const LocomotionClip *end() const noexcept { return data + count; }
+    };
+    // C++17 bounded view. Invalid counts expose no records; validation still rejects them.
+    [[nodiscard]] constexpr ClipsView active_clips() const noexcept {
+        return {clips.data(), clip_count <= clips.size() ? clip_count : 0};
+    }
 };
 // Scalar identity only: validation here does not authenticate model/animation bytes.
 inline constexpr LocomotionProfile heather_locomotion_profile{
-    1, 522, 525, 58, 2,
+    1, 522, 525, 58, 2, 3,
     {{{101, 10, 307, 0, 9, 1, 0, 0},
       {109, 24, 1996, 80, 103, 1, 0, 10},
       {113, 24, 2227, 176, 199, 1, 0, 34}}}};
+inline constexpr LocomotionProfile heather_turns_profile{
+    2, 522, 525, 78, 2, 5,
+    {{{101, 10, 307, 0, 9, 1, 0, 0},
+      {109, 24, 1996, 80, 103, 1, 0, 10},
+      {113, 24, 2227, 176, 199, 1, 0, 34},
+      {107, 10, 1152, 60, 69, 1, 0, 58},
+      {108, 10, 1152, 70, 79, 1, 0, 68}}}};
+[[nodiscard]] constexpr const LocomotionProfile *locomotion_profile(std::uint32_t id) noexcept {
+    return id == 1 ? &heather_locomotion_profile : id == 2 ? &heather_turns_profile : nullptr;
+}
 
 enum class LocomotionMode : std::uint32_t { stable = 1, cached = 3, phase_blend = 5 };
 enum class LocomotionError {
@@ -31,8 +52,9 @@ struct LocomotionClock {
     std::uint32_t counter{}, blend{};
     bool saved_local_valid{}; // Evaluator owns and validates the actual pose cache.
 };
-inline constexpr LocomotionClock initial_locomotion_clock() noexcept {
-    return {1, 101, 101, LocomotionMode::stable, 0, 0, false};
+inline constexpr LocomotionClock initial_locomotion_clock(
+    const LocomotionProfile &profile = heather_locomotion_profile) noexcept {
+    return {profile.id, 101, 101, LocomotionMode::stable, 0, 0, false};
 }
 struct LocomotionSamples {
     std::uint32_t clip_id{}, frame{}, following{}; // Relative to this clip.

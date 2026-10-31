@@ -38,8 +38,14 @@ class MovementController final : public IMovementSession {
     domain::SessionState state() const noexcept override { return lifecycle_.state(); }
     bool awaiting_release() const noexcept override { return awaiting_release_; }
     std::uint32_t remainder_us() const noexcept { return remainder_us_; }
-    std::optional<domain::InspectionMotion> pending_motion() const noexcept { return pending_; }
+    std::optional<InspectionAction> pending_action() const noexcept { return pending_; }
+    // Legacy diagnostic view; pending_action retains the full direction for profile 2.
+    std::optional<domain::InspectionMotion> pending_motion() const noexcept {
+        return pending_ ? std::optional<domain::InspectionMotion>{action_motion(*pending_)}
+                        : std::nullopt;
+    }
     InspectionActorResult result() const noexcept { return result_; }
+    void trace(domain::WorkTrace *value) noexcept { actor_.trace(value); }
     // External presentation/spawn failures discard timing and require release without changing
     // pose.
     void pause_on_fault() noexcept;
@@ -48,14 +54,15 @@ class MovementController final : public IMovementSession {
     void clear_timing() noexcept;
     void apply_event(domain::LifecycleEvent) noexcept;
     void fail() noexcept;
-    bool update(domain::InspectionMovementIntent desired) noexcept;
+    bool update(InspectionActionIntent desired) noexcept;
     InspectionActor actor_;
     domain::Lifecycle lifecycle_{};
     const domain::Vec3 spawn_;
     const float yaw_;
     std::uint32_t remainder_us_{};
-    std::optional<domain::InspectionMotion> pending_{};
+    std::optional<InspectionAction> pending_{};
     InspectionActorResult result_{};
+    const bool turns_;
     bool awaiting_release_{true}, busy_{};
 };
 static_assert(sizeof(MovementController) <= 32 * 1024);

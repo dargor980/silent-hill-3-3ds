@@ -20,11 +20,24 @@ DESCRIPTORS = (
 )
 PACKED_FIRST = (0, 10, 34)
 SAMPLES = tuple(i for d in DESCRIPTORS for i in range(d[3], d[4] + 1))
+TURN_DESCRIPTORS = DESCRIPTORS + (
+    (107, 10, 1152, 60, 69, 1, 0),
+    (108, 10, 1152, 70, 79, 1, 0),
+)
 
 
-def validate_descriptors(descriptors):
-    """Require three original PAL records, not inferred or converted speeds."""
-    expected = b"".join(struct.pack("<HHhHHBB", *d) for d in DESCRIPTORS)
+def _profile(profile):
+    if type(profile) is not int or profile not in (1, 2):
+        raise ValueError("HL_PROFILE")
+    if profile == 1:
+        return PROFILE, DESCRIPTORS, PACKED_FIRST, SAMPLES
+    samples = tuple(i for d in TURN_DESCRIPTORS for i in range(d[3], d[4] + 1))
+    return "heather-original-pal-525-turns-v1", TURN_DESCRIPTORS, (0, 10, 34, 58, 68), samples
+
+
+def validate_descriptors(descriptors, *, profile=1):
+    """Require the exact original PAL records for the selected frozen profile."""
+    expected = b"".join(struct.pack("<HHhHHBB", *d) for d in _profile(profile)[1])
     if type(descriptors) is not bytes or descriptors != expected:
         raise ValueError("HL_DESCRIPTORS")
 
@@ -43,25 +56,36 @@ def encode_locomotion_rig(
     source_bones,
     channels,
     descriptors,
+    profile=1,
 ):
     """Encode exact profile metadata plus bounded shared SRI geometry sections.
 
     Synthetic geometry may use SRI's structural limits. The private reducer
     below additionally enforces the original outfit's geometry counts.
     """
-    validate_descriptors(descriptors)
+    validate_descriptors(descriptors, profile=profile)
+    _, records, packed_first, samples = _profile(profile)
     if integers(source_bones, 36, 0, 72) != BONES or integers(channels, 36, 1, 2) != CHANNELS:
         raise ValueError("HL_BINDINGS")
-    if len(parents) != 36 or len(frames) != 58:
+    if len(parents) != 36 or len(frames) != len(samples):
         raise ValueError("HL_COUNTS")
     common = encode_rig_payload(
-        parents, frames, targets, helpers, vertices, indices, materials, center, scale
+        parents,
+        frames,
+        targets,
+        helpers,
+        vertices,
+        indices,
+        materials,
+        center,
+        scale,
+        max_samples=80,
     )
     boundary = 16 + 4 * len(parents)
     bindings = b"".join(struct.pack("<HBB", b, c, 0) for b, c in zip(BONES, CHANNELS, strict=True))
     clips = b"".join(
         descriptors[i * 12 : (i + 1) * 12] + struct.pack("<II", first, 0)
-        for i, first in enumerate(PACKED_FIRST)
+        for i, first in enumerate(packed_first)
     )
     payload = common[:boundary] + bindings + clips + common[boundary:]
     return (
@@ -69,10 +93,10 @@ def encode_locomotion_rig(
             "<8s22I",
             MAGIC,
             *map(len, (parents, frames, targets, vertices, indices, materials)),
-            3,
+            len(records),
             2,
             25,
-            1,
+            profile,
             522,
             525,
             len(payload),
@@ -83,26 +107,34 @@ def encode_locomotion_rig(
     )
 
 
-def heather_locomotion_rig(geometry, animation, textures, descriptors):
+def heather_locomotion_rig(geometry, animation, textures, descriptors, *, profile=1):
     """Reduce decoded intermediates; receipt explicitly leaves provenance unverified.
 
     Use produce_heather_locomotion for source authentication. No caller-supplied
     digest can turn this synthetic/decoded entry point into a verified package.
     """
-    validate_descriptors(descriptors)
+    validate_descriptors(descriptors, profile=profile)
+    samples = _profile(profile)[3]
     try:
-        rig, files, selection = prepare_heather_rig(geometry, animation, textures, SAMPLES)
+        rig, files, selection = prepare_heather_rig(
+            geometry, animation, textures, samples, max_samples=80
+        )
         raw = encode_locomotion_rig(
-            **rig, source_bones=selection["bones"], channels=CHANNELS, descriptors=descriptors
+            **rig,
+            source_bones=selection["bones"],
+            channels=CHANNELS,
+            descriptors=descriptors,
+            profile=profile,
         )
         files["heather.sri"] = raw
-        report = _receipt(geometry, rig, files, selection, descriptors)
+        report = _receipt(geometry, rig, files, selection, descriptors, profile)
     except (KeyError, IndexError, TypeError, OverflowError, struct.error) as error:
         raise ValueError("HL_INPUT") from error
     return files, report
 
 
-def _receipt(geometry, rig, files, selection, descriptors):
+def _receipt(geometry, rig, files, selection, descriptors, profile):
+    name, records, packed_first, samples = _profile(profile)
     skeleton = geometry["mesh"]["skeleton"]
     bones = [
         dict(
@@ -156,7 +188,7 @@ def _receipt(geometry, rig, files, selection, descriptors):
             source_samples=list(range(d[3], d[4] + 1)),
             packed_samples=list(range(first, first + d[1])),
         )
-        for i, (d, first) in enumerate(zip(DESCRIPTORS, PACKED_FIRST, strict=True))
+        for i, (d, first) in enumerate(zip(records, packed_first, strict=True))
     ]
     materials = [
         dict(
@@ -175,7 +207,7 @@ def _receipt(geometry, rig, files, selection, descriptors):
     return dict(
         schema_version=1,
         format="SRI2",
-        profile=PROFILE,
+        profile=name,
         source_verified=False,
         model_resource=522,
         animation_resource=525,
@@ -195,7 +227,7 @@ def _receipt(geometry, rig, files, selection, descriptors):
             scale=rig["scale"],
             radius=selection["framing_radius"],
             source_frame=0,
-            bounded_samples=58,
+            bounded_samples=len(samples),
         ),
         clock=dict(ticks=2, inspection_hz=25, speed_offset=0, speeds_already_pal=True),
         files={

@@ -213,7 +213,42 @@ aplazadas. Continúa [F06.02/heather-turns](docs/specs/sh3-3ds/heather-turns.md)
 [HG-T2 completadas](docs/execution/f06-02-heather-turns-cycles.md): ciclos originales
 107/108 y cuatro transiciones espera↔giro, 70 actualizaciones/2520 matrices,
 máximo 0,000468465 frente a 0,001; 214 pruebas y cobertura nueva 100/100.
-Sigue HG-T3, contrato y vectores nativos; el build de consola se conserva.
+[HG-T3 completada](docs/execution/f06-02-heather-turns-contract.md): contrato
+del perfil 2 con cinco clips/78 muestras, arcos y controles, compatibilidad
+SRI2 y límites de memoria; 248 pruebas nuevas, 492 relacionadas.
+[HG-T4.1 completada](docs/execution/f06-02-heather-turns-core.md): perfil y núcleo
+C++ de giros, 405 resultados nativos, regresiones HL y seis gates de cobertura.
+[HG-T4.2 completada](docs/execution/f06-02-heather-turns-sri2.md): SRI2 de cinco
+clips, límites SRI1 conservados y paquetes A/B de 78 muestras verificados;
+70 retornos/2520 matrices, error máximo 0,000488282 < 0,001.
+[HG-T4.3 completada](docs/execution/f06-02-heather-turns-integration.md): cinco
+acciones con controles/contactos HM, 32 combinaciones/25 rutas/36 pasos de replay,
+156 fallos atómicos y reintentos; pausa, R, reinicio y HOME/tapa con dobles SDK.
+27 CTest en Clang/ASan/GCC, 633 pruebas Python y 16 gates individuales ≥80/80.
+[HG-T4.4 completada](docs/execution/f06-02-heather-turns-resources.md): presupuesto
+49,42/64 MiB, 2048 pasos privados sin asignaciones y pila ARM estimada con reserva
+28016/32768 bytes. 30 CTest Release Clang/GCC, 28 ASan/UBSan, 17 gates ≥80/80
+y ARM `0188790baedd` compilado.
+[HG-T5 preparada](docs/execution/f06-02-heather-turns-delivery.md): paquetes A/B
+idénticos, 29 archivos de instalación, ocho ejecuciones host desde ZIP
+extraídos y [protocolo de consola](docs/compatibility/heather-turns.md)
+con tablas cotejadas en C++. Build instalado en SD: 29 archivos releídos,
+respaldo de `c3aae59d1a70` verificado y expulsión segura confirmada.
+[Prueba funcional HG aceptada según el usuario](docs/compatibility/heather-turns-results.md):
+ambos ciclos/retornos, inversiones, cancelación, pausa/R, HOME/tapa, reinicio,
+RUNNING y START confirmados; R steps acumulado 129. Lecturas R raw y límites
+conservados; sin medidas nuevas de rendimiento/memoria. HM-T5 adicional sigue aplazada.
+[F06.03 / HS-T1 completada](docs/benchmarks/skinning.md): inventario A/B de
+skinning cotejado con C++, 6943 vértices y 83 matrices usadas; particiones
+opacas conservando orden. [HS-T2 completada](docs/execution/f06-03-heather-skinning-contract.md):
+contrato de 30 matrices por paleta, 54 casos numéricos, SDK fijado y ABI ARM
+comprobados. [HS-T3 completada en host](docs/execution/f06-03-heather-skinning-prototype.md):
+prototipo híbrido con fallback CPU, vectores/A-B, orden, fallos, memoria/pila
+e intervalos verificados. [HS-T4 completada](docs/execution/f06-03-heather-skinning-delivery.md):
+selector CPU/híbrida, ARM `f64760613473`, presupuesto híbrido 49,94 MiB,
+paquetes A/B verificados y [protocolo HS](docs/compatibility/heather-skinning.md).
+Sigue HS-T5, medición física; la SD no se modificó en HS-T4.
+La comparación de rendimiento y los límites de hardware siguen pendientes.
 La regla general de colisión sigue pendiente.
 Contador corregido y discrepancia de planificador tras restaurar
 registrados. Pendientes variantes de contacto, respuesta de esquina, cruce exacto de ±pi,

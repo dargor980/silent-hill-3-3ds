@@ -62,7 +62,7 @@ bool draw_vertex_ok(const CharacterDrawVertex &v) noexcept {
 }
 } // namespace
 bool valid_rig(const InspectionRig &m) noexcept {
-    return !rig_payload_error(m) && m.clip_id && m.clip_id <= 65535 && m.increment &&
+    return m.sample_count <= sri1_samples && !rig_payload_error(m) && m.clip_id && m.clip_id <= 65535 && m.increment &&
            m.increment <= 65535 && m.increment < m.sample_count * 4096;
 }
 const char *rig_payload_error(const InspectionRig &m) noexcept {

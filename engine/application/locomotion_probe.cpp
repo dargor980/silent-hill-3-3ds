@@ -97,7 +97,7 @@ void LocomotionProbe::playback(LocomotionInput input, float seconds) noexcept {
             std::size_t index = 0;
             while (profile_.clips[index].id != state_.clock.target_id)
                 ++index; // Valid published state and fixed authenticated profile.
-            index = (index + (input.next_clip ? 1 : 2)) % profile_.clips.size();
+            index = (index + (input.next_clip ? 1 : profile_.clip_count - 1)) % profile_.clip_count;
             const auto clip = profile_.clips[index].id;
             // Reject invalid edges now, without sampling or publishing a pose.
             const auto result = domain::plan_locomotion_update(profile_, state_.clock, clip,

@@ -7,6 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 option(SH3_SANITIZERS "Enable address and undefined behavior sanitizers on host" OFF)
 option(SH3_COVERAGE "Enable GCC coverage on host" OFF)
+option(SH3_STACK_AUDIT "Emit compiler stack frames and GCC call graphs" OFF)
 if(NINTENDO_3DS AND (SH3_SANITIZERS OR SH3_COVERAGE))
   message(FATAL_ERROR "Sanitizers and coverage are host-only")
 endif()
@@ -16,6 +17,12 @@ endif()
 
 add_library(sh3_options INTERFACE)
 target_compile_options(sh3_options INTERFACE -Wall -Wextra -Wpedantic -Werror)
+if(SH3_STACK_AUDIT)
+  target_compile_options(sh3_options INTERFACE -fstack-usage)
+  if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    target_compile_options(sh3_options INTERFACE -fcallgraph-info=su)
+  endif()
+endif()
 if(SH3_SANITIZERS)
   target_compile_options(sh3_options INTERFACE -fsanitize=address,undefined -fno-omit-frame-pointer)
   target_link_options(sh3_options INTERFACE -fsanitize=address,undefined)
@@ -34,11 +41,16 @@ add_library(sh3_domain engine/domain/lifecycle.cpp engine/domain/diagnostic_opti
   engine/domain/character_lighting.cpp engine/domain/character_world.cpp engine/domain/inspection_rig.cpp
   engine/domain/locomotion_clock.cpp engine/domain/locomotion_pose.cpp
   engine/domain/locomotion_update.cpp engine/domain/inspection_locomotion.cpp
-  engine/domain/inspection_movement.cpp engine/domain/room_contacts.cpp engine/domain/room_scene.cpp)
+  engine/domain/inspection_movement.cpp engine/domain/room_contacts.cpp engine/domain/room_scene.cpp
+  engine/domain/skinning_plan.cpp)
 # Native movement profile fixes expression evaluation; it does not emulate EE/VU rounding.
 set_source_files_properties(engine/domain/inspection_movement.cpp PROPERTIES
   COMPILE_OPTIONS "-fno-fast-math;-ffp-contract=off")
+set_source_files_properties(engine/domain/locomotion_pose.cpp PROPERTIES
+  COMPILE_OPTIONS "-fno-fast-math;-ffp-contract=off")
 set_source_files_properties(engine/domain/room_scene.cpp PROPERTIES
+  COMPILE_OPTIONS "-fno-fast-math;-ffp-contract=off")
+set_source_files_properties(engine/domain/skinning_plan.cpp engine/domain/inspection_rig.cpp PROPERTIES
   COMPILE_OPTIONS "-fno-fast-math;-ffp-contract=off")
 # Compiler metadata for the complete HRC stack bound (no runtime instrumentation).
 set_source_files_properties(engine/domain/room_contacts.cpp
@@ -157,14 +169,31 @@ if(NINTENDO_3DS)
     DESCRIPTION "Private clip 0x1449 - skeleton axes" AUTHOR "SH3 3DS contributors")
   ctr_create_3dsx(sh3_animation_probe SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_animation_probe.smdh")
   sh3_add_inspection_shader(character_shader engine/platform/3ds/render/character.v.pica)
+  ctr_add_shader_library(skinning_shader engine/platform/3ds/render/skinning.v.pica)
+  dkp_add_embedded_binary_library(skinning_shader_data skinning_shader)
+  add_custom_target(skinning_shader_output_check
+    COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/qa/skinning_shader.py"
+      "${CMAKE_CURRENT_BINARY_DIR}/skinning_shader.shbin"
+    DEPENDS skinning_shader "${CMAKE_CURRENT_SOURCE_DIR}/tools/qa/skinning_shader.py" VERBATIM)
+  add_dependencies(skinning_shader_data skinning_shader_output_check)
   add_executable(sh3_heather_room engine/platform/3ds/render/room_entry.cpp
-    engine/platform/3ds/render/room_main.cpp engine/platform/3ds/render/room_renderer.cpp)
+    engine/platform/3ds/render/room_main.cpp engine/platform/3ds/render/room_renderer.cpp
+    engine/platform/3ds/render/skinning_gpu.cpp)
   target_compile_definitions(sh3_heather_room PRIVATE SH3_BUILD_ID="${identity}")
   target_link_libraries(sh3_heather_room PRIVATE sh3_application sh3_diagnostics sh3_movement_controls
-    sh3_room_material sh3_options character_shader_data citro3d)
+    sh3_room_material sh3_options character_shader_data skinning_shader_data citro3d)
   ctr_generate_smdh(OUTPUT "sh3_heather_room.smdh" NAME "SH3 Heather room"
     DESCRIPTION "Private hp34 - diagnostic color and light" AUTHOR "SH3 3DS contributors")
   ctr_create_3dsx(sh3_heather_room SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_heather_room.smdh")
+  add_executable(sh3_heather_skinning engine/platform/3ds/render/skinning_entry.cpp
+    engine/platform/3ds/render/room_main.cpp engine/platform/3ds/render/room_renderer.cpp
+    engine/platform/3ds/render/skinning_gpu.cpp)
+  target_compile_definitions(sh3_heather_skinning PRIVATE SH3_BUILD_ID="${identity}")
+  target_link_libraries(sh3_heather_skinning PRIVATE sh3_application sh3_diagnostics sh3_movement_controls
+    sh3_room_material sh3_options character_shader_data skinning_shader_data citro3d)
+  ctr_generate_smdh(OUTPUT "sh3_heather_skinning.smdh" NAME "SH3 Heather CPU GPU"
+    DESCRIPTION "HS comparative CPU and hybrid - private hp34" AUTHOR "SH3 3DS contributors")
+  ctr_create_3dsx(sh3_heather_skinning SMDH "${CMAKE_CURRENT_BINARY_DIR}/sh3_heather_skinning.smdh")
   add_executable(sh3_heather_probe engine/platform/3ds/render/rig_main.cpp
     engine/platform/3ds/render/rig_renderer.cpp engine/platform/3ds/render/material_state.cpp)
   target_compile_definitions(sh3_heather_probe PRIVATE SH3_BUILD_ID="${identity}")
@@ -212,7 +241,39 @@ endif()
 
 include(CTest)
 if(BUILD_TESTING AND NOT NINTENDO_3DS)
+  add_executable(test_skinning_capture tests/cpp/test_skinning_capture.cpp)
+  target_include_directories(test_skinning_capture PRIVATE tests/cpp)
+  target_link_libraries(test_skinning_capture PRIVATE sh3_diagnostics sh3_options)
+  add_test(NAME skinning_capture COMMAND test_skinning_capture)
+  add_executable(test_skinning_native tests/cpp/test_skinning_native.cpp)
+  target_include_directories(test_skinning_native PRIVATE tests/cpp)
+  target_link_libraries(test_skinning_native PRIVATE sh3_domain sh3_options)
+  add_test(NAME skinning_native COMMAND test_skinning_native)
+  foreach(test IN ITEMS test_skinning_renderer test_skinning_resources skinning_benchmark)
+    if(test STREQUAL "test_skinning_resources")
+      set(test_source tests/cpp/test_heather_turns_resources.cpp)
+    elseif(test STREQUAL "skinning_benchmark")
+      set(test_source tests/cpp/skinning_benchmark.cpp)
+    else()
+      set(test_source tests/cpp/test_skinning_renderer.cpp)
+    endif()
+    add_executable(${test} ${test_source} tests/cpp/room_sdk.cpp
+      engine/platform/3ds/render/room_renderer.cpp engine/platform/3ds/render/skinning_gpu.cpp
+      engine/platform/3ds/render/room_material_state.cpp engine/platform/3ds/render/material_state.cpp)
+    target_include_directories(${test} PRIVATE tests/cpp tests/cpp/render_doubles
+      engine/platform/3ds engine/platform/3ds/render)
+    target_compile_definitions(${test} PRIVATE SH3_TEST_HYBRID=1)
+    target_link_libraries(${test} PRIVATE sh3_application sh3_diagnostics sh3_options)
+  endforeach()
+  add_executable(test_heather_turns_resources tests/cpp/test_heather_turns_resources.cpp
+    tests/cpp/room_sdk.cpp engine/platform/3ds/render/room_renderer.cpp
+    engine/platform/3ds/render/skinning_gpu.cpp
+    engine/platform/3ds/render/room_material_state.cpp engine/platform/3ds/render/material_state.cpp)
+  target_include_directories(test_heather_turns_resources PRIVATE tests/cpp tests/cpp/render_doubles
+    engine/platform/3ds engine/platform/3ds/render)
+  target_link_libraries(test_heather_turns_resources PRIVATE sh3_application sh3_diagnostics sh3_options)
   add_executable(test_room_runtime tests/cpp/test_room_runtime.cpp tests/cpp/room_sdk.cpp
+    engine/platform/3ds/render/skinning_gpu.cpp
     engine/platform/3ds/render/room_renderer.cpp engine/platform/3ds/render/room_main.cpp
     engine/platform/3ds/render/room_material_state.cpp engine/platform/3ds/render/material_state.cpp
     engine/platform/3ds/movement_controls.cpp)
@@ -282,6 +343,16 @@ if(BUILD_TESTING AND NOT NINTENDO_3DS)
   target_link_libraries(test_locomotion_update PRIVATE sh3_domain sh3_options)
   add_test(NAME locomotion_update COMMAND test_locomotion_update)
   set_tests_properties(locomotion_update PROPERTIES LABELS "unit;contract;animation" TIMEOUT 30)
+  add_executable(test_heather_turns tests/cpp/test_heather_turns.cpp)
+  add_executable(test_heather_turns_integration tests/cpp/test_heather_turns_integration.cpp)
+  target_include_directories(test_heather_turns_integration PRIVATE tests/cpp)
+  target_link_libraries(test_heather_turns_integration PRIVATE sh3_application sh3_diagnostics sh3_options)
+  add_test(NAME heather_turns_integration COMMAND test_heather_turns_integration)
+  set_tests_properties(heather_turns_integration PROPERTIES LABELS "integration;contract;movement;lifecycle" TIMEOUT 30)
+  target_include_directories(test_heather_turns PRIVATE tests/cpp)
+  target_link_libraries(test_heather_turns PRIVATE sh3_domain sh3_options)
+  add_test(NAME heather_turns COMMAND test_heather_turns)
+  set_tests_properties(heather_turns PROPERTIES LABELS "unit;contract;animation" TIMEOUT 30)
   add_executable(test_inspection_rig tests/cpp/test_inspection_rig.cpp)
   add_executable(test_inspection_locomotion tests/cpp/test_inspection_locomotion.cpp)
   target_include_directories(test_inspection_locomotion PRIVATE tests/cpp)
@@ -292,6 +363,7 @@ if(BUILD_TESTING AND NOT NINTENDO_3DS)
   target_link_libraries(test_inspection_rig PRIVATE sh3_application sh3_diagnostics sh3_options)
   add_test(NAME inspection_rig COMMAND test_inspection_rig)
   add_executable(test_rig_draw_equivalence tests/cpp/test_rig_draw_equivalence.cpp)
+  target_compile_options(test_rig_draw_equivalence PRIVATE -fno-fast-math -ffp-contract=off)
   target_include_directories(test_rig_draw_equivalence PRIVATE tests/cpp)
   target_link_libraries(test_rig_draw_equivalence PRIVATE sh3_domain sh3_options)
   add_test(NAME rig_draw_equivalence COMMAND test_rig_draw_equivalence)
@@ -428,11 +500,23 @@ if(BUILD_TESTING AND NOT NINTENDO_3DS)
   # Host-only observer domain. Nintendo targets never depend on the PCSX2 tooling.
   find_package(Threads REQUIRED)
   find_package(Python3 REQUIRED COMPONENTS Interpreter)
+  add_test(NAME skinning_conformance COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/skinning_conformance.py $<TARGET_FILE:test_skinning_native>)
   add_test(NAME room_contacts_oracle COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/tests/room_contacts_oracle.py $<TARGET_FILE:test_room_contacts>)
   set_tests_properties(room_contacts_oracle PROPERTIES LABELS "integration;contract;movement" TIMEOUT 60)
   add_test(NAME room_runtime COMMAND ${Python3_EXECUTABLE}
-    ${CMAKE_CURRENT_SOURCE_DIR}/tests/room_runtime_conformance.py $<TARGET_FILE:test_room_runtime>)
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/room_runtime_conformance.py $<TARGET_FILE:test_room_runtime>
+    $<TARGET_FILE:test_heather_turns_resources> $<TARGET_FILE:test_skinning_renderer>
+    $<TARGET_FILE:test_skinning_resources>)
+  if(SH3_STACK_AUDIT AND NOT SH3_SANITIZERS AND NOT SH3_COVERAGE)
+    add_test(NAME heather_turns_stack COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_CURRENT_SOURCE_DIR}/tests/heather_turns_stack.py ${CMAKE_CURRENT_BINARY_DIR})
+    set_tests_properties(heather_turns_stack PROPERTIES LABELS "contract;memory" TIMEOUT 30)
+    add_test(NAME skinning_stack COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_CURRENT_SOURCE_DIR}/tests/skinning_stack.py ${CMAKE_CURRENT_BINARY_DIR})
+    set_tests_properties(skinning_stack PROPERTIES LABELS "contract;memory" TIMEOUT 30)
+  endif()
   set_tests_properties(room_runtime PROPERTIES LABELS "integration;contract;render;lifecycle;sdk-double" TIMEOUT 300)
   add_test(NAME room_scene_oracle COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/tests/room_scene_conformance.py $<TARGET_FILE:test_room_scene>)
@@ -454,6 +538,12 @@ if(BUILD_TESTING AND NOT NINTENDO_3DS)
   add_test(NAME locomotion_update_oracle COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/tests/locomotion_update_oracle.py $<TARGET_FILE:test_locomotion_update>)
   set_tests_properties(locomotion_update_oracle PROPERTIES LABELS "integration;contract;animation" TIMEOUT 30)
+  add_test(NAME heather_turns_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/heather_turns_oracle.py $<TARGET_FILE:test_heather_turns>)
+  set_tests_properties(heather_turns_oracle PROPERTIES LABELS "integration;contract;animation" TIMEOUT 30)
+  add_test(NAME heather_turns_integration_oracle COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/heather_turns_integration_oracle.py $<TARGET_FILE:test_heather_turns_integration>)
+  set_tests_properties(heather_turns_integration_oracle PROPERTIES LABELS "integration;contract;movement" TIMEOUT 30)
   add_test(NAME locomotion_rig_wire_oracle COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/tests/locomotion_rig_wire_oracle.py $<TARGET_FILE:test_inspection_locomotion>)
   set_tests_properties(locomotion_rig_wire_oracle PROPERTIES LABELS "integration;contract;animation" TIMEOUT 120)

@@ -3,7 +3,7 @@
   "cmakeMinimumRequired": {"major": 3, "minor": 21, "patch": 0},
   "configurePresets": [
     {"name": "host-debug", "generator": "Unix Makefiles", "binaryDir": "${sourceDir}/build/host-debug", "cacheVariables": {"CMAKE_BUILD_TYPE": "Debug", "BUILD_TESTING": "ON"}},
-    {"name": "host-release", "inherits": "host-debug", "binaryDir": "${sourceDir}/build/host-release", "cacheVariables": {"CMAKE_BUILD_TYPE": "Release"}},
+    {"name": "host-release", "inherits": "host-debug", "binaryDir": "${sourceDir}/build/host-release", "cacheVariables": {"CMAKE_BUILD_TYPE": "Release", "SH3_STACK_AUDIT": "ON"}},
     {"name": "host-sanitize", "inherits": "host-debug", "binaryDir": "${sourceDir}/build/host-sanitize", "cacheVariables": {"SH3_SANITIZERS": "ON"}},
     {"name": "host-coverage", "inherits": "host-debug", "binaryDir": "${sourceDir}/build/host-coverage", "cacheVariables": {"SH3_COVERAGE": "ON"}}
   ],

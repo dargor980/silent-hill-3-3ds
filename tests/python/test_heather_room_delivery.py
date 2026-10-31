@@ -242,3 +242,33 @@ def test_materials_archive_and_delivery_dispatch(inputs, monkeypatch):
     del data["room-texture-08.rgba"]
     with pytest.raises(ValueError, match="Unexpected inspection archive files"):
         inspection_archive(data, delivery.STEM)
+
+
+def test_skinning_stem_identity_and_archive(inputs):
+    from tools.pipeline.collision_polygon_inputs import PinnedInputs
+
+    build, repo = inputs[4], inputs[6]
+    stem = "sh3_heather_skinning"
+    for ext in ("elf", "3dsx", "smdh"):
+        (build / f"{delivery.STEM}.{ext}").rename(build / f"{stem}.{ext}")
+    checksum = build / "SHA256SUMS"
+    checksum.write_text(checksum.read_text().replace(delivery.STEM, stem))
+    custody = PinnedInputs()
+    artifacts, identity = delivery.verified_build(build, repo, custody, stem)
+    assert identity.encode() in artifacts[f"{stem}.3dsx"]
+    files = {n: b"synthetic" for n in delivery.RUNTIME_NAMES}
+    files.update({f"{stem}.{e}": artifacts[f"{stem}.{e}"] for e in ("3dsx", "smdh")})
+    files["LEEME.txt"] = b"HS synthetic"
+    for materials in (False, True):
+        if materials:
+            files.update({f"room-texture-{i:02}.rgba": b"synthetic" for i in range(9)})
+        raw = inspection_archive(files, stem)
+        assert raw == inspection_archive(dict(reversed(list(files.items()))), stem)
+        with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+            assert set(archive.namelist()) == {f"3ds/{stem}/{n}" for n in files} | {"SHA256SUMS"}
+            assert archive.testzip() is None
+        with pytest.raises(ValueError):
+            inspection_archive({**files, "unexpected": b"x"}, stem)
+    custody.verify()
+    with pytest.raises(ValueError):
+        delivery.verified_build(build, repo, PinnedInputs())  # Cannot impersonate accepted HG.

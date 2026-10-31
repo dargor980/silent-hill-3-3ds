@@ -95,7 +95,9 @@ def test_valid_package_cannot_hide_source_difference(source, section):
 def publication_seam(monkeypatch, source):
     files, report = source[-2:]
     monkeypatch.setattr(
-        publisher, "produce_heather_locomotion", lambda *args: (dict(files), copy.deepcopy(report))
+        publisher,
+        "produce_heather_locomotion",
+        lambda *args, **kwargs: (dict(files), copy.deepcopy(report)),
     )
 
 

@@ -61,7 +61,7 @@ SAMPLES = (*range(10), *range(80, 104), *range(176, 200))
 PAL = bytes.fromhex("65000a0033010000090001006d001800cc0750006700010071001800b308b000c7000100")
 
 
-def own_locomotion_shape():
+def own_locomotion_shape(*, turns=False):
     geometry, animation, textures = own_heather_shape()
     mesh = geometry["mesh"]
     for part in mesh["submeshes"]:
@@ -78,7 +78,7 @@ def own_locomotion_shape():
     mesh["skeleton"]["matrices_columns"] = matrices
     # Unselected tracks are poisoned to detect accidental contiguous 0..57 selection.
     animation["frames"] = [dict(tracks=[])] * 1763
-    for f in SAMPLES:
+    for f in (*SAMPLES, *range(60, 80)) if turns else SAMPLES:
         animation["frames"][f] = dict(
             tracks=[
                 dict(

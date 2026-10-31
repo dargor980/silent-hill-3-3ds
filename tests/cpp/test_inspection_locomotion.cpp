@@ -82,7 +82,7 @@ void number(Bytes &b, float f) {
     add(b, x);
 }
 void crc(Bytes &b) { put(b, 60, platform::inspection_crc32(b.data() + 96, b.size() - 96)); }
-Bytes fixture() {
+Bytes fixture(bool turns = false) {
     for (unsigned t = 0; t < 2; ++t) {
         pixels[t].resize(128 * 256 * 4);
         for (std::size_t i = 0; i < pixels[t].size(); ++i)
@@ -90,7 +90,8 @@ Bytes fixture() {
     }
     Bytes b{'S', '3', 'R', 'I', 'v', '2', 0, 0};
     b.resize(96);
-    const std::uint32_t header[]{36, 58, 1, 3, 6, 2, 3, 2, 25, 1, 522, 525};
+    const std::uint32_t header[]{36, turns ? 78U : 58U, 1, 3, 6, 2, turns ? 5U : 3U,
+                                 2, 25, turns ? 2U : 1U, 522, 525};
     for (unsigned i = 0; i < 12; ++i)
         put(b, 8 + 4 * i, header[i]);
     for (auto v : {0.F, 0.F, 0.F, .01F})
@@ -107,8 +108,11 @@ Bytes fixture() {
     }
     const unsigned clips[][8]{{101, 10, 307, 0, 9, 1, 0, 0},
                               {109, 24, 1996, 80, 103, 1, 0, 10},
-                              {113, 24, 2227, 176, 199, 1, 0, 34}};
-    for (const auto &c : clips) {
+                              {113, 24, 2227, 176, 199, 1, 0, 34},
+                              {107, 10, 1152, 60, 69, 1, 0, 58},
+                              {108, 10, 1152, 70, 79, 1, 0, 68}};
+    for (unsigned clip = 0; clip < (turns ? 5U : 3U); ++clip) {
+        const auto &c = clips[clip];
         for (unsigned i = 0; i < 5; ++i)
             add(b, c[i], 2);
         add(b, c[5], 1);
@@ -116,9 +120,9 @@ Bytes fixture() {
         add(b, c[7]);
         add(b, 0);
     }
-    for (unsigned f = 0; f < 58; ++f)
+    for (unsigned f = 0; f < (turns ? 78U : 58U); ++f)
         for (unsigned bone = 0; bone < 36; ++bone) {
-            const auto source = f < 10 ? f : f < 34 ? f + 70 : f + 142;
+            const auto source = f < 10 ? f : f < 34 ? f + 70 : f < 58 ? f + 142 : f + 2;
             for (float v : {float(source + bone) / 16, float(bone) / 32, -0.F, 0.F, 0.F, 0.F, 1.F})
                 number(b, v);
         }
@@ -224,11 +228,11 @@ void dump(const Model &m) {
                 double(g.center.z), double(g.scale));
     for (unsigned i = 0; i < g.bone_count; ++i)
         std::printf("B %u %d %u\n", m.source_bones[i], g.parents[i], m.channels[i]);
-    for (const auto &c : m.profile.clips)
+    for (const auto &c : m.profile.active_clips())
         std::printf("C %u %u %d %u %u %u %u %u 0\n", c.id, c.count, c.speed, c.start, c.end, c.loop,
                     c.trailing, c.packed_first);
     domain::InspectionLocomotionReader reader(m);
-    for (const auto &c : m.profile.clips)
+    for (const auto &c : m.profile.active_clips())
         for (unsigned f = 0; f < c.count; ++f)
             for (unsigned b = 0; b < g.bone_count; ++b) {
                 domain::LocomotionTransform tr{};
@@ -279,7 +283,7 @@ int trace(const Model &m) {
     if (domain::initialize_locomotion(m.profile, domain::locomotion_rig_skeleton(m), reader, state,
                                       workspace) != domain::LocomotionError::ok)
         return 3;
-    state.clock = {1, clip, clip, domain::LocomotionMode::stable, phase, 0, false};
+    state.clock = {m.profile.id, clip, clip, domain::LocomotionMode::stable, phase, 0, false};
     unsigned request{};
     do {
         const auto error = domain::update_locomotion(
@@ -575,6 +579,8 @@ int main(int argc, char **argv) {
         CHECK(std::strcmp(domain::locomotion_rig_error(out), field) == 0);
     };
     domain_bad([](auto &m) { m.profile.id = 0; }, "profile");
+    // Crossed profile/count pairs remain invalid even though both profiles are supported.
+    domain_bad([](auto &m) { m.profile = domain::heather_turns_profile; }, "counts");
     domain_bad([](auto &m) { m.inspection_hz = 24; }, "profile");
     domain_bad([](auto &m) { m.shared.clip_id = 101; }, "profile");
     domain_bad([](auto &m) { m.shared.increment = 614; }, "profile");
@@ -583,7 +589,7 @@ int main(int argc, char **argv) {
     out = model_copy;
     domain::InspectionLocomotionReader reader(out);
     domain::LocomotionTransform tr{};
-    for (const auto &c : out.profile.clips) {
+    for (const auto &c : out.profile.active_clips()) {
         CHECK(reader.read(c.id, c.count - 1, 0, tr));
         CHECK(tr.translation.x == float(c.end) / 16);
         const auto previous = tr;
@@ -595,7 +601,7 @@ int main(int argc, char **argv) {
     out.shared.bone_count = 74;
     CHECK(!reader.read(101, 0, 73, tr));
     out = model_copy;
-    out.shared.sample_count = 65;
+    out.shared.sample_count = 81;
     CHECK(!reader.read(101, 0, 0, tr));
     out = model_copy;
     out.profile.clips[0].packed_first = 0xffffffffU;
@@ -645,6 +651,66 @@ int main(int argc, char **argv) {
     }
     track_allocations = false;
     CHECK(allocations == 0 && scene.frames == 500 && app.snapshot().clock.target_id == 101);
+    const auto turns = fixture(true);
+    wire = turns;
+    reset();
+    CHECK(platform::read_locomotion_bundle("own", out, api()).error == E::ok);
+    watch = false;
+    CHECK(!domain::locomotion_rig_error(out));
+    CHECK(out.profile.id == 2 && out.shared.sample_count == 78);
+    CHECK(out.shared.samples[78][0].rotation[3] == 0);
+    for (auto clip : {107U, 108U}) {
+        CHECK(reader.read(clip, 9, 0, tr));
+        CHECK(tr.translation.x == (clip == 107 ? 69.F : 79.F) / 16);
+        CHECK(!reader.read(clip, 10, 0, tr));
+    }
+    // All crossed counts/IDs fail before allocation and cannot publish partial state.
+    for (auto item : {std::pair{12U, 58U}, {12U, 79U}, {12U, 80U}, {12U, 81U},
+                      {32U, 3U}, {32U, 6U}, {32U, 0xffffffffU}, {44U, 1U}, {44U, 3U}}) {
+        wire = turns;
+        put(wire, item.first, item.second);
+        reset();
+        track_allocations = true;
+        const auto result = platform::read_locomotion_rig("own", out, api());
+        track_allocations = false;
+        CHECK(allocations == 0);
+        rejected(result, E::invalid_data);
+    }
+    // Every byte of each added descriptor, plus every added local TR component.
+    for (std::size_t at = 460; at < 500; ++at) {
+        wire = turns;
+        wire[at] ^= 1;
+        crc(wire);
+        reset();
+        rejected(platform::read_locomotion_rig("own", out, api()), E::invalid_data);
+    }
+    for (std::size_t at = 500 + 58 * 36 * 28; at < 500 + 78 * 36 * 28; at += 4) {
+        wire = turns;
+        put(wire, at, 0x7fc00000U);
+        crc(wire);
+        reset();
+        rejected(platform::read_locomotion_rig("own", out, api()), E::invalid_data);
+    }
+    for (unsigned fail = 1; fail <= 3; ++fail) {
+        wire = turns;
+        reset();
+        fail_allocation = fail;
+        track_allocations = true;
+        const auto result = platform::read_locomotion_bundle("own", out, api());
+        track_allocations = false;
+        rejected(result, E::read_failed);
+    }
+    for (unsigned close = 1; close <= 3; ++close) {
+        wire = turns;
+        reset();
+        fail_close = close;
+        rejected(platform::read_locomotion_bundle("own", out, api()), E::close_failed);
+    }
+    wire = turns;
+    reset();
+    CHECK(platform::read_locomotion_bundle("own", out, api()).error == E::ok);
+    watch = false;
+    CHECK(!domain::locomotion_rig_error(out));
     std::printf("SRI2 native: %u rejections with byte-identical output; bundle/reader/500 updates "
                 "PASS; model %zu bytes\n",
                 rejections, sizeof(Model));

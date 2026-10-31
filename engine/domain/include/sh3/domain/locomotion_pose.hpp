@@ -45,5 +45,6 @@ struct LocomotionPoseScratch {
 // Default idle preserves initialization semantics; explicit clip is an inspection restart.
 [[nodiscard]] LocomotionError initialize_locomotion_pose(
     const LocomotionSkeleton &, const LocomotionSampleReader &,
-    LocomotionPoseScratch &scratch, std::uint32_t initial_clip = 101) noexcept;
+    LocomotionPoseScratch &scratch, std::uint32_t initial_clip = 101,
+    const LocomotionProfile &profile = heather_locomotion_profile) noexcept;
 } // namespace sh3::domain

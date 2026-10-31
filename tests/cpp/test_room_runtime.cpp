@@ -5,6 +5,7 @@
 #include "room_sdk.hpp"
 #include "sh3/application/room_loop.hpp"
 #include "sh3/platform/inspection_crc32.hpp"
+#include "sh3/platform/skinning_capture.hpp"
 #include <algorithm>
 #include <cstring>
 #include <limits>
@@ -297,11 +298,17 @@ auto replay(const char *root, const platform::RoomAssets &a, unsigned hz, bool i
         controls.frame(0, 0, now);
         const auto before_allocations = allocations;
         unsigned blocked = 0;
-        for (unsigned segment = 0; segment < 4; ++segment) {
+        const auto segments = a.rig.profile.id == 2 ? 8U : 4U;
+        for (unsigned segment = 0; segment < segments; ++segment) {
             const u32 input = segment == 0   ? 0
                               : segment == 1 ? KEY_DUP
                               : segment == 2 ? KEY_DUP | KEY_B
-                                             : KEY_DUP | KEY_DLEFT;
+                              : segment == 3 ? KEY_DUP | KEY_DLEFT
+                              : segment == 4 ? KEY_DRIGHT
+                              : segment == 5 ? KEY_DLEFT
+                              : segment == 6 ? 0
+                                             : KEY_DLEFT | KEY_DRIGHT;
+            const auto segment_position = app.snapshot().movement.position;
             const auto start = now;
             for (unsigned frame = 1; frame <= hz; ++frame) {
                 now = start + SYSCLOCK_ARM11 * frame / hz;
@@ -314,6 +321,13 @@ auto replay(const char *root, const platform::RoomAssets &a, unsigned hz, bool i
                     ++blocked;
             }
             CHECK(app.fault() == application::RoomFault::none);
+            if (segment >= 4) {
+                CHECK(app.snapshot().movement.position.x == segment_position.x &&
+                      app.snapshot().movement.position.z == segment_position.z);
+                CHECK(app.snapshot().animation.clock.target_id == (segment == 4   ? 107U
+                                                                   : segment == 5 ? 108U
+                                                                                  : 101U));
+            }
             if (interrupts) {
                 const auto instance = app.snapshot().instance;
                 const auto ordinal = app.snapshot().movement.ordinal;
@@ -338,7 +352,8 @@ auto replay(const char *root, const platform::RoomAssets &a, unsigned hz, bool i
                       app.snapshot().movement.ordinal == ordinal);
             }
         }
-        CHECK(allocations == before_allocations && app.snapshot().movement.ordinal == 100);
+        CHECK(allocations == before_allocations &&
+              app.snapshot().movement.ordinal == segments * 25);
         CHECK(static_before == platform::inspection_crc32(
                                    reinterpret_cast<const std::uint8_t *>(colored), static_bytes));
         CHECK(blocked > 0); // Wall/floor rejection still advances animation and ordinal.
@@ -402,6 +417,51 @@ void pause_trace(const char *root, unsigned hz) {
     CHECK(platform::ctr::run_room(root) == 0);
     CHECK(!active && !bytes && !screens && hooks == unhooks);
     std::printf("\nPAUSE_TRACE_END %u\n", hz);
+}
+void comparison_loop(const char *root) {
+    for (bool fallback : {false, true}) {
+        reset();
+        if (fallback)
+            failure = "HS_PALETTE";
+        length = 0;
+        auto add = [&](u32 held = 0, u32 down = 0, int event = -1) {
+            const auto tick = std::uint64_t(length) * SYSCLOCK_ARM11 / 25;
+            script[length++] = {held, down, tick, event};
+        };
+        add(KEY_L, KEY_L); // Held through launch cannot select.
+        add();
+        add(KEY_A | KEY_L, KEY_A | KEY_L); // Ambiguous choice ignored.
+        add();
+        add(KEY_A, KEY_A); // CPU.
+        add();
+        add(KEY_A, KEY_A); // RUNNING.
+        add();
+        add(KEY_X, KEY_X);
+        for (unsigned i = 0; i < 300; ++i)
+            add();
+        add(KEY_Y, KEY_Y);
+        add();
+        add(KEY_SELECT, KEY_SELECT);
+        add();
+        add(KEY_L, KEY_L); // Hybrid, fresh paused pose.
+        add();
+        add(0, 0, APTHOOK_ONSLEEP);
+        add(KEY_SELECT, KEY_SELECT, APTHOOK_ONWAKEUP); // Release gate protects menu too.
+        add();
+        add(KEY_A, KEY_A);
+        add();
+        add(KEY_X, KEY_X);
+        for (unsigned i = 0; i < 300; ++i)
+            add();
+        add(KEY_Y, KEY_Y);
+        add();
+        add(KEY_SELECT | KEY_START, KEY_SELECT | KEY_START); // Exit wins.
+        std::printf("\nHS_COMPARISON_BEGIN %u\n", unsigned(fallback));
+        CHECK(platform::ctr::run_room(root, true) == 0);
+        CHECK(!active && !bytes && !screens && hooks == unhooks);
+        CHECK(hooks == 4); // Two menus and two complete owners, never overlapping.
+        std::printf("\nHS_COMPARISON_END %u\n", unsigned(fallback));
+    }
 }
 void main_loop(const char *root) {
     reset();
@@ -467,6 +527,8 @@ int main(int argc, char **argv) {
         renderer_failures(argv[1], *a);
     } else
         CHECK(platform::read_room_runtime(argv[1], a).error == E::ok);
+    if (argc == 3 && std::strcmp(argv[2], "--turns") == 0)
+        CHECK(a->rig.profile.id == 2 && a->rig.shared.sample_count == 78);
     auto first = replay(argv[1], *a, 25, false);
     for (unsigned rate : {60U, 143U}) {
         auto next = replay(argv[1], *a, rate, true);
@@ -475,6 +537,8 @@ int main(int argc, char **argv) {
     }
     CHECK(!active && !bytes && hooks == unhooks);
     main_loop(argv[1]);
+    if (argc == 3 && std::strcmp(argv[2], "--turns") == 0)
+        comparison_loop(argv[1]);
     std::printf("Room runtime: read/render/HID/clock/contacts/APT/retry/cleanup PASS; extra=%zu "
                 "controller=%zu\n",
                 platform::room_runtime_extra, sizeof(application::RoomLoop));

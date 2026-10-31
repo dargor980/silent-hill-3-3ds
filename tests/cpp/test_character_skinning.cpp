@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
                 return -1;
             };
         if (argc == 3 && std::strcmp(argv[2], "read-failure") == 0)
-            api.error = +[](FILE *) -> int { return 1; };
+            api.error = +[](FILE *) noexcept -> int { return 1; };
         if (argc == 3 && std::strcmp(argv[2], "short-read") == 0)
             api.read = +[](void *p, std::size_t s, std::size_t n, FILE *f) -> std::size_t {
                 return std::fread(p, s, n > 1 ? n - 1 : n, f);

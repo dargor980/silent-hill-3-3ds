@@ -1,5 +1,6 @@
 #pragma once
 #include "sh3/domain/inspection_rig.hpp"
+#include "sh3/domain/work_trace.hpp"
 
 namespace sh3::domain {
 inline constexpr Vec3 room_origin{100000, 0, 140000};
@@ -79,8 +80,8 @@ class PreparedRoomScene final {
     PreparedRoomScene(const RoomMap &, const InspectionRig &) noexcept;
     bool ready() const noexcept { return ready_; }
     const RoomMemory &memory() const noexcept { return memory_; }
-    [[nodiscard]] bool frame(const RigPose &, const PoseMatrix &, RoomWorkspace &,
-                             RoomFrame &) const noexcept;
+    [[nodiscard]] bool frame(const RigPose &, const PoseMatrix &, RoomWorkspace &, RoomFrame &,
+                             WorkTrace * = nullptr) const noexcept;
 
   private:
     const RoomMap &map_;

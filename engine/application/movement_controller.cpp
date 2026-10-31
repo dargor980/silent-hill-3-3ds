@@ -4,7 +4,7 @@ namespace sh3::application {
 namespace {
 using Session = domain::SessionState;
 using Event = domain::LifecycleEvent;
-using Motion = domain::InspectionMotion;
+using Action = InspectionAction;
 using Turn = domain::InspectionTurn;
 class CallScope final {
   public:
@@ -18,16 +18,37 @@ bool held(MovementInput i) noexcept {
     return i.any_held || i.forward || i.backward || i.left || i.right || i.run || i.pause ||
            i.advance || i.restart || i.quit;
 }
-domain::InspectionMovementIntent intent(MovementInput i) noexcept {
-    const auto motion =
-        i.forward && !i.backward ? (i.run ? Motion::run : Motion::walk) : Motion::idle;
+InspectionActionIntent intent(MovementInput i, bool turns) noexcept {
     const auto turn = i.left == i.right ? Turn::none : i.left ? Turn::left : Turn::right;
-    return {motion, turn};
+    const auto action = i.forward && !i.backward       ? (i.run ? Action::run : Action::walk)
+                        : !turns || turn == Turn::none ? Action::idle
+                        : turn == Turn::right          ? Action::turn_right
+                                                       : Action::turn_left;
+    return {action, turn};
 }
-Motion active_motion(const domain::LocomotionClock &clock) noexcept {
-    return clock.target_id == 109   ? Motion::walk
-           : clock.target_id == 113 ? Motion::run
-                                    : Motion::idle;
+Action active_action(const domain::LocomotionClock &clock) noexcept {
+    switch (clock.target_id) {
+    case 109:
+        return Action::walk;
+    case 113:
+        return Action::run;
+    case 107:
+        return Action::turn_right;
+    case 108:
+        return Action::turn_left;
+    default:
+        return Action::idle;
+    }
+}
+Action next_action(Action current, Action desired) noexcept {
+    if (current == desired)
+        return current;
+    if (current == Action::idle)
+        return desired == Action::run ? Action::walk : desired;
+    if ((current == Action::walk && desired == Action::run) ||
+        (current == Action::run && desired == Action::walk))
+        return desired;
+    return Action::idle; // All remaining paths go through idle, one arc at a time.
 }
 } // namespace
 
@@ -36,7 +57,7 @@ MovementController::MovementController(const domain::LocomotionProfile &profile,
                                        const domain::LocomotionSampleReader &reader,
                                        const ports::IMovementContacts &contacts, domain::Vec3 spawn,
                                        float yaw) noexcept
-    : actor_(profile, rig, reader, contacts), spawn_(spawn), yaw_(yaw) {
+    : actor_(profile, rig, reader, contacts), spawn_(spawn), yaw_(yaw), turns_(profile.id == 2) {
     result_ = actor_.reset(spawn_, yaw_);
     if (result_.error != InspectionActorError::ok)
         fail();
@@ -71,22 +92,22 @@ void MovementController::dispatch(Event event) noexcept {
     const CallScope scope(busy_);
     apply_event(event);
 }
-bool MovementController::update(domain::InspectionMovementIntent desired) noexcept {
+bool MovementController::update(InspectionActionIntent desired) noexcept {
     const auto &clock = snapshot().animation.clock;
-    const auto current = active_motion(clock);
+    const auto current = active_action(clock);
     auto applied = desired;
     if (clock.mode != domain::LocomotionMode::stable)
-        applied.motion = current;
-    else if (current == Motion::idle && desired.motion == Motion::run)
-        applied.motion = Motion::walk; // Explicit native bridge; HL still rejects idle -> run.
-    result_ = actor_.step(applied, 2);
+        applied.action = current;
+    else
+        applied.action = next_action(current, desired.action);
+    result_ = actor_.step_action(applied, 2);
     if (result_.error != InspectionActorError::ok) {
         fail();
         return false;
     }
-    pending_ = desired.motion == active_motion(snapshot().animation.clock)
+    pending_ = desired.action == active_action(snapshot().animation.clock)
                    ? std::nullopt
-                   : std::optional<Motion>{desired.motion};
+                   : std::optional<Action>{desired.action};
     return true;
 }
 unsigned MovementController::step(MovementInput input, std::uint64_t elapsed_us) noexcept {
@@ -118,7 +139,7 @@ unsigned MovementController::step(MovementInput input, std::uint64_t elapsed_us)
     }
     if (input.advance) {
         clear_timing();
-        return state() == Session::paused && update(intent(input)) ? 1 : 0;
+        return state() == Session::paused && update(intent(input, turns_)) ? 1 : 0;
     }
     if (state() == Session::paused) {
         clear_timing();
@@ -134,10 +155,10 @@ unsigned MovementController::step(MovementInput input, std::uint64_t elapsed_us)
         clear_timing();
         elapsed_us = movement_max_interval_us;
     }
-    const auto desired = intent(input);
-    pending_ = desired.motion == active_motion(snapshot().animation.clock)
+    const auto desired = intent(input, turns_);
+    pending_ = desired.action == active_action(snapshot().animation.clock)
                    ? std::nullopt
-                   : std::optional<Motion>{desired.motion};
+                   : std::optional<Action>{desired.action};
     const auto total = remainder_us_ + elapsed_us;
     const auto count = static_cast<unsigned>(total / movement_step_us);
     remainder_us_ = static_cast<std::uint32_t>(total % movement_step_us);

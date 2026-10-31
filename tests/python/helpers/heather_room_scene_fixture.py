@@ -95,8 +95,8 @@ def texture():
     return struct.pack("<8I", 0xFFFFFFFF, 101, 32, 32 + len(block), 103, 1, 107, 109) + block
 
 
-def rig():
-    base = own_sri2()["heather.sri"]
+def rig(*, turns=False):
+    base = own_sri2(turns=turns)["heather.sri"]
     header = list(struct.unpack_from("<8s22I", base))
     payload = bytearray(base[96:-68])
     payload.extend(struct.pack("<39H", *([0, 1, 2] * 13)))

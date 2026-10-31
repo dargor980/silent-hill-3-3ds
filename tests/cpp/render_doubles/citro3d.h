@@ -20,16 +20,24 @@ struct C3D_Mtx {
     float data[16]{};
 };
 struct C3D_FVec {
-    float x, y, z;
+    float w, z, y, x;
 };
 struct C3D_Tex {
     void *data{nullptr};
 };
-struct C3D_AttrInfo {};
+struct C3D_AttrInfo {
+    int count{};
+    int components[4]{};
+};
 struct C3D_BufInfo {};
 struct C3D_TexEnv {};
 inline float C3D_AngleFromDegrees(float degrees) { return degrees * 0.01745329252F; }
-inline C3D_FVec FVec3_New(float x, float y, float z) { return {x, y, z}; }
+inline C3D_FVec FVec3_New(float x, float y, float z) { return {0, z, y, x}; }
+inline C3D_FVec FVec4_New(float x, float y, float z, float w) { return {w, z, y, x}; }
+inline constexpr int C3D_UNSIGNED_SHORT = 1;
+void C3D_SetAttrInfo(C3D_AttrInfo *);
+C3D_FVec *C3D_FVUnifWritePtr(int, int, int);
+void C3D_DrawElements(int, int, int, const void *);
 bool C3D_Init(std::size_t);
 void C3D_Fini();
 C3D_RenderTarget *C3D_RenderTargetCreate(int, int, int, int);

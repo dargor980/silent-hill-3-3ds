@@ -11,7 +11,7 @@ class FrameCadence final {
     void reset() noexcept {
         anchored_ = false;
         frames_ = 0;
-        fps_.reset();
+        measured_ = false;
     }
     void record(std::uint64_t now, bool presented) noexcept {
         if (!frequency_)
@@ -27,16 +27,19 @@ class FrameCadence final {
         const auto elapsed = now - anchor_;
         if (elapsed >= frequency_) {
             fps_ = double(frames_) * double(frequency_) / double(elapsed);
+            measured_ = true;
             anchor_ = now;
             frames_ = 0;
         }
     }
-    [[nodiscard]] std::optional<double> fps() const noexcept { return fps_; }
+    [[nodiscard]] std::optional<double> fps() const noexcept {
+        return measured_ ? std::optional<double>{fps_} : std::nullopt;
+    }
 
   private:
     const std::uint64_t frequency_;
     std::uint64_t anchor_{}, previous_{}, frames_{};
-    bool anchored_{};
-    std::optional<double> fps_{};
+    bool anchored_{}, measured_{};
+    double fps_{};
 };
 } // namespace sh3::platform

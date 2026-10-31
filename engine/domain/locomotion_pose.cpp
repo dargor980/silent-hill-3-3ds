@@ -48,14 +48,15 @@ Error read(const LocomotionSampleReader &reader, std::uint32_t clip, std::uint32
         return Error::sample_unavailable;
     return valid_transform(out) ? Error::ok : Error::invalid_pose;
 }
-const LocomotionClip *find_clip(std::uint32_t id) noexcept {
-    for (const auto &clip : heather_locomotion_profile.clips)
+const LocomotionClip *find_clip(const LocomotionProfile &profile, std::uint32_t id) noexcept {
+    for (const auto &clip : profile.active_clips())
         if (clip.id == id)
             return &clip;
     return nullptr;
 }
-bool valid_window(const LocomotionSamples &s, std::uint32_t id, std::uint32_t phase) noexcept {
-    const auto *clip = find_clip(id);
+bool valid_window(const LocomotionProfile &profile, const LocomotionSamples &s,
+                  std::uint32_t id, std::uint32_t phase) noexcept {
+    const auto *clip = find_clip(profile, id);
     if (!clip || s.clip_id != id || phase >= clip->count * 4096)
         return false;
     const auto frame = phase / 4096, following = (frame + 1) % clip->count;
@@ -67,8 +68,9 @@ bool valid_window(const LocomotionSamples &s, std::uint32_t id, std::uint32_t ph
 bool valid_plan(const LocomotionPlan &p, const LocomotionPoseCache &current) noexcept {
     // Reuse scalar invariant validation; do not duplicate the transition state machine.
     LocomotionPlan unused;
-    if (plan_locomotion_update(heather_locomotion_profile, p.next, {}, 2, unused) != Error::ok ||
-        !valid_window(p.target, p.next.target_id, p.pose_phase) ||
+    const auto *profile = locomotion_profile(p.next.profile_id);
+    if (!profile || plan_locomotion_update(*profile, p.next, {}, 2, unused) != Error::ok ||
+        !valid_window(*profile, p.target, p.next.target_id, p.pose_phase) ||
         p.fraction_q12 != p.pose_phase % 4096 || p.blend_q12 != p.next.blend)
         return false;
     switch (p.evaluation) {
@@ -78,7 +80,8 @@ bool valid_plan(const LocomotionPlan &p, const LocomotionPoseCache &current) noe
                                     : p.cache == CacheAction::none);
     case Evaluation::phase_blend:
         return p.next.mode == LocomotionMode::phase_blend && !current.saved_valid &&
-               p.cache == CacheAction::none && valid_window(p.source, p.next.source_id, p.pose_phase);
+               p.cache == CacheAction::none &&
+               valid_window(*profile, p.source, p.next.source_id, p.pose_phase);
     case Evaluation::cached_blend:
         return p.next.mode == LocomotionMode::cached && p.pose_phase == 0 &&
                (current.saved_valid ? p.cache == CacheAction::none
@@ -194,10 +197,11 @@ Error stage_locomotion_pose(const LocomotionSkeleton &rig, const LocomotionSampl
     return pose_error == Error::ok ? compose(rig, scratch) : pose_error;
 }
 Error initialize_locomotion_pose(const LocomotionSkeleton &rig, const LocomotionSampleReader &reader,
-                                LocomotionPoseScratch &scratch, std::uint32_t initial_clip) noexcept {
-    if (!valid_locomotion_skeleton(rig))
+                                LocomotionPoseScratch &scratch, std::uint32_t initial_clip,
+                                const LocomotionProfile &profile) noexcept {
+    if (!valid_locomotion_profile(profile) || !valid_locomotion_skeleton(rig))
         return Error::invalid_profile;
-    if (!find_clip(initial_clip))
+    if (!find_clip(profile, initial_clip))
         return Error::unknown_clip;
     scratch.next.bone_count = rig.bone_count;
     scratch.next.last_valid = false;

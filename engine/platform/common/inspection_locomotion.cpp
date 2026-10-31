@@ -35,7 +35,8 @@ Result decode(const std::uint8_t *h, const std::uint8_t *p, Model &model) noexce
     m.vertex_count = u32(h + 20);
     m.index_count = u32(h + 24);
     m.material_count = u32(h + 28);
-    model.profile = {u32(h + 44), u32(h + 48), u32(h + 52), m.sample_count, u32(h + 36), {}};
+    model.profile = {u32(h + 44), u32(h + 48), u32(h + 52), m.sample_count, u32(h + 36),
+                     u32(h + 32), {}};
     model.inspection_hz = u32(h + 40);
     m.center = {f32(p), f32(p + 4), f32(p + 8)};
     m.scale = f32(p + 12);
@@ -50,7 +51,8 @@ Result decode(const std::uint8_t *h, const std::uint8_t *p, Model &model) noexce
         if (p[3])
             return {E::invalid_data, "bindings.reserved"};
     }
-    for (auto &c : model.profile.clips) {
+    for (unsigned i = 0; i < model.profile.clip_count; ++i) {
+        auto &c = model.profile.clips[i]; // Exact profile/count pair checked before allocation.
         c = {u16(p), u16(p + 2), i16(p + 4), u16(p + 6), u16(p + 8), p[10], p[11], u32(p + 12)};
         if (u32(p + 16))
             return {E::invalid_data, "descriptors.reserved"};
@@ -106,18 +108,21 @@ Result load(const char *path, std::unique_ptr<Model> &out, StdioApi api) noexcep
     const auto nb = u32(h + 8), nf = u32(h + 12), nh = u32(h + 16), nv = u32(h + 20),
                ni = u32(h + 24), nm = u32(h + 28), bytes = u32(h + 56);
     Result result;
+    const auto *profile = domain::locomotion_profile(u32(h + 44));
     if (api.error(file))
         result = {E::read_failed, "header"};
     else if (count != header.size() || std::memcmp(h, "S3RIv2\0\0", 8))
         result = {E::invalid_data, "header.magic_or_size"};
-    else if (nb != 36 || nf != 58 || nh > domain::rig_helpers || nv < 3 ||
+    else if (nb != 36 || nf > domain::rig_samples || nh > domain::rig_helpers || nv < 3 ||
              nv > domain::rig_vertices || ni < 3 || ni > domain::rig_indices || ni % 3 || nm < 1 ||
              nm > domain::rig_materials)
         result = {E::invalid_data, "counts"};
-    else if (u32(h + 32) != 3 || u32(h + 36) != 2 || u32(h + 40) != 25 || u32(h + 44) != 1 ||
+    else if (!profile || nf != profile->sample_count || u32(h + 32) != profile->clip_count ||
+             u32(h + 36) != 2 || u32(h + 40) != 25 ||
              u32(h + 48) != 522 || u32(h + 52) != 525)
         result = {E::invalid_data, "profile"};
-    else if (bytes != 16 + 8 * nb + 60 + 28 * nb * nf + 68 * nh + 28 * nv + 2 * ni + 28 * nm)
+    else if (bytes != 16 + 8 * nb + 20 * profile->clip_count + 28 * nb * nf + 68 * nh +
+                          28 * nv + 2 * ni + 28 * nm)
         result = {E::invalid_data, "payload.length"};
     else {
         for (unsigned i = 64; i < 96; i += 4)

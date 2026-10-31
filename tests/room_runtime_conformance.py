@@ -9,14 +9,14 @@ import zlib
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tests.python.helpers.heather_room_scene_fixture import pin, scene_inputs  # noqa: E402
+from tests.python.helpers.heather_room_scene_fixture import pin, rig, scene_inputs  # noqa: E402
 from tools.pipeline import heather_room_contacts as contact  # noqa: E402
 from tools.pipeline import heather_room_scene as scene  # noqa: E402
 from tools.pipeline import prepare_heather_room_scene as preparation  # noqa: E402
 from tools.pipeline.prepare_heather_room_runtime import runtime_descriptor  # noqa: E402
 
 
-def main(executable):
+def main(executable, resources=None, skinning=None, skinning_resources=None):
     with tempfile.TemporaryDirectory() as directory:
         root = Path(directory).resolve()
         paths, _, a, b, ref = scene_inputs(root / "inputs")
@@ -86,7 +86,39 @@ def main(executable):
             assert raw[first_step - 1] >= hz * 2, (hz, raw)
             assert set(accepted[:first_step]) == {0} and set(accepted[first_step:]) == {1}, hz
         print("Room pause HUD: neutral 10s, noisy R, reset, one R and held R PASS at 25/60/143 Hz")
+        # The unchanged runtime loader passes the explicitly loaded profile 2
+        # through controls, actor, real contact adapter and renderer.
+        turns = {**files, **rig(turns=True), "map.srm": original}
+        (out / "heather.sri").write_bytes(turns["heather.sri"])
+        # Authored fixture descriptor: preserve placement/contact payload and the
+        # v2 map CRC already set above, then bind the new SRI bytes explicitly.
+        struct.pack_into("<I", descriptor, 20, zlib.crc32(turns["heather.sri"]))
+        (out / "scene.srr").write_bytes(descriptor)
+        comparison = subprocess.run(
+            [executable, str(out), "--turns"], check=True, capture_output=True, text=True
+        ).stdout
+        for fallback in (0, 1):
+            block = comparison.split(f"HS_COMPARISON_BEGIN {fallback}\n", 1)[1].split(
+                f"HS_COMPARISON_END {fallback}\n", 1
+            )[0]
+            assert "Asked:CPU Active:CPU" in block
+            assert (
+                "Asked:HYBRID Active:CPU" if fallback else "Asked:HYBRID Active:HYBRID"
+            ) in block
+            assert ("HS_UNIFORMS" if fallback else "HS_READY") in block
+            assert block.count("Window: DONE n=256 fail=0") >= 2
+            assert block.count("GPU matched: 256/256") >= 2
+            assert "Step: 0  Clip: 101  Q12: 0" in block
+        print(
+            "HS comparison menu, modes/fallback, neutral gates, HOME/lid and 256 GPU matches PASS"
+        )
+        if resources:
+            subprocess.run([resources, str(out)], check=True)
+        if skinning:
+            subprocess.run([skinning, str(out)], check=True)
+        if skinning_resources:
+            subprocess.run([skinning_resources, str(out)], check=True)
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(*sys.argv[1:])

@@ -1,0 +1,37 @@
+; HS-T2 executable contract probe; not installed in the room renderer.
+; All 4 input vectors are fully initialized by the producer.
+.fvec palette[90], clip_from_room[4]
+.constf constants(0.0, 1.0, 0.0, 0.0)
+.out out_position position
+.out out_color color
+.out out_texcoord texcoord0
+.proc main
+    mov r0, v0
+    mov r1, v1
+    mov r2, v2
+    mova a0.x, r2.x
+    dp4 r3.x, palette[a0.x], r0
+    dp4 r3.y, palette[a0.x+1], r0
+    dp4 r3.z, palette[a0.x+2], r0
+    mul r4.xyz, r3, r1.xxx
+    mova a0.x, r2.y
+    dp4 r3.x, palette[a0.x], r0
+    dp4 r3.y, palette[a0.x+1], r0
+    dp4 r3.z, palette[a0.x+2], r0
+    mul r3.xyz, r3, r1.yyy
+    add r4.xyz, r4, r3
+    mova a0.x, r2.z
+    dp4 r3.x, palette[a0.x], r0
+    dp4 r3.y, palette[a0.x+1], r0
+    dp4 r3.z, palette[a0.x+2], r0
+    mul r3.xyz, r3, r1.zzz
+    add r4.xyz, r4, r3
+    mov r4.w, r1.w
+    dp4 out_position.x, clip_from_room[0], r4
+    dp4 out_position.y, clip_from_room[1], r4
+    dp4 out_position.z, clip_from_room[2], r4
+    dp4 out_position.w, clip_from_room[3], r4
+    mov out_color, constants.yyyy
+    mov out_texcoord, v3
+    end
+.end

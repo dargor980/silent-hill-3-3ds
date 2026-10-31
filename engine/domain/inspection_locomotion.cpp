@@ -2,10 +2,10 @@
 
 namespace sh3::domain {
 const char *locomotion_rig_error(const InspectionLocomotion &m) noexcept {
-    if (!valid_locomotion_profile(m.profile) || m.inspection_hz != 25 || m.shared.clip_id ||
-        m.shared.increment)
+    if (!valid_locomotion_profile(m.profile) || m.inspection_hz != 25 ||
+        m.shared.clip_id || m.shared.increment)
         return "profile";
-    if (m.shared.bone_count != 36 || m.shared.sample_count != 58)
+    if (m.shared.bone_count != 36 || m.shared.sample_count != m.profile.sample_count)
         return "counts";
     constexpr std::array<std::uint16_t, 36> source{0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11,
                                                    12, 13, 14, 15, 16, 17, 21, 24, 25, 26, 27, 30,
@@ -26,7 +26,7 @@ bool InspectionLocomotionReader::read(std::uint32_t clip, std::uint32_t frame, s
     const auto &m = model_.shared;
     if (bone >= m.bone_count || bone >= rig_bones || m.sample_count > rig_samples)
         return false;
-    for (const auto &c : model_.profile.clips) {
+    for (const auto &c : model_.profile.active_clips()) {
         if (c.id != clip)
             continue;
         if (frame >= c.count || c.packed_first >= m.sample_count ||

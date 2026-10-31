@@ -34,14 +34,26 @@ jobs:
           ctest --version
       - name: Lint and formatting
         run: |
-          python -m ruff check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/locomotion_clock_oracle.py tests/locomotion_pose_oracle.py tests/locomotion_update_oracle.py tests/locomotion_rig_fixtures.py tests/locomotion_rig_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py tests/room_contacts_oracle.py tests/room_contacts_stack.py tests/heather_room_preparation_oracle.py tests/heather_room_preparation_conformance.py tests/heather_room_private_audit.py tests/room_scene_oracle.py tests/room_scene_conformance.py tests/room_scene_visual_audit.py tests/heather_room_scene_private_audit.py tests/heather_room_diagnostic_audit.py tests/heather_room_material_candidates_audit.py tests/heather_room_material_binding_audit.py tests/heather_room_materials_private_audit.py tests/room_runtime_conformance.py tests/heather_room_runtime_audit.py
-          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/locomotion_clock_oracle.py tests/locomotion_pose_oracle.py tests/locomotion_update_oracle.py tests/locomotion_rig_fixtures.py tests/locomotion_rig_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py tests/room_contacts_oracle.py tests/room_contacts_stack.py tests/heather_room_preparation_oracle.py tests/heather_room_preparation_conformance.py tests/heather_room_private_audit.py tests/room_scene_oracle.py tests/room_scene_conformance.py tests/room_scene_visual_audit.py tests/heather_room_scene_private_audit.py tests/heather_room_diagnostic_audit.py tests/heather_room_material_candidates_audit.py tests/heather_room_material_binding_audit.py tests/heather_room_materials_private_audit.py tests/room_runtime_conformance.py tests/heather_room_runtime_audit.py
+          python -m ruff check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/locomotion_clock_oracle.py tests/locomotion_pose_oracle.py tests/locomotion_update_oracle.py tests/heather_turns_oracle.py tests/heather_turns_integration_oracle.py tests/heather_turns_stack.py tests/locomotion_rig_fixtures.py tests/locomotion_rig_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py tests/room_contacts_oracle.py tests/room_contacts_stack.py tests/heather_room_preparation_oracle.py tests/heather_room_preparation_conformance.py tests/heather_room_private_audit.py tests/room_scene_oracle.py tests/room_scene_conformance.py tests/room_scene_visual_audit.py tests/heather_room_scene_private_audit.py tests/heather_room_diagnostic_audit.py tests/heather_room_material_candidates_audit.py tests/heather_room_material_binding_audit.py tests/heather_room_materials_private_audit.py tests/room_runtime_conformance.py tests/heather_room_runtime_audit.py
+          python -m ruff format --check tools tests/python tests/observer_wire_oracle.py tests/texture_wire_oracle.py tests/geometry_wire_oracle.py tests/animation_wire_oracle.py tests/locomotion_clock_oracle.py tests/locomotion_pose_oracle.py tests/locomotion_update_oracle.py tests/heather_turns_oracle.py tests/heather_turns_integration_oracle.py tests/heather_turns_stack.py tests/locomotion_rig_fixtures.py tests/locomotion_rig_wire_oracle.py tests/character_wire_oracle.py tests/character_material_wire_oracle.py tests/character_lighting_wire_oracle.py tests/character_world_wire_oracle.py tests/collision_wire_oracle.py tests/cld_polygon_wire_oracle.py tests/cld_polygon_fixtures.py tests/collision_polygon_recipe_fixtures.py tests/collision_polygon_package_fixtures.py tests/collision_polygon_package_oracle.py tests/room_contacts_oracle.py tests/room_contacts_stack.py tests/heather_room_preparation_oracle.py tests/heather_room_preparation_conformance.py tests/heather_room_private_audit.py tests/room_scene_oracle.py tests/room_scene_conformance.py tests/room_scene_visual_audit.py tests/heather_room_scene_private_audit.py tests/heather_room_diagnostic_audit.py tests/heather_room_material_candidates_audit.py tests/heather_room_material_binding_audit.py tests/heather_room_materials_private_audit.py tests/room_runtime_conformance.py tests/heather_room_runtime_audit.py
       - name: Dependency, custody and spec contracts
         run: python -m tools.qa.check_repository
+      - name: HS palette contract lint
+        run: |
+          python -m ruff check tests/skinning_conformance.py tests/skinning_stack.py
+          python -m ruff format --check tests/skinning_conformance.py tests/skinning_stack.py
+          python -m ruff check tests/heather_skinning_oracle.py tests/generate_heather_skinning_vectors.py tests/heather_skinning_sdk.py
+          python -m ruff format --check tests/heather_skinning_oracle.py tests/generate_heather_skinning_vectors.py tests/heather_skinning_sdk.py
+      - name: HS palette contract oracle coverage
+        run: |
+          python -m pytest tests/python/test_heather_skinning_contract.py --cov=tests.heather_skinning_oracle --cov=tests.generate_heather_skinning_vectors --cov-report=json:build/skinning-contract-coverage.json
+          python -m tools.qa.coverage_gate build/skinning-contract-coverage.json --files tests/heather_skinning_oracle.py tests/generate_heather_skinning_vectors.py
       - name: Python tests and coverage gate
         run: |
           python -m pytest --cov=tools --cov-report=xml:build/python-coverage.xml --cov-report=json:build/python-coverage.json --cov-report=term-missing --junitxml=build/pytest.xml
           python -m tools.qa.coverage_gate build/python-coverage.json
+          python -m tools.qa.coverage_gate build/python-coverage.json --files tools/qa/skinning_workload.py
+          python -m tools.qa.coverage_gate build/python-coverage.json --files tools/qa/skinning_shader.py
           python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/heather_room_contacts.py tools/pipeline/prepare_heather_room_contacts.py
           python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/collision_registry.py tools/pipeline/collision_evidence.py tools/pipeline/collision_intermediate.py tools/pipeline/prepare_collision_intermediate.py tools/pipeline/decoders/ps2_cld_polygons.py tools/pipeline/collision_polygon_intermediate.py tools/pipeline/collision_polygon_inputs.py tools/pipeline/collision_polygon_recipe.py tools/pipeline/collision_polygon_output.py tools/pipeline/prepare_collision_polygon_intermediate.py
           python -m tools.qa.coverage_gate build/python-coverage.json --files tools/pipeline/decoders/ps2_animation.py tools/pipeline/decoders/ps2_character_mesh.py tools/pipeline/decoders/ps2_character_morphs.py tools/pipeline/decoders/ps2_indexed.py tools/pipeline/decoders/ps2_morph_materials.py tools/pipeline/decode_morph_character.py tools/pipeline/rig_inspection.py
@@ -136,6 +148,10 @@ jobs:
           test -s build/inspection-movement-coverage.xml
           python -m gcovr --config gcovr-inspection-actor.cfg 2>&1 | tee build/logs/inspection-actor-coverage.log
           test -s build/inspection-actor-coverage.xml
+          python -m gcovr --config gcovr-inspection-action.cfg 2>&1 | tee build/logs/inspection-action-coverage.log
+          test -s build/inspection-action-coverage.xml
+          python -m gcovr --config gcovr-frame-cadence.cfg 2>&1 | tee build/logs/frame-cadence-coverage.log
+          test -s build/frame-cadence-coverage.xml
           python -m gcovr --config gcovr-movement-controller.cfg 2>&1 | tee build/logs/movement-controller-coverage.log
           test -s build/movement-controller-coverage.xml
           python -m gcovr --config gcovr-ctr-movement-controls.cfg 2>&1 | tee build/logs/ctr-movement-controls-coverage.log
@@ -150,6 +166,10 @@ jobs:
           test -s build/room-runtime-reader-coverage.xml
           python -m gcovr --config gcovr-room-renderer.cfg 2>&1 | tee build/logs/room-renderer-coverage.log
           test -s build/room-renderer-coverage.xml
+          python -m gcovr --config gcovr-skinning-plan.cfg
+          python -m gcovr --config gcovr-skinning-gpu.cfg
+          python -m gcovr --config gcovr-work-trace.cfg
+          python -m gcovr --config gcovr-skinning-capture.cfg
           python -m gcovr --config gcovr-room-main.cfg 2>&1 | tee build/logs/room-main-coverage.log
           test -s build/room-main-coverage.xml
           python -m gcovr --config gcovr-room-scene.cfg 2>&1 | tee build/logs/room-scene-coverage.log
@@ -177,6 +197,8 @@ jobs:
             build/locomotion-clock-coverage.xml
             build/inspection-movement-coverage.xml
             build/inspection-actor-coverage.xml
+            build/inspection-action-coverage.xml
+            build/frame-cadence-coverage.xml
             build/movement-controller-coverage.xml
             build/ctr-movement-controls-coverage.xml
             build/room-contacts-coverage.xml
@@ -188,6 +210,7 @@ jobs:
             build/room-scene-coverage.xml
             build/room-scene-reader-coverage.xml
             build/room-material-coverage.xml
+            build/skinning-capture-coverage.xml
             build/locomotion-pose-coverage.xml
             build/locomotion-update-coverage.xml
             build/locomotion-probe-coverage.xml
@@ -215,8 +238,37 @@ jobs:
           docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
             --user "$(id -u):$(id -g)" -e HOME=/tmp \
             --mount "type=bind,src=$PWD,dst=/work" -w /work "$image" bash -c \
-            'bash scripts/check_3ds_toolchain.sh && bash scripts/build_3ds.sh && python3 tests/room_contacts_stack.py build/3ds && bash scripts/build_render_probe.sh && bash scripts/build_texture_probe.sh && bash scripts/build_geometry_probe.sh && bash scripts/build_material_probe.sh && bash scripts/build_animation_probe.sh && bash scripts/build_character_probe.sh && bash scripts/build_character_material_probe.sh && bash scripts/build_character_lighting_probe.sh && bash scripts/build_character_world_probe.sh && bash scripts/build_heather_probe.sh && bash scripts/build_heather_room.sh' \
+            'bash scripts/check_3ds_toolchain.sh && bash scripts/build_3ds.sh && python3 tests/room_contacts_stack.py build/3ds && bash scripts/build_render_probe.sh && bash scripts/build_texture_probe.sh && bash scripts/build_geometry_probe.sh && bash scripts/build_material_probe.sh && bash scripts/build_animation_probe.sh && bash scripts/build_character_probe.sh && bash scripts/build_character_material_probe.sh && bash scripts/build_character_lighting_probe.sh && bash scripts/build_character_world_probe.sh && bash scripts/build_heather_probe.sh && bash scripts/build_heather_room.sh && bash scripts/build_heather_skinning.sh && python3 tests/skinning_stack.py build/heather-skinning-code' \
             2>&1 | tee build/logs/3ds.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: heather-skinning-code-only
+          path: |
+            build/heather-skinning-code/sh3_heather_skinning.3dsx
+            build/heather-skinning-code/sh3_heather_skinning.smdh
+            build/heather-skinning-code/build-id.txt
+            build/heather-skinning-code/SHA256SUMS
+            build/heather-skinning-code/sdk-image.txt
+            build/heather-skinning-code/toolchain-packages.txt
+          if-no-files-found: error
+          retention-days: 14
+      - name: HS palette SDK contract
+        shell: bash
+        run: |
+          image=$(cat toolchains/devkitpro-image.txt)
+          docker run --rm --memory=512m --network none --cap-drop ALL --security-opt no-new-privileges \
+            --user "$(id -u):$(id -g)" -e HOME=/tmp \
+            --mount "type=bind,src=$PWD,dst=/work" -w /work "$image" \
+            python3 tests/heather_skinning_sdk.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: hs-palette-sdk-contract
+          path: |
+            build/heather-skinning-contract/sdk/probe.json
+            build/heather-skinning-contract/sdk/contract.shbin
+            build/heather-skinning-contract/sdk/layout.o
+          if-no-files-found: error
+          retention-days: 14
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: private-heather-room-code-only

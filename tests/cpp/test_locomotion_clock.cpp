@@ -112,7 +112,7 @@ void invalid_states_and_requests() {
     for (auto clip : {0U, 1U, 100U, 65535U, max})
         rejected(profile, idle, clip, 2, Error::unknown_clip);
     rejected(profile, idle, 113, 2, Error::unsupported_transition);
-    for (const auto &clip : profile.clips) {
+    for (const auto &clip : profile.active_clips()) {
         rejected(profile, stable(clip.id, clip.count * 4096), {}, 2, Error::invalid_state);
         for (auto phase : {0U, 4095U, 4096U, clip.count * 4096 - 1}) {
             const auto state = stable(clip.id, phase);

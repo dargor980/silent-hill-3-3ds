@@ -2,7 +2,8 @@
 #include "sh3/domain/character_skinning.hpp"
 
 namespace sh3::domain {
-inline constexpr std::size_t rig_bones = 73, rig_samples = 64, rig_helpers = 128,
+inline constexpr std::size_t sri1_samples = 64;
+inline constexpr std::size_t rig_bones = 73, rig_samples = 80, rig_helpers = 128,
                              rig_vertices = 8192, rig_indices = 18000, rig_materials = 16;
 struct RigSample {
     Vec3 translation{};

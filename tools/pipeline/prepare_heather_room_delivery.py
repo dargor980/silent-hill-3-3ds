@@ -72,8 +72,8 @@ def source_names(repository):
     ) + [repository / "CMakeLists.txt"]
 
 
-def verified_build(build, repository, custody):
-    artifacts, identity = read_build(build, STEM)
+def verified_build(build, repository, custody, stem=STEM):
+    artifacts, identity = read_build(build, stem)
     custody.read(build / "SHA256SUMS", 4096)
     for name, raw in artifacts.items():
         require(custody.read(build / name, 16 * 1024 * 1024) == raw, "HRD_BUILD_CHANGED")
@@ -85,10 +85,10 @@ def verified_build(build, repository, custody):
         == custody.read(repository / "toolchains/devkitpro-image.txt", 4096),
         "HRD_SDK_IMAGE",
     )
-    elf = artifacts[STEM + ".elf"]
+    elf = artifacts[stem + ".elf"]
     require(elf[:6] == b"\x7fELF\x01\x01" and elf[18:20] == b"\x28\0", "HRD_ARM_ELF")
     require(
-        identity.encode() in elf and identity.encode() in artifacts[STEM + ".3dsx"],
+        identity.encode() in elf and identity.encode() in artifacts[stem + ".3dsx"],
         "HRD_EMBEDDED_ID",
     )
     return artifacts, identity

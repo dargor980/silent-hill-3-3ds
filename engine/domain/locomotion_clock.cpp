@@ -2,8 +2,11 @@
 
 namespace sh3::domain {
 bool valid_locomotion_profile(const LocomotionProfile &p) noexcept {
-    const auto &fixed = heather_locomotion_profile;
-    if (p.id != fixed.id || p.model_resource != fixed.model_resource ||
+    const auto *known = locomotion_profile(p.id);
+    if (!known)
+        return false;
+    const auto &fixed = *known;
+    if (p.clip_count != fixed.clip_count || p.model_resource != fixed.model_resource ||
         p.animation_resource != fixed.animation_resource || p.sample_count != fixed.sample_count ||
         p.ticks != fixed.ticks)
         return false;
@@ -22,17 +25,23 @@ using Mode = LocomotionMode;
 using Error = LocomotionError;
 
 const LocomotionClip *find(const LocomotionProfile &p, std::uint32_t id) noexcept {
-    for (const auto &clip : p.clips)
+    for (const auto &clip : p.active_clips())
         if (clip.id == id)
             return &clip;
     return nullptr;
 }
 bool moving(std::uint32_t id) noexcept { return id == 109 || id == 113; }
-bool cached_edge(std::uint32_t source, std::uint32_t target) noexcept {
-    return (source == 101 && target == 109) || (moving(source) && target == 101);
+struct CachedEdge { std::uint32_t source, target, first, delta; };
+constexpr std::array<CachedEdge, 7> cached_edges{{
+    {101, 109, 768, 768}, {109, 101, 1280, 360}, {113, 101, 1280, 360},
+    {101, 107, 768, 768}, {101, 108, 768, 768},
+    {107, 101, 1024, 410}, {108, 101, 1024, 410}}};
+const CachedEdge *cached_edge(std::uint32_t source, std::uint32_t target) noexcept {
+    for (const auto &edge : cached_edges)
+        if (edge.source == source && edge.target == target)
+            return &edge;
+    return nullptr;
 }
-std::uint32_t first_blend(std::uint32_t target) noexcept { return target == 109 ? 768 : 1280; }
-std::uint32_t blend_delta(std::uint32_t target) noexcept { return target == 109 ? 768 : 360; }
 bool valid_state(const LocomotionProfile &p, const LocomotionClock &s) noexcept {
     const auto *target = find(p, s.target_id);
     if (s.profile_id != p.id || !target || !find(p, s.source_id) ||
@@ -44,10 +53,12 @@ bool valid_state(const LocomotionProfile &p, const LocomotionClock &s) noexcept 
     case Mode::phase_blend:
         return moving(s.source_id) && moving(s.target_id) && s.source_id != s.target_id &&
                s.blend > 0 && s.blend < q12 && s.blend % 384 == 0 && !s.saved_local_valid;
-    case Mode::cached:
-        return cached_edge(s.source_id, s.target_id) && !s.counter && s.saved_local_valid &&
-               s.blend >= first_blend(s.target_id) && s.blend < q12 &&
-               (s.blend - first_blend(s.target_id)) % blend_delta(s.target_id) == 0;
+    case Mode::cached: {
+        const auto *edge = cached_edge(s.source_id, s.target_id);
+        return edge && !s.counter && s.saved_local_valid &&
+               s.blend >= edge->first && s.blend < q12 &&
+               (s.blend - edge->first) % edge->delta == 0;
+    }
     }
     return false;
 }
@@ -80,7 +91,8 @@ LocomotionError plan_locomotion_update(const LocomotionProfile &profile,
     const bool selection = request && *request != current.target_id;
     if (selection && current.mode != Mode::stable)
         return Error::transition_busy;
-    if (selection && current.target_id == 101 && *request == 113)
+    if (selection && !cached_edge(current.target_id, *request) &&
+        !(moving(current.target_id) && moving(*request)))
         return Error::unsupported_transition;
 
     LocomotionPlan plan{};
@@ -101,8 +113,9 @@ LocomotionError plan_locomotion_update(const LocomotionProfile &profile,
     const auto &target = *find(profile, next.target_id);
     plan.pose_phase = next.counter;
     if (next.mode == Mode::cached) {
-        const auto beta = selection ? std::uint64_t(first_blend(next.target_id))
-                                    : std::uint64_t(next.blend) + blend_delta(next.target_id);
+        const auto &edge = *cached_edge(next.source_id, next.target_id);
+        const auto beta = selection ? std::uint64_t(edge.first)
+                                    : std::uint64_t(next.blend) + edge.delta;
         if (beta < q12) {
             next.blend = static_cast<std::uint32_t>(beta);
             plan.evaluation = LocomotionEvaluation::cached_blend;

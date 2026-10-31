@@ -49,7 +49,7 @@ ports::FileError read_inspection_rig(const char *path, domain::InspectionRig &ou
     if (api.error(file))
         result = E::read_failed;
     else if (loaded != 64 || std::memcmp(header.data(), "S3RIv1\0\0", 8) || nb < 1 ||
-             nb > domain::rig_bones || nf < 2 || nf > domain::rig_samples ||
+             nb > domain::rig_bones || nf < 2 || nf > domain::sri1_samples ||
              nh > domain::rig_helpers || nv < 3 || nv > domain::rig_vertices || ni < 3 ||
              ni > domain::rig_indices || ni % 3 || nm < 1 || nm > domain::rig_materials ||
              word(header.data() + 48) || word(header.data() + 52) || word(header.data() + 56) ||

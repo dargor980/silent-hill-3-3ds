@@ -183,7 +183,8 @@ bool room_frame(const RoomMap &map, const InspectionRig &m, const RigPose &pose,
 PreparedRoomScene::PreparedRoomScene(const RoomMap &map, const InspectionRig &model) noexcept
     : map_(map), model_(model), ready_(valid_room_map(map) && room_memory(map, model, memory_)) {}
 bool PreparedRoomScene::frame(const RigPose &pose, const PoseMatrix &instance, RoomWorkspace &work,
-                              RoomFrame &out) const noexcept {
+                              RoomFrame &out, WorkTrace *trace) const noexcept {
+    WorkInterval interval(trace, WorkPhase::validation);
     if (!ready_ || !instance_ok(instance))
         return false;
     const auto &map = map_;
@@ -191,7 +192,9 @@ bool PreparedRoomScene::frame(const RigPose &pose, const PoseMatrix &instance, R
     for (unsigned i = 0; i < m.bone_count; ++i)
         if (!affine(pose[i]))
             return false;
+    interval.next(WorkPhase::palette);
     rig_palette(m, pose, work.palette);
+    interval.next(WorkPhase::deform_cpu);
     for (unsigned i = 0; i < m.vertex_count; ++i) {
         const auto &v = m.vertices[i];
         auto &d = work.vertices[i];
@@ -211,6 +214,7 @@ bool PreparedRoomScene::frame(const RigPose &pose, const PoseMatrix &instance, R
         if (!valid_room_vertex(d.draw))
             return false;
     }
+    interval.next(WorkPhase::sort_expand);
     std::size_t n = 0;
     for (unsigned i = 0; i < map.shape_count; ++i) {
         const auto &s = map.shapes[i];

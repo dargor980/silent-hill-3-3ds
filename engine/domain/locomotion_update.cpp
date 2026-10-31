@@ -32,11 +32,11 @@ Error initialize_locomotion(const LocomotionProfile &profile, const LocomotionSk
                             LocomotionWorkspace &workspace, std::uint32_t initial_clip) noexcept {
     if (!valid_locomotion_profile(profile) || !valid_locomotion_skeleton(rig))
         return Error::invalid_profile;
-    const auto error = initialize_locomotion_pose(rig, reader, workspace.pose, initial_clip);
+    const auto error = initialize_locomotion_pose(rig, reader, workspace.pose, initial_clip, profile);
     if (error != Error::ok)
         return error;
     workspace.plan = {};
-    workspace.plan.next = initial_locomotion_clock();
+    workspace.plan.next = initial_locomotion_clock(profile);
     workspace.plan.next.source_id = workspace.plan.next.target_id = initial_clip;
     // Initialization does not consume a tick; the first update still evaluates clip[0].
     publish(workspace.plan.next, rig, workspace.pose, state);
